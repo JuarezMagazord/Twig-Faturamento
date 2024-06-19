@@ -1,0 +1,53 @@
+{# Solicitado na atividade MAG-6350 #}
+
+{% set zeraBaseCalculo = false %}
+    {% if self.configuracaoParametros %}
+        {% set cfopZerada = self.configuracaoParametros.getOpcoesICMS().getCfopBaseZerada()|split(',') %}
+        {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+    {% endif %}
+    
+    {% if self.notaFiscalItem.getCfop().getCodigo() not in [5102, 6102] %}
+        {{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+    {% else %}
+        {% set aliquotaIPI = 0.00 %}
+        {% if self.configuracaoParametros %}
+            {% if self.aliquotaNcm|length > 0 %}
+                {% if self.aliquotaNcm[self.notaFiscalItem.ncm.codigo]  is defined %}
+                    {% set aliquotaIPI = (self.aliquotaNcm[self.notaFiscalItem.ncm.codigo]) %}
+                {% else %}
+                    {% set aliquotaIPI = 0.00 %}
+                {% endif %}
+            {% else %}
+                {% set aliquotaIPI = 0.00 %}
+            {% endif %}
+        {% else %}
+            {% set aliquotaIPI = 0.00 %}
+        {% endif %}
+    
+        {% if zeraBaseCalculo %}
+            {{ self.result('0.00') }}
+        {% else %}
+            {% if aliquotaIPI == 0.00 %}
+                {% if self.configuracaoGlobal %}
+                    {% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}
+                        {{ self.result(( self.notaFiscalItem.valorProduto) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+                    {% else %}
+                        {{ self.result(0.00) }}
+                    {% endif %}
+                {% else %}
+                    {{ self.result( self.notaFiscalItem.valorProduto + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+                {% endif %}
+            {% else %}
+                {% if self.configuracaoGlobal %}
+                    {% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}
+                        {% set baseMultIPI = 1 + (aliquotaIPI / 100) %}
+                        {{ self.result((((self.notaFiscalItem.valorProduto * baseMultIPI)  + (self.notaFiscalItem.valorFrete * baseMultIPI) + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto))) }}
+                    {% else %}
+                        {{ self.result(0.00) }}
+                    {% endif %}
+                {% else %}
+                    {{ self.result((self.notaFiscalItem.valorProduto) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+                {% endif %}
+            {% endif %}
+        {% endif %}
+    {% endif %}
