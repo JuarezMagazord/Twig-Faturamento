@@ -1,0 +1,37 @@
+{% set mensagem = [' '] %}
+
+{% set observacoes = [] %}
+{% set existePartilha = false %}
+{% for param in parametrosCalculados %}
+    {% if param.aliquotaICMS %}
+        {% set observacao = param.aliquotaICMS.observacao %}
+    {% else %}
+        {% set observacao = false %}
+    {% endif %}
+    {% set paramPartilha = param.getParametroItemCalculadoByChave('PARTILHA_ICMS') %}
+    {% if paramPartilha %}
+        {% set existePartilha = paramPartilha.getValor() == 'sim' %}
+    {% endif %}
+    {% if observacao %}
+        {% set adiciona = true %}
+        {% for obs in observacoes %}
+            {% if obs == observacao %}
+               {% set adiciona = false %}
+            {% endif %}
+        {% endfor %}
+        {% if adiciona %}
+            {% set observacoes = observacoes|merge([observacao]) %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
+{% set mensagem = mensagem|merge(observacoes) %}
+
+{% if existePartilha %}
+    {% set total_fcp = get_imposto_param_total_calculado('VLR_TOTAL_ICMS_FCP_DESTINO') %}
+    {% set total_partilha_destino = get_imposto_param_total_calculado('VLR_TOTAL_ICMS_DESTINO') %}
+    {% set total_partilha_origem = get_imposto_param_total_calculado('VLR_TOTAL_ICMS_PARTILHA_DESTINO') %}
+    {% set mensagem = mensagem|merge(['Recolhimento do ICMS ao ESTADO de destino - ']) %}
+    {% set mensagem = mensagem|merge(['Total FCP R$ ' ~ total_fcp|number_format(2,',','') ~ ' - Partilha ICMS UF Destino R$ ' ~ total_partilha_destino|number_format(2,',','') ~ ' - Partilha ICMS UF Origem R$ ' ~ total_partilha_origem|number_format(2,',','')]) %}
+{% endif %}
+
+{{self.result(mensagem|join(' - '))}}
