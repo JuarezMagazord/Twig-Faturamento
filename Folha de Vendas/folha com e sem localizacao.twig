@@ -1,0 +1,45 @@
+{{print_quebra_linha(true)}}
+    {% if folhaVenda.separador %}
+        {{print_text('Separador: ' ~ folhaVenda.separador.nome,2)}}
+    {% endif %}
+    {{print_empty_line()}}
+    {% for pedidoFolhaVenda in pedidosFolhaVenda %}
+    {{print_text('Folha de Vendas ' ~ folhaVenda.id,2)}}
+    {{print_text('')}}
+    {% if folhaVenda.separador %}
+        {{print_text('Separador: ' ~ folhaVenda.separador.nome,2)}}
+    {% endif %}
+    {{print_orientacao('center')}}
+    {% if pedidoFolhaVenda.pedidoRastreio.transportadoraServico %}
+        {{print_text(pedidoFolhaVenda.pedidoRastreio.transportadoraServico.descricao,3)}}
+    {% endif %}
+    {{print_text('Pedido ' ~ pedidoFolhaVenda.pedidoRastreio.pedido.codigo, 2)}}
+    {{print_barcode(pedidoFolhaVenda.pedidoRastreio.pedido.codigo)}}
+    {{print_orientacao('left')}}
+    {{print_empty_line()}}
+    {{print_text('Nome: '~pedidoFolhaVenda.pedidoRastreio.pedido.pedidoPessoa.nome)}}
+    {% if pedidoFolhaVenda.pedidoRastreio.pedido.valorPresente > 0 %}
+    {{print_enfase(true)}}
+    {{print_text('Presente: Sim')}}
+    {{print_enfase(false)}}
+    {% endif %}
+    {{print_line()}}
+    {% set totalPecas = 0 %}
+    {% for pedidoItem in pedidoFolhaVenda.pedidoRastreio.pedidoItem %}
+    {{print_enfase(true)}}
+    {{print_text_detalhe(pad(pedidoItem.produtoDerivacao.codigo, 26, 0) ~ pad(pedidoItem.quantidade, 5, 1, 'left'),2)}}
+    {{print_enfase(false)}}
+    {{print_text(pedidoItem.produtoDerivacao.produto.nome ~ ' - ' ~ pedidoItem.produtoDerivacao.nome)}}
+    {% if pedidoItem.getEstoqueItem.getLocalizacaoConcatenada() is null %}
+        {{print_text('Localização: Vazio')}}
+        {{print_line()}}
+    {% endif %}
+        {{print_text('Localização: '~pedidoItem.getEstoqueItem.getLocalizacaoConcatenada())}}
+        {{print_line()}}
+    {% set totalPecas = totalPecas + pedidoItem.quantidade %}
+    {% endfor %}
+    {{print_text('Quantidade Total: ' ~ totalPecas)}}
+    {{print_line()}}
+    {{print_cut()}}
+    {% endfor %}
+{{print_finalize(false)}}
