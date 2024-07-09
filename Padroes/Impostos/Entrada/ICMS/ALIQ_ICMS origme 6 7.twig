@@ -1,0 +1,15 @@
+{% if self.aliquotaICMS %}
+    {% if self.importado and self.siglaEstado != self.siglaEstadoEmissor %}
+            {% if self.origemFiscal in [6,7]%}
+                    {{ self.result(self.aliquotaICMS.ICMSInterestadual) }}
+            {% else %}
+                    {{ self.result(4.00) }}
+            {% endif %}
+    {% elseif self.siglaEstado == self.siglaEstadoEmissor %}
+            {{ self.result(self.aliquotaICMS.ICMSInterno) }}
+    {% else %}
+            {{ self.result(self.aliquotaICMS.ICMSInterestadual) }}
+    {% endif %}
+{% else %}
+    {{ self.result('0.00') }}
+{% endif %}

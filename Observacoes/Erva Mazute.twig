@@ -1,0 +1,7 @@
+{% set mensagem = '' %}
+    {% if self.getNotaFiscal().getNotaFiscalEndereco() [0].getCidade().getEstado().getSigla() == 'SC' %}
+            {% set mensagem = mensagem ~ ' Mercadoria consumo popular, art.26, inciso III, alinea D, RICMS/SC, base calculo reduzida em 41,667%, anexo II, art.2, inciso XI, lei 10.297/96. Produto com beneficio credito presumido Cbenef Sc850025' %}
+    {% else %}
+           {% set mensagem = mensagem ~ ' ' %}
+    {% endif %}
+    {{self.result(mensagem)}}

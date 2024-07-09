@@ -21,10 +21,10 @@ from
 	sum(nfitem_valor_unitario) as total_venedido, 
 	(sum(nfitem_valor_unitario) / sum(nfitem_quantidade)) as preco_medio,
 	CASE WHEN ped_origem = 1 THEN 'Site'
-                                 WHEN ped_origem = 2 AND lojmkt_nome = mktpl_nome then CONCAT_WS(' - ', 'Marketplace', lojmkt_nome)
-                                 WHEN ped_origem = 2 THEN CONCAT_WS(' - ', 'Marketplace', lojmkt_nome, mktpl_nome)
-                                  ELSE 'Manual'
-		END AS pedido_origem,
+            WHEN ped_origem = 2 AND lojmkt_nome = mktpl_nome then CONCAT_WS(' - ', 'Marketplace', lojmkt_nome)
+            WHEN ped_origem = 2 THEN CONCAT_WS(' - ', 'Marketplace', lojmkt_nome, mktpl_nome)
+            ELSE 'Manual'
+			END AS pedido_origem,
 		cat_nome,
 		to_date(nf_data_emissao) as dataemissao,custo_valor_atual,mz_produto_derivacao.proder_nome
 	from faturamento.ft_nota_fiscal     

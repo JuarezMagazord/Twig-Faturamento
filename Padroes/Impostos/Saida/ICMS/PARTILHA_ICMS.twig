@@ -1,0 +1,24 @@
+{# Suspenso por 90 dias  DIFAL julgado inconstitucional conforme decisao STF no Recurso Extraordinario 1287019 
+{{ self.result('não') }}#}
+
+{# Novo Calculo solicitado para gerar ou não difal pela CFOP, conforme atividade de Suporte 146085 }
+
+{% if self.notaFiscalItem.getCfop().getCodigo() in [5101,5102,6101,6102] %}
+    {{ self.result('não') }}
+{% elseif self.notaFiscalItem.getCfop().getCodigo() in [6107,6108] %}
+    {{ self.result('sim') }}
+{% else %}    
+    {{ self.result('não') }}
+{% endif %}
+
+
+{ Ignorado esse calculo, para fazer o de cima por CFOP. Conforme atividade de Suporte 146085 } 
+#}
+
+{% if self.siglaEstado != self.siglaEstadoEmissor and self.notaFiscalItem.getCfopConfiguracao().getCFOPConfiguracaoNotaFiscal().getOperacaoConsumidorFinal() and self.notaFiscalItem.notaFiscal.pessoa.tipo == 1 %}
+    {{ self.result('sim') }}
+{% elseif self.siglaEstado != self.siglaEstadoEmissor and self.notaFiscalItem.notaFiscal.pessoa.tipo == 2 and self.notaFiscalItem.notaFiscal.pessoa.inscricaoEstadual is empty %}
+    {{ self.result('sim') }}
+{% else %}
+    {{ self.result('não') }}
+{% endif %}

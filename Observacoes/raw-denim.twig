@@ -1,0 +1,27 @@
+{% set mensagem = '' %}
+
+    {% if self.getPedido() and self.getPedido().getOrigem() == 2 %}
+       {% set mensagem = mensagem ~ ' - Marketplace: ' ~ self.getPedido().getPedidoMarketplace().getMarketplace().getNome() ~' - '%}
+    {% endif %}
+    
+    {% set codigoPedido = self.getPedido().getCodigo()|default(false) %}
+    {% if codigoPedido %}
+        {% set mensagem = mensagem  ~ 'Pedido: ' ~ codigoPedido ~' - '%}
+    {% endif %}
+    
+    
+    
+    {% if self.inscricaoEstadualDestino %}
+        {% set mensagem = mensagem ~ self.inscricaoEstadualDestino.mensagem %}
+    {% endif %}
+    
+    
+    {% set vlrNacional = get_imposto_param_total_calculado('VLR_TOTAL_NACIONAL_IBPT') %}
+    {% set vlrEstadual = get_imposto_param_total_calculado('VLR_TOTAL_ESTADUAL_IBPT') %}
+    {% if vlrNacional > 0 or vlrEstadual > 0 %}
+        {% set BCIBPT = get_imposto_param_total_calculado('VLR_TOTAL_BASE_IBPT') %}
+        {% set mensagemibpt = ' - Total aproximado de tributos: ' ~ (vlrNacional + vlrEstadual)|number_format(2,',','.') ~ ' (' ~ regra_de_tres(BCIBPT, 100, (vlrNacional + vlrEstadual))|number_format(2,',','.') ~ '%) Federais ' ~ vlrNacional|number_format(2,',','.') ~ ' (' ~ regra_de_tres(BCIBPT, 100, vlrNacional)|number_format(2,',','.') ~ '%) Estaduais ' ~ vlrEstadual|number_format(2,',','.')  ~ ' (' ~ regra_de_tres(BCIBPT, 100, vlrEstadual)|number_format(2,',','.') ~ '%). Fonte.: IBPT/empresometro.com.br.' %}
+        {% set mensagem = mensagem ~ mensagemibpt%}
+    {% endif %}
+    
+{{self.result(mensagem)}}

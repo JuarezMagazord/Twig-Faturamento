@@ -1,0 +1,4 @@
+{#  Dentro de Observações #}
+
+{#  Pegar informações para estado destinatário. #}
+{% self.getNotaFiscal().getNotaFiscalEndereco() [0].getCidade().getEstado().getSigla() == 'SC' %}

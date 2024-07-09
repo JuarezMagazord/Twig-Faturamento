@@ -1,0 +1,6 @@
+{% set reducao = calculo_get_parametro_calculado('PERC_REDUCAO_BASE_CALCULO_ICMS')/100 %}
+    {% set base = ((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) %}
+    {% if reducao > 0 %}
+        {% set base = base * reducao %}
+    {% endif %}
+    {{ self.result(base ) }}
