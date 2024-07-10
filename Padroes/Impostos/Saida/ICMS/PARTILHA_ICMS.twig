@@ -22,3 +22,13 @@
 {% else %}
     {{ self.result('não') }}
 {% endif %}
+
+{#  Ignorado o script acima, inserido o seguinte:#}
+
+{% if self.notaFiscalItem.getCfop().getCodigo() in [5101,5102,6101,6102] %}
+    {{ self.result('não') }}
+{% elseif self.notaFiscalItem.getCfop().getCodigo() in [6107,6108] %}
+    {{ self.result('sim') }}
+{% else %}    
+    {{ self.result('não') }}
+{% endif %}
