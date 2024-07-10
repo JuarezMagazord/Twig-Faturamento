@@ -1,7 +1,10 @@
+{# Modificação realizada conforme solicitação do ticket #362176. #}
+
 {% set aliqSN = 'self.configuracaoGlobal.getAproveitamentoCreditoICMS()' %}
 {% set valorBase = 'self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto)' %}
 {% set mensagem = '' %}    
-    {% if destinatario.tipo == 2 and destinatario.contribuinteIcms() %}
+    {% if self.notaFiscalItem().notaFiscal().pessoa.tipo == 2
+    and self.notaFiscalItem().notaFiscal().pessoa.contribuinteIcms == true %}
         {% set mensagem = mensagem ~'DOCUMENTO EMITIDO POR ME OU EPP OPTANTE PELO SIMPLES NACIONAL LC 123/2006, NÃO GERA DIREITO A CRÉDITO FISCAL DE IPI. - ICMS DIFAL NÃO RECOLHIDO NOS TERMOS DA ADI 5469/2021 STF. PERMITE APROVEITAMENTO DE CRÉDITO DE ICMS NO VALOR DE R$'~ valorBase * aliqSN ~', CORRESPONDENTE A ALIQUOTA DE '~ aliqSN ~'% NOS TERMOS DO ARTIGO 23 DA LC 123. ' %}
     {% else %}    
         {% set mensagem = mensagem ~'DOCUMENTO EMITIDO POR ME OU EPP OPTANTE PELO SIMPLES NACIONAL LC 123/2006, NÃO GERA DIREITO A CRÉDITO FISCAL DE IPI. - ICMS DIFAL NÃO RECOLHIDO NOS TERMOS DA ADI 5469/2021 STF ' %}
