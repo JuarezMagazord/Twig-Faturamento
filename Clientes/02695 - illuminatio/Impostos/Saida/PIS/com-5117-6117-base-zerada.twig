@@ -1,0 +1,16 @@
+{% set zeraBaseCalculo = false %}
+    {% if self.configuracaoParametros %}
+        {% set cfopZerada = self.configuracaoParametros.getOpcoesPIS().getCfopBaseZerada()|split(',') %}
+        {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+    {% endif %}
+    {% if zeraBaseCalculo %}
+        {{ self.result('0.00') }}
+    {% elseif self.notaFiscalItem.cfop.codigo in [5117,6117] %}
+        {{ self.result('0.00') }}
+    {% elseif self.configuracaoGlobal %}
+        {% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}
+            {{ self.result(self.notaFiscalItem.valorProduto + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+        {% else %}
+            {{ self.result(0.00) }}
+    {% endif %}
+{% endif %}
