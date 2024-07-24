@@ -1,0 +1,33 @@
+{% if calculo_get_parametro_calculado('PARTILHA_ICMS') == 'sim' %}
+    
+    {% set valor_partilha_detino = calculo_get_parametro_calculado('VLR_ICMS_PARTILHA_DESTINO') %}
+    {% set base = calculo_get_parametro_calculado('VLR_BASE_ICMS') %}
+    {% set vlrIcms = calculo_get_parametro_calculado('VLR_ICMS') %}
+    {% set aliqDest = calculo_get_parametro_calculado('ALIQ_ICMS_DESTINO') %}
+    
+    {# (base - vlrIcms) * (1 - aliqDest  * aliqDest) - vlrIcms #}
+    {# 1° base - vlrIcms #}
+    {% set baseICMS = base - vlrIcms %}
+    {# 2° baseICMS  #}
+    {% set aliqDestCalc = (100 / aliqDest) * aliqDest %}
+    {% set baseAliq = baseICMS * aliqDestCalc %}
+    {% set resultado = baseAliq - vlrIcms %}
+
+    {{ self.result(resultado) }}
+{% else %}
+    {{ self.result('0.00') }}
+{% endif %}
+
+
+=-=-=-=-=-=-=-
+
+
+{% if calculo_get_parametro_calculado('PARTILHA_ICMS') == 'sim' %}
+    {% set valor_partilha_detino = calculo_get_parametro_calculado('VLR_ICMS_PARTILHA_DESTINO') %}
+    {{ self.result(valor_partilha_detino) }}
+{% else %}
+    {{ self.result(0) }}
+{% endif %}
+
+
+=-=-=-=-=-=-=-
