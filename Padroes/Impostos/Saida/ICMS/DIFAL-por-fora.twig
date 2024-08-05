@@ -1,0 +1,20 @@
+{% if calculo_get_parametro_calculado('PARTILHA_ICMS') == 'sim' %}
+    
+    {% set valor_partilha_destino = calculo_get_parametro_calculado('VLR_ICMS_PARTILHA_DESTINO') %}
+    {% set base = calculo_get_parametro_calculado('VLR_BASE_ICMS') %}
+    {% set vlrIcms = calculo_get_parametro_calculado('VLR_ICMS') %}
+    {% set aliqOrig = calculo_get_parametro_calculado('ALIQ_ICMS') %}
+    {% set aliqDest = calculo_get_parametro_calculado('ALIQ_ICMS_DESTINO')%}
+    {# (base - vlrIcms) * (1 - aliqDest  * aliqDest) - vlrIcms #}
+    {% set baseAliq = base * (aliqOrig / 100) %}
+    {% set baseLiq = base - baseAliq %}
+    {% set baseTotal = baseLiq / (1- (aliqDest / 100))%}
+    {% set baseFinal = baseTotal * (aliqDest / 100) - baseAliq %}
+    
+
+    {% set resultado = baseFinal %}
+    
+    {{ self.result(resultado) }}
+{% else %}
+    {{ self.result('0.00') }}
+{% endif %}
