@@ -31,3 +31,7 @@
 
 
 =-=-=-=-=-=-=-
+
+{% set vlrIpi = ((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto)* 0.0325 %}
+
+{{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto + vlrIpi) }}
