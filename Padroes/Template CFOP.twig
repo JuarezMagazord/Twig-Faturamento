@@ -1,77 +1,33 @@
-{% set cfopCodigo = '' %}
-    {% set operacaoInterna = (estadoEmissor == estadoDestinatario) %}
-    {% if tipo == 1 %}
-        {% if origem == 'filial' and destino == 'filial' %}
-            {% if operacaoInterna %}
-                {% set cfopCodigo = '5152' %}
-            {% else %}
-                {% set cfopCodigo = '6152' %}
-            {% endif %}    
-        {% elseif origem == 'filial' and destino == 'fornecedor'%}
-            {% if operacaoInterna %}
-                {% set cfopCodigo = '5202' %}
-            {% else %}
-                {% set cfopCodigo = '6202' %}
-            {% endif %}    
-        {% else %}
-            {% set isBrinde = (formaPagamento and formaPagamento.isBrinde()) %}
-            {% if operacaoInterna %}
-                {% if isBrinde %}
-                    {% set cfopCodigo = '5910' %}
-                {% else %}
-                    {% if produtoDerivacao is not null and produtoDerivacao.produto.marca.getProducaoPropria() == true %}
-                        {% set cfopCodigo = '5101' %}
-                    {% else %}    
-                        {% set cfopCodigo = '5102' %}
-                    {% endif %}    
-                {% endif %}
-            {% else %}    
-                {% if isBrinde %}
-                    {% set cfopCodigo = '6910' %}
-                {% else %}
-                    {% if destinatario.tipo == 2 and destinatario.contribuinteIcms %}
-                        {% if produtoDerivacao is not null and produtoDerivacao.produto.marca.getProducaoPropria() == true %}
-                            {% set cfopCodigo = '6101' %}
-                        {% else %}
-                            {% set cfopCodigo = '6102' %}
-                        {% endif %}
-                    {% else %}
-                        {% if produtoDerivacao is not null and produtoDerivacao.produto.marca.getProducaoPropria() == true %}
-                            {% set cfopCodigo = '6107' %}
-                        {% else %}
-                            {% set cfopCodigo = '6108' %}
-                        {% endif %}
-                    {% endif %}    
-                {% endif %}
-            {% endif %}    
-        {% endif %}    
-    {% else %}
-        {% if origem == 'filial' and destino == 'cliente' %}
-            {% if operacaoInterna %}
-                {% if produtoDerivacao is not null and produtoDerivacao.produto.marca.getProducaoPropria() == true %}
-                    {% set cfopCodigo = '1201' %}
-                {% else %}
-                    {% set cfopCodigo = '1202' %}
-                {% endif %}
-            {% else %}
-                {% if produtoDerivacao is not null and produtoDerivacao.produto.marca.getProducaoPropria() == true %}
-                    {% set cfopCodigo = '2201' %}
-                {% else %}
-                    {% set cfopCodigo = '2202' %}
-                {% endif %}
-            {% endif %}
-        {% elseif origem == 'transportadora' and destino == 'filial' %}
-            {% if operacaoInterna %}
-                {% set cfopCodigo = '1353' %}
-            {% else %}
-                {% set cfopCodigo = '2353' %}
-            {% endif %}
-        {% else %}
-            {% if operacaoInterna %}
-                {% set cfopCodigo = '1102' %}
-            {% else %}
-                {% set cfopCodigo = '2102' %}
-            {% endif %}
-        {% endif %}
-    {% endif %}
-    {{cfopCodigo}}
+{% set mensagem = '' %}
+
+{% if self.getPedido() and self.getPedido().getOrigem() == 2 %}
+   {% set mensagem = mensagem ~ ' - Marketplace: ' ~ self.getPedido().getPedidoMarketplace().getMarketplace().getNome() ~' - '%}
+{% endif %}
+
+{% set codigoPedido = self.getPedido().getCodigo()|default(false) %}
+{% if codigoPedido %}
+	{% set mensagem = mensagem  ~ 'Pedido: ' ~ codigoPedido ~' - '%}
+{% endif %}
+
+{% set mensagem = mensagem ~'Documento emitido por ME ou EPP optante pelo Simples Nacional.  Não gera direito a crédito fiscal de IPI.' %}
+
+{% if calculo_get_parametro_calculado('ICMS_SITUACAO_TRIB') == '101' and self.getConfiguracaoGlobal().getOpcoesGlobais().getAproveitamentoCreditoICMS() > 0 %}
+    {% set valor_total_nota = self.getNotaFiscal().getValorTotal() %}
+    {% set valor_credito_icms = valor_total_nota * (self.getConfiguracaoGlobal().getOpcoesGlobais().getAproveitamentoCreditoICMS() / 100) %}
+        {% set mensagem = mensagem ~ ' Permite o aproveitamento do crédito de ICMS no valor de R$ ' ~ valor_credito_icms|round(2) ~ ' correspondente à alíquota de ' ~ self.getConfiguracaoGlobal().getOpcoesGlobais().getAproveitamentoCreditoICMS() ~ ' %, nos termos do art. 23 da LC 123. '%}
+{% else %}
+{% set mensagem = mensagem ~'' %}
+{% endif %}
+{% if self.inscricaoEstadualDestino %}
+    {% set mensagem = mensagem ~ self.inscricaoEstadualDestino.mensagem %}
+{% endif %}
+
+
+{% set vlrNacional = get_imposto_param_total_calculado('VLR_TOTAL_NACIONAL_IBPT') %}
+{% set vlrEstadual = get_imposto_param_total_calculado('VLR_TOTAL_ESTADUAL_IBPT') %}
+{% if vlrNacional > 0 or vlrEstadual > 0 %}
+    {% set BCIBPT = get_imposto_param_total_calculado('VLR_TOTAL_BASE_IBPT') %}
+    {% set mensagemibpt = ' - Total aproximado de tributos: ' ~ (vlrNacional + vlrEstadual)|number_format(2,',','.') ~ ' (' ~ regra_de_tres(BCIBPT, 100, (vlrNacional + vlrEstadual))|number_format(2,',','.') ~ '%) Federais ' ~ vlrNacional|number_format(2,',','.') ~ ' (' ~ regra_de_tres(BCIBPT, 100, vlrNacional)|number_format(2,',','.') ~ '%) Estaduais ' ~ vlrEstadual|number_format(2,',','.')  ~ ' (' ~ regra_de_tres(BCIBPT, 100, vlrEstadual)|number_format(2,',','.') ~ '%). Fonte.: IBPT/empresometro.com.br.' %}
+    {% set mensagem = mensagem ~ mensagemibpt%}
+{% endif %}
+{{self.result(mensagem)}}
