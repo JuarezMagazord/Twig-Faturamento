@@ -1,4 +1,5 @@
-{#  Pegar informações para estado destinatário. #}
+{#  Informações para estado destinatário. #}
 {% self.getNotaFiscal().getNotaFiscalEndereco() [0].getCidade().getEstado().getSigla() == 'SC' %}
 
-{#  #}
+{#  ID da derivação. #}
+{% self.notaFiscalItem.getProdutoDerivacao().getId() %}

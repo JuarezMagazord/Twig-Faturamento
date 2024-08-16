@@ -1,0 +1,3 @@
+{# Inclusão do valor IPI na base ICMS. #}
+{% set ncmIpi = self.notaFiscalItem.getProdutoDerivacao().getNcm() %}
+    {% if %}
