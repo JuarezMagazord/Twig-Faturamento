@@ -1,0 +1,8 @@
+{# Solicitação feita pelo ticket 393443 #}
+{# {% if self.siglaEstado != self.siglaEstadoEmissor and self.notaFiscalItem.getCfopConfiguracao().getCFOPConfiguracaoNotaFiscal().getOperacaoConsumidorFinal() and (self.notaFiscalItem.notaFiscal.pessoa.tipo == 1 or self.notaFiscalItem.notaFiscal.pessoa.inscricaoEstadual is empty) %}
+                    {{ self.result('sim') }}
+                {% else %}
+                    {{ self.result('não') }}
+                {% endif %} #}
+
+{{ self.result('não') }}
