@@ -1,0 +1,4 @@
+{% if self.notaFiscalItem.getCfop().getCodigo() in [1202,2202] %}
+    {{ self.result('0.00') }}
+{% else %}
+    {{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }} 

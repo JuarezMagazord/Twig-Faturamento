@@ -1,0 +1,15 @@
+{# Solicitação feita pelo ticket 404177. #}
+
+{# Váriavel para buscar o valor do ICMS calculado. #}
+{% set valorICMS = calculo_get_parametro_calculado('VLR_ICMS') %}
+{# Cálculo do IPI par aincluir na base do ICMS. #}
+{% set valorIPI = (((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) * 0.0325) %}
+
+{# Conferencia do tipo de cadastro do cliente, se contribuinte ou não. #}
+{% if self.siglaEstado != self.siglaEstadoEmissor and self.notaFiscalItem.getCfopConfiguracao().getCFOPConfiguracaoNotaFiscal().getOperacaoConsumidorFinal() and (self.notaFiscalItem.notaFiscal.pessoa.tipo == 1 or self.notaFiscalItem.notaFiscal.pessoa.inscricaoEstadual is empty) %}
+    {# Valor total da NFe. #}
+    {{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + valorIPI + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto - valorIPI - valorICMS) }}
+{% else %}
+    {# caso não contribuinte, preenche com a base normal do ICMS. #}
+    {{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+{% endif %}
