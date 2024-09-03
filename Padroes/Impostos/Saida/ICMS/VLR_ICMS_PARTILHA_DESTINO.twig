@@ -1,0 +1,7 @@
+{% if calculo_get_parametro_calculado('PARTILHA_ICMS') == 'sim' %}
+    {% set valor_partilha = calculo_get_parametro_calculado('VLR_PARTILHA_ICMS') %}
+    {% set porc_partilha_destino = calculo_get_parametro_calculado('PERC_PART_DESTINO') / 100 %}
+    {{ self.result(valor_partilha * porc_partilha_destino) }}
+{% else %}
+    {{ self.result(0.0) }}
+{% endif %}

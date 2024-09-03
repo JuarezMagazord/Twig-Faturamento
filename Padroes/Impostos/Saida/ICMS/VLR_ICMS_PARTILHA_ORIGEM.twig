@@ -1,0 +1,7 @@
+{% if calculo_get_parametro_calculado('PARTILHA_ICMS') == 'sim' %}
+    {% set valor_partilha = calculo_get_parametro_calculado('VLR_PARTILHA_ICMS') %}
+    {% set valor_partilha_detino = calculo_get_parametro_calculado('VLR_ICMS_PARTILHA_DESTINO') %}
+    {{ self.result(valor_partilha - valor_partilha_detino) }}
+{% else %}
+    {{ self.result(0) }}
+{% endif %}
