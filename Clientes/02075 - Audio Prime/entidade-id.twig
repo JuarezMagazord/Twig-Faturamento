@@ -1,0 +1,4 @@
+{# self.notaFiscalItem.notaFiscal.entidadeEmissao.id #}
+
+{% elseif self.notaFiscalItem.notaFiscal.pessoa.tipo == 2 and self.notaFiscalItem.notaFiscal.pessoa.contribuinteIcms == true and self.siglaEstado == self.siglaEstadoEmissor and self.notaFiscalItem.notaFiscal.entidadeEmissao.id != 5 %}
+    {{ self.result(12.00) }}

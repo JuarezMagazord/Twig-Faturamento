@@ -3,3 +3,18 @@
 
 {#  ID da derivação. #}
 {% self.notaFiscalItem.getProdutoDerivacao().getId() %}
+
+{#  Obtem o valor já calculado anteriormente conforme o indicado nos parenteses, e precisa seguir a ordem de calculo informado no: FATURAMENTO > CONFIGURAÇÕES > IMPOSTOS. #}
+{% set variavel = calculo_get_parametro_calculado('PARAMETRO') %}
+
+{# Tipo de pessoa: 1 = Física; 2 = Juridica. #}
+{% set self.notaFiscalItem.notaFiscal.pessoa.tipo == X %}
+
+{# Contribuinte: TRUE = Sim; FALSE = Não. #}
+{% set self.notaFiscalItem.notaFiscal.pessoa.contribuinteIcms == true %}
+
+{# Identifica qual o estado de origem (siglaEstadoEmissor) e o estado de destino (siglaEstado). #}
+{% set self.siglaEstado == self.siglaEstadoEmissor %}
+
+{# Identifica a entidade de venda na NFe, campo 'Filial de Venda (Loja)'. #}
+{% set self.notaFiscalItem.notaFiscal.entidadeEmissao.id = '' %}
