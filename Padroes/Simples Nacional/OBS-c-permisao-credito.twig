@@ -1,0 +1,22 @@
+{# Esse procedimento incluí a troca de CSOSN para 101 caso o cliente for do tipo Jurídico e o campo da Inscrição Estadual não estiver vazio. #}
+{# Parametro Saída - ICMS - ICMS_SITUACAO_TRIB #}
+{% if self.notaFiscalItem.notaFiscal.pessoa.tipo ==  2 
+       and self.notaFiscalItem.notaFiscal.pessoa.inscricaoEstadual is not empty %}
+    {{self.result(101)}}
+{% else %}
+    {{self.result(102)}}
+{% endif %}
+
+{# Importante validar o preenchimento da alíquota de aproveitamento, no menu Faturamento >> Configurações >> Empresas e Filiais, selecionar a entidade, clicar no botão 'Configurações Gerais' e conferir o campo 'Aproveitamento Crédito ICMS(%)', apartir dessa informação ele vai incluir na próxima etapa, a alíquota, permitindo o devido calculo da formula. #}
+
+{# Agora pode ser incluso o seguinte script nas observações de saída: #}
+{% if calculo_get_parametro_calculado('ICMS_SITUACAO_TRIB') == '101' and self.getConfiguracaoGlobal().getOpcoesGlobais().getAproveitamentoCreditoICMS() > 0 %}
+    {% set valor_total_nota = self.getNotaFiscal().getValorTotal() %}
+    {% set valor_credito_icms = valor_total_nota * (self.getConfiguracaoGlobal().getOpcoesGlobais().getAproveitamentoCreditoICMS() / 100) %}
+        {% set mensagem = mensagem ~ ' Permite o aproveitamento do crédito de ICMS no valor de R$ ' ~ valor_credito_icms|round(2) ~ ' correspondente à alíquota de ' ~ self.getConfiguracaoGlobal().getOpcoesGlobais().getAproveitamentoCreditoICMS() ~ ' %, nos termos do art. 23 da LC 123. '%}
+{% else %}
+{% set mensagem = mensagem ~'' %}
+{% endif %}
+{% if self.inscricaoEstadualDestino %}
+    {% set mensagem = mensagem ~ self.inscricaoEstadualDestino.mensagem %}
+{% endif %}
