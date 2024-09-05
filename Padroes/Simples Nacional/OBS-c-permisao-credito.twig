@@ -20,3 +20,4 @@
 {% if self.inscricaoEstadualDestino %}
     {% set mensagem = mensagem ~ self.inscricaoEstadualDestino.mensagem %}
 {% endif %}
+{# Ele precisa ser inserido fora de uma condição, se não vai atrapalhar outra regra além de não aplicar o valor esperado. #}
