@@ -7,7 +7,7 @@
 {#  Obtem o valor já calculado anteriormente conforme o indicado nos parenteses, e precisa seguir a ordem de calculo informado no: FATURAMENTO > CONFIGURAÇÕES > IMPOSTOS. #}
 {% set variavel = calculo_get_parametro_calculado('PARAMETRO') %}
 
-{# Tipo de pessoa: 1 = Física; 2 = Juridica. #}
+{# Tipo de pessoa: 1 = Física; 2 = Juridica; 3 = Estrangeiro. #}
 {% set self.notaFiscalItem.notaFiscal.pessoa.tipo == X %}
 
 {# Contribuinte: TRUE = Sim; FALSE = Não. #}
@@ -18,3 +18,6 @@
 
 {# Identifica a entidade de venda na NFe, campo 'Filial de Venda (Loja)'. #}
 {% set self.notaFiscalItem.notaFiscal.entidadeEmissao.id = '' %}
+
+{# Identifica a CFOP dentro da NFe. #}
+{% self.notaFiscalItem.getCfop().getCodigo() %}
