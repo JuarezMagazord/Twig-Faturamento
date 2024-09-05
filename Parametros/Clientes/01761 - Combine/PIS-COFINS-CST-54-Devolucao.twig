@@ -1,0 +1,8 @@
+{# Solicitação feita via ticket, 417487. #}
+{# A mesma deve se aplicar nos parametos: 
+Entrada - PIS  - PIS_SITUACAO_TRIB; 
+Entrada - COFINS - COFINS_SITUACAO_TRIB. #}
+{% if self.notaFiscalItem.getCfop().getCodigo() in [1202, 2202, 1201, 2201] %}
+    {{ self.result('54') }}
+{% else %}
+    {{ self.result('01') }}
