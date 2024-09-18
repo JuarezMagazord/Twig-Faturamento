@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe31240944283705000139550050000000231000001337" versao="4.00">
+        <ide>
+            <cUF>31</cUF>
+            <cNF>00000133</cNF>
+            <natOp>Venda Mercad.Adquir.e/ou Receb.Terceiros</natOp>
+            <mod>55</mod>
+            <serie>5</serie>
+            <nNF>23</nNF>
+            <dhEmi>2024-09-18T08:13:42-03:00</dhEmi>
+            <dhSaiEnt>2024-09-18T08:13:42-03:00</dhSaiEnt>
+            <tpNF>1</tpNF>
+            <idDest>1</idDest>
+            <cMunFG>3113404</cMunFG>
+            <tpImp>1</tpImp>
+            <tpEmis>1</tpEmis>
+            <cDV>7</cDV>
+            <tpAmb>1</tpAmb>
+            <finNFe>1</finNFe>
+            <indFinal>1</indFinal>
+            <indPres>2</indPres>
+            <indIntermed>1</indIntermed>
+            <procEmi>0</procEmi>
+            <verProc>Magazord 1.0</verProc>
+        </ide>
+        <emit>
+            <CNPJ>44283705000139</CNPJ>
+            <xNome>eAgromercantil Ltda</xNome>
+            <xFant>eAgro Brasil</xFant>
+            <enderEmit>
+                <xLgr>Rua Sylvio da Silva Araújo</xLgr>
+                <nro>33</nro>
+                <xBairro>Rafael José de Lima</xBairro>
+                <cMun>3113404</cMun>
+                <xMun>Caratinga</xMun>
+                <UF>MG</UF>
+                <CEP>35302612</CEP>
+                <cPais>1058</cPais>
+                <xPais>Brasil</xPais>
+                <fone>33998595826</fone>
+            </enderEmit>
+            <IE>0042007840030</IE>
+            <IM>ISENTO</IM>
+            <CNAE>4789099</CNAE>
+            <CRT>3</CRT>
+        </emit>
+        <dest>
+            <CPF>14966560675</CPF>
+            <xNome>Joao Vitor Martins Barbosa</xNome>
+            <enderDest>
+                <xLgr>Rua dos Fidelis</xLgr>
+                <nro>06</nro>
+                <xCpl>casa</xCpl>
+                <xBairro>Mantiqueira</xBairro>
+                <cMun>3106200</cMun>
+                <xMun>Belo Horizonte</xMun>
+                <UF>MG</UF>
+                <CEP>31680355</CEP>
+                <cPais>1058</cPais>
+                <xPais>Brasil</xPais>
+                <fone>31999503777</fone>
+            </enderDest>
+            <indIEDest>9</indIEDest>
+            <email>9ac2e36eeaa98e1e28b072ab9363c603@madeiramadeira.com.br</email>
+        </dest>
+        <entrega>
+            <CPF>14966560675</CPF>
+            <xLgr>Rua dos Fidelis</xLgr>
+            <nro>06</nro>
+            <xCpl>casa</xCpl>
+            <xBairro>Mantiqueira</xBairro>
+            <cMun>3106200</cMun>
+            <xMun>Belo Horizonte</xMun>
+            <UF>MG</UF>
+            <CEP>31680355</CEP>
+        </entrega>
+
+
+        <det nItem="1">
+            <prod>
+                <cProd>967796401</cProd>
+                <cEAN>7391736439190</cEAN>
+                <xProd>Motosserra Husqvarna 125 16&quot; 3/8</xProd>
+                <NCM>84678100</NCM>
+                <CEST>0801901</CEST>
+                <CFOP>5102</CFOP>
+                <uCom>UN</uCom>
+                <qCom>1.0000</qCom>
+                <vUnCom>1099.900000</vUnCom>
+                <vProd>1099.90</vProd>
+                <cEANTrib>7391736439190</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>1099.900000</vUnTrib>
+                <vFrete>137.19</vFrete>
+                <indTot>1</indTot>
+                <xPed>0012409289301</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS60>
+                        <orig>2</orig>
+                        <CST>60</CST>
+                    </ICMS60>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISOutr>
+                        <CST>50</CST>
+                        <vBC>1237.09</vBC>
+                        <pPIS>1.65</pPIS>
+                        <vPIS>20.41</vPIS>
+                    </PISOutr>
+                </PIS>
+                <COFINS>
+                    <COFINSOutr>
+                        <CST>50</CST>
+                        <vBC>1237.09</vBC>
+                        <pCOFINS>7.60</pCOFINS>
+                        <vCOFINS>94.02</vCOFINS>
+                    </COFINSOutr>
+                </COFINS>
+            </imposto>
+        </det>
+        <total>
+            <ICMSTot>
+                <vBC>1237.09</vBC>
+                <vICMS>222.68</vICMS>
+                <vICMSDeson>0</vICMSDeson>
+                <vFCP>0.00</vFCP>
+                <vBCST>0</vBCST>
+                <vST>0</vST>
+                <vFCPST>0.00</vFCPST>
+                <vFCPSTRet>0.00</vFCPSTRet>
+                <vProd>1099.90</vProd>
+                <vFrete>137.19</vFrete>
+                <vSeg>0</vSeg>
+                <vDesc>0.00</vDesc>
+                <vII>0</vII>
+                <vIPI>0.00</vIPI>
+                <vIPIDevol>0.00</vIPIDevol>
+                <vPIS>20.41</vPIS>
+                <vCOFINS>94.02</vCOFINS>
+                <vOutro>0.00</vOutro>
+                <vNF>1237.09</vNF>
+            </ICMSTot>
+        </total>
+        <transp>
+            <modFrete>0</modFrete>
+            <transporta>
+                <CNPJ>44914992003749</CNPJ>
+                <xNome>Rodonaves</xNome>
+                <xEnder>Rua Hipólito Henrique Pfleger, 3431</xEnder>
+                <xMun>Biguaçu</xMun>
+                <UF>SC</UF>
+            </transporta>
+            <vol>
+                <qVol>1</qVol>
+                <esp>Caixa</esp>
+                <pesoL>6.600</pesoL>
+                <pesoB>6.600</pesoB>
+            </vol>
+        </transp>
+        <cobr>
+            <fat>
+                <nFat>23</nFat>
+                <vOrig>1237.09</vOrig>
+                <vDesc>0.00</vDesc>
+                <vLiq>1237.09</vLiq>
+            </fat>
+            <dup>
+                <nDup>001</nDup>
+                <dVenc>2024-09-18</dVenc>
+                <vDup>1237.09</vDup>
+            </dup>
+        </cobr>
+        <pag>
+            <detPag>
+                <tPag>03</tPag>
+                <vPag>1237.09</vPag>
+                <card>
+                    <tpIntegra>2</tpIntegra>
+                    <CNPJ>10490181000135</CNPJ>
+                    <tBand>01</tBand>
+                </card>
+            </detPag>
+        </pag>
+        <infIntermed>
+            <CNPJ>10490181000135</CNPJ>
+            <idCadIntTran>Madeiramadeira Comércio Eletrônico S/A</idCadIntTran>
+        </infIntermed>
+        <infAdic>
+            <infCpl>Operação contratada no âmbito do comércio eletrônico ou do telemarketing,
+                conforme e-PTA-RE nº 45.000038362-74 - Marketplace: Madeira Madeira - Pedido:
+                0012409289301 - - Total aproximado de tributos: 430,51 (34,80%) Federais 207,83
+                (16,80%) Estaduais 222,68 (18,00%). Fonte.: IBPT/empresometro.com.br. - Codigo de
+                Rastreio Rodonaves : MZ202409306614EB</infCpl>
+            <obsCont xCampo="Pedido de Venda">
+                <xTexto>0012409289301</xTexto>
+            </obsCont>
+        </infAdic>
+        <infRespTec>
+            <CNPJ>28977040000107</CNPJ>
+            <xContato>Ricardo Schroeder</xContato>
+            <email>ricardo@magazord.com.br</email>
+            <fone>4735208013</fone>
+        </infRespTec>
+    </infNFe>
+</NFe>

@@ -21,3 +21,6 @@
 
 {# Identifica a CFOP dentro da NFe. #}
 {% self.notaFiscalItem.getCfop().getCodigo() %}
+
+{# Condição global, para o CRT configuração, 1 = Simples nacional, 2= Presumido, 3 = Real, 4 = MEI. #}
+{% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}

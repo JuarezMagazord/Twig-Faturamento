@@ -1,0 +1,7 @@
+{% if self.notaFiscalItem.getSituacaoTributariaICMS().getCodigo() == '60' %}
+	{{self.result('0.00')}}
+{% else %}
+	{{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+{% endif %}
+
+
