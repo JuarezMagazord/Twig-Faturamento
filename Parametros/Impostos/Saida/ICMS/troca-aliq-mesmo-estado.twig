@@ -1,0 +1,14 @@
+{% if self.importado and self.siglaEstado != self.siglaEstadoEmissor %}
+    {% if self.origemFiscal in [6,7]%}
+        {{ self.result(self.aliquotaICMS.ICMSInterestadual) }}
+    {% else %}
+        {{ self.result(4) }}
+    {% endif %}
+{% elseif self.siglaEstado == self.siglaEstadoEmissor %}
+    {{ self.result(self.aliquotaICMS.ICMSInterno) }}
+    {% if self.notaFiscalItem.getProdutoDerivacao() is not null and self.notaFiscalItem.getProdutoDerivacao().getId() in [] %}
+        {{ self.result(12.00) }}
+    {% endif %}
+{% else %}
+    {{ self.result(self.aliquotaICMS.ICMSInterestadual) }}
+{% endif %}
