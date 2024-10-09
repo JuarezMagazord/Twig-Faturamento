@@ -1,0 +1,57 @@
+{# PARAMETRO SAÍDA ICMS, VLR_BASE_ICMS. #}
+
+{% set zeraBaseCalculo = false %}
+    {% set BaseCalculo = (self.notaFiscalItem.valorProduto + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) %}
+    
+    {% if self.configuracaoParametros %}
+        {% set cfopZerada = self.configuracaoParametros.getOpcoesICMS().getCfopBaseZerada()|split(',') %}
+        {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+    {% endif %}
+    
+    {% set reducaoBaseCalculo = 0 %}
+    
+    {% if zeraBaseCalculo %}
+        {{ self.result('0.00') }}
+    {% elseif self.notaFiscalItem.getCfop().getCodigo() in [5405,6404] %}
+        {{ self.result('0.00') }}
+    {% elseif self.configuracaoGlobal %}
+        {% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() != 1 %}
+            {% if self.notaFiscalItem.produtoDerivacao %}
+    {# Aqui  são para estado de origem   #}
+                {% if self.siglaEstado == self.siglaEstadoEmissor %}
+                    {#alterar conforme percentual do SKU #}
+                    {% if self.notaFiscalItem.produtoDerivacao.pai.codigo in ['1301','4801','4802','4803','4804','4805','4806','4807','4808','4815','4816','4817','4821','6243','6516','6583','6584','6585','6586','6587','6588','6589','6590','6591','6592','6593','6595','6596','6597','6598','6599','6600','6604','6605','6606','6609','6611','6612','6613','6775','7287','7288','7289','7566','7839','8109','8617','8895','9009','9010'] %}
+                        {% set reducaoBaseCalculo = 0.5111 %}
+                    {# pode ser adicionado quantos else if necessarios  alterar conforme percentual do SKU#}
+                    {% elseif self.notaFiscalItem.produtoDerivacao.pai.codigo in ['2059','2859','4377','4379','4603','4604','4823','4891','4954','5200','5201','6315','6344','6420','6421','6513','6520','6686','6748','6832','7258','7292','7403','7601','7602','7603','7655','7820','8149','8183','8184','8194','8195','8304','8305','8580','7258','8825','8826','8827','8828','8829','8945','8946']  %}
+                        {% set reducaoBaseCalculo = 0.6889 %}
+                    {% endif %}
+    {#validamos os ESTADOS (Sul e Sudeste exceto E.S) #}
+                {% elseif self.siglaEstado in ['SC', 'PR','SP','RJ','RS'] %}
+                    {#alterar conforme percentual do SKU #}
+                    {% if self.notaFiscalItem.produtoDerivacao.pai.codigo in ['1301'] %}
+                        {% set reducaoBaseCalculo = 0.2667 %}
+                    {# pode ser adicionado quantos else if necessarios  alterar conforme percentual do SKU#}
+                    {% elseif self.notaFiscalItem.produtoDerivacao.pai.codigo in ['1386','2403','3687','3688','4603','4875','4920','6315','6517','6708','6832','8149']  %}
+                        {% set reducaoBaseCalculo = 0.4167 %}
+                    {% endif %}
+    {#  aqui vai validar os demais estados  ESTADOS ('AC','AP','AM','PA','RO','RR','TO','AL','BA','CE','MA','PB','PE','PI','RN','SE','GO','MT','MS','DF','ES') #}
+                {% else %}
+                    {#alterar conforme percentual do SKU #}
+                    {% if self.notaFiscalItem.produtoDerivacao.pai.codigo in ['84137090'] %}
+                        {% set reducaoBaseCalculo = 0.2657 %}
+                    {# pode ser adicionado quantos else if necessarios  alterar conforme percentual do SKU #}
+                    {% elseif self.notaFiscalItem.produtoDerivacao.pai.codigo in ['84678900','84678100','84678900','84678900','84331100','84678900','84678100','84331100','84678900','84678900','84331100','84244900']  %}
+                        {% set reducaoBaseCalculo = 0.4143 %}
+                    {% endif %}
+                {% endif %}
+            {% else %}
+                {{ self.result(BaseCalculo) }}
+            {% endif %}
+    
+        {% else %}
+            {{ self.result('0.00') }}
+        {% endif %}
+    {% endif %}
+    
+    {{ self.result(BaseCalculo - (BaseCalculo * reducaoBaseCalculo)) }}
