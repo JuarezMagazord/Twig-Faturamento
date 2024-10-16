@@ -1,0 +1,6 @@
+{#  Váriavel para buscar o valor do ICMS calculado.  #}
+{% set valorICMS = calculo_get_parametro_calculado('VLR_ICMS') %}
+
+{#  Calculo, isentando o VLR_ICMS da base PIS, o mesmo pode ser usado no COFINS.    #}
+{{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto - valorICMS) }}
+    

@@ -8,7 +8,7 @@
 {# Conferencia do tipo de cadastro do cliente, se contribuinte ou não. #}
 {% if self.siglaEstado != self.siglaEstadoEmissor and self.notaFiscalItem.getCfopConfiguracao().getCFOPConfiguracaoNotaFiscal().getOperacaoConsumidorFinal() and (self.notaFiscalItem.notaFiscal.pessoa.tipo == 1 or self.notaFiscalItem.notaFiscal.pessoa.inscricaoEstadual is empty) %}
     {# Valor total da NFe. #}
-    {{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + valorIPI + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto - valorIPI - valorICMS) }}
+    {{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + valorIPI + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto - valorICMS) }}
 {% else %}
     {# caso não contribuinte, preenche com a base normal do ICMS. #}
     {{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
