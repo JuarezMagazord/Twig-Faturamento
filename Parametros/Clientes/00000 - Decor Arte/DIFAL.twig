@@ -1,0 +1,23 @@
+{# Calculo por fora do DIFAL, solicitação via ticket 421739. #}
+
+{% if calculo_get_parametro_calculado('PARTILHA_ICMS') == 'sim' %}
+    {% set base_calculo = calculo_get_parametro_calculado('VLR_BASE_ICMS') %}
+    {% set aliquota_icms_destino = calculo_get_parametro_calculado('ALIQ_ICMS_DESTINO') / 100 %}
+    {% set aliquota_icms = calculo_get_parametro_calculado('ALIQ_ICMS') / 100 %}
+    {% set valor_icms_origem = calculo_get_parametro_calculado('VLR_ICMS') %}
+    {# Diferencial entre alíquotas. #}
+    {% set difal = aliquota_icms_destino - aliquota_icms %}
+    {#Calculo Original
+        {% set resultado = (base_calculo * aliquota_icms_destino) - valor_icms_origem %}
+     #}
+    {# Calculo novo #}
+    {% set base_difal = (base_calculo / (1 - aliquota_icms_destino)) %}
+    {% set resultado = base_difal * difal %}
+    {% if resultado > 0 %}
+        {{ self.result(resultado)}}
+    {% else %}
+        {{ self.result('0.00')}}
+    {% endif %}
+{% else %}
+    {{ self.result('0.00') }}
+{% endif %}
