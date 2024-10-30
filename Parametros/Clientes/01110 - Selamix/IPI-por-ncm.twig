@@ -1,0 +1,6 @@
+{# Solicitação via ticket, 456258 #}
+{% if self.notaFiscalItem.ncm.codigo in [32149000] %}
+    {{ self.result('51') }}
+{% else %}
+    {{ self.result(self.situacaoTributariaIPI.codigo) }}
+{% endif %}
