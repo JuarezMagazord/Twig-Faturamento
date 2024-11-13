@@ -1,0 +1,6 @@
+{# Solicitação referente ao ticket 453469, onde o cliente precisava da redução de BASE ICMS para determinados NCMs #}
+{% if self.notaFiscalItem.ncm.codigo in [44182900] and self.getNotaFiscal().getNotaFiscalEndereco() [0].getCidade().getEstado().getSigla() == 'SC' %}
+    {{ self.result('20') }}
+{% else %}
+    {{ self.result('00') }}
+{% endif %}

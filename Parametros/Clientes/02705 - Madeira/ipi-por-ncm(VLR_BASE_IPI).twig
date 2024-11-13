@@ -1,0 +1,6 @@
+{# Solicitação referente ao ticket 453500, onde o cliente precisava do destaque de ipi para determinados NCMs #}
+{% if self.notaFiscalItem.ncm.codigo in [44111210, 44111310, 44111410] %}
+    {{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+{% else %}
+    {{ self.result('0.00') }}
+{% endif %}
