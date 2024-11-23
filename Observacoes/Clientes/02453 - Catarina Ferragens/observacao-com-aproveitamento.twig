@@ -1,36 +1,37 @@
 {% set mensagem = '' %}
 
-    {% if self.getPedido() and self.getPedido().getOrigem() == 2 %}
-       {% set mensagem = mensagem ~ ' - Marketplace: ' ~ self.getPedido().getPedidoMarketplace().getMarketplace().getNome() ~' - '%}
-    {% endif %}
-    
-    {% set codigoPedido = self.getPedido().getCodigo()|default(false) %}
-    {% if codigoPedido %}
-        {% set mensagem = mensagem  ~ 'Pedido: ' ~ codigoPedido ~' - '%}
-    {% endif %}
-    
-    {% set mensagem = mensagem ~'Documento emitido por ME ou EPP optante pelo Simples Nacional.  Não gera direito a crédito fiscal de IPI. ' %}
-    
-    {% if self.inscricaoEstadualDestino %}
-        {% set mensagem = mensagem ~ self.inscricaoEstadualDestino.mensagem %}
-    {% endif %}
-    
-    
-    {% set vlrNacional = get_imposto_param_total_calculado('VLR_TOTAL_NACIONAL_IBPT') %}
-    {% set vlrEstadual = get_imposto_param_total_calculado('VLR_TOTAL_ESTADUAL_IBPT') %}
-    {% if vlrNacional > 0 or vlrEstadual > 0 %}
-        {% set BCIBPT = get_imposto_param_total_calculado('VLR_TOTAL_BASE_IBPT') %}
-        {% set mensagemibpt = ' - Total aproximado de tributos: ' ~ (vlrNacional + vlrEstadual)|number_format(2,',','.') ~ ' (' ~ regra_de_tres(BCIBPT, 100, (vlrNacional + vlrEstadual))|number_format(2,',','.') ~ '%) Federais ' ~ vlrNacional|number_format(2,',','.') ~ ' (' ~ regra_de_tres(BCIBPT, 100, vlrNacional)|number_format(2,',','.') ~ '%) Estaduais ' ~ vlrEstadual|number_format(2,',','.')  ~ ' (' ~ regra_de_tres(BCIBPT, 100, vlrEstadual)|number_format(2,',','.') ~ '%). Fonte.: IBPT/empresometro.com.br.' %}
-        {% set mensagem = mensagem ~ mensagemibpt%}
-    {% endif %}
-    
-    {% set aliqSN = 'self.configuracaoGlobal.getAproveitamentoCreditoICMS()' %}
-    {% set valorBase = 'self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto)' %}
-    {% set mensagem = '' %}    
-        {% if self.notaFiscalItem().notaFiscal().pessoa.tipo == 2 %}
-            {% set mensagem = mensagem ~'DOCUMENTO EMITIDO POR ME OU EPP OPTANTE PELO SIMPLES NACIONAL LC 123/2006, NÃO GERA DIREITO A CRÉDITO FISCAL DE IPI. - ICMS DIFAL NÃO RECOLHIDO NOS TERMOS DA ADI 5469/2021 STF. PERMITE APROVEITAMENTO DE CRÉDITO DE ICMS NO VALOR DE R$'~ valorBase * aliqSN ~', CORRESPONDENTE A ALIQUOTA DE '~ aliqSN ~'% NOS TERMOS DO ARTIGO 23 DA LC 123. ' %}
-        {% else %}    
-            {% set mensagem = mensagem ~'DOCUMENTO EMITIDO POR ME OU EPP OPTANTE PELO SIMPLES NACIONAL LC 123/2006, NÃO GERA DIREITO A CRÉDITO FISCAL DE IPI. - ICMS DIFAL NÃO RECOLHIDO NOS TERMOS DA ADI 5469/2021 STF ' %}
-        {% endif %}
-    
-    {{self.result(mensagem)}}
+{% if self.getPedido() and self.getPedido().getOrigem() == 2 %}
+   {% set mensagem = mensagem ~ ' - Marketplace: ' ~ self.getPedido().getPedidoMarketplace().getMarketplace().getNome() ~' - '%}
+{% endif %}
+
+{% set codigoPedido = self.getPedido().getCodigo()|default(false) %}
+{% if codigoPedido %}
+	{% set mensagem = mensagem  ~ 'Pedido: ' ~ codigoPedido ~' - '%}
+{% endif %}
+
+{% set mensagem = mensagem ~'Documento emitido por ME ou EPP optante pelo Simples Nacional.  Não gera direito a crédito fiscal de IPI.' %}
+
+{# Removido da string abaixo a seguinte configuração:
+"calculo_get_parametro_calculado('ICMS_SITUACAO_TRIB') == '101' and" 
+Conforme solicitação no ticket 471860 #}
+
+{% if self.getConfiguracaoGlobal().getOpcoesGlobais().getAproveitamentoCreditoICMS() > 0 %}
+    {% set valor_total_nota = self.getNotaFiscal().getValorTotal() %}
+    {% set valor_credito_icms = valor_total_nota * (self.getConfiguracaoGlobal().getOpcoesGlobais().getAproveitamentoCreditoICMS() / 100) %}
+        {% set mensagem = mensagem ~ ' Permite o aproveitamento do crédito de ICMS no valor de R$ ' ~ valor_credito_icms|round(2) ~ ' correspondente à alíquota de ' ~ self.getConfiguracaoGlobal().getOpcoesGlobais().getAproveitamentoCreditoICMS() ~ ' %, nos termos do art. 23 da LC 123. '%}
+{% else %}
+{% set mensagem = mensagem ~'' %}
+{% endif %}
+{% if self.inscricaoEstadualDestino %}
+    {% set mensagem = mensagem ~ self.inscricaoEstadualDestino.mensagem %}
+{% endif %}
+
+
+{% set vlrNacional = get_imposto_param_total_calculado('VLR_TOTAL_NACIONAL_IBPT') %}
+{% set vlrEstadual = get_imposto_param_total_calculado('VLR_TOTAL_ESTADUAL_IBPT') %}
+{% if vlrNacional > 0 or vlrEstadual > 0 %}
+    {% set BCIBPT = get_imposto_param_total_calculado('VLR_TOTAL_BASE_IBPT') %}
+    {% set mensagemibpt = ' - Total aproximado de tributos: ' ~ (vlrNacional + vlrEstadual)|number_format(2,',','.') ~ ' (' ~ regra_de_tres(BCIBPT, 100, (vlrNacional + vlrEstadual))|number_format(2,',','.') ~ '%) Federais ' ~ vlrNacional|number_format(2,',','.') ~ ' (' ~ regra_de_tres(BCIBPT, 100, vlrNacional)|number_format(2,',','.') ~ '%) Estaduais ' ~ vlrEstadual|number_format(2,',','.')  ~ ' (' ~ regra_de_tres(BCIBPT, 100, vlrEstadual)|number_format(2,',','.') ~ '%). Fonte.: IBPT/empresometro.com.br.' %}
+    {% set mensagem = mensagem ~ mensagemibpt%}
+{% endif %}
+{{self.result(mensagem)}}

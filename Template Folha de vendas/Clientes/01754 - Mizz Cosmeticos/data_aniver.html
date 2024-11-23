@@ -38,7 +38,8 @@
                 <strong>Tipo: </strong>{{ print_pessoa_tipo(pedidoFolhaVenda.cliente.tipo) }}<br>
                 <strong>Estado: </strong>{{ pedidoFolhaVenda.endereco.cidade.estado.sigla }}
                 - {{ pedidoFolhaVenda.endereco.cidade.estado.nome }}<br>
-                <stong>Data Nasc: </stong>{{ print_pessoa}}
+                <strong>Data Nascimento: </strong>{{ print_date(pedidoFolhaVenda.cliente.dataNascimento) }}<br>
+                <strong>Quantidade Pedidos: </strong>{{ get_quantidade_pedido_cliente(pedidoFolhaVenda.cliente.id) }}<br>
             </td>
             <!--
             Esse cmapo é responsável pelo 'Dados do Pedido'
