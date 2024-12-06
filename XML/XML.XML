@@ -1,108 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-    <infNFe Id="NFe31240944283705000139550050000000231000001337" versao="4.00">
+    <infNFe Id="NFe35241233165840000163550050000007541000008670" versao="4.00">
         <ide>
-            <cUF>31</cUF>
-            <cNF>00000133</cNF>
-            <natOp>Venda Mercad.Adquir.e/ou Receb.Terceiros</natOp>
+            <cUF>35</cUF>
+            <cNF>00000867</cNF>
+            <natOp>Venda Merc.Adq.Rec.Terc.Dest.Nao Contrib</natOp>
             <mod>55</mod>
             <serie>5</serie>
-            <nNF>23</nNF>
-            <dhEmi>2024-09-18T08:13:42-03:00</dhEmi>
-            <dhSaiEnt>2024-09-18T08:13:42-03:00</dhSaiEnt>
+            <nNF>754</nNF>
+            <dhEmi>2024-12-06T09:41:56-03:00</dhEmi>
+            <dhSaiEnt>2024-12-06T09:41:56-03:00</dhSaiEnt>
             <tpNF>1</tpNF>
-            <idDest>1</idDest>
-            <cMunFG>3113404</cMunFG>
+            <idDest>2</idDest>
+            <cMunFG>3506508</cMunFG>
             <tpImp>1</tpImp>
             <tpEmis>1</tpEmis>
-            <cDV>7</cDV>
+            <cDV>0</cDV>
             <tpAmb>1</tpAmb>
             <finNFe>1</finNFe>
             <indFinal>1</indFinal>
             <indPres>2</indPres>
-            <indIntermed>1</indIntermed>
+            <indIntermed>0</indIntermed>
             <procEmi>0</procEmi>
             <verProc>Magazord 1.0</verProc>
         </ide>
         <emit>
-            <CNPJ>44283705000139</CNPJ>
-            <xNome>eAgromercantil Ltda</xNome>
-            <xFant>eAgro Brasil</xFant>
+            <CNPJ>33165840000163</CNPJ>
+            <xNome>Larossa Ind. e Com. do Vestuário e Acessórios LTDA</xNome>
+            <xFant>Grugui</xFant>
             <enderEmit>
-                <xLgr>Rua Sylvio da Silva Araújo</xLgr>
-                <nro>33</nro>
-                <xBairro>Rafael José de Lima</xBairro>
-                <cMun>3113404</cMun>
-                <xMun>Caratinga</xMun>
-                <UF>MG</UF>
-                <CEP>35302612</CEP>
+                <xLgr>Rua José Terence</xLgr>
+                <nro>545</nro>
+                <xBairro>Jardim Marister</xBairro>
+                <cMun>3506508</cMun>
+                <xMun>Birigüi</xMun>
+                <UF>SP</UF>
+                <CEP>16204253</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>33998595826</fone>
+                <fone>1836421112</fone>
             </enderEmit>
-            <IE>0042007840030</IE>
+            <IE>214257942110</IE>
             <IM>ISENTO</IM>
-            <CNAE>4789099</CNAE>
-            <CRT>3</CRT>
+            <CRT>1</CRT>
         </emit>
         <dest>
-            <CPF>14966560675</CPF>
-            <xNome>Joao Vitor Martins Barbosa</xNome>
+            <CPF>72780363134</CPF>
+            <xNome>Maruza Vieira</xNome>
             <enderDest>
-                <xLgr>Rua dos Fidelis</xLgr>
-                <nro>06</nro>
-                <xCpl>casa</xCpl>
-                <xBairro>Mantiqueira</xBairro>
-                <cMun>3106200</cMun>
-                <xMun>Belo Horizonte</xMun>
-                <UF>MG</UF>
-                <CEP>31680355</CEP>
+                <xLgr>Quadra Quadra 11</xLgr>
+                <nro>27</nro>
+                <xBairro>Valparaiso I - Etapa C</xBairro>
+                <cMun>5221858</cMun>
+                <xMun>Valparaíso de Goiás</xMun>
+                <UF>GO</UF>
+                <CEP>72876211</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>31999503777</fone>
+                <fone>61985209220</fone>
             </enderDest>
             <indIEDest>9</indIEDest>
-            <email>9ac2e36eeaa98e1e28b072ab9363c603@madeiramadeira.com.br</email>
+            <email>clientee@gmail.com</email>
         </dest>
         <entrega>
-            <CPF>14966560675</CPF>
-            <xLgr>Rua dos Fidelis</xLgr>
-            <nro>06</nro>
-            <xCpl>casa</xCpl>
-            <xBairro>Mantiqueira</xBairro>
-            <cMun>3106200</cMun>
-            <xMun>Belo Horizonte</xMun>
-            <UF>MG</UF>
-            <CEP>31680355</CEP>
+            <CPF>72780363134</CPF>
+            <xLgr>Quadra Quadra 11</xLgr>
+            <nro>27</nro>
+            <xBairro>Valparaiso I - Etapa C</xBairro>
+            <cMun>5221858</cMun>
+            <xMun>Valparaíso de Goiás</xMun>
+            <UF>GO</UF>
+            <CEP>72876211</CEP>
         </entrega>
 
 
         <det nItem="1">
             <prod>
-                <cProd>967796401</cProd>
-                <cEAN>7391736439190</cEAN>
-                <xProd>Motosserra Husqvarna 125 16&quot; 3/8</xProd>
-                <NCM>84678100</NCM>
-                <CEST>0801901</CEST>
-                <CFOP>5102</CFOP>
+                <cProd>GR214737PT33</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Bota Coturno Infantil Menina Teen Grugui Dia a Dia Com Ziper - Preto - 33</xProd>
+                <NCM>64019200</NCM>
+                <CFOP>6108</CFOP>
                 <uCom>UN</uCom>
                 <qCom>1.0000</qCom>
-                <vUnCom>1099.900000</vUnCom>
-                <vProd>1099.90</vProd>
-                <cEANTrib>7391736439190</cEANTrib>
+                <vUnCom>79.900000</vUnCom>
+                <vProd>79.90</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
                 <uTrib>UN</uTrib>
                 <qTrib>1.0000</qTrib>
-                <vUnTrib>1099.900000</vUnTrib>
-                <vFrete>137.19</vFrete>
+                <vUnTrib>79.900000</vUnTrib>
+                <vOutro>7.49</vOutro>
                 <indTot>1</indTot>
-                <xPed>0012409289301</xPed>
+                <xPed>0012412184673</xPed>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMS60>
-                        <orig>2</orig>
-                        <CST>60</CST>
-                    </ICMS60>
+                    <ICMSSN102>
+                        <orig>0</orig>
+                        <CSOSN>102</CSOSN>
+                    </ICMSSN102>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
@@ -111,98 +107,97 @@
                     </IPINT>
                 </IPI>
                 <PIS>
-                    <PISOutr>
-                        <CST>50</CST>
-                        <vBC>1237.09</vBC>
-                        <pPIS>1.65</pPIS>
-                        <vPIS>20.41</vPIS>
-                    </PISOutr>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
                 </PIS>
                 <COFINS>
-                    <COFINSOutr>
-                        <CST>50</CST>
-                        <vBC>1237.09</vBC>
-                        <pCOFINS>7.60</pCOFINS>
-                        <vCOFINS>94.02</vCOFINS>
-                    </COFINSOutr>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
                 </COFINS>
+                <ICMSUFDest>
+                    <vBCUFDest>0.00</vBCUFDest>
+                    <vBCFCPUFDest>0.00</vBCFCPUFDest>
+                    <pFCPUFDest>0.00</pFCPUFDest>
+                    <pICMSUFDest>19.00</pICMSUFDest>
+                    <pICMSInter>7.00</pICMSInter>
+                    <pICMSInterPart>100.00</pICMSInterPart>
+                    <vFCPUFDest>0.00</vFCPUFDest>
+                    <vICMSUFDest>0.00</vICMSUFDest>
+                    <vICMSUFRemet>0.00</vICMSUFRemet>
+                </ICMSUFDest>
             </imposto>
         </det>
         <total>
             <ICMSTot>
-                <vBC>1237.09</vBC>
-                <vICMS>222.68</vICMS>
+
+
+                <vBC>0.00</vBC>
+                <vICMS>0.00</vICMS>
                 <vICMSDeson>0</vICMSDeson>
+
+                <vFCPUFDest>0.00</vFCPUFDest>
+                <vICMSUFDest>0.00</vICMSUFDest>
+                <vICMSUFRemet>0.00</vICMSUFRemet>
                 <vFCP>0.00</vFCP>
                 <vBCST>0</vBCST>
                 <vST>0</vST>
                 <vFCPST>0.00</vFCPST>
                 <vFCPSTRet>0.00</vFCPSTRet>
-                <vProd>1099.90</vProd>
-                <vFrete>137.19</vFrete>
+                <vProd>79.90</vProd>
+                <vFrete>0.00</vFrete>
                 <vSeg>0</vSeg>
                 <vDesc>0.00</vDesc>
                 <vII>0</vII>
                 <vIPI>0.00</vIPI>
                 <vIPIDevol>0.00</vIPIDevol>
-                <vPIS>20.41</vPIS>
-                <vCOFINS>94.02</vCOFINS>
-                <vOutro>0.00</vOutro>
-                <vNF>1237.09</vNF>
+                <vPIS>0.00</vPIS>
+                <vCOFINS>0.00</vCOFINS>
+                <vOutro>7.49</vOutro>
+                <vNF>87.39</vNF>
             </ICMSTot>
         </total>
         <transp>
-            <modFrete>0</modFrete>
+            <modFrete>2</modFrete>
             <transporta>
-                <CNPJ>44914992003749</CNPJ>
-                <xNome>Rodonaves</xNome>
-                <xEnder>Rua Hipólito Henrique Pfleger, 3431</xEnder>
-                <xMun>Biguaçu</xMun>
-                <UF>SC</UF>
+                <CNPJ>11200418000169</CNPJ>
+                <xNome>Dafiti - GFG Comércio Digital Ltda</xNome>
+                <xEnder>Rua José Terence, 545</xEnder>
+                <xMun>Birigüi</xMun>
+                <UF>SP</UF>
             </transporta>
             <vol>
                 <qVol>1</qVol>
                 <esp>Caixa</esp>
-                <pesoL>6.600</pesoL>
-                <pesoB>6.600</pesoB>
+                <pesoL>0.870</pesoL>
+                <pesoB>0.870</pesoB>
             </vol>
         </transp>
         <cobr>
             <fat>
-                <nFat>23</nFat>
-                <vOrig>1237.09</vOrig>
+                <nFat>754</nFat>
+                <vOrig>79.90</vOrig>
                 <vDesc>0.00</vDesc>
-                <vLiq>1237.09</vLiq>
+                <vLiq>79.90</vLiq>
             </fat>
             <dup>
                 <nDup>001</nDup>
-                <dVenc>2024-09-18</dVenc>
-                <vDup>1237.09</vDup>
+                <dVenc>2024-12-06</dVenc>
+                <vDup>79.90</vDup>
             </dup>
         </cobr>
         <pag>
             <detPag>
-                <tPag>03</tPag>
-                <vPag>1237.09</vPag>
-                <card>
-                    <tpIntegra>2</tpIntegra>
-                    <CNPJ>10490181000135</CNPJ>
-                    <tBand>01</tBand>
-                </card>
+                <tPag>05</tPag>
+                <vPag>79.90</vPag>
             </detPag>
         </pag>
-        <infIntermed>
-            <CNPJ>10490181000135</CNPJ>
-            <idCadIntTran>Madeiramadeira Comércio Eletrônico S/A</idCadIntTran>
-        </infIntermed>
         <infAdic>
-            <infCpl>Operação contratada no âmbito do comércio eletrônico ou do telemarketing,
-                conforme e-PTA-RE nº 45.000038362-74 - Marketplace: Madeira Madeira - Pedido:
-                0012409289301 - - Total aproximado de tributos: 430,51 (34,80%) Federais 207,83
-                (16,80%) Estaduais 222,68 (18,00%). Fonte.: IBPT/empresometro.com.br. - Codigo de
-                Rastreio Rodonaves : MZ202409306614EB</infCpl>
+            <infCpl>Pedido: 0012412184673 - Documento emitido por ME ou EPP optante pelo Simples
+                Nacional. Não gera direito a crédito fiscal de IPI.</infCpl>
             <obsCont xCampo="Pedido de Venda">
-                <xTexto>0012409289301</xTexto>
+                <xTexto>0012412184673</xTexto>
             </obsCont>
         </infAdic>
         <infRespTec>

@@ -1,8 +1,433 @@
+
 <!DOCTYPE html>
-<html>
-    <body>
-        <p>Esse Texto é normal</p>
-        <p>Esse texto é <i>itálico.</i></p>
-        <p>Esse texto está em <strong>negrito</strong></p>        
-    </body>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mestre de RPG - D&D 5ª Edição</title>
+    <style>
+        /* Estilo Geral */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .card input {
+            width: 100%;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .card select {
+            width: 100%;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .card .remove-btn {
+            display: flex;
+            place-content: center;
+            position: absolute;
+            top: 9px;
+            right: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 39px;
+            cursor: pointer;
+            zoom: 76%;
+            font-size: 16px;
+        }
+        .card .remove-btn:hover {
+            background-color: darkred;
+        }
+
+        /* Cores das Bordas por Raça */
+        .card.anão {
+            border: 3px solid #8B4513; /* Marrom */
+        }
+        .card.elfo {
+            border: 3px solid #228B22; /* Verde */
+        }
+        .card.halfling {
+            border: 3px solid #FFD700; /* Amarelo */
+        }
+        .card.humano {
+            border: 3px solid #1E90FF; /* Azul */
+        }
+        .card.draconato {
+            border: 3px solid #FF4500; /* Vermelho */
+        }
+        .card.gnomo {
+            border: 3px solid #FFA500; /* Laranja */
+        }
+        .card.meio-elfo {
+            border: 3px solid #A9A9A9; /* Cinza */
+        }
+        .card.meio-orc {
+            border: 3px solid #000000; /* Preto */
+        }
+        .card.tiefling {
+            border: 3px solid #800080; /* Roxo */
+        }
+
+        /* Estilos de ícones e emojis */
+        .icon {
+            margin-right: 8px;
+        }
+    </style>
+    <title>Gerador de Cards de Monstros D&D</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+        body {
+            font-family: 'MedievalSharp', cursive;
+            background-image: url('https://www.publicdomainpictures.net/pictures/320000/velka/background-paper-medieval-1586080599YHU.jpg');
+            background-size: cover;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #5A3E1B;
+        }
+        .field {
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], textarea, input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.2em;
+            border: 2px solid #5A3E1B;
+            border-radius: 5px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button {
+            background-color: #5A3E1B;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            display: block;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #3E2A1B;
+        }
+        .card {
+            border: 2px solid #5A3E1B;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: #fff;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        .card-header {
+            font-size: 1.8em;
+            color: #5A3E1B;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .card-content {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            white-space: pre-line;
+        }
+        .card-image {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+            max-height: 350px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .remove-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Mestre de RPG - D&D 5ª Edição</h1>
+</header>
+
+<main>
+    <div class="section">
+        <h2>Adicionar Jogadores</h2>
+        <form id="playerForm">
+            <div class="form-group">
+                <label for="playerName"><span class="icon">👤</span> Nome do Jogador:</label>
+                <input type="text" id="playerName" required>
+            </div>
+            <div class="form-group">
+                <label for="characterName"><span class="icon">⚔️</span> Nome do Personagem:</label>
+                <input type="text" id="characterName" required>
+            </div>
+            <div class="form-group">
+                <label for="characterClass"><span class="icon">🛡️</span> Classe:</label>
+                <select id="characterClass" required>
+                    <option value="">Selecione uma classe</option>
+                    <option value="Bárbaro">Bárbaro</option>
+                    <option value="Bardo">Bardo</option>
+                    <option value="Clérigo">Clérigo</option>
+                    <option value="Druida">Druida</option>
+                    <option value="Guerreiro">Guerreiro</option>
+                    <option value="Ladino">Ladino</option>
+                    <option value="Mago">Mago</option>
+                    <option value="Monge">Monge</option>
+                    <option value="Paladino">Paladino</option>
+                    <option value="Patrulheiro">Patrulheiro</option>
+                    <option value="Feiticeiro">Feiticeiro</option>
+                    <option value="Bruxo">Bruxo</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="characterRace"><span class="icon">🦸‍♂️</span> Raça:</label>
+                <select id="characterRace" required>
+                    <option value="">Selecione uma raça</option>
+                    <option value="anão">Anão</option>
+                    <option value="elfo">Elfo</option>
+                    <option value="halfling">Halfling</option>
+                    <option value="humano">Humano</option>
+                    <option value="draconato">Draconato</option>
+                    <option value="gnomo">Gnomo</option>
+                    <option value="meio-elfo">Meio-Elfo</option>
+                    <option value="meio-orc">Meio-Orc</option>
+                    <option value="tiefling">Tiefling</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="characterLevel"><span class="icon">🎲</span> Nível:</label>
+                <input type="number" id="characterLevel" min="1" max="20" required>
+            </div>
+            <div class="form-group">
+                <label for="currentHP"><span class="icon">❤️</span> Pontos de Vida Atuais:</label>
+                <input type="number" id="currentHP" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="tempHP"><span class="icon">💪</span> Pontos de Vida Temporários:</label>
+                <input type="number" id="tempHP" min="0">
+            </div>
+            <button type="submit">Adicionar Jogador</button>
+        </form>
+    </div>
+
+    <div class="section">
+        <h2>Personagens</h2>
+        <div class="card-container" id="cardContainer"></div>
+    </div>
+</main>
+
+<script>
+    const playerForm = document.getElementById('playerForm');
+    const cardContainer = document.getElementById('cardContainer');
+
+    playerForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const playerName = document.getElementById('playerName').value;
+        const characterName = document.getElementById('characterName').value;
+        const characterClass = document.getElementById('characterClass').value;
+        const characterRace = document.getElementById('characterRace').value;
+        const characterLevel = document.getElementById('characterLevel').value;
+        const currentHP = document.getElementById('currentHP').value;
+        const tempHP = document.getElementById('tempHP').value;
+
+        const card = document.createElement('div');
+        card.className = `card ${characterRace}`; // Aplica a classe específica da raça
+
+        card.innerHTML = `
+            <button class="remove-btn" title="Remover">&#10005;</button>
+            <label>Nome do Jogador:</label>
+            <input type="text" value="${playerName}" disabled>
+            <label>Nome do Personagem:</label>
+            <input type="text" value="${characterName}">
+            <label>Classe:</label>
+            <input type="text" value="${characterClass}" disabled>
+            <label>Raça:</label>
+            <input type="text" value="${characterRace}" disabled>
+            <label>Nível:</label>
+            <input type="number" value="${characterLevel}" min="1" max="20">
+            <label>Pontos de Vida Atuais:</label>
+            <input type="number" value="${currentHP}" min="0">
+            <label>Pontos de Vida Temporários:</label>
+            <input type="number" value="${tempHP}" min="0">
+        `;
+
+        card.querySelector('.remove-btn').addEventListener('click', () => card.remove());
+
+        cardContainer.appendChild(card);
+        playerForm.reset();
+    });
+</script>
+<div class="container">
+        <h1>Gerador de Cards de Monstros D&D 🐉</h1>
+
+        <!-- Campo de geração de cartão -->
+        <div class="field">
+            <label for="monstro">Nome do Monstro 🧙‍♂️:</label>
+            <input type="text" id="monstro" name="monstro" placeholder="Digite o nome do monstro">
+        </div>
+        <div class="field">
+            <label for="atributos">Atributos (FOR, DES, CON, INT, SAB, CAR) 💪:</label>
+            <input type="text" id="atributos" name="atributos" placeholder="Ex: 18, 14, 16, 10, 12, 8">
+        </div>
+        <div class="field">
+            <label for="vantagens">Vantagens 🛡️:</label>
+            <textarea id="vantagens" name="vantagens" rows="3" placeholder="Digite as vantagens"></textarea>
+        </div>
+        <div class="field">
+            <label for="habilidades">Habilidades ✨:</label>
+            <textarea id="habilidades" name="habilidades" rows="3" placeholder="Digite as habilidades"></textarea>
+        </div>
+        <div class="field">
+            <label for="imagem">Imagem do Monstro 📷:</label>
+            <input type="file" id="imagem" name="imagem" accept="image/*">
+        </div>
+        <button onclick="gerarCard()">Gerar Card</button>
+
+        <!-- Local para exibir os cartões -->
+        <div id="cards-container"></div>
+    </div>
+
+    <script>
+        function gerarCard() {
+            let monstro = document.getElementById('monstro').value;
+            let atributos = document.getElementById('atributos').value.split(',').map(attr => attr.trim());
+            let vantagens = document.getElementById('vantagens').value.split(',').map(adv => adv.trim().replace(/\n/g, '<br>'));
+            let habilidades = document.getElementById('habilidades').value.split(',').map(hab => hab.trim().replace(/\n/g, '<br>'));
+            let imagem = document.getElementById('imagem').files[0];
+            let cardContainer = document.getElementById('cards-container');
+
+            let card = document.createElement('div');
+            card.className = 'card';
+
+            let cardHeader = document.createElement('div');
+            cardHeader.className = 'card-header';
+            cardHeader.textContent = monstro;
+
+            if (imagem) {
+                let reader = new FileReader();
+                reader.onload = function(e) {
+                    let img = document.createElement('img');
+                    img.className = 'card-image';
+                    img.src = e.target.result;
+                    card.appendChild(img);
+                }
+                reader.readAsDataURL(imagem);
+            }
+
+            let cardContent = document.createElement('div');
+            cardContent.className = 'card-content';
+            cardContent.innerHTML = `
+                <strong>Atributos:</strong> FOR ${atributos[0]}, DES ${atributos[1]}, CON ${atributos[2]}, INT ${atributos[3]}, SAB ${atributos[4]}, CAR ${atributos[5]}<br>
+                <strong>Vantagens:</strong> ${vantagens.join(', ')}<br>
+                <strong>Habilidades:</strong> ${habilidades.join(', ')}
+            `;
+
+            let removeBtn = document.createElement('button');
+            removeBtn.className = 'remove-btn';
+            removeBtn.textContent = 'X';
+            removeBtn.onclick = function() {
+                card.remove();
+            };
+
+            card.appendChild(cardHeader);
+            card.appendChild(cardContent);
+            card.appendChild(removeBtn);
+
+            cardContainer.appendChild(card);
+        }
+    </script>
+</body>
 </html>
+

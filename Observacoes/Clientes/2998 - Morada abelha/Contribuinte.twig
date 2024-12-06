@@ -33,3 +33,13 @@
     {% endif %}
     
 {{self.result(mensagem)}}
+
+
+
+{% if self.siglaEstado == 'RS' %}
+  {% if self.notaFiscalItem().notaFiscal().pessoa.tipo == 2 and self.notaFiscalItem().notaFiscal().pessoa.contribuinteIcms %}
+    {{ self.result('51') }}
+  {% else %}
+    {{ self.result('00') }}
+  {% endif %}
+{% endif %}

@@ -11,7 +11,7 @@
 {% set self.notaFiscalItem.notaFiscal.pessoa.tipo == X %}
 
 {# Contribuinte: TRUE = Sim; FALSE = Não. #}
-{% set self.notaFiscalItem.notaFiscal.pessoa.contribuinteIcms == true %}
+{% if self.notaFiscalItem().notaFiscal().pessoa.tipo == 2 and self.notaFiscalItem().notaFiscal().pessoa.contribuinteIcms %}
 
 {# Identifica qual o estado de origem (siglaEstadoEmissor) e o estado de destino (siglaEstado). #}
 {% set self.siglaEstado == self.siglaEstadoEmissor %}
