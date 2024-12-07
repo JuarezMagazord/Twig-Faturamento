@@ -1,0 +1,11 @@
+{# Parametro para SAÍDA / ICMS / VLR_BASE_ICMS #}
+
+{% if self.siglaEstado == 'RS' %}
+  {% if self.notaFiscalItem().notaFiscal().pessoa.tipo == 2 and self.notaFiscalItem().notaFiscal().pessoa.contribuinteIcms %}
+    {{ self.result('0.00') }}
+  {% else %}
+    {{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+  {% endif %}
+    {% else %}
+    {{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+{% endif %}
