@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folha de vendas {{ folhaVenda.id }}</title>
+    {{ default_css() }}
+</head>
+
+<body>
+    {{ print_button() }}
+    {{ folhaVenda.filtro }}
+    {{ print_resumo(folhaVendaResumo, true, true) }}
+    {% for pedidoFolhaVenda in pedidosFolhaVenda %}
+    <table class="page-break table-default">
+        <tr>
+            <td class="title td-default">Pedido:</td>
+            <td class="td-default">{{ pedidoFolhaVenda.pedido.id }} - {{ pedidoFolhaVenda.pedido.codigo }}</td>
+            <td class="td-default">{{ print_codigo_barras(pedidoFolhaVenda.pedido.codigo) }}</td>
+        </tr>
+    </table>
+
+    <table class="table-default">
+        <tr>
+            <th class="th-default">Dados do Cliente</th>
+            <th class="th-default">Dados do Pedido</th>
+        </tr>
+        <tr>
+            <td class="td-default">
+                <strong>Código: </strong>{{ pedidoFolhaVenda.cliente.id }}<br>
+                <strong>Nome: </strong>{{ pedidoFolhaVenda.cliente.nome }}<br>
+                {% for pessoaContato in pedidoFolhaVenda.cliente.pessoaContato %}
+                {% if (pessoaContato.isTipoTelefone() and pessoaContato.tipo==1) %}
+                <strong>Contato: </strong>{{pessoaContato.contato}}<br>
+                {% endif %}
+                {% endfor %}
+                <strong>CPF/CNPJ: </strong>{{ pedidoFolhaVenda.cliente.cpfCnpj }}<br>
+                <strong>Tipo: </strong>{{ print_pessoa_tipo(pedidoFolhaVenda.cliente.tipo) }}<br>
+                <strong>Estado: </strong>{{ pedidoFolhaVenda.endereco.cidade.estado.sigla }}
+                - {{ pedidoFolhaVenda.endereco.cidade.estado.nome }}
+            </td>
+            <td class="td-default">
+                <strong>Rep.: </strong>{{ pedidoFolhaVenda.loja.nome }}<br>
+                <strong>FormaPgto: </strong>{{ pedidoFolhaVenda.formaPagamento.nome | default('-') }}<br>
+                <strong>Transp.: </strong>{{ pedidoFolhaVenda.transportadoraServico.descricao | default('-') }}<br>
+                <strong>CondiçãoPgto: </strong>{{ pedidoFolhaVenda.condicaoPagamento.nome | default('-') }}<br>
+                <strong>Emissão: </strong>{{ print_date(pedidoFolhaVenda.pedido.dataHora) }}<br>
+                <strong>Aprovação: </strong> {{ print_date(pedidoFolhaVenda.pedido.dataAprovado) }}<br>
+                <strong>Obs: </strong>
+                {% for observacao in pedidoFolhaVenda.pedido.getObservacoesPedido() %}
+                {{ observacao.mensagem }} <br>
+                {% endfor %}
+            </td>
+        </tr>
+    </table>
+
+    <table class="table-default">
+        <tr>
+            <th class="th-default">Imagem</th>
+            <th class="th-default">Produto</th>
+            <th class="th-default">Descrição</th>
+            <th class="th-default">Marca</th>
+            <th class="th-default">Depósito</th>
+            <th class="th-default">Qtde</th>
+            <th class="th-default">Pré-Venda</th>
+        </tr>
+        {% for pedidoItem in pedidoFolhaVenda.pedidoItem %}
+        <tr>
+            <td class="td-default">{{ print_produto_imagem(pedidoItem) }}</td>
+            <td class="td-default">{{ pedidoItem.produtoDerivacao.codigo }}</td>
+            <td class="td-default">{{ pedidoItem.descricao }}</td>
+            <td class="td-default">{{ pedidoItem.produtoDerivacao.produto.marca.nome }}</td>
+            <td class="td-default">{{ pedidoItem.deposito.nome }}</td>
+            <td class="td-default">{{ pedidoItem.quantidade }}</td>
+            <td class="td-default">{{ print_date(pedidoItem.dataPreVenda) }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endfor %}
+</body>
+
+</html>

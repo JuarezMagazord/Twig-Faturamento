@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folha de vendas {{ folhaVenda.id }}</title>
+    {{ default_css() }}
+    <style>
+        body {
+            -webkit-print-color-adjust: exact;
+        }
+
+        .th-default {
+            background: #E5E7EB;
+        }
+
+        img {
+            width: auto;
+            height: 100px;
+        }
+
+        .container-tabela {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .tabela-pagamento {
+            border-collapse: collapse;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+{{ print_button() }}
+{{ print_resumo(folhaVendaResumo, true, true) }}
+{% for pedidoFolhaVenda in pedidosFolhaVenda %}
+    <h1 class="page-break">Pedido
+        #{{ pedidoFolhaVenda.pedido.codigo }} {{ pedidoFolhaVenda.pedido.pedidoMarketplace.lojaDoMarketplace.nome | default('') ? ' - ' ~ pedidoFolhaVenda.pedido.pedidoMarketplace.lojaDoMarketplace.nome : '' }}</h1>
+    <p>{{ print_date(pedidoFolhaVenda.pedido.dataHora) }} | <strong>{{ pedidoFolhaVenda.pedido.loja.nome }}</strong></p>
+
+    <table class="table-default">
+        <tbody style="vertical-align: top">
+        <tr>
+            <th class="th-default">Dados do Cliente</th>
+            <th class="th-default">Informações adicionais</th>
+            <th class="th-default">Endereço de entrega</th>
+            <th class="th-default">Endereço de cobrança</th>
+        </tr>
+        <tr style="align-content: start">
+            <td class="td-default">
+                {{ pedidoFolhaVenda.cliente.nome }}<br>
+                {{ pedidoFolhaVenda.cliente.email }}
+            </td>
+            <td class="td-default">
+                CPF/CNPJ: {{ pedidoFolhaVenda.cliente.cpfCnpj }}<br>
+                <strong>Quantidade Pedidos: </strong>{{ get_quantidade_pedido_cliente(pedidoFolhaVenda.cliente.id) }}<br>
+            </td>
+            <td class="td-default">
+                Aos cuidados de: {{ pedidoFolhaVenda.endereco.nomeDestinatario }}<br>
+                {{ pedidoFolhaVenda.endereco.logradouro }}, {{ pedidoFolhaVenda.endereco.numero }}
+                , {{ pedidoFolhaVenda.endereco.bairro }}, {{ pedidoFolhaVenda.endereco.complemento }}<br>
+                {{ pedidoFolhaVenda.endereco.cidade.nome }} - {{ pedidoFolhaVenda.endereco.cidade.estado.nome }} -
+                Brasil
+                - {{ '%08d'|format(pedidoFolhaVenda.endereco.cep)|slice(0, 5) ~ '-' ~ '%08d'|format(pedidoFolhaVenda.endereco.cep)|slice(5, 3) }}
+            </td>
+            <td class="td-default">
+                {% set pessoaEndereco = pedidoFolhaVenda.cliente.findPessoaEndereco(2) %}
+                {% if pessoaEndereco %}
+                    {{ pessoaEndereco.nomeDestinatario }}<br>
+                    {{ pessoaEndereco.logradouro }}, {{ pessoaEndereco.numero }}
+                    , {{ pessoaEndereco.bairro }}, {{ pessoaEndereco.complemento }}<br>
+                    {{ pessoaEndereco.cidade.nome }} - {{ pessoaEndereco.cidade.estado.nome }} -
+                    Brasil
+                    - {{ '%08d'|format(pessoaEndereco.cep)|slice(0, 5) ~ '-' ~ '%08d'|format(pessoaEndereco.cep)|slice(5, 3) }}
+                {% endif %}
+                <br>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="table-default">
+        <tr>
+            <th colspan="2" class="th-default">Produto</th>
+            <th class="th-default">Qtd.</th>
+            <th class="th-default">Total</th>
+        </tr>
+        {% set pesoTotal = 0 %}
+        {% for pedidoItem in pedidoFolhaVenda.pedidoItem %}
+            {% set pesoTotal = pesoTotal + (pedidoItem.produtoDerivacao.peso * pedidoItem.quantidade) %}
+            <tr>
+                <td class="td-default" style="text-align: center; min-width: 100px">{{ print_produto_imagem(pedidoItem) }}</td>
+                <td class="td-default">
+                    {{ pedidoItem.descricao }}<br>
+                    <strong>Código:</strong> {{ pedidoItem.produtoDerivacao.codigo }} -
+                    <strong>Marca:</strong> {{ pedidoItem.produtoDerivacao.produto.marca.nome }}
+                </td>
+                <td style="text-align: center" class="td-default">{{ pedidoItem.quantidade }}</td>
+                <td style="text-align: right; min-width: 100px" class="td-default">
+                    R$ {{ (pedidoItem.valorUnitario * pedidoItem.quantidade) |number_format(2, ',', '.') }}<br>
+                    <span style="font-size: 12px">(R$ {{ pedidoItem.valorUnitario|number_format(2, ',', '.') }} cada)</span>
+                </td>
+            </tr>
+        {% endfor %}
+
+    </table>
+    <div class="container-tabela">
+        {% if (pedidoFolhaVenda.pedido.pedidoMarketplace) %}
+            <table class="table-default">
+                <tbody style="vertical-align: top">
+                <tr>
+                    <td class="td-default">
+                        <strong><span
+                                    style="font-size: 20px">Observações {{ pedidoFolhaVenda.pedido.pedidoMarketplace.lojaDoMarketplace.nome }}</span></strong>
+                        <br>
+                        <br>
+                        {{ print_date(pedidoFolhaVenda.pedido.pedidoMarketplace.data) }}
+
+                        Pedido(s) {{ pedidoFolhaVenda.pedido.pedidoMarketplace.lojaDoMarketplace.nome }}
+                        : {{ pedidoFolhaVenda.pedido.pedidoMarketplace.numeroPedido }} <br>
+                        Envio: <span style="color: red">--Não achei essa informação--</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        {% endif %}
+        <table class="table-default" style="width: 100%; border-collapse: collapse;">
+            <tr>
+                <td style="text-align: right; padding: 5px; font-size: 14px; border: none;">
+                    <strong>Subtotal ({{ pedidoFolhaVenda.pedidoItem|length }})</strong>
+                </td>
+                <td class="td-default" style="text-align: right; padding: 5px; font-size: 14px; border: none;">
+                    R$ {{ pedidoFolhaVenda.pedido.valorProduto | number_format(2, ',', '.') }}
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right; padding: 5px; font-size: 14px; border: none;">
+                    <strong>Valor do frete</strong>
+                </td>
+                <td class="td-default" style="text-align: right; padding: 5px; font-size: 14px; border: none;">
+                    R$ {{ pedidoFolhaVenda.pedido.valorFrete | number_format(2, ',', '.') }}
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right; padding: 5px; font-size: 14px; border: none;">Desconto</td>
+                <td class="td-default" style="text-align: right; padding: 5px; font-size: 14px; border: none;">
+                    -R$ {{ pedidoFolhaVenda.pedido.valorDesconto | number_format(2, ',', '.') }}
+                </td>
+            </tr>
+            <tr>
+                <th style="text-align: right; padding: 10px; font-size: 16px; font-weight: bold; border-top: 2px solid #000;">
+                    Total do pedido
+                </th>
+                <th style="text-align: right; padding: 10px; font-size: 16px; font-weight: bold; border-top: 2px solid #000;">
+                    R$ {{ pedidoFolhaVenda.pedido.valorTotal | number_format(2, ',', '.') }}
+                </th>
+            </tr>
+        </table>
+    </div>
+    <div class="container-tabela">
+        <table class="tabela-pagamento">
+            <tbody style="vertical-align: top">
+            <tr>
+                <th class="th-default">Forma de pagamento</th>
+            </tr>
+            <tr>
+                <td class="td-default">
+                    <br>
+                    R$
+                    <br>
+                    Nº da transação: <span style="color: red">--Não achei essa informação--</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="tabela-pagamento">
+            <tr>
+                <th class="th-default">Forma de envio</th>
+            </tr>
+            <tr>
+                <td class="td-default">
+                    {{ pedidoFolhaVenda.transportadoraServico.descricaoSite | default('-')}}
+                </td>
+            </tr>
+            <tr>
+                <td class="td-default">
+                    Data do envio: <br>
+                    Peso do pedido: {{ pesoTotal }} kg<br>
+                    Código: {{ pedidoFolhaVenda.pedido.pedidoRastreio.codigoRastreio | default('-') }}
+                </td>
+            </tr>
+        </table>
+    </div>
+{% endfor %}
+</body>
+</html>
