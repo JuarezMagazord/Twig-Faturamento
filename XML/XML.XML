@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-    <infNFe Id="NFe35241233165840000163550050000007541000008670" versao="4.00">
+    <infNFe Id="NFe35241233165840000163550050000010061000011190" versao="4.00">
         <ide>
             <cUF>35</cUF>
-            <cNF>00000867</cNF>
+            <cNF>00001119</cNF>
             <natOp>Venda Merc.Adq.Rec.Terc.Dest.Nao Contrib</natOp>
             <mod>55</mod>
             <serie>5</serie>
-            <nNF>754</nNF>
-            <dhEmi>2024-12-06T09:41:56-03:00</dhEmi>
-            <dhSaiEnt>2024-12-06T09:41:56-03:00</dhSaiEnt>
+            <nNF>1006</nNF>
+            <dhEmi>2024-12-11T08:22:20-03:00</dhEmi>
+            <dhSaiEnt>2024-12-11T08:22:20-03:00</dhSaiEnt>
             <tpNF>1</tpNF>
             <idDest>2</idDest>
             <cMunFG>3506508</cMunFG>
@@ -45,41 +45,41 @@
             <CRT>1</CRT>
         </emit>
         <dest>
-            <CPF>72780363134</CPF>
-            <xNome>Maruza Vieira</xNome>
+            <CPF>04459562324</CPF>
+            <xNome>helidiana alves</xNome>
             <enderDest>
-                <xLgr>Quadra Quadra 11</xLgr>
-                <nro>27</nro>
-                <xBairro>Valparaiso I - Etapa C</xBairro>
-                <cMun>5221858</cMun>
-                <xMun>Valparaíso de Goiás</xMun>
-                <UF>GO</UF>
-                <CEP>72876211</CEP>
+                <xLgr>Rua Jose Alci Pinheiro Mendes</xLgr>
+                <nro>291</nro>
+                <xBairro>Diadema</xBairro>
+                <cMun>2305233</cMun>
+                <xMun>Horizonte</xMun>
+                <UF>CE</UF>
+                <CEP>62882578</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>61985209220</fone>
+                <fone>85997263560</fone>
             </enderDest>
             <indIEDest>9</indIEDest>
-            <email>clientee@gmail.com</email>
+            <email>Cliente2@gmail.com</email>
         </dest>
         <entrega>
-            <CPF>72780363134</CPF>
-            <xLgr>Quadra Quadra 11</xLgr>
-            <nro>27</nro>
-            <xBairro>Valparaiso I - Etapa C</xBairro>
-            <cMun>5221858</cMun>
-            <xMun>Valparaíso de Goiás</xMun>
-            <UF>GO</UF>
-            <CEP>72876211</CEP>
+            <CPF>04459562324</CPF>
+            <xLgr>Rua Jose Alci Pinheiro Mendes</xLgr>
+            <nro>291</nro>
+            <xBairro>Diadema</xBairro>
+            <cMun>2305233</cMun>
+            <xMun>Horizonte</xMun>
+            <UF>CE</UF>
+            <CEP>62882578</CEP>
         </entrega>
 
 
         <det nItem="1">
             <prod>
-                <cProd>GR214737PT33</cProd>
+                <cProd>GR09705PT36</cProd>
                 <cEAN>SEM GTIN</cEAN>
-                <xProd>Bota Coturno Infantil Menina Teen Grugui Dia a Dia Com Ziper - Preto - 33</xProd>
-                <NCM>64019200</NCM>
+                <xProd>Tenis Infantil Casual Unissex Grugui Conforto - Preto - 36</xProd>
+                <NCM>64041100</NCM>
                 <CFOP>6108</CFOP>
                 <uCom>UN</uCom>
                 <qCom>1.0000</qCom>
@@ -89,9 +89,9 @@
                 <uTrib>UN</uTrib>
                 <qTrib>1.0000</qTrib>
                 <vUnTrib>79.900000</vUnTrib>
-                <vOutro>7.49</vOutro>
+                <vOutro>4.49</vOutro>
                 <indTot>1</indTot>
-                <xPed>0012412184673</xPed>
+                <xPed>0012412837524</xPed>
             </prod>
             <imposto>
                 <ICMS>
@@ -120,7 +120,7 @@
                     <vBCUFDest>0.00</vBCUFDest>
                     <vBCFCPUFDest>0.00</vBCFCPUFDest>
                     <pFCPUFDest>0.00</pFCPUFDest>
-                    <pICMSUFDest>19.00</pICMSUFDest>
+                    <pICMSUFDest>20.00</pICMSUFDest>
                     <pICMSInter>7.00</pICMSInter>
                     <pICMSInterPart>100.00</pICMSInterPart>
                     <vFCPUFDest>0.00</vFCPUFDest>
@@ -154,8 +154,8 @@
                 <vIPIDevol>0.00</vIPIDevol>
                 <vPIS>0.00</vPIS>
                 <vCOFINS>0.00</vCOFINS>
-                <vOutro>7.49</vOutro>
-                <vNF>87.39</vNF>
+                <vOutro>4.49</vOutro>
+                <vNF>84.39</vNF>
             </ICMSTot>
         </total>
         <transp>
@@ -170,20 +170,20 @@
             <vol>
                 <qVol>1</qVol>
                 <esp>Caixa</esp>
-                <pesoL>0.870</pesoL>
-                <pesoB>0.870</pesoB>
+                <pesoL>0.670</pesoL>
+                <pesoB>0.670</pesoB>
             </vol>
         </transp>
         <cobr>
             <fat>
-                <nFat>754</nFat>
+                <nFat>1006</nFat>
                 <vOrig>79.90</vOrig>
                 <vDesc>0.00</vDesc>
                 <vLiq>79.90</vLiq>
             </fat>
             <dup>
                 <nDup>001</nDup>
-                <dVenc>2024-12-06</dVenc>
+                <dVenc>2024-12-11</dVenc>
                 <vDup>79.90</vDup>
             </dup>
         </cobr>
@@ -194,10 +194,10 @@
             </detPag>
         </pag>
         <infAdic>
-            <infCpl>Pedido: 0012412184673 - Documento emitido por ME ou EPP optante pelo Simples
+            <infCpl>Pedido: 0012412837524 - Documento emitido por ME ou EPP optante pelo Simples
                 Nacional. Não gera direito a crédito fiscal de IPI.</infCpl>
             <obsCont xCampo="Pedido de Venda">
-                <xTexto>0012412184673</xTexto>
+                <xTexto>0012412837524</xTexto>
             </obsCont>
         </infAdic>
         <infRespTec>

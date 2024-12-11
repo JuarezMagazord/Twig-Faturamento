@@ -1,0 +1,33 @@
+{#  Regrapara quando o cliente for dentro do estado e contribuinte ICMS.    #}
+{% if self.importado and self.siglaEstado != self.siglaEstadoEmissor %}
+    {% if self.origemFiscal in [6,7]%}
+        {{ self.result(self.aliquotaICMS.ICMSInterestadual) }}
+    {% else %}
+        {{ self.result(4.00) }}
+    {% endif %}
+{% elseif self.siglaEstado == self.siglaEstadoEmissor %}
+    {% if self.notaFiscalItem.notaFiscal.pessoa.tipo == 2 and self.notaFiscalItem.notaFiscal.pessoa.contribuinteIcms %}
+        {{ self.result('12.00')}}
+    {% else %}
+        {{ self.result(self.aliquotaICMS.ICMSInterno) }}
+    {% endif %}
+    {% else %}
+        {{ self.result(self.aliquotaICMS.ICMSInterestadual) }}
+{% endif %}
+
+
+{# Original
+
+{% if self.importado and self.siglaEstado != self.siglaEstadoEmissor %}
+    {% if self.origemFiscal in [6,7]%}
+        {{ self.result(self.aliquotaICMS.ICMSInterestadual) }}
+    {% else %}
+        {{ self.result(4) }}
+    {% endif %}
+{% elseif self.siglaEstado == self.siglaEstadoEmissor %}
+    {{ self.result(self.aliquotaICMS.ICMSInterno) }}
+{% else %}
+    {{ self.result(self.aliquotaICMS.ICMSInterestadual) }}
+{% endif %}
+
+#}
