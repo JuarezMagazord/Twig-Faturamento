@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    {% set notaFiscal = notaFiscalXml.notaFiscal %}
+    <infNFe Id="NFe{{ notaFiscal.chave }}" versao="4.00">
+        <ide>
+            <cUF>{{ enderecoEmitente.cidade.estado.codigoIbge }}</cUF>
+            <cNF>{{ "%08d"|format(notaFiscal.id) }}</cNF>
+            {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getNaturezaOperacao() %}
+                {% set natOp = notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getNaturezaOperacao() %}
+            {% else %}
+                {% set natOp = notaFiscal.cfop.descricaoEnvio %}
+            {% endif %}
+            <natOp>{{ remove_acentuacao(natOp)|trim }}</natOp>
+            <mod>55</mod>
+            <serie>{{ notaFiscal.serie.codigo }}</serie>
+            <nNF>{{ notaFiscal.numero }}</nNF>
+            <dhEmi>{{ format_date_sefaz(notaFiscal.dataEmissao) }}</dhEmi>
+            <dhSaiEnt>{{ format_date_sefaz(notaFiscal.dataEmissao) }}</dhSaiEnt>
+            <tpNF>{{ notaFiscal.tipo }}</tpNF>
+            {% if notaFiscal.pessoa.tipo == 3 %}
+                <idDest>3</idDest>
+            {% else %}
+                {% if enderecoEntrega.cidade.estado.sigla != enderecoEmitente.cidade.estado.sigla %}
+                    <idDest>2</idDest>
+                {% else %}
+                    <idDest>1</idDest>
+                {% endif %}
+            {% endif %}
+            <cMunFG>{{ enderecoEmitente.cidade.codigoIbgePai }}</cMunFG>
+            <tpImp>1</tpImp>
+            {% if tipoEmissao %}
+                <tpEmis>{{ tipoEmissao }}</tpEmis>
+            {% else %}
+                <tpEmis>1</tpEmis>
+            {% endif %}
+            <cDV>{{ notaFiscal.digitoVerificador }}</cDV>
+            <tpAmb>{{ notaFiscal.serie.opcoes.ambiente }}</tpAmb>
+            <finNFe>{{ notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() }}</finNFe>
+            <indFinal>{{ notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getOperacaoConsumidorFinal() ? 1 : 0 }}</indFinal>
+            <indPres>{{ notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getIndicadorPresenca() }}</indPres>
+            {% set pedidosCodigo = [] %}
+            {% set pedidoMarketplace = false %}
+            {% for i, pedidoNotaFiscal in pedidosNotaFiscal %}
+                {% set pedidosCodigo = pedidosCodigo|merge([pedidoNotaFiscal.pedido.codigo]) %}
+                {% if pedidoNotaFiscal.pedido.isOrigemMarketplace() %}
+                    {% set pedidoMarketplace = true %}
+                {% endif %}
+            {% endfor %}
+            {% if pedidoMarketplace == true %}
+                <indIntermed>1</indIntermed>
+            {% else %}
+                <indIntermed>0</indIntermed>
+            {% endif %}
+            <procEmi>0</procEmi>
+            {% if versaoMagazord %}
+                <verProc>{{ versaoMagazord }}</verProc>
+            {% endif %}
+            {% if notaFiscal.serie.opcoes.contingenciaHabilitada == true %}
+                <dhCont>{{ format_date_sefaz(notaFiscal.dataEmissao) }}</dhCont>
+                <xJust>Indisponibilidade na autorizadora padrao</xJust>
+{% endif %}
+            {% set showEnderecoDestinatario = true %}
+            {% if notaFiscal.notaFiscalRelacionada %}
+                {% for notaRelacionada in notaFiscal.notaFiscalRelacionada %}
+                    {% if notaRelacionada.chave is null %}
+                    {% elseif notaRelacionada.tipo == 1 %}
+                        {% set showEnderecoDestinatario = false %}
+                        <NFref>
+                            <refNFe>{{ notaRelacionada.chave }}</refNFe>
+                        </NFref>
+                    {% elseif notaRelacionada.tipo == 3 %}
+                        {% set showEnderecoDestinatario = false %}
+                        <NFref>
+                            <refCTe>{{ notaRelacionada.chave }}</refCTe>
+                        </NFref>
+                    {% else %}
+                        <NFref>
+                            <refECF>
+                                {% if notaRelacionada.modelo == 1 %}
+                                    <mod>2B</mod>
+                                {% elseif notaRelacionada.modelo == 2 %}
+                                    <mod>2C</mod>
+                                {% else %}
+                                    <mod>2D</mod>
+                                {% endif %}
+                                <nECF>{{ notaRelacionada.numeroMaquina }}</nECF>
+                                <nCOO>{{ notaRelacionada.chave }}</nCOO>
+                            </refECF>
+                        </NFref>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </ide>
+        <emit>
+            <CNPJ>{{ notaFiscal.pessoaEmissao.cpfCnpj|replace({'.':'','-':'','/':''}) }}</CNPJ>
+            <xNome>{{ notaFiscal.pessoaEmissao.nome|trim|escape }}</xNome>
+            <xFant>{{ notaFiscal.pessoaEmissao.nomeFantasia|trim|escape }}</xFant>
+            <enderEmit>
+                <xLgr>{{ enderecoEmitente.logradouro }}</xLgr>
+                <nro>{{ enderecoEmitente.numero|default('S/N') }}</nro>
+                {% if enderecoEmitente.complemento|length > 0 %}
+                    <xCpl>{{ enderecoEmitente.complemento|trim|slice(0,60) }}</xCpl>
+                {% endif %}
+                <xBairro>{{ enderecoEmitente.bairro }}</xBairro>
+                <cMun>{{ enderecoEmitente.cidade.codigoIbgePai }}</cMun>
+                <xMun>{{ enderecoEmitente.cidade.nome }}</xMun>
+                <UF>{{ enderecoEmitente.cidade.estado.sigla }}</UF>
+                <CEP>{{ "%08d"|format(enderecoEmitente.cep) }}</CEP>
+                <cPais>1058</cPais>
+                <xPais>Brasil</xPais>
+                <fone>{{ contatoPrincipalEmitente.contato|replace({'(':'',')':'','-':'',' ':''}) }}</fone>
+            </enderEmit>
+            <IE>{{ notaFiscal.pessoaEmissao.inscricaoEstadual|replace({'.':'','/':'','-':''}) }}</IE>
+            {% if inscricaoEstadualDestino %}
+                <IEST>{{ inscricaoEstadualDestino }}</IEST>
+            {% endif %}
+            <IM>{{ filial.opcoesGlobais.im }}</IM>
+            {% if filial.opcoesGlobais.cnae %}
+                <CNAE>{{ filial.opcoesGlobais.cnae }}</CNAE>
+            {% endif %}
+            <CRT>{{ filial.opcoesGlobais.crt }}</CRT>
+        </emit>
+        <dest>
+            {% if notaFiscal.pessoa.tipo == 2 %}
+                <CNPJ>{{ notaFiscal.pessoa.cpfCnpj|replace({'.':'','-':'','/':''}) }}</CNPJ>
+            {% elseif notaFiscal.pessoa.tipo == 3 %}
+                <idEstrangeiro>{{ notaFiscal.pessoa.documento }}</idEstrangeiro>
+            {% else %}
+                <CPF>{{ notaFiscal.pessoa.cpfCnpj|replace({'.':'','-':'','/':''}) }}</CPF>
+            {% endif %}
+            {% if notaFiscal.serie.opcoes.ambiente == 1 %}
+                <xNome>{{ limpa_texto(notaFiscal.pessoa.nome)|trim|escape }}</xNome>
+            {% else %}
+                <xNome>NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</xNome>
+            {% endif %}
+            <enderDest>
+                <xLgr>{{ limpa_texto(enderecoEntrega.logradouro)|trim|escape }}</xLgr>
+                <nro>{{ enderecoEntrega.numero|default('S/N') }}</nro>
+                {% if enderecoEntrega.complemento|length > 0 and notaFiscal.pessoa.tipo != 3%}
+                    <xCpl>{{ limpa_texto(enderecoEntrega.complemento)|slice(0,60)|escape }}</xCpl>
+                {% elseif notaFiscal.pessoa.tipo == 3 %}
+                    <xCpl>{{ limpa_texto(enderecoEntrega.nomeCidade)|trim|escape ~', '~ limpa_texto(enderecoEntrega.nomeEstado)|trim|escape ~', '~ enderecoEntrega.pais.sigla}}</xCpl>
+                {% endif %}
+                <xBairro>{{ limpa_texto(enderecoEntrega.bairro)|trim|escape }}</xBairro>
+                {% if notaFiscal.pessoa.tipo == 3 %}
+                    <cMun>9999999</cMun>
+                    <xMun>EXTERIOR</xMun>
+                    <UF>EX</UF>
+                    <cPais>{{ enderecoEntrega.pais.bacen }}</cPais>
+                    <xPais>{{ enderecoEntrega.pais.nomeIngles }}</xPais>
+                {% else %}
+                    <cMun>{{ enderecoEntrega.cidade.codigoIbgePai }}</cMun>
+                    <xMun>{{ enderecoEntrega.cidade.nome }}</xMun>
+                    <UF>{{ enderecoEntrega.cidade.estado.sigla }}</UF>
+                    <CEP>{{ "%08d"|format(enderecoEntrega.cep) }}</CEP>
+                    <cPais>1058</cPais>
+                    <xPais>Brasil</xPais>
+                {% endif %}
+                {% if contatoPrincipalDestinatario and contatoPrincipalDestinatario.contato|length > 0 %}
+                    <fone>{{ contatoPrincipalDestinatario.contato|replace({'(':'',')':'','-':'',' ':''}) }}</fone>
+                {% endif %}
+            </enderDest>
+            {% if notaFiscal.pessoa.tipo == 2 and notaFiscal.pessoa.inscricaoEstadual %}
+                <indIEDest>1</indIEDest>
+                <IE>{{ notaFiscal.pessoa.inscricaoEstadual|replace({'.':'','/':'','-':''}) }}</IE>
+            {% else %}
+                <indIEDest>9</indIEDest>
+            {% endif %}
+            {% if notaFiscal.pessoa.email|length > 0 and notaFiscal.pessoa.email|length <= 60 %}
+                <email>{{ notaFiscal.pessoa.email }}</email>
+            {% endif %}
+        </dest>
+        {% if notaFiscal.pessoa.tipo != 3 %}
+            {% if showEnderecoDestinatario %}
+                <entrega>
+                    {% if notaFiscal.pessoa.tipo == 2 %}
+                        <CNPJ>{{ notaFiscal.pessoa.cpfCnpj|replace({'.':'','-':'','/':''}) }}</CNPJ>
+                    {% else %}
+                        <CPF>{{ notaFiscal.pessoa.cpfCnpj|replace({'.':'','-':'','/':''}) }}</CPF>
+                    {% endif %}
+                    <xLgr>{{ limpa_texto(enderecoEntrega.logradouro)|trim|escape }}</xLgr>
+                    <nro>{{ enderecoEntrega.numero|default('S/N') }}</nro>
+                    {% if enderecoEntrega.complemento|length > 0 %}
+                        <xCpl>{{ limpa_texto(enderecoEntrega.complemento)|slice(0,60)|escape }}</xCpl>
+                    {% endif %}
+                    <xBairro>{{ limpa_texto(enderecoEntrega.bairro)|trim|escape }}</xBairro>
+                    <cMun>{{ enderecoEntrega.cidade.codigoIbgePai }}</cMun>
+                    <xMun>{{ enderecoEntrega.cidade.nome }}</xMun>
+                    <UF>{{ enderecoEntrega.cidade.estado.sigla }}</UF>
+                    <CEP>{{ "%08d"|format(enderecoEntrega.cep) }}</CEP>
+                </entrega>
+            {% endif %}
+        {% endif %}
+        {% if pessoaAutXML|length > 0 %}
+            {% for pessoa in pessoaAutXML %}
+                <autXML>
+                    {% if pessoa['tipo'] == 1 %}
+                        <CPF>{{ pessoa['cpfCnpj'] }}</CPF>
+                    {% else %}
+                        <CNPJ>{{ pessoa['cpfCnpj'] }}</CNPJ>
+                    {% endif %}
+                </autXML>
+            {% endfor %}
+        {% endif %}
+        {% set partilhaICMS = false %}
+        {% set valor_trib_estadual = 0 %}
+        {% set valor_trib_federal = 0 %}
+
+        {% for i, notaFiscalItem in notaFiscal.notaFiscalItem %}
+            {{ set_nota_fiscal_item(notaFiscalItem.id) }}
+            <det nItem="{{ i + 1 }}">
+                <prod>
+                    {% if notaFiscalItem.produtoCadastrado %}
+                        <cProd>{{ notaFiscalItem.produtoDerivacao.codigo }}</cProd>
+                    {% elseif notaFiscalItem.codigo is not empty %}
+                        <cProd>{{ notaFiscalItem.codigo }}</cProd>
+                    {% else %}
+                        <cProd>CFOP{{ notaFiscalItem.cfop.codigo }}</cProd>
+                    {% endif %}
+                    {% set ean = notaFiscalItem.ean %}
+                    {% if ean is null %}
+                        {% set ean = 'SEM GTIN' %}
+                    {% endif %}
+                    <cEAN>{{ ean }}</cEAN>
+                    <xProd>{{ limpa_texto(notaFiscalItem.descricao)|trim|escape }}</xProd>
+                    {% set ncm_codigo = notaFiscalItem.ncm.codigo %}
+                    <NCM>{{ "%08d"|format(ncm_codigo) }}</NCM>
+                    {% if notaFiscalItem.cest %}
+                        {% set cest_codigo = notaFiscalItem.cest.codigo %}
+                        <CEST>{{ "%07d"|format(cest_codigo) }}</CEST>
+                    {% endif %}
+                    {% if notaFiscalItem.getInformacoesGerais().getCodigoBeneficioFiscal() %}
+                        <cBenef>{{ notaFiscalItem.getInformacoesGerais().getCodigoBeneficioFiscal() }}</cBenef>
+                    {% endif %}
+                    <CFOP>{{ notaFiscalItem.cfop.codigo }}</CFOP>
+                    <uCom>{{ notaFiscalItem.unidadeMedida.sigla }}</uCom>
+                    <qCom>{{ notaFiscalItem.quantidade|number_format(4,'.','') }}</qCom>
+                    <vUnCom>{{ notaFiscalItem.valorUnitario|number_format(6,'.','') }}</vUnCom>
+                    <vProd>{{ notaFiscalItem.valorProduto|number_format(2,'.','') }}</vProd>
+                    <cEANTrib>{{ ean }}</cEANTrib>
+                    <uTrib>{{ notaFiscalItem.unidadeMedida.sigla }}</uTrib>
+                    <qTrib>{{ notaFiscalItem.quantidade }}</qTrib>
+                    <vUnTrib>{{ notaFiscalItem.valorUnitario }}</vUnTrib>
+                    {% if notaFiscalItem.valorFrete > 0 %}
+                        <vFrete>{{ notaFiscalItem.valorFrete }}</vFrete>
+                    {% endif %}
+                    {% if notaFiscalItem.valorDesconto > 0 %}
+                        <vDesc>{{ notaFiscalItem.valorDesconto }}</vDesc>
+                    {% endif %}
+                    {% if notaFiscalItem.valorOutrasDespesas > 0 %}
+                        <vOutro>{{ notaFiscalItem.valorOutrasDespesas }}</vOutro>
+                    {% endif %}
+                    <indTot>1</indTot>
+                    {% if pedidosCodigo|length > 0 %}
+                        <xPed>{{ pedidosCodigo|join(', ') }}</xPed>
+                    {% endif %}
+                    {# Grupo de Combustivel  #}
+                    {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getCfopCombustivel() and  notaFiscalItem.produtoDerivacao.informacoes.codigoANP %}
+                        <comb>
+                            <cProdANP>{{ notaFiscalItem.produtoDerivacao.informacoes.codigoANP.codigo }}</cProdANP>
+                            <descANP>{{ notaFiscalItem.produtoDerivacao.informacoes.codigoANP.descricao }}</descANP>
+                            <UFCons>{{ enderecoEmitente.cidade.estado.sigla }}</UFCons>
+                        </comb>
+                    {% endif %}
+                </prod>
+                <imposto>
+                    {% if filial.opcoesGlobais.tributoFederal and filial.opcoesGlobais.tributoEstadual %}
+                        {% set valor_trib_estadual_produto = (((notaFiscalItem.quantidade * notaFiscalItem.valorUnitario) * (filial.opcoesGlobais.tributoEstadual / 100))|round(2)|number_format(2,'.','')) %}
+                        {% set valor_trib_federal_produto = (((notaFiscalItem.quantidade * notaFiscalItem.valorUnitario) * (filial.opcoesGlobais.tributoFederal / 100))|round(2)|number_format(2,'.','')) %}
+                        {% set valor_trib_estadual = valor_trib_estadual + valor_trib_estadual_produto %}
+                        {% set valor_trib_federal = valor_trib_federal + valor_trib_federal_produto %}
+                        <vTotTrib>{{ (valor_trib_estadual_produto + valor_trib_federal_produto)|number_format(2,'.','') }}</vTotTrib>
+                    {% endif %}
+                    <ICMS>
+                        {% set situacao_tributaria_icms = get_param_value_item_by_nome_logico('ICMS_SITUACAO_TRIB')|default(false) %}
+                        {% set valor_credito_icms = 0 %}
+                        {%  if  filial.opcoesGlobais.aproveitamentoCreditoICMS > 0 %}
+                            {% set valor_credito_icms = notaFiscal.valorTotal * (filial.opcoesGlobais.aproveitamentoCreditoICMS / 100) %}
+                        {% endif %}
+                        {% if situacao_tributaria_icms == 'false' %}
+                            <ICMSSN102>
+                                <orig>{{ get_param_value_item_by_nome_logico('ORIGEM_ICMS') }}</orig>
+                                <CSOSN>102</CSOSN>
+                            </ICMSSN102>
+                            {# Quando for CRT 2 geralmente utiliza as mesmas situacoes tributarias do CRT 3 #}
+                        {% elseif filial.opcoesGlobais.crt == 1 %}
+                            {% if situacao_tributaria_icms in [102,103,300,400] %}
+                                <ICMSSN102>
+                                    <orig>{{ get_param_value_item_by_nome_logico('ORIGEM_ICMS') }}</orig>
+                                    <CSOSN>{{ situacao_tributaria_icms }}</CSOSN>
+                                </ICMSSN102>
+                            {% elseif situacao_tributaria_icms in [101,201] %}
+                                <ICMSSN{{ situacao_tributaria_icms }}>
+                                    <orig>{{ get_param_value_item_by_nome_logico('ORIGEM_ICMS') }}</orig>
+                                    <CSOSN>{{ situacao_tributaria_icms }}</CSOSN>
+                                    <pCredSN>{{ filial.opcoesGlobais.aproveitamentoCreditoICMS }}</pCredSN>
+                                    <vCredICMSSN>{{ valor_credito_icms|number_format(2,'.','')  }}</vCredICMSSN>
+                                </ICMSSN{{ situacao_tributaria_icms }}>
+                            {% elseif situacao_tributaria_icms == '900' %}
+                                <ICMSSN{{ situacao_tributaria_icms }}>
+                                    <orig>{{ get_param_value_item_by_nome_logico('ORIGEM_ICMS') }}</orig>
+                                    <CSOSN>{{ situacao_tributaria_icms }}</CSOSN>
+                                    <modBC>3</modBC>
+                                    <vBC>{{ get_param_value_item_by_nome_logico('VLR_BASE_ICMS') }}</vBC>
+                                    <pICMS>{{ get_param_value_item_by_nome_logico('ALIQ_ICMS') }}</pICMS>
+                                    <vICMS>{{ get_param_value_item_by_nome_logico('VLR_ICMS') }}</vICMS>
+                                    <pCredSN>{{ filial.opcoesGlobais.aproveitamentoCreditoICMS }}</pCredSN>
+                                    <vCredICMSSN>{{ valor_credito_icms|number_format(2,'.','')  }}</vCredICMSSN>
+                                </ICMSSN{{ situacao_tributaria_icms }}>
+                            {% else %}
+                                <ICMSSN{{ situacao_tributaria_icms }}>
+                                    <orig>{{ get_param_value_item_by_nome_logico('ORIGEM_ICMS') }}</orig>
+                                    <CSOSN>{{ situacao_tributaria_icms }}</CSOSN>
+                                </ICMSSN{{ situacao_tributaria_icms }}>
+                            {% endif %}
+                        {% else %}
+                            {% if situacao_tributaria_icms == '00' %}
+                                <ICMS00>
+                                    <orig>{{ get_param_value_item_by_nome_logico('ORIGEM_ICMS') }}</orig>
+                                    <CST>00</CST>
+                                    <modBC>3</modBC>
+                                    <vBC>{{ get_param_value_item_by_nome_logico('VLR_BASE_ICMS') }}</vBC>
+                                    <pICMS>{{ get_param_value_item_by_nome_logico('ALIQ_ICMS') }}</pICMS>
+                                    <vICMS>{{ get_param_value_item_by_nome_logico('VLR_ICMS') }}</vICMS>
+                                </ICMS00>
+                            {% elseif situacao_tributaria_icms == '20' %}
+                                <ICMS20>
+                                    <orig>{{ get_param_value_item_by_nome_logico('ORIGEM_ICMS') }}</orig>
+                                    <CST>20</CST>
+                                    <modBC>3</modBC>
+                                    <pRedBC>{{ get_param_value_item_by_nome_logico('PERC_REDUCAO_BASE_CALCULO_ICMS') }}</pRedBC>
+                                    <vBC>{{ ((get_param_value_item_by_nome_logico('VLR_BASE_ICMS') - get_param_value_item_by_nome_logico('VLR_ICMS_DESONERADO'))|round(2)|number_format(2,'.','')) }}</vBC>
+                                    <pICMS>{{ get_param_value_item_by_nome_logico('ALIQ_ICMS') }}</pICMS>
+                                    <vICMS>{{ get_param_value_item_by_nome_logico('VLR_ICMS') }}</vICMS>
+                                </ICMS20>
+                            {% elseif situacao_tributaria_icms in ['30','40','41','50'] %}
+                                <ICMS40>
+                                    <orig>{{ get_param_value_item_by_nome_logico('ORIGEM_ICMS') }}</orig>
+                                    <CST>{{ situacao_tributaria_icms }}</CST>
+                                </ICMS40>
+                            {% else %}
+                                <ICMS{{ situacao_tributaria_icms }}>
+                                    <orig>{{ get_param_value_item_by_nome_logico('ORIGEM_ICMS') }}</orig>
+                                    <CST>{{ situacao_tributaria_icms }}</CST>
+                                </ICMS{{ situacao_tributaria_icms }}>
+                            {% endif %}
+                        {% endif %}
+                    </ICMS>
+                    {% set cst_ipi = get_param_value_item_by_nome_logico('IPI_SITUACAO_TRIB') %}
+                    {% if cst_ipi in ['00','49','50','99'] %}
+                        <IPI>
+                            <cEnq>999</cEnq>
+                            <IPITrib>
+                                <CST>{{ cst_ipi }}</CST>
+                                <vBC>{{ get_param_value_item_by_nome_logico('VLR_BASE_IPI') }}</vBC>
+                                <pIPI>{{ get_param_value_item_by_nome_logico('ALIQ_IPI') }}</pIPI>
+                                <vIPI>{{ get_param_value_item_by_nome_logico('VLR_IPI') }}</vIPI>
+                            </IPITrib>
+                        </IPI>
+                    {% elseif cst_ipi in ['55'] %}
+                        <IPI>
+                            <cEnq>109</cEnq>
+                            <IPINT>
+                                <CST>{{ cst_ipi }}</CST>
+                            </IPINT>
+                        </IPI>
+                    {% elseif cst_ipi in ['01','03','51','53'] %}
+                        <IPI>
+                            <cEnq>999</cEnq>
+                            <IPINT>
+                                <CST>{{ cst_ipi }}</CST>
+                            </IPINT>
+                        </IPI>
+                    {% else %}
+                        <IPI>
+                            <cEnq>999</cEnq>
+                            <IPITrib>
+                                {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() == 4 %}
+                                    <CST>{{ cst_ipi }}</CST>
+                                    <vBC>0.00</vBC>
+                                    <pIPI>{{ get_param_value_item_by_nome_logico('ALIQ_IPI') }}</pIPI>
+                                    <vIPI>0.00</vIPI>
+                                {% else %}
+                                    <CST>{{ cst_ipi }}</CST>
+                                    <vBC>{{ get_param_value_item_by_nome_logico('VLR_BASE_IPI') }}</vBC>
+                                    <pIPI>{{ get_param_value_item_by_nome_logico('ALIQ_IPI') }}</pIPI>
+                                    <vIPI>{{ get_param_value_item_by_nome_logico('VLR_IPI') }}</vIPI>
+                                {% endif %}
+                            </IPITrib>
+                        </IPI>
+                    {% endif %}
+                    <PIS>
+                        {% if get_param_value_item_by_nome_logico('PIS_SITUACAO_TRIB') in ['01','02'] %}
+                            <PISAliq>
+                                <CST>{{ get_param_value_item_by_nome_logico('PIS_SITUACAO_TRIB') }}</CST>
+                                <vBC>{{ get_param_value_item_by_nome_logico('VLR_BASE_PIS') }}</vBC>
+                                <pPIS>{{ get_param_value_item_by_nome_logico('ALIQ_PIS') }}</pPIS>
+                                <vPIS>{{ get_param_value_item_by_nome_logico('VLR_PIS') }}</vPIS>
+                            </PISAliq>
+                        {% elseif get_param_value_item_by_nome_logico('PIS_SITUACAO_TRIB') in ['04','05','06','07','08','09'] %}
+                            <PISNT>
+                                <CST>{{ get_param_value_item_by_nome_logico('PIS_SITUACAO_TRIB') }}</CST>
+                            </PISNT>
+                        {% else %}
+                            <PISOutr>
+                                <CST>{{ get_param_value_item_by_nome_logico('PIS_SITUACAO_TRIB') }}</CST>
+                                <vBC>{{ get_param_value_item_by_nome_logico('VLR_BASE_PIS') }}</vBC>
+                                <pPIS>{{ get_param_value_item_by_nome_logico('ALIQ_PIS') }}</pPIS>
+                                <vPIS>{{ get_param_value_item_by_nome_logico('VLR_PIS') }}</vPIS>
+                            </PISOutr>
+                        {% endif %}
+                    </PIS>
+                    <COFINS>
+                        {% if get_param_value_item_by_nome_logico('COFINS_SITUACAO_TRIB') in ['01','02'] %}
+                            <COFINSAliq>
+                                <CST>{{ get_param_value_item_by_nome_logico('COFINS_SITUACAO_TRIB') }}</CST>
+                                <vBC>{{ get_param_value_item_by_nome_logico('VLR_BASE_COFINS') }}</vBC>
+                                <pCOFINS>{{ get_param_value_item_by_nome_logico('ALIQ_COFINS') }}</pCOFINS>
+                                <vCOFINS>{{ get_param_value_item_by_nome_logico('VLR_COFINS') }}</vCOFINS>
+                            </COFINSAliq>
+                        {% elseif get_param_value_item_by_nome_logico('COFINS_SITUACAO_TRIB') in ['04','05','06','07','08','09'] %}
+                            <COFINSNT>
+                                <CST>{{ get_param_value_item_by_nome_logico('COFINS_SITUACAO_TRIB') }}</CST>
+                            </COFINSNT>
+                        {% else %}
+                            <COFINSOutr>
+                                <CST>{{ get_param_value_item_by_nome_logico('COFINS_SITUACAO_TRIB') }}</CST>
+                                <vBC>{{ get_param_value_item_by_nome_logico('VLR_BASE_COFINS') }}</vBC>
+                                <pCOFINS>{{ get_param_value_item_by_nome_logico('ALIQ_COFINS') }}</pCOFINS>
+                                <vCOFINS>{{ get_param_value_item_by_nome_logico('VLR_COFINS') }}</vCOFINS>
+                            </COFINSOutr>
+                        {% endif %}
+                    </COFINS>
+                    {% set partilhaICMS = get_param_value_item_by_nome_logico('PARTILHA_ICMS') == 'sim' %}
+                    {% if partilhaICMS %}
+                        <ICMSUFDest>
+                            <vBCUFDest>{{ get_param_value_item_by_nome_logico('VLR_BASE_ICMS') }}</vBCUFDest>
+                            <vBCFCPUFDest>{{ get_param_value_item_by_nome_logico('VLR_BASE_ICMS') }}</vBCFCPUFDest>
+                            <pFCPUFDest>{{ get_param_value_item_by_nome_logico('ALIQ_FCP_DESTINO') }}</pFCPUFDest>
+                            <pICMSUFDest>{{ get_param_value_item_by_nome_logico('ALIQ_ICMS_DESTINO') }}</pICMSUFDest>
+                            <pICMSInter>{{ get_param_value_item_by_nome_logico('ALIQ_ICMS') }}</pICMSInter>
+                            <pICMSInterPart>{{ get_param_value_item_by_nome_logico('PERC_PART_DESTINO') }}</pICMSInterPart>
+                            <vFCPUFDest>{{ get_param_value_item_by_nome_logico('VLR_FCP_DESTINO') }}</vFCPUFDest>
+                            <vICMSUFDest>{{ get_param_value_item_by_nome_logico('VLR_ICMS_DESTINO') }}</vICMSUFDest>
+                            <vICMSUFRemet>{{ get_param_value_item_by_nome_logico('VLR_ICMS_PARTILHA_ORIGEM') }}</vICMSUFRemet>
+                        </ICMSUFDest>
+                    {% endif %}
+                </imposto>
+                {% set valor_ipi_item = get_param_value_item_by_nome_logico('VLR_IPI') %}
+                {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() == 4 and (notaFiscal.cfop.codigo != 6202 and notaFiscal.cfop.codigo != 5202) %}
+                    <impostoDevol>
+                        <pDevol>0.00</pDevol>
+                        <IPI>
+                            <vIPIDevol>{{ valor_ipi_item ? valor_ipi_item : '0.00' }}</vIPIDevol>
+                        </IPI>
+                    </impostoDevol>
+                {% endif %}
+                {% if notaFiscalItem.infoAdicional is defined and notaFiscalItem.infoAdicional|length > 0 %}
+                    <infAdProd>{{ notaFiscalItem.infoAdicional }}</infAdProd>
+                {% endif %}
+            </det>
+        {% endfor %}
+        <total>
+            <ICMSTot>
+                {{ set_nota_fiscal(notaFiscal.id) }}
+                <vBC>{{ get_param_value_by_nome_logico('VLR_TOTAL_BASE_ICMS') }}</vBC>
+                <vICMS>{{ get_param_value_by_nome_logico('VLR_TOTAL_ICMS') }}</vICMS>
+                <vICMSDeson>0</vICMSDeson>
+                {% if partilhaICMS %}
+                    <vFCPUFDest>{{ get_param_value_by_nome_logico('VLR_TOTAL_ICMS_FCP_DESTINO') }}</vFCPUFDest>
+                    <vICMSUFDest>{{ get_param_value_by_nome_logico('VLR_TOTAL_ICMS_DESTINO') }}</vICMSUFDest>
+                    <vICMSUFRemet>{{ get_param_value_by_nome_logico('VLR_TOTAL_ICMS_PARTILHA_DESTINO') }}</vICMSUFRemet>
+                {% endif %}
+                <vFCP>0.00</vFCP>
+                <vBCST>0</vBCST>
+                <vST>0</vST>
+                <vFCPST>0.00</vFCPST>
+                <vFCPSTRet>0.00</vFCPSTRet>
+                <vProd>{{ notaFiscal.valorTotalProduto|number_format(2,'.','') }}</vProd>
+                <vFrete>{{ notaFiscal.valorTotalFrete }}</vFrete>
+                <vSeg>0</vSeg>
+                <vDesc>{{ notaFiscal.valorDesconto }}</vDesc>
+                <vII>0</vII>
+                {% set valor_ipi = get_param_value_by_nome_logico('VLR_TOTAL_IPI') %}
+                {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() == 4 and (notaFiscal.cfop.codigo != 6202 and notaFiscal.cfop.codigo != 5202) %}
+                    <vIPI>0.00</vIPI>
+                    <vIPIDevol>{{ valor_ipi ? valor_ipi : '0.00' }}</vIPIDevol>
+                {% else %}
+                    <vIPI>{{ valor_ipi ? valor_ipi : '0.00' }}</vIPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                {% endif %}
+                <vPIS>{{ get_param_value_by_nome_logico('VLR_TOTAL_PIS') }}</vPIS>
+                <vCOFINS>{{ get_param_value_by_nome_logico('VLR_TOTAL_COFINS') }}</vCOFINS>
+                <vOutro>{{ notaFiscal.valorOutrasDespesas }}</vOutro>
+                {% set valor_total = notaFiscal.valorTotal %}
+                
+                {% if valor_ipi > 0 and (notaFiscal.cfop.codigo == 6202 and notaFiscal.cfop.codigo == 5202) %}
+                <vNF>{{ (valor_total+valor_ipi)|number_format(2,'.','') }}</vNF>
+                 {% else %}
+                <vNF>{{ valor_total|number_format(2,'.','') }}</vNF>
+                {% endif %}
+                {% if filial.opcoesGlobais.tributoFederal and filial.opcoesGlobais.tributoEstadual %}
+                    <vTotTrib>{{ (valor_trib_estadual + valor_trib_federal)|number_format(2,'.','') }}</vTotTrib>
+                {% endif %}
+            </ICMSTot>
+        </total>
+        <transp>
+            <modFrete>{{ notaFiscal.modalidadeFrete }}</modFrete>
+            {% if notaFiscal.modalidadeFrete != 9 %}
+                <transporta>
+                    <CNPJ>{{ notaFiscal.transportadora.pessoa.cpfCnpj|replace({'.':'','-':'','/':''}) }}</CNPJ>
+                    <xNome>{{ notaFiscal.transportadora.pessoa.nomeFantasia|trim|escape }}</xNome>
+                    {% if notaFiscal.transportadora.pessoa.inscricaoEstadual|length > 0 %}
+                        <IE>{{ notaFiscal.transportadora.pessoa.inscricaoEstadual|replace({'.':'','/':'','-':''}) }}</IE>
+
+                    {% endif %}
+                    {% set transportadoraEndereco = notaFiscal.transportadora.pessoa.pessoaEndereco.first %}
+                    <xEnder>{{ transportadoraEndereco.logradouro }}, {{ transportadoraEndereco.numero }}</xEnder>
+                    <xMun>{{ transportadoraEndereco.cidade.nome }}</xMun>
+                    <UF>{{ transportadoraEndereco.cidade.estado.sigla }}</UF>
+                </transporta>
+            {% endif %}
+            {% if notaFiscal.notaFiscalVolume and (notaFiscal.notaFiscalVolume.pesoLiquido > 0 or notaFiscal.notaFiscalVolume.pesoBruto > 0 or notaFiscal.notaFiscalVolume.quantidade > 0 or notaFiscal.notaFiscalVolume.especie|length > 0) %}
+                <vol>
+                    {% if notaFiscal.notaFiscalVolume.quantidade > 0 %}
+                        <qVol>{{ notaFiscal.notaFiscalVolume.quantidade }}</qVol>
+                    {% else %}
+                        <qVol>1</qVol>
+                    {% endif %}
+                    {% if notaFiscal.notaFiscalVolume.especie|length > 0 %}
+                        <esp>{{ notaFiscal.notaFiscalVolume.especie }}</esp>
+                    {% else %}
+                        <esp>Caixa</esp>
+                    {% endif %}
+                    {% if notaFiscal.notaFiscalVolume.pesoLiquido > 0 %}
+                        <pesoL>{{ notaFiscal.notaFiscalVolume.pesoLiquido }}</pesoL>
+                    {% endif %}
+                    {% if notaFiscal.notaFiscalVolume.pesoBruto > 0 %}
+                        <pesoB>{{ notaFiscal.notaFiscalVolume.pesoBruto }}</pesoB>
+                    {% endif %}
+                </vol>
+            {% endif %}
+        </transp>
+        <pag>
+            {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() in [2,4] or notaFiscal.cfopConfiguracao.tipoOperacao == 5 %}
+                <detPag>
+                    <tPag>90</tPag>
+                    <vPag>0.00</vPag>
+                </detPag>
+            {% else %}
+                {% for pagamento in pagamentos %}
+                    {% if pagamento.cartoes|length > 1 %}
+                        {% for cartao in pagamento.cartoes %}
+                            <detPag>
+                                <tPag>{{ pagamento.formaPagamento }}</tPag>
+                                <vPag>{{ cartao.valor|number_format(2,'.','') }}</vPag>
+                                <card>
+                                    <tpIntegra>{{ cartao['tipoIntegracao'] }}</tpIntegra>
+                                    {% if infoRecebimentoSefaz and  infoRecebimentoSefaz['cnpj'] %}
+                                        <CNPJ>{{ infoRecebimentoSefaz['cnpj'] }}</CNPJ>
+                                    {% endif %}
+                                    {% if cartao['bandeira'] is not null %}
+                                        <tBand>{{ cartao['bandeira'] }}</tBand>
+                                    {% endif %}
+                                    {% if cartao['codigoAuth'] is not null %}
+                                        {% set codTransaction = cartao['codigoAuth'] %}
+                                        {% set transaction = codTransaction |split('-')[1]|default(codTransaction) %}
+                                        <cAut>{{ transaction|slice(-20) }}</cAut>
+                                    {% endif %}
+                                </card>
+                            </detPag>
+                        {% endfor %}
+                    {% else %}
+                        <detPag>
+                            <tPag>{{ pagamento.formaPagamento }}</tPag>
+                            {% if pagamento.formaPagamento == 90 %}
+                                <vPag>0.00</vPag>
+                            {% else %}
+                                <vPag>{{ pagamento.valor|number_format(2,'.','') }}</vPag>
+                                {% if pagamento.cartoes|length > 0 %}
+                                    <card>
+                                        {% for cartao in pagamento.cartoes %}
+                                            <tpIntegra>{{ cartao['tipoIntegracao'] }}</tpIntegra>
+                                            {% if infoRecebimentoSefaz and  infoRecebimentoSefaz['cnpj'] %}
+                                                <CNPJ>{{ infoRecebimentoSefaz['cnpj'] }}</CNPJ>
+                                            {% endif %}
+                                            {% if cartao['bandeira'] is not null %}
+                                                <tBand>{{ cartao['bandeira'] }}</tBand>
+                                            {% endif %}
+                                            {% if cartao['codigoAuth'] is not null %}
+                                                {% set codTransaction = cartao['codigoAuth'] %}
+                                                {% set transaction = codTransaction |split('-')[1]|default(codTransaction) %}
+                                                <cAut>{{ transaction|slice(-20) }}</cAut>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </card>
+                                {% endif %}
+                            {% endif %}
+                        </detPag>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </pag>
+        {% if pedidoMarketplace == true %}
+            <infIntermed>
+                <CNPJ>{{ notaFiscal.formaRecebimento.opcoesSefaz.cnpj|replace({'.':'','-':'','/':''}) }}</CNPJ>
+                <idCadIntTran>{{ notaFiscal.formaRecebimento.opcoesSefaz.razaoSocial|escape }}</idCadIntTran>
+            </infIntermed>
+        {% endif %}
+        {% set infoFisco = get_observacoes(1) %}
+        {% set infoContribuinte = get_observacoes(2) %}
+        {% set infoAdicional = false %}
+        {% if pedidosCodigo|length > 0 %}
+            {% set infoAdicional = {'Pedido de Venda': pedidosCodigo|join(', ')} %}
+        {% endif %}
+        {% if infoFisco != false or infoContribuinte != false or infoAdicional != false %}
+            <infAdic>
+                {% if infoFisco != false %}
+                    <infAdFisco>{{ infoFisco }}</infAdFisco>
+                {% endif %}
+                {% if notaFiscal.rastreio and notaFiscal.rastreio.codigoRastreio %}
+                    {% if infoContribuinte != false %}
+                        {% set infoContribuinte =  infoContribuinte ~ ' - Codigo de Rastreio ' ~ notaFiscal.transportadora.nome ~ ' : ' ~ notaFiscal.rastreio.codigoRastreio %}
+                    {% else %}
+                        {% set infoContribuinte =  'Codigo de Rastreio ' ~ notaFiscal.transportadora.nome ~ ' : ' ~ notaFiscal.rastreio.codigoRastreio %}
+                    {% endif %}
+                {% endif %}
+                {% if infoContribuinte != false %}
+                    {% if valor_trib_federal and valor_trib_estadual %}
+                        {% set infoContribuinte =  infoContribuinte ~ '. Tributos aproximados: R$ ' ~ valor_trib_federal|number_format(2,'.','') ~ ' (Federal) e R$ ' ~ valor_trib_estadual|number_format(2,'.','') ~ ' (Estadual).' %}
+                    {% endif %}
+                    <infCpl>{{ infoContribuinte|escape }}</infCpl>
+                {% endif %}
+                {% if infoAdicional != false %}
+                    {% for key, value in infoAdicional %}
+                        <obsCont xCampo="{{ key }}">
+                            <xTexto>{{ value }}</xTexto>
+                        </obsCont>
+                    {% endfor %}
+                {% endif %}
+            </infAdic>
+        {% endif %}
+        {% if notaFiscal.pessoa.tipo == 3 %}
+            <exporta>
+                <UFSaidaPais>{{ enderecoEmitente.cidade.estado.sigla }}</UFSaidaPais>
+                <xLocExporta>{{ enderecoEmitente.cidade.estado.nome }}</xLocExporta>
+                <xLocDespacho>{{ enderecoEmitente.cidade.estado.nome }}</xLocDespacho>
+            </exporta>
+        {% endif %}
+        {% if responsavelTecnico and responsavelTecnico.getCnpj()|length > 0 %}
+            <infRespTec>
+                <CNPJ>{{ responsavelTecnico.getCnpj()|replace({'.':'','-':'','/':''}) }}</CNPJ>
+                <xContato>{{ responsavelTecnico.getContato() }}</xContato>
+                <email>{{ responsavelTecnico.getEmail() }}</email>
+                <fone>{{ responsavelTecnico.getTelefone()|replace({'(':'',')':'','-':'',' ':''}) }}</fone>
+            </infRespTec>
+        {% endif %}
+    </infNFe>
+</NFe>

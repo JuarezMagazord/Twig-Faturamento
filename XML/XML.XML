@@ -1,210 +1,506 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-    <infNFe Id="NFe35241233165840000163550050000010061000011190" versao="4.00">
+            <infNFe Id="NFe42241250207656000158550010000019541000022299" versao="4.00">
         <ide>
-            <cUF>35</cUF>
-            <cNF>00001119</cNF>
-            <natOp>Venda Merc.Adq.Rec.Terc.Dest.Nao Contrib</natOp>
+            <cUF>42</cUF>
+            <cNF>00002229</cNF>
+                                                    <natOp>Devolucao de Compra p/Comercializacao</natOp>
             <mod>55</mod>
-            <serie>5</serie>
-            <nNF>1006</nNF>
-            <dhEmi>2024-12-11T08:22:20-03:00</dhEmi>
-            <dhSaiEnt>2024-12-11T08:22:20-03:00</dhSaiEnt>
+            <serie>1</serie>
+            <nNF>1954</nNF>
+            <dhEmi>2024-12-18T13:24:00-03:00</dhEmi>
+            <dhSaiEnt>2024-12-18T13:24:00-03:00</dhSaiEnt>
             <tpNF>1</tpNF>
-            <idDest>2</idDest>
-            <cMunFG>3506508</cMunFG>
+                                                <idDest>2</idDest>
+                                        <cMunFG>4213203</cMunFG>
             <tpImp>1</tpImp>
-            <tpEmis>1</tpEmis>
-            <cDV>0</cDV>
+                            <tpEmis>1</tpEmis>
+                        <cDV>9</cDV>
             <tpAmb>1</tpAmb>
-            <finNFe>1</finNFe>
-            <indFinal>1</indFinal>
+            <finNFe>4</finNFe>
+            <indFinal>0</indFinal>
             <indPres>2</indPres>
-            <indIntermed>0</indIntermed>
-            <procEmi>0</procEmi>
-            <verProc>Magazord 1.0</verProc>
-        </ide>
+                                                                <indIntermed>0</indIntermed>
+                        <procEmi>0</procEmi>
+                            <verProc>Magazord 1.0</verProc>
+                                                                                                                                    <NFref>
+                            <refNFe>35240948059223000150550010000007641000130510</refNFe>
+                        </NFref>
+                                                        </ide>
         <emit>
-            <CNPJ>33165840000163</CNPJ>
-            <xNome>Larossa Ind. e Com. do Vestuário e Acessórios LTDA</xNome>
-            <xFant>Grugui</xFant>
+            <CNPJ>50207656000158</CNPJ>
+            <xNome>BH Store Ltda</xNome>
+            <xFant>Adora Home</xFant>
             <enderEmit>
-                <xLgr>Rua José Terence</xLgr>
-                <nro>545</nro>
-                <xBairro>Jardim Marister</xBairro>
-                <cMun>3506508</cMun>
-                <xMun>Birigüi</xMun>
-                <UF>SP</UF>
-                <CEP>16204253</CEP>
+                <xLgr>Rua Wilhelm Perch</xLgr>
+                <nro>285</nro>
+                                    <xCpl>Sala 01</xCpl>
+                                <xBairro>Centro</xBairro>
+                <cMun>4213203</cMun>
+                <xMun>Pomerode</xMun>
+                <UF>SC</UF>
+                <CEP>89107000</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>1836421112</fone>
+                <fone>4733809019</fone>
             </enderEmit>
-            <IE>214257942110</IE>
-            <IM>ISENTO</IM>
-            <CRT>1</CRT>
+            <IE>262240890</IE>
+                        <IM>ISENTO</IM>
+                            <CNAE>4713002</CNAE>
+                        <CRT>1</CRT>
         </emit>
         <dest>
-            <CPF>04459562324</CPF>
-            <xNome>helidiana alves</xNome>
-            <enderDest>
-                <xLgr>Rua Jose Alci Pinheiro Mendes</xLgr>
-                <nro>291</nro>
-                <xBairro>Diadema</xBairro>
-                <cMun>2305233</cMun>
-                <xMun>Horizonte</xMun>
-                <UF>CE</UF>
-                <CEP>62882578</CEP>
-                <cPais>1058</cPais>
-                <xPais>Brasil</xPais>
-                <fone>85997263560</fone>
-            </enderDest>
-            <indIEDest>9</indIEDest>
-            <email>Cliente2@gmail.com</email>
-        </dest>
-        <entrega>
-            <CPF>04459562324</CPF>
-            <xLgr>Rua Jose Alci Pinheiro Mendes</xLgr>
-            <nro>291</nro>
-            <xBairro>Diadema</xBairro>
-            <cMun>2305233</cMun>
-            <xMun>Horizonte</xMun>
-            <UF>CE</UF>
-            <CEP>62882578</CEP>
-        </entrega>
-
-
-        <det nItem="1">
-            <prod>
-                <cProd>GR09705PT36</cProd>
-                <cEAN>SEM GTIN</cEAN>
-                <xProd>Tenis Infantil Casual Unissex Grugui Conforto - Preto - 36</xProd>
-                <NCM>64041100</NCM>
-                <CFOP>6108</CFOP>
-                <uCom>UN</uCom>
-                <qCom>1.0000</qCom>
-                <vUnCom>79.900000</vUnCom>
-                <vProd>79.90</vProd>
-                <cEANTrib>SEM GTIN</cEANTrib>
-                <uTrib>UN</uTrib>
-                <qTrib>1.0000</qTrib>
-                <vUnTrib>79.900000</vUnTrib>
-                <vOutro>4.49</vOutro>
-                <indTot>1</indTot>
-                <xPed>0012412837524</xPed>
-            </prod>
-            <imposto>
-                <ICMS>
-                    <ICMSSN102>
-                        <orig>0</orig>
-                        <CSOSN>102</CSOSN>
-                    </ICMSSN102>
-                </ICMS>
-                <IPI>
-                    <cEnq>999</cEnq>
-                    <IPINT>
-                        <CST>53</CST>
-                    </IPINT>
-                </IPI>
-                <PIS>
-                    <PISNT>
-                        <CST>07</CST>
-                    </PISNT>
-                </PIS>
-                <COFINS>
-                    <COFINSNT>
-                        <CST>07</CST>
-                    </COFINSNT>
-                </COFINS>
-                <ICMSUFDest>
-                    <vBCUFDest>0.00</vBCUFDest>
-                    <vBCFCPUFDest>0.00</vBCFCPUFDest>
-                    <pFCPUFDest>0.00</pFCPUFDest>
-                    <pICMSUFDest>20.00</pICMSUFDest>
-                    <pICMSInter>7.00</pICMSInter>
-                    <pICMSInterPart>100.00</pICMSInterPart>
-                    <vFCPUFDest>0.00</vFCPUFDest>
-                    <vICMSUFDest>0.00</vICMSUFDest>
-                    <vICMSUFRemet>0.00</vICMSUFRemet>
-                </ICMSUFDest>
-            </imposto>
-        </det>
-        <total>
+                            <CNPJ>48059223000150</CNPJ>
+                                        <xNome>V P A COMERCIAL IMPORTADORA LTDA</xNome>
+                        <enderDest>
+                <xLgr>RUA PADRE EUCLIDES</xLgr>
+                <nro>0241</nro>
+                                <xBairro>CAMPOS ELISEOS</xBairro>
+                                    <cMun>3543402</cMun>
+                    <xMun>Ribeirão Preto</xMun>
+                    <UF>SP</UF>
+                    <CEP>14080200</CEP>
+                    <cPais>1058</cPais>
+                    <xPais>Brasil</xPais>
+                                                    <fone>1636109248</fone>
+                            </enderDest>
+                            <indIEDest>1</indIEDest>
+                <IE>797963603114</IE>
+                                            </dest>
+                                                                                    
+                    
+            <det nItem="1">
+                <prod>
+                                            <cProd>FS1151-01</cProd>
+                                                                                <cEAN>7899511431457</cEAN>
+                    <xProd>Haste Com 3 Girassois Permanentes 53cm</xProd>
+                                        <NCM>67029000</NCM>
+                                                            <CFOP>6202</CFOP>
+                    <uCom>UN</uCom>
+                    <qCom>1.0000</qCom>
+                    <vUnCom>38.066667</vUnCom>
+                    <vProd>38.07</vProd>
+                    <cEANTrib>7899511431457</cEANTrib>
+                    <uTrib>UN</uTrib>
+                    <qTrib>1.0000</qTrib>
+                    <vUnTrib>38.066667</vUnTrib>
+                                                                                <indTot>1</indTot>
+                                                                            </prod>
+                <imposto>
+                                        <ICMS>
+                                                                                                                                                            <ICMSSN900>
+                                    <orig>2</orig>
+                                    <CSOSN>900</CSOSN>
+                                    <modBC>3</modBC>
+                                    <vBC>38.07</vBC>
+                                    <pICMS>4.0000</pICMS>
+                                    <vICMS>1.52</vICMS>
+                                    <pCredSN>0</pCredSN>
+                                    <vCredICMSSN>0.00</vCredICMSSN>
+                                </ICMSSN900>
+                                                                        </ICMS>
+                                                                                        <IPI>
+                            <cEnq>999</cEnq>
+                            <IPITrib>
+                                <CST>99</CST>
+                                <vBC>0.00</vBC>
+                                <pIPI>9.7500</pIPI>
+                                <vIPI>0.00</vIPI>
+                            </IPITrib>
+                        </IPI>
+                                        <PIS>
+                                                    <PISOutr>
+                                <CST>99</CST>
+                                <vBC>0.00</vBC>
+                                <pPIS>0.6500</pPIS>
+                                <vPIS>0.00</vPIS>
+                            </PISOutr>
+                                            </PIS>
+                    <COFINS>
+                                                    <COFINSOutr>
+                                <CST>99</CST>
+                                <vBC>0.00</vBC>
+                                <pCOFINS>3.0000</pCOFINS>
+                                <vCOFINS>0.00</vCOFINS>
+                            </COFINSOutr>
+                                            </COFINS>
+                                                        </imposto>
+                                                    <impostoDevol>
+                        <pDevol>0.00</pDevol>
+                        <IPI>
+                            <vIPIDevol>3.71</vIPIDevol>
+                        </IPI>
+                    </impostoDevol>
+                                            </det>
+                    
+            <det nItem="2">
+                <prod>
+                                            <cProd>FS0858 01</cProd>
+                                                                                <cEAN>7899511425203</cEAN>
+                    <xProd>VASO CIMENTO TIPO RENDADO PRETO 11 3X11 3X10 CM CM 24 CB 04</xProd>
+                                        <NCM>68109900</NCM>
+                                                            <CFOP>6202</CFOP>
+                    <uCom>UN</uCom>
+                    <qCom>6.0000</qCom>
+                    <vUnCom>27.215000</vUnCom>
+                    <vProd>163.29</vProd>
+                    <cEANTrib>7899511425203</cEANTrib>
+                    <uTrib>UN</uTrib>
+                    <qTrib>6.0000</qTrib>
+                    <vUnTrib>27.215000</vUnTrib>
+                                                                                <indTot>1</indTot>
+                                                                            </prod>
+                <imposto>
+                                        <ICMS>
+                                                                                                                                                            <ICMSSN900>
+                                    <orig>2</orig>
+                                    <CSOSN>900</CSOSN>
+                                    <modBC>3</modBC>
+                                    <vBC>0</vBC>
+                                    <pICMS>4.0000</pICMS>
+                                    <vICMS>0.00</vICMS>
+                                    <pCredSN>0</pCredSN>
+                                    <vCredICMSSN>0.00</vCredICMSSN>
+                                </ICMSSN900>
+                                                                        </ICMS>
+                                                                                        <IPI>
+                            <cEnq>999</cEnq>
+                            <IPITrib>
+                                <CST>99</CST>
+                                <vBC>0.00</vBC>
+                                <pIPI>0</pIPI>
+                                <vIPI>0.00</vIPI>
+                            </IPITrib>
+                        </IPI>
+                                        <PIS>
+                                                    <PISOutr>
+                                <CST>99</CST>
+                                <vBC>0</vBC>
+                                <pPIS>0.6500</pPIS>
+                                <vPIS>0.00</vPIS>
+                            </PISOutr>
+                                            </PIS>
+                    <COFINS>
+                                                    <COFINSOutr>
+                                <CST>99</CST>
+                                <vBC>0</vBC>
+                                <pCOFINS>3.0000</pCOFINS>
+                                <vCOFINS>0.00</vCOFINS>
+                            </COFINSOutr>
+                                            </COFINS>
+                                                        </imposto>
+                                                    <impostoDevol>
+                        <pDevol>0.00</pDevol>
+                        <IPI>
+                            <vIPIDevol>0.00</vIPIDevol>
+                        </IPI>
+                    </impostoDevol>
+                                            </det>
+                    
+            <det nItem="3">
+                <prod>
+                                            <cProd>GBC0660-01</cProd>
+                                                                                <cEAN>7899511426750</cEAN>
+                    <xProd>Vaso Cachorro Gres Grande</xProd>
+                                        <NCM>69139000</NCM>
+                                                            <CFOP>6202</CFOP>
+                    <uCom>UN</uCom>
+                    <qCom>1.0000</qCom>
+                    <vUnCom>18.367500</vUnCom>
+                    <vProd>18.37</vProd>
+                    <cEANTrib>7899511426750</cEANTrib>
+                    <uTrib>UN</uTrib>
+                    <qTrib>1.0000</qTrib>
+                    <vUnTrib>18.367500</vUnTrib>
+                                                                                <indTot>1</indTot>
+                                                                            </prod>
+                <imposto>
+                                        <ICMS>
+                                                                                                                                                            <ICMSSN900>
+                                    <orig>2</orig>
+                                    <CSOSN>900</CSOSN>
+                                    <modBC>3</modBC>
+                                    <vBC>18.37</vBC>
+                                    <pICMS>4.0000</pICMS>
+                                    <vICMS>0.73</vICMS>
+                                    <pCredSN>0</pCredSN>
+                                    <vCredICMSSN>0.00</vCredICMSSN>
+                                </ICMSSN900>
+                                                                        </ICMS>
+                                                                                        <IPI>
+                            <cEnq>999</cEnq>
+                            <IPITrib>
+                                <CST>99</CST>
+                                <vBC>0.00</vBC>
+                                <pIPI>13.0000</pIPI>
+                                <vIPI>0.00</vIPI>
+                            </IPITrib>
+                        </IPI>
+                                        <PIS>
+                                                    <PISOutr>
+                                <CST>99</CST>
+                                <vBC>0.00</vBC>
+                                <pPIS>0.6500</pPIS>
+                                <vPIS>0.00</vPIS>
+                            </PISOutr>
+                                            </PIS>
+                    <COFINS>
+                                                    <COFINSOutr>
+                                <CST>99</CST>
+                                <vBC>0.00</vBC>
+                                <pCOFINS>3.0000</pCOFINS>
+                                <vCOFINS>0.00</vCOFINS>
+                            </COFINSOutr>
+                                            </COFINS>
+                                                        </imposto>
+                                                    <impostoDevol>
+                        <pDevol>0.00</pDevol>
+                        <IPI>
+                            <vIPIDevol>2.39</vIPIDevol>
+                        </IPI>
+                    </impostoDevol>
+                                            </det>
+                    
+            <det nItem="4">
+                <prod>
+                                            <cProd>GBC0658-01</cProd>
+                                                                                <cEAN>7899511426736</cEAN>
+                    <xProd>Vaso Gato Gres Grande</xProd>
+                                        <NCM>69139000</NCM>
+                                                            <CFOP>6202</CFOP>
+                    <uCom>UN</uCom>
+                    <qCom>1.0000</qCom>
+                    <vUnCom>18.367500</vUnCom>
+                    <vProd>18.37</vProd>
+                    <cEANTrib>7899511426736</cEANTrib>
+                    <uTrib>UN</uTrib>
+                    <qTrib>1.0000</qTrib>
+                    <vUnTrib>18.367500</vUnTrib>
+                                                                                <indTot>1</indTot>
+                                                                            </prod>
+                <imposto>
+                                        <ICMS>
+                                                                                                                                                            <ICMSSN900>
+                                    <orig>2</orig>
+                                    <CSOSN>900</CSOSN>
+                                    <modBC>3</modBC>
+                                    <vBC>18.37</vBC>
+                                    <pICMS>4.0000</pICMS>
+                                    <vICMS>0.73</vICMS>
+                                    <pCredSN>0</pCredSN>
+                                    <vCredICMSSN>0.00</vCredICMSSN>
+                                </ICMSSN900>
+                                                                        </ICMS>
+                                                                                        <IPI>
+                            <cEnq>999</cEnq>
+                            <IPITrib>
+                                <CST>99</CST>
+                                <vBC>0.00</vBC>
+                                <pIPI>13.0000</pIPI>
+                                <vIPI>0.00</vIPI>
+                            </IPITrib>
+                        </IPI>
+                                        <PIS>
+                                                    <PISOutr>
+                                <CST>99</CST>
+                                <vBC>0.00</vBC>
+                                <pPIS>0.6500</pPIS>
+                                <vPIS>0.00</vPIS>
+                            </PISOutr>
+                                            </PIS>
+                    <COFINS>
+                                                    <COFINSOutr>
+                                <CST>99</CST>
+                                <vBC>0.00</vBC>
+                                <pCOFINS>3.0000</pCOFINS>
+                                <vCOFINS>0.00</vCOFINS>
+                            </COFINSOutr>
+                                            </COFINS>
+                                                        </imposto>
+                                                    <impostoDevol>
+                        <pDevol>0.00</pDevol>
+                        <IPI>
+                            <vIPIDevol>2.39</vIPIDevol>
+                        </IPI>
+                    </impostoDevol>
+                                            </det>
+                    
+            <det nItem="5">
+                <prod>
+                                            <cProd>FS0862-01</cProd>
+                                                                                <cEAN>7899511425241</cEAN>
+                    <xProd>Vaso Cimento Luena Preto</xProd>
+                                        <NCM>68109900</NCM>
+                                                            <CFOP>6202</CFOP>
+                    <uCom>UN</uCom>
+                    <qCom>3.0000</qCom>
+                    <vUnCom>35.087500</vUnCom>
+                    <vProd>105.26</vProd>
+                    <cEANTrib>7899511425241</cEANTrib>
+                    <uTrib>UN</uTrib>
+                    <qTrib>3.0000</qTrib>
+                    <vUnTrib>35.087500</vUnTrib>
+                                                                                <indTot>1</indTot>
+                                                                            </prod>
+                <imposto>
+                                        <ICMS>
+                                                                                                                                                            <ICMSSN900>
+                                    <orig>2</orig>
+                                    <CSOSN>900</CSOSN>
+                                    <modBC>3</modBC>
+                                    <vBC>105.26</vBC>
+                                    <pICMS>4.0000</pICMS>
+                                    <vICMS>4.21</vICMS>
+                                    <pCredSN>0</pCredSN>
+                                    <vCredICMSSN>0.00</vCredICMSSN>
+                                </ICMSSN900>
+                                                                        </ICMS>
+                                                                                        <IPI>
+                            <cEnq>999</cEnq>
+                            <IPITrib>
+                                <CST>99</CST>
+                                <vBC>0.00</vBC>
+                                <pIPI>0</pIPI>
+                                <vIPI>0.00</vIPI>
+                            </IPITrib>
+                        </IPI>
+                                        <PIS>
+                                                    <PISOutr>
+                                <CST>99</CST>
+                                <vBC>0.00</vBC>
+                                <pPIS>0.6500</pPIS>
+                                <vPIS>0.00</vPIS>
+                            </PISOutr>
+                                            </PIS>
+                    <COFINS>
+                                                    <COFINSOutr>
+                                <CST>99</CST>
+                                <vBC>0.00</vBC>
+                                <pCOFINS>3.0000</pCOFINS>
+                                <vCOFINS>0.00</vCOFINS>
+                            </COFINSOutr>
+                                            </COFINS>
+                                                        </imposto>
+                                                    <impostoDevol>
+                        <pDevol>0.00</pDevol>
+                        <IPI>
+                            <vIPIDevol>0.00</vIPIDevol>
+                        </IPI>
+                    </impostoDevol>
+                                            </det>
+                    
+            <det nItem="6">
+                <prod>
+                                            <cProd>GBC0659-01</cProd>
+                                                                                <cEAN>7899511426743</cEAN>
+                    <xProd>Vaso Gato Gres Pequeno</xProd>
+                                        <NCM>69139000</NCM>
+                                                            <CFOP>6202</CFOP>
+                    <uCom>UN</uCom>
+                    <qCom>1.0000</qCom>
+                    <vUnCom>13.103333</vUnCom>
+                    <vProd>13.10</vProd>
+                    <cEANTrib>7899511426743</cEANTrib>
+                    <uTrib>UN</uTrib>
+                    <qTrib>1.0000</qTrib>
+                    <vUnTrib>13.103333</vUnTrib>
+                                                                                <indTot>1</indTot>
+                                                                            </prod>
+                <imposto>
+                                        <ICMS>
+                                                                                                                                                            <ICMSSN900>
+                                    <orig>2</orig>
+                                    <CSOSN>900</CSOSN>
+                                    <modBC>3</modBC>
+                                    <vBC>13.10</vBC>
+                                    <pICMS>4.0000</pICMS>
+                                    <vICMS>0.52</vICMS>
+                                    <pCredSN>0</pCredSN>
+                                    <vCredICMSSN>0.00</vCredICMSSN>
+                                </ICMSSN900>
+                                                                        </ICMS>
+                                                                                        <IPI>
+                            <cEnq>999</cEnq>
+                            <IPITrib>
+                                <CST>99</CST>
+                                <vBC>0.00</vBC>
+                                <pIPI>13.0000</pIPI>
+                                <vIPI>0.00</vIPI>
+                            </IPITrib>
+                        </IPI>
+                                        <PIS>
+                                                    <PISOutr>
+                                <CST>99</CST>
+                                <vBC>0.00</vBC>
+                                <pPIS>0.6500</pPIS>
+                                <vPIS>0.00</vPIS>
+                            </PISOutr>
+                                            </PIS>
+                    <COFINS>
+                                                    <COFINSOutr>
+                                <CST>99</CST>
+                                <vBC>0.00</vBC>
+                                <pCOFINS>3.0000</pCOFINS>
+                                <vCOFINS>0.00</vCOFINS>
+                            </COFINSOutr>
+                                            </COFINS>
+                                                        </imposto>
+                                                    <impostoDevol>
+                        <pDevol>0.00</pDevol>
+                        <IPI>
+                            <vIPIDevol>1.70</vIPIDevol>
+                        </IPI>
+                    </impostoDevol>
+                                            </det>
+                <total>
             <ICMSTot>
+                
 
-
-                <vBC>0.00</vBC>
-                <vICMS>0.00</vICMS>
-                <vICMSDeson>0</vICMSDeson>
-
-                <vFCPUFDest>0.00</vFCPUFDest>
-                <vICMSUFDest>0.00</vICMSUFDest>
-                <vICMSUFRemet>0.00</vICMSUFRemet>
-                <vFCP>0.00</vFCP>
+                                    <vBC>193.17</vBC>
+                    <vICMS>7.71</vICMS>
+                    <vICMSDeson>0</vICMSDeson>
+                
+                                <vFCP>0.00</vFCP>
                 <vBCST>0</vBCST>
                 <vST>0</vST>
                 <vFCPST>0.00</vFCPST>
                 <vFCPSTRet>0.00</vFCPSTRet>
-                <vProd>79.90</vProd>
+                <vProd>356.46</vProd>
                 <vFrete>0.00</vFrete>
                 <vSeg>0</vSeg>
                 <vDesc>0.00</vDesc>
                 <vII>0</vII>
-                <vIPI>0.00</vIPI>
-                <vIPIDevol>0.00</vIPIDevol>
-                <vPIS>0.00</vPIS>
+                                                    <vIPI>0.00</vIPI>
+                    <vIPIDevol>10.19</vIPIDevol>
+                                <vPIS>0.00</vPIS>
                 <vCOFINS>0.00</vCOFINS>
-                <vOutro>4.49</vOutro>
-                <vNF>84.39</vNF>
-            </ICMSTot>
+                <vOutro>0.00</vOutro>
+                                <vNF>366.65</vNF>
+                            </ICMSTot>
         </total>
         <transp>
-            <modFrete>2</modFrete>
-            <transporta>
-                <CNPJ>11200418000169</CNPJ>
-                <xNome>Dafiti - GFG Comércio Digital Ltda</xNome>
-                <xEnder>Rua José Terence, 545</xEnder>
-                <xMun>Birigüi</xMun>
-                <UF>SP</UF>
-            </transporta>
-            <vol>
-                <qVol>1</qVol>
-                <esp>Caixa</esp>
-                <pesoL>0.670</pesoL>
-                <pesoB>0.670</pesoB>
-            </vol>
-        </transp>
-        <cobr>
-            <fat>
-                <nFat>1006</nFat>
-                <vOrig>79.90</vOrig>
-                <vDesc>0.00</vDesc>
-                <vLiq>79.90</vLiq>
-            </fat>
-            <dup>
-                <nDup>001</nDup>
-                <dVenc>2024-12-11</dVenc>
-                <vDup>79.90</vDup>
-            </dup>
-        </cobr>
-        <pag>
-            <detPag>
-                <tPag>05</tPag>
-                <vPag>79.90</vPag>
-            </detPag>
-        </pag>
-        <infAdic>
-            <infCpl>Pedido: 0012412837524 - Documento emitido por ME ou EPP optante pelo Simples
-                Nacional. Não gera direito a crédito fiscal de IPI.</infCpl>
-            <obsCont xCampo="Pedido de Venda">
-                <xTexto>0012412837524</xTexto>
-            </obsCont>
-        </infAdic>
-        <infRespTec>
-            <CNPJ>28977040000107</CNPJ>
-            <xContato>Ricardo Schroeder</xContato>
-            <email>ricardo@magazord.com.br</email>
-            <fone>4735208013</fone>
-        </infRespTec>
-    </infNFe>
+            <modFrete>9</modFrete>
+                                        <vol>
+                                            <qVol>1</qVol>
+                                                                <esp>VOLUMES</esp>
+                                                                <pesoL>4.720</pesoL>
+                                                                <pesoB>4.720</pesoB>
+                                    </vol>
+                    </transp>
+                <pag>
+                            <detPag>
+                    <tPag>90</tPag>
+                    <vPag>0.00</vPag>
+                </detPag>
+                    </pag>
+                                                            <infAdic>
+                                                                                        <infCpl>Documento emitido por ME ou EPP optante pelo Simples Nacional.  Não gera direito a crédito fiscal de IPI.  - Total aproximado de tributos: 45,33 (12,72%) Federais 24,23 (6,80%) Estaduais 21,10 (5,92%). Fonte.: IBPT/empresometro.com.br.</infCpl>
+                                            </infAdic>
+                                    <infRespTec>
+                <CNPJ>28977040000107</CNPJ>
+                <xContato>Ricardo Schroeder</xContato>
+                <email>ricardo@magazord.com.br</email>
+                <fone>4735208013</fone>
+            </infRespTec>
+            </infNFe>
 </NFe>

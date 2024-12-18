@@ -8,7 +8,7 @@
 </head>
 <body>
 {{ print_button() }}
-{{ folhaVenda.filtro }}
+<!-- {{ folhaVenda.filtro }} -->
 {{ print_resumo(folhaVendaResumo, true, true) }}
 {% for pedidoFolhaVenda in pedidosFolhaVenda %}
     <table class="page-break table-default">
@@ -19,7 +19,7 @@
         </tr>
     </table>
 
-    <table class="table-default">
+    <!-- <table class="table-default">
         <tr>
             <th class="th-default">Dados do Cliente</th>
             <th class="th-default">Dados do Pedido</th>
@@ -32,6 +32,11 @@
                 <strong>Tipo: </strong>{{ print_pessoa_tipo(pedidoFolhaVenda.cliente.tipo) }}<br>
                 <strong>Estado: </strong>{{ pedidoFolhaVenda.endereco.cidade.estado.sigla }}
                 - {{ pedidoFolhaVenda.endereco.cidade.estado.nome }}
+                <strong>Cep: </strong>{{pedidoFolhaVenda.endereco.cep}}<br>
+                <strong>Prazo: </strong>{{pedidoFolhaVenda.pedido.pedidoRastreio.diasUteis}}<br>
+                <strong>Telefone: </strong>{{ print_contato_principal(pedidoFolhaVenda.cliente) }}<br>
+				<strong>Vendedor: </strong>{{ pedidoFolhaVenda.pedido.codigoVendedor.codigo | default('-') }}
+				
             </td>
             <td class="td-default">
                 <strong>Rep.: </strong>{{ pedidoFolhaVenda.loja.nome }}<br>
@@ -39,16 +44,22 @@
                 <strong>Transp.: </strong>{{ pedidoFolhaVenda.transportadoraServico.descricao | default('-') }}<br>
                 <strong>CondiçãoPgto: </strong>{{ pedidoFolhaVenda.condicaoPagamento.nome | default('-') }}<br>
                 <strong>Emissão: </strong>{{ print_date(pedidoFolhaVenda.pedido.dataHora) }}<br>
-                <strong>Aprovação: </strong> {{ print_date(pedidoFolhaVenda.pedido.dataAprovado) }}
+                <strong>Aprovação: </strong> {{ print_date(pedidoFolhaVenda.pedido.dataAprovado) }}<br>
+                <strong>Obs: </strong>
+                {% for observacao in pedidoFolhaVenda.pedido.getObservacoesPedido() %}
+                    {{ observacao.mensagem }} - {{ observacao.data_hora }} <br>
+                {% endfor %}
             </td>
         </tr>
-    </table>
+    </table> --> 
 
     <table class="table-default">
         <tr>
+            <th class="th-default">Marketplace</th>
             <th class="th-default">Imagem</th>
             <th class="th-default">Código</th>
             <th class="th-default">Qtde</th>
+            <th class="th-default">Vlr Unitário</th>
             <th class="th-default">Frete</th>
             <th class="th-default">Total</th>
         </tr>
@@ -59,9 +70,11 @@
             {% if (pedidoItem.produtoDerivacaoKit.codigo in myArray) %}
             {% else %}
                 {% set myArray = myArray|merge([pedidoItem.produtoDerivacaoKit.codigo]) %}
+                <td class="td-default">{{ pedidoFolhaVenda.pedido.pedidoMarketplace.lojaDoMarketplace.nome | default('') ? ' ' ~ pedidoFolhaVenda.pedido.pedidoMarketplace.lojaDoMarketplace.nome : '' }}</td>
                 <td class="td-default">{{ print_produto_imagem_kit(pedidoItem) }}</td>
                 <td class="td-default">{{ pedidoItem.produtoDerivacaoKit.codigo }}</td>
                 <td class="td-default">{{ pedidoItem.quantidade }}</td>
+                <td class="td-default">{{ pedidoItem.valorUnitario | number_format(2, ',', '.') }}</td>
                 <td class="td-default">{{ pedidoItem.valorFrete | number_format(2, ',', '.') }}</td>
                 <td class="td-default">
                     {% set vlrUni = pedidoItem.valorUnitario %}
@@ -73,9 +86,11 @@
                 
             {% endif %}
         {% else %}
+            <td class="td-default">{{ pedidoFolhaVenda.pedido.pedidoMarketplace.lojaDoMarketplace.nome | default('') ? ' ' ~ pedidoFolhaVenda.pedido.pedidoMarketplace.lojaDoMarketplace.nome : '' }}</td>
             <td class="td-default">{{ print_produto_imagem(pedidoItem) }}</td>
             <td class="td-default">{{ pedidoItem.produtoDerivacao.codigo }}</td>
             <td class="td-default">{{ pedidoItem.quantidade }}</td>
+            <td class="td-default">{{ pedidoItem.valorUnitario | number_format(2, ',', '.') }}</td>
             <td class="td-default">{{ pedidoItem.valorFrete | number_format(2, ',', '.') }}</td>
             <td class="td-default">
                 {% set vlrUni = pedidoItem.valorUnitario %}
