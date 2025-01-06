@@ -1,0 +1,40 @@
+{# Solicitação feita pela contabildiade no ticket 379414, após mudança de regime tributário, do simples para presumido. #}
+    {% set zeraBaseCalculo = false %}
+        {% if self.configuracaoParametros %}
+            {% set cfopZerada = self.configuracaoParametros.getOpcoesPIS().getCfopBaseZerada()|split(',') %}
+            {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+        {% endif %}
+        {% if zeraBaseCalculo %}
+            {{ self.result('0.00') }}
+        {% elseif self.configuracaoGlobal %}
+            {% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}
+                {# Configuração para zerar a base, caso for situação 8 ou 6 no produto. #}
+                {% if self.situacaoTributariaCOFINS.codigo() == [8,6] %}
+                    {{ self.result('0.00')}}
+                {% endif %}
+                {{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+            {% else %}
+                {{ self.result(0.00) }}
+            {% endif %}
+        {% endif %}
+
+
+{# Solicitação feita pela contabildiade no ticket 379414, após mudança de regime tributário, do simples para presumido. #}
+{% set zeraBaseCalculo = false %}
+    {% if self.configuracaoParametros %}
+        {% set cfopZerada = self.configuracaoParametros.getOpcoesPIS().getCfopBaseZerada()|split(',') %}
+        {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+    {% endif %}
+    {% if zeraBaseCalculo %}
+        {{ self.result('0.00') }}
+    {% elseif self.configuracaoGlobal %}
+        {% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}
+            {# Configuração para zerar a base, caso for situação 8 ou 6 no produto. #}
+            {% if self.situacaoTributariaPIS.codigo() == [8,6] %}
+                {{ self.result('0.00')}}
+            {% endif %}
+            {{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+        {% else %}
+            {{ self.result(0.00) }}
+        {% endif %}
+    {% endif %}

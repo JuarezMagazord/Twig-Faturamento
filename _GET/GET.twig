@@ -25,8 +25,12 @@
 {# Condição global, para o CRT configuração, 1 = Simples nacional, 2= Presumido, 3 = Real, 4 = MEI. #}
 {% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}
 
+{# Situação tributária para COFINS, o mesmo se aplica para ICMS, PIS, IPI. #}
+{% self.situacaoTributariaCOFINS.codigo() %}
+
 {# Origem do produto #}
 {% self.origemFiscal %}
 
 {# NCM do produto na NFe #}
 {% self.notaFiscalItem.ncm.codigo %}
+
