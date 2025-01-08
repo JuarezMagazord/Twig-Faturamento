@@ -1,0 +1,45 @@
+{% set cfopCodigo = '' %}
+    {# Condição para clientes extrangeiro. #}
+    {% set operacaoInterna = (estadoEmissor == estadoDestinatario) %}
+    {% if tipo == 1 %}
+        {# Identificação do cliente extrangeiro. #}
+        {% set isBrinde = (formaPagamento and formaPagamento.isBrinde()) %}
+        {% if operacaoInterna %}
+            {% if isBrinde %}
+                {% set cfopCodigo = '5910' %}
+            {% else %}
+                {% set cfopCodigo = '5102' %}
+            {% endif %}
+        {% else %}
+            {% if isBrinde %}
+                {% set cfopCodigo = '6910' %}
+            {% else %}
+                {% if destinatario.tipo == 2 and destinatario.contribuinteIcms %}
+                    {% set cfopCodigo = '6102' %}
+                {% else %}
+                    {% set cfopCodigo = '6108' %}
+                {% endif %}
+            {% endif %}
+        {% endif %}
+    {% else %}
+        {% if origem == 'filial' and destino == 'cliente' %}
+            {% if operacaoInterna %}
+                {% set cfopCodigo = '1202' %}
+            {% else %}
+                {% set cfopCodigo = '2202' %}
+            {% endif %}
+        {% elseif origem == 'transportadora' and destino == 'filial' %}
+        {% if operacaoInterna %}
+              {% set cfopCodigo = '1353' %}
+        {% else %}
+            {% set cfopCodigo = '2353' %}
+        {% endif %}
+        {% else %}
+            {% if operacaoInterna %}
+                {% set cfopCodigo = '1102' %}
+            {% else %}
+                {% set cfopCodigo = '2102' %}
+            {% endif %}
+        {% endif %}
+    {% endif %}
+    {{cfopCodigo}}
