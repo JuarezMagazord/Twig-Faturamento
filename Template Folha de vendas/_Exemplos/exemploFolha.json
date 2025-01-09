@@ -1,0 +1,125 @@
+{
+    "folhaVenda": {
+        "id": "number",
+        "dataHora": "Date",
+        "filtro": "string"
+    },
+    "pedidosFolhaVenda": [
+        {
+            "loja": {
+                "id": "number",
+                "nome": "string"
+            },
+            "pedido": {
+                "id": "number",
+                "codigo": "string",
+                "pedidoMarketplace": "string",
+                "valorFrete": "number",
+                "valorTotal": "number",
+                "valorDesconto": "number",
+                "valorProduto": "number",
+                "pedidoRastreio": {
+                    "diasUteis": "number"
+                }
+            },
+            "pedidoItem": [
+                {
+                    "id": "number",
+                    "quantidade": "number",
+                    "valorUnitario": "number",
+                    "valorDesconto": "number",
+                    "descricao": "string",
+                    "dataPrevenda": "Date",
+                    "produtoDerivacao": {
+                        "id": "number",
+                        "codigo": "string",
+                        "produto": {
+                            "nome": "string",
+                            "marca": {
+                                "nome": "string"
+                            }
+                        }
+                    }
+                }
+            ],
+            "produtoDerivacaoKit": {
+                "codigo": "string",
+                "nome": "string",
+                "produto": {
+                    "nome": "string",
+                    "marca": {
+                        "nome": "string"
+                    }
+                }
+            },
+            "pedidoItemKit": {
+                "quantidade": "number"
+            },
+            "info": {
+                "personalizacao": [
+                    {
+                        "nome": "string",
+                        "valor": "number",
+                        "descricao": "string",
+                        "key": "string"
+                    }
+                ],
+                "valorPersonalizacao": "number"
+            }
+        }
+    ],
+    "transportadoraServico": {
+        "id": "number",
+        "descricao": "string",
+        "descricaoSite": "string"
+    },
+    "cliente": {
+        "id": "number",
+        "nome": "string",
+        "nomeFantasia": "string",
+        "cpfCnpj": "string",
+        "email": "string"
+    },
+    "endereco": {
+        "cep": "string",
+        "logradouro": "string",
+        "numero": "string",
+        "complemento": "string",
+        "nomeDestinatario": "string",
+        "cidade": {
+            "nome": "string",
+            "estado": {
+                "sigla": "string",
+                "nome": "string"
+            }
+        }
+    },
+    "condicaoPagamento": {
+        "id": "number",
+        "nome": "string",
+        "numeroParcelas": "number"
+    },
+    "formaPagamento": {
+        "id": "number",
+        "nome": "string"
+    },
+    "folhaVendaResumo": {
+        "resumoItens": [
+            {
+                "produto_derivacao_codigo": "string",
+                "produto_derivacao_nome": "string",
+                "produto_ean": "string",
+                "produto_nome": "string",
+                "produto_modelo": "string",
+                "produto_marca": "string",
+                "kit_nome": "string",
+                "kit_id": "string",
+                "deposito_id": "string",
+                "deposito_nome": "string",
+                "qtde_estoque_total": "string",
+                "qtde_item": "string",
+                "localizacoes": "string"
+            }
+        ]
+    }
+}

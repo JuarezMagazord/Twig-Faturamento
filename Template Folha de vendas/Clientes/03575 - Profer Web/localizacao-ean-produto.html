@@ -78,9 +78,9 @@
                 <td class="td-default">{{ pedidoItem.descricao }}</td>
                 <td class="td-default">{{ pedidoItem.produtoDerivacao.produto.marca.nome }}</td>
                 <td class="td-default">{{ pedidoItem.deposito.nome }}</td>
-                <td class="td-default">{{ folhaVendaResumo.resumoItens.localizazoes | default('') }}</td>
+                <td class="td-default">{{ folhaVendaResumo.resumoItens.localizacoes | default ('')}}</td>
                 <td class="td-default">{{ pedidoItem.quantidade }}</td>
-                <td class="td-default">{{ folhaVendaResumo.resumoItens.produto_ean }}</td>
+                <td class="td-default">{{ print_codigo_barras(produto_ean) }}</td>
             </tr>
         {% endfor %}
     </table>
