@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+<<<<<<< Updated upstream
             <infNFe Id="NFe42241250207656000158550010000019541000022299" versao="4.00">
         <ide>
             <cUF>42</cUF>
@@ -16,10 +17,29 @@
             <tpImp>1</tpImp>
                             <tpEmis>1</tpEmis>
                         <cDV>9</cDV>
+=======
+    <infNFe Id="NFe42250150207656000158550010000020731000023488" versao="4.00">
+        <ide>
+            <cUF>42</cUF>
+            <cNF>00002348</cNF>
+            <natOp>Devolucao de Compra p/Comercializacao</natOp>
+            <mod>55</mod>
+            <serie>1</serie>
+            <nNF>2073</nNF>
+            <dhEmi>2025-01-10T15:42:00-03:00</dhEmi>
+            <dhSaiEnt>2025-01-10T15:42:00-03:00</dhSaiEnt>
+            <tpNF>1</tpNF>
+            <idDest>2</idDest>
+            <cMunFG>4213203</cMunFG>
+            <tpImp>1</tpImp>
+            <tpEmis>1</tpEmis>
+            <cDV>8</cDV>
+>>>>>>> Stashed changes
             <tpAmb>1</tpAmb>
             <finNFe>4</finNFe>
             <indFinal>0</indFinal>
             <indPres>2</indPres>
+<<<<<<< Updated upstream
                                                                 <indIntermed>0</indIntermed>
                         <procEmi>0</procEmi>
                             <verProc>Magazord 1.0</verProc>
@@ -27,6 +47,18 @@
                             <refNFe>35240948059223000150550010000007641000130510</refNFe>
                         </NFref>
                                                         </ide>
+=======
+            <indIntermed>0</indIntermed>
+            <procEmi>0</procEmi>
+            <verProc>Magazord 1.0</verProc>
+            <NFref>
+                <refNFe>35240948059223000150550010000007641000130510</refNFe>
+            </NFref>
+            <NFref>
+                <refNFe>35240948059223000150550010000007641000130510</refNFe>
+            </NFref>
+        </ide>
+>>>>>>> Stashed changes
         <emit>
             <CNPJ>50207656000158</CNPJ>
             <xNome>BH Store Ltda</xNome>
@@ -34,8 +66,13 @@
             <enderEmit>
                 <xLgr>Rua Wilhelm Perch</xLgr>
                 <nro>285</nro>
+<<<<<<< Updated upstream
                                     <xCpl>Sala 01</xCpl>
                                 <xBairro>Centro</xBairro>
+=======
+                <xCpl>Sala 01</xCpl>
+                <xBairro>Centro</xBairro>
+>>>>>>> Stashed changes
                 <cMun>4213203</cMun>
                 <xMun>Pomerode</xMun>
                 <UF>SC</UF>
@@ -45,6 +82,7 @@
                 <fone>4733809019</fone>
             </enderEmit>
             <IE>262240890</IE>
+<<<<<<< Updated upstream
                         <IM>ISENTO</IM>
                             <CNAE>4713002</CNAE>
                         <CRT>1</CRT>
@@ -453,14 +491,397 @@
                     </impostoDevol>
                                             </det>
                 <total>
+=======
+            <IM>ISENTO</IM>
+            <CNAE>4713002</CNAE>
+            <CRT>1</CRT>
+        </emit>
+        <dest>
+            <CNPJ>48059223000150</CNPJ>
+            <xNome>V P A COMERCIAL IMPORTADORA LTDA</xNome>
+            <enderDest>
+                <xLgr>RUA PADRE EUCLIDES</xLgr>
+                <nro>0241</nro>
+                <xBairro>CAMPOS ELISEOS</xBairro>
+                <cMun>3543402</cMun>
+                <xMun>Ribeirão Preto</xMun>
+                <UF>SP</UF>
+                <CEP>14080200</CEP>
+                <cPais>1058</cPais>
+                <xPais>Brasil</xPais>
+                <fone>1636109248</fone>
+            </enderDest>
+            <indIEDest>1</indIEDest>
+            <IE>797963603114</IE>
+        </dest>
+
+
+        <det nItem="1">
+            <prod>
+                <cProd>FS1151-01</cProd>
+                <cEAN>7899511431457</cEAN>
+                <xProd>Haste Com 3 Girassois Permanentes 53cm</xProd>
+                <NCM>67029000</NCM>
+                <CFOP>6202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>1.0000</qCom>
+                <vUnCom>38.066667</vUnCom>
+                <vProd>38.07</vProd>
+                <cEANTrib>7899511431457</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>38.066667</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMSSN900>
+                        <orig>2</orig>
+                        <CSOSN>900</CSOSN>
+                        <modBC>3</modBC>
+                        <vBC>38.07</vBC>
+                        <pICMS>4.0000</pICMS>
+                        <vICMS>1.52</vICMS>
+                        <pCredSN>0</pCredSN>
+                        <vCredICMSSN>0.00</vCredICMSSN>
+                    </ICMSSN900>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>9.7500</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
+                </PIS>
+                <COFINS>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>3.71</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="2">
+            <prod>
+                <cProd>FS0858 01</cProd>
+                <cEAN>7899511425203</cEAN>
+                <xProd>VASO CIMENTO TIPO RENDADO PRETO 11 3X11 3X10 CM CM 24 CB 04</xProd>
+                <NCM>68109900</NCM>
+                <CFOP>6202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>6.0000</qCom>
+                <vUnCom>27.215000</vUnCom>
+                <vProd>163.29</vProd>
+                <cEANTrib>7899511425203</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>6.0000</qTrib>
+                <vUnTrib>27.215000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMSSN900>
+                        <orig>2</orig>
+                        <CSOSN>900</CSOSN>
+                        <modBC>3</modBC>
+                        <vBC>163.29</vBC>
+                        <pICMS>4.0000</pICMS>
+                        <vICMS>6.53</vICMS>
+                        <pCredSN>0</pCredSN>
+                        <vCredICMSSN>0.00</vCredICMSSN>
+                    </ICMSSN900>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
+                </PIS>
+                <COFINS>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="3">
+            <prod>
+                <cProd>GBC0660-01</cProd>
+                <cEAN>7899511426750</cEAN>
+                <xProd>Vaso Cachorro Gres Grande</xProd>
+                <NCM>69139000</NCM>
+                <CFOP>6202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>1.0000</qCom>
+                <vUnCom>18.367500</vUnCom>
+                <vProd>18.37</vProd>
+                <cEANTrib>7899511426750</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>18.367500</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMSSN900>
+                        <orig>2</orig>
+                        <CSOSN>900</CSOSN>
+                        <modBC>3</modBC>
+                        <vBC>18.37</vBC>
+                        <pICMS>4.0000</pICMS>
+                        <vICMS>0.73</vICMS>
+                        <pCredSN>0</pCredSN>
+                        <vCredICMSSN>0.00</vCredICMSSN>
+                    </ICMSSN900>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>13.0000</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
+                </PIS>
+                <COFINS>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>2.39</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="4">
+            <prod>
+                <cProd>GBC0658-01</cProd>
+                <cEAN>7899511426736</cEAN>
+                <xProd>Vaso Gato Gres Grande</xProd>
+                <NCM>69139000</NCM>
+                <CFOP>6202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>1.0000</qCom>
+                <vUnCom>18.367500</vUnCom>
+                <vProd>18.37</vProd>
+                <cEANTrib>7899511426736</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>18.367500</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMSSN900>
+                        <orig>2</orig>
+                        <CSOSN>900</CSOSN>
+                        <modBC>3</modBC>
+                        <vBC>18.37</vBC>
+                        <pICMS>4.0000</pICMS>
+                        <vICMS>0.73</vICMS>
+                        <pCredSN>0</pCredSN>
+                        <vCredICMSSN>0.00</vCredICMSSN>
+                    </ICMSSN900>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>13.0000</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
+                </PIS>
+                <COFINS>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>2.39</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="5">
+            <prod>
+                <cProd>FS0862-01</cProd>
+                <cEAN>7899511425241</cEAN>
+                <xProd>Vaso Cimento Luena Preto</xProd>
+                <NCM>68109900</NCM>
+                <CFOP>6202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>3.0000</qCom>
+                <vUnCom>35.087500</vUnCom>
+                <vProd>105.26</vProd>
+                <cEANTrib>7899511425241</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>3.0000</qTrib>
+                <vUnTrib>35.087500</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMSSN900>
+                        <orig>2</orig>
+                        <CSOSN>900</CSOSN>
+                        <modBC>3</modBC>
+                        <vBC>105.26</vBC>
+                        <pICMS>4.0000</pICMS>
+                        <vICMS>4.21</vICMS>
+                        <pCredSN>0</pCredSN>
+                        <vCredICMSSN>0.00</vCredICMSSN>
+                    </ICMSSN900>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
+                </PIS>
+                <COFINS>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="6">
+            <prod>
+                <cProd>GBC0659-01</cProd>
+                <cEAN>7899511426743</cEAN>
+                <xProd>Vaso Gato Gres Pequeno</xProd>
+                <NCM>69139000</NCM>
+                <CFOP>6202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>1.0000</qCom>
+                <vUnCom>13.103333</vUnCom>
+                <vProd>13.10</vProd>
+                <cEANTrib>7899511426743</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>13.103333</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMSSN900>
+                        <orig>2</orig>
+                        <CSOSN>900</CSOSN>
+                        <modBC>3</modBC>
+                        <vBC>13.10</vBC>
+                        <pICMS>4.0000</pICMS>
+                        <vICMS>0.52</vICMS>
+                        <pCredSN>0</pCredSN>
+                        <vCredICMSSN>0.00</vCredICMSSN>
+                    </ICMSSN900>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>13.0000</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
+                </PIS>
+                <COFINS>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>1.70</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+        <total>
+>>>>>>> Stashed changes
             <ICMSTot>
                 
 
+<<<<<<< Updated upstream
                                     <vBC>193.17</vBC>
                     <vICMS>7.71</vICMS>
                     <vICMSDeson>0</vICMSDeson>
                 
                                 <vFCP>0.00</vFCP>
+=======
+
+                <vBC>356.46</vBC>
+                <vICMS>14.24</vICMS>
+                <vICMSDeson>0</vICMSDeson>
+
+                <vFCP>0.00</vFCP>
+>>>>>>> Stashed changes
                 <vBCST>0</vBCST>
                 <vST>0</vST>
                 <vFCPST>0.00</vFCPST>
@@ -470,6 +891,7 @@
                 <vSeg>0</vSeg>
                 <vDesc>0.00</vDesc>
                 <vII>0</vII>
+<<<<<<< Updated upstream
                                                     <vIPI>0.00</vIPI>
                     <vIPIDevol>10.19</vIPIDevol>
                                 <vPIS>0.00</vPIS>
@@ -503,4 +925,39 @@
                 <fone>4735208013</fone>
             </infRespTec>
             </infNFe>
+=======
+                <vIPI>0.00</vIPI>
+                <vIPIDevol>10.19</vIPIDevol>
+                <vPIS>0.00</vPIS>
+                <vCOFINS>0.00</vCOFINS>
+                <vOutro>0.00</vOutro>
+                <vNF>366.65</vNF>
+            </ICMSTot>
+        </total>
+        <transp>
+            <modFrete>9</modFrete>
+            <vol>
+                <qVol>1</qVol>
+                <esp>VOLUMES</esp>
+                <pesoL>4.720</pesoL>
+                <pesoB>4.720</pesoB>
+            </vol>
+        </transp>
+        <pag>
+            <detPag>
+                <tPag>90</tPag>
+                <vPag>0.00</vPag>
+            </detPag>
+        </pag>
+        <infAdic>
+            <infCpl>Documento emitido por ME ou EPP optante pelo Simples Nacional.  Não gera direito a crédito fiscal de IPI.  - Total aproximado de tributos: 45,33 (12,72%) Federais 24,23 (6,80%) Estaduais 21,10 (5,92%). Fonte.: IBPT/empresometro.com.br.</infCpl>
+        </infAdic>
+        <infRespTec>
+            <CNPJ>28977040000107</CNPJ>
+            <xContato>Ricardo Schroeder</xContato>
+            <email>ricardo@magazord.com.br</email>
+            <fone>4735208013</fone>
+        </infRespTec>
+    </infNFe>
+>>>>>>> Stashed changes
 </NFe>

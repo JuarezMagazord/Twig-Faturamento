@@ -38,7 +38,6 @@
                 <strong>Tipo: </strong>{{ print_pessoa_tipo(pedidoFolhaVenda.cliente.tipo) }}<br>
                 <strong>Estado: </strong>{{ pedidoFolhaVenda.endereco.cidade.estado.sigla }}
                 - {{ pedidoFolhaVenda.endereco.cidade.estado.nome }}<br>
-                <strong>Telefone: </strong>{{ print_contato_principal(pedidoFolhaVenda.cliente) }}<br>
                 <strong>Data Nascimento: </strong>{{ print_date(pedidoFolhaVenda.cliente.dataNascimento) }}
             </td>
             <!--
@@ -54,84 +53,37 @@
             </td>
         </tr>
     </table>
-    <table class="table-default">
-        <!--
-            Endereço para entrega
-        -->
-        <tr>
-            <th class="th-default">Entrega</th>
-        </tr>
-        <tr>
-            <td class="td-default">
-                {{ pedidoFolhaVenda.endereco.nomeDestinatario }}<br>
-                {{ pedidoFolhaVenda.endereco.logradouro }}, {{ pedidoFolhaVenda.endereco.numero }}
-                , {{ pedidoFolhaVenda.endereco.bairro }}, {{ pedidoFolhaVenda.endereco.complemento }}
-                {{ pedidoFolhaVenda.endereco.cidade.nome }} - {{ pedidoFolhaVenda.endereco.cidade.estado.nome }}
-                -
-                Brasil
-                - {{ '%08d'|format(pedidoFolhaVenda.endereco.cep)|slice(0, 5) ~ '-' ~
-                '%08d'|format(pedidoFolhaVenda.endereco.cep)|slice(5, 3) }}
-            </td>
-        </tr>
-    </table>
 
     <!--
     Informações sobre os itens
     -->
     <table class="table-default">
         <tr>
+            <th class="th-default">Plataforma</th>
             <th class="th-default">Imagem</th>
             <th class="th-default">Produto</th>
             <th class="th-default">Descrição</th>
-            <th class="th-default">Marca</th>
-            <th class="th-default">Depósito</th>
             <th class="th-default">Qtde</th>
-            <th class="th-default">Pré-Venda</th>
+            <th class="th-default">Vlr Unit</th>
+            <th  class="th-default">Total</th>
         </tr>
         <!--
             Aqui entra a repetição dos produtos
         -->
         {% for pedidoItem in pedidoFolhaVenda.pedidoItem %}
             <tr>
+                <td class="td-default">{{ pedidoFolhaVenda.pedido.pedidoMarketplace.lojaMarketplace.nome |
+                    default('-') }}</td>
                 <td class="td-default">{{ print_produto_imagem(pedidoItem) }}</td>
                 <td class="td-default">{{ pedidoItem.produtoDerivacao.codigo }}</td>
                 <td class="td-default">{{ pedidoItem.descricao }}</td>
-                <td class="td-default">{{ pedidoItem.produtoDerivacao.produto.marca.nome }}</td>
-                <td class="td-default">{{ pedidoItem.deposito.nome }}</td>
                 <td class="td-default">{{ pedidoItem.quantidade }}</td>
-                <td class="td-default">{{ print_date(pedidoItem.dataPreVenda) }}</td>
-            </tr>
-            <tr>
-                <th class="th-default"></th>
-                <th class="th-default"></th>
-                <th class="th-default">Personalização</th>
-                <th class="th-default"></th>
-                <th class="th-default">Vlr Unit</th>
-                <th class="th-default">Frete</th>
-                <th class="th-default">Vlr total</th>
-            </tr>
-            <tr>
-                <td class="td-default"></td>
-                <td class="td-default"></td>
-                <!--
-                    Informações sobre a personalização.
-                -->
                 <td class="td-default">
-                    {% set exists = false %}
-                    {% set personalizacaoDescricao = '' %}
-                    {% if pedidoItem.info is defined and pedidoItem.info.personalizacao is defined %}
-                        {% set personalizacaoDescricao = '' %}
-                        {% for personalizacao in pedidoItem.info.personalizacao %}
-                            {% set personalizacaoDescricao = personalizacaoDescricao ~ personalizacao.descricao %}
-                        {% endfor %}
-                    {% endif %}
+                    {% set item = pedidoItem.valorUnitario %}
+                    {% set frete = pedidoItem.valorFrete %}
+                    {% set itemUnit = item + frete %}
+                    {{ itemUnit | number_format(2, ',', '.') }}
                 </td>
-                <td class="td-default"></td>
-                <td class="td-default">{{ pedidoItem.valorUnitario | number_format(2, ',', '.') }}</td>
-                <td class="td-default">{{ pedidoItem.valorFrete | number_format(2, ',', '.') }}</td>
-                <!--
-                    Informações sobre o totalizador por produto.
-                -->
                 <td class="td-default">
                     {% set vlrUni = pedidoItem.valorUnitario %}
                     {% set qtdIten = pedidoItem.quantidade %}
@@ -140,19 +92,7 @@
                     {{ valorTotal | number_format(2, ',', '.') }}
                 </td>
             </tr>
-            <tr><th><td> </td></th></tr>
         {% endfor %}
-    </table>
-    <table class="table-default">
-        <!--
-            Informações dos valores totais do pedido
-        -->
-        <tr>
-            <th class="th-default" style="text-align: right;">Valor total do pedido</th>
-        </tr>
-        <tr>
-            <td class="td-default" style="text-align: right;">{{ pedidoFolhaVenda.pedido.valorTotal | number_format(2, ',', '.') }}</td>
-        </tr>
     </table>
 {% endfor %}
 </body>
