@@ -1,0 +1,44 @@
+{# {% set aliquotaIPI = 0.00 %}
+
+{% if self.notaFiscalItem.getProdutoDerivacao().getId() in [94] %}
+    {{ self.result('9.75') }}
+{% elseif self.configuracaoParametros %}
+    {% if self.aliquotaProdutoDerivacao|length > 0 and self.aliquotaProdutoDerivacao[self.notaFiscalItem.produtoDerivacao.codigo] is defined %}
+        {% set aliquotaIPI = self.aliquotaProdutoDerivacao[self.notaFiscalItem.produtoDerivacao.codigo] %}
+    {% elseif self.aliquotaNcm|length > 0 and self.aliquotaNcm[self.notaFiscalItem.ncm.codigo] is defined %}
+        {% set aliquotaIPI = self.aliquotaNcm[self.notaFiscalItem.ncm.codigo] %}
+    {% elseif self.aliquotaCfops|length > 0 and self.aliquotaCfops[self.notaFiscalItem.cfop.codigo] is defined %}
+        {% set aliquotaIPI = self.aliquotaCfops[self.notaFiscalItem.cfop.codigo] %}
+    {% else %}
+        {% set aliquotaIPI = 0.00 %}
+    {% endif %}
+{% else %}
+    {% set aliquotaIPI = 0.00 %}
+{% endif %}
+
+{{ self.result(aliquotaIPI) }} #}
+
+
+
+{% if self.notaFiscalItem.getProdutoDerivacao().getId() in [94] %}
+    {{ self.result('9.75') }}
+{% else %}
+    {{ self.result('0.00') }}
+{% endif %}
+
+
+{% if self.notaFiscalItem.getProdutoDerivacao().getId() in [94] %}
+    {{ self.result('9.75') }}
+{% elseif self.configuracaoParametros %}
+    {% if self.aliquotaProdutoDerivacao|length > 0 and self.aliquotaProdutoDerivacao[self.notaFiscalItem.produtoDerivacao.codigo] is defined %}
+        {{ self.result( self.aliquotaProdutoDerivacao[self.notaFiscalItem.produtoDerivacao.codigo]) }}
+    {% elseif self.aliquotaNcm|length > 0 and self.aliquotaNcm[self.notaFiscalItem.ncm.codigo] is defined %}
+        {{ self.result( self.aliquotaNcm[self.notaFiscalItem.ncm.codigo]) }}
+    {% elseif self.aliquotaCfops|length > 0 and self.aliquotaCfops[self.notaFiscalItem.cfop.codigo] is defined %}
+        {{ self.result(self.aliquotaCfops[self.notaFiscalItem.cfop.codigo]) }}
+    {% else %}
+        {{ self.result('0.00') }}
+    {% endif %}
+{% else %}
+    {{ self.result('0.00') }}
+{% endif %}
