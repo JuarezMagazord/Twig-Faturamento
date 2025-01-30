@@ -1,15 +1,15 @@
 {% set mensagem = '' %}
 
     {% if self.getPedido() and self.getPedido().getOrigem() == 2 %}
-       {% set mensagem = mensagem ~ ' - Marketplace: ' ~ self.getPedido().getPedidoMarketplace().getMarketplace().getNome() ~' - '%}
+       {% set mensagem = mensagem ~ ' - Marketplace: ' ~ self.getPedido().getPedidoMarketplace().getMarketplace().getNome() ~' - '~ self.getPedido().pedidoMarketplace().numeroPedido() %}
     {% endif %}
     
     {% set codigoPedido = self.getPedido().getCodigo()|default(false) %}
     {% if codigoPedido %}
-        {# Solicitação feita via ticket, 475473 #}
-        {% set idPedidoMkt = self.getPedido().getPedidoMarketplace().getIdentificador()  %}
+        {# Solicitação feita via ticket, 475473 
+        {% set idPedidoMkt = self.getPedido().getPedidoMarketplace().getIdentificador()  %} #}
     
-        {% set mensagem = mensagem  ~ 'Pedido: ' ~ codigoPedido ~ ' - ' ~ idPedidoMkt ~ ' ' %}
+        {% set mensagem = mensagem  ~ ' Pedido: ' ~ codigoPedido ~ ' - ' %}
     {% endif %}
     
     {% set mensagem = mensagem ~'Documento emitido por ME ou EPP optante pelo Simples Nacional.  Não gera direito a crédito fiscal de IPI. ' %}

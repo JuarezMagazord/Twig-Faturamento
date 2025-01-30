@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Folha de vendas
+			{{ folhaVenda.id }}</title>
+		{{ default_css() }}
+	</head>
+
+	<body>
+
+
+		{% for pedidoFolhaVenda in pedidosFolhaVenda %}
+			<table class="page-break table-default">
+				<tr>
+					<td class="title td-default">Pedido:</td>
+					<td class="td-default">{{ pedidoFolhaVenda.pedido.id }}
+						-
+						{{ pedidoFolhaVenda.pedido.codigo }}</td>
+					<td class="td-default">{{ print_codigo_barras(pedidoFolhaVenda.pedido.codigo) }}</td>
+				</tr>
+			</table>
+
+			<table class="table-default">
+				<tr>
+					<th class="th-default">Dados do Cliente</th>
+					<th class="th-default">Dados do Pedido</th>
+				</tr>
+				<tr>
+					<td class="td-default">
+						<strong>Código:
+						</strong>
+						{{ pedidoFolhaVenda.cliente.id }}<br>
+						<strong>Nome:
+						</strong>
+						{{ pedidoFolhaVenda.cliente.nome }}<br>
+						<strong>CPF/CNPJ:
+						</strong>
+						{{ pedidoFolhaVenda.cliente.cpfCnpj }}<br>
+						<strong>Tipo:
+						</strong>
+						{{ print_pessoa_tipo(pedidoFolhaVenda.cliente.tipo) }}<br>
+						<strong>Estado:
+						</strong>
+						{{ pedidoFolhaVenda.endereco.cidade.estado.sigla }}
+						-
+						{{ pedidoFolhaVenda.endereco.cidade.estado.nome }}
+					</td>
+					<td class="td-default">
+						<strong>Rep.:
+						</strong>
+						{{ pedidoFolhaVenda.loja.nome }}<br>
+						<strong>FormaPgto:
+						</strong>
+						{{ pedidoFolhaVenda.formaPagamento.nome | default('-') }}<br>
+						<strong>Transp.:
+						</strong>
+						{{ pedidoFolhaVenda.transportadoraServico.descricao | default('-') }}<br>
+						<strong>CondiçãoPgto:
+						</strong>
+						{{ pedidoFolhaVenda.condicaoPagamento.nome | default('-') }}<br>
+						<strong>Emissão:
+						</strong>
+						{{ print_date(pedidoFolhaVenda.pedido.dataHora) }}<br>
+						<strong>Aprovação:
+						</strong>
+						{{ print_date(pedidoFolhaVenda.pedido.dataAprovado) }}
+					</td>
+				</tr>
+			</table>
+
+			<table class="table-default">
+				<tr>
+					<th class="th-default">Imagem</th>
+					<th class="th-default">Código</th>
+					<th class="th-default">Descrição</th>
+					<th class="th-default">Qtde</th>
+				</tr>
+				{% for pedidoItem in pedidoFolhaVenda.pedidoItem %}
+                    {% set localizacao = '' %}
+					<tr>
+						{% if (pedidoItem.produtoDerivacaoKit) %}
+							{% set estoqueKit = find_one_by('\\Magamobi\\MagaZord\\Model\\Estoque', {'produtoDerivacao': pedidoItem.produtoDerivacaoKit, "deposito" : 1}) %}
+							{% if estoqueKit.getLocalizacaoConcatenada() %}
+								{% set localizacao = ' ('~ estoqueKit.getLocalizacaoConcatenada() ~')' %}
+							{% endif %}
+							<td class="td-default">{{ print_produto_imagem_kit(pedidoItem) }}</td>
+							<td class="td-default">{{ pedidoItem.produtoDerivacaoKit.codigo  ~ localizacao }}</td>
+							<td class="td-default">{{ pedidoItem.produtoDerivacaoKit.produto.nome }}
+								-
+								{{
+                pedidoItem.produtoDerivacaoKit.nome }}</td>
+							<td class="td-default">{{ pedidoItem.pedidoItemKit.quantidade }}</td>
+
+						{% else %}
+							
+							{% if pedidoItem.getEstoqueItem().getLocalizacaoConcatenada() %}
+								{% set localizacao = ' ('~pedidoItem.getEstoqueItem().getLocalizacaoConcatenada()~')' %}
+							{% endif %}
+							<td class="td-default">{{ print_produto_imagem(pedidoItem) }}
+							</td>
+							<td class="td-default">{{ pedidoItem.produtoDerivacao.codigo ~ localizacao}}
+							</td>
+							<td class="td-default">{{ pedidoItem.descricao }}</td>
+							<td class="td-default">{{ pedidoItem.quantidade }}</td>
+						{% endif %}
+					</tr>
+				{% endfor %}
+			</table>
+		{% endfor %}
+	</body>
+
+</html>

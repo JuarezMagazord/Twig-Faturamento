@@ -1,0 +1,39 @@
+{{print_quebra_linha(true)}}
+{{print_text('Folha de Vendas ' ~ folhaVenda.id,2)}}
+{% if folhaVenda.separador %}
+    {{print_text('Separador: ' ~ folhaVenda.separador.nome,1)}}
+{% endif %}
+{{print_empty_line()}}
+{% for pedidoFolhaVenda in pedidosFolhaVenda %}
+    {{print_text('Folha de Vendas ' ~ folhaVenda.id,1)}}
+    {{print_text('')}}
+    {% if folhaVenda.separador %}
+        {{print_text('Separador: ' ~ folhaVenda.separador.nome,1)}}
+    {% endif %}
+    {{print_orientacao('center')}}
+    {{print_text('Pedido ' ~ pedidoFolhaVenda.pedidoRastreio.pedido.codigo, 1)}}
+         {{print_text('Cupom: ' ~ pedidoFolhaVenda.pedidoRastreio.pedido.getCupomDescontoConcatenado)}}                                        
+    {{print_barcode(pedidoFolhaVenda.pedidoRastreio.pedido.codigo)}}
+    {{print_orientacao('left')}}
+    {{print_empty_line()}}
+    {{print_text('Nome: '~pedidoFolhaVenda.pedidoRastreio.pedido.pedidoPessoa.nome)}}
+    {% if pedidoFolhaVenda.pedidoRastreio.pedido.valorPresente > 0 %}
+        {{print_enfase(true)}}
+        {{print_text('Presente: Sim')}}
+        {{print_enfase(false)}}
+    {% endif %}
+    {{print_line()}}
+    {% for pedidoItem in pedidoFolhaVenda.pedidoRastreio.pedidoItem %}
+        {{print_enfase(true)}}
+        {{print_text_detalhe(pad(pedidoItem.produtoDerivacao.codigo, 26, 0) ~ pad(pedidoItem.quantidade, 5, 1, 'left'),2)}}
+        {{print_enfase(false)}}
+        {{print_text(pedidoItem.produtoDerivacao.produto.nome ~ ' - ' ~ pedidoItem.produtoDerivacao.nome)}}
+        {{print_enfase(true)}}
+        {{print_text('Qtd em estoque: '~pedidoItem.getEstoqueItem.getQuantidadeFisica())}}
+        {{print_text(''~pedidoItem.getEstoqueItem.getLocalizacaoConcatenada(), 1)}}
+        {{print_enfase(false)}}
+        {{print_line()}}
+    {% endfor %}
+    {{print_cut()}}
+{% endfor %}
+{{print_finalize(false)}}

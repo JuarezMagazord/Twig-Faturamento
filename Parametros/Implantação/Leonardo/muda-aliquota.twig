@@ -1,0 +1,5 @@
+{% if self.notaFiscal.pessoa.tipo == 2 and notaFiscal.pessoa.contribuinteICMS == true %}
+  {{ self.result( 4.00 ) }}
+{% else %}
+  {{ self.result(self.aliquotaICMS.ICMSInterestadual) }}
+{% endif %}
