@@ -13,7 +13,7 @@
         {% if self.notaFiscalItem.getProdutoDerivacao().getId() in [94] %}
                 {{ self.result('0.00')}}
         {% elseif self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}
-            {{ self.result( (self.notaFiscalItem.valorProduto + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto)) }}
+            {{ self.result((self.notaFiscalItem.valorProduto + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto)) }}
         {% else %}
             {{ self.result(0.00) }}
         {% endif %}
