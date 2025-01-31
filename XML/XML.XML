@@ -1,627 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-<<<<<<< Updated upstream
-            <infNFe Id="NFe42241250207656000158550010000019541000022299" versao="4.00">
+    <infNFe Id="NFe42250137470485000197550050000181141000184099" versao="4.00">
         <ide>
             <cUF>42</cUF>
-            <cNF>00002229</cNF>
-                                                    <natOp>Devolucao de Compra p/Comercializacao</natOp>
+            <cNF>00018409</cNF>
+            <natOp>Devolucao Compra para Comercializacao</natOp>
             <mod>55</mod>
-            <serie>1</serie>
-            <nNF>1954</nNF>
-            <dhEmi>2024-12-18T13:24:00-03:00</dhEmi>
-            <dhSaiEnt>2024-12-18T13:24:00-03:00</dhSaiEnt>
+            <serie>5</serie>
+            <nNF>18114</nNF>
+            <dhEmi>2025-01-31T14:23:04-03:00</dhEmi>
+            <dhSaiEnt>2025-01-31T14:23:04-03:00</dhSaiEnt>
             <tpNF>1</tpNF>
-                                                <idDest>2</idDest>
-                                        <cMunFG>4213203</cMunFG>
-            <tpImp>1</tpImp>
-                            <tpEmis>1</tpEmis>
-                        <cDV>9</cDV>
-=======
-    <infNFe Id="NFe42250150207656000158550010000020731000023488" versao="4.00">
-        <ide>
-            <cUF>42</cUF>
-            <cNF>00002348</cNF>
-            <natOp>Devolucao de Compra p/Comercializacao</natOp>
-            <mod>55</mod>
-            <serie>1</serie>
-            <nNF>2073</nNF>
-            <dhEmi>2025-01-10T15:42:00-03:00</dhEmi>
-            <dhSaiEnt>2025-01-10T15:42:00-03:00</dhSaiEnt>
-            <tpNF>1</tpNF>
-            <idDest>2</idDest>
-            <cMunFG>4213203</cMunFG>
+            <idDest>1</idDest>
+            <cMunFG>4202404</cMunFG>
             <tpImp>1</tpImp>
             <tpEmis>1</tpEmis>
-            <cDV>8</cDV>
->>>>>>> Stashed changes
+            <cDV>9</cDV>
             <tpAmb>1</tpAmb>
             <finNFe>4</finNFe>
-            <indFinal>0</indFinal>
+            <indFinal>1</indFinal>
             <indPres>2</indPres>
-<<<<<<< Updated upstream
-                                                                <indIntermed>0</indIntermed>
-                        <procEmi>0</procEmi>
-                            <verProc>Magazord 1.0</verProc>
-                                                                                                                                    <NFref>
-                            <refNFe>35240948059223000150550010000007641000130510</refNFe>
-                        </NFref>
-                                                        </ide>
-=======
             <indIntermed>0</indIntermed>
             <procEmi>0</procEmi>
             <verProc>Magazord 1.0</verProc>
             <NFref>
-                <refNFe>35240948059223000150550010000007641000130510</refNFe>
-            </NFref>
-            <NFref>
-                <refNFe>35240948059223000150550010000007641000130510</refNFe>
+                <refNFe>42250110567835000181550010000484321160825452</refNFe>
             </NFref>
         </ide>
->>>>>>> Stashed changes
         <emit>
-            <CNPJ>50207656000158</CNPJ>
-            <xNome>BH Store Ltda</xNome>
-            <xFant>Adora Home</xFant>
+            <CNPJ>37470485000197</CNPJ>
+            <xNome>Casatop Com Atacadista Ltda</xNome>
+            <xFant>Casa Top</xFant>
             <enderEmit>
-                <xLgr>Rua Wilhelm Perch</xLgr>
-                <nro>285</nro>
-<<<<<<< Updated upstream
-                                    <xCpl>Sala 01</xCpl>
-                                <xBairro>Centro</xBairro>
-=======
-                <xCpl>Sala 01</xCpl>
-                <xBairro>Centro</xBairro>
->>>>>>> Stashed changes
-                <cMun>4213203</cMun>
-                <xMun>Pomerode</xMun>
+                <xLgr>Rua Dr. Pedro Zimmermann</xLgr>
+                <nro>13310</nro>
+                <xBairro>Vila Itoupava</xBairro>
+                <cMun>4202404</cMun>
+                <xMun>Blumenau</xMun>
                 <UF>SC</UF>
-                <CEP>89107000</CEP>
+                <CEP>89069005</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>4733809019</fone>
+                <fone>47991465817</fone>
             </enderEmit>
-            <IE>262240890</IE>
-<<<<<<< Updated upstream
-                        <IM>ISENTO</IM>
-                            <CNAE>4713002</CNAE>
-                        <CRT>1</CRT>
-        </emit>
-        <dest>
-                            <CNPJ>48059223000150</CNPJ>
-                                        <xNome>V P A COMERCIAL IMPORTADORA LTDA</xNome>
-                        <enderDest>
-                <xLgr>RUA PADRE EUCLIDES</xLgr>
-                <nro>0241</nro>
-                                <xBairro>CAMPOS ELISEOS</xBairro>
-                                    <cMun>3543402</cMun>
-                    <xMun>Ribeirão Preto</xMun>
-                    <UF>SP</UF>
-                    <CEP>14080200</CEP>
-                    <cPais>1058</cPais>
-                    <xPais>Brasil</xPais>
-                                                    <fone>1636109248</fone>
-                            </enderDest>
-                            <indIEDest>1</indIEDest>
-                <IE>797963603114</IE>
-                                            </dest>
-                                                                                    
-                    
-            <det nItem="1">
-                <prod>
-                                            <cProd>FS1151-01</cProd>
-                                                                                <cEAN>7899511431457</cEAN>
-                    <xProd>Haste Com 3 Girassois Permanentes 53cm</xProd>
-                                        <NCM>67029000</NCM>
-                                                            <CFOP>6202</CFOP>
-                    <uCom>UN</uCom>
-                    <qCom>1.0000</qCom>
-                    <vUnCom>38.066667</vUnCom>
-                    <vProd>38.07</vProd>
-                    <cEANTrib>7899511431457</cEANTrib>
-                    <uTrib>UN</uTrib>
-                    <qTrib>1.0000</qTrib>
-                    <vUnTrib>38.066667</vUnTrib>
-                                                                                <indTot>1</indTot>
-                                                                            </prod>
-                <imposto>
-                                        <ICMS>
-                                                                                                                                                            <ICMSSN900>
-                                    <orig>2</orig>
-                                    <CSOSN>900</CSOSN>
-                                    <modBC>3</modBC>
-                                    <vBC>38.07</vBC>
-                                    <pICMS>4.0000</pICMS>
-                                    <vICMS>1.52</vICMS>
-                                    <pCredSN>0</pCredSN>
-                                    <vCredICMSSN>0.00</vCredICMSSN>
-                                </ICMSSN900>
-                                                                        </ICMS>
-                                                                                        <IPI>
-                            <cEnq>999</cEnq>
-                            <IPITrib>
-                                <CST>99</CST>
-                                <vBC>0.00</vBC>
-                                <pIPI>9.7500</pIPI>
-                                <vIPI>0.00</vIPI>
-                            </IPITrib>
-                        </IPI>
-                                        <PIS>
-                                                    <PISOutr>
-                                <CST>99</CST>
-                                <vBC>0.00</vBC>
-                                <pPIS>0.6500</pPIS>
-                                <vPIS>0.00</vPIS>
-                            </PISOutr>
-                                            </PIS>
-                    <COFINS>
-                                                    <COFINSOutr>
-                                <CST>99</CST>
-                                <vBC>0.00</vBC>
-                                <pCOFINS>3.0000</pCOFINS>
-                                <vCOFINS>0.00</vCOFINS>
-                            </COFINSOutr>
-                                            </COFINS>
-                                                        </imposto>
-                                                    <impostoDevol>
-                        <pDevol>0.00</pDevol>
-                        <IPI>
-                            <vIPIDevol>3.71</vIPIDevol>
-                        </IPI>
-                    </impostoDevol>
-                                            </det>
-                    
-            <det nItem="2">
-                <prod>
-                                            <cProd>FS0858 01</cProd>
-                                                                                <cEAN>7899511425203</cEAN>
-                    <xProd>VASO CIMENTO TIPO RENDADO PRETO 11 3X11 3X10 CM CM 24 CB 04</xProd>
-                                        <NCM>68109900</NCM>
-                                                            <CFOP>6202</CFOP>
-                    <uCom>UN</uCom>
-                    <qCom>6.0000</qCom>
-                    <vUnCom>27.215000</vUnCom>
-                    <vProd>163.29</vProd>
-                    <cEANTrib>7899511425203</cEANTrib>
-                    <uTrib>UN</uTrib>
-                    <qTrib>6.0000</qTrib>
-                    <vUnTrib>27.215000</vUnTrib>
-                                                                                <indTot>1</indTot>
-                                                                            </prod>
-                <imposto>
-                                        <ICMS>
-                                                                                                                                                            <ICMSSN900>
-                                    <orig>2</orig>
-                                    <CSOSN>900</CSOSN>
-                                    <modBC>3</modBC>
-                                    <vBC>0</vBC>
-                                    <pICMS>4.0000</pICMS>
-                                    <vICMS>0.00</vICMS>
-                                    <pCredSN>0</pCredSN>
-                                    <vCredICMSSN>0.00</vCredICMSSN>
-                                </ICMSSN900>
-                                                                        </ICMS>
-                                                                                        <IPI>
-                            <cEnq>999</cEnq>
-                            <IPITrib>
-                                <CST>99</CST>
-                                <vBC>0.00</vBC>
-                                <pIPI>0</pIPI>
-                                <vIPI>0.00</vIPI>
-                            </IPITrib>
-                        </IPI>
-                                        <PIS>
-                                                    <PISOutr>
-                                <CST>99</CST>
-                                <vBC>0</vBC>
-                                <pPIS>0.6500</pPIS>
-                                <vPIS>0.00</vPIS>
-                            </PISOutr>
-                                            </PIS>
-                    <COFINS>
-                                                    <COFINSOutr>
-                                <CST>99</CST>
-                                <vBC>0</vBC>
-                                <pCOFINS>3.0000</pCOFINS>
-                                <vCOFINS>0.00</vCOFINS>
-                            </COFINSOutr>
-                                            </COFINS>
-                                                        </imposto>
-                                                    <impostoDevol>
-                        <pDevol>0.00</pDevol>
-                        <IPI>
-                            <vIPIDevol>0.00</vIPIDevol>
-                        </IPI>
-                    </impostoDevol>
-                                            </det>
-                    
-            <det nItem="3">
-                <prod>
-                                            <cProd>GBC0660-01</cProd>
-                                                                                <cEAN>7899511426750</cEAN>
-                    <xProd>Vaso Cachorro Gres Grande</xProd>
-                                        <NCM>69139000</NCM>
-                                                            <CFOP>6202</CFOP>
-                    <uCom>UN</uCom>
-                    <qCom>1.0000</qCom>
-                    <vUnCom>18.367500</vUnCom>
-                    <vProd>18.37</vProd>
-                    <cEANTrib>7899511426750</cEANTrib>
-                    <uTrib>UN</uTrib>
-                    <qTrib>1.0000</qTrib>
-                    <vUnTrib>18.367500</vUnTrib>
-                                                                                <indTot>1</indTot>
-                                                                            </prod>
-                <imposto>
-                                        <ICMS>
-                                                                                                                                                            <ICMSSN900>
-                                    <orig>2</orig>
-                                    <CSOSN>900</CSOSN>
-                                    <modBC>3</modBC>
-                                    <vBC>18.37</vBC>
-                                    <pICMS>4.0000</pICMS>
-                                    <vICMS>0.73</vICMS>
-                                    <pCredSN>0</pCredSN>
-                                    <vCredICMSSN>0.00</vCredICMSSN>
-                                </ICMSSN900>
-                                                                        </ICMS>
-                                                                                        <IPI>
-                            <cEnq>999</cEnq>
-                            <IPITrib>
-                                <CST>99</CST>
-                                <vBC>0.00</vBC>
-                                <pIPI>13.0000</pIPI>
-                                <vIPI>0.00</vIPI>
-                            </IPITrib>
-                        </IPI>
-                                        <PIS>
-                                                    <PISOutr>
-                                <CST>99</CST>
-                                <vBC>0.00</vBC>
-                                <pPIS>0.6500</pPIS>
-                                <vPIS>0.00</vPIS>
-                            </PISOutr>
-                                            </PIS>
-                    <COFINS>
-                                                    <COFINSOutr>
-                                <CST>99</CST>
-                                <vBC>0.00</vBC>
-                                <pCOFINS>3.0000</pCOFINS>
-                                <vCOFINS>0.00</vCOFINS>
-                            </COFINSOutr>
-                                            </COFINS>
-                                                        </imposto>
-                                                    <impostoDevol>
-                        <pDevol>0.00</pDevol>
-                        <IPI>
-                            <vIPIDevol>2.39</vIPIDevol>
-                        </IPI>
-                    </impostoDevol>
-                                            </det>
-                    
-            <det nItem="4">
-                <prod>
-                                            <cProd>GBC0658-01</cProd>
-                                                                                <cEAN>7899511426736</cEAN>
-                    <xProd>Vaso Gato Gres Grande</xProd>
-                                        <NCM>69139000</NCM>
-                                                            <CFOP>6202</CFOP>
-                    <uCom>UN</uCom>
-                    <qCom>1.0000</qCom>
-                    <vUnCom>18.367500</vUnCom>
-                    <vProd>18.37</vProd>
-                    <cEANTrib>7899511426736</cEANTrib>
-                    <uTrib>UN</uTrib>
-                    <qTrib>1.0000</qTrib>
-                    <vUnTrib>18.367500</vUnTrib>
-                                                                                <indTot>1</indTot>
-                                                                            </prod>
-                <imposto>
-                                        <ICMS>
-                                                                                                                                                            <ICMSSN900>
-                                    <orig>2</orig>
-                                    <CSOSN>900</CSOSN>
-                                    <modBC>3</modBC>
-                                    <vBC>18.37</vBC>
-                                    <pICMS>4.0000</pICMS>
-                                    <vICMS>0.73</vICMS>
-                                    <pCredSN>0</pCredSN>
-                                    <vCredICMSSN>0.00</vCredICMSSN>
-                                </ICMSSN900>
-                                                                        </ICMS>
-                                                                                        <IPI>
-                            <cEnq>999</cEnq>
-                            <IPITrib>
-                                <CST>99</CST>
-                                <vBC>0.00</vBC>
-                                <pIPI>13.0000</pIPI>
-                                <vIPI>0.00</vIPI>
-                            </IPITrib>
-                        </IPI>
-                                        <PIS>
-                                                    <PISOutr>
-                                <CST>99</CST>
-                                <vBC>0.00</vBC>
-                                <pPIS>0.6500</pPIS>
-                                <vPIS>0.00</vPIS>
-                            </PISOutr>
-                                            </PIS>
-                    <COFINS>
-                                                    <COFINSOutr>
-                                <CST>99</CST>
-                                <vBC>0.00</vBC>
-                                <pCOFINS>3.0000</pCOFINS>
-                                <vCOFINS>0.00</vCOFINS>
-                            </COFINSOutr>
-                                            </COFINS>
-                                                        </imposto>
-                                                    <impostoDevol>
-                        <pDevol>0.00</pDevol>
-                        <IPI>
-                            <vIPIDevol>2.39</vIPIDevol>
-                        </IPI>
-                    </impostoDevol>
-                                            </det>
-                    
-            <det nItem="5">
-                <prod>
-                                            <cProd>FS0862-01</cProd>
-                                                                                <cEAN>7899511425241</cEAN>
-                    <xProd>Vaso Cimento Luena Preto</xProd>
-                                        <NCM>68109900</NCM>
-                                                            <CFOP>6202</CFOP>
-                    <uCom>UN</uCom>
-                    <qCom>3.0000</qCom>
-                    <vUnCom>35.087500</vUnCom>
-                    <vProd>105.26</vProd>
-                    <cEANTrib>7899511425241</cEANTrib>
-                    <uTrib>UN</uTrib>
-                    <qTrib>3.0000</qTrib>
-                    <vUnTrib>35.087500</vUnTrib>
-                                                                                <indTot>1</indTot>
-                                                                            </prod>
-                <imposto>
-                                        <ICMS>
-                                                                                                                                                            <ICMSSN900>
-                                    <orig>2</orig>
-                                    <CSOSN>900</CSOSN>
-                                    <modBC>3</modBC>
-                                    <vBC>105.26</vBC>
-                                    <pICMS>4.0000</pICMS>
-                                    <vICMS>4.21</vICMS>
-                                    <pCredSN>0</pCredSN>
-                                    <vCredICMSSN>0.00</vCredICMSSN>
-                                </ICMSSN900>
-                                                                        </ICMS>
-                                                                                        <IPI>
-                            <cEnq>999</cEnq>
-                            <IPITrib>
-                                <CST>99</CST>
-                                <vBC>0.00</vBC>
-                                <pIPI>0</pIPI>
-                                <vIPI>0.00</vIPI>
-                            </IPITrib>
-                        </IPI>
-                                        <PIS>
-                                                    <PISOutr>
-                                <CST>99</CST>
-                                <vBC>0.00</vBC>
-                                <pPIS>0.6500</pPIS>
-                                <vPIS>0.00</vPIS>
-                            </PISOutr>
-                                            </PIS>
-                    <COFINS>
-                                                    <COFINSOutr>
-                                <CST>99</CST>
-                                <vBC>0.00</vBC>
-                                <pCOFINS>3.0000</pCOFINS>
-                                <vCOFINS>0.00</vCOFINS>
-                            </COFINSOutr>
-                                            </COFINS>
-                                                        </imposto>
-                                                    <impostoDevol>
-                        <pDevol>0.00</pDevol>
-                        <IPI>
-                            <vIPIDevol>0.00</vIPIDevol>
-                        </IPI>
-                    </impostoDevol>
-                                            </det>
-                    
-            <det nItem="6">
-                <prod>
-                                            <cProd>GBC0659-01</cProd>
-                                                                                <cEAN>7899511426743</cEAN>
-                    <xProd>Vaso Gato Gres Pequeno</xProd>
-                                        <NCM>69139000</NCM>
-                                                            <CFOP>6202</CFOP>
-                    <uCom>UN</uCom>
-                    <qCom>1.0000</qCom>
-                    <vUnCom>13.103333</vUnCom>
-                    <vProd>13.10</vProd>
-                    <cEANTrib>7899511426743</cEANTrib>
-                    <uTrib>UN</uTrib>
-                    <qTrib>1.0000</qTrib>
-                    <vUnTrib>13.103333</vUnTrib>
-                                                                                <indTot>1</indTot>
-                                                                            </prod>
-                <imposto>
-                                        <ICMS>
-                                                                                                                                                            <ICMSSN900>
-                                    <orig>2</orig>
-                                    <CSOSN>900</CSOSN>
-                                    <modBC>3</modBC>
-                                    <vBC>13.10</vBC>
-                                    <pICMS>4.0000</pICMS>
-                                    <vICMS>0.52</vICMS>
-                                    <pCredSN>0</pCredSN>
-                                    <vCredICMSSN>0.00</vCredICMSSN>
-                                </ICMSSN900>
-                                                                        </ICMS>
-                                                                                        <IPI>
-                            <cEnq>999</cEnq>
-                            <IPITrib>
-                                <CST>99</CST>
-                                <vBC>0.00</vBC>
-                                <pIPI>13.0000</pIPI>
-                                <vIPI>0.00</vIPI>
-                            </IPITrib>
-                        </IPI>
-                                        <PIS>
-                                                    <PISOutr>
-                                <CST>99</CST>
-                                <vBC>0.00</vBC>
-                                <pPIS>0.6500</pPIS>
-                                <vPIS>0.00</vPIS>
-                            </PISOutr>
-                                            </PIS>
-                    <COFINS>
-                                                    <COFINSOutr>
-                                <CST>99</CST>
-                                <vBC>0.00</vBC>
-                                <pCOFINS>3.0000</pCOFINS>
-                                <vCOFINS>0.00</vCOFINS>
-                            </COFINSOutr>
-                                            </COFINS>
-                                                        </imposto>
-                                                    <impostoDevol>
-                        <pDevol>0.00</pDevol>
-                        <IPI>
-                            <vIPIDevol>1.70</vIPIDevol>
-                        </IPI>
-                    </impostoDevol>
-                                            </det>
-                <total>
-=======
+            <IE>260552771</IE>
             <IM>ISENTO</IM>
-            <CNAE>4713002</CNAE>
-            <CRT>1</CRT>
+            <CNAE>4679699</CNAE>
+            <CRT>3</CRT>
         </emit>
         <dest>
-            <CNPJ>48059223000150</CNPJ>
-            <xNome>V P A COMERCIAL IMPORTADORA LTDA</xNome>
+            <CNPJ>10567835000181</CNPJ>
+            <xNome>Santo Antonio di Padova Industria e comercio ltda</xNome>
             <enderDest>
-                <xLgr>RUA PADRE EUCLIDES</xLgr>
-                <nro>0241</nro>
-                <xBairro>CAMPOS ELISEOS</xBairro>
-                <cMun>3543402</cMun>
-                <xMun>Ribeirão Preto</xMun>
-                <UF>SP</UF>
-                <CEP>14080200</CEP>
+                <xLgr>Rua Ari Barroso</xLgr>
+                <nro>280</nro>
+                <xBairro>Salto do Norte</xBairro>
+                <cMun>4202404</cMun>
+                <xMun>Blumenau</xMun>
+                <UF>SC</UF>
+                <CEP>89065130</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>1636109248</fone>
             </enderDest>
-            <indIEDest>1</indIEDest>
-            <IE>797963603114</IE>
+            <indIEDest>9</indIEDest>
         </dest>
 
 
         <det nItem="1">
             <prod>
-                <cProd>FS1151-01</cProd>
-                <cEAN>7899511431457</cEAN>
-                <xProd>Haste Com 3 Girassois Permanentes 53cm</xProd>
-                <NCM>67029000</NCM>
-                <CFOP>6202</CFOP>
+                <cProd>1001031-</cProd>
+                <cEAN>7898711780105</cEAN>
+                <xProd>Torneira de Metal P/ Jardim 1/2 X 3/4 Esfera</xProd>
+                <NCM>84818019</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
                 <uCom>UN</uCom>
-                <qCom>1.0000</qCom>
-                <vUnCom>38.066667</vUnCom>
-                <vProd>38.07</vProd>
-                <cEANTrib>7899511431457</cEANTrib>
+                <qCom>43.0000</qCom>
+                <vUnCom>15.150000</vUnCom>
+                <vProd>651.45</vProd>
+                <cEANTrib>7898711780105</cEANTrib>
                 <uTrib>UN</uTrib>
-                <qTrib>1.0000</qTrib>
-                <vUnTrib>38.066667</vUnTrib>
+                <qTrib>43.0000</qTrib>
+                <vUnTrib>15.150000</vUnTrib>
                 <indTot>1</indTot>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMSSN900>
-                        <orig>2</orig>
-                        <CSOSN>900</CSOSN>
+                    <ICMS00>
+                        <orig>0</orig>
+                        <CST>00</CST>
                         <modBC>3</modBC>
-                        <vBC>38.07</vBC>
-                        <pICMS>4.0000</pICMS>
-                        <vICMS>1.52</vICMS>
-                        <pCredSN>0</pCredSN>
-                        <vCredICMSSN>0.00</vCredICMSSN>
-                    </ICMSSN900>
+                        <vBC>651.45</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
                     <IPITrib>
                         <CST>99</CST>
                         <vBC>0.00</vBC>
-                        <pIPI>9.7500</pIPI>
+                        <pIPI>0.00</pIPI>
                         <vIPI>0.00</vIPI>
                     </IPITrib>
                 </IPI>
                 <PIS>
-                    <PISNT>
-                        <CST>07</CST>
-                    </PISNT>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>651.45</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
                 </PIS>
                 <COFINS>
-                    <COFINSNT>
-                        <CST>07</CST>
-                    </COFINSNT>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>651.45</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
                 </COFINS>
             </imposto>
             <impostoDevol>
                 <pDevol>0.00</pDevol>
                 <IPI>
-                    <vIPIDevol>3.71</vIPIDevol>
+                    <vIPIDevol>0.00</vIPIDevol>
                 </IPI>
             </impostoDevol>
         </det>
 
         <det nItem="2">
             <prod>
-                <cProd>FS0858 01</cProd>
-                <cEAN>7899511425203</cEAN>
-                <xProd>VASO CIMENTO TIPO RENDADO PRETO 11 3X11 3X10 CM CM 24 CB 04</xProd>
-                <NCM>68109900</NCM>
-                <CFOP>6202</CFOP>
+                <cProd>1001032-</cProd>
+                <cEAN>7898711781287</cEAN>
+                <xProd>Torneira de Metal p/Jardim c/Chave Uso Restrito 1/2&quot; e 3/4&quot;</xProd>
+                <NCM>84818019</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
                 <uCom>UN</uCom>
-                <qCom>6.0000</qCom>
-                <vUnCom>27.215000</vUnCom>
-                <vProd>163.29</vProd>
-                <cEANTrib>7899511425203</cEANTrib>
+                <qCom>326.0000</qCom>
+                <vUnCom>19.710000</vUnCom>
+                <vProd>6425.46</vProd>
+                <cEANTrib>7898711781287</cEANTrib>
                 <uTrib>UN</uTrib>
-                <qTrib>6.0000</qTrib>
-                <vUnTrib>27.215000</vUnTrib>
+                <qTrib>326.0000</qTrib>
+                <vUnTrib>19.710000</vUnTrib>
                 <indTot>1</indTot>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMSSN900>
-                        <orig>2</orig>
-                        <CSOSN>900</CSOSN>
+                    <ICMS00>
+                        <orig>0</orig>
+                        <CST>00</CST>
                         <modBC>3</modBC>
-                        <vBC>163.29</vBC>
-                        <pICMS>4.0000</pICMS>
-                        <vICMS>6.53</vICMS>
-                        <pCredSN>0</pCredSN>
-                        <vCredICMSSN>0.00</vCredICMSSN>
-                    </ICMSSN900>
+                        <vBC>6425.46</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
                     <IPITrib>
                         <CST>99</CST>
                         <vBC>0.00</vBC>
-                        <pIPI>0</pIPI>
+                        <pIPI>0.00</pIPI>
                         <vIPI>0.00</vIPI>
                     </IPITrib>
                 </IPI>
                 <PIS>
-                    <PISNT>
-                        <CST>07</CST>
-                    </PISNT>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>6425.46</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
                 </PIS>
                 <COFINS>
-                    <COFINSNT>
-                        <CST>07</CST>
-                    </COFINSNT>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>6425.46</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
                 </COFINS>
             </imposto>
             <impostoDevol>
@@ -634,168 +194,183 @@
 
         <det nItem="3">
             <prod>
-                <cProd>GBC0660-01</cProd>
-                <cEAN>7899511426750</cEAN>
-                <xProd>Vaso Cachorro Gres Grande</xProd>
-                <NCM>69139000</NCM>
-                <CFOP>6202</CFOP>
+                <cProd>1013071-</cProd>
+                <cEAN>7898954237121</cEAN>
+                <xProd>Tampinha Plastica p/Valvula de Lavatorio</xProd>
+                <NCM>84818011</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
                 <uCom>UN</uCom>
-                <qCom>1.0000</qCom>
-                <vUnCom>18.367500</vUnCom>
-                <vProd>18.37</vProd>
-                <cEANTrib>7899511426750</cEANTrib>
+                <qCom>16.0000</qCom>
+                <vUnCom>2.340000</vUnCom>
+                <vProd>37.44</vProd>
+                <cEANTrib>7898954237121</cEANTrib>
                 <uTrib>UN</uTrib>
-                <qTrib>1.0000</qTrib>
-                <vUnTrib>18.367500</vUnTrib>
+                <qTrib>16.0000</qTrib>
+                <vUnTrib>2.340000</vUnTrib>
                 <indTot>1</indTot>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMSSN900>
+                    <ICMS00>
                         <orig>2</orig>
-                        <CSOSN>900</CSOSN>
+                        <CST>00</CST>
                         <modBC>3</modBC>
-                        <vBC>18.37</vBC>
-                        <pICMS>4.0000</pICMS>
-                        <vICMS>0.73</vICMS>
-                        <pCredSN>0</pCredSN>
-                        <vCredICMSSN>0.00</vCredICMSSN>
-                    </ICMSSN900>
+                        <vBC>37.44</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
                     <IPITrib>
                         <CST>99</CST>
                         <vBC>0.00</vBC>
-                        <pIPI>13.0000</pIPI>
+                        <pIPI>0.00</pIPI>
                         <vIPI>0.00</vIPI>
                     </IPITrib>
                 </IPI>
                 <PIS>
-                    <PISNT>
-                        <CST>07</CST>
-                    </PISNT>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>37.44</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
                 </PIS>
                 <COFINS>
-                    <COFINSNT>
-                        <CST>07</CST>
-                    </COFINSNT>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>37.44</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
                 </COFINS>
             </imposto>
             <impostoDevol>
                 <pDevol>0.00</pDevol>
                 <IPI>
-                    <vIPIDevol>2.39</vIPIDevol>
+                    <vIPIDevol>0.00</vIPIDevol>
                 </IPI>
             </impostoDevol>
         </det>
 
         <det nItem="4">
             <prod>
-                <cProd>GBC0658-01</cProd>
-                <cEAN>7899511426736</cEAN>
-                <xProd>Vaso Gato Gres Grande</xProd>
-                <NCM>69139000</NCM>
-                <CFOP>6202</CFOP>
+                <cProd>1002086-</cProd>
+                <cEAN>7898954237626</cEAN>
+                <xProd>Kit Completo p/Caixa Acoplada Entrada Ajustavel e Saida c/Adaptador e Acionador Superior</xProd>
+                <NCM>84818019</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
                 <uCom>UN</uCom>
-                <qCom>1.0000</qCom>
-                <vUnCom>18.367500</vUnCom>
-                <vProd>18.37</vProd>
-                <cEANTrib>7899511426736</cEANTrib>
+                <qCom>65.0000</qCom>
+                <vUnCom>69.440000</vUnCom>
+                <vProd>4513.60</vProd>
+                <cEANTrib>7898954237626</cEANTrib>
                 <uTrib>UN</uTrib>
-                <qTrib>1.0000</qTrib>
-                <vUnTrib>18.367500</vUnTrib>
+                <qTrib>65.0000</qTrib>
+                <vUnTrib>69.440000</vUnTrib>
                 <indTot>1</indTot>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMSSN900>
+                    <ICMS00>
                         <orig>2</orig>
-                        <CSOSN>900</CSOSN>
+                        <CST>00</CST>
                         <modBC>3</modBC>
-                        <vBC>18.37</vBC>
-                        <pICMS>4.0000</pICMS>
-                        <vICMS>0.73</vICMS>
-                        <pCredSN>0</pCredSN>
-                        <vCredICMSSN>0.00</vCredICMSSN>
-                    </ICMSSN900>
+                        <vBC>4513.60</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
                     <IPITrib>
                         <CST>99</CST>
                         <vBC>0.00</vBC>
-                        <pIPI>13.0000</pIPI>
+                        <pIPI>0.00</pIPI>
                         <vIPI>0.00</vIPI>
                     </IPITrib>
                 </IPI>
                 <PIS>
-                    <PISNT>
-                        <CST>07</CST>
-                    </PISNT>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>4513.60</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
                 </PIS>
                 <COFINS>
-                    <COFINSNT>
-                        <CST>07</CST>
-                    </COFINSNT>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>4513.60</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
                 </COFINS>
             </imposto>
             <impostoDevol>
                 <pDevol>0.00</pDevol>
                 <IPI>
-                    <vIPIDevol>2.39</vIPIDevol>
+                    <vIPIDevol>0.00</vIPIDevol>
                 </IPI>
             </impostoDevol>
         </det>
 
         <det nItem="5">
             <prod>
-                <cProd>FS0862-01</cProd>
-                <cEAN>7899511425241</cEAN>
-                <xProd>Vaso Cimento Luena Preto</xProd>
-                <NCM>68109900</NCM>
-                <CFOP>6202</CFOP>
+                <cProd>1013044-</cProd>
+                <cEAN>7898954237015</cEAN>
+                <xProd>Valvula Inox Polido p/Lavatorio 2.1/2&quot; Tipo Universal c/Tampa Plastica</xProd>
+                <NCM>84818011</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
                 <uCom>UN</uCom>
-                <qCom>3.0000</qCom>
-                <vUnCom>35.087500</vUnCom>
-                <vProd>105.26</vProd>
-                <cEANTrib>7899511425241</cEANTrib>
+                <qCom>455.0000</qCom>
+                <vUnCom>6.380000</vUnCom>
+                <vProd>2902.90</vProd>
+                <cEANTrib>7898954237015</cEANTrib>
                 <uTrib>UN</uTrib>
-                <qTrib>3.0000</qTrib>
-                <vUnTrib>35.087500</vUnTrib>
+                <qTrib>455.0000</qTrib>
+                <vUnTrib>6.380000</vUnTrib>
                 <indTot>1</indTot>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMSSN900>
+                    <ICMS00>
                         <orig>2</orig>
-                        <CSOSN>900</CSOSN>
+                        <CST>00</CST>
                         <modBC>3</modBC>
-                        <vBC>105.26</vBC>
-                        <pICMS>4.0000</pICMS>
-                        <vICMS>4.21</vICMS>
-                        <pCredSN>0</pCredSN>
-                        <vCredICMSSN>0.00</vCredICMSSN>
-                    </ICMSSN900>
+                        <vBC>2902.90</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
                     <IPITrib>
                         <CST>99</CST>
                         <vBC>0.00</vBC>
-                        <pIPI>0</pIPI>
+                        <pIPI>0.00</pIPI>
                         <vIPI>0.00</vIPI>
                     </IPITrib>
                 </IPI>
                 <PIS>
-                    <PISNT>
-                        <CST>07</CST>
-                    </PISNT>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>2902.90</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
                 </PIS>
                 <COFINS>
-                    <COFINSNT>
-                        <CST>07</CST>
-                    </COFINSNT>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>2902.90</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
                 </COFINS>
             </imposto>
             <impostoDevol>
@@ -808,139 +383,3312 @@
 
         <det nItem="6">
             <prod>
-                <cProd>GBC0659-01</cProd>
-                <cEAN>7899511426743</cEAN>
-                <xProd>Vaso Gato Gres Pequeno</xProd>
-                <NCM>69139000</NCM>
-                <CFOP>6202</CFOP>
+                <cProd>1013039-</cProd>
+                <cEAN>7898954237022</cEAN>
+                <xProd>Valvula Inox Extra-Brilho p/Lavatorio 2.1/2&quot; c/Tampa Metal</xProd>
+                <NCM>84818011</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
                 <uCom>UN</uCom>
-                <qCom>1.0000</qCom>
-                <vUnCom>13.103333</vUnCom>
-                <vProd>13.10</vProd>
-                <cEANTrib>7899511426743</cEANTrib>
+                <qCom>54.0000</qCom>
+                <vUnCom>8.460000</vUnCom>
+                <vProd>456.84</vProd>
+                <cEANTrib>7898954237022</cEANTrib>
                 <uTrib>UN</uTrib>
-                <qTrib>1.0000</qTrib>
-                <vUnTrib>13.103333</vUnTrib>
+                <qTrib>54.0000</qTrib>
+                <vUnTrib>8.460000</vUnTrib>
                 <indTot>1</indTot>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMSSN900>
+                    <ICMS00>
                         <orig>2</orig>
-                        <CSOSN>900</CSOSN>
+                        <CST>00</CST>
                         <modBC>3</modBC>
-                        <vBC>13.10</vBC>
-                        <pICMS>4.0000</pICMS>
-                        <vICMS>0.52</vICMS>
-                        <pCredSN>0</pCredSN>
-                        <vCredICMSSN>0.00</vCredICMSSN>
-                    </ICMSSN900>
+                        <vBC>456.84</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
                     <IPITrib>
                         <CST>99</CST>
                         <vBC>0.00</vBC>
-                        <pIPI>13.0000</pIPI>
+                        <pIPI>0.00</pIPI>
                         <vIPI>0.00</vIPI>
                     </IPITrib>
                 </IPI>
                 <PIS>
-                    <PISNT>
-                        <CST>07</CST>
-                    </PISNT>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>456.84</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
                 </PIS>
                 <COFINS>
-                    <COFINSNT>
-                        <CST>07</CST>
-                    </COFINSNT>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>456.84</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
                 </COFINS>
             </imposto>
             <impostoDevol>
                 <pDevol>0.00</pDevol>
                 <IPI>
-                    <vIPIDevol>1.70</vIPIDevol>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="7">
+            <prod>
+                <cProd>1013040-</cProd>
+                <cEAN>7898954237046</cEAN>
+                <xProd>Valvula Inox Extra Brilho Tipo Americana 3.1/2&quot;c/Pino Plastico Cromado</xProd>
+                <NCM>84818011</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>58.0000</qCom>
+                <vUnCom>7.000000</vUnCom>
+                <vProd>406.00</vProd>
+                <cEANTrib>7898954237046</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>58.0000</qTrib>
+                <vUnTrib>7.000000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>406.00</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>406.00</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>406.00</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="8">
+            <prod>
+                <cProd>1013045-</cProd>
+                <cEAN>7898960876680</cEAN>
+                <xProd>Valvula Inox 3.1/2&quot; Puxador de Metal c/Acabamento Escovado</xProd>
+                <NCM>84818011</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>24.0000</qCom>
+                <vUnCom>36.320000</vUnCom>
+                <vProd>871.68</vProd>
+                <cEANTrib>7898960876680</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>24.0000</qTrib>
+                <vUnTrib>36.320000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>871.68</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>871.68</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>871.68</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="9">
+            <prod>
+                <cProd>1013042-</cProd>
+                <cEAN>7898954237053</cEAN>
+                <xProd>Valvula Inox Extra Brilho Tipo Americana 3.1/2&quot; c/Pino Plastico Preto</xProd>
+                <NCM>84818011</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2399.0000</qCom>
+                <vUnCom>6.790000</vUnCom>
+                <vProd>16289.21</vProd>
+                <cEANTrib>7898954237053</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2399.0000</qTrib>
+                <vUnTrib>6.790000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>16289.21</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>16289.21</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>16289.21</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="10">
+            <prod>
+                <cProd>1013055-</cProd>
+                <cEAN>7898954237138</cEAN>
+                <xProd>Valvula Extra Brilho Tipo Americana 4.1/2&quot; Puxador Cromado c/Ladrao</xProd>
+                <NCM>84818011</NCM>
+                <CEST>1007700</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>17.0000</qCom>
+                <vUnCom>55.010000</vUnCom>
+                <vProd>935.17</vProd>
+                <cEANTrib>7898954237138</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>17.0000</qTrib>
+                <vUnTrib>55.010000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>0</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>935.17</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>935.17</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>935.17</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="11">
+            <prod>
+                <cProd>1013036-</cProd>
+                <cEAN>7898954237060</cEAN>
+                <xProd>Valvula Inox Extra-Brilho 4.1/2 c/Puxador Metal</xProd>
+                <NCM>84818011</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>8.0000</qCom>
+                <vUnCom>39.280000</vUnCom>
+                <vProd>314.24</vProd>
+                <cEANTrib>7898954237060</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>8.0000</qTrib>
+                <vUnTrib>39.280000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>314.24</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>314.24</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>314.24</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="12">
+            <prod>
+                <cProd>1013037-</cProd>
+                <cEAN>7898954237077</cEAN>
+                <xProd>Valvula Inox Extra-Brilho Tipo Americana 4.1/2&quot; c/Pino Plastico Cromado</xProd>
+                <NCM>84818011</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>17.0000</qCom>
+                <vUnCom>13.370000</vUnCom>
+                <vProd>227.29</vProd>
+                <cEANTrib>7898954237077</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>17.0000</qTrib>
+                <vUnTrib>13.370000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>227.29</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>227.29</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>227.29</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="13">
+            <prod>
+                <cProd>1013072-</cProd>
+                <cEAN>7898954237107</cEAN>
+                <xProd>Cestinha 4.1/2&quot; de Inox c/Puxador Preto</xProd>
+                <NCM>84818011</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>206.0000</qCom>
+                <vUnCom>7.100000</vUnCom>
+                <vProd>1462.60</vProd>
+                <cEANTrib>7898954237107</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>206.0000</qTrib>
+                <vUnTrib>7.100000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>1462.60</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>1462.60</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>1462.60</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="14">
+            <prod>
+                <cProd>1013075-8</cProd>
+                <cEAN>7898954237091</cEAN>
+                <xProd>Cestinha/Peneira Avulsa p/ Valvula 3.1/2&quot;. Puxador Plastico Preto</xProd>
+                <NCM>84818011</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>395.0000</qCom>
+                <vUnCom>5.260000</vUnCom>
+                <vProd>2077.70</vProd>
+                <cEANTrib>7898954237091</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>395.0000</qTrib>
+                <vUnTrib>5.260000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>0</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>2077.70</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>2077.70</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>2077.70</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="15">
+            <prod>
+                <cProd>1002058-</cProd>
+                <cEAN>7898954237329</cEAN>
+                <xProd>Mecanismo de Saida Universal Dual Flush p/Caixa Acoplada</xProd>
+                <NCM>84818019</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>126.0000</qCom>
+                <vUnCom>55.650000</vUnCom>
+                <vProd>7011.90</vProd>
+                <cEANTrib>7898954237329</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>126.0000</qTrib>
+                <vUnTrib>55.650000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>7011.90</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>7011.90</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>7011.90</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="16">
+            <prod>
+                <cProd>1002070-</cProd>
+                <cEAN>7898954237343</cEAN>
+                <xProd>Corrente de Aco Inox p/Mecanismo de Caixa Acoplada</xProd>
+                <NCM>39209990</NCM>
+                <CEST>1001300</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>223.0000</qCom>
+                <vUnCom>4.070000</vUnCom>
+                <vProd>907.61</vProd>
+                <cEANTrib>7898954237343</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>223.0000</qTrib>
+                <vUnTrib>4.070000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>907.61</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>907.61</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>907.61</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="17">
+            <prod>
+                <cProd>1002068-</cProd>
+                <cEAN>7898954237367</cEAN>
+                <xProd>Vedacao de Mecanismo em PVC p/Caixa Acoplada</xProd>
+                <NCM>39209990</NCM>
+                <CEST>1001300</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>112.0000</qCom>
+                <vUnCom>7.210000</vUnCom>
+                <vProd>807.52</vProd>
+                <cEANTrib>7898954237367</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>112.0000</qTrib>
+                <vUnTrib>7.210000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>807.52</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>807.52</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>807.52</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="18">
+            <prod>
+                <cProd>1002069-</cProd>
+                <cEAN>7898954237374</cEAN>
+                <xProd>Vedacao de Mecanismo em Silicone p/Caixa Acoplada</xProd>
+                <NCM>39209990</NCM>
+                <CEST>1001300</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>8.0000</qCom>
+                <vUnCom>12.170000</vUnCom>
+                <vProd>97.36</vProd>
+                <cEANTrib>7898954237374</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>8.0000</qTrib>
+                <vUnTrib>12.170000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>97.36</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>97.36</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>97.36</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="19">
+            <prod>
+                <cProd>1004040-</cProd>
+                <cEAN>7898954237404</cEAN>
+                <xProd>Engate Flexivel de PVC 60cm Macho-Femea 1/2&quot;</xProd>
+                <NCM>84818019</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>8.0000</qCom>
+                <vUnCom>14.590000</vUnCom>
+                <vProd>116.72</vProd>
+                <cEANTrib>7898954237404</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>8.0000</qTrib>
+                <vUnTrib>14.590000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>0</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>116.72</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>116.72</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>116.72</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="20">
+            <prod>
+                <cProd>1002100-</cProd>
+                <cEAN>7898954237442</cEAN>
+                <xProd>Conjunto de Fixacao Para Caixas Acopladas</xProd>
+                <NCM>39209990</NCM>
+                <CEST>1001300</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>54.0000</qCom>
+                <vUnCom>3.710000</vUnCom>
+                <vProd>200.34</vProd>
+                <cEANTrib>7898954237442</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>54.0000</qTrib>
+                <vUnTrib>3.710000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>200.34</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>200.34</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>200.34</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="21">
+            <prod>
+                <cProd>1002066-</cProd>
+                <cEAN>7898954237459</cEAN>
+                <xProd>Acionador Universal c/Canopla Prolongada p/Caixa Acoplada</xProd>
+                <NCM>39229000</NCM>
+                <CEST>1001300</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>275.0000</qCom>
+                <vUnCom>16.730000</vUnCom>
+                <vProd>4600.75</vProd>
+                <cEANTrib>7898954237459</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>275.0000</qTrib>
+                <vUnTrib>16.730000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>4600.75</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>4600.75</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>4600.75</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="22">
+            <prod>
+                <cProd>1002065-</cProd>
+                <cEAN>7898954237466</cEAN>
+                <xProd>Acionador Lateral p/Caixa Acoplada</xProd>
+                <NCM>39229000</NCM>
+                <CEST>1001300</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>137.0000</qCom>
+                <vUnCom>19.700000</vUnCom>
+                <vProd>2698.90</vProd>
+                <cEANTrib>7898954237466</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>137.0000</qTrib>
+                <vUnTrib>19.700000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>2698.90</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>2698.90</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>2698.90</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="23">
+            <prod>
+                <cProd>1002072-</cProd>
+                <cEAN>7898954237473</cEAN>
+                <xProd>Kit Completo Para Caixa Acoplada Entrada Ajustavel e Saida Dual Flush</xProd>
+                <NCM>84819010</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>100.0000</qCom>
+                <vUnCom>86.770000</vUnCom>
+                <vProd>8677.00</vProd>
+                <cEANTrib>7898954237473</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>100.0000</qTrib>
+                <vUnTrib>86.770000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>8677.00</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>8677.00</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>8677.00</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="24">
+            <prod>
+                <cProd>1013076-</cProd>
+                <cEAN>7898954237237</cEAN>
+                <xProd>Cestinha/Peneira de Inox Avulsa p/ Valvulas de Pia 3.1/2&quot;</xProd>
+                <NCM>84818011</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>137.0000</qCom>
+                <vUnCom>3.640000</vUnCom>
+                <vProd>498.68</vProd>
+                <cEANTrib>7898954237237</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>137.0000</qTrib>
+                <vUnTrib>3.640000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>0</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>498.68</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>498.68</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>498.68</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="25">
+            <prod>
+                <cProd>1013073-</cProd>
+                <cEAN>7898954237244</cEAN>
+                <xProd>Cestinha 4.1/2&quot; de Inox c/Puxador Cromado</xProd>
+                <NCM>84818011</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>137.0000</qCom>
+                <vUnCom>8.060000</vUnCom>
+                <vProd>1104.22</vProd>
+                <cEANTrib>7898954237244</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>137.0000</qTrib>
+                <vUnTrib>8.060000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>1104.22</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>1104.22</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>1104.22</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="26">
+            <prod>
+                <cProd>1007045-100</cProd>
+                <cEAN>7898711782741</cEAN>
+                <xProd>Ralo Protetor - 100mm</xProd>
+                <NCM>39229000</NCM>
+                <CEST>1001300</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>3801.0000</qCom>
+                <vUnCom>3.780000</vUnCom>
+                <vProd>14367.78</vProd>
+                <cEANTrib>7898711782741</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>3801.0000</qTrib>
+                <vUnTrib>3.780000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>0</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>14367.78</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>14367.78</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>14367.78</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="27">
+            <prod>
+                <cProd>1007045-150</cProd>
+                <cEAN>7898711782734</cEAN>
+                <xProd>Ralo Protetor - 150mm</xProd>
+                <NCM>39229000</NCM>
+                <CEST>1001300</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>936.0000</qCom>
+                <vUnCom>4.900000</vUnCom>
+                <vProd>4586.40</vProd>
+                <cEANTrib>7898711782734</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>936.0000</qTrib>
+                <vUnTrib>4.900000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>0</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>4586.40</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>4586.40</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>4586.40</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="28">
+            <prod>
+                <cProd>1007037-</cProd>
+                <cEAN>7898954237169</cEAN>
+                <xProd>Grelha Inox Quadrada (100mm)</xProd>
+                <NCM>39174090</NCM>
+                <CEST>0100200</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>34.0000</qCom>
+                <vUnCom>6.130000</vUnCom>
+                <vProd>208.42</vProd>
+                <cEANTrib>7898954237169</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>34.0000</qTrib>
+                <vUnTrib>6.130000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>0</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>208.42</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>208.42</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>208.42</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="29">
+            <prod>
+                <cProd>1013070-</cProd>
+                <cEAN>7898954237114</cEAN>
+                <xProd>Tampinha de Metal para Lavatorio 2.1/2&quot;</xProd>
+                <NCM>84818011</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>387.0000</qCom>
+                <vUnCom>3.890000</vUnCom>
+                <vProd>1505.43</vProd>
+                <cEANTrib>7898954237114</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>387.0000</qTrib>
+                <vUnTrib>3.890000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>1505.43</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>1505.43</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>1505.43</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="30">
+            <prod>
+                <cProd>1007042-</cProd>
+                <cEAN>7898954237206</cEAN>
+                <xProd>Grelha Inox Quadrada (150mm)</xProd>
+                <NCM>84818019</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>8.0000</qCom>
+                <vUnCom>11.660000</vUnCom>
+                <vProd>93.28</vProd>
+                <cEANTrib>7898954237206</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>8.0000</qTrib>
+                <vUnTrib>11.660000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>0</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>93.28</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>93.28</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>93.28</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="31">
+            <prod>
+                <cProd>1007044-</cProd>
+                <cEAN>7898954237220</cEAN>
+                <xProd>Grelha Inox Redonda (150mm)</xProd>
+                <NCM>84818011</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>8.0000</qCom>
+                <vUnCom>11.660000</vUnCom>
+                <vProd>93.28</vProd>
+                <cEANTrib>7898954237220</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>8.0000</qTrib>
+                <vUnTrib>11.660000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>0</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>93.28</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>93.28</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>93.28</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="32">
+            <prod>
+                <cProd>1002049-</cProd>
+                <cEAN>7898954237299</cEAN>
+                <xProd>Mecanismo de Entrada Universal Ajustavel p/Caixa Acoplada</xProd>
+                <NCM>84818019</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>297.0000</qCom>
+                <vUnCom>24.400000</vUnCom>
+                <vProd>7246.80</vProd>
+                <cEANTrib>7898954237299</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>297.0000</qTrib>
+                <vUnTrib>24.400000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>7246.80</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>7246.80</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>7246.80</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="33">
+            <prod>
+                <cProd>1002120-</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Mecanismo de Entrada Universal Ajustavel ECO p/Caixa Acoplada</xProd>
+                <NCM>84818019</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2648.0000</qCom>
+                <vUnCom>19.460000</vUnCom>
+                <vProd>51530.08</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2648.0000</qTrib>
+                <vUnTrib>19.460000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>51530.08</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>51530.08</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>51530.08</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="34">
+            <prod>
+                <cProd>1002061-</cProd>
+                <cEAN>7898960876581</cEAN>
+                <xProd>Acionador Dual Flush c/Pino Superior p/Caixa Acoplada</xProd>
+                <NCM>73269090</NCM>
+                <CEST>1002000</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>688.0000</qCom>
+                <vUnCom>9.730000</vUnCom>
+                <vProd>6694.24</vProd>
+                <cEANTrib>7898960876581</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>688.0000</qTrib>
+                <vUnTrib>9.730000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>6694.24</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>6694.24</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>6694.24</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="35">
+            <prod>
+                <cProd>1002057-</cProd>
+                <cEAN>7898960876604</cEAN>
+                <xProd>Mecanismo de Saida Dual Flush c/Botao Superior p/Caixa Acoplada</xProd>
+                <NCM>84818019</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>112.0000</qCom>
+                <vUnCom>40.950000</vUnCom>
+                <vProd>4586.40</vProd>
+                <cEANTrib>7898960876604</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>112.0000</qTrib>
+                <vUnTrib>40.950000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>4586.40</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>4586.40</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>4586.40</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="36">
+            <prod>
+                <cProd>1002078-</cProd>
+                <cEAN>7898960876574</cEAN>
+                <xProd>Kit Completo Entrada Ajustavel e Saida Dual Flush c/Acionador Duplo</xProd>
+                <NCM>39209990</NCM>
+                <CEST>1001300</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>154.0000</qCom>
+                <vUnCom>80.220000</vUnCom>
+                <vProd>12353.88</vProd>
+                <cEANTrib>7898960876574</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>154.0000</qTrib>
+                <vUnTrib>80.220000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>12353.88</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>12353.88</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>12353.88</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="37">
+            <prod>
+                <cProd>1002085-</cProd>
+                <cEAN>7898954237510</cEAN>
+                <xProd>Kit Completo Universal p/Caixa Acoplada Entrada Ajustavel e Saida Ajustavel Acionador Superior</xProd>
+                <NCM>84818019</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>51.0000</qCom>
+                <vUnCom>59.830000</vUnCom>
+                <vProd>3051.33</vProd>
+                <cEANTrib>7898954237510</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>51.0000</qTrib>
+                <vUnTrib>59.830000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>3051.33</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>3051.33</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>3051.33</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="38">
+            <prod>
+                <cProd>1002087-</cProd>
+                <cEAN>7898954237527</cEAN>
+                <xProd>Kit Completo Entrada Ajustavel e Saida Ajustavel c/Acionador Lateral</xProd>
+                <NCM>39209990</NCM>
+                <CEST>1001300</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>156.0000</qCom>
+                <vUnCom>63.620000</vUnCom>
+                <vProd>9924.72</vProd>
+                <cEANTrib>7898954237527</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>156.0000</qTrib>
+                <vUnTrib>63.620000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>9924.72</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>9924.72</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>9924.72</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="39">
+            <prod>
+                <cProd>1007039-</cProd>
+                <cEAN>7898954237183</cEAN>
+                <xProd>Grelha Inox Redonda (100mm)</xProd>
+                <NCM>84818019</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>8.0000</qCom>
+                <vUnCom>6.130000</vUnCom>
+                <vProd>49.04</vProd>
+                <cEANTrib>7898954237183</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>8.0000</qTrib>
+                <vUnTrib>6.130000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>0</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>49.04</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>49.04</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>49.04</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="40">
+            <prod>
+                <cProd>1006047-1</cProd>
+                <cEAN>7894061002065</cEAN>
+                <xProd>Sifao Copo Universal - Branco</xProd>
+                <NCM>39174090</NCM>
+                <CEST>0100200</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>120.0000</qCom>
+                <vUnCom>4.620000</vUnCom>
+                <vProd>554.40</vProd>
+                <cEANTrib>7894061002065</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>120.0000</qTrib>
+                <vUnTrib>4.620000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>0</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>554.40</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>554.40</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>554.40</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="41">
+            <prod>
+                <cProd>1002088-</cProd>
+                <cEAN>7898711780945</cEAN>
+                <xProd>Kit Completo Entrada Ajustavel e Saida Ajustavel c/Acionador Superior</xProd>
+                <NCM>39209990</NCM>
+                <CEST>1001300</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>26.0000</qCom>
+                <vUnCom>71.720000</vUnCom>
+                <vProd>1864.72</vProd>
+                <cEANTrib>7898711780945</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>26.0000</qTrib>
+                <vUnTrib>71.720000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>1864.72</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>1864.72</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>1864.72</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="42">
+            <prod>
+                <cProd>1002050-</cProd>
+                <cEAN>7898960876741</cEAN>
+                <xProd>Mecanismo de Entrada Universal Simplificado p/Caixa Acoplada</xProd>
+                <NCM>84818019</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>894.0000</qCom>
+                <vUnCom>16.210000</vUnCom>
+                <vProd>14491.74</vProd>
+                <cEANTrib>7898960876741</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>894.0000</qTrib>
+                <vUnTrib>16.210000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>14491.74</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>14491.74</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>14491.74</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="43">
+            <prod>
+                <cProd>1002090-</cProd>
+                <cEAN>7898960876857</cEAN>
+                <xProd>Kit Completo Mecanismo de Entrada e Saida c/Adaptador e Botao Superior</xProd>
+                <NCM>84818019</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>120.0000</qCom>
+                <vUnCom>44.000000</vUnCom>
+                <vProd>5280.00</vProd>
+                <cEANTrib>7898960876857</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>120.0000</qTrib>
+                <vUnTrib>44.000000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>5280.00</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>5280.00</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>5280.00</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="44">
+            <prod>
+                <cProd>101382-</cProd>
+                <cEAN>7898954237718</cEAN>
+                <xProd>Valvula Inox Baby 1 P/ Lavatorio Tampa Plastica EMB.PADOVA</xProd>
+                <NCM>84818011</NCM>
+                <CEST>1100500</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>86.0000</qCom>
+                <vUnCom>7.390000</vUnCom>
+                <vProd>635.54</vProd>
+                <cEANTrib>7898954237718</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>86.0000</qTrib>
+                <vUnTrib>7.390000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>0</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>635.54</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>635.54</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>635.54</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="45">
+            <prod>
+                <cProd>1002107-</cProd>
+                <cEAN>7898960876475</cEAN>
+                <xProd>Tubo de Ligacao p/Bacia Sanitaria - Cromado</xProd>
+                <NCM>39174090</NCM>
+                <CEST>0100200</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>8.0000</qCom>
+                <vUnCom>26.410000</vUnCom>
+                <vProd>211.28</vProd>
+                <cEANTrib>7898960876475</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>8.0000</qTrib>
+                <vUnTrib>26.410000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>0</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>211.28</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>211.28</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>211.28</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="46">
+            <prod>
+                <cProd>1002062-</cProd>
+                <cEAN>7898954237640</cEAN>
+                <xProd>Acionador Convencional c/Adaptador c/Acionamento Superior p/Caixa Acoplada</xProd>
+                <NCM>39172900</NCM>
+                <CEST>0100200</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>1625.0000</qCom>
+                <vUnCom>7.630000</vUnCom>
+                <vProd>12398.75</vProd>
+                <cEANTrib>7898954237640</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>1625.0000</qTrib>
+                <vUnTrib>7.630000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>12398.75</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>12398.75</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>12398.75</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="47">
+            <prod>
+                <cProd>1002055-</cProd>
+                <cEAN>7898711780297</cEAN>
+                <xProd>Mecanismo de Saida Convencional c/Vedante Silicone p/Caixa Acoplada</xProd>
+                <NCM>84818019</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>8.0000</qCom>
+                <vUnCom>31.420000</vUnCom>
+                <vProd>251.36</vProd>
+                <cEANTrib>7898711780297</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>8.0000</qTrib>
+                <vUnTrib>31.420000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>251.36</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>251.36</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>251.36</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="48">
+            <prod>
+                <cProd>1013052-</cProd>
+                <cEAN>7898954237725</cEAN>
+                <xProd>Valvula Inox 4.1/2&#039;&#039; Sifao Luxo c/Alta Vazao</xProd>
+                <NCM>84818019</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>57.0000</qCom>
+                <vUnCom>161.080000</vUnCom>
+                <vProd>9181.56</vProd>
+                <cEANTrib>7898954237725</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>57.0000</qTrib>
+                <vUnTrib>161.080000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>9181.56</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>9181.56</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>9181.56</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="49">
+            <prod>
+                <cProd>1002118-</cProd>
+                <cEAN>7898711780112</cEAN>
+                <xProd>Kit Anel de Vedacao e Parafuso de Fixacao para Bacia Sanitaria</xProd>
+                <NCM>39229000</NCM>
+                <CEST>1001300</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>43.0000</qCom>
+                <vUnCom>9.320000</vUnCom>
+                <vProd>400.76</vProd>
+                <cEANTrib>7898711780112</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>43.0000</qTrib>
+                <vUnTrib>9.320000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>0</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>400.76</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>400.76</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>400.76</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="50">
+            <prod>
+                <cProd>1002111-</cProd>
+                <cEAN>7898960876512</cEAN>
+                <xProd>Kit Parafusos de Fixacao Inox c/Bucha 10 p/Bacia Sanitaria</xProd>
+                <NCM>74153300</NCM>
+                <CEST>1005700</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>86.0000</qCom>
+                <vUnCom>12.710000</vUnCom>
+                <vProd>1093.06</vProd>
+                <cEANTrib>7898960876512</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>86.0000</qTrib>
+                <vUnTrib>12.710000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>0</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>1093.06</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>1093.06</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>1093.06</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="51">
+            <prod>
+                <cProd>1002112-</cProd>
+                <cEAN>7898960876529</cEAN>
+                <xProd>Kit Parafusos de Fixacao Latonado c/Bucha 10 p/Bacia Sanitaria</xProd>
+                <NCM>39229000</NCM>
+                <CEST>1001300</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>17.0000</qCom>
+                <vUnCom>3.490000</vUnCom>
+                <vProd>59.33</vProd>
+                <cEANTrib>7898960876529</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>17.0000</qTrib>
+                <vUnTrib>3.490000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>0</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>59.33</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>59.33</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>59.33</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="52">
+            <prod>
+                <cProd>1002109-</cProd>
+                <cEAN>7898960876499</cEAN>
+                <xProd>Kit Parafusos de Fixacao Latonado c/Bucha 8 p/Tanque</xProd>
+                <NCM>84818011</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>27.0000</qCom>
+                <vUnCom>2.860000</vUnCom>
+                <vProd>77.22</vProd>
+                <cEANTrib>7898960876499</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>27.0000</qTrib>
+                <vUnTrib>2.860000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>0</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>77.22</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>77.22</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>77.22</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="53">
+            <prod>
+                <cProd>1001028-3</cProd>
+                <cEAN>7898960876963</cEAN>
+                <xProd>Torneira p/Maquina de Lavar 1/2&quot;x 3/4&quot; - Cromado</xProd>
+                <NCM>84818019</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>146.0000</qCom>
+                <vUnCom>15.340000</vUnCom>
+                <vProd>2239.64</vProd>
+                <cEANTrib>7898960876963</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>146.0000</qTrib>
+                <vUnTrib>15.340000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>2239.64</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>2239.64</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>2239.64</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="54">
+            <prod>
+                <cProd>1010091-</cProd>
+                <cEAN>7898711781553</cEAN>
+                <xProd>Ferramenta Chave Multiuso 8 em 1 p/Instalacao de Torneiras e Caixas Acopladas</xProd>
+                <NCM>82060000</NCM>
+                <CEST>1002000</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>8.0000</qCom>
+                <vUnCom>27.870000</vUnCom>
+                <vProd>222.96</vProd>
+                <cEANTrib>7898711781553</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>8.0000</qTrib>
+                <vUnTrib>27.870000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>222.96</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>222.96</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>222.96</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="55">
+            <prod>
+                <cProd>1009047-1</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Acabamento p/Valvula de Descarga Hydra Max e Docol - Branco</xProd>
+                <NCM>84819010</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>8.0000</qCom>
+                <vUnCom>20.060000</vUnCom>
+                <vProd>160.48</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>8.0000</qTrib>
+                <vUnTrib>20.060000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>0</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>160.48</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>160.48</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>160.48</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="56">
+            <prod>
+                <cProd>1009048-3</cProd>
+                <cEAN>7898711784042</cEAN>
+                <xProd>Acabamento p/Valvula de Descarga Docol Classica - Cromado</xProd>
+                <NCM>84819010</NCM>
+                <CEST>1007900</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>3022.0000</qCom>
+                <vUnCom>23.800000</vUnCom>
+                <vProd>71923.60</vProd>
+                <cEANTrib>7898711784042</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>3022.0000</qTrib>
+                <vUnTrib>23.800000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>2</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>71923.60</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>71923.60</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>71923.60</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="57">
+            <prod>
+                <cProd>1001034-</cProd>
+                <cEAN>7898960876284</cEAN>
+                <xProd>Tubo Extensivo Duplo Cromado (SIFAO)</xProd>
+                <NCM>39174090</NCM>
+                <CEST>1100100</CEST>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>8.0000</qCom>
+                <vUnCom>29.330000</vUnCom>
+                <vProd>234.64</vProd>
+                <cEANTrib>7898960876284</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>8.0000</qTrib>
+                <vUnTrib>29.330000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>0</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>234.64</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>234.64</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>234.64</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
                 </IPI>
             </impostoDevol>
         </det>
         <total>
->>>>>>> Stashed changes
             <ICMSTot>
-                
 
-<<<<<<< Updated upstream
-                                    <vBC>193.17</vBC>
-                    <vICMS>7.71</vICMS>
-                    <vICMSDeson>0</vICMSDeson>
-                
-                                <vFCP>0.00</vFCP>
-=======
 
-                <vBC>356.46</vBC>
-                <vICMS>14.24</vICMS>
+                <vBC>301864.70</vBC>
+                <vICMS>0.00</vICMS>
                 <vICMSDeson>0</vICMSDeson>
 
                 <vFCP>0.00</vFCP>
->>>>>>> Stashed changes
                 <vBCST>0</vBCST>
                 <vST>0</vST>
                 <vFCPST>0.00</vFCPST>
                 <vFCPSTRet>0.00</vFCPSTRet>
-                <vProd>356.46</vProd>
+                <vProd>301864.70</vProd>
                 <vFrete>0.00</vFrete>
                 <vSeg>0</vSeg>
                 <vDesc>0.00</vDesc>
                 <vII>0</vII>
-<<<<<<< Updated upstream
-                                                    <vIPI>0.00</vIPI>
-                    <vIPIDevol>10.19</vIPIDevol>
-                                <vPIS>0.00</vPIS>
-                <vCOFINS>0.00</vCOFINS>
-                <vOutro>0.00</vOutro>
-                                <vNF>366.65</vNF>
-                            </ICMSTot>
-        </total>
-        <transp>
-            <modFrete>9</modFrete>
-                                        <vol>
-                                            <qVol>1</qVol>
-                                                                <esp>VOLUMES</esp>
-                                                                <pesoL>4.720</pesoL>
-                                                                <pesoB>4.720</pesoB>
-                                    </vol>
-                    </transp>
-                <pag>
-                            <detPag>
-                    <tPag>90</tPag>
-                    <vPag>0.00</vPag>
-                </detPag>
-                    </pag>
-                                                            <infAdic>
-                                                                                        <infCpl>Documento emitido por ME ou EPP optante pelo Simples Nacional.  Não gera direito a crédito fiscal de IPI.  - Total aproximado de tributos: 45,33 (12,72%) Federais 24,23 (6,80%) Estaduais 21,10 (5,92%). Fonte.: IBPT/empresometro.com.br.</infCpl>
-                                            </infAdic>
-                                    <infRespTec>
-                <CNPJ>28977040000107</CNPJ>
-                <xContato>Ricardo Schroeder</xContato>
-                <email>ricardo@magazord.com.br</email>
-                <fone>4735208013</fone>
-            </infRespTec>
-            </infNFe>
-=======
                 <vIPI>0.00</vIPI>
-                <vIPIDevol>10.19</vIPIDevol>
+                <vIPIDevol>0.00</vIPIDevol>
                 <vPIS>0.00</vPIS>
                 <vCOFINS>0.00</vCOFINS>
                 <vOutro>0.00</vOutro>
-                <vNF>366.65</vNF>
+                <vNF>301864.70</vNF>
             </ICMSTot>
         </total>
         <transp>
             <modFrete>9</modFrete>
             <vol>
-                <qVol>1</qVol>
-                <esp>VOLUMES</esp>
-                <pesoL>4.720</pesoL>
-                <pesoB>4.720</pesoB>
+                <qVol>50</qVol>
+                <esp>Caixa</esp>
+                <pesoL>6830.930</pesoL>
+                <pesoB>6830.930</pesoB>
             </vol>
         </transp>
         <pag>
@@ -949,9 +3697,6 @@
                 <vPag>0.00</vPag>
             </detPag>
         </pag>
-        <infAdic>
-            <infCpl>Documento emitido por ME ou EPP optante pelo Simples Nacional.  Não gera direito a crédito fiscal de IPI.  - Total aproximado de tributos: 45,33 (12,72%) Federais 24,23 (6,80%) Estaduais 21,10 (5,92%). Fonte.: IBPT/empresometro.com.br.</infCpl>
-        </infAdic>
         <infRespTec>
             <CNPJ>28977040000107</CNPJ>
             <xContato>Ricardo Schroeder</xContato>
@@ -959,5 +3704,4 @@
             <fone>4735208013</fone>
         </infRespTec>
     </infNFe>
->>>>>>> Stashed changes
 </NFe>
