@@ -14,3 +14,66 @@
             {{ self.result(0.00) }}
         {% endif %}
     {% endif %}
+
+
+
+{# Solicitação feita pela contabildiade no ticket 379414, após mudança de regime tributário, do simples para presumido. #}
+{% set baseICMS = calculo_get_parametro_calculado('VLR_ICMS') %}
+{% set vlrDifal = calculo_get_parametro_calculado('VLR_ICMS_DESTINO') %}
+{% set vlrFcp = calculo_get_parametro_calculado('VLR_FCP_DESTINO') %}
+{% set vlrRemovido = baseICMS + vlrDifal + vlrFcp %}
+    {% set zeraBaseCalculo = false %}
+        {% if self.configuracaoParametros %}
+            {% set cfopZerada = self.configuracaoParametros.getOpcoesPIS().getCfopBaseZerada()|split(',') %}
+            {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+        {% endif %}
+        {% if zeraBaseCalculo %}
+            {{ self.result('0.00') }}
+        {% elseif self.configuracaoGlobal %}
+            {% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}
+                {{ self.result(((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) - vlrRemovido) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+            {% else %}
+                {{ self.result(0.00) }}
+            {% endif %}
+        {% endif %}
+
+
+
+        {% set mensagem = '' %}
+
+            {% if self.getPedido() and self.getPedido().getOrigem() == 2 %}
+               {% set mensagem = mensagem ~ ' - Marketplace: ' ~ self.getPedido().getPedidoMarketplace().getMarketplace().getNome() ~' - '%}
+            {% endif %}
+            
+            {% set codigoPedido = self.getPedido().getCodigo()|default(false) %}
+            {% if codigoPedido %}
+                {% set mensagem = mensagem  ~ 'Pedido: ' ~ codigoPedido ~' - '%}
+            {% endif %}
+            
+            {% if situacao_tributaria_icms == '51' %}
+                {% set mensagem = mensagem ~' ## ICMS DIFERIDO CONFORME ITEM 1.1 DO TTD BENEFICIO 409, ATO CONCESSORIO 135000000028716;NOTA FISCAL DISPONIVEL PARA CONSULTA EM WWW.NFE.FAZENDA.GOV.BR;## PRODUTOS ADQUIRIDOS EXCLUSIVAMENTE PARA USO/CONSUMO PROPRIO ##;## CBENEF:SC850065, SC830018 ##; MD5: 9eb2e2b52867efc55ad35064dac9fa74' %}
+            {% elseif situacao_tributaria_icms == '00' %}
+                {% set mensagem = mensagem ~ ' ## ICMS DIFERIDO CONFORME ITEM 1.1 DO TTD BENEFICIO 409, ATO CONCESSORIO 135000000028716;NOTA FISCAL DISPONIVEL PARA CONSULTA EM WWW.NFE.FAZENDA.GOV.BR;## PRODUTOS ADQUIRIDOS EXCLUSIVAMENTE PARA USO/CONSUMO PROPRIO ##;## CBENEF: SC830018 ##; MD5: 9eb2e2b52867efc55ad35064dac9fa74'%}
+            {% endif %}
+            
+            {% if self.inscricaoEstadualDestino %}
+                {% set mensagem = mensagem ~ self.inscricaoEstadualDestino.mensagem %}
+            {% endif %}
+            
+            
+            {% set vlrNacional = get_imposto_param_total_calculado('VLR_TOTAL_NACIONAL_IBPT') %}
+            {% set vlrEstadual = get_imposto_param_total_calculado('VLR_TOTAL_ESTADUAL_IBPT') %}
+            {% if vlrNacional > 0 or vlrEstadual > 0 %}
+                {% set BCIBPT = get_imposto_param_total_calculado('VLR_TOTAL_BASE_IBPT') %}
+                {% set mensagemibpt = ' - Total aproximado de tributos: ' ~ (vlrNacional + vlrEstadual)|number_format(2,',','.') ~ ' (' ~ regra_de_tres(BCIBPT, 100, (vlrNacional + vlrEstadual))|number_format(2,',','.') ~ '%) Federais ' ~ vlrNacional|number_format(2,',','.') ~ ' (' ~ regra_de_tres(BCIBPT, 100, vlrNacional)|number_format(2,',','.') ~ '%) Estaduais ' ~ vlrEstadual|number_format(2,',','.')  ~ ' (' ~ regra_de_tres(BCIBPT, 100, vlrEstadual)|number_format(2,',','.') ~ '%). Fonte.: IBPT/empresometro.com.br.' %}
+                {% set mensagem = mensagem ~ mensagemibpt%}
+            {% endif %}
+            
+            {{self.result(mensagem)}}
+
+
+{% if situacao_tributaria_icms == '51' %}
+    <cBenef>{{ notaFiscalItem.getInformacoesGerais().getCodigoBeneficioFiscal() + ';SC850065' }}</cBenef>
+{% elseif situacao_tributaria_icms == '00' %}
+    <cBenef>{{ 'SC830018' }}</cBenef>
+{% endif %}
