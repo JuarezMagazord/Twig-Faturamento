@@ -72,7 +72,6 @@ Incluir a localização
             <th class="th-default">Imagem</th>
             <th class="th-default">Produto</th>
             <th class="th-default">Descrição</th>
-            <th class="th-default">Marca</th>
             <th class="th-default">Depósito</th>
             <th class="th-default">Qtde</th>
         </tr>
@@ -84,7 +83,6 @@ Incluir a localização
                 <td class="td-default">{{ print_produto_imagem(pedidoItem) }}</td>
                 <td class="td-default">{{ pedidoItem.produtoDerivacao.codigo }}</td>
                 <td class="td-default">{{ pedidoItem.descricao }}</td>
-                <td class="td-default">{{ pedidoItem.produtoDerivacao.produto.marca.nome }}</td>
                 <td class="td-default">{{ pedidoItem.deposito.nome }}</td>
                 <td class="td-default">{{ pedidoItem.quantidade }}</td>
             </tr>
