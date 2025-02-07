@@ -1,28 +1,69 @@
-{#  #}
 {% if calculo_get_parametro_calculado('PARTILHA_ICMS') == 'sim' %}
-    {# Calculo por fora #}
-    {# 'AC', 'AP', 'AM', 'CE', 'DF', 'ES', 'MA', 'MT', 'RN', 'RO', 'RR' #}
-    {% if self.siglaEstado in ['AC', 'AP', 'AM', 'CE', 'DF', 'ES', 'MA', 'MT', 'RN', 'RO', 'RR'] %}
-        {% set valor_partilha_destino = calculo_get_parametro_calculado('VLR_ICMS_PARTILHA_DESTINO') %}
-        {% set base = calculo_get_parametro_calculado('VLR_BASE_ICMS') %}
-        {% set vlrIcms = calculo_get_parametro_calculado('VLR_ICMS') %}
-        {% set aliqOrig = calculo_get_parametro_calculado('ALIQ_ICMS') %}
-        {% set aliqDest = calculo_get_parametro_calculado('ALIQ_ICMS_DESTINO')%}
-        {# (base - vlrIcms) * (1 - aliqDest  * aliqDest) - vlrIcms #}
-        {% set baseAliq = base * (aliqOrig / 100) %}
-        {% set baseLiq = base - baseAliq %}
-        {% set baseTotal = baseLiq / (1- (aliqDest / 100))%}
-        {% set baseFinal = baseTotal * (aliqDest / 100) - baseAliq %}
-        {% set resultado = baseFinal %}
-        {{ self.result(resultado) }}
-        
-        {% elseif calculo_get_parametro_calculado('PARTILHA_ICMS') == 'não' %}
-            {{ self.result('0.00') }}
-    {% else %}
-        {# Caso o destinatário for diferente dos estados citados acima, ele deve usa o calculo normal do DIFAL: #}
-        {% set base_calculo = calculo_get_parametro_calculado('VLR_BASE_ICMS') %}
-        {% set aliquota_icms_destino = calculo_get_parametro_calculado('ALIQ_ICMS_DESTINO') / 100 %}
-        {% set valor_icms_origem = calculo_get_parametro_calculado('VLR_ICMS') %}
-        {% set resultado = (base_calculo * aliquota_icms_destino) - valor_icms_origem %}
+    {% set base_calculo = calculo_get_parametro_calculado('VLR_BASE_ICMS') %}
+    {% set aliquota_icms_origem = calculo_get_parametro_calculado('ALIQ_ICMS') / 100 %}
+    {% set aliquota_icms_destino = calculo_get_parametro_calculado('ALIQ_ICMS_DESTINO') / 100 %}
+    {% set resultado = base_calculo * (aliquota_icms_destino - aliquota_icms_origem) %}
+    {#  DIFAL BASE SIMPLES #}
+    {% if resultado > 0 %}
         {{ self.result(resultado)}}
+    {% else %}
+        {{ self.result(0.00)}}
+    {% endif %}
+    {# para utilizar DIFAL BASE DUPLA descomentar codigo abaixo #}
+    {% if self.siglaEstado in ['BA','GO','MG','MS','PA','PB','PR','PE','RS','SE','TO'] %}
+        {% set valor_icms_origem = calculo_get_parametro_calculado('VLR_ICMS') %}
+        {% set difal_destino = (100 - calculo_get_parametro_calculado('ALIQ_ICMS_DESTINO')) %}
+        {% set difal_origem = (100 - calculo_get_parametro_calculado('ALIQ_ICMS')) %}
+        {% set difal = (base_calculo * difal_origem) %}
+        {% set difal = (difal  / difal_destino) %}
+        {% set difal = (difal * aliquota_icms_destino) %}
+        {% set difal = (difal - valor_icms_origem ) %}
+        {% if difal > 0.00 %}
+            {{ self.result(difal) }}
+        {% else %}		
+            {{ self.result(0.00) }}
+        {% endif %}
+    {% else %}	
+        {% if resultado > 0.00 %}
+            {{ self.result(resultado) }}
+        {% else %}		
+            {{ self.result(0.00) }}
+        {% endif %}
+    {% endif %}
+{% else %}
+    {{ self.result(0.00) }}
+{% endif %}
+
+
+
+{% if calculo_get_parametro_calculado('PARTILHA_ICMS') == 'sim' %}
+{% set base_calculo = calculo_get_parametro_calculado('VLR_BASE_ICMS') %}
+{% set aliquota_icms_origem = calculo_get_parametro_calculado('ALIQ_ICMS') / 100 %}
+{% set aliquota_icms_destino = calculo_get_parametro_calculado('ALIQ_ICMS_DESTINO') / 100 %}
+{% set resultado = base_calculo * (aliquota_icms_destino - aliquota_icms_origem) %}
+{# DIFAL BASE SIMPLES #}
+
+{# para utilizar DIFAL BASE DUPLA descomentar codigo abaixo #}
+{% if self.siglaEstado in ['BA','GO','MG','MS','PA','PB','PR','PE','RS','SE','TO'] %}
+{% set valor_icms_origem = calculo_get_parametro_calculado('VLR_ICMS') %}
+{% set difal_destino = (100 - calculo_get_parametro_calculado('ALIQ_ICMS_DESTINO')) %}
+{% set difal_origem = (100 - calculo_get_parametro_calculado('ALIQ_ICMS')) %}
+{% set difal = (base_calculo * difal_origem) %}
+{% set difal = (difal / difal_destino) %}
+{% set difal = (difal * aliquota_icms_destino) %}
+{% set difal = (difal - valor_icms_origem ) %}
+{% if difal > 0.00 %}
+{{ self.result(difal) }}
+{% else %}
+{{ self.result(0.00) }}
+{% endif %}
+{% else %}
+{% if resultado > 0.00 %}
+{{ self.result(resultado) }}
+{% else %}
+{{ self.result(0.00) }}
+{% endif %}
+{% endif %}
+{% else %}
+{{ self.result(0.00) }}
 {% endif %}
