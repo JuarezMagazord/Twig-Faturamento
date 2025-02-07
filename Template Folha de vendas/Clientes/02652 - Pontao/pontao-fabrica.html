@@ -1,6 +1,5 @@
 <!-- Modificações
 
-Remover o pré-vendas
 Incluir variação de tamanho
 Incluir espaço para separador
 Incluir espaço para emabalador
@@ -73,10 +72,8 @@ Incluir a localização
             <th class="th-default">Imagem</th>
             <th class="th-default">Produto</th>
             <th class="th-default">Descrição</th>
-            <th class="th-default">Marca</th>
             <th class="th-default">Depósito</th>
             <th class="th-default">Qtde</th>
-            <th class="th-default">Pré-Venda</th>
         </tr>
         <!--
             Aqui entra a repetição dos produtos
@@ -86,13 +83,24 @@ Incluir a localização
                 <td class="td-default">{{ print_produto_imagem(pedidoItem) }}</td>
                 <td class="td-default">{{ pedidoItem.produtoDerivacao.codigo }}</td>
                 <td class="td-default">{{ pedidoItem.descricao }}</td>
-                <td class="td-default">{{ pedidoItem.produtoDerivacao.produto.marca.nome }}</td>
                 <td class="td-default">{{ pedidoItem.deposito.nome }}</td>
                 <td class="td-default">{{ pedidoItem.quantidade }}</td>
-                <td class="td-default">{{ print_date(pedidoItem.dataPreVenda) }}</td>
             </tr>
-        {% endfor %}
-    </table>
+            {% endfor %}
+        </table>
+        <table class="table-default" style="width: 100%; table-layout: fixed; margin-top: 20px;">
+            <tr>
+                <td class="td-default" style="width: 50%; text-align: center; vertical-align: middle; height: 80px; padding: 15px;">
+                    Separador:<br>
+                    ___________________________
+                </td>
+                <td class="td-default" style="width: 50%; text-align: center; vertical-align: middle; height: 80px; padding: 15px;">
+                    Empacotador:<br>
+                    ___________________________
+                </td>
+            </tr>
+        </table>
+        </table>
 {% endfor %}
 </body>
 </html>
