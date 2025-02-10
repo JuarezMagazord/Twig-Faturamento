@@ -1,0 +1,14 @@
+{% if self.notaFiscalItem.notaFiscal.pessoa.tipo == 3 %}
+    {{ self.result('não') }}
+{% elseif self.notaFiscalItem.getCfop().getCodigo() in [6404] %}
+    {{ self.result('não') }}
+{% else %}
+    {% if self.siglaEstado != self.siglaEstadoEmissor and self.notaFiscalItem.getCfopConfiguracao().getCFOPConfiguracaoNotaFiscal().getOperacaoConsumidorFinal() and (self.notaFiscalItem.notaFiscal.pessoa.tipo == 1 or self.notaFiscalItem.notaFiscal.pessoa.contribuinteICMS == false) %}
+        {{ self.result('sim') }}
+    {% else %}
+        {{ self.result('não') }}
+    {% endif %}
+{% endif %}
+
+
+
