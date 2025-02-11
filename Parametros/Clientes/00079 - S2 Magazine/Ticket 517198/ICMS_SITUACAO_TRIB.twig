@@ -1,0 +1,12 @@
+{% if self.notaFiscalItem.getCfop().getCodigo() in [5152]  %}
+    {{ self.result('51') }}
+{# Solicitação feita via ticket 517198 #}
+{% elseif self.notaFiscalItem.getCfop().getCodigo() in [5915, 5916, 6915,6916] %}
+    {{ self.result('50') }}
+{% elseif self.notaFiscalItem.getCfop().getCodigo() in [5949, 6949] %}
+    {{ self.result('90') }}
+{% elseif self.notaFiscalItem.getCfop().getCodigo() in [5910, 6910] %}
+    {{ self.result('41') }}
+{% else %}
+    {{ self.result('00') }}
+{% endif %}

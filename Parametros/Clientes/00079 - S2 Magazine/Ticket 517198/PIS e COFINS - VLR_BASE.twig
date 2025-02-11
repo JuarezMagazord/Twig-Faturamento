@@ -1,0 +1,26 @@
+{% set zeraBaseCalculo = false %}												
+{% if self.configuracaoParametros %}												
+{% set cfopZerada = self.configuracaoParametros.getOpcoesPIS().getCfopBaseZerada()|split(',') %}												
+{% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}												
+{% endif %}												
+												
+												
+{# Desconto de ICMS na base de calculo - Base Legal: julgamento dos embargos do RE 574.706 em 13/05/2021, pelo STF; art. 161-C da IN RFB n° 1717/2017. #}												
+{% set deduzirICMS = calculo_get_parametro_calculado('VLR_ICMS') %}												
+{# Solicitação feita via ticket 517198 #}
+{% set deduzirDIFAL = calculo_get_parametro_calculado('VLR_PARTILHA_ICMS') %}
+{% if self.notaFiscalItem.getCfop().getCodigo() in [5152, 5915, 5916, 5910, 5949, 6915, 6916, 5910, 6949]  %}
+    {% set zeraBaseCalculo = true %}	
+{% endif %}		
+				
+{% if zeraBaseCalculo %}												
+{{ self.result('0.00') }}												
+{% elseif self.configuracaoGlobal %}												
+{% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}												
+		{{ self.result( (self.notaFiscalItem.valorProduto + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) - (deduzirDIFAL + deduzirICMS) }}										
+	{% else %}											
+{{ self.result(0.00) }}										
+{% endif %}												
+{% else %}												
+	{{ self.result( (self.notaFiscalItem.valorProduto + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) - (deduzirDIFAL + deduzirICMS) }}											
+{% endif %}
