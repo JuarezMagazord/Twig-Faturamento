@@ -1,0 +1,9 @@
+{% set situacao_tributaria = calculo_get_parametro_calculado('ICMS_SITUACAO_TRIB') %}
+    {% if situacao_tributaria in ["40","41","50"] %}
+        {{ self.result('100.00') }}
+    {% elseif  %}
+        {% if situacao_tributaria in ["51"] %}
+            {{ self.result('23.53') }}
+        {% else %}
+        {{ self.result('0.00') }}
+    {% endif %}
