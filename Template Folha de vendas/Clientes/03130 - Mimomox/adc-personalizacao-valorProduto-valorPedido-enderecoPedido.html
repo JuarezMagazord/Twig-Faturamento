@@ -93,45 +93,86 @@
         -->
         {% for pedidoItem in pedidoFolhaVenda.pedidoItem %}
             <tr>
+                <!-- Imagem -->
                 <td class="td-default">{{ print_produto_imagem(pedidoItem) }}</td>
+                <!-- 2 -->
                 <td class="td-default">{{ pedidoItem.produtoDerivacao.codigo }}</td>
+                <!-- 3 -->
                 <td class="td-default">{{ pedidoItem.descricao }}</td>
+                <!-- 4 -->
                 <td class="td-default">{{ pedidoItem.produtoDerivacao.produto.marca.nome }}</td>
+                <!-- 5 -->
                 <td class="td-default">{{ pedidoItem.deposito.nome }}</td>
+                <!-- 6 -->
                 <td class="td-default">{{ pedidoItem.quantidade }}</td>
+                <!-- 7 -->
                 <td class="td-default">{{ print_date(pedidoItem.dataPreVenda) }}</td>
             </tr>
             <tr>
+                <!-- Imagem -->
                 <th class="th-default"></th>
+                <!-- 2 -->
                 <th class="th-default"></th>
+                <!-- 3 -->
                 <th class="th-default">Personalização</th>
+                <!-- 4 -->
                 <th class="th-default"></th>
+                <!-- 5 -->
                 <th class="th-default">Vlr Unit</th>
+                <!-- 6 -->
                 <th class="th-default">Frete</th>
+                <!-- 7 -->
                 <th class="th-default">Vlr total</th>
             </tr>
+            {% set myArray = [] %}
+            {% for pedidoItem in pedidoFolhaVenda.pedidoItem %}
             <tr>
+                <!-- 1 -->
                 <td class="td-default"></td>
+                <!-- 2 -->
                 <td class="td-default"></td>
-                <!--
-                    Informações sobre a personalização.
-                -->
-                <td class="td-default">
-                    {% set exists = false %}
+                {% set exists = false %}
+                {% set personalizacaoDescricao = '' %}
+                {% if pedidoItem.info is defined and pedidoItem.info.personalizacao is defined %}
                     {% set personalizacaoDescricao = '' %}
+                    {% for personalizacao in pedidoItem.info.personalizacao %}
+                        {% set personalizacaoDescricao = personalizacaoDescricao ~ personalizacao.descricao %}
+                    {% endfor %}
+                {% endif %}
+                {% for item in myArray %}
+                    {% if pedidoItem.produtoDerivacaoKit is not null %}
+                        {% if item.codigo == pedidoItem.produtoDerivacaoKit.codigo and item.personalizacao == personalizacaoDescricao %}
+                            {% set exists = true %}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+                {% if pedidoItem.produtoDerivacaoKit and not exists and personalizacaoDescricao is empty %}
+                    {% set myArray = myArray|merge([{'codigo': pedidoItem.produtoDerivacaoKit.codigo, 'personalizacao': personalizacaoDescricao}]) %}
+                <!-- 3 -->
+                <td class="td-default">
                     {% if pedidoItem.info is defined and pedidoItem.info.personalizacao is defined %}
-                        {% set personalizacaoDescricao = '' %}
                         {% for personalizacao in pedidoItem.info.personalizacao %}
-                            {% set personalizacaoDescricao = personalizacaoDescricao ~ personalizacao.descricao %}
+                            {{ personalizacao.nome }} {{ personalizacao.descricao }};
                         {% endfor %}
                     {% endif %}
                 </td>
+                <!-- 4 -->
+                <td class="td-default">
+                    {% elseif not exists %}
+                        {% if pedidoItem.info is defined and pedidoItem.info.personalizacao is defined %}
+                            {% for personalizacao in pedidoItem.info.personalizacao %}
+                                {{ personalizacao.nome }} {{ personalizacao.descricao }};
+                            {% endfor %}
+                        {% endif %}
+                    {% endif %}
+                </td>
+                <!-- 5 -->
                 <td class="td-default"></td>
+                <!-- 6 -->
                 <td class="td-default">{{ pedidoItem.valorUnitario | number_format(2, ',', '.') }}</td>
+                <!-- 7 -->
                 <td class="td-default">{{ pedidoItem.valorFrete | number_format(2, ',', '.') }}</td>
-                <!--
-                    Informações sobre o totalizador por produto.
-                -->
+                <!--Informações sobre o totalizador por produto.-->
                 <td class="td-default">
                     {% set vlrUni = pedidoItem.valorUnitario %}
                     {% set qtdIten = pedidoItem.quantidade %}
@@ -140,8 +181,7 @@
                     {{ valorTotal | number_format(2, ',', '.') }}
                 </td>
             </tr>
-            <tr><th><td> </td></th></tr>
-        {% endfor %}
+            {% endfor %}
     </table>
     <table class="table-default">
         <!--
@@ -154,6 +194,7 @@
             <td class="td-default" style="text-align: right;">{{ pedidoFolhaVenda.pedido.valorTotal | number_format(2, ',', '.') }}</td>
         </tr>
     </table>
-{% endfor %}
+    {% endfor %}
+    {% endfor %}
 </body>
 </html>

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-    <infNFe Id="NFe42250200463035000167550030000063821000065293" versao="4.00">
+    <infNFe Id="NFe33250232007191000100550050000072851000074769" versao="4.00">
         <ide>
-            <cUF>42</cUF>
-            <cNF>00006529</cNF>
-            <natOp>Venda Producao Estab. P/Nao Contribuinte</natOp>
+            <cUF>33</cUF>
+            <cNF>00007476</cNF>
+            <natOp>Venda Merc.Adq.Rec.Terc.Dest.Nao Contrib</natOp>
             <mod>55</mod>
-            <serie>3</serie>
-            <nNF>6382</nNF>
-            <dhEmi>2025-02-06T16:22:00-03:00</dhEmi>
-            <dhSaiEnt>2025-02-06T16:22:00-03:00</dhSaiEnt>
+            <serie>5</serie>
+            <nNF>7285</nNF>
+            <dhEmi>2025-02-13T15:52:52-03:00</dhEmi>
+            <dhSaiEnt>2025-02-13T15:52:52-03:00</dhSaiEnt>
             <tpNF>1</tpNF>
             <idDest>2</idDest>
-            <cMunFG>4216305</cMunFG>
+            <cMunFG>3301009</cMunFG>
             <tpImp>1</tpImp>
             <tpEmis>1</tpEmis>
-            <cDV>3</cDV>
+            <cDV>9</cDV>
             <tpAmb>1</tpAmb>
             <finNFe>1</finNFe>
             <indFinal>1</indFinal>
@@ -25,81 +25,73 @@
             <verProc>Magazord 1.0</verProc>
         </ide>
         <emit>
-            <CNPJ>00463035000167</CNPJ>
-            <xNome>Industria e Comercio de Calcados S. Santos Ltda</xNome>
-            <xFant>Suzana Santos</xFant>
+            <CNPJ>32007191000100</CNPJ>
+            <xNome>MHM Vestuario EIRELI</xNome>
+            <xFant>L&#039;enfant</xFant>
             <enderEmit>
-                <xLgr>Rua Manoel Cunha</xLgr>
-                <nro>55</nro>
+                <xLgr>Rua Siqueira Campos</xLgr>
+                <nro>139</nro>
+                <xCpl>Sala 211</xCpl>
                 <xBairro>Centro</xBairro>
-                <cMun>4216305</cMun>
-                <xMun>São João Batista</xMun>
-                <UF>SC</UF>
-                <CEP>88240000</CEP>
+                <cMun>3301009</cMun>
+                <xMun>Campos dos Goytacazes</xMun>
+                <UF>RJ</UF>
+                <CEP>28010015</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>4832656800</fone>
+                <fone>22997667350</fone>
             </enderEmit>
-            <IE>253028043</IE>
-            <IM>Isento</IM>
-            <CNAE>1533500</CNAE>
+            <IE>11297803</IE>
+            <IM>ISENTO</IM>
+            <CNAE>4781400</CNAE>
             <CRT>3</CRT>
         </emit>
         <dest>
-            <CPF>37379698842</CPF>
-            <xNome>Jessica Musembani Capuzzo</xNome>
+            <CPF>85801637060</CPF>
+            <xNome>Comprador (Testes Internos)</xNome>
             <enderDest>
-                <xLgr>Via Joao Batista Santanna</xLgr>
-                <nro>215</nro>
-                <xCpl>bloco 5 apartamento 301</xCpl>
-                <xBairro>Reserva Sul Condominio Resort</xBairro>
-                <cMun>3543402</cMun>
-                <xMun>Ribeirão Preto</xMun>
-                <UF>SP</UF>
-                <CEP>14022320</CEP>
+                <xLgr>Rua Jose Bonifacio</xLgr>
+                <nro>899</nro>
+                <xBairro>Centro</xBairro>
+                <cMun>4106902</cMun>
+                <xMun>Curitiba</xMun>
+                <UF>PR</UF>
+                <CEP>81170210</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>16169973787</fone>
+                <fone>47989898989</fone>
             </enderDest>
             <indIEDest>9</indIEDest>
-            <email>jehcapuzzo@gmail.com</email>
+            <email>teste@comprador.com.br</email>
         </dest>
         <entrega>
-            <CPF>37379698842</CPF>
-            <xNome>Jéssica Musembani Capuzzo</xNome>
-            <xLgr>Via Joao Batista Santanna</xLgr>
-            <nro>215</nro>
-            <xCpl>bloco 5 apartamento 301</xCpl>
-            <xBairro>Reserva Sul Condominio Resort</xBairro>
-            <cMun>3543402</cMun>
-            <xMun>Ribeirão Preto</xMun>
-            <UF>SP</UF>
-            <CEP>14022320</CEP>
+            <CPF>85801637060</CPF>
+            <xNome>Comprador (Testes Internos) - PR</xNome>
+            <xLgr>Rua Jose Bonifacio</xLgr>
+            <nro>899</nro>
+            <xBairro>Centro</xBairro>
+            <cMun>4106902</cMun>
+            <xMun>Curitiba</xMun>
+            <UF>PR</UF>
+            <CEP>81170210</CEP>
         </entrega>
 
 
         <det nItem="1">
             <prod>
-                <cProd>2334-39</cProd>
+                <cProd>CJ-MIRELLAPINK-2</cProd>
                 <cEAN>SEM GTIN</cEAN>
-                <xProd>TAMANCO MEGAN VERNIZ - Marrom - 39</xProd>
-                <NCM>64029990</NCM>
-                <cBenef>SC850043</cBenef>
-                <gCred>
-                    <cCredPresumido>SC850043</cCredPresumido>
-                    <pCredPresumido>75.00</pCredPresumido>
-                    <vCredPresumido>14.66</vCredPresumido>
-                </gCred>
-                <CFOP>6107</CFOP>
-                <uCom>PAR</uCom>
+                <xProd>Conjunto Mirella Pink - 2</xProd>
+                <NCM>62034200</NCM>
+                <CFOP>6108</CFOP>
+                <uCom>UN</uCom>
                 <qCom>1.0000</qCom>
-                <vUnCom>152.910000</vUnCom>
-                <vProd>152.91</vProd>
+                <vUnCom>100.000000</vUnCom>
+                <vProd>100.00</vProd>
                 <cEANTrib>SEM GTIN</cEANTrib>
-                <uTrib>PAR</uTrib>
+                <uTrib>UN</uTrib>
                 <qTrib>1.0000</qTrib>
-                <vUnTrib>152.910000</vUnTrib>
-                <vFrete>9.90</vFrete>
+                <vUnTrib>100.000000</vUnTrib>
                 <indTot>1</indTot>
             </prod>
             <imposto>
@@ -108,42 +100,42 @@
                         <orig>0</orig>
                         <CST>00</CST>
                         <modBC>3</modBC>
-                        <vBC>162.81</vBC>
+                        <vBC>100.00</vBC>
                         <pICMS>12.00</pICMS>
-                        <vICMS>19.54</vICMS>
+                        <vICMS>12.00</vICMS>
                     </ICMS00>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
                     <IPINT>
-                        <CST>51</CST>
+                        <CST>53</CST>
                     </IPINT>
                 </IPI>
                 <PIS>
                     <PISAliq>
                         <CST>01</CST>
-                        <vBC>162.81</vBC>
-                        <pPIS>1.65</pPIS>
-                        <vPIS>2.69</vPIS>
+                        <vBC>80.50</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.52</vPIS>
                     </PISAliq>
                 </PIS>
                 <COFINS>
                     <COFINSAliq>
                         <CST>01</CST>
-                        <vBC>162.81</vBC>
-                        <pCOFINS>7.60</pCOFINS>
-                        <vCOFINS>12.37</vCOFINS>
+                        <vBC>80.50</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>2.42</vCOFINS>
                     </COFINSAliq>
                 </COFINS>
                 <ICMSUFDest>
-                    <vBCUFDest>162.81</vBCUFDest>
-                    <vBCFCPUFDest>162.81</vBCFCPUFDest>
+                    <vBCUFDest>100.00</vBCUFDest>
+                    <vBCFCPUFDest>100.00</vBCFCPUFDest>
                     <pFCPUFDest>0.00</pFCPUFDest>
-                    <pICMSUFDest>18.00</pICMSUFDest>
+                    <pICMSUFDest>19.50</pICMSUFDest>
                     <pICMSInter>12.00</pICMSInter>
                     <pICMSInterPart>100.00</pICMSInterPart>
                     <vFCPUFDest>0.00</vFCPUFDest>
-                    <vICMSUFDest>9.77</vICMSUFDest>
+                    <vICMSUFDest>7.50</vICMSUFDest>
                     <vICMSUFRemet>0.00</vICMSUFRemet>
                 </ICMSUFDest>
             </imposto>
@@ -152,76 +144,71 @@
             <ICMSTot>
 
 
-                <vBC>162.81</vBC>
-                <vICMS>19.54</vICMS>
+                <vBC>100.00</vBC>
+                <vICMS>12.00</vICMS>
                 <vICMSDeson>0</vICMSDeson>
 
                 <vFCPUFDest>0.00</vFCPUFDest>
-                <vICMSUFDest>9.77</vICMSUFDest>
+                <vICMSUFDest>7.50</vICMSUFDest>
                 <vICMSUFRemet>0.00</vICMSUFRemet>
                 <vFCP>0.00</vFCP>
                 <vBCST>0</vBCST>
                 <vST>0</vST>
                 <vFCPST>0.00</vFCPST>
                 <vFCPSTRet>0.00</vFCPSTRet>
-                <vProd>152.91</vProd>
-                <vFrete>9.90</vFrete>
+                <vProd>100.00</vProd>
+                <vFrete>0.00</vFrete>
                 <vSeg>0</vSeg>
                 <vDesc>0.00</vDesc>
                 <vII>0</vII>
                 <vIPI>0.00</vIPI>
                 <vIPIDevol>0.00</vIPIDevol>
-                <vPIS>2.69</vPIS>
-                <vCOFINS>12.37</vCOFINS>
+                <vPIS>0.52</vPIS>
+                <vCOFINS>2.42</vCOFINS>
                 <vOutro>0.00</vOutro>
-                <vNF>162.81</vNF>
+                <vNF>100.00</vNF>
             </ICMSTot>
         </total>
         <transp>
-            <modFrete>0</modFrete>
-            <transporta>
-                <CNPJ>42584754000186</CNPJ>
-                <xNome>JET Express</xNome>
-                <xEnder>Avenida Engenheiro Luiz Carlos Berrini, 105</xEnder>
-                <xMun>São Paulo</xMun>
-                <UF>SP</UF>
-            </transporta>
+            <modFrete>9</modFrete>
             <vol>
                 <qVol>1</qVol>
                 <esp>Caixa</esp>
-                <pesoL>0.600</pesoL>
-                <pesoB>0.600</pesoB>
+                <pesoL>0.120</pesoL>
+                <pesoB>0.120</pesoB>
             </vol>
         </transp>
         <cobr>
             <fat>
-                <nFat>6382</nFat>
-                <vOrig>162.81</vOrig>
+                <nFat>7285</nFat>
+                <vOrig>100.00</vOrig>
                 <vDesc>0.00</vDesc>
-                <vLiq>162.81</vLiq>
+                <vLiq>100.00</vLiq>
             </fat>
             <dup>
                 <nDup>001</nDup>
-                <dVenc>2025-02-06</dVenc>
-                <vDup>162.81</vDup>
+                <dVenc>2025-02-13</dVenc>
+                <vDup>100.00</vDup>
             </dup>
         </cobr>
         <pag>
             <detPag>
-                <tPag>17</tPag>
-                <vPag>162.81</vPag>
+                <tPag>01</tPag>
+                <vPag>100.00</vPag>
             </detPag>
         </pag>
         <infAdic>
-            <infAdFisco>- Recolhimento do ICMS ao ESTADO de destino - - Total FCP R$ 0,00 - Partilha
-                ICMS UF Destino R$ 9,77 - Partilha ICMS UF Origem R$ 0,00</infAdFisco>
-            <infCpl>- Total aproximado de tributos: 49,58 (30,45%) Federais 21,90 (13,45%) Estaduais
-                27,68 (17,00%). Fonte.: IBPT/empresometro.com.br.</infCpl>
+            <infAdFisco>- Lei n° 21.850/2023 - Recolhimento do ICMS ao ESTADO de destino - - Total
+                FCP R$ 0,00 - Partilha ICMS UF Destino R$ 7,50 - Partilha ICMS UF Origem R$ 0,00</infAdFisco>
+            <infCpl>PR - Inscrição Substituto Tributário (IE): 09911039-29 - Recolhimento ICMS
+                Interestadual UF Destino por Apuração. - Total aproximado de tributos: 33,45
+                (33,45%) Federais 13,45 (13,45%) Estaduais 20,00 (20,00%). Fonte.:
+                IBPT/empresometro.com.br.</infCpl>
         </infAdic>
         <infRespTec>
             <CNPJ>28977040000107</CNPJ>
             <xContato>Ricardo Schroeder</xContato>
-            <email>ricardo@magazord.com.br</email>
+            <email>ricardo@magamobi.com.br</email>
             <fone>4735208013</fone>
         </infRespTec>
     </infNFe>

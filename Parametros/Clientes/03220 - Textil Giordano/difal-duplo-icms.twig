@@ -1,0 +1,122 @@
+{# Conteúdo original
+{{ self.result(self.notaFiscalItem.valorProduto + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }} #}
+
+{% set zeraBaseCalculo = false %}											
+    {% if self.configuracaoParametros %}											
+    {% set cfopZerada = self.configuracaoParametros.getOpcoesICMS().getCfopBaseZerada()|split(',') %}											
+        {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}										
+    {% endif %}											
+                                                
+    {% set aliquotaIPI = 0.00 %}											
+    {% if self.configuracaoParametros %}											
+    {% if self.aliquotaProdutoDerivacao|length > 0 and self.aliquotaProdutoDerivacao[self.notaFiscalItem.produtoDerivacao.codigo]  is defined %}											
+    {% set aliquotaIPI = (self.aliquotaProdutoDerivacao[self.notaFiscalItem.produtoDerivacao.codigo]) %}											
+    {% else %}											
+    {% if self.aliquotaNcm|length > 0 %}											
+    {% if self.aliquotaNcm[self.notaFiscalItem.ncm.codigo]  is defined %}											
+    {% set aliquotaIPI = (self.aliquotaNcm[self.notaFiscalItem.ncm.codigo]) %}											
+    {% else %}											
+    {% set aliquotaIPI = 0.00 %}											
+    {% endif %}											
+    {% else %}											
+    {% set aliquotaIPI = 0.00 %}											
+    {% endif %}											
+    {% endif %}											
+    {% else %}											
+    {% set aliquotaIPI = 0.00 %}											
+    {% endif %}											
+                                                
+    {% if zeraBaseCalculo %}											
+        {{ self.result('0.00') }}										
+    {% else %}											
+    {% set valorBC = ( self.notaFiscalItem.valorProduto) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto %}
+        {# Base dupla DIFAL #}
+        {% if self.siglaEstado in ['BA','GO','MG','MS','PA','PB','PR','PE','RS','SE','TO'] %}
+            {% set aliquota_icms_origem = self.aliquotaICMS.ICMSInterestadual  %}
+            {% set aliquota_icms_destino = self.aliquotaICMS.ICMSInterno  %}
+            {% set difal = (aliquota_icms_destino - aliquota_icms_origem) / 100 %}
+            {% set difal = 1 - difal %}    
+            {{ self.result( ((valorBC / difal) * (aliquota_icms_destino / 100)) + valorBC ) }}
+        {% else %}
+            {% if aliquotaIPI == 0.00 %}										
+                {% if self.configuracaoGlobal %}									
+                    {% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}								
+                        {{ self.result(valorBC) }}							
+                    {% else %}								
+                        {{ self.result(0.00) }}							
+                    {% endif %}								
+                {% else %}									
+                    {{ self.result( valorBC) }}								
+                {% endif %}									
+            {% else %}										
+                {% if self.configuracaoGlobal %}									
+                    {% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}								
+                        {% set aliqIPI =  (aliquotaIPI / 100) %}							
+                            {{ self.result((valorBC * aliqIPI)  + valorBC) }}							
+                        {% else %}								
+                            {{ self.result(0.00) }}							
+                        {% endif %}								
+                    {% else %}									
+                        {{ self.result(valorBC) }}								
+                    {% endif %}									
+                {% endif %}										
+            {% endif %}
+        {% endif %}
+            
+
+
+{# Conteúdo original
+{{ self.result(self.notaFiscalItem.valorProduto + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}#}
+
+{% set zeraBaseCalculo = false %}											
+    {% if self.configuracaoParametros %}											
+    {% set cfopZerada = self.configuracaoParametros.getOpcoesICMS().getCfopBaseZerada()|split(',') %}											
+        {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}										
+    {% endif %}											
+                                                
+    {% set aliquotaIPI = 0.00 %}											
+    {% if self.configuracaoParametros %}											
+    {% if self.aliquotaProdutoDerivacao|length > 0 and self.aliquotaProdutoDerivacao[self.notaFiscalItem.produtoDerivacao.codigo]  is defined %}											
+    {% set aliquotaIPI = (self.aliquotaProdutoDerivacao[self.notaFiscalItem.produtoDerivacao.codigo]) %}											
+    {% else %}											
+    {% if self.aliquotaNcm|length > 0 %}											
+    {% if self.aliquotaNcm[self.notaFiscalItem.ncm.codigo]  is defined %}											
+    {% set aliquotaIPI = (self.aliquotaNcm[self.notaFiscalItem.ncm.codigo]) %}											
+    {% else %}											
+    {% set aliquotaIPI = 0.00 %}											
+    {% endif %}											
+    {% else %}											
+    {% set aliquotaIPI = 0.00 %}											
+    {% endif %}											
+    {% endif %}											
+    {% else %}											
+    {% set aliquotaIPI = 0.00 %}											
+    {% endif %}											
+                                                
+    {% if zeraBaseCalculo %}											
+        {{ self.result('0.00') }}										
+    {% else %}											
+    {% set valorBC = ( self.notaFiscalItem.valorProduto) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto %}											
+        {% if aliquotaIPI == 0.00 %}										
+            {% if self.configuracaoGlobal %}									
+                {% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}								
+                    {{ self.result(valorBC) }}							
+                {% else %}								
+                    {{ self.result(0.00) }}							
+                {% endif %}								
+            {% else %}									
+                {{ self.result( valorBC) }}								
+            {% endif %}									
+        {% else %}										
+            {% if self.configuracaoGlobal %}									
+                {% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}								
+                    {% set aliqIPI =  (aliquotaIPI / 100) %}							
+                    {{ self.result((valorBC * aliqIPI)  + valorBC) }}							
+                {% else %}								
+                    {{ self.result(0.00) }}							
+                {% endif %}								
+            {% else %}									
+                {{ self.result(valorBC) }}								
+            {% endif %}									
+        {% endif %}										
+    {% endif %}

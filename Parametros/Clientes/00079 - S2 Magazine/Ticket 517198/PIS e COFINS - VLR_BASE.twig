@@ -17,10 +17,10 @@
 {{ self.result('0.00') }}												
 {% elseif self.configuracaoGlobal %}												
 {% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}												
-		{{ self.result( (self.notaFiscalItem.valorProduto + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) - (deduzirDIFAL + deduzirICMS) }}										
+		{{ self.result((self.notaFiscalItem.valorProduto + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) - (deduzirDIFAL + deduzirICMS)) }}										
 	{% else %}											
 {{ self.result(0.00) }}										
 {% endif %}												
 {% else %}												
-	{{ self.result( (self.notaFiscalItem.valorProduto + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) - (deduzirDIFAL + deduzirICMS) }}											
+	{{ self.result((self.notaFiscalItem.valorProduto + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) - (deduzirDIFAL + deduzirICMS)) }}											
 {% endif %}
