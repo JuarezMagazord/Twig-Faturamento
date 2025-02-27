@@ -7,3 +7,13 @@
         {% else %}
         {{ self.result('0.00') }}
     {% endif %}
+
+
+{% if self.notaFiscalItem.getCfop().getCodigo() in [5201,5202] %}
+    {{ self.result('900') }}
+{% endif %}
+{% if self.notaFiscalItem.notaFiscal.pessoa.tipo ==  2 and self.notaFiscalItem.notaFiscal.pessoa.inscricaoEstadual is not empty %}
+    {{self.result('101')}}
+{% else %}
+    {{self.result('102')}}
+{% endif %}

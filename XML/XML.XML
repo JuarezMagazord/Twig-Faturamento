@@ -1,214 +1,218 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-    <infNFe Id="NFe33250232007191000100550050000072851000074769" versao="4.00">
+    <infNFe Id="NFe42250237575940000119550050000045921000047020" versao="4.00">
         <ide>
-            <cUF>33</cUF>
-            <cNF>00007476</cNF>
-            <natOp>Venda Merc.Adq.Rec.Terc.Dest.Nao Contrib</natOp>
+            <cUF>42</cUF>
+            <cNF>00004702</cNF>
+            <natOp>Devolucao Compra para Comercializacao</natOp>
             <mod>55</mod>
             <serie>5</serie>
-            <nNF>7285</nNF>
-            <dhEmi>2025-02-13T15:52:52-03:00</dhEmi>
-            <dhSaiEnt>2025-02-13T15:52:52-03:00</dhSaiEnt>
+            <nNF>4592</nNF>
+            <dhEmi>2025-02-27T13:01:09-03:00</dhEmi>
+            <dhSaiEnt>2025-02-27T13:01:09-03:00</dhSaiEnt>
             <tpNF>1</tpNF>
-            <idDest>2</idDest>
-            <cMunFG>3301009</cMunFG>
+            <idDest>1</idDest>
+            <cMunFG>4208906</cMunFG>
             <tpImp>1</tpImp>
             <tpEmis>1</tpEmis>
-            <cDV>9</cDV>
+            <cDV>0</cDV>
             <tpAmb>1</tpAmb>
-            <finNFe>1</finNFe>
-            <indFinal>1</indFinal>
+            <finNFe>4</finNFe>
+            <indFinal>0</indFinal>
             <indPres>2</indPres>
             <indIntermed>0</indIntermed>
             <procEmi>0</procEmi>
             <verProc>Magazord 1.0</verProc>
+            <NFref>
+                <refNFe>42250210474553000130550010013669581938753670</refNFe>
+            </NFref>
         </ide>
         <emit>
-            <CNPJ>32007191000100</CNPJ>
-            <xNome>MHM Vestuario EIRELI</xNome>
-            <xFant>L&#039;enfant</xFant>
+            <CNPJ>37575940000119</CNPJ>
+            <xNome>Quotidien Confecções Ltda.</xNome>
+            <xFant>Quotidien</xFant>
             <enderEmit>
-                <xLgr>Rua Siqueira Campos</xLgr>
-                <nro>139</nro>
-                <xCpl>Sala 211</xCpl>
-                <xBairro>Centro</xBairro>
-                <cMun>3301009</cMun>
-                <xMun>Campos dos Goytacazes</xMun>
-                <UF>RJ</UF>
-                <CEP>28010015</CEP>
+                <xLgr>Rua Vinte e Cinco de Julho</xLgr>
+                <nro>2003</nro>
+                <xCpl>Sala 02</xCpl>
+                <xBairro>Vila Nova</xBairro>
+                <cMun>4208906</cMun>
+                <xMun>Jaraguá do Sul</xMun>
+                <UF>SC</UF>
+                <CEP>89259000</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>22997667350</fone>
+                <fone>47997226360</fone>
             </enderEmit>
-            <IE>11297803</IE>
+            <IE>260561339</IE>
             <IM>ISENTO</IM>
-            <CNAE>4781400</CNAE>
-            <CRT>3</CRT>
+            <CNAE>1412601</CNAE>
+            <CRT>1</CRT>
         </emit>
         <dest>
-            <CPF>85801637060</CPF>
-            <xNome>Comprador (Testes Internos)</xNome>
+            <CNPJ>10474553000130</CNPJ>
+            <xNome>MALHAS MENEGOTTI INDUSTRIA TEXTIL LTDA</xNome>
             <enderDest>
-                <xLgr>Rua Jose Bonifacio</xLgr>
-                <nro>899</nro>
-                <xBairro>Centro</xBairro>
-                <cMun>4106902</cMun>
-                <xMun>Curitiba</xMun>
-                <UF>PR</UF>
-                <CEP>81170210</CEP>
+                <xLgr>R.Joaquim Francisco de Paula PD.1, 4850</xLgr>
+                <nro>0</nro>
+                <xBairro>CHICO DE PAULA</xBairro>
+                <cMun>4208906</cMun>
+                <xMun>Jaraguá do Sul</xMun>
+                <UF>SC</UF>
+                <CEP>89254848</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>47989898989</fone>
+                <fone>4733728500</fone>
             </enderDest>
-            <indIEDest>9</indIEDest>
-            <email>teste@comprador.com.br</email>
+            <indIEDest>1</indIEDest>
+            <IE>255735898</IE>
         </dest>
-        <entrega>
-            <CPF>85801637060</CPF>
-            <xNome>Comprador (Testes Internos) - PR</xNome>
-            <xLgr>Rua Jose Bonifacio</xLgr>
-            <nro>899</nro>
-            <xBairro>Centro</xBairro>
-            <cMun>4106902</cMun>
-            <xMun>Curitiba</xMun>
-            <UF>PR</UF>
-            <CEP>81170210</CEP>
-        </entrega>
-
-
         <det nItem="1">
             <prod>
-                <cProd>CJ-MIRELLAPINK-2</cProd>
+                <cProd>308266.2136</cProd>
                 <cEAN>SEM GTIN</cEAN>
-                <xProd>Conjunto Mirella Pink - 2</xProd>
-                <NCM>62034200</NCM>
-                <CFOP>6108</CFOP>
-                <uCom>UN</uCom>
-                <qCom>1.0000</qCom>
-                <vUnCom>100.000000</vUnCom>
-                <vProd>100.00</vProd>
+                <xProd>MALHA CONFORTO CZ 96,00% ALGODAO / 4,00% ELASTANO EXTRA LARG. 1,80m GRAM.170gr/m 1L,2C,3C,4A,6B,7E,8C</xProd>
+                <NCM>60062200</NCM>
+                <CFOP>5202</CFOP>
+                <uCom>KG</uCom>
+                <qCom>14.5600</qCom>
+                <vUnCom>69.960165</vUnCom>
+                <vProd>1018.62</vProd>
                 <cEANTrib>SEM GTIN</cEANTrib>
-                <uTrib>UN</uTrib>
-                <qTrib>1.0000</qTrib>
-                <vUnTrib>100.000000</vUnTrib>
+                <uTrib>KG</uTrib>
+                <qTrib>14.5600</qTrib>
+                <vUnTrib>69.960165</vUnTrib>
                 <indTot>1</indTot>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMS00>
+                    <ICMSSN102>
                         <orig>0</orig>
-                        <CST>00</CST>
-                        <modBC>3</modBC>
-                        <vBC>100.00</vBC>
-                        <pICMS>12.00</pICMS>
-                        <vICMS>12.00</vICMS>
-                    </ICMS00>
+                        <CSOSN>102</CSOSN>
+                    </ICMSSN102>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
                     <IPINT>
-                        <CST>53</CST>
+                        <CST>03</CST>
                     </IPINT>
                 </IPI>
                 <PIS>
-                    <PISAliq>
-                        <CST>01</CST>
-                        <vBC>80.50</vBC>
-                        <pPIS>0.65</pPIS>
-                        <vPIS>0.52</vPIS>
-                    </PISAliq>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
                 </PIS>
                 <COFINS>
-                    <COFINSAliq>
-                        <CST>01</CST>
-                        <vBC>80.50</vBC>
-                        <pCOFINS>3.00</pCOFINS>
-                        <vCOFINS>2.42</vCOFINS>
-                    </COFINSAliq>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
                 </COFINS>
-                <ICMSUFDest>
-                    <vBCUFDest>100.00</vBCUFDest>
-                    <vBCFCPUFDest>100.00</vBCFCPUFDest>
-                    <pFCPUFDest>0.00</pFCPUFDest>
-                    <pICMSUFDest>19.50</pICMSUFDest>
-                    <pICMSInter>12.00</pICMSInter>
-                    <pICMSInterPart>100.00</pICMSInterPart>
-                    <vFCPUFDest>0.00</vFCPUFDest>
-                    <vICMSUFDest>7.50</vICMSUFDest>
-                    <vICMSUFRemet>0.00</vICMSUFRemet>
-                </ICMSUFDest>
             </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+        <det nItem="2">
+            <prod>
+                <cProd>410021.2136</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>RIB 2X1 M.CONFORTO CZ 97,00% ALGODAO / 3,00% ELASTANO EXTRA LARG. 50cm GRAM.260gr/m 1L,2C,3C,4A,6B,7E,8C</xProd>
+                <NCM>60062200</NCM>
+                <CFOP>5202</CFOP>
+                <uCom>KG</uCom>
+                <qCom>0.8300</qCom>
+                <vUnCom>88.915663</vUnCom>
+                <vProd>73.80</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>KG</uTrib>
+                <qTrib>0.8300</qTrib>
+                <vUnTrib>88.915663</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMSSN102>
+                        <orig>0</orig>
+                        <CSOSN>102</CSOSN>
+                    </ICMSSN102>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>03</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
+                </PIS>
+                <COFINS>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
         </det>
         <total>
             <ICMSTot>
-
-
-                <vBC>100.00</vBC>
-                <vICMS>12.00</vICMS>
+                <vBC>0.00</vBC>
+                <vICMS>0.00</vICMS>
                 <vICMSDeson>0</vICMSDeson>
-
-                <vFCPUFDest>0.00</vFCPUFDest>
-                <vICMSUFDest>7.50</vICMSUFDest>
-                <vICMSUFRemet>0.00</vICMSUFRemet>
                 <vFCP>0.00</vFCP>
                 <vBCST>0</vBCST>
                 <vST>0</vST>
                 <vFCPST>0.00</vFCPST>
                 <vFCPSTRet>0.00</vFCPSTRet>
-                <vProd>100.00</vProd>
+                <vProd>1092.42</vProd>
                 <vFrete>0.00</vFrete>
                 <vSeg>0</vSeg>
                 <vDesc>0.00</vDesc>
                 <vII>0</vII>
                 <vIPI>0.00</vIPI>
                 <vIPIDevol>0.00</vIPIDevol>
-                <vPIS>0.52</vPIS>
-                <vCOFINS>2.42</vCOFINS>
+                <vPIS>0.00</vPIS>
+                <vCOFINS>0.00</vCOFINS>
                 <vOutro>0.00</vOutro>
-                <vNF>100.00</vNF>
+                <vNF>1092.42</vNF>
             </ICMSTot>
         </total>
         <transp>
-            <modFrete>9</modFrete>
+            <modFrete>0</modFrete>
+            <transporta>
+                <CNPJ>02255335000186</CNPJ>
+                <xNome></xNome>
+                <xEnder>Rua Frederico Barg, 110</xEnder>
+                <xMun>Jaraguá do Sul</xMun>
+                <UF>SC</UF>
+            </transporta>
             <vol>
                 <qVol>1</qVol>
-                <esp>Caixa</esp>
-                <pesoL>0.120</pesoL>
-                <pesoB>0.120</pesoB>
+                <esp>ROLOS</esp>
             </vol>
         </transp>
-        <cobr>
-            <fat>
-                <nFat>7285</nFat>
-                <vOrig>100.00</vOrig>
-                <vDesc>0.00</vDesc>
-                <vLiq>100.00</vLiq>
-            </fat>
-            <dup>
-                <nDup>001</nDup>
-                <dVenc>2025-02-13</dVenc>
-                <vDup>100.00</vDup>
-            </dup>
-        </cobr>
         <pag>
             <detPag>
-                <tPag>01</tPag>
-                <vPag>100.00</vPag>
+                <tPag>90</tPag>
+                <vPag>0.00</vPag>
             </detPag>
         </pag>
         <infAdic>
-            <infAdFisco>- Lei n° 21.850/2023 - Recolhimento do ICMS ao ESTADO de destino - - Total
-                FCP R$ 0,00 - Partilha ICMS UF Destino R$ 7,50 - Partilha ICMS UF Origem R$ 0,00</infAdFisco>
-            <infCpl>PR - Inscrição Substituto Tributário (IE): 09911039-29 - Recolhimento ICMS
-                Interestadual UF Destino por Apuração. - Total aproximado de tributos: 33,45
-                (33,45%) Federais 13,45 (13,45%) Estaduais 20,00 (20,00%). Fonte.:
-                IBPT/empresometro.com.br.</infCpl>
+            <infCpl>Documento emitido por ME ou EPP optante pelo Simples Nacional. Não gera direitoa crédito fiscal de IPI.</infCpl>
         </infAdic>
         <infRespTec>
             <CNPJ>28977040000107</CNPJ>
             <xContato>Ricardo Schroeder</xContato>
-            <email>ricardo@magamobi.com.br</email>
+            <email>ricardo@magazord.com.br</email>
             <fone>4735208013</fone>
         </infRespTec>
     </infNFe>

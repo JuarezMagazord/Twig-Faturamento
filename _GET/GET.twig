@@ -34,5 +34,3 @@
 {# NCM do produto na NFe #}
 {% self.notaFiscalItem.ncm.codigo %}
 
-{# Instrução para obter#}
-{% self.getNotaFiscal().getNotaFiscalEndereco() [0].getCidade().getEstado().getSigla() == 'SP' %}
