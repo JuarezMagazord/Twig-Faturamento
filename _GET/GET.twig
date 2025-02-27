@@ -20,13 +20,13 @@
 {% set self.notaFiscalItem.notaFiscal.entidadeEmissao.id = '' %}
 
 {# Identifica a CFOP dentro da NFe. #}
-{% self.notaFiscalItem.getCfop().getCodigo() %}
+{% if self.notaFiscalItem.getCfop().getCodigo() %}
 
 {# Condição global, para o CRT configuração, 1 = Simples nacional, 2= Presumido, 3 = Real, 4 = MEI. #}
 {% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}
 
 {# Situação tributária para COFINS, o mesmo se aplica para ICMS, PIS, IPI. #}
-{% self.situacaoTributariaCOFINS.codigo() %}
+{% if self.situacaoTributariaCOFINS.codigo() in ['00', '50']%}
 
 {# Origem do produto #}
 {% self.origemFiscal %}

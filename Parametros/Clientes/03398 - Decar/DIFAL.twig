@@ -1,0 +1,49 @@
+{% set zeraBaseCalculo = false %}
+    {% set BaseCalculo = (self.notaFiscalItem.valorProduto + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) %}
+    
+    {% if self.configuracaoParametros %}
+        {% set cfopZerada = self.configuracaoParametros.getOpcoesICMS().getCfopBaseZerada()|split(',') %}
+        {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+    {% endif %}
+    
+    {% if zeraBaseCalculo %}
+        {{ self.result('0.00') }}
+    {% elseif self.notaFiscalItem.getCfop().getCodigo() in [5405,6403] %}
+        {{ self.result('0.00') }}
+    {% elseif self.configuracaoGlobal %}
+        {% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() != 1 %}
+            {% if self.siglaEstado == 'SP' %}
+                {# Verifica se a venda é interna (CFOP dentro do estado de SP) #}
+                {% set cfopVendaInterna = [5101, 5102, 5103, 5104, 5105] %}  {# CFOPs típicos de vendas internas em SP #}
+                {% if self.notaFiscalItem.getCfop().getCodigo() in cfopVendaInterna %}
+                    {# Aqui vai os NCM que são para SC e que a redução é de 53,34% #}
+                    {% if self.notaFiscalItem.produtoDerivacao.pai.codigo in ['4585p','4586p','4587p','4589p','4589p','4594p','4714p','5498p','5903p','5904p','5907p','7199p','7209p','7664p','8203p','8205p','8206p','10042p'] %}
+                        {{ self.result(BaseCalculo - (BaseCalculo * 0.5334)) }}
+                    {# Aqui vai os NCM que são para SC e que a redução é de 53,33% #}    
+                    {% elseif self.notaFiscalItem.produtoDerivacao.pai.codigo in ['4584p','31012p','31013p','31014p','31015p'] %}
+                        {{ self.result(BaseCalculo - (BaseCalculo * 0.5333)) }}
+                    {# Aqui vai os NCM que são para SC e que a redução é de 51,11% #}    
+                    {% elseif self.notaFiscalItem.produtoDerivacao.pai.codigo in ['15353p','15710p','25887p','25888p','31512p','36083p','37527p'] %}
+                        {{ self.result(BaseCalculo - (BaseCalculo * 0.5111)) }}
+                    {# Aqui vai os NCM que são para SC e que a redução é de 46,67% #}    
+                    {% elseif self.notaFiscalItem.produtoDerivacao.pai.codigo in ['22019p'] %}
+                        {{ self.result(BaseCalculo - (BaseCalculo * 0.4667)) }}
+                    {# Aqui vai os NCM que são para SC e que a redução é de 38,88% #}    
+                    {% elseif self.notaFiscalItem.produtoDerivacao.pai.codigo in ['295099p','29511p'] %}
+                        {{ self.result(BaseCalculo - (BaseCalculo * 0.3888)) }}
+                    {# Aqui vai os NCM que são para SC e que a redução é de 33,33% #}    
+                    {% elseif self.notaFiscalItem.produtoDerivacao.pai.codigo in ['19768p','20396p','22045p','22046p','22460p','27284p','31114p'] %}
+                        {{ self.result(BaseCalculo - (BaseCalculo * 0.3333)) }}
+                    {% else %}
+                        {{ self.result(BaseCalculo) }}
+                    {% endif %}
+                {% else %}
+                    {# Para vendas externas ou outros tipos de CFOP, sem redução #}
+                    {{ self.result(BaseCalculo) }}
+                {% endif %}
+            {% else %}
+                {{ self.result(BaseCalculo) }}
+                {# {{ self.result('0.00') }} #}
+            {% endif %}
+        {% endif %}
+    {% endif %}
