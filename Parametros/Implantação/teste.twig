@@ -1,3 +1,12 @@
+{# {% if self.notaFiscalItem.getSituacaoTributariaICMS().getCodigo() == '60' %}
+	{{self.result('0.00')}}
+{% else %}
+	{{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+{% endif %} 
+
+{{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }} #}
+
+
 {# {% if self.notaFiscal.pessoa.tipo == 2 and notaFiscal.pessoa.contribuinteICMS == true %}
   {{ self.result( 4.00 ) }}
 {% else %}
@@ -5,26 +14,39 @@
 {% endif %} #}
 
 {% set zeraAliquota = false %}
-            {% if self.configuracaoParametros %}
-                    {% set cfopZerada = self.configuracaoParametros.getOpcoesICMS().getCfopAliquotaZerada()|split(',') %}
-                    {% set zeraAliquota = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
-            {% endif %}
+    {% if self.configuracaoParametros %}
+        {% set cfopZerada = self.configuracaoParametros.getOpcoesICMS().getCfopAliquotaZerada()|split(',') %}
+        {% set zeraAliquota = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+    {% endif %}
             
-            {% if zeraAliquota or self.notaFiscalItem.notaFiscal.pessoa.tipo == 3 %}
-                    {{ self.result('0.00') }}
-            {% elseif  self.importado and self.siglaEstado != self.siglaEstadoEmissor %}
-                {% if self.origemFiscal == '7' %}
-                    {{ self.result(self.aliquotaICMS.ICMSInterestadual) }}
-                {% else %}
-                    {{ self.result(4.00) }}
-                {% endif %}
-            {% elseif self.siglaEstado == self.siglaEstadoEmissor %}
-                {{ self.result(self.aliquotaICMS.ICMSInterno) }}
-                {% if self.notaFiscal.pessoa.tipo == 2 and notaFiscal.pessoa.contribuinteICMS == true %}
-  {{ self.result( 4.00 ) }}
-            {% else %}
-                {{ self.result(self.aliquotaICMS.ICMSInterestadual) }}
-            {% endif %}
-            {% endif %}
+    {% if zeraAliquota or self.notaFiscalItem.notaFiscal.pessoa.tipo == 3 %}
+        {{ self.result('0.00') }}
+    {% elseif  self.importado and self.siglaEstado != self.siglaEstadoEmissor %}
+        {# origem #}
+        {% if self.origemFiscal == '7' %}
+            {{ self.result(self.aliquotaICMS.ICMSInterestadual) }}
+        {% else %}
+            {{ self.result(4.00) }}
+        {% endif %}
+    {% elseif self.siglaEstado == self.siglaEstadoEmissor %}
+        {{ self.result(self.aliquotaICMS.ICMSInterno) }}
+        {% if self.notaFiscal.pessoa.tipo == 2 and notaFiscal.pessoa.contribuinteICMS == true %}
+            {{ self.result( 4.00 ) }}
+        {% else %}
+            {{ self.result(self.aliquotaICMS.ICMSInterestadual) }}
+    {% endif %}
+{% endif %}
 
 
+{% set zeraAliquota = false %}
+    {% if self.configuracaoParametros %}
+        {% set cfopZerada = self.configuracaoParametros.getOpcoesICMS().getCfopAliquotaZerada()|split(',') %}
+        {% set zeraAliquota = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+    {% endif %}
+            
+    {% if zeraAliquota or self.notaFiscalItem.notaFiscal.pessoa.tipo == 3 %}
+        {{ self.result('0.00') }}
+    {% else %}
+        {# {{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }} #}
+        {{ self.result('10.00')}}
+{% endif %}
