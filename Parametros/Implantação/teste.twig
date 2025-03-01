@@ -1,3 +1,143 @@
+{% set zeraAliquota = false %}
+    {% if self.configuracaoParametros %}
+        {% set cfopZerada = self.configuracaoParametros.getOpcoesICMS().getCfopAliquotaZerada()|split(',') %}
+        {% set zeraAliquota = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+    {% endif %}
+            
+    {% if zeraAliquota or self.notaFiscalItem.notaFiscal.pessoa.tipo == 3 %}
+        {{ self.result('0.00') }}
+    {% else %}
+        {# {{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }} #}
+        {{ self.result('10.00')}}
+{% endif %}
+
+{% set zeraAliquota = false %}
+    {% if self.configuracaoParametros %}
+        {% set cfopZerada = self.configuracaoParametros.getOpcoesICMS().getCfopAliquotaZerada()|split(',') %}
+        {% set zeraAliquota = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+    {% endif %}
+            
+{# {% set zeraBaseCalculo = false %}
+    {% if self.configuracaoParametros %}
+        {% set cfopZerada = self.configuracaoParametros.getOpcoesICMS().getCfopBaseZerada()|split(',') %}
+        {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+    {% endif %} #}
+
+{# Zera base de calculo ICMS #}
+{% set zeraBaseCalculo = false %}
+    {% if self.configuracaoParametros %}
+        {% set cfopZerada = self.configuracaoParametros.getOpcoesICMS().getCfopBaseZerada()|split(',') %}
+        {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+    {% endif %}
+
+    {% if zeraBaseCalculo %}
+        {{ self.result('0.00') }}
+    {% else %}
+        {{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+    {% endif %}
+{# Fim Zera Base de calculo ICMS#}
+
+{# Zera base de calculo PIS #}
+{% set zeraBaseCalculo = false %}
+    {% if self.configuracaoParametros %}
+        {% set cfopZerada = self.configuracaoParametros.getOpcoesPIS().getCfopBaseZerada()|split(',') %}
+        {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+    {% endif %}
+
+    {% if zeraBaseCalculo %}
+        {{ self.result('0.00') }}
+    {% else %}
+        {{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+    {% endif %}
+{# Fim Zera Base de calculo PIS#}
+
+{# Zera base de calculo PIS com ICMS deduzido #}
+{% set vlr_ICMS = calculo_get_parametro_calculado('VLR_ICMS') %}
+{% set zeraBaseCalculo = false %}
+    {% if self.configuracaoParametros %}
+        {% set cfopZerada = self.configuracaoParametros.getOpcoesPIS().getCfopBaseZerada()|split(',') %}
+        {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+    {% endif %}
+
+    {% if zeraBaseCalculo %}
+        {{ self.result('0.00') }}
+    {% else %}
+        {{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto - vlr_ICMS ) }}
+    {% endif %}
+{# Fim Zera Base de calculo PIS#}
+
+{# Zera base de calculo COFINS #}
+{% set zeraBaseCalculo = false %}
+    {% if self.configuracaoParametros %}
+        {% set cfopZerada = self.configuracaoParametros.getOpcoesCOFINS().getCfopBaseZerada()|split(',') %}
+        {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+    {% endif %}
+
+    {% if zeraBaseCalculo %}
+        {{ self.result('0.00') }}
+    {% else %}
+        {{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+    {% endif %}
+{# Fim Zera Base de calculo COFINS #}
+
+{# Zera base de calculo COFINS com ICMS deduzido #}
+{% set vlr_ICMS = calculo_get_parametro_calculado('VLR_ICMS') %}
+{% set zeraBaseCalculo = false %}
+    {% if self.configuracaoParametros %}
+        {% set cfopZerada = self.configuracaoParametros.getOpcoesCOFINS().getCfopBaseZerada()|split(',') %}
+        {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+    {% endif %}
+
+    {% if zeraBaseCalculo %}
+        {{ self.result('0.00') }}
+    {% else %}
+        {{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto - vlr_ICMS ) }}
+    {% endif %}
+{# Fim Zera Base de calculo COFINS #}
+
+{# Zera base de calculo IPI #}
+{% set zeraBaseCalculo = false %}
+    {% if self.configuracaoParametros %}
+        {% set cfopZerada = self.configuracaoParametros.getOpcoesIPI().getCfopBaseZerada()|split(',') %}
+        {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+    {% endif %}
+
+    {% if zeraBaseCalculo %}
+        {{ self.result('0.00') }}
+    {% else %}
+        {{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+    {% endif %}
+{# Fim Zera Base de calculo IPI #}
+
+{# Zera base de calculo COFINS com IPI deduzido #}
+{% set vlr_ICMS = calculo_get_parametro_calculado('VLR_ICMS') %}
+{% set zeraBaseCalculo = false %}
+    {% if self.configuracaoParametros %}
+        {% set cfopZerada = self.configuracaoParametros.getOpcoesIPI().getCfopBaseZerada()|split(',') %}
+        {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+    {% endif %}
+
+    {% if zeraBaseCalculo %}
+        {{ self.result('0.00') }}
+    {% else %}
+        {{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto - vlr_ICMS ) }}
+    {% endif %}
+{# Fim Zera Base de calculo COFINS #}
+
+{# Zera alíquota ICMS #}
+{% set zeraAliquota = false %}
+    {% if self.configuracaoParametros %}
+        {% set cfopZerada = self.configuracaoParametros.getOpcoesICMS().getCfopAliquotaZerada()|split(',') %}
+        {% set zeraAliquota = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+    {% endif %}
+            
+    {% if zeraAliquota or self.notaFiscalItem.notaFiscal.pessoa.tipo == 3 %}
+        {{ self.result('0.00') }}
+    {% else %}
+        {{ self.result('0.00') }}
+{% endif %}
+
+
 {# {% if self.notaFiscalItem.getSituacaoTributariaICMS().getCodigo() == '60' %}
 	{{self.result('0.00')}}
 {% else %}
@@ -13,13 +153,8 @@
   {{ self.result(self.aliquotaICMS.ICMSInterno)}}
 {% endif %} #}
 
-{% set zeraAliquota = false %}
-    {% if self.configuracaoParametros %}
-        {% set cfopZerada = self.configuracaoParametros.getOpcoesICMS().getCfopAliquotaZerada()|split(',') %}
-        {% set zeraAliquota = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
-    {% endif %}
-            
-    {% if zeraAliquota or self.notaFiscalItem.notaFiscal.pessoa.tipo == 3 %}
+
+{% if zeraBaseCalculo or self.notaFiscalItem.notaFiscal.pessoa.tipo == 3 %}
         {{ self.result('0.00') }}
     {% elseif  self.importado and self.siglaEstado != self.siglaEstadoEmissor %}
         {# origem #}
@@ -35,18 +170,4 @@
         {% else %}
             {{ self.result(self.aliquotaICMS.ICMSInterestadual) }}
     {% endif %}
-{% endif %}
-
-
-{% set zeraAliquota = false %}
-    {% if self.configuracaoParametros %}
-        {% set cfopZerada = self.configuracaoParametros.getOpcoesICMS().getCfopAliquotaZerada()|split(',') %}
-        {% set zeraAliquota = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
-    {% endif %}
-            
-    {% if zeraAliquota or self.notaFiscalItem.notaFiscal.pessoa.tipo == 3 %}
-        {{ self.result('0.00') }}
-    {% else %}
-        {# {{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }} #}
-        {{ self.result('10.00')}}
 {% endif %}
