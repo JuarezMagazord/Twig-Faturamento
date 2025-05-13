@@ -1,278 +1,236 @@
-<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
-    <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-        <infNFe Id="NFe42250237575940000119550050000045931000047035" versao="4.00">
-            <ide>
-                <cUF>42</cUF>
-                <cNF>00004703</cNF>
-                <natOp>Devolucao Compra para Comercializacao</natOp>
-                <mod>55</mod>
-                <serie>5</serie>
-                <nNF>4593</nNF>
-                <dhEmi>2025-02-27T13:01:09-03:00</dhEmi>
-                <dhSaiEnt>2025-02-27T13:01:09-03:00</dhSaiEnt>
-                <tpNF>1</tpNF>
-                <idDest>1</idDest>
-                <cMunFG>4208906</cMunFG>
-                <tpImp>1</tpImp>
-                <tpEmis>1</tpEmis>
-                <cDV>5</cDV>
-                <tpAmb>1</tpAmb>
-                <finNFe>4</finNFe>
-                <indFinal>0</indFinal>
-                <indPres>2</indPres>
-                <indIntermed>0</indIntermed>
-                <procEmi>0</procEmi>
-                <verProc>Magazord 1.0</verProc>
-                <NFref>
-                    <refNFe>42250210474553000130550010013669581938753670</refNFe>
-                </NFref>
-            </ide>
-            <emit>
-                <CNPJ>37575940000119</CNPJ>
-                <xNome>Quotidien Confecções Ltda.</xNome>
-                <xFant>Quotidien</xFant>
-                <enderEmit>
-                    <xLgr>Rua Vinte e Cinco de Julho</xLgr>
-                    <nro>2003</nro>
-                    <xCpl>Sala 02</xCpl>
-                    <xBairro>Vila Nova</xBairro>
-                    <cMun>4208906</cMun>
-                    <xMun>Jaraguá do Sul</xMun>
-                    <UF>SC</UF>
-                    <CEP>89259000</CEP>
-                    <cPais>1058</cPais>
-                    <xPais>Brasil</xPais>
-                    <fone>47997226360</fone>
-                </enderEmit>
-                <IE>260561339</IE>
-                <IM>ISENTO</IM>
-                <CNAE>1412601</CNAE>
-                <CRT>1</CRT>
-            </emit>
-            <dest>
-                <CNPJ>10474553000130</CNPJ>
-                <xNome>MALHAS MENEGOTTI INDUSTRIA TEXTIL LTDA</xNome>
-                <enderDest>
-                    <xLgr>R.Joaquim Francisco de Paula PD.1, 4850</xLgr>
-                    <nro>0</nro>
-                    <xBairro>CHICO DE PAULA</xBairro>
-                    <cMun>4208906</cMun>
-                    <xMun>Jaraguá do Sul</xMun>
-                    <UF>SC</UF>
-                    <CEP>89254848</CEP>
-                    <cPais>1058</cPais>
-                    <xPais>Brasil</xPais>
-                    <fone>4733728500</fone>
-                </enderDest>
-                <indIEDest>1</indIEDest>
-                <IE>255735898</IE>
-            </dest>
-            <det nItem="1">
-                <prod>
-                    <cProd>308266.2136</cProd>
-                    <cEAN>SEM GTIN</cEAN>
-                    <xProd>MALHA CONFORTO CZ 96,00% ALGODAO / 4,00% ELASTANO EXTRA LARG. 1,80m GRAM.
-                        170gr/m 1L,2C,3C,4A,6B,7E,8C</xProd>
-                    <NCM>60062200</NCM>
-                    <CFOP>5202</CFOP>
-                    <uCom>KG</uCom>
-                    <qCom>14.5600</qCom>
-                    <vUnCom>69.960165</vUnCom>
-                    <vProd>1018.62</vProd>
-                    <cEANTrib>SEM GTIN</cEANTrib>
-                    <uTrib>KG</uTrib>
-                    <qTrib>14.5600</qTrib>
-                    <vUnTrib>69.960165</vUnTrib>
-                    <indTot>1</indTot>
-                </prod>
-                <imposto>
-                    <ICMS>
-                        <ICMSSN102>
-                            <orig>0</orig>
-                            <CSOSN>102</CSOSN>
-                        </ICMSSN102>
-                    </ICMS>
-                    <IPI>
-                        <cEnq>999</cEnq>
-                        <IPITrib>
-                            <CST>50</CST>
-                            <vBC>0.00</vBC>
-                            <pIPI>0</pIPI>
-                            <vIPI>0.00</vIPI>
-                        </IPITrib>
-                    </IPI>
-                    <PIS>
-                        <PISAliq>
-                            <CST>01</CST>
-                            <vBC>0</vBC>
-                            <pPIS>1.65</pPIS>
-                            <vPIS>0</vPIS>
-                        </PISAliq>
-                    </PIS>
-                    <COFINS>
-                        <COFINSAliq>
-                            <CST>01</CST>
-                            <vBC>0</vBC>
-                            <pCOFINS>7.60</pCOFINS>
-                            <vCOFINS>0</vCOFINS>
-                        </COFINSAliq>
-                    </COFINS>
-                </imposto>
-                <impostoDevol>
-                    <pDevol>0.00</pDevol>
-                    <IPI>
-                        <vIPIDevol>0.00</vIPIDevol>
-                    </IPI>
-                </impostoDevol>
-            </det>
-            <det nItem="2">
-                <prod>
-                    <cProd>410021.2136</cProd>
-                    <cEAN>SEM GTIN</cEAN>
-                    <xProd>RIB 2X1 M.CONFORTO CZ 97,00% ALGODAO / 3,00% ELASTANO EXTRA LARG. 50cm
-                        GRAM. 260gr/m 1L,2C,3C,4A,6B,7E,8C</xProd>
-                    <NCM>60062200</NCM>
-                    <CFOP>5202</CFOP>
-                    <uCom>KG</uCom>
-                    <qCom>0.8300</qCom>
-                    <vUnCom>88.915663</vUnCom>
-                    <vProd>73.80</vProd>
-                    <cEANTrib>SEM GTIN</cEANTrib>
-                    <uTrib>KG</uTrib>
-                    <qTrib>0.8300</qTrib>
-                    <vUnTrib>88.915663</vUnTrib>
-                    <indTot>1</indTot>
-                </prod>
-                <imposto>
-                    <ICMS>
-                        <ICMSSN102>
-                            <orig>0</orig>
-                            <CSOSN>102</CSOSN>
-                        </ICMSSN102>
-                    </ICMS>
-                    <IPI>
-                        <cEnq>999</cEnq>
-                        <IPITrib>
-                            <CST>50</CST>
-                            <vBC>0.00</vBC>
-                            <pIPI>0</pIPI>
-                            <vIPI>0.00</vIPI>
-                        </IPITrib>
-                    </IPI>
-                    <PIS>
-                        <PISAliq>
-                            <CST>01</CST>
-                            <vBC>0</vBC>
-                            <pPIS>1.65</pPIS>
-                            <vPIS>0</vPIS>
-                        </PISAliq>
-                    </PIS>
-                    <COFINS>
-                        <COFINSAliq>
-                            <CST>01</CST>
-                            <vBC>0</vBC>
-                            <pCOFINS>7.60</pCOFINS>
-                            <vCOFINS>0</vCOFINS>
-                        </COFINSAliq>
-                    </COFINS>
-                </imposto>
-                <impostoDevol>
-                    <pDevol>0.00</pDevol>
-                    <IPI>
-                        <vIPIDevol>0.00</vIPIDevol>
-                    </IPI>
-                </impostoDevol>
-            </det>
-            <total>
-                <ICMSTot>
-                    <vBC>0.00</vBC>
-                    <vICMS>0.00</vICMS>
-                    <vICMSDeson>0</vICMSDeson>
-                    <vFCP>0.00</vFCP>
-                    <vBCST>0</vBCST>
-                    <vST>0</vST>
-                    <vFCPST>0.00</vFCPST>
-                    <vFCPSTRet>0.00</vFCPSTRet>
-                    <vProd>1092.42</vProd>
-                    <vFrete>0.00</vFrete>
-                    <vSeg>0</vSeg>
-                    <vDesc>0.00</vDesc>
-                    <vII>0</vII>
-                    <vIPI>0.00</vIPI>
-                    <vIPIDevol>0.00</vIPIDevol>
-                    <vPIS>0.00</vPIS>
-                    <vCOFINS>0.00</vCOFINS>
-                    <vOutro>0.00</vOutro>
-                    <vNF>1092.42</vNF>
-                </ICMSTot>
-            </total>
-            <transp>
-                <modFrete>0</modFrete>
-                <transporta>
-                    <CNPJ>02255335000186</CNPJ>
-                    <xNome>DISK E TENHA</xNome>
-                    <xEnder>Rua Frederico Barg, 110</xEnder>
-                    <xMun>Jaraguá do Sul</xMun>
-                    <UF>SC</UF>
-                </transporta>
-                <vol>
-                    <qVol>1</qVol>
-                    <esp>ROLOS</esp>
-                </vol>
-            </transp>
-            <pag>
-                <detPag>
-                    <tPag>90</tPag>
-                    <vPag>0.00</vPag>
-                </detPag>
-            </pag>
-            <infAdic>
-                <infCpl>Documento emitido por ME ou EPP optante pelo Simples Nacional. Não gera
-                    direito a crédito fiscal de IPI.</infCpl>
-            </infAdic>
-            <infRespTec>
-                <CNPJ>28977040000107</CNPJ>
-                <xContato>Ricardo Schroeder</xContato>
-                <email>ricardo@magazord.com.br</email>
-                <fone>4735208013</fone>
-            </infRespTec>
-        </infNFe>
-        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-            <SignedInfo>
-                <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
-                <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
-                <Reference URI="#NFe42250237575940000119550050000045931000047035">
-                    <Transforms>
-                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
-                        <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
-                    </Transforms>
-                    <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-                    <DigestValue>gGMY9JKIPNidOJtYkpI9WXhN1GY=</DigestValue>
-                </Reference>
-            </SignedInfo>
-            <SignatureValue>
-                cF7vIrKSsdIyodKzuWV631+FgbRXjIvLoA0vO0lvX+6BVVuCmtjUZVfF717Bp/xChOrpUw+kJyb0sYIl7w4UTtjtuw1JPw1No7VLdggcl22C7DNq8wAi243QrGokhioJEdhTFTLPvzXRZs86YzlWLQNPHT7zm5ePYCpxorVyWEpCCthzkmbWhh19/z6ivaHIJ31oxOq2OxyeM8iWmVPMC7hTxSpaGUQOqoZ+X02x1LwbXkxA+ijhZVG1NUWLLSTD0jdRS5I0Sdp6r4j/k5NrhDOQJ2ZRxK5jmZP799/EbxRgWGZ+C3NnrGBK+6IyMjwLIZF9QFMa6Cht7IyKd5OMjg==</SignatureValue>
-            <KeyInfo>
-                <X509Data>
-                    <X509Certificate>
-                        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</X509Certificate>
-                </X509Data>
-            </KeyInfo>
-        </Signature>
-    </NFe>
-    <protNFe xmlns="http://www.portalfiscal.inf.br/nfe"
-        xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" versao="4.00">
-        <infProt>
+<?xml version="1.0" encoding="UTF-8"?>
+<NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe42250530338877000158550050000000641000001737" versao="4.00">
+        <ide>
+            <cUF>42</cUF>
+            <cNF>00000173</cNF>
+            <natOp>Venda Merc.Adq.Rec.Terc.Dest.Nao Contrib</natOp>
+            <mod>55</mod>
+            <serie>5</serie>
+            <nNF>64</nNF>
+            <dhEmi>2025-05-09T10:43:48-03:00</dhEmi>
+            <dhSaiEnt>2025-05-09T10:43:48-03:00</dhSaiEnt>
+            <tpNF>1</tpNF>
+            <idDest>2</idDest>
+            <cMunFG>4216305</cMunFG>
+            <tpImp>1</tpImp>
+            <tpEmis>1</tpEmis>
+            <cDV>7</cDV>
             <tpAmb>1</tpAmb>
-            <verAplic>SVRS2501312310DR</verAplic>
-            <chNFe>42250237575940000119550050000045931000047035</chNFe>
-            <dhRecbto>2025-02-27T14:29:52-03:00</dhRecbto>
-            <nProt>242250075992413</nProt>
-            <digVal>gGMY9JKIPNidOJtYkpI9WXhN1GY=</digVal>
-            <cStat>100</cStat>
-            <xMotivo>Autorizado o uso da NF-e</xMotivo>
-        </infProt>
-    </protNFe>
-</nfeProc>
+            <finNFe>1</finNFe>
+            <indFinal>1</indFinal>
+            <indPres>2</indPres>
+            <indIntermed>0</indIntermed>
+            <procEmi>0</procEmi>
+            <verProc>Magazord 1.0</verProc>
+        </ide>
+        <emit>
+            <CNPJ>30338877000158</CNPJ>
+            <xNome>Serra Maquinas Ltda</xNome>
+            <xFant>Serra Maquinas</xFant>
+            <enderEmit>
+                <xLgr>Rodovia SC 410</xLgr>
+                <nro>5617</nro>
+                <xCpl>KM 24 Sala 01 e 02</xCpl>
+                <xBairro>Centro</xBairro>
+                <cMun>4216305</cMun>
+                <xMun>São João Batista</xMun>
+                <UF>SC</UF>
+                <CEP>88240000</CEP>
+                <cPais>1058</cPais>
+                <xPais>Brasil</xPais>
+                <fone>4832653950</fone>
+            </enderEmit>
+            <IE>258667737</IE>
+            <IM>isento</IM>
+            <CRT>3</CRT>
+        </emit>
+        <dest>
+            <CPF>00381173046</CPF>
+            <xNome>Marciel de Luca Martins</xNome>
+            <enderDest>
+                <xLgr>Av do Riacho</xLgr>
+                <nro>1262</nro>
+                <xCpl>loja</xCpl>
+                <xBairro>centro</xBairro>
+                <cMun>4321501</cMun>
+                <xMun>Torres</xMun>
+                <UF>RS</UF>
+                <CEP>95560000</CEP>
+                <cPais>1058</cPais>
+                <xPais>Brasil</xPais>
+                <fone>51983251000</fone>
+            </enderDest>
+            <indIEDest>9</indIEDest>
+            <email>grupo.kaza@hotmail.com</email>
+        </dest>
+        <entrega>
+            <CPF>00381173046</CPF>
+            <xNome>Marciel de Luca Martins</xNome>
+            <xLgr>Av do Riacho</xLgr>
+            <nro>1262</nro>
+            <xCpl>loja</xCpl>
+            <xBairro>centro</xBairro>
+            <cMun>4321501</cMun>
+            <xMun>Torres</xMun>
+            <UF>RS</UF>
+            <CEP>95560000</CEP>
+        </entrega>
+
+
+        <det nItem="1">
+            <prod>
+                <cProd>4006825641202-01</cProd>
+                <cEAN>4006825641202</cEAN>
+                <xProd>PISTOLA DE COLA QUENTE TE-CG 18 LI SOLO</xProd>
+                <NCM>85167990</NCM>
+                <CEST>2105100</CEST>
+                <CFOP>6108</CFOP>
+                <uCom>UN</uCom>
+                <qCom>1.0000</qCom>
+                <vUnCom>319.000000</vUnCom>
+                <vProd>319.00</vProd>
+                <cEANTrib>4006825641202</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>319.000000</vUnTrib>
+                <vFrete>26.98</vFrete>
+                <indTot>1</indTot>
+                <xPed>0012505260603</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>0</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>345.98</vBC>
+                        <pICMS>12.00</pICMS>
+                        <vICMS>41.52</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>287.16</vBC>
+                        <pPIS>1.65</pPIS>
+                        <vPIS>4.74</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>287.16</vBC>
+                        <pCOFINS>7.60</pCOFINS>
+                        <vCOFINS>21.82</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+                <ICMSUFDest>
+                    <vBCUFDest>345.98</vBCUFDest>
+                    <vBCFCPUFDest>345.98</vBCFCPUFDest>
+                    <pFCPUFDest>0.00</pFCPUFDest>
+                    <pICMSUFDest>17.00</pICMSUFDest>
+                    <pICMSInter>12.00</pICMSInter>
+                    <pICMSInterPart>100.00</pICMSInterPart>
+                    <vFCPUFDest>0.00</vFCPUFDest>
+                    <vICMSUFDest>17.30</vICMSUFDest>
+                    <vICMSUFRemet>0.00</vICMSUFRemet>
+                </ICMSUFDest>
+            </imposto>
+        </det>
+        <total>
+            <ICMSTot>
+
+
+                <vBC>345.98</vBC>
+                <vICMS>41.52</vICMS>
+                <vICMSDeson>0</vICMSDeson>
+
+                <vFCPUFDest>0.00</vFCPUFDest>
+                <vICMSUFDest>17.30</vICMSUFDest>
+                <vICMSUFRemet>0.00</vICMSUFRemet>
+                <vFCP>0.00</vFCP>
+                <vBCST>0.00</vBCST>
+                <vST>0.00</vST>
+                <vFCPST>0.00</vFCPST>
+                <vFCPSTRet>0.00</vFCPSTRet>
+                <vProd>319.00</vProd>
+                <vFrete>26.98</vFrete>
+                <vSeg>0</vSeg>
+                <vDesc>0.00</vDesc>
+                <vII>0</vII>
+                <vIPI>0.00</vIPI>
+                <vIPIDevol>0.00</vIPIDevol>
+                <vPIS>4.74</vPIS>
+                <vCOFINS>21.82</vCOFINS>
+                <vOutro>0.00</vOutro>
+                <vNF>345.98</vNF>
+            </ICMSTot>
+        </total>
+        <transp>
+            <modFrete>0</modFrete>
+            <transporta>
+                <CNPJ>34737950000115</CNPJ>
+                <xNome>PELISSER E FIORI TRANSPORTES E LOGISTICA LTDA</xNome>
+                <xEnder>Rua Itajai, 557</xEnder>
+                <xMun>Gaspar</xMun>
+                <UF>SC</UF>
+            </transporta>
+            <vol>
+                <qVol>1</qVol>
+                <esp>Caixa</esp>
+                <pesoL>0.500</pesoL>
+                <pesoB>0.500</pesoB>
+            </vol>
+        </transp>
+        <cobr>
+            <fat>
+                <nFat>64</nFat>
+                <vOrig>345.98</vOrig>
+                <vDesc>0.00</vDesc>
+                <vLiq>345.98</vLiq>
+            </fat>
+            <dup>
+                <nDup>001</nDup>
+                <dVenc>2025-05-09</dVenc>
+                <vDup>345.98</vDup>
+            </dup>
+        </cobr>
+        <pag>
+            <detPag>
+                <tPag>03</tPag>
+                <vPag>345.98</vPag>
+                <card>
+                    <tpIntegra>1</tpIntegra>
+                    <CNPJ>19468242000132</CNPJ>
+                    <tBand>02</tBand>
+                    <cAut>4dedb5b930dd20d4903a</cAut>
+                </card>
+            </detPag>
+        </pag>
+        <infAdic>
+            <infAdFisco>- Recolhimento do ICMS ao ESTADO de destino - - Total FCP R$ 0,00 - Partilha
+                ICMS UF Destino R$ 17,30 - Partilha ICMS UF Origem R$ 0,00</infAdFisco>
+            <infCpl>Pedido: 0012505260603 - . - Total aproximado de tributos: 76,35 (22,07%)
+                Federais 64,59 (18,67%) Estaduais 11,76 (3,40%). Fonte.: IBPT/empresometro.com.br.</infCpl>
+            <obsCont xCampo="Pedido de Venda">
+                <xTexto>0012505260603</xTexto>
+            </obsCont>
+        </infAdic>
+        <infRespTec>
+            <CNPJ>28977040000107</CNPJ>
+            <xContato>Ricardo Schroeder</xContato>
+            <email>ricardo@magazord.com.br</email>
+            <fone>4735208013</fone>
+        </infRespTec>
+    </infNFe>
+</NFe>

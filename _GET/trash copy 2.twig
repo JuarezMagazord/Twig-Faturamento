@@ -1,0 +1,214 @@
+{% set cfopCodigo = '' %}
+    {% set operacaoInterna = (estadoEmissor == estadoDestinatario) %}
+    {% if tipo == 1 %} {# Operação de saída #}
+        {% if origem == 'filial' and destino == 'filial' %}
+            {% if operacaoInterna %}
+                {% set cfopCodigo = '5152' %}
+            {% else %}
+                {% set cfopCodigo = '6152' %}
+            {% endif %}    
+        {% elseif origem == 'filial' and destino == 'fornecedor'%}
+            {% if operacaoInterna %}
+                {% set cfopCodigo = '5202' %}
+            {% else %}
+                {% set cfopCodigo = '6202' %}
+            {% endif %}    
+        {% else %}
+            {% set isBrinde = (formaPagamento and formaPagamento.isBrinde()) %}
+            {% if operacaoInterna %}
+                {% if isBrinde %}
+                    {% set cfopCodigo = '5910' %}
+                {% else %}
+     {% if produtoDerivacao is not null and produtoDerivacao.produto.marca.getProducaoPropria() == true %}
+                        {% set cfopCodigo = '5101' %}
+                    {% else %}    
+                        {% set cfopCodigo = '5102' %}
+                    {% endif %}    
+                {% endif %}
+            {% else %}    
+                {% if isBrinde %}
+                    {% set cfopCodigo = '6910' %}
+                {% else %}
+                    {% if destinatario.tipo == 2 and destinatario.contribuinteIcms %}
+                        {% if estadoDestinatario.siglaEstado == 'PR' %}
+                            {% cfopCodigo = '6403' %}
+                                {% else %} 
+                            {% cfopCodigo = '6108' %}
+                            {% endif %}
+                        {% if produtoDerivacao is not null and produtoDerivacao.produto.marca.getProducaoPropria() == true %}
+                            {% set cfopCodigo = '6101' %}
+                        {% else %}
+                            {% set cfopCodigo = '6102' %}
+                        {% endif %}
+                    {% else %}
+                        {% if produtoDerivacao is not null and produtoDerivacao.produto.marca.getProducaoPropria() == true %}
+                            {% set cfopCodigo = '6107' %}
+                                {% else %} 
+                            {% set cfopCodigo = '6108' %}
+                        {% endif %}
+                    {% endif %}    
+                {% endif %}
+            {% endif %}    
+        {% endif %}    
+    {% else %}
+        {% if origem == 'filial' and destino == 'cliente' %}
+            {% if operacaoInterna %}
+                {% if produtoDerivacao is not null and produtoDerivacao.produto.marca.getProducaoPropria() == true %}
+                    {% set cfopCodigo = '1201' %}
+                {% else %}
+                    {% set cfopCodigo = '1202' %}
+                {% endif %}
+            {% else %}
+                {% if produtoDerivacao is not null and produtoDerivacao.produto.marca.getProducaoPropria() == true %}
+                    {% set cfopCodigo = '2201' %}
+                {% else %}
+                    {% set cfopCodigo = '2202' %}
+                {% endif %}
+            {% endif %}
+        {% elseif origem == 'transportadora' and destino == 'filial' %}
+            {% if operacaoInterna %}
+                {% set cfopCodigo = '1353' %}
+            {% else %}
+                {% set cfopCodigo = '2353' %}
+            {% endif %}
+        {% else %}
+            {% if operacaoInterna %}
+                {% set cfopCodigo = '1102' %}
+            {% else %}
+                {% set cfopCodigo = '2102' %}
+            {% endif %}
+        {% endif %}
+    {% endif %} {# fim do 'if' tipo = 1 #}
+    
+    {# Variável para clientes contribuitnes #}
+    {#  'AL': ['70099200', '39241000', '42021220', '42029200', '42021210', '96033000', '96162000'], X
+        'AP': ['96033000', '96162000'], X
+        'AM': ['42021220'], X
+        'BA': ['39241000', '42021210', '42021220', '42029200', '70099200'], x
+        'ES': ['70099200'], x
+        'MT': ['39241000', '70134290', '70139900', '42021220', '42029200', '42021210', '96033000', '96162000'], x
+        'MG': ['70099200', '3924100', '42021220', '42029200', '96033000', '96162000', '42021210', '70134290', '70139900'], x
+        'PE': ['70099200'], x
+        'PR': ['70099200', '96033000', '42021210', '96162000'], x
+        'RJ': ['70099200', '42021210', '96033000', '96162000', '42021220', '42029200', '70139900', '39241000', '70134290'], x
+        'RS': ['70099200', '96033000', '42021210', '96162000'], x
+        'SP': ['42021210', '42029200', '39241000'], x
+        'DF': ['70099200', '42021210', '96033000', '96162000'] #}
+    {#  Código para mudar para CFOP de mercadoria ST 
+    {% if contribuinte %}
+        {% if produto.ncm.codigo in ['70099200', '39241000', '42021220', '42029200', '42021210', '96033000', '96162000'] %}
+            {% cfopCodigo'6403' %}
+                {% else %} 
+            {% cfopCodigo'6108' %}
+        {% endif %}
+    {% endif %}
+
+    {% if destinatario.tipo == 2 and destinatario.contribuinteIcms %}
+        {% if operacaoInterna == false %}
+            {% if produto.ncm.codigo in ['70099200', '39241000', '42021220', '42029200', '42021210', '96033000', '96162000'] %}
+            {% cfopCodigo = '6403' %}
+                {% else %} 
+            {% cfopCodigo = '6108' %}
+            {% endif %}
+        {% endif %}
+    {% endif %}#}
+
+
+ 
+{{cfopCodigo}}
+
+{######################################}
+{########### Código original ##########}
+{######################################}
+
+{% set cfopCodigo = '' %}
+    {% set operacaoInterna = (estadoEmissor == estadoDestinatario) %}
+    {% if tipo == 1 %}
+        {% if origem == 'filial' and destino == 'filial' %}
+            {% if operacaoInterna %}
+                {% set cfopCodigo = '5152' %}
+            {% else %}
+                {% set cfopCodigo = '6152' %}
+            {% endif %}    
+        {% elseif origem == 'filial' and destino == 'fornecedor'%}
+            {% if operacaoInterna %}
+                {% set cfopCodigo = '5202' %}
+            {% else %}
+                {% set cfopCodigo = '6202' %}
+            {% endif %}    
+        {% else %}
+            {% set isBrinde = (formaPagamento and formaPagamento.isBrinde()) %}
+            {% if operacaoInterna %}
+                {% if isBrinde %}
+                    {% set cfopCodigo = '5910' %}
+                {% else %}
+     {% if produtoDerivacao is not null and produtoDerivacao.produto.marca.getProducaoPropria() == true %}
+                        {% set cfopCodigo = '5101' %}
+                    {% else %}    
+                        {% set cfopCodigo = '5102' %}
+                    {% endif %}    
+                {% endif %}
+            {% else %}    
+                {% if isBrinde %}
+                    {% set cfopCodigo = '6910' %}
+                {% else %}
+                    {% if destinatario.tipo == 2 and destinatario.contribuinteIcms %}
+                        {% if produtoDerivacao is not null and produtoDerivacao.produto.marca.getProducaoPropria() == true %}
+                            {% set cfopCodigo = '6101' %}
+                        {% else %}
+                            {% set cfopCodigo = '6102' %}
+                        {% endif %}
+                    {% else %}
+                        {% if produtoDerivacao is not null and produtoDerivacao.produto.marca.getProducaoPropria() == true %}
+                            {% set cfopCodigo = '6107' %}
+                        {% else %}
+                            {% set cfopCodigo = '6108' %}
+                        {% endif %}
+                    {% endif %}    
+                {% endif %}
+            {% endif %}    
+        {% endif %}    
+    {% else %}
+        {% if origem == 'filial' and destino == 'cliente' %}
+            {% if operacaoInterna %}
+                {% if produtoDerivacao is not null and produtoDerivacao.produto.marca.getProducaoPropria() == true %}
+                    {% set cfopCodigo = '1201' %}
+                {% else %}
+                    {% set cfopCodigo = '1202' %}
+                {% endif %}
+            {% else %}
+                {% if produtoDerivacao is not null and produtoDerivacao.produto.marca.getProducaoPropria() == true %}
+                    {% set cfopCodigo = '2201' %}
+                {% else %}
+                    {% set cfopCodigo = '2202' %}
+                {% endif %}
+            {% endif %}
+        {% elseif origem == 'transportadora' and destino == 'filial' %}
+            {% if operacaoInterna %}
+                {% set cfopCodigo = '1353' %}
+            {% else %}
+                {% set cfopCodigo = '2353' %}
+            {% endif %}
+        {% else %}
+            {% if operacaoInterna %}
+                {% set cfopCodigo = '1102' %}
+            {% else %}
+                {% set cfopCodigo = '2102' %}
+            {% endif %}
+        {% endif %}
+    {% endif %}
+    {#  Código para mudar para CFOP de mercadoria ST #}
+      {% if ncm in ['70099200', '39241000', '42021220', '42029200', '42021210', '96033000', '96162000'] %} 
+         {% if operacaoInterna  %}
+                        {% set cfopCodigo = '5403' %}
+                        {% else %}    
+                            {% set cfopCodigo = '6403' %}
+                      {% endif %}  
+ {% else %}    
+{% if operacaoInterna  %}
+                        {% set cfopCodigo = '5102' %}
+                        {% else %}    
+                            {% set cfopCodigo = '6107' %}
+                      {% endif %}  
+                        {% endif %}    
+    {{cfopCodigo}}

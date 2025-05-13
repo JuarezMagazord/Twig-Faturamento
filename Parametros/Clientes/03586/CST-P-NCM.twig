@@ -1,0 +1,5 @@
+{% set mva = calculo_get_parametro_calculado('ICMS_ST_PERC_MVA') %}
+    {% if mva > '0.00' %}
+        {{ self.resul('10')}}
+    {% else %}
+        {{ self.resul('00')}}

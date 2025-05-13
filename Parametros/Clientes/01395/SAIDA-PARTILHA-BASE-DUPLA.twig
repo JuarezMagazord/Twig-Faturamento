@@ -1,0 +1,72 @@
+{% if calculo_get_parametro_calculado('PARTILHA_ICMS') == 'sim' %}
+    {% set base_calculo = calculo_get_parametro_calculado('VLR_BASE_ICMS') %}
+    {% set aliquota_icms_origem = calculo_get_parametro_calculado('ALIQ_ICMS') / 100 %}
+    {% set aliquota_icms_destino = calculo_get_parametro_calculado('ALIQ_ICMS_DESTINO') / 100 %}
+    {% set resultado = base_calculo * (aliquota_icms_destino - aliquota_icms_origem) %}
+
+    {# Inicializa a variável final como zero #}
+    {% set valor_final = 0.00 %}
+
+    {# DIFAL BASE SIMPLES #}
+    {% if resultado > 0 %}
+        {% set valor_final = resultado %}
+    {% endif %}
+
+    {# Verifica se é DIFAL BASE DUPLA #}
+    {% if self.siglaEstado in ['BA','GO','MG','PA','PB','PR','PE','RS','SE','TO'] %}
+        {% set valor_icms_origem = calculo_get_parametro_calculado('VLR_ICMS') %}
+        {% set difal_destino = (100 - calculo_get_parametro_calculado('ALIQ_ICMS_DESTINO')) %}
+        {% set difal_origem = (100 - calculo_get_parametro_calculado('ALIQ_ICMS')) %}
+        {% set difal = (base_calculo * difal_origem) %}
+        {% set difal = (difal  / difal_destino) %}
+        {% set difal = (difal * aliquota_icms_destino) %}
+        {% set difal = (difal - valor_icms_origem ) %}
+        
+        {% if difal > 0 %}
+            {% set valor_final = difal %}
+        {% endif %}
+    {% endif %}
+
+    {# Chama self.result() apenas uma vez, garantindo que não haja inserções duplicadas #}
+    {{ self.result(valor_final) }}
+
+{% else %}
+    {{ self.result(0.00) }}
+{% endif %}
+
+
+{% if calculo_get_parametro_calculado('PARTILHA_ICMS') == 'sim' %}
+    {% set base_calculo = calculo_get_parametro_calculado('VLR_BASE_ICMS') %}
+    {% set aliquota_icms_origem = calculo_get_parametro_calculado('ALIQ_ICMS') / 100 %}
+    {% set aliquota_icms_destino = calculo_get_parametro_calculado('ALIQ_ICMS_DESTINO') / 100 %}
+    {% set resultado = base_calculo * (aliquota_icms_destino - aliquota_icms_origem) %}
+    {#  DIFAL BASE SIMPLES #}
+    {% if resultado > 0 %}
+        {{ self.result(resultado)}}
+    {% else %}
+        {{ self.result(0.00)}}
+    {% endif %}
+    {# para utilizar DIFAL BASE DUPLA descomentar codigo abaixo #}
+    {% if self.siglaEstado in ['BA','GO','MG','PA','PB','PR','PE','RS','SE','TO'] %}
+        {% set valor_icms_origem = calculo_get_parametro_calculado('VLR_ICMS') %}
+        {% set difal_destino = (100 - calculo_get_parametro_calculado('ALIQ_ICMS_DESTINO')) %}
+        {% set difal_origem = (100 - calculo_get_parametro_calculado('ALIQ_ICMS')) %}
+        {% set difal = (base_calculo * difal_origem) %}
+        {% set difal = (difal  / difal_destino) %}
+        {% set difal = (difal * aliquota_icms_destino) %}
+        {% set difal = (difal - valor_icms_origem ) %}
+        {% if difal > 0.00 %}
+            {{ self.result(difal) }}
+        {% else %}		
+            {{ self.result(0.00) }}
+        {% endif %}
+    {% else %}	
+        {% if resultado > 0.00 %}
+            {{ self.result(resultado) }}
+        {% else %}		
+            {{ self.result(0.00) }}
+        {% endif %}
+    {% endif %}
+{% else %}
+    {{ self.result(0.00) }}
+{% endif %}

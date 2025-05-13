@@ -1,5 +1,44 @@
-{#  Váriavel para buscar o valor do ICMS calculado.  #}
-{% set valorICMS = calculo_get_parametro_calculado('VLR_ICMS') %}
+{% set vlrIcms = calculo_get_parametro_calculado('VLR_ICMS') %}
+{% set vlrDifal = calculo_get_parametro_calculado('VLR_PARTILHA_ICMS') %}
 
-{#  Calculo, isentando o VLR_ICMS da base PIS, o mesmo pode ser usado no COFINS.    #}
-{{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto - valorICMS) }}
+{% set zeraBaseCalculo = false %}
+    {% if self.configuracaoParametros %}
+        {% set cfopZerada = self.configuracaoParametros.getOpcoesPIS().getCfopBaseZerada()|split(',') %}
+        {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+
+{{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - (self.notaFiscalItem.valorDesconto + vlrDifal + vlrIcms )) }}
+
+
+
+
+
+{% if self.notaFiscalItem.getCfop().getCodigo() in [5927] %}
+    {{ self.result(0) }}
+  {% else %}
+
+{% set zeraBaseCalculo = false %}
+{% if self.configuracaoParametros %}
+  {% set cfopZerada = self.configuracaoParametros.getOpcoesPIS().getCfopBaseZerada()|split(',') %}
+  {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+{% endif %}
+{# Desconto de ICMS na base de calculo - Base Legal: julgamento dos embargos do RE 574.706 em 13/05/2021, pelo STF; art. 161-C da IN RFB n° 1717/2017. #}
+{% set deduzirICMS = calculo_get_parametro_calculado('VLR_ICMS') %} 
+
+{% if zeraBaseCalculo %}
+  {{ self.result('0.00') }}
+{% elseif self.configuracaoGlobal %}
+  {% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}
+      {{ self.result( (self.notaFiscalItem.valorProduto + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) - deduzirICMS) }}
+  {% else %}
+
+{{ self.result(0.00) }}
+{% endif %}
+{% else %}
+
+{% set vlrIcms = calculo_get_parametro_calculado('VLR_ICMS') %}
+{% set deduzirDifal = calculo_get_parametro_calculado('VLR_PARTILHA_ICMS') %}
+
+{{ self.result((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - (self.notaFiscalItem.valorDesconto + vlrDifal + vlrIcms )) }}
+{% endif %}
+
+{% endif %}

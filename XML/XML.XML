@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-    <infNFe Id="NFe42250237575940000119550050000045921000047020" versao="4.00">
+    <infNFe Id="NFe42250423362845000122550050000002601000003758" versao="4.00">
         <ide>
             <cUF>42</cUF>
-            <cNF>00004702</cNF>
-            <natOp>Devolucao Compra para Comercializacao</natOp>
+            <cNF>00000375</cNF>
+            <natOp>Devolucao de Compra p/Comercializacao</natOp>
             <mod>55</mod>
             <serie>5</serie>
-            <nNF>4592</nNF>
-            <dhEmi>2025-02-27T13:01:09-03:00</dhEmi>
-            <dhSaiEnt>2025-02-27T13:01:09-03:00</dhSaiEnt>
+            <nNF>260</nNF>
+            <dhEmi>2025-04-16T15:58:11-03:00</dhEmi>
+            <dhSaiEnt>2025-04-16T15:58:11-03:00</dhSaiEnt>
             <tpNF>1</tpNF>
-            <idDest>1</idDest>
-            <cMunFG>4208906</cMunFG>
+            <idDest>2</idDest>
+            <cMunFG>4202008</cMunFG>
             <tpImp>1</tpImp>
             <tpEmis>1</tpEmis>
-            <cDV>0</cDV>
+            <cDV>8</cDV>
             <tpAmb>1</tpAmb>
             <finNFe>4</finNFe>
             <indFinal>0</indFinal>
@@ -24,78 +24,89 @@
             <procEmi>0</procEmi>
             <verProc>Magazord 1.0</verProc>
             <NFref>
-                <refNFe>42250210474553000130550010013669581938753670</refNFe>
+                <refNFe>35250309627645000123550010000094421000207755</refNFe>
             </NFref>
         </ide>
         <emit>
-            <CNPJ>37575940000119</CNPJ>
-            <xNome>Quotidien Confecções Ltda.</xNome>
-            <xFant>Quotidien</xFant>
+            <CNPJ>23362845000122</CNPJ>
+            <xNome>A C T de Oliveira Gustmann Ltda</xNome>
+            <xFant>Mesa Tua</xFant>
             <enderEmit>
-                <xLgr>Rua Vinte e Cinco de Julho</xLgr>
-                <nro>2003</nro>
-                <xCpl>Sala 02</xCpl>
-                <xBairro>Vila Nova</xBairro>
-                <cMun>4208906</cMun>
-                <xMun>Jaraguá do Sul</xMun>
+                <xLgr>Rua 3300</xLgr>
+                <nro>702</nro>
+                <xBairro>Centro</xBairro>
+                <cMun>4202008</cMun>
+                <xMun>Balneário Camboriú</xMun>
                 <UF>SC</UF>
-                <CEP>89259000</CEP>
+                <CEP>88330272</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>47997226360</fone>
+                <fone>4733670295</fone>
             </enderEmit>
-            <IE>260561339</IE>
+            <IE>257772863</IE>
             <IM>ISENTO</IM>
-            <CNAE>1412601</CNAE>
+            <CNAE>8211300</CNAE>
             <CRT>1</CRT>
         </emit>
         <dest>
-            <CNPJ>10474553000130</CNPJ>
-            <xNome>MALHAS MENEGOTTI INDUSTRIA TEXTIL LTDA</xNome>
+            <CNPJ>09627645000123</CNPJ>
+            <xNome>ROBERTO TIBERIO EPP - FOCOS</xNome>
             <enderDest>
-                <xLgr>R.Joaquim Francisco de Paula PD.1, 4850</xLgr>
-                <nro>0</nro>
-                <xBairro>CHICO DE PAULA</xBairro>
-                <cMun>4208906</cMun>
-                <xMun>Jaraguá do Sul</xMun>
-                <UF>SC</UF>
-                <CEP>89254848</CEP>
+                <xLgr>Rua Plinio Dionisio de Freitas</xLgr>
+                <nro>315</nro>
+                <xCpl>A</xCpl>
+                <xBairro>Jd. Sao Roberto</xBairro>
+                <cMun>3550308</cMun>
+                <xMun>São Paulo</xMun>
+                <UF>SP</UF>
+                <CEP>03978780</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>4733728500</fone>
+                <fone>1133851590</fone>
             </enderDest>
             <indIEDest>1</indIEDest>
-            <IE>255735898</IE>
+            <IE>148165241114</IE>
         </dest>
+
+
         <det nItem="1">
             <prod>
-                <cProd>308266.2136</cProd>
+                <cProd>223184</cProd>
                 <cEAN>SEM GTIN</cEAN>
-                <xProd>MALHA CONFORTO CZ 96,00% ALGODAO / 4,00% ELASTANO EXTRA LARG. 1,80m GRAM.170gr/m 1L,2C,3C,4A,6B,7E,8C</xProd>
-                <NCM>60062200</NCM>
-                <CFOP>5202</CFOP>
-                <uCom>KG</uCom>
-                <qCom>14.5600</qCom>
-                <vUnCom>69.960165</vUnCom>
-                <vProd>1018.62</vProd>
+                <xProd>CJTO PRATELEIRAS 1220X457X2200 C/ 4 NIVEIS EPOXI ZINCADA - M</xProd>
+                <NCM>94032090</NCM>
+                <CFOP>6202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>3.0000</qCom>
+                <vUnCom>1516.800000</vUnCom>
+                <vProd>4550.40</vProd>
                 <cEANTrib>SEM GTIN</cEANTrib>
-                <uTrib>KG</uTrib>
-                <qTrib>14.5600</qTrib>
-                <vUnTrib>69.960165</vUnTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>3.0000</qTrib>
+                <vUnTrib>1516.800000</vUnTrib>
                 <indTot>1</indTot>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMSSN102>
+                    <ICMSSN900>
                         <orig>0</orig>
-                        <CSOSN>102</CSOSN>
-                    </ICMSSN102>
+                        <CSOSN>900</CSOSN>
+                        <modBC>3</modBC>
+                        <vBC>4550.40</vBC>
+                        <pICMS>12.00</pICMS>
+                        <vICMS>546.05</vICMS>
+                        <pCredSN>0</pCredSN>
+                        <vCredICMSSN>0.00</vCredICMSSN>
+                    </ICMSSN900>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
-                    <IPINT>
-                        <CST>03</CST>
-                    </IPINT>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>3.25</pIPI>
+                        <vIPI>147.89</vIPI>
+                    </IPITrib>
                 </IPI>
                 <PIS>
                     <PISNT>
@@ -115,35 +126,45 @@
                 </IPI>
             </impostoDevol>
         </det>
+
         <det nItem="2">
             <prod>
-                <cProd>410021.2136</cProd>
+                <cProd>223185</cProd>
                 <cEAN>SEM GTIN</cEAN>
-                <xProd>RIB 2X1 M.CONFORTO CZ 97,00% ALGODAO / 3,00% ELASTANO EXTRA LARG. 50cm GRAM.260gr/m 1L,2C,3C,4A,6B,7E,8C</xProd>
-                <NCM>60062200</NCM>
-                <CFOP>5202</CFOP>
-                <uCom>KG</uCom>
-                <qCom>0.8300</qCom>
-                <vUnCom>88.915663</vUnCom>
-                <vProd>73.80</vProd>
+                <xProd>CJTO PRATELEIRAS 1520X457X2200 C/ 4 NIVEIS EPOXI ZINCADA - M</xProd>
+                <NCM>94032090</NCM>
+                <CFOP>6202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>1.0000</qCom>
+                <vUnCom>1130.000000</vUnCom>
+                <vProd>1130.00</vProd>
                 <cEANTrib>SEM GTIN</cEANTrib>
-                <uTrib>KG</uTrib>
-                <qTrib>0.8300</qTrib>
-                <vUnTrib>88.915663</vUnTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>1130.000000</vUnTrib>
                 <indTot>1</indTot>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMSSN102>
+                    <ICMSSN900>
                         <orig>0</orig>
-                        <CSOSN>102</CSOSN>
-                    </ICMSSN102>
+                        <CSOSN>900</CSOSN>
+                        <modBC>3</modBC>
+                        <vBC>1130.00</vBC>
+                        <pICMS>12.00</pICMS>
+                        <vICMS>135.60</vICMS>
+                        <pCredSN>0</pCredSN>
+                        <vCredICMSSN>0.00</vCredICMSSN>
+                    </ICMSSN900>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
-                    <IPINT>
-                        <CST>03</CST>
-                    </IPINT>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>3.25</pIPI>
+                        <vIPI>36.72</vIPI>
+                    </IPITrib>
                 </IPI>
                 <PIS>
                     <PISNT>
@@ -165,39 +186,37 @@
         </det>
         <total>
             <ICMSTot>
-                <vBC>0.00</vBC>
-                <vICMS>0.00</vICMS>
+
+
+                <vBC>5680.40</vBC>
+                <vICMS>681.65</vICMS>
                 <vICMSDeson>0</vICMSDeson>
+
                 <vFCP>0.00</vFCP>
-                <vBCST>0</vBCST>
-                <vST>0</vST>
+                <vBCST>0.00</vBCST>
+                <vST>0.00</vST>
                 <vFCPST>0.00</vFCPST>
                 <vFCPSTRet>0.00</vFCPSTRet>
-                <vProd>1092.42</vProd>
+                <vProd>5680.40</vProd>
                 <vFrete>0.00</vFrete>
                 <vSeg>0</vSeg>
                 <vDesc>0.00</vDesc>
                 <vII>0</vII>
-                <vIPI>0.00</vIPI>
+                <vIPI>184.61</vIPI>
                 <vIPIDevol>0.00</vIPIDevol>
                 <vPIS>0.00</vPIS>
                 <vCOFINS>0.00</vCOFINS>
                 <vOutro>0.00</vOutro>
-                <vNF>1092.42</vNF>
+                <vNF>5865.01</vNF>
             </ICMSTot>
         </total>
         <transp>
-            <modFrete>0</modFrete>
-            <transporta>
-                <CNPJ>02255335000186</CNPJ>
-                <xNome></xNome>
-                <xEnder>Rua Frederico Barg, 110</xEnder>
-                <xMun>Jaraguá do Sul</xMun>
-                <UF>SC</UF>
-            </transporta>
+            <modFrete>9</modFrete>
             <vol>
                 <qVol>1</qVol>
-                <esp>ROLOS</esp>
+                <esp>1</esp>
+                <pesoL>130.000</pesoL>
+                <pesoB>130.000</pesoB>
             </vol>
         </transp>
         <pag>
@@ -207,7 +226,11 @@
             </detPag>
         </pag>
         <infAdic>
-            <infCpl>Documento emitido por ME ou EPP optante pelo Simples Nacional. Não gera direitoa crédito fiscal de IPI.</infCpl>
+            <infAdFisco>INFORMAÇÕES PARA FINS DE CRÉDITO DE DESTINATÁRIO: IPI DESTACADO NO XML R$
+                184,61 PARA DESTINATÁRIO TOMAR O CRÉDITO</infAdFisco>
+            <infCpl>Documento emitido por ME ou EPP optante pelo Simples Nacional. Não gera direito
+                a crédito fiscal de IPI. - Total aproximado de tributos: 1.834,77 (32,30%) Federais
+                869,10 (15,30%) Estaduais 965,67 (17,00%). Fonte.: IBPT/empresometro.com.br.</infCpl>
         </infAdic>
         <infRespTec>
             <CNPJ>28977040000107</CNPJ>

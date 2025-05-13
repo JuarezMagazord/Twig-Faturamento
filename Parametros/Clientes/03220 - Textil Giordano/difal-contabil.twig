@@ -10,7 +10,7 @@
         {{ self.result(0.00)}}
     {% endif %}
     {# para utilizar DIFAL BASE DUPLA descomentar codigo abaixo #}
-    {% if self.siglaEstado in ['BA','GO','MG','PA','PB','PR','PE','RS','SE','TO'] %}
+    {% if self.siglaEstado in ['BA','GO','MG','PA','PB','PR','PE','RS','SE','TO','RJ'] %}
         {% set valor_icms_origem = calculo_get_parametro_calculado('VLR_ICMS') %}
         {% set difal_destino = (100 - calculo_get_parametro_calculado('ALIQ_ICMS_DESTINO')) %}
         {% set difal_origem = (100 - calculo_get_parametro_calculado('ALIQ_ICMS')) %}
@@ -30,7 +30,6 @@
             {{ self.result(0.00) }}
         {% endif %}
     {% endif %}
-        
 {% else %}
     {{ self.result(0.00) }}
 {% endif %}

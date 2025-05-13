@@ -1,19 +1,221 @@
-{% set situacao_tributaria = calculo_get_parametro_calculado('ICMS_SITUACAO_TRIB') %}
-    {% if situacao_tributaria in ["40","41","50"] %}
-        {{ self.result('100.00') }}
-    {% elseif  %}
-        {% if situacao_tributaria in ["51"] %}
-            {{ self.result('23.53') }}
-        {% else %}
-        {{ self.result('0.00') }}
-    {% endif %}
-
-
-{% if self.notaFiscalItem.getCfop().getCodigo() in [5201,5202] %}
-    {{ self.result('900') }}
-{% endif %}
-{% if self.notaFiscalItem.notaFiscal.pessoa.tipo ==  2 and self.notaFiscalItem.notaFiscal.pessoa.inscricaoEstadual is not empty %}
-    {{self.result('101')}}
+{# AL #}
+{% if  self.siglaEstado == "AL" and self.notaFiscalItem.getNCM().getCodigo() == '70099200'%}
+    {{ self.result('70.40') }}
+{%elseif self.siglaEstado == "AL" and self.notaFiscalItem.getNCM().getCodigo() in ['39241000', '42021220', '42029200'] %}
+    {{ self.result('100.53') }}
+{% elseif self.siglaEstado == "AL" and self.notaFiscalItem.getNCM().getCodigo() in ['42021210', '96033000', '96162000'] %}
+    {{ self.result('89.65') }} 
 {% else %}
-    {{self.result('102')}}
+    {% self.result('0.00') %}
+{% endif %}
+
+{# AP #}
+{% if  self.siglaEstado == "AP" and self.notaFiscalItem.getNCM().getCodigo() in ['96033000', '96162000']%}
+    {{ self.result('76.78') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{# AM #}
+{% if  self.siglaEstado == "AM" and self.notaFiscalItem.getNCM().getCodigo() == '42021220'%}
+    {{ self.result('76.78') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{# BA #}
+{% if  self.siglaEstado == "BA" and self.notaFiscalItem.getNCM().getCodigo() in ['39241000', '42021210', '42021220', '42029200' ] %}
+    {{ self.result('94.31') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{% if  self.siglaEstado == "BA" and self.notaFiscalItem.getNCM().getCodigo() == '70099200' %}
+    {{ self.result('75.09') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{# ES #}
+{% if  self.siglaEstado == "ES" and self.notaFiscalItem.getNCM().getCodigo() == '70099200' %}
+    {{ self.result('58.46') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{# MT #}
+{% if  self.siglaEstado == "MT" and self.notaFiscalItem.getNCM().getCodigo() in ['39241000', '70134290', '70139900'] %}
+    {{ self.result('51.47') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{% if  self.siglaEstado == "MT" and self.notaFiscalItem.getNCM().getCodigo() in ['42021220', '42029200'] %}
+    {{ self.result('57.97') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{% if  self.siglaEstado == "MT" and self.notaFiscalItem.getNCM().getCodigo() in ['42021210', '96033000', '96162000'] %}
+    {{ self.result('59.64') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{# MG #}
+{% if  self.siglaEstado == "MG" and self.notaFiscalItem.getNCM().getCodigo() == '70099200' %}
+    {{ self.result('63.90') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{% if  self.siglaEstado == "MG" and self.notaFiscalItem.getNCM().getCodigo() == '3924100' %}
+    {{ self.result('75.61') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{% if  self.siglaEstado == "MG" and self.notaFiscalItem.getNCM().getCodigo() in ['42021220', '42029200'] %}
+    {{ self.result('81.46') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{% if  self.siglaEstado == "MG" and self.notaFiscalItem.getNCM().getCodigo() in ['96033000', '96162000'] %}
+    {{ self.result('85.02') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{% if  self.siglaEstado == "MG" and self.notaFiscalItem.getNCM().getCodigo() == '42021210' %}
+    {{ self.result('88.38') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{% if  self.siglaEstado == "MG" and self.notaFiscalItem.getNCM().getCodigo() in ['70134290', '70139900'] %}
+    {{ self.result('99.02') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{# PE #}
+
+{% if  self.siglaEstado == "PE" and self.notaFiscalItem.getNCM().getCodigo() == '70099200' %}
+    {{ self.result('71.47') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{# PR #}
+{% if  self.siglaEstado == "PR" and self.notaFiscalItem.getNCM().getCodigo() == '70099200' %}
+    {{ self.result('72.92') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{% if  self.siglaEstado == "PR" and self.notaFiscalItem.getNCM().getCodigo() == '96033000' %}
+    {{ self.result('73.36') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{% if  self.siglaEstado == "PR" and self.notaFiscalItem.getNCM().getCodigo() == '42021210' %}
+    {{ self.result('99.32') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{% if  self.siglaEstado == "PR" and self.notaFiscalItem.getNCM().getCodigo() == '96162000' %}
+    {{ self.result('106.73') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{# RJ #}
+{% if  self.siglaEstado == "RJ" and self.notaFiscalItem.getNCM().getCodigo() == '70099200' %}
+    {{ self.result('74.77') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{% if  self.siglaEstado == "RJ" and self.notaFiscalItem.getNCM().getCodigo() in ['42021210','96033000','96162000'] %}
+    {{ self.result('92.14') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{% if  self.siglaEstado == "RJ" and self.notaFiscalItem.getNCM().getCodigo() in ['42021220','42029200'] %}
+    {{ self.result('98.04') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{% if  self.siglaEstado == "RJ" and self.notaFiscalItem.getNCM().getCodigo() == '70139900' %}
+    {{ self.result('110.47') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{% if  self.siglaEstado == "RJ" and self.notaFiscalItem.getNCM().getCodigo() == '39241000' %}
+    {{ self.result('114.84') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{% if  self.siglaEstado == "RJ" and self.notaFiscalItem.getNCM().getCodigo() == '70134290' %}
+    {{ self.result('134.10') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{# RS #}
+{% if  self.siglaEstado == "RS" and self.notaFiscalItem.getNCM().getCodigo() == '70099200' %}
+    {{ self.result('76.96') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{% if  self.siglaEstado == "RS" and self.notaFiscalItem.getNCM().getCodigo() == '96033000' %}
+    {{ self.result('106.44') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{% if  self.siglaEstado == "RS" and self.notaFiscalItem.getNCM().getCodigo() == '42021210' %}
+    {{ self.result('108.23') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{% if  self.siglaEstado == "RS" and self.notaFiscalItem.getNCM().getCodigo() == '96162000' %}
+    {{ self.result('113.71') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{# SP #}
+{% if  self.siglaEstado == "SP" and self.notaFiscalItem.getNCM().getCodigo() in ['42021210', '42029200'] %}
+    {{ self.result('57.24') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{% if  self.siglaEstado == "SP" and self.notaFiscalItem.getNCM().getCodigo() == '39241000' %}
+    {{ self.result('71.14') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{# DF #}
+{% if  self.siglaEstado == "DF" and self.notaFiscalItem.getNCM().getCodigo() == '70099200' %}
+    {{ self.result('59.26') }}
+{% else %}
+    {% self.result('0.00') %}
+{% endif %}
+
+{% if  self.siglaEstado == "DF" and self.notaFiscalItem.getNCM().getCodigo() in ['42021210', '96033000','96162000']  %}
+    {{ self.result('89.65') }}
+{% else %}
+    {% self.result('0.00') %}
 {% endif %}

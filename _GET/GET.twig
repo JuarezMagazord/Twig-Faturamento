@@ -28,7 +28,7 @@
 {# Situação tributária para COFINS, o mesmo se aplica para ICMS, PIS, IPI. #}
 {% if self.situacaoTributariaCOFINS.codigo() in ['00', '50']%}
 
-{# Origem do produto #}
+{# Origem do produto na NFe #}
 {% self.origemFiscal %}
 
 {# NCM do produto na NFe #}

@@ -1,0 +1,10 @@
+{% set zeraAliquota = false %}
+    {% if self.configuracaoParametros %}
+            {% set cfopZerada = self.configuracaoParametros.getOpcoesPIS().getCfopAliquotaZerada()|split(',') %}
+            {% set zeraAliquota = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+    {% endif %}
+    {#{% if zeraAliquota or self.situacaoTributariaPIS.codigo in ['04', '06'] %}
+            {{ self.result('0.00') }}
+    {% else %}
+        {{ self.result(self.aliquotaPIS) }}
+    {% endif %} #}

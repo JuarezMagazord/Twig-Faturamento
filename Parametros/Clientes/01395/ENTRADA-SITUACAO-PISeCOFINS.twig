@@ -1,0 +1,4 @@
+{% if self.notaFiscalItem.getCfop().getCodigo() in [1202,1201,2202,2201]%}
+    {{self.result('98')}}
+{% else %}
+    {{self.result('00')}}

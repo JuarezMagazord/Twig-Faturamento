@@ -1,0 +1,101 @@
+{# ICMS Situação#}
+{# Isenta produto ICMS #}
+{% if self.notaFiscalItem.produtoDerivacao.pai.codigo in ['1745P']  %}
+    {{ self.result(40)}}
+{% else %}
+    {{ self.result('00')}}
+{% endif %}
+
+{# IPI Situação#}
+{# Isenta produto IPI #}
+{% if self.notaFiscalItem.produtoDerivacao.pai.codigo in ['1745P']  %}
+    {{ self.result(53))}}
+{% else %}
+    {{ self.result(50)}}
+{% endif %}
+
+{# IPI Situação#}
+{# Isenta produto PIS/COFINS #}
+{% if self.notaFiscalItem.produtoDerivacao.pai.codigo in ['1745P']  %}
+    {{ self.result('06'))}}
+{% else %}
+    {{ self.result('01')}}
+{% endif %}
+
+{# BASES #}
+
+{# ICMS Base #}
+{# zera base para produto #}
+{% set zeraBaseCalculo = false %}
+    {% if self.configuracaoParametros %}
+        {% set cfopZerada = self.configuracaoParametros.getOpcoesICMS().getCfopBaseZerada()|split(',') %}
+        {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+    {% endif %}
+    {% if zeraBaseCalculo %}
+        {{ self.result('0.00') }}
+    {% elseif self.notaFiscalItem.produtoDerivacao.pai.codigo in ['1745P']  %}
+        {{ self.result('0.00')}}
+    {% elseif self.configuracaoGlobal %}
+        {% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}
+            {{ self.result(self.notaFiscalItem.valorProduto + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+        {% else %}
+            {{ self.result('0.00') }}
+    {% endif %}
+{% endif %}
+
+{# IPI Base #}
+{# zera base para produto #}
+{% set zeraBaseCalculo = false %}
+    {% if self.configuracaoParametros %}
+        {% set cfopZerada = self.configuracaoParametros.getOpcoesIPI().getCfopBaseZerada()|split(',') %}
+        {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+    {% endif %}
+    {% if zeraBaseCalculo %}
+        {{ self.result('0.00') }}
+    {% elseif self.notaFiscalItem.produtoDerivacao.pai.codigo in ['1745P']  %}
+        {{ self.result('0.00')}}
+    {% elseif self.configuracaoGlobal %}
+        {% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}
+            {{ self.result(self.notaFiscalItem.valorProduto + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+        {% else %}
+            {{ self.result('0.00') }}
+    {% endif %}
+{% endif %}
+
+{# PIS Base #}
+{# zera base para produto #}
+{% set zeraBaseCalculo = false %}
+    {% if self.configuracaoParametros %}
+        {% set cfopZerada = self.configuracaoParametros.getOpcoesPIS().getCfopBaseZerada()|split(',') %}
+        {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+    {% endif %}
+    {% if zeraBaseCalculo %}
+        {{ self.result('0.00') }}
+    {% elseif self.notaFiscalItem.produtoDerivacao.pai.codigo in ['1745P']  %}
+        {{ self.result('0.00')}}
+    {% elseif self.configuracaoGlobal %}
+        {% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}
+            {{ self.result(self.notaFiscalItem.valorProduto + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+        {% else %}
+            {{ self.result('0.00') }}
+    {% endif %}
+{% endif %}
+
+{# COFINS Base #}
+{# zera base para produto #}
+{% set zeraBaseCalculo = false %}
+    {% if self.configuracaoParametros %}
+        {% set cfopZerada = self.configuracaoParametros.getOpcoesCOFINS().getCfopBaseZerada()|split(',') %}
+        {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+    {% endif %}
+    {% if zeraBaseCalculo %}
+        {{ self.result('0.00') }}
+    {% elseif self.notaFiscalItem.produtoDerivacao.pai.codigo in ['1745P']  %}
+        {{ self.result('0.00')}}
+    {% elseif self.configuracaoGlobal %}
+        {% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}
+            {{ self.result(self.notaFiscalItem.valorProduto + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+        {% else %}
+            {{ self.result('0.00') }}
+    {% endif %}
+{% endif %}
