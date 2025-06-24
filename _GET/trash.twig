@@ -1,25 +1,19 @@
-
-{% set zeraAliquota = false %}                                                
-    {% if self.configuracaoParametros %}                                                
-    {% set cfopZerada = self.configuracaoParametros.getOpcoesICMS().getCfopAliquotaZerada()|split(',') %}                                                
-    {% set zeraAliquota = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}                                                
-    {% endif %}                                                
-    {% if zeraAliquota %}                                                
-    {{ self.result('0.00') }}                                                
-    {% elseif self.importado and self.siglaEstado != self.siglaEstadoEmissor %}                                                
-    {% if self.origemFiscal == '7' %}                                                
-    {{ self.result(self.aliquotaICMS.ICMSInterestadual) }}                                                
-    {% else %}                                                
-    {{ self.result(4.00) }}                                                
-    {% endif %}                                                
-    {% elseif self.siglaEstado == self.siglaEstadoEmissor %}                                                
-    {# Solicitado na atividade redmine 84136 para que se for determinados produtos para SC joggue aliquota de 12% #}                                                
-    {# Colocar o ID da derivação na lista #}                                                
-    {% if self.notaFiscalItem.ncm.codigo in ['94036000','681099'] %}                                                
-    {{ self.result(12.00) }}                                                
-    {% else %}                                                
-    {{ self.result(self.aliquotaICMS.ICMSInterno) }}                                                
-    {% endif %}                                                
-    {% else %}                                                
-    {{ self.result(self.aliquotaICMS.ICMSInterestadual) }}                                                
-    {% endif %}
+{% set zeraAliquota = false %}
+            {% if self.configuracaoParametros %}
+                    {% set cfopZerada = self.configuracaoParametros.getOpcoesICMS().getCfopAliquotaZerada()|split(',') %}
+                    {% set zeraAliquota = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+            {% endif %}
+            
+            {% if zeraAliquota or self.notaFiscalItem.notaFiscal.pessoa.tipo == 3 %}
+                    {{ self.result('0.00') }}
+            {% elseif  self.importado and self.siglaEstado != self.siglaEstadoEmissor %}
+                {% if self.origemFiscal == '7' %}
+                    {{ self.result(self.aliquotaICMS.ICMSInterestadual) }}
+                {% else %}
+                    {{ self.result(4.00) }}
+                {% endif %}
+            {% elseif self.siglaEstado == self.siglaEstadoEmissor %}
+                {{ self.result(self.aliquotaICMS.ICMSInterno) }}
+            {% else %}
+                {{ self.result(self.aliquotaICMS.ICMSInterestadual) }}
+            {% endif %}

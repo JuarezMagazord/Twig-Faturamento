@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folha de vendas {{ folhaVenda.id }}</title>
+    {{ default_css() }}
+</head>
+<body>
+{{ print_button() }}
+
+{# Inicializa os dados do resumo agrupado #}
+{% set resumoAgrupado = {
+    'resumoItens': [],
+    'totalPedidos': pedidosFolhaVenda|length,
+    'destacaKit': true  
+} %}
+
+{# Monta os itens do resumo agrupado #}
+{% for pedidoFolhaVenda in pedidosFolhaVenda %}
+    {% for pedidoItem in pedidoFolhaVenda.pedidoItem %}
+        {% if pedidoItem.produtoDerivacaoKit %}
+            {% set codigo = pedidoItem.produtoDerivacaoKit.codigo %}
+            {% set nome = pedidoItem.produtoDerivacaoKit.produto.nome ~ ' - ' ~ pedidoItem.produtoDerivacaoKit.nome %}
+            {% set quantidade = pedidoItem.pedidoItemKit.quantidade %}
+            {% set tipo = 'kit' %}
+            {% set ean = pedidoItem.produtoDerivacaoKit.ean | default('') %}
+            {% set marca = pedidoItem.produtoDerivacaoKit.produto.marca.nome | default('') %}
+            {% set kit_codigo = pedidoItem.produtoDerivacaoKit.produto.codigo | default('') %}
+        {% else %}
+            {% set codigo = pedidoItem.produtoDerivacao.codigo %}
+            {% set nome = pedidoItem.descricao %}
+            {% set quantidade = pedidoItem.quantidade %}
+            {% set tipo = 'produto' %}
+            {% set ean = pedidoItem.produtoDerivacao.ean | default('') %}
+            {% set marca = pedidoItem.produtoDerivacao.produto.marca.nome | default('') %}
+            {% set kit_codigo = '' %}
+        {% endif %}
+
+        {% set itemExistente = false %}
+        {% for i in 0..(resumoAgrupado.resumoItens|length - 1) %}
+            {% if resumoAgrupado.resumoItens[i].codigo == codigo %}
+                {% set resumoAgrupado = resumoAgrupado|merge({
+                    resumoItens: resumoAgrupado.resumoItens|merge({
+                        (i): resumoAgrupado.resumoItens[i]|merge({
+                            quantidade: resumoAgrupado.resumoItens[i].quantidade + quantidade
+                        })
+                    })
+                }) %}
+                {% set itemExistente = true %}
+            {% endif %}
+        {% endfor %}
+
+        {% if not itemExistente %}
+            {% set resumoAgrupado = resumoAgrupado|merge({
+                resumoItens: resumoAgrupado.resumoItens|merge([{
+                    'codigo': codigo,
+                    'nome': nome,
+                    'quantidade': quantidade,
+                    'tipo': tipo,
+                    'produto_ean': ean,
+                    'produto_marca': marca,
+                    'kit_codigo': kit_codigo
+                }])
+            }) %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+
+{# Exibe o resumo #}
+{{ print_resumo(resumoAgrupado, true, true) }}    
+
+{# Chama a função de resumo com a estrutura correta #}
+{{ print_resumo(resumoAgrupado, true, true) }}
+
+{% for pedidoFolhaVenda in pedidosFolhaVenda %}
+    <table class="page-break table-default">
+        <tr>
+            <td class="title td-default">Pedido:</td>
+            <td class="td-default">{{ pedidoFolhaVenda.pedido.id }} - {{ pedidoFolhaVenda.pedido.codigo }}</td>
+            <td class="td-default">{{ print_codigo_barras(pedidoFolhaVenda.pedido.codigo) }}</td>
+        </tr>
+    </table>
+
+    <table class="table-default">
+        <tr>
+            <th class="th-default">Dados do Cliente</th>
+            <th class="th-default">Dados do Pedido</th>
+        </tr>
+        <tr>
+            <td class="td-default">
+                <strong>Código: </strong>{{ pedidoFolhaVenda.cliente.id }}<br>
+                <strong>Nome: </strong>{{ pedidoFolhaVenda.cliente.nome }}<br>
+                <strong>CPF/CNPJ: </strong>{{ pedidoFolhaVenda.cliente.cpfCnpj }}<br>
+                <strong>Tipo: </strong>{{ print_pessoa_tipo(pedidoFolhaVenda.cliente.tipo) }}<br>
+                <strong>Estado: </strong>{{ pedidoFolhaVenda.endereco.cidade.estado.sigla }}
+                - {{ pedidoFolhaVenda.endereco.cidade.estado.nome }}
+                <strong>Cep: </strong>{{pedidoFolhaVenda.endereco.cep}}<br>
+                <strong>Prazo: </strong>{{pedidoFolhaVenda.pedido.pedidoRastreio.diasUteis}}<br>
+                <strong>Telefone: </strong>{{ print_contato_principal(pedidoFolhaVenda.cliente) }}<br>
+				<strong>Vendedor: </strong>{{ pedidoFolhaVenda.pedido.codigoVendedor.codigo | default('-') }}
+            </td>
+            <td class="td-default">
+                <strong>Rep.: </strong>{{ pedidoFolhaVenda.loja.nome }}<br>
+                <strong>FormaPgto: </strong>{{ pedidoFolhaVenda.formaPagamento.nome | default('-') }}<br>
+                <strong>Transp.: </strong>{{ pedidoFolhaVenda.transportadoraServico.descricao | default('-') }}<br>
+                <strong>CondiçãoPgto: </strong>{{ pedidoFolhaVenda.condicaoPagamento.nome | default('-') }}<br>
+                <strong>Emissão: </strong>{{ print_date(pedidoFolhaVenda.pedido.dataHora) }}<br>
+                <strong>Aprovação: </strong> {{ print_date(pedidoFolhaVenda.pedido.dataAprovado) }}<br>
+                <strong>Obs: </strong>
+                {% for observacao in pedidoFolhaVenda.pedido.getObservacoesPedido() %}
+                    {{ observacao.mensagem }} - {{ observacao.data_hora }} <br>
+                {% endfor %}
+            </td>
+        </tr>
+    </table>
+
+    <table class="table-default">
+        <tr>
+            <th class="th-default">Imagem</th>
+            <th class="th-default">Código</th>
+            <th class="th-default">Descrição</th>
+            <th class="th-default">Qtde</th>
+        </tr>
+{% set myArray = [] %}
+        {% for pedidoItem in pedidoFolhaVenda.pedidoItem %}
+            <tr>
+                {% if pedidoItem.produtoDerivacaoKit %}
+                    {% if pedidoItem.produtoDerivacaoKit.codigo not in myArray %}
+                        {% set myArray = myArray|merge([pedidoItem.produtoDerivacaoKit.codigo]) %}
+                        <td class="td-default">{{ print_produto_imagem_kit(pedidoItem) }}</td>
+                        <td class="td-default">{{ pedidoItem.produtoDerivacaoKit.codigo }}</td>
+                        <td class="td-default">{{ pedidoItem.produtoDerivacaoKit.produto.nome }} - {{ pedidoItem.produtoDerivacaoKit.nome }}</td>
+                        <td class="td-default">{{ pedidoItem.pedidoItemKit.quantidade }}</td>
+                    {% endif %}
+                {% else %}
+                    <td class="td-default">{{ print_produto_imagem(pedidoItem) }}</td>
+                    <td class="td-default">{{ pedidoItem.produtoDerivacao.codigo }}</td>
+                    <td class="td-default">{{ pedidoItem.descricao }}</td>
+                    <td class="td-default">{{ pedidoItem.quantidade }}</td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+{% endfor %}
+</body>
+</html>

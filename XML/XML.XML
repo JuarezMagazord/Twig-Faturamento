@@ -1,100 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-    <infNFe Id="NFe42250237575940000119550050000045921000047020" versao="4.00">
+    <infNFe Id="NFe31250644283705000139550050000004971000006165" versao="4.00">
         <ide>
-            <cUF>42</cUF>
-            <cNF>00004702</cNF>
-            <natOp>Devolucao Compra para Comercializacao</natOp>
+            <cUF>31</cUF>
+            <cNF>00000616</cNF>
+            <natOp>Venda Merc.Adq.Rec.Terc.Dest.Nao Contrib</natOp>
             <mod>55</mod>
             <serie>5</serie>
-            <nNF>4592</nNF>
-            <dhEmi>2025-02-27T13:01:09-03:00</dhEmi>
-            <dhSaiEnt>2025-02-27T13:01:09-03:00</dhSaiEnt>
+            <nNF>497</nNF>
+            <dhEmi>2025-06-06T14:54:34-03:00</dhEmi>
+            <dhSaiEnt>2025-06-06T14:54:34-03:00</dhSaiEnt>
             <tpNF>1</tpNF>
-            <idDest>1</idDest>
-            <cMunFG>4208906</cMunFG>
+            <idDest>2</idDest>
+            <cMunFG>3113404</cMunFG>
             <tpImp>1</tpImp>
             <tpEmis>1</tpEmis>
-            <cDV>0</cDV>
+            <cDV>5</cDV>
             <tpAmb>1</tpAmb>
-            <finNFe>4</finNFe>
-            <indFinal>0</indFinal>
+            <finNFe>1</finNFe>
+            <indFinal>1</indFinal>
             <indPres>2</indPres>
             <indIntermed>0</indIntermed>
             <procEmi>0</procEmi>
             <verProc>Magazord 1.0</verProc>
-            <NFref>
-                <refNFe>42250210474553000130550010013669581938753670</refNFe>
-            </NFref>
         </ide>
         <emit>
-            <CNPJ>37575940000119</CNPJ>
-            <xNome>Quotidien Confecções Ltda.</xNome>
-            <xFant>Quotidien</xFant>
+            <CNPJ>44283705000139</CNPJ>
+            <xNome>eAgromercantil Ltda</xNome>
+            <xFant>eAgro Brasil</xFant>
             <enderEmit>
-                <xLgr>Rua Vinte e Cinco de Julho</xLgr>
-                <nro>2003</nro>
-                <xCpl>Sala 02</xCpl>
-                <xBairro>Vila Nova</xBairro>
-                <cMun>4208906</cMun>
-                <xMun>Jaraguá do Sul</xMun>
-                <UF>SC</UF>
-                <CEP>89259000</CEP>
+                <xLgr>Rua Sylvio da Silva Araújo</xLgr>
+                <nro>33</nro>
+                <xBairro>Rafael José de Lima</xBairro>
+                <cMun>3113404</cMun>
+                <xMun>Caratinga</xMun>
+                <UF>MG</UF>
+                <CEP>35302612</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>47997226360</fone>
+                <fone>33998595826</fone>
             </enderEmit>
-            <IE>260561339</IE>
+            <IE>0042007840030</IE>
             <IM>ISENTO</IM>
-            <CNAE>1412601</CNAE>
-            <CRT>1</CRT>
+            <CNAE>4789099</CNAE>
+            <CRT>3</CRT>
         </emit>
         <dest>
-            <CNPJ>10474553000130</CNPJ>
-            <xNome>MALHAS MENEGOTTI INDUSTRIA TEXTIL LTDA</xNome>
+            <CPF>12092300547</CPF>
+            <xNome>Anntony Sousa</xNome>
             <enderDest>
-                <xLgr>R.Joaquim Francisco de Paula PD.1, 4850</xLgr>
-                <nro>0</nro>
-                <xBairro>CHICO DE PAULA</xBairro>
-                <cMun>4208906</cMun>
-                <xMun>Jaraguá do Sul</xMun>
-                <UF>SC</UF>
-                <CEP>89254848</CEP>
+                <xLgr>Rua Jose Vicente</xLgr>
+                <nro>93</nro>
+                <xCpl>Referencia: Rua do mercado do peixe</xCpl>
+                <xBairro>Centro</xBairro>
+                <cMun>2805406</cMun>
+                <xMun>Poço Redondo</xMun>
+                <UF>SE</UF>
+                <CEP>49810000</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>4733728500</fone>
             </enderDest>
-            <indIEDest>1</indIEDest>
-            <IE>255735898</IE>
+            <indIEDest>9</indIEDest>
+            <email>Anntony@gmail.com</email>
         </dest>
+        <entrega>
+            <CPF>12092300547</CPF>
+            <xLgr>Rua Jose Vicente</xLgr>
+            <nro>93</nro>
+            <xCpl>Referencia: Rua do mercado do peixe</xCpl>
+            <xBairro>Centro</xBairro>
+            <cMun>2805406</cMun>
+            <xMun>Poço Redondo</xMun>
+            <UF>SE</UF>
+        </entrega>
+
+
         <det nItem="1">
             <prod>
-                <cProd>308266.2136</cProd>
+                <cProd>CFOP6108</cProd>
                 <cEAN>SEM GTIN</cEAN>
-                <xProd>MALHA CONFORTO CZ 96,00% ALGODAO / 4,00% ELASTANO EXTRA LARG. 1,80m GRAM.170gr/m 1L,2C,3C,4A,6B,7E,8C</xProd>
-                <NCM>60062200</NCM>
-                <CFOP>5202</CFOP>
-                <uCom>KG</uCom>
-                <qCom>14.5600</qCom>
-                <vUnCom>69.960165</vUnCom>
-                <vProd>1018.62</vProd>
+                <xProd>NF Complementar</xProd>
+                <NCM>84244100</NCM>
+                <CFOP>6108</CFOP>
+                <uCom>UN</uCom>
+                <qCom>1.0000</qCom>
+                <vUnCom>0.000000</vUnCom>
+                <vProd>0.00</vProd>
                 <cEANTrib>SEM GTIN</cEANTrib>
-                <uTrib>KG</uTrib>
-                <qTrib>14.5600</qTrib>
-                <vUnTrib>69.960165</vUnTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>0.000000</vUnTrib>
                 <indTot>1</indTot>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMSSN102>
-                        <orig>0</orig>
-                        <CSOSN>102</CSOSN>
-                    </ICMSSN102>
+                    <ICMS00>
+                        <orig></orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>533.14</vBC>
+                        <pICMS>4.00</pICMS>
+                        <vICMS>21.33</vICMS>
+                    </ICMS00>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
                     <IPINT>
-                        <CST>03</CST>
+                        <CST>53</CST>
                     </IPINT>
                 </IPI>
                 <PIS>
@@ -107,73 +119,34 @@
                         <CST>07</CST>
                     </COFINSNT>
                 </COFINS>
+                <ICMSUFDest>
+                    <vBCUFDest>533.14</vBCUFDest>
+                    <vBCFCPUFDest>533.14</vBCFCPUFDest>
+                    <pFCPUFDest>1.00</pFCPUFDest>
+                    <pICMSUFDest>5.60</pICMSUFDest>
+                    <pICMSInter>4.00</pICMSInter>
+                    <pICMSInterPart>100.00</pICMSInterPart>
+                    <vFCPUFDest>5.33</vFCPUFDest>
+                    <vICMSUFDest>8.53</vICMSUFDest>
+                    <vICMSUFRemet>0.00</vICMSUFRemet>
+                </ICMSUFDest>
             </imposto>
-            <impostoDevol>
-                <pDevol>0.00</pDevol>
-                <IPI>
-                    <vIPIDevol>0.00</vIPIDevol>
-                </IPI>
-            </impostoDevol>
-        </det>
-        <det nItem="2">
-            <prod>
-                <cProd>410021.2136</cProd>
-                <cEAN>SEM GTIN</cEAN>
-                <xProd>RIB 2X1 M.CONFORTO CZ 97,00% ALGODAO / 3,00% ELASTANO EXTRA LARG. 50cm GRAM.260gr/m 1L,2C,3C,4A,6B,7E,8C</xProd>
-                <NCM>60062200</NCM>
-                <CFOP>5202</CFOP>
-                <uCom>KG</uCom>
-                <qCom>0.8300</qCom>
-                <vUnCom>88.915663</vUnCom>
-                <vProd>73.80</vProd>
-                <cEANTrib>SEM GTIN</cEANTrib>
-                <uTrib>KG</uTrib>
-                <qTrib>0.8300</qTrib>
-                <vUnTrib>88.915663</vUnTrib>
-                <indTot>1</indTot>
-            </prod>
-            <imposto>
-                <ICMS>
-                    <ICMSSN102>
-                        <orig>0</orig>
-                        <CSOSN>102</CSOSN>
-                    </ICMSSN102>
-                </ICMS>
-                <IPI>
-                    <cEnq>999</cEnq>
-                    <IPINT>
-                        <CST>03</CST>
-                    </IPINT>
-                </IPI>
-                <PIS>
-                    <PISNT>
-                        <CST>07</CST>
-                    </PISNT>
-                </PIS>
-                <COFINS>
-                    <COFINSNT>
-                        <CST>07</CST>
-                    </COFINSNT>
-                </COFINS>
-            </imposto>
-            <impostoDevol>
-                <pDevol>0.00</pDevol>
-                <IPI>
-                    <vIPIDevol>0.00</vIPIDevol>
-                </IPI>
-            </impostoDevol>
         </det>
         <total>
             <ICMSTot>
-                <vBC>0.00</vBC>
-                <vICMS>0.00</vICMS>
+
+                <vBC>533.14</vBC>
+                <vICMS>21.33</vICMS>
                 <vICMSDeson>0</vICMSDeson>
+                <vFCPUFDest>5.33</vFCPUFDest>
+                <vICMSUFDest>8.53</vICMSUFDest>
+                <vICMSUFRemet>0.00</vICMSUFRemet>
                 <vFCP>0.00</vFCP>
                 <vBCST>0</vBCST>
                 <vST>0</vST>
                 <vFCPST>0.00</vFCPST>
                 <vFCPSTRet>0.00</vFCPSTRet>
-                <vProd>1092.42</vProd>
+                <vProd>0.00</vProd>
                 <vFrete>0.00</vFrete>
                 <vSeg>0</vSeg>
                 <vDesc>0.00</vDesc>
@@ -183,31 +156,21 @@
                 <vPIS>0.00</vPIS>
                 <vCOFINS>0.00</vCOFINS>
                 <vOutro>0.00</vOutro>
-                <vNF>1092.42</vNF>
+                <vNF>0.00</vNF>
             </ICMSTot>
         </total>
         <transp>
-            <modFrete>0</modFrete>
-            <transporta>
-                <CNPJ>02255335000186</CNPJ>
-                <xNome></xNome>
-                <xEnder>Rua Frederico Barg, 110</xEnder>
-                <xMun>Jaraguá do Sul</xMun>
-                <UF>SC</UF>
-            </transporta>
-            <vol>
-                <qVol>1</qVol>
-                <esp>ROLOS</esp>
-            </vol>
+            <modFrete>9</modFrete>
         </transp>
         <pag>
             <detPag>
-                <tPag>90</tPag>
+                <tPag>01</tPag>
                 <vPag>0.00</vPag>
             </detPag>
         </pag>
         <infAdic>
-            <infCpl>Documento emitido por ME ou EPP optante pelo Simples Nacional. Não gera direitoa crédito fiscal de IPI.</infCpl>
+            <infAdFisco>- Recolhimento do ICMS ao ESTADO de destino -  - Total FCP R$ 5,33 - Partilha ICMS UF Destino R$ 8,53 - Partilha ICMS UF Origem R$ 0,00</infAdFisco>
+            <infCpl>Operação contratada no âmbito do comércio eletrônico ou do telemarketing, conforme e-PTA-RE nº 45.000038362-74</infCpl>
         </infAdic>
         <infRespTec>
             <CNPJ>28977040000107</CNPJ>

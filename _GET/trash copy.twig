@@ -1,0 +1,47 @@
+{# {% if self.situacaoTributariaICMS %}
+  {% set situacao = (self.situacaoTributariaICMS.codigo) %}
+{% else %}
+  {% set situacao = ('00') %}
+{% endif %}
+{% if situacao == 60 %}
+{{ self.result(0.00) }}
+{% else %} #}
+{% set zeraBaseCalculo = false %}
+{% set BaseCalculo = (self.notaFiscalItem.valorProduto + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) %}
+
+{% if self.configuracaoParametros %}
+	{% set cfopZerada = self.configuracaoParametros.getOpcoesICMS().getCfopBaseZerada()|split(',') %}
+	{% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+{% endif %}
+
+{% set reducaoBaseCalculo = 0 %}
+
+{% if zeraBaseCalculo %}
+	{{ self.result('0.00') }}
+{% elseif self.notaFiscalItem.getCfop().getCodigo() in [5405,6404] %}
+	{{ self.result('0.00') }}
+{% elseif self.configuracaoGlobal %}
+	{% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() != 1 %}
+		{% if self.notaFiscalItem.produtoDerivacao %}
+			{% if self.notaFiscalItem.produtoDerivacao.codigo in [ '786.845', '788.480', '789.735', '789.908', '788.621', '16.022', '808.531', '808.423', '807.151', '769.687', '773.605', '803.157', '770.504', '770.231', '807.045', '807.043', '807.042', '805.433', '805.438', '770.784', '808.013', '808.012', '768.473', '779.591', '774.968', '805.428', '805.429', '789.064', '769.718', '779.145', '17.496', '786.845', '788.480', '789.735', '789.908', '788.621', '16.022'] %}
+				{% if self.siglaEstado == self.siglaEstadoEmissor %}
+					{% set reducaoBaseCalculo = 0.2872 %}
+				{% else %}
+					{% set reducaoBaseCalculo = 0.5833 %}
+				{% endif %}
+			{% elseif self.notaFiscalItem.produtoDerivacao.codigo in ['806.551', '788.862', '788.272', '2.093', '2.891', '806.503', '806.504', '805.708', '805.704', '805.714', '803.664', '803.665', '778.612', '778.613', '778.614', '783.444', '806.551', '788.862', '788.272', '2.093', '2.891', '806.503', '806.504', '805.708', '805.704', '805.714']  %}
+				{% if self.siglaEstado == self.siglaEstadoEmissor %}
+					{% set reducaoBaseCalculo = 0.4513 %}
+				{% else %}
+					{% set reducaoBaseCalculo = 0.7313 %}
+				{% endif %}
+			{% endif %}
+		{% else %}
+			{{ self.result(BaseCalculo) }}
+		{% endif %}
+	{% else %}
+		{{ self.result('0.00') }}
+	{% endif %}
+{% endif %}
+{{ self.result(BaseCalculo - (BaseCalculo * reducaoBaseCalculo)) }}
+{% endif %}

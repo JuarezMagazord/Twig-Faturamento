@@ -1,0 +1,39 @@
+{{print_quebra_linha(true)}}
+{{print_text('Folha de Vendas ' ~ folhaVenda.id,2)}}
+{{print_empty_line()}}
+{% set totalItem = 0 %}   
+{{print_text('Total de Itens: '~totalItem)}}
+{{print_text('Total de Pedidos: '~pedidosFolhaVenda|length)}}
+{{print_cut()}} 
+{% for pedidoFolhaVenda in pedidosFolhaVenda %}
+  {{print_text('')}}    
+  {{print_orientacao('center')}}
+  {% if pedidoFolhaVenda.pedidoRastreio.pedido.origem == 1 %}
+    {{print_text('SITE',3)}}    
+  {% endif %}
+{% set pedido = pedidoFolhaVenda.pedidoRastreio.pedido %}
+{% if pedido.origem == 2  and pedido.pedidoMarketplace %}
+    {{print_text(pedido.pedidoMarketplace.lojaDoMarketplace.nome, 3)}}
+{% endif %}
+  {{print_text(pedidoFolhaVenda.pedidoRastreio.pedido.loja.nome, 2)}}
+  {{print_text(pedidoFolhaVenda.pedidoRastreio.transportadoraServico.descricao,3)}}
+  {{print_text('Pedido ' ~ pedidoFolhaVenda.pedidoRastreio.pedido.codigo, 2)}}
+  {{print_barcode(pedidoFolhaVenda.pedidoRastreio.pedido.codigo)}}
+  {{print_orientacao('left')}}
+  {{print_empty_line()}}
+  {{print_text('Nome: '~pedidoFolhaVenda.pedidoRastreio.pedido.pedidoPessoa.nome)}}
+  {{print_text(pad('Total: R$ '~pedidoFolhaVenda.pedidoRastreio.valorTotal|number_format(2,',','.'), 25, 0) ~ pad(folhaVenda.dataHora|date('d/m/Y') , 15, 5, 'left')) }}
+  {{print_line()}}        
+  {% for pedidoItem in pedidoFolhaVenda.pedidoRastreio.pedidoItemSortedByProduto %}
+    {{print_enfase(true)}}
+    {{print_text_detalhe(pad(pedidoItem.produtoDerivacao.codigo, 26, 0) ~ pad(pedidoItem.quantidade, 5, 1, 'left'),2)}}    
+    {{print_enfase(false)}}
+    {{print_text(pedidoItem.produtoDerivacao.produto.nome ~ ' - ' ~ pedidoItem.produtoDerivacao.nome)}}
+   {{print_enfase(true)}}
+     {{print_text(pedidoItem.getEstoqueItem.getLocalizacaoConcatenada(10),2)}}
+  {{print_enfase(false)}}
+    {{print_line()}}      
+  {% endfor %}
+  {{print_cut()}} 
+{% endfor %}
+{{print_finalize(false)}}
