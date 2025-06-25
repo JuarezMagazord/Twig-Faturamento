@@ -1,7 +1,180 @@
-{% set situacao_tributaria = calculo_get_parametro_calculado('ICMS_SITUACAO_TRIB') %}
-{% if situacao_tributaria in ["40","41","50"] %}
-    {{ self.result(100) }}
-    {% elseif situacao_tributaria in ["20"] %}
-{% else %}
-    {{ self.result(0) }}
-{% endif %}
+<?xml version="1.0" encoding="UTF-8"?>
+<NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+            <infNFe Id="NFe42250302638760000235550050000011811000021660" versao="4.00">
+        <ide>
+            <cUF>42</cUF>
+            <cNF>00002166</cNF>
+                                                    <natOp>Venda Prod.Estab.Dest.ZFManaus ou ALCom.</natOp>
+            <mod>55</mod>
+            <serie>5</serie>
+            <nNF>1181</nNF>
+            <dhEmi>2025-03-14T11:04:11-03:00</dhEmi>
+            <dhSaiEnt>2025-03-14T11:04:11-03:00</dhSaiEnt>
+            <tpNF>1</tpNF>
+                                                <idDest>2</idDest>
+                                        <cMunFG>4218707</cMunFG>
+            <tpImp>1</tpImp>
+                            <tpEmis>1</tpEmis>
+                        <cDV>0</cDV>
+            <tpAmb>1</tpAmb>
+            <finNFe>1</finNFe>
+            <indFinal>0</indFinal>
+            <indPres>2</indPres>
+                                                                <indIntermed>0</indIntermed>
+                        <procEmi>0</procEmi>
+                            <verProc>Magazord 1.0</verProc>
+                                                                                    </ide>
+        <emit>
+            <CNPJ>02638760000235</CNPJ>
+            <xNome>Carimbos Nykon Industria e Comercio S.A</xNome>
+            <xFant>Carimbos Nykon</xFant>
+            <enderEmit>
+                <xLgr>Rua Júlio Boppré</xLgr>
+                <nro>2586</nro>
+                                <xBairro>Oficinas</xBairro>
+                <cMun>4218707</cMun>
+                <xMun>Tubarão</xMun>
+                <UF>SC</UF>
+                <CEP>88702360</CEP>
+                <cPais>1058</cPais>
+                <xPais>Brasil</xPais>
+                <fone>4836220029</fone>
+            </enderEmit>
+            <IE>261652192</IE>
+                        <IM>ISENTO</IM>
+                            <CNAE>3299002</CNAE>
+                        <CRT>3</CRT>
+        </emit>
+        <dest>
+                            <CPF>85801637060</CPF>
+                                        <xNome>Comprador (Testes Internos)</xNome>
+                        <enderDest>
+                <xLgr>Rua Jose Bonifacio</xLgr>
+                <nro>899</nro>
+                                <xBairro>Centro</xBairro>
+                                    <cMun>4106902</cMun>
+                    <xMun>Curitiba</xMun>
+                    <UF>PR</UF>
+                    <CEP>81170210</CEP>
+                    <cPais>1058</cPais>
+                    <xPais>Brasil</xPais>
+                                                    <fone>47989898989</fone>
+                            </enderDest>
+                            <indIEDest>9</indIEDest>
+                                                    <email>teste@comprador.com.br</email>
+                    </dest>
+                                                            <entrega>
+                                            <CPF>85801637060</CPF>
+                                        <xNome>Comprador (Testes Internos) - PR</xNome>
+                    <xLgr>Rua Jose Bonifacio</xLgr>
+                    <nro>899</nro>
+                                        <xBairro>Centro</xBairro>
+                    <cMun>4106902</cMun>
+                    <xMun>Curitiba</xMun>
+                    <UF>PR</UF>
+                    <CEP>81170210</CEP>
+                                    </entrega>
+                                                    
+                    
+            <det nItem="1">
+                <prod>
+                                            <cProd>Almofada 002-Azul</cProd>
+                                                                                                                            <cEAN>SEM GTIN</cEAN>
+                    <xProd>Almofada Nykon N°2 - Azul</xProd>
+                                        <NCM>96122000</NCM>
+                                                            <CFOP>6109</CFOP>
+                    <uCom>UN</uCom>
+                    <qCom>1.0000</qCom>
+                    <vUnCom>100.000000</vUnCom>
+                    <vProd>100.00</vProd>
+                    <cEANTrib>SEM GTIN</cEANTrib>
+                    <uTrib>UN</uTrib>
+                    <qTrib>1.0000</qTrib>
+                    <vUnTrib>100.000000</vUnTrib>
+                                                                                <indTot>1</indTot>
+                                                                                                </prod>
+                <imposto>
+                                        <ICMS>
+                                                                                                                                                            <ICMS40>
+                                    <orig>1</orig>
+                                    <CST>40</CST>
+
+                                                                    </ICMS40>
+                                                                        </ICMS>
+                                                                <IPI>
+                            <cEnq>999</cEnq>
+                            <IPINT>
+                                <CST>53</CST>
+                            </IPINT>
+                        </IPI>
+                                        <PIS>
+                                                    <PISAliq>
+                                <CST>01</CST>
+                                <vBC>100.00</vBC>
+                                <pPIS>0.65</pPIS>
+                                <vPIS>0.65</vPIS>
+                            </PISAliq>
+                                            </PIS>
+                    <COFINS>
+                                                    <COFINSAliq>
+                                <CST>01</CST>
+                                <vBC>100.00</vBC>
+                                <pCOFINS>3.00</pCOFINS>
+                                <vCOFINS>3.00</vCOFINS>
+                            </COFINSAliq>
+                                            </COFINS>
+                                                        </imposto>
+                                                            </det>
+                <total>
+            <ICMSTot>
+                
+
+                                    <vBC>100.00</vBC>
+                    <vICMS>4.00</vICMS>
+                    <vICMSDeson>0</vICMSDeson>
+                
+                                <vFCP>0.00</vFCP>
+                                                    <vBCST>0.00</vBCST>
+                    <vST>0.00</vST>
+                                <vFCPST>0.00</vFCPST>
+                <vFCPSTRet>0.00</vFCPSTRet>
+                <vProd>100.00</vProd>
+                <vFrete>0.00</vFrete>
+                <vSeg>0</vSeg>
+                <vDesc>0.00</vDesc>
+                <vII>0</vII>
+                                                    <vIPI>0.00</vIPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                                <vPIS>0.65</vPIS>
+                <vCOFINS>3.00</vCOFINS>
+                <vOutro>0.00</vOutro>
+                                <vNF>100.00</vNF>
+                            </ICMSTot>
+        </total>
+        <transp>
+            <modFrete>9</modFrete>
+                                        <vol>
+                                            <qVol>1</qVol>
+                                                                <esp>Caixa</esp>
+                                                                <pesoL>0.083</pesoL>
+                                                                <pesoB>0.083</pesoB>
+                                    </vol>
+                    </transp>
+                <pag>
+                                                                        <detPag>
+                            <tPag>01</tPag>
+                                                            <vPag>100.00</vPag>
+                                                                                    </detPag>
+                                                        </pag>
+                                                            <infAdic>
+                                    <infAdFisco>- Lei n° 21.850/2023</infAdFisco>
+                                                                                        <infCpl>- Total aproximado de tributos: 37,21 (37,21%) Federais 20,21 (20,21%) Estaduais 17,00 (17,00%). Fonte.: IBPT/empresometro.com.br.</infCpl>
+                                            </infAdic>
+                                    <infRespTec>
+                <CNPJ>28977040000107</CNPJ>
+                <xContato>Ricardo Schroeder</xContato>
+                <email>ricardo@magazord.com.br</email>
+                <fone>4735208013</fone>
+                            </infRespTec>
+            </infNFe>
+</NFe>

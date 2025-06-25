@@ -1,0 +1,4 @@
+{% if self.notaFiscalItem.notaFiscal.pessoa.tipo == 'ES' %}
+    {% if self.notaFiscalItem.getCfop().getCodigo() == 5102 %}
+        {{ self.result('17.00')}}
+    {% %}
