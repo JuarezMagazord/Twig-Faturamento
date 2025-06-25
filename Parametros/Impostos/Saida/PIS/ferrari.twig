@@ -1,0 +1,26 @@
+{#{% set zeraBaseCalculo = false %}
+{% if self.configuracaoParametros %}
+	{% set cfopZerada = self.configuracaoParametros.getOpcoesPIS().getCfopBaseZerada()|split(',') %}
+	{% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+{% endif %} #}
+
+{# Solicitação feita pela contabilidade em conversa com Eder no dia 19-05-2025 #}
+{# {% set baseICMS = calculo_get_parametro_calculado('VLR_ICMS') %}
+{% set vlrDifal = calculo_get_parametro_calculado('VLR_ICMS_DESTINO') %}
+{% set vlrRemovido = baseICMS + vlrDifal %}
+    {% set zeraBaseCalculo = false %}
+        {% if self.configuracaoParametros %}
+            {% set cfopZerada = self.configuracaoParametros.getOpcoesPIS().getCfopBaseZerada()|split(',') %}
+            {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+        {% endif %}
+        {% if zeraBaseCalculo %}
+            {{ self.result('0.00') }}
+        {% elseif self.configuracaoGlobal %}
+            {% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}
+                {{ self.result(((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) - vlrRemovido) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+            {% else %}
+                {{ self.result(0.00) }}
+            {% endif %}
+        {% endif %} #}
+
+        {{ self.result(((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) - vlrRemovido) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
