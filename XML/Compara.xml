@@ -1,230 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-    <infNFe Id="NFe42250530338877000158550050000000641000001737" versao="4.00">
+    <infNFe Id="NFe42250681614703000101550050000648361000661366" versao="4.00">
         <ide>
             <cUF>42</cUF>
-            <cNF>00000173</cNF>
-            <natOp>Venda Merc.Adq.Rec.Terc.Dest.Nao Contrib</natOp>
+            <cNF>00066136</cNF>
+            <natOp>Devolucao de Compra para Indus.</natOp>
             <mod>55</mod>
             <serie>5</serie>
-            <nNF>64</nNF>
-            <dhEmi>2025-05-09T10:43:48-03:00</dhEmi>
-            <dhSaiEnt>2025-05-09T10:43:48-03:00</dhSaiEnt>
+            <nNF>64836</nNF>
+            <dhEmi>2025-06-25T16:25:08-03:00</dhEmi>
+            <dhSaiEnt>2025-06-25T16:25:08-03:00</dhSaiEnt>
             <tpNF>1</tpNF>
-            <idDest>2</idDest>
-            <cMunFG>4216305</cMunFG>
+            <idDest>1</idDest>
+            <cMunFG>4206306</cMunFG>
             <tpImp>1</tpImp>
             <tpEmis>1</tpEmis>
-            <cDV>7</cDV>
+            <cDV>6</cDV>
             <tpAmb>1</tpAmb>
-            <finNFe>1</finNFe>
-            <indFinal>1</indFinal>
+            <finNFe>4</finNFe>
+            <indFinal>0</indFinal>
             <indPres>2</indPres>
             <indIntermed>0</indIntermed>
             <procEmi>0</procEmi>
             <verProc>Magazord 1.0</verProc>
+            <NFref>
+                <refNFe>42250634890357000104550010000151211000042940</refNFe>
+            </NFref>
         </ide>
         <emit>
-            <CNPJ>30338877000158</CNPJ>
-            <xNome>Serra Maquinas Ltda</xNome>
-            <xFant>Serra Maquinas</xFant>
+            <CNPJ>81614703000101</CNPJ>
+            <xNome>Casa Show Utilidades Ltda</xNome>
+            <xFant>Casa Show</xFant>
             <enderEmit>
-                <xLgr>Rodovia SC 410</xLgr>
-                <nro>5617</nro>
-                <xCpl>KM 24 Sala 01 e 02</xCpl>
+                <xLgr>Rua Oscar Schumacher</xLgr>
+                <nro>230</nro>
+                <xCpl>Casa cinza lado direito, porta espelhada.</xCpl>
                 <xBairro>Centro</xBairro>
-                <cMun>4216305</cMun>
-                <xMun>São João Batista</xMun>
+                <cMun>4206306</cMun>
+                <xMun>Guabiruba</xMun>
                 <UF>SC</UF>
-                <CEP>88240000</CEP>
+                <CEP>88360000</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>4832653950</fone>
+                <fone>47991762606</fone>
             </enderEmit>
-            <IE>258667737</IE>
-            <IM>isento</IM>
-            <CRT>3</CRT>
+            <IE>251903630</IE>
+            <IM>ISENTO</IM>
+            <CNAE>4759801</CNAE>
+            <CRT>1</CRT>
         </emit>
         <dest>
-            <CPF>00381173046</CPF>
-            <xNome>Marciel de Luca Martins</xNome>
+            <CNPJ>34890357000104</CNPJ>
+            <xNome>DL EMBALAGENS LTDA</xNome>
             <enderDest>
-                <xLgr>Av do Riacho</xLgr>
-                <nro>1262</nro>
-                <xCpl>loja</xCpl>
-                <xBairro>centro</xBairro>
-                <cMun>4321501</cMun>
-                <xMun>Torres</xMun>
-                <UF>RS</UF>
-                <CEP>95560000</CEP>
+                <xLgr>Rua Amador Bueno da Ribeira</xLgr>
+                <nro>189</nro>
+                <xBairro>Nova Esperanca</xBairro>
+                <cMun>4202008</cMun>
+                <xMun>Balneário Camboriú</xMun>
+                <UF>SC</UF>
+                <CEP>88336320</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>51983251000</fone>
             </enderDest>
-            <indIEDest>9</indIEDest>
-            <email>grupo.kaza@hotmail.com</email>
+            <indIEDest>1</indIEDest>
+            <IE>260237213</IE>
         </dest>
-        <entrega>
-            <CPF>00381173046</CPF>
-            <xNome>Marciel de Luca Martins</xNome>
-            <xLgr>Av do Riacho</xLgr>
-            <nro>1262</nro>
-            <xCpl>loja</xCpl>
-            <xBairro>centro</xBairro>
-            <cMun>4321501</cMun>
-            <xMun>Torres</xMun>
-            <UF>RS</UF>
-            <CEP>95560000</CEP>
-        </entrega>
 
 
         <det nItem="1">
             <prod>
-                <cProd>4006825641202-01</cProd>
-                <cEAN>4006825641202</cEAN>
-                <xProd>PISTOLA DE COLA QUENTE TE-CG 18 LI SOLO</xProd>
-                <NCM>85167990</NCM>
-                <CEST>2105100</CEST>
-                <CFOP>6108</CFOP>
+                <cProd>8891</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>ENVELOPE INVIOLAVEL PCR PRETO 20X30+3 MODELO PEQUENO</xProd>
+                <NCM>39232910</NCM>
+                <CEST>1901900</CEST>
+                <CFOP>5201</CFOP>
                 <uCom>UN</uCom>
-                <qCom>1.0000</qCom>
-                <vUnCom>319.000000</vUnCom>
-                <vProd>319.00</vProd>
-                <cEANTrib>4006825641202</cEANTrib>
+                <qCom>7000.0000</qCom>
+                <vUnCom>0.080000</vUnCom>
+                <vProd>560.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
                 <uTrib>UN</uTrib>
-                <qTrib>1.0000</qTrib>
-                <vUnTrib>319.000000</vUnTrib>
-                <vFrete>26.98</vFrete>
+                <qTrib>7000.0000</qTrib>
+                <vUnTrib>0.080000</vUnTrib>
                 <indTot>1</indTot>
-                <xPed>0012505260603</xPed>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMS00>
+                    <ICMSSN900>
                         <orig>0</orig>
-                        <CST>00</CST>
+                        <CSOSN>900</CSOSN>
                         <modBC>3</modBC>
-                        <vBC>345.98</vBC>
+                        <vBC>595.00</vBC>
                         <pICMS>12.00</pICMS>
-                        <vICMS>41.52</vICMS>
-                    </ICMS00>
+                        <vICMS>71.40</vICMS>
+                        <pCredSN>0</pCredSN>
+                        <vCredICMSSN>0.00</vCredICMSSN>
+                    </ICMSSN900>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
                     <IPITrib>
-                        <CST>99</CST>
-                        <vBC>0.00</vBC>
-                        <pIPI>0.00</pIPI>
-                        <vIPI>0.00</vIPI>
+                        <CST>50</CST>
+                        <vBC>595.00</vBC>
+                        <pIPI>9.75</pIPI>
+                        <vIPI>58.01</vIPI>
                     </IPITrib>
                 </IPI>
                 <PIS>
-                    <PISAliq>
-                        <CST>01</CST>
-                        <vBC>287.16</vBC>
-                        <pPIS>1.65</pPIS>
-                        <vPIS>4.74</vPIS>
-                    </PISAliq>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
                 </PIS>
                 <COFINS>
-                    <COFINSAliq>
-                        <CST>01</CST>
-                        <vBC>287.16</vBC>
-                        <pCOFINS>7.60</pCOFINS>
-                        <vCOFINS>21.82</vCOFINS>
-                    </COFINSAliq>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
                 </COFINS>
-                <ICMSUFDest>
-                    <vBCUFDest>345.98</vBCUFDest>
-                    <vBCFCPUFDest>345.98</vBCFCPUFDest>
-                    <pFCPUFDest>0.00</pFCPUFDest>
-                    <pICMSUFDest>17.00</pICMSUFDest>
-                    <pICMSInter>12.00</pICMSInter>
-                    <pICMSInterPart>100.00</pICMSInterPart>
-                    <vFCPUFDest>0.00</vFCPUFDest>
-                    <vICMSUFDest>17.30</vICMSUFDest>
-                    <vICMSUFRemet>0.00</vICMSUFRemet>
-                </ICMSUFDest>
             </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>0.00</vIPIDevol>
+                </IPI>
+            </impostoDevol>
         </det>
         <total>
             <ICMSTot>
 
-
-                <vBC>345.98</vBC>
-                <vICMS>41.52</vICMS>
+                <vBC>595.00</vBC>
+                <vICMS>71.40</vICMS>
                 <vICMSDeson>0</vICMSDeson>
-
-                <vFCPUFDest>0.00</vFCPUFDest>
-                <vICMSUFDest>17.30</vICMSUFDest>
-                <vICMSUFRemet>0.00</vICMSUFRemet>
                 <vFCP>0.00</vFCP>
-                <vBCST>0.00</vBCST>
-                <vST>0.00</vST>
+                <vBCST>0</vBCST>
+                <vST>0</vST>
                 <vFCPST>0.00</vFCPST>
                 <vFCPSTRet>0.00</vFCPSTRet>
-                <vProd>319.00</vProd>
-                <vFrete>26.98</vFrete>
+                <vProd>560.00</vProd>
+                <vFrete>0.00</vFrete>
                 <vSeg>0</vSeg>
                 <vDesc>0.00</vDesc>
                 <vII>0</vII>
-                <vIPI>0.00</vIPI>
+                <vIPI>58.01</vIPI>
                 <vIPIDevol>0.00</vIPIDevol>
-                <vPIS>4.74</vPIS>
-                <vCOFINS>21.82</vCOFINS>
+                <vPIS>0.00</vPIS>
+                <vCOFINS>0.00</vCOFINS>
                 <vOutro>0.00</vOutro>
-                <vNF>345.98</vNF>
+
+                <vNF>618.01</vNF>
             </ICMSTot>
         </total>
         <transp>
-            <modFrete>0</modFrete>
+            <modFrete>1</modFrete>
             <transporta>
-                <CNPJ>34737950000115</CNPJ>
-                <xNome>PELISSER E FIORI TRANSPORTES E LOGISTICA LTDA</xNome>
-                <xEnder>Rua Itajai, 557</xEnder>
-                <xMun>Gaspar</xMun>
+                <CNPJ>81614703000101</CNPJ>
+                <xNome>Casa Show</xNome>
+                <IE>251903630</IE>
+
+                <xEnder>Rua Oscar Schumacher, 230</xEnder>
+                <xMun>Guabiruba</xMun>
                 <UF>SC</UF>
             </transporta>
-            <vol>
-                <qVol>1</qVol>
-                <esp>Caixa</esp>
-                <pesoL>0.500</pesoL>
-                <pesoB>0.500</pesoB>
-            </vol>
         </transp>
-        <cobr>
-            <fat>
-                <nFat>64</nFat>
-                <vOrig>345.98</vOrig>
-                <vDesc>0.00</vDesc>
-                <vLiq>345.98</vLiq>
-            </fat>
-            <dup>
-                <nDup>001</nDup>
-                <dVenc>2025-05-09</dVenc>
-                <vDup>345.98</vDup>
-            </dup>
-        </cobr>
         <pag>
             <detPag>
-                <tPag>03</tPag>
-                <vPag>345.98</vPag>
-                <card>
-                    <tpIntegra>1</tpIntegra>
-                    <CNPJ>19468242000132</CNPJ>
-                    <tBand>02</tBand>
-                    <cAut>4dedb5b930dd20d4903a</cAut>
-                </card>
+                <tPag>90</tPag>
+                <vPag>0.00</vPag>
             </detPag>
         </pag>
         <infAdic>
-            <infAdFisco>- Recolhimento do ICMS ao ESTADO de destino - - Total FCP R$ 0,00 - Partilha
-                ICMS UF Destino R$ 17,30 - Partilha ICMS UF Origem R$ 0,00</infAdFisco>
-            <infCpl>Pedido: 0012505260603 - . - Total aproximado de tributos: 76,35 (22,07%)
-                Federais 64,59 (18,67%) Estaduais 11,76 (3,40%). Fonte.: IBPT/empresometro.com.br.</infCpl>
-            <obsCont xCampo="Pedido de Venda">
-                <xTexto>0012505260603</xTexto>
-            </obsCont>
+            <infCpl>DEVOLUCAO TOTAL NF 15121 - 04/06/25
+                NF-e REF: 42250634890357000104550010000151211000042940</infCpl>
         </infAdic>
         <infRespTec>
             <CNPJ>28977040000107</CNPJ>

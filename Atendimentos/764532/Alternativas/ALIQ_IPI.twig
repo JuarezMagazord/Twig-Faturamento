@@ -1,0 +1,22 @@
+{% set aliquotaIPI = 0.00 %}
+
+{% if self.configuracaoParametros %}
+    {% if self.origemFiscal in [2] %}
+        {% set aliquotaIPI = 0.00 %}
+    {# {% elseif self.aliquotaProdutoDerivacao|length > 0 and self.aliquotaProdutoDerivacao[self.notaFiscalItem.produtoDerivacao.codigo]  is defined %}    
+        {% set aliquotaIPI = (self.aliquotaProdutoDerivacao[self.notaFiscalItem.produtoDerivacao.codigo]) %}
+    {% elseif self.aliquotaNcm|length > 0 and self.aliquotaNcm[self.notaFiscalItem.ncm.codigo]  is defined %}
+        {% set aliquotaIPI = (self.aliquotaNcm[self.notaFiscalItem.ncm.codigo]) %} #}
+    {% elseif self.notaFiscalItem.cfop.codigo in [6107, 5102, 6108] %}
+        {% set aliquotaIPI = 3.25 %}    
+    {% else %}
+        {% set aliquotaIPI = 0.00 %}
+    {% endif %}    
+{% else %}
+    {% set aliquotaIPI = 0.00 %}
+{% endif %}
+
+{{ self.result(aliquotaIPI) }}
+
+
+{# 6107, 5102, 6108 #}

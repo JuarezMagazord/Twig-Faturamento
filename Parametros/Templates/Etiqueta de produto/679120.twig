@@ -8,11 +8,11 @@
 
     {% set colunas = 1 %}
 
-    {% set larguraImpresao = 105 %} {# tamanho em mm #}
-    {% set espacamentoEtiquetasLaterais = 3 %} {# tamanho em mm #}
+    {% set larguraImpresao = 100 %} {# tamanho em mm #}
+    {% set espacamentoEtiquetasLaterais = 30 %} {# tamanho em mm #}
 
-    {% set larguraEtiqueta = 90 %} {# tamanho em mm #}
-    {% set alturaEtiqueta = 25 %} {# tamanho em mm #}
+    {% set larguraEtiqueta = 100 %} {# tamanho em mm #}
+    {% set alturaEtiqueta = 30 %} {# tamanho em mm #}
 
     {% set tamanhoTextoCodigoProduto = 7 %} {# Tamanho em Pixels #}
     {% set tamanhoTextoNomeProduto = 7 %} {# Tamanho em Pixels #}
@@ -63,24 +63,50 @@
 </head>
 <body>
 
-<div class="etiqueta-container" style="grid-template-columns: repeat({{ colunas }}, 1fr);">
+<div class="etiqueta-container" style="display: grid; grid-template-columns: repeat({{ colunas }}, 1fr); gap: 5px;">
     {% for produto in produtos %}
         {% for i in 0..produto.quantidade -1 %}
-            <div class="etiqueta">
-                <div class="colum1">
-                    <strong style="font-size: {{ tamanhoTextoCodigoProduto }}px;">{{ produto.codigo }}</strong>
-                    <div class="barcode">
-                        <img class="barcode-default" src="{{ barcode_src(produto.codigo) }}" alt="Código de barras" style="max-width: 90%; max-height: auto;">
-                    </div>
-                    <strong style="font-size: {{ tamanhoTextoCodigoProduto }}px;">{{ produto.preco}}</strong>
+            <div class="etiqueta" style="width: 90mm; height: 25mm; border: 1px solid #000; display: flex; flex-direction: column; padding: 2mm; box-sizing: border-box;">
+                
+                <!-- Header da etiqueta -->
+                <div class="etiqueta-header" style="font-size: 10px; font-weight: bold; text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 2px;">
+                    Catarina Bueno
                 </div>
-                <div class="colum2">
-                    <div style="font-size: {{ tamanhoTextoNomeProduto }}px;max-width:100%;white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ produto.nome }}</div>
-                    <div style="font-zie: {{ tamanhoTextoDerivacaoProduto }}px;max-width:100%;white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{ produto.nomeDerivacao }}</div>
+
+                <!-- Corpo dividido em 3 colunas -->
+                <div class="etiqueta-body" style="display: flex; flex: 1; justify-content: space-between; align-items: center; gap: 5px;">
+
+                    <!-- Coluna 1: Código, Código de barras, Preço -->
+                    <div class="coluna1" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                        
+                        <div class="barcode" style="flex: 1; display: flex; align-items: center;">
+                            <!-- <img class="barcode-default" src="{{ barcode_src(produto.codigo) }}" alt="Código de barras" style="height: 1; max-width: 100%;"> -->
+                            <img class="barcode-default" src="{{ barcode_src(produto.codigo) }}" alt="Código de barras" style="height: 1; max-width: 100%;">
+                        </div>
+                        <strong style="font-size: 12px;">{{ produto.codigo }}</strong>
+                    </div>
+
+                    <!-- Coluna 2: Nome e Derivação -->
+                    <div class="coluna2" style="flex: 1.2; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                            {{ produto.nome }}
+                        </div>
+                    </div>
+
+                    <!-- Coluna 3: Adicionais -->
+                    <div class="coluna3" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                        <div style="font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                            {{ produto.nomeDerivacao }}
+                        </div>
+                        <div>
+                            <strong style="font-size: 12px;">R$ {{ produto.preco }}</strong>
+                        </div>
+                    </div>
                 </div>
             </div>
         {% endfor %}
     {% endfor %}
 </div>
+
 </body>
 </html>

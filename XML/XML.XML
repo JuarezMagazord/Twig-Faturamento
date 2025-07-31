@@ -1,236 +1,233 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-    <infNFe Id="NFe42250423362845000122550050000002601000003758" versao="4.00">
+    <infNFe Id="NFe42250752085759000118550040000000301000001411" versao="4.00">
         <ide>
             <cUF>42</cUF>
-            <cNF>00000375</cNF>
-            <natOp>Devolucao de Compra p/Comercializacao</natOp>
+            <cNF>00000141</cNF>
+            <natOp>Venda Merc.Adq.Rec.Terc.Dest.Nao Contrib</natOp>
             <mod>55</mod>
-            <serie>5</serie>
-            <nNF>260</nNF>
-            <dhEmi>2025-04-16T15:58:11-03:00</dhEmi>
-            <dhSaiEnt>2025-04-16T15:58:11-03:00</dhSaiEnt>
+            <serie>4</serie>
+            <nNF>30</nNF>
+            <dhEmi>2025-07-31T11:21:41-03:00</dhEmi>
+            <dhSaiEnt>2025-07-31T11:21:41-03:00</dhSaiEnt>
             <tpNF>1</tpNF>
             <idDest>2</idDest>
-            <cMunFG>4202008</cMunFG>
+            <cMunFG>4210506</cMunFG>
             <tpImp>1</tpImp>
             <tpEmis>1</tpEmis>
-            <cDV>8</cDV>
+            <cDV>1</cDV>
             <tpAmb>1</tpAmb>
-            <finNFe>4</finNFe>
-            <indFinal>0</indFinal>
+            <finNFe>1</finNFe>
+            <indFinal>1</indFinal>
             <indPres>2</indPres>
-            <indIntermed>0</indIntermed>
+            <indIntermed>1</indIntermed>
             <procEmi>0</procEmi>
             <verProc>Magazord 1.0</verProc>
-            <NFref>
-                <refNFe>35250309627645000123550010000094421000207755</refNFe>
-            </NFref>
         </ide>
         <emit>
-            <CNPJ>23362845000122</CNPJ>
-            <xNome>A C T de Oliveira Gustmann Ltda</xNome>
-            <xFant>Mesa Tua</xFant>
+            <CNPJ>52085759000118</CNPJ>
+            <xNome>Prime Office Ltda</xNome>
+            <xFant>Prime Office</xFant>
             <enderEmit>
-                <xLgr>Rua 3300</xLgr>
-                <nro>702</nro>
-                <xBairro>Centro</xBairro>
-                <cMun>4202008</cMun>
-                <xMun>Balneário Camboriú</xMun>
+                <xLgr>Av Orlando Valerio Zawadzki</xLgr>
+                <nro>250</nro>
+                <xCpl>Barracao 01</xCpl>
+                <xBairro>Universitario</xBairro>
+                <cMun>4210506</cMun>
+                <xMun>Maravilha</xMun>
                 <UF>SC</UF>
-                <CEP>88330272</CEP>
+                <CEP>89874000</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>4733670295</fone>
+                <fone>49998126683</fone>
             </enderEmit>
-            <IE>257772863</IE>
-            <IM>ISENTO</IM>
-            <CNAE>8211300</CNAE>
-            <CRT>1</CRT>
+            <IE>262512858</IE>
+            <IM>isento</IM>
+            <CRT>3</CRT>
         </emit>
         <dest>
-            <CNPJ>09627645000123</CNPJ>
-            <xNome>ROBERTO TIBERIO EPP - FOCOS</xNome>
+            <CPF>46841249836</CPF>
+            <xNome>LUCAS HENRIQUE GOMES</xNome>
             <enderDest>
-                <xLgr>Rua Plinio Dionisio de Freitas</xLgr>
-                <nro>315</nro>
-                <xCpl>A</xCpl>
-                <xBairro>Jd. Sao Roberto</xBairro>
-                <cMun>3550308</cMun>
-                <xMun>São Paulo</xMun>
-                <UF>SP</UF>
-                <CEP>03978780</CEP>
+                <xLgr>Rua Torres Camara</xLgr>
+                <nro>1100</nro>
+                <xCpl>Ap302 Portaria na Joaquim Nabuco 1401</xCpl>
+                <xBairro>Aldeota</xBairro>
+                <cMun>2304400</cMun>
+                <xMun>Fortaleza</xMun>
+                <UF>CE</UF>
+                <CEP>60150060</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>1133851590</fone>
+                <fone>19995829542</fone>
             </enderDest>
-            <indIEDest>1</indIEDest>
-            <IE>148165241114</IE>
+            <indIEDest>9</indIEDest>
+            <email>2e986519e25aeaa87190295803b72e16@madeiramadeira.com.br</email>
         </dest>
+        <entrega>
+            <CPF>46841249836</CPF>
+            <xNome>LUCAS HENRIQUE GOMES</xNome>
+            <xLgr>Rua Torres Camara</xLgr>
+            <nro>1100</nro>
+            <xCpl>Ap302 Portaria na Joaquim Nabuco 1401</xCpl>
+            <xBairro>Aldeota</xBairro>
+            <cMun>2304400</cMun>
+            <xMun>Fortaleza</xMun>
+            <UF>CE</UF>
+            <CEP>60150060</CEP>
+        </entrega>
 
 
         <det nItem="1">
             <prod>
-                <cProd>223184</cProd>
-                <cEAN>SEM GTIN</cEAN>
-                <xProd>CJTO PRATELEIRAS 1220X457X2200 C/ 4 NIVEIS EPOXI ZINCADA - M</xProd>
-                <NCM>94032090</NCM>
-                <CFOP>6202</CFOP>
-                <uCom>UN</uCom>
-                <qCom>3.0000</qCom>
-                <vUnCom>1516.800000</vUnCom>
-                <vProd>4550.40</vProd>
-                <cEANTrib>SEM GTIN</cEANTrib>
-                <uTrib>UN</uTrib>
-                <qTrib>3.0000</qTrib>
-                <vUnTrib>1516.800000</vUnTrib>
-                <indTot>1</indTot>
-            </prod>
-            <imposto>
-                <ICMS>
-                    <ICMSSN900>
-                        <orig>0</orig>
-                        <CSOSN>900</CSOSN>
-                        <modBC>3</modBC>
-                        <vBC>4550.40</vBC>
-                        <pICMS>12.00</pICMS>
-                        <vICMS>546.05</vICMS>
-                        <pCredSN>0</pCredSN>
-                        <vCredICMSSN>0.00</vCredICMSSN>
-                    </ICMSSN900>
-                </ICMS>
-                <IPI>
-                    <cEnq>999</cEnq>
-                    <IPITrib>
-                        <CST>99</CST>
-                        <vBC>0.00</vBC>
-                        <pIPI>3.25</pIPI>
-                        <vIPI>147.89</vIPI>
-                    </IPITrib>
-                </IPI>
-                <PIS>
-                    <PISNT>
-                        <CST>07</CST>
-                    </PISNT>
-                </PIS>
-                <COFINS>
-                    <COFINSNT>
-                        <CST>07</CST>
-                    </COFINSNT>
-                </COFINS>
-            </imposto>
-            <impostoDevol>
-                <pDevol>0.00</pDevol>
-                <IPI>
-                    <vIPIDevol>0.00</vIPIDevol>
-                </IPI>
-            </impostoDevol>
-        </det>
-
-        <det nItem="2">
-            <prod>
-                <cProd>223185</cProd>
-                <cEAN>SEM GTIN</cEAN>
-                <xProd>CJTO PRATELEIRAS 1520X457X2200 C/ 4 NIVEIS EPOXI ZINCADA - M</xProd>
-                <NCM>94032090</NCM>
-                <CFOP>6202</CFOP>
+                <cProd>P210</cProd>
+                <cEAN>7898973275494</cEAN>
+                <xProd>Cadeira De Escritorio Diretor Preta Giratoria Com Tela Mesh P210</xProd>
+                <NCM>94013900</NCM>
+                <CFOP>6108</CFOP>
                 <uCom>UN</uCom>
                 <qCom>1.0000</qCom>
-                <vUnCom>1130.000000</vUnCom>
-                <vProd>1130.00</vProd>
-                <cEANTrib>SEM GTIN</cEANTrib>
+                <vUnCom>366.014500</vUnCom>
+                <vProd>366.01</vProd>
+                <cEANTrib>7898973275494</cEANTrib>
                 <uTrib>UN</uTrib>
                 <qTrib>1.0000</qTrib>
-                <vUnTrib>1130.000000</vUnTrib>
+                <vUnTrib>366.014500</vUnTrib>
+                <vFrete>56.67</vFrete>
                 <indTot>1</indTot>
+                <xPed>0012507663847</xPed>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMSSN900>
-                        <orig>0</orig>
-                        <CSOSN>900</CSOSN>
+                    <ICMS00>
+                        <orig>1</orig>
+                        <CST>00</CST>
                         <modBC>3</modBC>
-                        <vBC>1130.00</vBC>
-                        <pICMS>12.00</pICMS>
-                        <vICMS>135.60</vICMS>
-                        <pCredSN>0</pCredSN>
-                        <vCredICMSSN>0.00</vCredICMSSN>
-                    </ICMSSN900>
+                        <vBC>422.68</vBC>
+                        <pICMS>4.00</pICMS>
+                        <vICMS>16.91</vICMS>
+                    </ICMS00>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
                     <IPITrib>
-                        <CST>99</CST>
-                        <vBC>0.00</vBC>
+                        <CST>50</CST>
+                        <vBC>422.68</vBC>
                         <pIPI>3.25</pIPI>
-                        <vIPI>36.72</vIPI>
+                        <vIPI>13.74</vIPI>
                     </IPITrib>
                 </IPI>
                 <PIS>
-                    <PISNT>
-                        <CST>07</CST>
-                    </PISNT>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>405.77</vBC>
+                        <pPIS>1.65</pPIS>
+                        <vPIS>6.70</vPIS>
+                    </PISAliq>
                 </PIS>
                 <COFINS>
-                    <COFINSNT>
-                        <CST>07</CST>
-                    </COFINSNT>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>405.77</vBC>
+                        <pCOFINS>7.60</pCOFINS>
+                        <vCOFINS>30.84</vCOFINS>
+                    </COFINSAliq>
                 </COFINS>
+                <ICMSUFDest>
+                    <vBCUFDest>422.68</vBCUFDest>
+                    <vBCFCPUFDest>422.68</vBCFCPUFDest>
+                    <pFCPUFDest>0.00</pFCPUFDest>
+                    <pICMSUFDest>20.00</pICMSUFDest>
+                    <pICMSInter>4.00</pICMSInter>
+                    <pICMSInterPart>100.00</pICMSInterPart>
+                    <vFCPUFDest>0.00</vFCPUFDest>
+                    <vICMSUFDest>67.63</vICMSUFDest>
+                    <vICMSUFRemet>0.00</vICMSUFRemet>
+                </ICMSUFDest>
             </imposto>
-            <impostoDevol>
-                <pDevol>0.00</pDevol>
-                <IPI>
-                    <vIPIDevol>0.00</vIPIDevol>
-                </IPI>
-            </impostoDevol>
         </det>
         <total>
             <ICMSTot>
 
 
-                <vBC>5680.40</vBC>
-                <vICMS>681.65</vICMS>
+                <vBC>422.68</vBC>
+                <vICMS>16.91</vICMS>
                 <vICMSDeson>0</vICMSDeson>
 
+                <vFCPUFDest>0.00</vFCPUFDest>
+                <vICMSUFDest>67.63</vICMSUFDest>
+                <vICMSUFRemet>0.00</vICMSUFRemet>
                 <vFCP>0.00</vFCP>
                 <vBCST>0.00</vBCST>
                 <vST>0.00</vST>
                 <vFCPST>0.00</vFCPST>
                 <vFCPSTRet>0.00</vFCPSTRet>
-                <vProd>5680.40</vProd>
-                <vFrete>0.00</vFrete>
+                <vProd>366.01</vProd>
+                <vFrete>56.67</vFrete>
                 <vSeg>0</vSeg>
                 <vDesc>0.00</vDesc>
                 <vII>0</vII>
-                <vIPI>184.61</vIPI>
+                <vIPI>13.74</vIPI>
                 <vIPIDevol>0.00</vIPIDevol>
-                <vPIS>0.00</vPIS>
-                <vCOFINS>0.00</vCOFINS>
+                <vPIS>6.70</vPIS>
+                <vCOFINS>30.84</vCOFINS>
                 <vOutro>0.00</vOutro>
-                <vNF>5865.01</vNF>
+                <vNF>436.42</vNF>
             </ICMSTot>
         </total>
         <transp>
-            <modFrete>9</modFrete>
+            <modFrete>0</modFrete>
+            <transporta>
+                <CNPJ>95591723004700</CNPJ>
+                <xNome>TNT Mercurio Cargas</xNome>
+                <xEnder>Acesso Plínio Arlindo de Nes, 3101</xEnder>
+                <xMun>Chapecó</xMun>
+                <UF>SC</UF>
+            </transporta>
             <vol>
                 <qVol>1</qVol>
-                <esp>1</esp>
-                <pesoL>130.000</pesoL>
-                <pesoB>130.000</pesoB>
+                <esp>Caixa</esp>
+                <pesoL>11.000</pesoL>
+                <pesoB>11.000</pesoB>
             </vol>
         </transp>
+        <cobr>
+            <fat>
+                <nFat>30</nFat>
+                <vOrig>436.42</vOrig>
+                <vDesc>0.00</vDesc>
+                <vLiq>436.42</vLiq>
+            </fat>
+            <dup>
+                <nDup>001</nDup>
+                <dVenc>2025-07-31</dVenc>
+                <vDup>436.42</vDup>
+            </dup>
+        </cobr>
         <pag>
             <detPag>
-                <tPag>90</tPag>
-                <vPag>0.00</vPag>
+                <tPag>03</tPag>
+                <vPag>436.42</vPag>
+                <card>
+                    <tpIntegra>2</tpIntegra>
+                    <CNPJ>10490181000135</CNPJ>
+                    <tBand>01</tBand>
+                </card>
             </detPag>
         </pag>
+        <infIntermed>
+            <CNPJ>10490181000135</CNPJ>
+            <idCadIntTran>Madeiramadeira Comércio Eletrônico S/A</idCadIntTran>
+        </infIntermed>
         <infAdic>
-            <infAdFisco>INFORMAÇÕES PARA FINS DE CRÉDITO DE DESTINATÁRIO: IPI DESTACADO NO XML R$
-                184,61 PARA DESTINATÁRIO TOMAR O CRÉDITO</infAdFisco>
-            <infCpl>Documento emitido por ME ou EPP optante pelo Simples Nacional. Não gera direito
-                a crédito fiscal de IPI. - Total aproximado de tributos: 1.834,77 (32,30%) Federais
-                869,10 (15,30%) Estaduais 965,67 (17,00%). Fonte.: IBPT/empresometro.com.br.</infCpl>
+            <infAdFisco>- Recolhimento do ICMS ao ESTADO de destino - - Total FCP R$ 0,00 - Partilha
+                ICMS UF Destino R$ 67,63 - Partilha ICMS UF Origem R$ 0,00</infAdFisco>
+            <infCpl>- Marketplace: Madeira Madeira - Pedido: 0012507663847 - - Total aproximado de
+                tributos: 136,53 (32,30%) Federais 64,67 (15,30%) Estaduais 71,86 (17,00%). Fonte.:
+                IBPT/empresometro.com.br.</infCpl>
+            <obsCont xCampo="Pedido de Venda">
+                <xTexto>0012507663847</xTexto>
+            </obsCont>
         </infAdic>
         <infRespTec>
             <CNPJ>28977040000107</CNPJ>
