@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+<<<<<<< Updated upstream
     <infNFe Id="NFe42250681614703000101550050000648361000661366" versao="4.00">
         <ide>
             <cUF>42</cUF>
@@ -19,6 +20,27 @@
             <tpAmb>1</tpAmb>
             <finNFe>4</finNFe>
             <indFinal>0</indFinal>
+=======
+    <infNFe Id="NFe41250736772117000130550050000001081000001090" versao="4.00">
+        <ide>
+            <cUF>41</cUF>
+            <cNF>00000109</cNF>
+            <natOp>Venda Merc.Adq.c/Subst.Trib.entre C.Subs</natOp>
+            <mod>55</mod>
+            <serie>5</serie>
+            <nNF>108</nNF>
+            <dhEmi>2025-07-23T10:29:13-03:00</dhEmi>
+            <dhSaiEnt>2025-07-23T10:29:13-03:00</dhSaiEnt>
+            <tpNF>1</tpNF>
+            <idDest>1</idDest>
+            <cMunFG>4119905</cMunFG>
+            <tpImp>1</tpImp>
+            <tpEmis>1</tpEmis>
+            <cDV>0</cDV>
+            <tpAmb>2</tpAmb>
+            <finNFe>1</finNFe>
+            <indFinal>1</indFinal>
+>>>>>>> Stashed changes
             <indPres>2</indPres>
             <indIntermed>0</indIntermed>
             <procEmi>0</procEmi>
@@ -28,6 +50,7 @@
             </NFref>
         </ide>
         <emit>
+<<<<<<< Updated upstream
             <CNPJ>81614703000101</CNPJ>
             <xNome>Casa Show Utilidades Ltda</xNome>
             <xFant>Casa Show</xFant>
@@ -66,10 +89,63 @@
             <indIEDest>1</indIEDest>
             <IE>260237213</IE>
         </dest>
+=======
+            <CNPJ>36772117000130</CNPJ>
+            <xNome>PGT Comercio e Assessoria Ltda</xNome>
+            <xFant>i9 Materiais Elétricos</xFant>
+            <enderEmit>
+                <xLgr>Rua Siqueira Campos</xLgr>
+                <nro>2174</nro>
+                <xCpl>SL B</xCpl>
+                <xBairro>Cará-cará</xBairro>
+                <cMun>4119905</cMun>
+                <xMun>Ponta Grossa</xMun>
+                <UF>PR</UF>
+                <CEP>84033000</CEP>
+                <cPais>1058</cPais>
+                <xPais>Brasil</xPais>
+                <fone>4230258002</fone>
+            </enderEmit>
+            <IE>9102712452</IE>
+            <IM>ISENTO</IM>
+            <CNAE>4742300</CNAE>
+            <CRT>1</CRT>
+        </emit>
+        <dest>
+            <CPF>03035114277</CPF>
+            <xNome>NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</xNome>
+            <enderDest>
+                <xLgr>Rua Valerio Ronchi</xLgr>
+                <nro>701</nro>
+                <xBairro>Uvaranas</xBairro>
+                <cMun>4119905</cMun>
+                <xMun>Ponta Grossa</xMun>
+                <UF>PR</UF>
+                <CEP>84030320</CEP>
+                <cPais>1058</cPais>
+                <xPais>Brasil</xPais>
+                <fone>42988068127</fone>
+            </enderDest>
+            <indIEDest>9</indIEDest>
+            <email>lucassgabrielf@gmail.com</email>
+        </dest>
+        <entrega>
+            <CPF>03035114277</CPF>
+            <xNome>Lucas Gabriel Aguiar Farias</xNome>
+            <xLgr>Rua Valerio Ronchi</xLgr>
+            <nro>701</nro>
+            <xBairro>Uvaranas</xBairro>
+            <cMun>4119905</cMun>
+            <xMun>Ponta Grossa</xMun>
+            <UF>PR</UF>
+            <CEP>84030320</CEP>
+        </entrega>
+>>>>>>> Stashed changes
 
 
         <det nItem="1">
             <prod>
+<<<<<<< Updated upstream
                 <cProd>8891</cProd>
                 <cEAN>SEM GTIN</cEAN>
                 <xProd>ENVELOPE INVIOLAVEL PCR PRETO 20X30+3 MODELO PEQUENO</xProd>
@@ -107,6 +183,37 @@
                         <pIPI>9.75</pIPI>
                         <vIPI>58.01</vIPI>
                     </IPITrib>
+=======
+                <cProd>7854</cProd>
+                <cEAN>7898961886718</cEAN>
+                <xProd>Lampada Bulbo Pera - Branca - 6500K - 12W</xProd>
+                <NCM>94051190</NCM>
+                <CEST>2112200</CEST>
+                <CFOP>5405</CFOP>
+                <uCom>UN</uCom>
+                <qCom>10.0000</qCom>
+                <vUnCom>2.841000</vUnCom>
+                <vProd>28.41</vProd>
+                <cEANTrib>7898961886718</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>10.0000</qTrib>
+                <vUnTrib>2.841000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012507428387</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMSSN500>
+                        <orig>0</orig>
+                        <CSOSN>500</CSOSN>
+                    </ICMSSN500>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+>>>>>>> Stashed changes
                 </IPI>
                 <PIS>
                     <PISNT>
@@ -129,15 +236,27 @@
         <total>
             <ICMSTot>
 
+<<<<<<< Updated upstream
                 <vBC>595.00</vBC>
                 <vICMS>71.40</vICMS>
                 <vICMSDeson>0</vICMSDeson>
+=======
+
+                <vBC>0.00</vBC>
+                <vICMS>0.00</vICMS>
+                <vICMSDeson>0</vICMSDeson>
+
+>>>>>>> Stashed changes
                 <vFCP>0.00</vFCP>
                 <vBCST>0</vBCST>
                 <vST>0</vST>
                 <vFCPST>0.00</vFCPST>
                 <vFCPSTRet>0.00</vFCPSTRet>
+<<<<<<< Updated upstream
                 <vProd>560.00</vProd>
+=======
+                <vProd>28.41</vProd>
+>>>>>>> Stashed changes
                 <vFrete>0.00</vFrete>
                 <vSeg>0</vSeg>
                 <vDesc>0.00</vDesc>
@@ -147,6 +266,7 @@
                 <vPIS>0.00</vPIS>
                 <vCOFINS>0.00</vCOFINS>
                 <vOutro>0.00</vOutro>
+<<<<<<< Updated upstream
 
                 <vNF>618.01</vNF>
             </ICMSTot>
@@ -172,6 +292,31 @@
         <infAdic>
             <infCpl>DEVOLUCAO TOTAL NF 15121 - 04/06/25
                 NF-e REF: 42250634890357000104550010000151211000042940</infCpl>
+=======
+                <vNF>28.41</vNF>
+            </ICMSTot>
+        </total>
+        <transp>
+            <modFrete>9</modFrete>
+            <vol>
+                <qVol>1</qVol>
+                <esp>Caixa</esp>
+                <pesoL>0.350</pesoL>
+                <pesoB>0.350</pesoB>
+            </vol>
+        </transp>
+        <pag>
+            <detPag>
+                <tPag>17</tPag>
+                <vPag>28.41</vPag>
+            </detPag>
+        </pag>
+        <infAdic>
+            <infCpl>Pedido: 0012507428387 - Documento emitido por ME ou EPP optante pelo Simples Nacional.  Não gera direito a crédito fiscal de IPI.  - Total aproximado de tributos: 9,93 (34,95%) Federais 4,53 (15,95%) Estaduais 5,40 (19,01%). Fonte.: IBPT/empresometro.com.br.</infCpl>
+            <obsCont xCampo="Pedido de Venda">
+                <xTexto>0012507428387</xTexto>
+            </obsCont>
+>>>>>>> Stashed changes
         </infAdic>
         <infRespTec>
             <CNPJ>28977040000107</CNPJ>

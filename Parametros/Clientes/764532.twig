@@ -1,0 +1,35 @@
+{% if self.origemFiscal in [2] %}	
+	{{ self.result(0.00) }}
+{% else %}											
+	{{ self.result((self.notaFiscalItem.valorProduto) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+{% endif %}	
+
+
+------
+
+
+{% set zeraBaseCalculo = false %}													
+{% if self.configuracaoParametros %}													
+{% set cfopZerada = self.configuracaoParametros.getOpcoesICMS().getCfopBaseZerada()|split(',') %}													
+	{% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}												
+{% endif %}													
+													
+{% if zeraBaseCalculo %}													
+	{{ self.result('0.00') }}												
+{% else %}													
+													
+		{% if self.configuracaoGlobal %}											
+			{% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}
+				{% if self.origemFiscal in [2] %}	
+					{{ self.result(0.00) }}
+				{% else %}											
+					{{ self.result((self.notaFiscalItem.valorProduto) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+				{% endif %}										
+				{{ self.result(( self.notaFiscalItem.valorProduto) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}									
+			{% else %}										
+				{{ self.result(0.00) }}									
+			{% endif %}										
+		{% else %}											
+			{{ self.result((self.notaFiscalItem.valorProduto) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}										
+		{% endif %}											
+{% endif %}
