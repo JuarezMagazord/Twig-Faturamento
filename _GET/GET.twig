@@ -34,3 +34,6 @@
 {# NCM do produto na NFe #}
 {% self.notaFiscalItem.ncm.codigo %}
 
+{% self.configuracaoParametros.getOpcoesIPI().getAliquotaNcm() %}
+    
+{% self.configuracaoParametros.getOpcoesIPI().getAliquotaProdutoDerivacao() %}
