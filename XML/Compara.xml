@@ -1,327 +1,301 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-<<<<<<< Updated upstream
-    <infNFe Id="NFe42250681614703000101550050000648361000661366" versao="4.00">
+    <infNFe Id="NFe42250936152422000120550050000277401000408184" versao="4.00">
         <ide>
             <cUF>42</cUF>
-            <cNF>00066136</cNF>
-            <natOp>Devolucao de Compra para Indus.</natOp>
+            <cNF>00040818</cNF>
+
+            <natOp>Venda Merc.Adq.Rec.Terc.Dest.Nao Contrib</natOp>
             <mod>55</mod>
             <serie>5</serie>
-            <nNF>64836</nNF>
-            <dhEmi>2025-06-25T16:25:08-03:00</dhEmi>
-            <dhSaiEnt>2025-06-25T16:25:08-03:00</dhSaiEnt>
+            <nNF>27740</nNF>
+            <dhEmi>2025-09-03T07:32:44-03:00</dhEmi>
+            <dhSaiEnt>2025-09-03T07:32:44-03:00</dhSaiEnt>
             <tpNF>1</tpNF>
-            <idDest>1</idDest>
-            <cMunFG>4206306</cMunFG>
+            <idDest>2</idDest>
+            <cMunFG>4208302</cMunFG>
             <tpImp>1</tpImp>
             <tpEmis>1</tpEmis>
-            <cDV>6</cDV>
+            <cDV>4</cDV>
             <tpAmb>1</tpAmb>
-            <finNFe>4</finNFe>
-            <indFinal>0</indFinal>
-=======
-    <infNFe Id="NFe41250736772117000130550050000001081000001090" versao="4.00">
-        <ide>
-            <cUF>41</cUF>
-            <cNF>00000109</cNF>
-            <natOp>Venda Merc.Adq.c/Subst.Trib.entre C.Subs</natOp>
-            <mod>55</mod>
-            <serie>5</serie>
-            <nNF>108</nNF>
-            <dhEmi>2025-07-23T10:29:13-03:00</dhEmi>
-            <dhSaiEnt>2025-07-23T10:29:13-03:00</dhSaiEnt>
-            <tpNF>1</tpNF>
-            <idDest>1</idDest>
-            <cMunFG>4119905</cMunFG>
-            <tpImp>1</tpImp>
-            <tpEmis>1</tpEmis>
-            <cDV>0</cDV>
-            <tpAmb>2</tpAmb>
             <finNFe>1</finNFe>
             <indFinal>1</indFinal>
->>>>>>> Stashed changes
             <indPres>2</indPres>
+
+
             <indIntermed>0</indIntermed>
+
+
             <procEmi>0</procEmi>
             <verProc>Magazord 1.0</verProc>
-            <NFref>
-                <refNFe>42250634890357000104550010000151211000042940</refNFe>
-            </NFref>
         </ide>
         <emit>
-<<<<<<< Updated upstream
-            <CNPJ>81614703000101</CNPJ>
-            <xNome>Casa Show Utilidades Ltda</xNome>
-            <xFant>Casa Show</xFant>
+            <CNPJ>36152422000120</CNPJ>
+            <xNome>Me Decora Casa Decorações Ltda</xNome>
+            <xFant>Me Decora Casa</xFant>
             <enderEmit>
-                <xLgr>Rua Oscar Schumacher</xLgr>
-                <nro>230</nro>
-                <xCpl>Casa cinza lado direito, porta espelhada.</xCpl>
+                <xLgr>Rua 254</xLgr>
+                <nro>350</nro>
+                <xCpl>Sala 03AEdifício Maré</xCpl>
+                <xBairro>Meia Praia</xBairro>
+                <cMun>4208302</cMun>
+                <xMun>Itapema</xMun>
+                <UF>SC</UF>
+                <CEP>88220000</CEP>
+                <cPais>1058</cPais>
+                <xPais>Brasil</xPais>
+                <fone>47989064788</fone>
+            </enderEmit>
+            <IE>260399655</IE>
+            <IM>ISENTO</IM>
+            <CNAE>4759899</CNAE>
+            <CRT>1</CRT>
+        </emit>
+        <dest>
+            <CPF>01088364799</CPF>
+            <xNome>Nuzia Rosa Santos Pereira</xNome>
+            <enderDest>
+                <xLgr>Rua Mexico</xLgr>
+                <nro>90</nro>
+                <xCpl>101</xCpl>
                 <xBairro>Centro</xBairro>
-                <cMun>4206306</cMun>
-                <xMun>Guabiruba</xMun>
-                <UF>SC</UF>
-                <CEP>88360000</CEP>
+                <cMun>3304557</cMun>
+                <xMun>Rio de Janeiro</xMun>
+                <UF>RJ</UF>
+                <CEP>20031140</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>47991762606</fone>
-            </enderEmit>
-            <IE>251903630</IE>
-            <IM>ISENTO</IM>
-            <CNAE>4759801</CNAE>
-            <CRT>1</CRT>
-        </emit>
-        <dest>
-            <CNPJ>34890357000104</CNPJ>
-            <xNome>DL EMBALAGENS LTDA</xNome>
-            <enderDest>
-                <xLgr>Rua Amador Bueno da Ribeira</xLgr>
-                <nro>189</nro>
-                <xBairro>Nova Esperanca</xBairro>
-                <cMun>4202008</cMun>
-                <xMun>Balneário Camboriú</xMun>
-                <UF>SC</UF>
-                <CEP>88336320</CEP>
-                <cPais>1058</cPais>
-                <xPais>Brasil</xPais>
-            </enderDest>
-            <indIEDest>1</indIEDest>
-            <IE>260237213</IE>
-        </dest>
-=======
-            <CNPJ>36772117000130</CNPJ>
-            <xNome>PGT Comercio e Assessoria Ltda</xNome>
-            <xFant>i9 Materiais Elétricos</xFant>
-            <enderEmit>
-                <xLgr>Rua Siqueira Campos</xLgr>
-                <nro>2174</nro>
-                <xCpl>SL B</xCpl>
-                <xBairro>Cará-cará</xBairro>
-                <cMun>4119905</cMun>
-                <xMun>Ponta Grossa</xMun>
-                <UF>PR</UF>
-                <CEP>84033000</CEP>
-                <cPais>1058</cPais>
-                <xPais>Brasil</xPais>
-                <fone>4230258002</fone>
-            </enderEmit>
-            <IE>9102712452</IE>
-            <IM>ISENTO</IM>
-            <CNAE>4742300</CNAE>
-            <CRT>1</CRT>
-        </emit>
-        <dest>
-            <CPF>03035114277</CPF>
-            <xNome>NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</xNome>
-            <enderDest>
-                <xLgr>Rua Valerio Ronchi</xLgr>
-                <nro>701</nro>
-                <xBairro>Uvaranas</xBairro>
-                <cMun>4119905</cMun>
-                <xMun>Ponta Grossa</xMun>
-                <UF>PR</UF>
-                <CEP>84030320</CEP>
-                <cPais>1058</cPais>
-                <xPais>Brasil</xPais>
-                <fone>42988068127</fone>
+                <fone>21987565583</fone>
             </enderDest>
             <indIEDest>9</indIEDest>
-            <email>lucassgabrielf@gmail.com</email>
+            <email>Nuziasantos933@gmail.com</email>
         </dest>
         <entrega>
-            <CPF>03035114277</CPF>
-            <xNome>Lucas Gabriel Aguiar Farias</xNome>
-            <xLgr>Rua Valerio Ronchi</xLgr>
-            <nro>701</nro>
-            <xBairro>Uvaranas</xBairro>
-            <cMun>4119905</cMun>
-            <xMun>Ponta Grossa</xMun>
-            <UF>PR</UF>
-            <CEP>84030320</CEP>
+            <CPF>01088364799</CPF>
+            <xNome>Nuzia Rosa Santos Pereira</xNome>
+            <xLgr>Rua Mexico</xLgr>
+            <nro>90</nro>
+            <xCpl>101</xCpl>
+            <xBairro>Centro</xBairro>
+            <cMun>3304557</cMun>
+            <xMun>Rio de Janeiro</xMun>
+            <UF>RJ</UF>
+            <CEP>20031140</CEP>
         </entrega>
->>>>>>> Stashed changes
 
 
         <det nItem="1">
             <prod>
-<<<<<<< Updated upstream
-                <cProd>8891</cProd>
-                <cEAN>SEM GTIN</cEAN>
-                <xProd>ENVELOPE INVIOLAVEL PCR PRETO 20X30+3 MODELO PEQUENO</xProd>
-                <NCM>39232910</NCM>
-                <CEST>1901900</CEST>
-                <CFOP>5201</CFOP>
+                <cProd>2900-1</cProd>
+                <cEAN>7899768029001</cEAN>
+                <xProd>Jarra Vidro Canelado com Tampa Bambu 500 ml</xProd>
+                <NCM>70134900</NCM>
+                <CEST>1400100</CEST>
+
+                <CFOP>6108</CFOP>
                 <uCom>UN</uCom>
-                <qCom>7000.0000</qCom>
-                <vUnCom>0.080000</vUnCom>
-                <vProd>560.00</vProd>
-                <cEANTrib>SEM GTIN</cEANTrib>
+                <qCom>1.0000</qCom>
+                <vUnCom>57.460794</vUnCom>
+                <vProd>57.46</vProd>
+                <cEANTrib>7899768029001</cEANTrib>
                 <uTrib>UN</uTrib>
-                <qTrib>7000.0000</qTrib>
-                <vUnTrib>0.080000</vUnTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>57.460794</vUnTrib>
+                <vFrete>7.08</vFrete>
                 <indTot>1</indTot>
+                <xPed>0012509796731</xPed>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMSSN900>
-                        <orig>0</orig>
-                        <CSOSN>900</CSOSN>
-                        <modBC>3</modBC>
-                        <vBC>595.00</vBC>
-                        <pICMS>12.00</pICMS>
-                        <vICMS>71.40</vICMS>
-                        <pCredSN>0</pCredSN>
-                        <vCredICMSSN>0.00</vCredICMSSN>
-                    </ICMSSN900>
+                    <ICMSSN102>
+                        <orig>1</orig>
+                        <CSOSN>102</CSOSN>
+                    </ICMSSN102>
+
                 </ICMS>
+
+
                 <IPI>
                     <cEnq>999</cEnq>
                     <IPITrib>
-                        <CST>50</CST>
-                        <vBC>595.00</vBC>
-                        <pIPI>9.75</pIPI>
-                        <vIPI>58.01</vIPI>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
                     </IPITrib>
-=======
-                <cProd>7854</cProd>
-                <cEAN>7898961886718</cEAN>
-                <xProd>Lampada Bulbo Pera - Branca - 6500K - 12W</xProd>
-                <NCM>94051190</NCM>
-                <CEST>2112200</CEST>
-                <CFOP>5405</CFOP>
+                </IPI>
+                <PIS>
+                    <PISOutr>
+                        <CST>49</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISOutr>
+                </PIS>
+                <COFINS>
+                    <COFINSOutr>
+                        <CST>49</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSOutr>
+                </COFINS>
+                <ICMSUFDest>
+                    <vBCUFDest>0.00</vBCUFDest>
+                    <vBCFCPUFDest>0.00</vBCFCPUFDest>
+                    <pFCPUFDest>2.00</pFCPUFDest>
+                    <pICMSUFDest>20.00</pICMSUFDest>
+                    <pICMSInter>4.00</pICMSInter>
+                    <pICMSInterPart>100.00</pICMSInterPart>
+                    <vFCPUFDest>0.00</vFCPUFDest>
+                    <vICMSUFDest>0.00</vICMSUFDest>
+                    <vICMSUFRemet>0.00</vICMSUFRemet>
+                </ICMSUFDest>
+            </imposto>
+
+
+        </det>
+
+        <det nItem="2">
+            <prod>
+                <cProd>2901-1</cProd>
+                <cEAN>7899768029018</cEAN>
+                <xProd>Jarra Vidro Canelado com Tampa Bambu 1 Litro</xProd>
+                <NCM>70134900</NCM>
+                <CEST>1400100</CEST>
+
+                <CFOP>6108</CFOP>
                 <uCom>UN</uCom>
-                <qCom>10.0000</qCom>
-                <vUnCom>2.841000</vUnCom>
-                <vProd>28.41</vProd>
-                <cEANTrib>7898961886718</cEANTrib>
+                <qCom>1.0000</qCom>
+                <vUnCom>71.419206</vUnCom>
+                <vProd>71.42</vProd>
+                <cEANTrib>7899768029018</cEANTrib>
                 <uTrib>UN</uTrib>
-                <qTrib>10.0000</qTrib>
-                <vUnTrib>2.841000</vUnTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>71.419206</vUnTrib>
+                <vFrete>8.80</vFrete>
                 <indTot>1</indTot>
-                <xPed>0012507428387</xPed>
+                <xPed>0012509796731</xPed>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMSSN500>
-                        <orig>0</orig>
-                        <CSOSN>500</CSOSN>
-                    </ICMSSN500>
+                    <ICMSSN102>
+                        <orig>1</orig>
+                        <CSOSN>102</CSOSN>
+                    </ICMSSN102>
+
                 </ICMS>
+
+
                 <IPI>
                     <cEnq>999</cEnq>
-                    <IPINT>
-                        <CST>53</CST>
-                    </IPINT>
->>>>>>> Stashed changes
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
                 </IPI>
                 <PIS>
-                    <PISNT>
-                        <CST>07</CST>
-                    </PISNT>
+                    <PISOutr>
+                        <CST>49</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISOutr>
                 </PIS>
                 <COFINS>
-                    <COFINSNT>
-                        <CST>07</CST>
-                    </COFINSNT>
+                    <COFINSOutr>
+                        <CST>49</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSOutr>
                 </COFINS>
+                <ICMSUFDest>
+                    <vBCUFDest>0.00</vBCUFDest>
+                    <vBCFCPUFDest>0.00</vBCFCPUFDest>
+                    <pFCPUFDest>2.00</pFCPUFDest>
+                    <pICMSUFDest>20.00</pICMSUFDest>
+                    <pICMSInter>4.00</pICMSInter>
+                    <pICMSInterPart>100.00</pICMSInterPart>
+                    <vFCPUFDest>0.00</vFCPUFDest>
+                    <vICMSUFDest>0.00</vICMSUFDest>
+                    <vICMSUFRemet>0.00</vICMSUFRemet>
+                </ICMSUFDest>
             </imposto>
-            <impostoDevol>
-                <pDevol>0.00</pDevol>
-                <IPI>
-                    <vIPIDevol>0.00</vIPIDevol>
-                </IPI>
-            </impostoDevol>
+
+
         </det>
         <total>
             <ICMSTot>
-
-<<<<<<< Updated upstream
-                <vBC>595.00</vBC>
-                <vICMS>71.40</vICMS>
-                <vICMSDeson>0</vICMSDeson>
-=======
 
                 <vBC>0.00</vBC>
                 <vICMS>0.00</vICMS>
                 <vICMSDeson>0</vICMSDeson>
 
->>>>>>> Stashed changes
+                <vFCPUFDest>0.00</vFCPUFDest>
+                <vICMSUFDest>0.00</vICMSUFDest>
+                <vICMSUFRemet>0.00</vICMSUFRemet>
                 <vFCP>0.00</vFCP>
                 <vBCST>0</vBCST>
                 <vST>0</vST>
                 <vFCPST>0.00</vFCPST>
                 <vFCPSTRet>0.00</vFCPSTRet>
-<<<<<<< Updated upstream
-                <vProd>560.00</vProd>
-=======
-                <vProd>28.41</vProd>
->>>>>>> Stashed changes
-                <vFrete>0.00</vFrete>
+                <vProd>128.88</vProd>
+                <vFrete>15.88</vFrete>
                 <vSeg>0</vSeg>
                 <vDesc>0.00</vDesc>
                 <vII>0</vII>
-                <vIPI>58.01</vIPI>
+                <vIPI>0.00</vIPI>
                 <vIPIDevol>0.00</vIPIDevol>
                 <vPIS>0.00</vPIS>
                 <vCOFINS>0.00</vCOFINS>
                 <vOutro>0.00</vOutro>
-<<<<<<< Updated upstream
-
-                <vNF>618.01</vNF>
+                <vNF>144.76</vNF>
             </ICMSTot>
         </total>
         <transp>
-            <modFrete>1</modFrete>
+            <modFrete>0</modFrete>
             <transporta>
-                <CNPJ>81614703000101</CNPJ>
-                <xNome>Casa Show</xNome>
-                <IE>251903630</IE>
-
-                <xEnder>Rua Oscar Schumacher, 230</xEnder>
-                <xMun>Guabiruba</xMun>
-                <UF>SC</UF>
+                <CNPJ>42584754026576</CNPJ>
+                <xNome>J&T Express</xNome>
+                <xEnder>Avenida Engenheiro Luiz Carlos Berrini, 105</xEnder>
+                <xMun>São Paulo</xMun>
+                <UF>SP</UF>
             </transporta>
-        </transp>
-        <pag>
-            <detPag>
-                <tPag>90</tPag>
-                <vPag>0.00</vPag>
-            </detPag>
-        </pag>
-        <infAdic>
-            <infCpl>DEVOLUCAO TOTAL NF 15121 - 04/06/25
-                NF-e REF: 42250634890357000104550010000151211000042940</infCpl>
-=======
-                <vNF>28.41</vNF>
-            </ICMSTot>
-        </total>
-        <transp>
-            <modFrete>9</modFrete>
             <vol>
                 <qVol>1</qVol>
                 <esp>Caixa</esp>
-                <pesoL>0.350</pesoL>
-                <pesoB>0.350</pesoB>
+                <pesoL>1.235</pesoL>
+                <pesoB>1.235</pesoB>
             </vol>
         </transp>
         <pag>
             <detPag>
                 <tPag>17</tPag>
-                <vPag>28.41</vPag>
+
+                <vPag>144.76</vPag>
+                <card>
+                    <tpIntegra>2</tpIntegra>
+                </card>
             </detPag>
         </pag>
+
+
         <infAdic>
-            <infCpl>Pedido: 0012507428387 - Documento emitido por ME ou EPP optante pelo Simples Nacional.  Não gera direito a crédito fiscal de IPI.  - Total aproximado de tributos: 9,93 (34,95%) Federais 4,53 (15,95%) Estaduais 5,40 (19,01%). Fonte.: IBPT/empresometro.com.br.</infCpl>
+            <infCpl>Pedido: 0012509796731 - Documento emitido por ME ou EPP optante pelo Simples
+                Nacional. Não gera direito a crédito fiscal de IPI e ICMS. - Total aproximado de
+                tributos: 51,64 (35,67%) Federais 27,03 (18,67%) Estaduais 24,61 (17,00%). Fonte.:
+                IBPT/empresometro.com.br.</infCpl>
             <obsCont xCampo="Pedido de Venda">
-                <xTexto>0012507428387</xTexto>
+                <xTexto>0012509796731</xTexto>
             </obsCont>
->>>>>>> Stashed changes
         </infAdic>
         <infRespTec>
             <CNPJ>28977040000107</CNPJ>
             <xContato>Ricardo Schroeder</xContato>
-            <email>ricardo@magazord.com.br</email>
+            <email>ricardo@magamobi.com.br</email>
             <fone>4735208013</fone>
         </infRespTec>
     </infNFe>
