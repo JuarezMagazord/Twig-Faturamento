@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-    <infNFe Id="NFe42250752085759000118550040000000301000001411" versao="4.00">
+    <infNFe Id="NFe42250907501260000190550050000199491000219030" versao="4.00">
         <ide>
             <cUF>42</cUF>
-            <cNF>00000141</cNF>
+            <cNF>00021903</cNF>
             <natOp>Venda Merc.Adq.Rec.Terc.Dest.Nao Contrib</natOp>
             <mod>55</mod>
-            <serie>4</serie>
-            <nNF>30</nNF>
-            <dhEmi>2025-07-31T11:21:41-03:00</dhEmi>
-            <dhSaiEnt>2025-07-31T11:21:41-03:00</dhSaiEnt>
+            <serie>5</serie>
+            <nNF>19949</nNF>
+            <dhEmi>2025-09-01T07:05:01-03:00</dhEmi>
+            <dhSaiEnt>2025-09-01T07:05:01-03:00</dhSaiEnt>
             <tpNF>1</tpNF>
             <idDest>2</idDest>
-            <cMunFG>4210506</cMunFG>
+            <cMunFG>4202800</cMunFG>
             <tpImp>1</tpImp>
             <tpEmis>1</tpEmis>
-            <cDV>1</cDV>
+            <cDV>0</cDV>
             <tpAmb>1</tpAmb>
             <finNFe>1</finNFe>
             <indFinal>1</indFinal>
@@ -25,123 +25,110 @@
             <verProc>Magazord 1.0</verProc>
         </ide>
         <emit>
-            <CNPJ>52085759000118</CNPJ>
-            <xNome>Prime Office Ltda</xNome>
-            <xFant>Prime Office</xFant>
+            <CNPJ>07501260000190</CNPJ>
+            <xNome>Destro Comercio de Confeccoes Ltda</xNome>
+            <xFant>Sao Paulo Magazine</xFant>
             <enderEmit>
-                <xLgr>Av Orlando Valerio Zawadzki</xLgr>
-                <nro>250</nro>
-                <xCpl>Barracao 01</xCpl>
-                <xBairro>Universitario</xBairro>
-                <cMun>4210506</cMun>
-                <xMun>Maravilha</xMun>
+                <xLgr>Rua Antônio Dante Brognoli</xLgr>
+                <nro>675</nro>
+                <xBairro>Nossa Senhora de Fátima</xBairro>
+                <cMun>4202800</cMun>
+                <xMun>Braço do Norte</xMun>
                 <UF>SC</UF>
-                <CEP>89874000</CEP>
+                <CEP>88750000</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>49998126683</fone>
+                <fone>4836587568</fone>
             </enderEmit>
-            <IE>262512858</IE>
-            <IM>isento</IM>
-            <CRT>3</CRT>
+            <IE>255023138</IE>
+            <IM>ISENTO</IM>
+            <CNAE>4781400</CNAE>
+            <CRT>1</CRT>
         </emit>
         <dest>
-            <CPF>46841249836</CPF>
-            <xNome>LUCAS HENRIQUE GOMES</xNome>
+            <CPF>22404522850</CPF>
+            <xNome>FABIANA YUMI TERAMOTO</xNome>
             <enderDest>
-                <xLgr>Rua Torres Camara</xLgr>
-                <nro>1100</nro>
-                <xCpl>Ap302 Portaria na Joaquim Nabuco 1401</xCpl>
-                <xBairro>Aldeota</xBairro>
-                <cMun>2304400</cMun>
-                <xMun>Fortaleza</xMun>
-                <UF>CE</UF>
-                <CEP>60150060</CEP>
+                <xLgr>Rua Paracatu</xLgr>
+                <nro>621</nro>
+                <xCpl>apto 164</xCpl>
+                <xBairro>Parque Imperial</xBairro>
+                <cMun>3550308</cMun>
+                <xMun>São Paulo</xMun>
+                <UF>SP</UF>
+                <CEP>04302021</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>19995829542</fone>
+                <fone>11981988646</fone>
             </enderDest>
             <indIEDest>9</indIEDest>
-            <email>2e986519e25aeaa87190295803b72e16@madeiramadeira.com.br</email>
+            <email>fabianayumi@gmail.com</email>
         </dest>
         <entrega>
-            <CPF>46841249836</CPF>
-            <xNome>LUCAS HENRIQUE GOMES</xNome>
-            <xLgr>Rua Torres Camara</xLgr>
-            <nro>1100</nro>
-            <xCpl>Ap302 Portaria na Joaquim Nabuco 1401</xCpl>
-            <xBairro>Aldeota</xBairro>
-            <cMun>2304400</cMun>
-            <xMun>Fortaleza</xMun>
-            <UF>CE</UF>
-            <CEP>60150060</CEP>
+            <CPF>22404522850</CPF>
+            <xLgr>Rua Paracatu</xLgr>
+            <nro>621</nro>
+            <xCpl>apto 164</xCpl>
+            <xBairro>Parque Imperial</xBairro>
+            <cMun>3550308</cMun>
+            <xMun>São Paulo</xMun>
+            <UF>SP</UF>
+            <CEP>04302021</CEP>
         </entrega>
 
 
         <det nItem="1">
             <prod>
-                <cProd>P210</cProd>
-                <cEAN>7898973275494</cEAN>
-                <xProd>Cadeira De Escritorio Diretor Preta Giratoria Com Tela Mesh P210</xProd>
-                <NCM>94013900</NCM>
+                <cProd>1866-1</cProd>
+                <cEAN>7897368445757</cEAN>
+                <xProd>Porta Papel Higienico De Bambu E Metal 18x18x71cm Jolitex Mek - Tissue</xProd>
+                <NCM>44209000</NCM>
+                <CEST>0800200</CEST>
                 <CFOP>6108</CFOP>
                 <uCom>UN</uCom>
                 <qCom>1.0000</qCom>
-                <vUnCom>366.014500</vUnCom>
-                <vProd>366.01</vProd>
-                <cEANTrib>7898973275494</cEANTrib>
+                <vUnCom>155.900000</vUnCom>
+                <vProd>155.90</vProd>
+                <cEANTrib>7897368445757</cEANTrib>
                 <uTrib>UN</uTrib>
                 <qTrib>1.0000</qTrib>
-                <vUnTrib>366.014500</vUnTrib>
-                <vFrete>56.67</vFrete>
+                <vUnTrib>155.900000</vUnTrib>
+                <vFrete>12.63</vFrete>
                 <indTot>1</indTot>
-                <xPed>0012507663847</xPed>
+                <xPed>0012508978030</xPed>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMS00>
-                        <orig>1</orig>
-                        <CST>00</CST>
-                        <modBC>3</modBC>
-                        <vBC>422.68</vBC>
-                        <pICMS>4.00</pICMS>
-                        <vICMS>16.91</vICMS>
-                    </ICMS00>
+                    <ICMSSN102>
+                        <orig>0</orig>
+                        <CSOSN>102</CSOSN>
+                    </ICMSSN102>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
-                    <IPITrib>
-                        <CST>50</CST>
-                        <vBC>422.68</vBC>
-                        <pIPI>3.25</pIPI>
-                        <vIPI>13.74</vIPI>
-                    </IPITrib>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
                 </IPI>
                 <PIS>
-                    <PISAliq>
-                        <CST>01</CST>
-                        <vBC>405.77</vBC>
-                        <pPIS>1.65</pPIS>
-                        <vPIS>6.70</vPIS>
-                    </PISAliq>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
                 </PIS>
                 <COFINS>
-                    <COFINSAliq>
-                        <CST>01</CST>
-                        <vBC>405.77</vBC>
-                        <pCOFINS>7.60</pCOFINS>
-                        <vCOFINS>30.84</vCOFINS>
-                    </COFINSAliq>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
                 </COFINS>
                 <ICMSUFDest>
-                    <vBCUFDest>422.68</vBCUFDest>
-                    <vBCFCPUFDest>422.68</vBCFCPUFDest>
+                    <vBCUFDest>0.00</vBCUFDest>
+                    <vBCFCPUFDest>0.00</vBCFCPUFDest>
                     <pFCPUFDest>0.00</pFCPUFDest>
-                    <pICMSUFDest>20.00</pICMSUFDest>
-                    <pICMSInter>4.00</pICMSInter>
+                    <pICMSUFDest>18.00</pICMSUFDest>
+                    <pICMSInter>12.00</pICMSInter>
                     <pICMSInterPart>100.00</pICMSInterPart>
                     <vFCPUFDest>0.00</vFCPUFDest>
-                    <vICMSUFDest>67.63</vICMSUFDest>
+                    <vICMSUFDest>0.00</vICMSUFDest>
                     <vICMSUFRemet>0.00</vICMSUFRemet>
                 </ICMSUFDest>
             </imposto>
@@ -149,84 +136,62 @@
         <total>
             <ICMSTot>
 
-
-                <vBC>422.68</vBC>
-                <vICMS>16.91</vICMS>
+                <vBC>0.00</vBC>
+                <vICMS>0.00</vICMS>
                 <vICMSDeson>0</vICMSDeson>
-
                 <vFCPUFDest>0.00</vFCPUFDest>
-                <vICMSUFDest>67.63</vICMSUFDest>
+                <vICMSUFDest>0.00</vICMSUFDest>
                 <vICMSUFRemet>0.00</vICMSUFRemet>
                 <vFCP>0.00</vFCP>
-                <vBCST>0.00</vBCST>
-                <vST>0.00</vST>
+                <vBCST>0</vBCST>
+                <vST>0</vST>
                 <vFCPST>0.00</vFCPST>
                 <vFCPSTRet>0.00</vFCPSTRet>
-                <vProd>366.01</vProd>
-                <vFrete>56.67</vFrete>
+                <vProd>155.90</vProd>
+                <vFrete>12.63</vFrete>
                 <vSeg>0</vSeg>
                 <vDesc>0.00</vDesc>
                 <vII>0</vII>
-                <vIPI>13.74</vIPI>
+                <vIPI>0.00</vIPI>
                 <vIPIDevol>0.00</vIPIDevol>
-                <vPIS>6.70</vPIS>
-                <vCOFINS>30.84</vCOFINS>
+                <vPIS>0.00</vPIS>
+                <vCOFINS>0.00</vCOFINS>
                 <vOutro>0.00</vOutro>
-                <vNF>436.42</vNF>
+
+                <vNF>168.53</vNF>
             </ICMSTot>
         </total>
         <transp>
             <modFrete>0</modFrete>
             <transporta>
-                <CNPJ>95591723004700</CNPJ>
-                <xNome>TNT Mercurio Cargas</xNome>
-                <xEnder>Acesso Plínio Arlindo de Nes, 3101</xEnder>
-                <xMun>Chapecó</xMun>
+                <CNPJ>42546699000130</CNPJ>
+                <xNome>SMART2C TRANSPORTES E LOGISTICA LTDA</xNome>
+                <xEnder>Avenida Mário Uriarte, 1511</xEnder>
+                <xMun>Itajaí</xMun>
                 <UF>SC</UF>
             </transporta>
             <vol>
                 <qVol>1</qVol>
                 <esp>Caixa</esp>
-                <pesoL>11.000</pesoL>
-                <pesoB>11.000</pesoB>
+                <pesoL>0.950</pesoL>
+                <pesoB>0.950</pesoB>
             </vol>
         </transp>
-        <cobr>
-            <fat>
-                <nFat>30</nFat>
-                <vOrig>436.42</vOrig>
-                <vDesc>0.00</vDesc>
-                <vLiq>436.42</vLiq>
-            </fat>
-            <dup>
-                <nDup>001</nDup>
-                <dVenc>2025-07-31</dVenc>
-                <vDup>436.42</vDup>
-            </dup>
-        </cobr>
         <pag>
             <detPag>
-                <tPag>03</tPag>
-                <vPag>436.42</vPag>
-                <card>
-                    <tpIntegra>2</tpIntegra>
-                    <CNPJ>10490181000135</CNPJ>
-                    <tBand>01</tBand>
-                </card>
+                <tPag>99</tPag>
+                <vPag>168.53</vPag>
+                <xPag>Carnê de Pagamento Digital</xpag>
             </detPag>
         </pag>
         <infIntermed>
-            <CNPJ>10490181000135</CNPJ>
-            <idCadIntTran>Madeiramadeira Comércio Eletrônico S/A</idCadIntTran>
+            <CNPJ>01438784006561</CNPJ>
+            <idCadIntTran>Leroy Merlin Companhia Brasileira de Bricolagem</idCadIntTran>
         </infIntermed>
         <infAdic>
-            <infAdFisco>- Recolhimento do ICMS ao ESTADO de destino - - Total FCP R$ 0,00 - Partilha
-                ICMS UF Destino R$ 67,63 - Partilha ICMS UF Origem R$ 0,00</infAdFisco>
-            <infCpl>- Marketplace: Madeira Madeira - Pedido: 0012507663847 - - Total aproximado de
-                tributos: 136,53 (32,30%) Federais 64,67 (15,30%) Estaduais 71,86 (17,00%). Fonte.:
-                IBPT/empresometro.com.br.</infCpl>
+            <infCpl>- Marketplace: Leroy Merlin - Pedido: 0012508978030 - Documento emitido por ME ou EPP optante pelo Simples Nacional.  Não gera direito a crédito fiscal de IPI.  - Total aproximado de tributos: 42,89 (25,45%) Federais 22,67 (13,45%) Estaduais 20,22 (12,00%). Fonte.: IBPT/empresometro.com.br. - Codigo de Rastreio Smart2C : MZ202509000520SA</infCpl>
             <obsCont xCampo="Pedido de Venda">
-                <xTexto>0012507663847</xTexto>
+                <xTexto>0012508978030</xTexto>
             </obsCont>
         </infAdic>
         <infRespTec>

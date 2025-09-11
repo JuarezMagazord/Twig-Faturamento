@@ -1,42 +1,62 @@
-{{print_quebra_linha(false)}}  {# Evita quebras de linha automáticas #}
-{{print_text('Folha de Vendas ' ~ folhaVenda.id,2)}}
-{% if folhaVenda.separador %}
-    {{print_text('Separador: ' ~ folhaVenda.separador.nome,1)}}
+{% set mensagem = '' %}
+
+{% if self.getPedido() and self.getPedido().getOrigem() == 2 %}
+   {% set mensagem = mensagem ~ ' - Marketplace: ' ~ self.getPedido().getPedidoMarketplace().getMarketplace().getNome() ~' - '%}
 {% endif %}
-{{print_empty_line()}}
 
-{% for pedidoFolhaVenda in pedidosFolhaVenda %}
-    {{print_text('Folha de Vendas ' ~ folhaVenda.id,1)}}
-    {{print_text('')}}
-    {% if folhaVenda.separador %}
-        {{print_text('Separador: ' ~ folhaVenda.separador.nome,1)}}
-    {% endif %}
-    {{print_orientacao('center')}}
-    {{print_text('Pedido ' ~ pedidoFolhaVenda.pedidoRastreio.pedido.codigo, 1)}}
-    {{print_text('Cupom: ' ~ pedidoFolhaVenda.pedidoRastreio.pedido.getCupomDescontoConcatenado)}}                                        
-    {{print_barcode(pedidoFolhaVenda.pedidoRastreio.pedido.codigo)}}
-    {{print_orientacao('left')}}
-    {{print_empty_line()}}
-    {{print_text('Nome: '~pedidoFolhaVenda.pedidoRastreio.pedido.pedidoPessoa.nome)}}
-    {% if pedidoFolhaVenda.pedidoRastreio.pedido.valorPresente > 0 %}
-        {{print_enfase(true)}}
-        {{print_text('Presente: Sim')}}
-        {{print_enfase(false)}}
-    {% endif %}
-    {{print_line()}}
+{% set codigoPedido = self.getPedido().getCodigo()|default(false) %}
+{% if codigoPedido %}
+	{% set mensagem = mensagem  ~ 'Pedido: ' ~ codigoPedido ~' - '%}
+{% endif %}
 
-    {% for pedidoItem in pedidoFolhaVenda.pedidoRastreio.pedidoItem %}
-        {{print_enfase(true)}}
-        {{print_text_detalhe(pad(pedidoItem.produtoDerivacao.codigo, 26, 0) ~ pad(pedidoItem.quantidade, 5, 1, 'left'),2)}}
-        {{print_enfase(false)}}
-        {{print_text(pedidoItem.produtoDerivacao.produto.nome ~ ' - ' ~ pedidoItem.produtoDerivacao.nome)}}
-        {{print_enfase(true)}}
-        {{print_text('Qtd em estoque: '~pedidoItem.getEstoqueItem.getQuantidadeFisica())}}
-        {{print_text(''~pedidoItem.getEstoqueItem.getLocalizacaoConcatenada(), 1)}}
-        {{print_enfase(false)}}
-        {{print_line()}}
-    {% endfor %}
-{{print_cut()}} 
-{% endfor %}
+{% set mensagem = mensagem ~' ' %}
 
-{{print_finalize(true)}}
+{% if self.inscricaoEstadualDestino %}
+	{% set mensagem = mensagem ~ self.inscricaoEstadualDestino.mensagem %}
+{% endif %}
+
+{% if self.notaFiscalItem.getCfop().getCodigo() == '5152' %}
+    {% set mensagem = mensagem ~' ' %}
+{% else %}
+    {% set vlrNacional = get_imposto_param_total_calculado('VLR_TOTAL_NACIONAL_IBPT') %}
+    {% set vlrEstadual = get_imposto_param_total_calculado('VLR_TOTAL_ESTADUAL_IBPT') %}
+    {% if vlrNacional > 0 or vlrEstadual > 0 %}
+        {% set BCIBPT = get_imposto_param_total_calculado('VLR_TOTAL_BASE_IBPT') %}
+        {% set mensagemibpt = ' - Total aproximado de tributos: ' ~ (vlrNacional + vlrEstadual)|number_format(2,',','.') ~ ' (' ~ regra_de_tres(BCIBPT, 100, (vlrNacional + vlrEstadual))|number_format(2,',','.') ~ '%) Federais ' ~ vlrNacional|number_format(2,',','.') ~ ' (' ~ regra_de_tres(BCIBPT, 100, vlrNacional)|number_format(2,',','.') ~ '%) Estaduais ' ~ vlrEstadual|number_format(2,',','.')  ~ ' (' ~ regra_de_tres(BCIBPT, 100, vlrEstadual)|number_format(2,',','.') ~ '%). Fonte.: IBPT/empresometro.com.br.' %}
+        {% set mensagem = mensagem ~ mensagemibpt%}
+{% endif %}
+{% endif %}
+
+{{self.result(mensagem)}}
+
+
+{% set mensagem = '' %}
+
+{% if self.getPedido() and self.getPedido().getOrigem() == 2 %}
+   {% set mensagem = mensagem ~ ' - Marketplace: ' ~ self.getPedido().getPedidoMarketplace().getMarketplace().getNome() ~' - '%}
+{% endif %}
+
+{% set codigoPedido = self.getPedido().getCodigo()|default(false) %}
+{% if codigoPedido %}
+    {% set mensagem = mensagem  ~ 'Pedido: ' ~ codigoPedido ~' - '%}
+{% endif %}
+
+{% set mensagem = mensagem ~' ' %}
+
+{% if self.inscricaoEstadualDestino %}
+    {% set mensagem = mensagem ~ self.inscricaoEstadualDestino.mensagem %}
+{% endif %}
+
+{% if self.getNotaFiscal().getCfop().getCodigo() in [5152] %}
+    {% set mensagem = mensagem ~' ' %}
+{% else %}
+    {% set vlrNacional = get_imposto_param_total_calculado('VLR_TOTAL_NACIONAL_IBPT') %}
+    {% set vlrEstadual = get_imposto_param_total_calculado('VLR_TOTAL_ESTADUAL_IBPT') %}
+    {% if vlrNacional > 0 or vlrEstadual > 0 %}
+        {% set BCIBPT = get_imposto_param_total_calculado('VLR_TOTAL_BASE_IBPT') %}
+        {% set mensagemibpt = ' - Total aproximado de tributos: ' ~ (vlrNacional + vlrEstadual)|number_format(2,',','.') ~ ' (' ~ regra_de_tres(BCIBPT, 100, (vlrNacional + vlrEstadual))|number_format(2,',','.') ~ '%) Federais ' ~ vlrNacional|number_format(2,',','.') ~ ' (' ~ regra_de_tres(BCIBPT, 100, vlrNacional)|number_format(2,',','.') ~ '%) Estaduais ' ~ vlrEstadual|number_format(2,',','.')  ~ ' (' ~ regra_de_tres(BCIBPT, 100, vlrEstadual)|number_format(2,',','.') ~ '%). Fonte.: IBPT/empresometro.com.br.' %}
+        {% set mensagem = mensagem ~ mensagemibpt%}
+{% endif %}
+{% endif %}
+
+{{self.result(mensagem)}}

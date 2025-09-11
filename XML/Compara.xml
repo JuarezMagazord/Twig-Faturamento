@@ -1,219 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-<<<<<<< Updated upstream
-    <infNFe Id="NFe42250681614703000101550050000648361000661366" versao="4.00">
+    <infNFe Id="NFe43250989443345000123550050000012471000013533" versao="4.00">
         <ide>
-            <cUF>42</cUF>
-            <cNF>00066136</cNF>
-            <natOp>Devolucao de Compra para Indus.</natOp>
+            <cUF>43</cUF>
+            <cNF>00001353</cNF>
+            <natOp>Venda Merc.Adq.Rec.Terc.Dest.Nao Contrib</natOp>
             <mod>55</mod>
             <serie>5</serie>
-            <nNF>64836</nNF>
-            <dhEmi>2025-06-25T16:25:08-03:00</dhEmi>
-            <dhSaiEnt>2025-06-25T16:25:08-03:00</dhSaiEnt>
+            <nNF>1247</nNF>
+            <dhEmi>2025-09-04T10:58:46-03:00</dhEmi>
+            <dhSaiEnt>2025-09-04T10:58:46-03:00</dhSaiEnt>
             <tpNF>1</tpNF>
-            <idDest>1</idDest>
-            <cMunFG>4206306</cMunFG>
+            <idDest>2</idDest>
+            <cMunFG>4304606</cMunFG>
             <tpImp>1</tpImp>
             <tpEmis>1</tpEmis>
-            <cDV>6</cDV>
+            <cDV>3</cDV>
             <tpAmb>1</tpAmb>
-            <finNFe>4</finNFe>
-            <indFinal>0</indFinal>
-=======
-    <infNFe Id="NFe41250736772117000130550050000001081000001090" versao="4.00">
-        <ide>
-            <cUF>41</cUF>
-            <cNF>00000109</cNF>
-            <natOp>Venda Merc.Adq.c/Subst.Trib.entre C.Subs</natOp>
-            <mod>55</mod>
-            <serie>5</serie>
-            <nNF>108</nNF>
-            <dhEmi>2025-07-23T10:29:13-03:00</dhEmi>
-            <dhSaiEnt>2025-07-23T10:29:13-03:00</dhSaiEnt>
-            <tpNF>1</tpNF>
-            <idDest>1</idDest>
-            <cMunFG>4119905</cMunFG>
-            <tpImp>1</tpImp>
-            <tpEmis>1</tpEmis>
-            <cDV>0</cDV>
-            <tpAmb>2</tpAmb>
             <finNFe>1</finNFe>
             <indFinal>1</indFinal>
->>>>>>> Stashed changes
             <indPres>2</indPres>
             <indIntermed>0</indIntermed>
             <procEmi>0</procEmi>
             <verProc>Magazord 1.0</verProc>
-            <NFref>
-                <refNFe>42250634890357000104550010000151211000042940</refNFe>
-            </NFref>
         </ide>
         <emit>
-<<<<<<< Updated upstream
-            <CNPJ>81614703000101</CNPJ>
-            <xNome>Casa Show Utilidades Ltda</xNome>
-            <xFant>Casa Show</xFant>
+            <CNPJ>89443345000123</CNPJ>
+            <xNome>Pharmadent Distribuidora de Produtos para Saúde Ltda</xNome>
+            <xFant>Pharmadent Distribuidora</xFant>
             <enderEmit>
-                <xLgr>Rua Oscar Schumacher</xLgr>
-                <nro>230</nro>
-                <xCpl>Casa cinza lado direito, porta espelhada.</xCpl>
-                <xBairro>Centro</xBairro>
-                <cMun>4206306</cMun>
-                <xMun>Guabiruba</xMun>
-                <UF>SC</UF>
-                <CEP>88360000</CEP>
+                <xLgr>Rua Sete Povos</xLgr>
+                <nro>260</nro>
+                <xBairro>Marechal Rondon</xBairro>
+                <cMun>4304606</cMun>
+                <xMun>Canoas</xMun>
+                <UF>RS</UF>
+                <CEP>92020340</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>47991762606</fone>
+                <fone>5134785522</fone>
             </enderEmit>
-            <IE>251903630</IE>
+            <IE>0240372069</IE>
             <IM>ISENTO</IM>
-            <CNAE>4759801</CNAE>
+            <CNAE>4645101</CNAE>
             <CRT>1</CRT>
         </emit>
         <dest>
-            <CNPJ>34890357000104</CNPJ>
-            <xNome>DL EMBALAGENS LTDA</xNome>
+            <CPF>11021930709</CPF>
+            <xNome>ALINE GALAO FALQUETO</xNome>
             <enderDest>
-                <xLgr>Rua Amador Bueno da Ribeira</xLgr>
-                <nro>189</nro>
-                <xBairro>Nova Esperanca</xBairro>
-                <cMun>4202008</cMun>
-                <xMun>Balneário Camboriú</xMun>
-                <UF>SC</UF>
-                <CEP>88336320</CEP>
+                <xLgr>Rua das Acacias</xLgr>
+                <nro>41</nro>
+                <xCpl>CASA</xCpl>
+                <xBairro>Fazenda Vitali</xBairro>
+                <cMun>3201506</cMun>
+                <xMun>Colatina</xMun>
+                <UF>ES</UF>
+                <CEP>29707011</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-            </enderDest>
-            <indIEDest>1</indIEDest>
-            <IE>260237213</IE>
-        </dest>
-=======
-            <CNPJ>36772117000130</CNPJ>
-            <xNome>PGT Comercio e Assessoria Ltda</xNome>
-            <xFant>i9 Materiais Elétricos</xFant>
-            <enderEmit>
-                <xLgr>Rua Siqueira Campos</xLgr>
-                <nro>2174</nro>
-                <xCpl>SL B</xCpl>
-                <xBairro>Cará-cará</xBairro>
-                <cMun>4119905</cMun>
-                <xMun>Ponta Grossa</xMun>
-                <UF>PR</UF>
-                <CEP>84033000</CEP>
-                <cPais>1058</cPais>
-                <xPais>Brasil</xPais>
-                <fone>4230258002</fone>
-            </enderEmit>
-            <IE>9102712452</IE>
-            <IM>ISENTO</IM>
-            <CNAE>4742300</CNAE>
-            <CRT>1</CRT>
-        </emit>
-        <dest>
-            <CPF>03035114277</CPF>
-            <xNome>NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</xNome>
-            <enderDest>
-                <xLgr>Rua Valerio Ronchi</xLgr>
-                <nro>701</nro>
-                <xBairro>Uvaranas</xBairro>
-                <cMun>4119905</cMun>
-                <xMun>Ponta Grossa</xMun>
-                <UF>PR</UF>
-                <CEP>84030320</CEP>
-                <cPais>1058</cPais>
-                <xPais>Brasil</xPais>
-                <fone>42988068127</fone>
+                <fone>27998044662</fone>
             </enderDest>
             <indIEDest>9</indIEDest>
-            <email>lucassgabrielf@gmail.com</email>
+            <email>aline_galao@hotmail.com</email>
         </dest>
         <entrega>
-            <CPF>03035114277</CPF>
-            <xNome>Lucas Gabriel Aguiar Farias</xNome>
-            <xLgr>Rua Valerio Ronchi</xLgr>
-            <nro>701</nro>
-            <xBairro>Uvaranas</xBairro>
-            <cMun>4119905</cMun>
-            <xMun>Ponta Grossa</xMun>
-            <UF>PR</UF>
-            <CEP>84030320</CEP>
+            <CPF>11021930709</CPF>
+            <xNome>ALINE GALAO FALQUETO</xNome>
+            <xLgr>Rua das Acacias</xLgr>
+            <nro>41</nro>
+            <xCpl>CASA</xCpl>
+            <xBairro>Fazenda Vitali</xBairro>
+            <cMun>3201506</cMun>
+            <xMun>Colatina</xMun>
+            <UF>ES</UF>
+            <CEP>29707011</CEP>
         </entrega>
->>>>>>> Stashed changes
 
 
         <det nItem="1">
             <prod>
-<<<<<<< Updated upstream
-                <cProd>8891</cProd>
-                <cEAN>SEM GTIN</cEAN>
-                <xProd>ENVELOPE INVIOLAVEL PCR PRETO 20X30+3 MODELO PEQUENO</xProd>
-                <NCM>39232910</NCM>
-                <CEST>1901900</CEST>
-                <CFOP>5201</CFOP>
+                <cProd>HA.40.011-1</cProd>
+                <cEAN>7898415826017</cEAN>
+                <xProd>Bicarbonato de Sodio 8.4% Flaconete Esteril 10ml 10Un</xProd>
+                <NCM>30049099</NCM>
+                <CFOP>6108</CFOP>
                 <uCom>UN</uCom>
-                <qCom>7000.0000</qCom>
-                <vUnCom>0.080000</vUnCom>
-                <vProd>560.00</vProd>
-                <cEANTrib>SEM GTIN</cEANTrib>
+                <qCom>1.0000</qCom>
+                <vUnCom>39.770000</vUnCom>
+                <vProd>39.77</vProd>
+                <cEANTrib>7898415826017</cEANTrib>
                 <uTrib>UN</uTrib>
-                <qTrib>7000.0000</qTrib>
-                <vUnTrib>0.080000</vUnTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>39.770000</vUnTrib>
                 <indTot>1</indTot>
+                <xPed>0012509716949</xPed>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMSSN900>
+                    <ICMSSN102>
                         <orig>0</orig>
-                        <CSOSN>900</CSOSN>
-                        <modBC>3</modBC>
-                        <vBC>595.00</vBC>
-                        <pICMS>12.00</pICMS>
-                        <vICMS>71.40</vICMS>
-                        <pCredSN>0</pCredSN>
-                        <vCredICMSSN>0.00</vCredICMSSN>
-                    </ICMSSN900>
-                </ICMS>
-                <IPI>
-                    <cEnq>999</cEnq>
-                    <IPITrib>
-                        <CST>50</CST>
-                        <vBC>595.00</vBC>
-                        <pIPI>9.75</pIPI>
-                        <vIPI>58.01</vIPI>
-                    </IPITrib>
-=======
-                <cProd>7854</cProd>
-                <cEAN>7898961886718</cEAN>
-                <xProd>Lampada Bulbo Pera - Branca - 6500K - 12W</xProd>
-                <NCM>94051190</NCM>
-                <CEST>2112200</CEST>
-                <CFOP>5405</CFOP>
-                <uCom>UN</uCom>
-                <qCom>10.0000</qCom>
-                <vUnCom>2.841000</vUnCom>
-                <vProd>28.41</vProd>
-                <cEANTrib>7898961886718</cEANTrib>
-                <uTrib>UN</uTrib>
-                <qTrib>10.0000</qTrib>
-                <vUnTrib>2.841000</vUnTrib>
-                <indTot>1</indTot>
-                <xPed>0012507428387</xPed>
-            </prod>
-            <imposto>
-                <ICMS>
-                    <ICMSSN500>
-                        <orig>0</orig>
-                        <CSOSN>500</CSOSN>
-                    </ICMSSN500>
+                        <CSOSN>102</CSOSN>
+                    </ICMSSN102>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
                     <IPINT>
                         <CST>53</CST>
                     </IPINT>
->>>>>>> Stashed changes
                 </IPI>
                 <PIS>
                     <PISNT>
@@ -225,98 +119,355 @@
                         <CST>07</CST>
                     </COFINSNT>
                 </COFINS>
+                <ICMSUFDest>
+                    <vBCUFDest>0.00</vBCUFDest>
+                    <vBCFCPUFDest>0.00</vBCFCPUFDest>
+                    <pFCPUFDest>0.00</pFCPUFDest>
+                    <pICMSUFDest>17.00</pICMSUFDest>
+                    <pICMSInter>7.00</pICMSInter>
+                    <pICMSInterPart>100.00</pICMSInterPart>
+                    <vFCPUFDest>0.00</vFCPUFDest>
+                    <vICMSUFDest>0.00</vICMSUFDest>
+                    <vICMSUFRemet>0.00</vICMSUFRemet>
+                </ICMSUFDest>
             </imposto>
-            <impostoDevol>
-                <pDevol>0.00</pDevol>
+        </det>
+
+        <det nItem="2">
+            <prod>
+                <cProd>HA.40.008-1</cProd>
+                <cEAN>7898179365036</cEAN>
+                <xProd>Soro Fisiologico 0.9% Flaconete 10ml 10Un</xProd>
+                <NCM>30049099</NCM>
+                <CFOP>6108</CFOP>
+                <uCom>UN</uCom>
+                <qCom>3.0000</qCom>
+                <vUnCom>25.220000</vUnCom>
+                <vProd>75.66</vProd>
+                <cEANTrib>7898179365036</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>3.0000</qTrib>
+                <vUnTrib>25.220000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012509716949</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMSSN102>
+                        <orig>0</orig>
+                        <CSOSN>102</CSOSN>
+                    </ICMSSN102>
+                </ICMS>
                 <IPI>
-                    <vIPIDevol>0.00</vIPIDevol>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
                 </IPI>
-            </impostoDevol>
+                <PIS>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
+                </PIS>
+                <COFINS>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
+                </COFINS>
+                <ICMSUFDest>
+                    <vBCUFDest>0.00</vBCUFDest>
+                    <vBCFCPUFDest>0.00</vBCFCPUFDest>
+                    <pFCPUFDest>0.00</pFCPUFDest>
+                    <pICMSUFDest>17.00</pICMSUFDest>
+                    <pICMSInter>7.00</pICMSInter>
+                    <pICMSInterPart>100.00</pICMSInterPart>
+                    <vFCPUFDest>0.00</vFCPUFDest>
+                    <vICMSUFDest>0.00</vICMSUFDest>
+                    <vICMSUFRemet>0.00</vICMSUFRemet>
+                </ICMSUFDest>
+            </imposto>
+        </det>
+
+        <det nItem="3">
+            <prod>
+                <cProd>00101400-1</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Caneta de Marcacao Skin Marker BRANCA 03Un</xProd>
+                <NCM>96082000</NCM>
+                <CFOP>6108</CFOP>
+                <uCom>UN</uCom>
+                <qCom>1.0000</qCom>
+                <vUnCom>29.970000</vUnCom>
+                <vProd>29.97</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>29.970000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012509716949</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMSSN102>
+                        <orig>0</orig>
+                        <CSOSN>102</CSOSN>
+                    </ICMSSN102>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
+                </PIS>
+                <COFINS>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
+                </COFINS>
+                <ICMSUFDest>
+                    <vBCUFDest>0.00</vBCUFDest>
+                    <vBCFCPUFDest>0.00</vBCFCPUFDest>
+                    <pFCPUFDest>0.00</pFCPUFDest>
+                    <pICMSUFDest>17.00</pICMSUFDest>
+                    <pICMSInter>7.00</pICMSInter>
+                    <pICMSInterPart>100.00</pICMSInterPart>
+                    <vFCPUFDest>0.00</vFCPUFDest>
+                    <vICMSUFDest>0.00</vICMSUFDest>
+                    <vICMSUFRemet>0.00</vICMSUFRemet>
+                </ICMSUFDest>
+            </imposto>
+        </det>
+
+        <det nItem="4">
+            <prod>
+                <cProd>ATEN.3411-1</cProd>
+                <cEAN>7893595697243</cEAN>
+                <xProd>Agulha de Lebel Intra Needle 34Gx4mm - 34G-4 10Un</xProd>
+                <NCM>90183219</NCM>
+                <CEST>1301500</CEST>
+                <CFOP>6108</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>52.380000</vUnCom>
+                <vProd>104.76</vProd>
+                <cEANTrib>7893595697243</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>52.380000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012509716949</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMSSN102>
+                        <orig>0</orig>
+                        <CSOSN>102</CSOSN>
+                    </ICMSSN102>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
+                </PIS>
+                <COFINS>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
+                </COFINS>
+                <ICMSUFDest>
+                    <vBCUFDest>0.00</vBCUFDest>
+                    <vBCFCPUFDest>0.00</vBCFCPUFDest>
+                    <pFCPUFDest>0.00</pFCPUFDest>
+                    <pICMSUFDest>17.00</pICMSUFDest>
+                    <pICMSInter>7.00</pICMSInter>
+                    <pICMSInterPart>100.00</pICMSInterPart>
+                    <vFCPUFDest>0.00</vFCPUFDest>
+                    <vICMSUFDest>0.00</vICMSUFDest>
+                    <vICMSUFRemet>0.00</vICMSUFRemet>
+                </ICMSUFDest>
+            </imposto>
+        </det>
+
+        <det nItem="5">
+            <prod>
+                <cProd>HA.40.006-1</cProd>
+                <cEAN>7896676400663</cEAN>
+                <xProd>Anestesico Xylestesin 2% CV 20ml</xProd>
+                <NCM>30049043</NCM>
+                <CFOP>6108</CFOP>
+                <uCom>UN</uCom>
+                <qCom>3.0000</qCom>
+                <vUnCom>23.183333</vUnCom>
+                <vProd>69.55</vProd>
+                <cEANTrib>7896676400663</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>3.0000</qTrib>
+                <vUnTrib>23.183333</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012509716949</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMSSN102>
+                        <orig>0</orig>
+                        <CSOSN>102</CSOSN>
+                    </ICMSSN102>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
+                </PIS>
+                <COFINS>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
+                </COFINS>
+                <ICMSUFDest>
+                    <vBCUFDest>0.00</vBCUFDest>
+                    <vBCFCPUFDest>0.00</vBCFCPUFDest>
+                    <pFCPUFDest>0.00</pFCPUFDest>
+                    <pICMSUFDest>17.00</pICMSUFDest>
+                    <pICMSInter>7.00</pICMSInter>
+                    <pICMSInterPart>100.00</pICMSInterPart>
+                    <vFCPUFDest>0.00</vFCPUFDest>
+                    <vICMSUFDest>0.00</vICMSUFDest>
+                    <vICMSUFRemet>0.00</vICMSUFRemet>
+                </ICMSUFDest>
+            </imposto>
+        </det>
+
+        <det nItem="6">
+            <prod>
+                <cProd>HA.40.007-1</cProd>
+                <cEAN>7896676424140</cEAN>
+                <xProd>Anestesico Xylestesin 2% SV 20ml</xProd>
+                <NCM>30049043</NCM>
+                <CEST>1300300</CEST>
+                <CFOP>6108</CFOP>
+                <uCom>UN</uCom>
+                <qCom>3.0000</qCom>
+                <vUnCom>27.936667</vUnCom>
+                <vProd>83.81</vProd>
+                <cEANTrib>7896676424140</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>3.0000</qTrib>
+                <vUnTrib>27.936667</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012509716949</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMSSN102>
+                        <orig>0</orig>
+                        <CSOSN>102</CSOSN>
+                    </ICMSSN102>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
+                </PIS>
+                <COFINS>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
+                </COFINS>
+                <ICMSUFDest>
+                    <vBCUFDest>0.00</vBCUFDest>
+                    <vBCFCPUFDest>0.00</vBCFCPUFDest>
+                    <pFCPUFDest>0.00</pFCPUFDest>
+                    <pICMSUFDest>17.00</pICMSUFDest>
+                    <pICMSInter>7.00</pICMSInter>
+                    <pICMSInterPart>100.00</pICMSInterPart>
+                    <vFCPUFDest>0.00</vFCPUFDest>
+                    <vICMSUFDest>0.00</vICMSUFDest>
+                    <vICMSUFRemet>0.00</vICMSUFRemet>
+                </ICMSUFDest>
+            </imposto>
         </det>
         <total>
             <ICMSTot>
 
-<<<<<<< Updated upstream
-                <vBC>595.00</vBC>
-                <vICMS>71.40</vICMS>
-                <vICMSDeson>0</vICMSDeson>
-=======
 
                 <vBC>0.00</vBC>
                 <vICMS>0.00</vICMS>
                 <vICMSDeson>0</vICMSDeson>
 
->>>>>>> Stashed changes
+                <vFCPUFDest>0.00</vFCPUFDest>
+                <vICMSUFDest>0.00</vICMSUFDest>
+                <vICMSUFRemet>0.00</vICMSUFRemet>
                 <vFCP>0.00</vFCP>
-                <vBCST>0</vBCST>
-                <vST>0</vST>
+                <vBCST>0.00</vBCST>
+                <vST>0.00</vST>
                 <vFCPST>0.00</vFCPST>
                 <vFCPSTRet>0.00</vFCPSTRet>
-<<<<<<< Updated upstream
-                <vProd>560.00</vProd>
-=======
-                <vProd>28.41</vProd>
->>>>>>> Stashed changes
+                <vProd>403.52</vProd>
                 <vFrete>0.00</vFrete>
                 <vSeg>0</vSeg>
                 <vDesc>0.00</vDesc>
                 <vII>0</vII>
-                <vIPI>58.01</vIPI>
+                <vIPI>0.00</vIPI>
                 <vIPIDevol>0.00</vIPIDevol>
                 <vPIS>0.00</vPIS>
                 <vCOFINS>0.00</vCOFINS>
                 <vOutro>0.00</vOutro>
-<<<<<<< Updated upstream
-
-                <vNF>618.01</vNF>
+                <vNF>403.52</vNF>
             </ICMSTot>
         </total>
         <transp>
-            <modFrete>1</modFrete>
+            <modFrete>0</modFrete>
             <transporta>
-                <CNPJ>81614703000101</CNPJ>
-                <xNome>Casa Show</xNome>
-                <IE>251903630</IE>
-
-                <xEnder>Rua Oscar Schumacher, 230</xEnder>
-                <xMun>Guabiruba</xMun>
-                <UF>SC</UF>
+                <CNPJ>34028316125747</CNPJ>
+                <xNome>AC CANOAS</xNome>
+                <xEnder>Rua Quinze de Janeiro, 61</xEnder>
+                <xMun>Canoas</xMun>
+                <UF>RS</UF>
             </transporta>
-        </transp>
-        <pag>
-            <detPag>
-                <tPag>90</tPag>
-                <vPag>0.00</vPag>
-            </detPag>
-        </pag>
-        <infAdic>
-            <infCpl>DEVOLUCAO TOTAL NF 15121 - 04/06/25
-                NF-e REF: 42250634890357000104550010000151211000042940</infCpl>
-=======
-                <vNF>28.41</vNF>
-            </ICMSTot>
-        </total>
-        <transp>
-            <modFrete>9</modFrete>
             <vol>
                 <qVol>1</qVol>
                 <esp>Caixa</esp>
-                <pesoL>0.350</pesoL>
-                <pesoB>0.350</pesoB>
+                <pesoL>1.100</pesoL>
+                <pesoB>1.100</pesoB>
             </vol>
         </transp>
         <pag>
             <detPag>
                 <tPag>17</tPag>
-                <vPag>28.41</vPag>
+                <vPag>403.52</vPag>
+                <card>
+                    <tpIntegra>2</tpIntegra>
+                </card>
             </detPag>
         </pag>
         <infAdic>
-            <infCpl>Pedido: 0012507428387 - Documento emitido por ME ou EPP optante pelo Simples Nacional.  Não gera direito a crédito fiscal de IPI.  - Total aproximado de tributos: 9,93 (34,95%) Federais 4,53 (15,95%) Estaduais 5,40 (19,01%). Fonte.: IBPT/empresometro.com.br.</infCpl>
+            <infCpl>Pedido: 0012509716949 - Documento emitido por ME ou EPP optante pelo Simples Nacional.  Não gera direito a crédito fiscal de IPI.  - Total aproximado de tributos: 126,02 (31,23%) Federais 57,43 (14,23%) Estaduais 68,59 (17,00%). Fonte.: IBPT/empresometro.com.br. - Codigo de Rastreio Correios Local : MZ202509075233PH</infCpl>
             <obsCont xCampo="Pedido de Venda">
-                <xTexto>0012507428387</xTexto>
+                <xTexto>0012509716949</xTexto>
             </obsCont>
->>>>>>> Stashed changes
         </infAdic>
         <infRespTec>
             <CNPJ>28977040000107</CNPJ>
