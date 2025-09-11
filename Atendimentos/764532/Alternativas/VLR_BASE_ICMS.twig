@@ -1,18 +1,6 @@
-{# Ajustes realizados conforme o ticket 764532 #}
+{# Solicitado na atividade #86278 #}
 
-{% if self.notaFiscalItem.cfop.codigo in [6107, 5102, 6108] %}
-    {% if self.origemFiscal in [2] %}	
-        {{ self.result(0.00) }}
-    {% else %}
-        {% set baseMultIPI = 1 + ( 3.25 / 100) %}
-        {{ self.result((((self.notaFiscalItem.valorProduto * baseMultIPI)  + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto))) }}
-    {% endif %}
-{% else %}
-    {{ self.result((self.notaFiscalItem.valorProduto) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
-{% endif %}
-
-
-{#{% set zeraBaseCalculo = false %}
+{% set zeraBaseCalculo = false %}
 {% if self.configuracaoParametros %}
 {% set cfopZerada = self.configuracaoParametros.getOpcoesICMS().getCfopBaseZerada()|split(',') %}
     {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
@@ -47,15 +35,17 @@
             {{ self.result( self.notaFiscalItem.valorProduto + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
         {% endif %}
     {% else %}
-        {% if self.configuracaoGlobal %}
+        {% set baseSemMultIPI = (( self.notaFiscalItem.valorProduto) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) %}
+        {% if self.origemFiscal in [0,2] %}
+            {{ self.result(baseSemMultIPI) }}
+        {% elseif self.configuracaoGlobal %}
             {% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}
-                {% set baseMultIPI = 1 + ( 3.25 / 100) %}
-                    {{ self.result((((self.notaFiscalItem.valorProduto * baseMultIPI)  + (self.notaFiscalItem.valorFrete * baseMultIPI) + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto))) }}
-                {% else %}
-                    {{ self.result(0.00) }}
-                {% endif %}
+                {% set baseMultIPI = 1 + (aliquotaIPI / 100) %}
+                {% set baseComMultIPI = (((self.notaFiscalItem.valorProduto * baseMultIPI)  + (self.notaFiscalItem.valorFrete * baseMultIPI) + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto)) %}
+                {{ self.result(baseComMultIPI) }}
             {% else %}
-            {{ self.result((self.notaFiscalItem.valorProduto) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+                {{ self.result(0.00) }}
+            {% endif %}
         {% endif %}
     {% endif %}
-{% endif %}#}
+{% endif %}

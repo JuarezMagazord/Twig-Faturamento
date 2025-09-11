@@ -1,0 +1,62 @@
+{% set totalPecas = 0 %}
+{% for pedidoFolhaVenda in pedidosFolhaVenda %}
+    {% set qtdCliente = get_quantidade_pedido_cliente(pedidoFolhaVenda.pedidoRastreio.pedido.pessoa.id) %}
+    {{print_text('')}}
+    {% if folhaVenda.separador %}
+        {{print_text('Separado: ' ~ folhaVenda.separador.nome,2)}}
+    {% endif %}
+    {{print_orientacao('center')}}
+    {% if pedidoFolhaVenda.pedidoRastreio.transportadoraServico %}
+        {{print_text(pedidoFolhaVenda.pedidoRastreio.transportadoraServico.descricao,2)}}
+{{print_text('Cupom: ' ~ pedidoFolhaVenda.pedidoRastreio.pedido.getCupomDescontoConcatenado)}}   
+    {% endif %}
+    {{print_text('Loja ' ~ pedidoFolhaVenda.pedidoRastreio.pedido.getLoja().getNome(), 2)}}
+    {{print_text('Pedido ' ~ pedidoFolhaVenda.pedidoRastreio.pedido.codigo, 1)}}
+    {{print_barcode(pedidoFolhaVenda.pedidoRastreio.pedido.codigo)}}
+    {{print_orientacao('left')}}
+    {{print_empty_line()}}
+    {{print_text_detalhe(pad(pedidoFolhaVenda.pedidoRastreio.pedido.pedidoPessoa.nome, 25, 0) ~ pad(pedidoFolhaVenda.pedidoRastreio.pedido.pessoa.id, 6, 1, 'left'),2)}}
+    {{print_text('Qtd Pedidos Clientes: ' ~ qtdCliente)}}
+    {{print_text('Data: '~pedidoFolhaVenda.pedidoRastreio.pedido.dataHora|date('d/m/Y'))}}
+    {% set quantidade_derivacao_item = get_quantidade_derivacao_pedido(pedidoFolhaVenda.pedidoRastreio) %}
+    {% if quantidade_derivacao_item[2] is defined and quantidade_derivacao_item[2][0]['nome'] is defined %}
+        {{print_text('Tam Prin ' ~ quantidade_derivacao_item[2][0]['nome'], 1)}}
+    {% endif %}
+    {{print_line()}}
+
+    {% set mapaQuantidade = {} %}
+    {% for item in pedidoFolhaVenda.pedidoRastreio.pedidoItem  %}
+        {# Força a chave numérica como 00005_1, 00010_2 etc. para simular ordenação correta #}
+        {% set chaveOrdenada = "%05d"|format(item.quantidade) ~ '_' ~ loop.index %}
+        {% set mapaQuantidade = mapaQuantidade|merge({ (chaveOrdenada): item }) %}
+    {% endfor %}
+
+    {# Ordena as chaves, que agora são strings formatadas numericamente #}
+    {% set itensOrdenados = mapaQuantidade|keys|sort|reverse %}
+
+    {% for chave in itensOrdenados %}
+        {% set pedidoItem = mapaQuantidade[chave] %}
+        {{print_enfase(true)}}
+        {% if pedidoItem.produtoDerivacaoKit %}
+            {{print_text('SKU KIT: '~ pedidoItem.produtoDerivacaoKit.codigo(),1)}}
+            {{print_text('KIT Nome: '~ pedidoItem.produtoDerivacaoKit.produto.nome(),1)}}
+        {% endif %}
+        {{print_text_detalhe(pad(pedidoItem.produtoDerivacao.codigo, 26, 0) ~ pad(pedidoItem.quantidade, 5, 1, 'left'),2)}}
+        {% set totalPecas = totalPecas + pedidoItem.quantidade %}
+        {{print_enfase(false)}}
+        {{print_orientacao('left')}}
+        {{print_text('Ean: '~ pedidoItem.produtoDerivacao.getEANPrincipal(),1)}}
+        {{print_text(pedidoItem.produtoDerivacao.produto.nome ~ ' - ' ~ pedidoItem.produtoDerivacao.nome,1)}}
+        {{print_text('Volumes: '~ pedidoItem.produtoDerivacao.produto.volumes|default('1'),1)}}
+        {{print_text('Localização: ' ~ pedidoItem.getEstoqueItem.getLocalizacaoConcatenada(), 1)}}
+        {% if pedidoItem.presente %}
+            {{print_enfase(true)}}
+            {{print_text('Presente: Sim')}}
+            {{print_enfase(false)}}
+        {% endif %}
+        {{print_line()}}
+    {% endfor %}
+    {{print_cut()}}
+{% endfor %}
+{{print_text('Quantidade Total: ' ~ totalPecas)}}
+{{print_finalize(false)}}

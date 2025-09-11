@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etiqueta de Produto</title>
+    {{ default_css() }}
+
+    {% set colunas = 1 %}
+
+    {% set larguraImpresao = 100 %} {# tamanho em mm #}
+    {% set espacamentoEtiquetasLaterais = 30 %} {# tamanho em mm #}
+
+    {% set larguraEtiqueta = 100 %} {# tamanho em mm #}
+    {% set alturaEtiqueta = 30 %} {# tamanho em mm #}
+
+    {% set tamanhoTextoCodigoProduto = 7 %} {# Tamanho em Pixels #}
+    {% set tamanhoTextoNomeProduto = 7 %} {# Tamanho em Pixels #}
+    {% set tamanhoTextoDerivacaoProduto = 7 %} {# Tamanho em Pixels #}
+
+
+
+    <style>
+        @page {
+            size: {{ larguraImpresao }}mm auto;
+            margin: 0 3mm;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-content: flex-start;
+            width: {{ larguraImpresao }}mm; /* Largura fixa da impressão */
+        }
+
+        .etiqueta-container {
+            display: grid;
+            grid-template-columns: repeat({{ colunas }}, 1fr);
+            gap: 0 {{ espacamentoEtiquetasLaterais }}mm; /* Espaçamento entre etiquetas */
+            width: {{ larguraImpresao }}mm; /* Mantém a largura fixa */
+            margin: 0 3mm;
+        }
+
+        .etiqueta {
+            width: {{ larguraEtiqueta }}mm; /* Largura da etiqueta */
+            height: {{ alturaEtiqueta }}mm; /* Altura da etiqueta */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+
+        .barcode img {
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="etiqueta-container" style="display: grid; grid-template-columns: repeat({{ colunas }}, 1fr); gap: 5px;">
+    {% for produto in produtos %}
+        {% for i in 0..produto.quantidade -1 %}
+            <div class="etiqueta" style="border: 1px solid #000; display: flex; flex-direction: column; padding: 2mm; box-sizing: border-box;">
+                
+                <!-- Header da etiqueta -->
+                <div class="etiqueta-header" style="font-size: 10px; font-weight: bold; text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 2px;">
+                    Catarina Bueno
+                </div>
+
+                <!-- Corpo dividido em 3 colunas -->
+                <div class="etiqueta-body" style="display: grid; grid-template-columns: 25mm 1fr 32mm; align-items: center;  gap: 3mm; height: 100%;">
+
+                    <!-- Coluna 1: Código, Código de barras, Preço -->
+                    <div class="coluna1" style="display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; height: 100%;">
+                        <div class="barcode" style="display: flex; align-items: center; justify-content: flex-start; height: 12mm;">
+                            <img class="barcode-default" 
+                                src="{{ barcode_src(produto.codigo) }}" 
+                                alt="Código de barras" 
+                                style="max-height: 100%; max-width: 100%;">
+                        </div>
+                        <strong style="font-size: 12px;">{{ produto.codigo }}</strong>
+                    </div>
+
+                    <!-- Coluna 2: Nome e Derivação -->
+                    <div class="coluna2" style="display: flex; flex-direction: column; justify-content: center; word-break: break-word; white-space: normal;">
+                        <div style="font-size: 12px;">
+                            {{ produto.nome }}
+                        </div>
+                    </div>
+
+                    <!-- Coluna 3: Adicionais -->
+                    <div class="coluna3" style="display: flex; flex-direction: column; align-items: flex-end; justify-content: center; text-align: right;">
+                        <div style="font-size: 12px; word-break: break-word;">
+                            {{ produto.nomeDerivacao }}
+                        </div>
+                        <div>
+                            <strong style="font-size: 12px;">R$ {{ produto.preco }}</strong>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        {% endfor %}
+    {% endfor %}
+</div>
+
+</body>
+</html>

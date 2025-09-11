@@ -1,0 +1,9 @@
+{% if self.situacaoTributariaIPI %}
+    {{ self.result(self.situacaoTributariaIPI.codigo) }}
+{% elseif self.configuracaoParametros and self.configuracaoParametros.getOpcoesIPI().getSituacaoTributariaSaida() %}
+    {{ self.result(self.configuracaoParametros.getOpcoesIPI().getSituacaoTributariaSaida().getCodigo()) }}
+{% else %}
+    {{ self.result(53) }}
+{% endif %}
+
+
