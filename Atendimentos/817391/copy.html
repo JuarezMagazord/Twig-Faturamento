@@ -1,0 +1,105 @@
+<style>
+   body {
+		font-size: 10px;
+	}
+
+	.td-default {
+		padding: 5px !important;
+	}
+
+	.td-custom-item {
+		padding: 2px 2px 2px 5px !important;
+		border: none !important;
+	}
+
+	.td-custom-resumo {
+		border: none !important;
+	}
+
+	.table-default {
+		font-size: 10px;
+		margin-bottom: 10px !important;
+	}
+
+	.quebrar-depois {
+		page-break-after: always; /* Sempre quebra a página após o elemento */
+	}
+
+	.nao-quebrar-meio {
+		page-break-inside: avoid;
+		break-inside: avoid;
+	}
+
+	.resumo {
+		border: none !important;
+	}
+
+	.resumo tbody tr:nth-child(odd) {
+		background-color: rgb(207, 207, 207);
+	}
+
+	.resumo tbody tr:nth-child(even) {
+		background-color: #ffffff;
+	}
+
+	.itens tbody tr:nth-child(odd) {
+		background-color: rgb(207, 207, 207);
+	}
+
+	.itens tbody tr:nth-child(even) {
+		background-color: #ffffff;
+	}
+</style>
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Folha de vendas
+            {{ folhaVenda.id }}</title>
+        {{ default_css() }}
+    </head>
+    <body>
+        {{ print_button() }}
+
+        <table class="table-default resumo   quebrar-depois">
+            <thead>
+                <tr>
+                    <td colspan="2" class="title td-default">Folha de Vendas: {{ folhaVenda.id }}</td>
+                    <td colspan="3" class="td-default" style="text-align: center">{{ print_codigo_barras(folhaVenda.id, 'C128', 30, 150) }}</td>
+                </tr>
+                <tr>
+                    <th class="th-default">Código - SKU</th>
+                    <th class="th-default">Produto</th>
+                    <th class="th-default">Depósito</th>
+                    <th class="th-default">Qtde</th>
+                    <th class="th-default">Qtde Estoque</th>
+<th class="th-default">Cupom de Desconto</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% set totalItems = 0 %}
+                {% for item in folhaVendaResumo.resumoItens %}
+                    {% set totalItems = totalItems + item.qtde_item %}
+                    <tr>
+                        <td class='td-default td-custom-resumo'>{{ item.produto_derivacao_codigo }}</td>
+                        <td class='td-default td-custom-resumo'>{{ item.produto_nome }}
+                            -
+                            {{ item.produto_derivacao_nome }}</td>
+                        <td class='td-default td-custom-resumo'>{{ item.deposito_nome }}</td>
+                        <td class='td-default td-custom-resumo'>{{ item.qtde_item }}</td>
+                        <td class='td-default td-custom-resumo'>{{ item.qtde_estoque_total }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4" style="text-align: right; font-size: 18px;"></td>
+                    <td colspan='1' style="font-size: 16px; text-align: left;">Total de Itens:
+                        {{ totalItems }}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>

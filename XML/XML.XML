@@ -1,374 +1,284 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-    <infNFe Id="NFe42250948134335000129550050000077391000079790" versao="4.00">
+    <infNFe Id="NFe42250905621126000105550020000001011000002140" versao="4.00">
         <ide>
             <cUF>42</cUF>
-            <cNF>00007979</cNF>
-
-            <natOp>Devolucao Compra para Comercializacao</natOp>
+            <cNF>00000214</cNF>
+            <natOp>Compra para Comercializacao</natOp>
             <mod>55</mod>
-            <serie>5</serie>
-            <nNF>7739</nNF>
-            <dhEmi>2025-09-08T12:15:00-03:00</dhEmi>
-            <dhSaiEnt>2025-09-08T12:15:00-03:00</dhSaiEnt>
-            <tpNF>1</tpNF>
-            <idDest>1</idDest>
-            <cMunFG>4214805</cMunFG>
+            <serie>2</serie>
+            <nNF>101</nNF>
+            <dhEmi>2025-09-12T09:37:42-03:00</dhEmi>
+            <dhSaiEnt>2025-09-12T09:37:42-03:00</dhSaiEnt>
+            <tpNF>0</tpNF>
+            <idDest>3</idDest>
+            <cMunFG>4209300</cMunFG>
             <tpImp>1</tpImp>
             <tpEmis>1</tpEmis>
             <cDV>0</cDV>
             <tpAmb>1</tpAmb>
-            <finNFe>4</finNFe>
-            <indFinal>1</indFinal>
+            <finNFe>1</finNFe>
+            <indFinal>0</indFinal>
             <indPres>2</indPres>
-
-
             <indIntermed>0</indIntermed>
-
-
             <procEmi>0</procEmi>
             <verProc>Magazord 1.0</verProc>
-            <NFref>
-                <refNFe>42250713992333000196550030004224311289657670</refNFe>
-            </NFref>
-            <NFref>
-                <refNFe>42250613992333000196550030004135761246062734</refNFe>
-            </NFref>
-            <NFref>
-                <refNFe>42240713992333000196550030003202051320034728</refNFe>
-            </NFref>
-            <NFref>
-                <refNFe>42250513992333000196550030004057751538676037</refNFe>
-            </NFref>
-            <NFref>
-                <refNFe>42250713992333000196550030004224971440375537</refNFe>
-            </NFref>
         </ide>
         <emit>
-            <CNPJ>48134335000129</CNPJ>
-            <xNome>Tatical Militaria Ltda</xNome>
-            <xFant>Tatical Militaria</xFant>
+            <CNPJ>05621126000105</CNPJ>
+            <xNome>SSA - Comercio e Assistencia Tecnica Ltda</xNome>
+            <xFant>S.S.A</xFant>
             <enderEmit>
-                <xLgr>Rua Princesa Isabel</xLgr>
-                <nro>807</nro>
-                <xCpl>Sala 01</xCpl>
-                <xBairro>Canoas</xBairro>
-                <cMun>4214805</cMun>
-                <xMun>Rio do Sul</xMun>
+                <xLgr>Rua Graça Aranha</xLgr>
+                <nro>639</nro>
+                <xBairro>Caravagio</xBairro>
+                <cMun>4209300</cMun>
+                <xMun>Lages</xMun>
                 <UF>SC</UF>
-                <CEP>89164054</CEP>
+                <CEP>88509440</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>47989073755</fone>
+                <fone>4932290129</fone>
             </enderEmit>
-            <IE>261942158</IE>
+            <IE>254572723</IE>
             <IM>ISENTO</IM>
-            <CNAE>4763604</CNAE>
+            <CNAE>4751201</CNAE>
             <CRT>1</CRT>
         </emit>
         <dest>
-            <CNPJ>13992333000196</CNPJ>
-            <xNome>R.BRANDS LTDA - MATRIZ SC</xNome>
+            <idEstrangeiro>80052397-0</idEstrangeiro>
+            <xNome>IMPORTADORA AMERICAS S.A.</xNome>
             <enderDest>
-                <xLgr>Avenida Governador Adolfo Konder</xLgr>
-                <nro>705</nro>
-                <xCpl>Bloco 01 Armazem 07</xCpl>
-                <xBairro>Cidade Nova</xBairro>
-                <cMun>4208203</cMun>
-                <xMun>Itajaí</xMun>
-                <UF>SC</UF>
-                <CEP>88308001</CEP>
-                <cPais>1058</cPais>
-                <xPais>Brasil</xPais>
-                <fone>4837715050</fone>
+                <xLgr>ITA YVATE ESQUINA MONSENOR RODRIGIEZ - EDIFICIO SA</xLgr>
+                <nro>01</nro>
+                <xCpl>CIUDADE DEL ESTE, PLANTA URBANA, PY</xCpl>
+                <xBairro>CENTRO COMERCIAL</xBairro>
+                <cMun>9999999</cMun>
+                <xMun>EXTERIOR</xMun>
+                <UF>EX</UF>
+                <cPais>5860</cPais>
+                <xPais>Paraguay</xPais>
             </enderDest>
-            <indIEDest>1</indIEDest>
-            <IE>257426558</IE>
+            <indIEDest>9</indIEDest>
+            <email>comtabilidad@importadoraamericas.com</email>
         </dest>
 
 
         <det nItem="1">
             <prod>
-                <cProd>76</cProd>
-                <cEAN>7898618487190</cEAN>
-                <xProd>Refil De Hidratacao Viper Preto - Invictus - PRETO</xProd>
-                <NCM>39232990</NCM>
-                <CEST>2805800</CEST>
-
-                <CFOP>5202</CFOP>
+                <cProd>2112-1</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Caixa de Som JBL GO 04 Bluetooth</xProd>
+                <NCM>85182200</NCM>
+                <CEST>2105700</CEST>
+                <CFOP>3102</CFOP>
                 <uCom>UN</uCom>
-                <qCom>1.0000</qCom>
-                <vUnCom>98.740000</vUnCom>
-                <vProd>98.74</vProd>
-                <cEANTrib>7898618487190</cEANTrib>
+                <qCom>5.0000</qCom>
+                <vUnCom>165.076000</vUnCom>
+                <vProd>825.38</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
                 <uTrib>UN</uTrib>
-                <qTrib>1.0000</qTrib>
-                <vUnTrib>98.740000</vUnTrib>
+                <qTrib>5.0000</qTrib>
+                <vUnTrib>165.076000</vUnTrib>
+                <vOutro>264.12</vOutro>
                 <indTot>1</indTot>
+                <DI>
+                    <nDI>238013/2025</nDI>
+                    <dDI>2025-09-11</dDI>
+                    <xLocDesemb>Foz do Iguacu Ponte da Amizade</xLocDesemb>
+                    <UFDesemb>PR</UFDesemb>
+                    <dDesemb>2025-09-11</dDesemb>
+                    <tpViaTransp>7</tpViaTransp>
+                    <vAFRMM>0.00</vAFRMM>
+                    <tpIntermedio>1</tpIntermedio>
+                    <cExportador>RTU01</cExportador>
+                    <adi>
+                        <nAdicao>1</nAdicao>
+                        <nSeqAdic>1</nSeqAdic>
+                        <cFabricante>FABRIC001</cFabricante>
+                        <vDescDI>825.38</vDescDI>
+                    </adi>
+                </DI>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMSSN102>
+                    <ICMSSN101>
                         <orig>0</orig>
-                        <CSOSN>102</CSOSN>
-                    </ICMSSN102>
-
+                        <CSOSN>101</CSOSN>
+                        <pCredSN>0</pCredSN>
+                        <vCredICMSSN>0.00</vCredICMSSN>
+                    </ICMSSN101>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
-                    <IPITrib>
-                        <CST>99</CST>
-                        <vBC>0.00</vBC>
-                        <pIPI>0.00</pIPI>
-                        <vIPI>14.81</vIPI>
-                    </IPITrib>
+                    <IPINT>
+                        <CST>03</CST>
+                    </IPINT>
                 </IPI>
                 <PIS>
-                    <PISOutr>
-                        <CST>49</CST>
-                        <vBC>0.00</vBC>
-                        <pPIS>0.00</pPIS>
-                        <vPIS>0.00</vPIS>
-                    </PISOutr>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
                 </PIS>
                 <COFINS>
-                    <COFINSOutr>
-                        <CST>49</CST>
-                        <vBC>0.00</vBC>
-                        <pCOFINS>0.00</pCOFINS>
-                        <vCOFINS>0.00</vCOFINS>
-                    </COFINSOutr>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
                 </COFINS>
             </imposto>
-
-            <impostoDevol>
-                <pDevol>0.00</pDevol>
-                <IPI>
-                    <vIPIDevol>0.00</vIPIDevol>
-                </IPI>
-            </impostoDevol>
-
         </det>
 
         <det nItem="2">
             <prod>
-                <cProd>1255</cProd>
-                <cEAN>7908005368671</cEAN>
-                <xProd>Mochila Seal - WARSKIN BLACK</xProd>
-                <NCM>42029200</NCM>
-                <CEST>1900501</CEST>
-
-                <CFOP>5202</CFOP>
+                <cProd>1414-1</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Smarthphone Redmi 14C 256GB</xProd>
+                <NCM>85171300</NCM>
+                <CEST>2111000</CEST>
+                <CFOP>3102</CFOP>
                 <uCom>UN</uCom>
-                <qCom>1.0000</qCom>
-                <vUnCom>245.190000</vUnCom>
-                <vProd>245.19</vProd>
-                <cEANTrib>7908005368671</cEANTrib>
+                <qCom>4.0000</qCom>
+                <vUnCom>568.290000</vUnCom>
+                <vProd>2273.16</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
                 <uTrib>UN</uTrib>
-                <qTrib>1.0000</qTrib>
-                <vUnTrib>245.190000</vUnTrib>
+                <qTrib>4.0000</qTrib>
+                <vUnTrib>568.290000</vUnTrib>
+                <vOutro>748.21</vOutro>
                 <indTot>1</indTot>
+                <DI>
+                    <nDI>238013/2025</nDI>
+                    <dDI>2025-09-11</dDI>
+                    <xLocDesemb>Foz do Iguacu Ponte da Amizade</xLocDesemb>
+                    <UFDesemb>PR</UFDesemb>
+                    <dDesemb>2025-09-11</dDesemb>
+                    <tpViaTransp>7</tpViaTransp>
+                    <vAFRMM>0.00</vAFRMM>
+                    <tpIntermedio>1</tpIntermedio>
+                    <cExportador>RTU01</cExportador>
+                    <adi>
+                        <nAdicao>2</nAdicao>
+                        <nSeqAdic>2</nSeqAdic>
+                        <cFabricante>FABRIC001</cFabricante>
+                        <vDescDI>2273.16</vDescDI>
+                    </adi>
+                </DI>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMSSN102>
+                    <ICMSSN101>
                         <orig>0</orig>
-                        <CSOSN>102</CSOSN>
-                    </ICMSSN102>
-
+                        <CSOSN>101</CSOSN>
+                        <pCredSN>0</pCredSN>
+                        <vCredICMSSN>0.00</vCredICMSSN>
+                    </ICMSSN101>
                 </ICMS>
-
-
                 <IPI>
                     <cEnq>999</cEnq>
-                    <IPITrib>
-                        <CST>99</CST>
-                        <vBC>0.00</vBC>
-
-                        <pIPI>0.00</pIPI>
-                        <vIPI>15.94</vIPI>
-                    </IPITrib>
+                    <IPINT>
+                        <CST>03</CST>
+                    </IPINT>
                 </IPI>
                 <PIS>
-                    <PISOutr>
-                        <CST>49</CST>
-                        <vBC>0.00</vBC>
-                        <pPIS>0.00</pPIS>
-                        <vPIS>0.00</vPIS>
-                    </PISOutr>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
                 </PIS>
                 <COFINS>
-                    <COFINSOutr>
-                        <CST>49</CST>
-                        <vBC>0.00</vBC>
-                        <pCOFINS>0.00</pCOFINS>
-                        <vCOFINS>0.00</vCOFINS>
-                    </COFINSOutr>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
                 </COFINS>
             </imposto>
-
-            <impostoDevol>
-                <pDevol>0.00</pDevol>
-                <IPI>
-                    <vIPIDevol>0.00</vIPIDevol>
-                </IPI>
-            </impostoDevol>
-
         </det>
 
         <det nItem="3">
             <prod>
-                <cProd>1660</cProd>
-                <cEAN>7908005377208</cEAN>
-                <xProd>Caneta X-Treme - Invictus - PRETO</xProd>
-                <NCM>96081000</NCM>
-                <CEST>1903000</CEST>
-
-                <CFOP>5202</CFOP>
+                <cProd>2256-1</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Microfone Hollyland Lark M2</xProd>
+                <NCM>85181090</NCM>
+                <CEST>2105700</CEST>
+                <CFOP>3102</CFOP>
                 <uCom>UN</uCom>
-                <qCom>1.0000</qCom>
-                <vUnCom>52.400000</vUnCom>
-                <vProd>52.40</vProd>
-                <cEANTrib>7908005377208</cEANTrib>
+                <qCom>2.0000</qCom>
+                <vUnCom>600.765000</vUnCom>
+                <vProd>1201.53</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
                 <uTrib>UN</uTrib>
-                <qTrib>1.0000</qTrib>
-                <vUnTrib>52.400000</vUnTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>600.765000</vUnTrib>
+                <vOutro>384.48</vOutro>
                 <indTot>1</indTot>
+                <DI>
+                    <nDI>238013/2025</nDI>
+                    <dDI>2025-09-11</dDI>
+                    <xLocDesemb>Foz do Iguacu Ponte da Amizade</xLocDesemb>
+                    <UFDesemb>PR</UFDesemb>
+                    <dDesemb>2025-09-11</dDesemb>
+                    <tpViaTransp>7</tpViaTransp>
+                    <vAFRMM>0.00</vAFRMM>
+                    <tpIntermedio>1</tpIntermedio>
+                    <cExportador>RTU01</cExportador>
+                    <adi>
+                        <nAdicao>3</nAdicao>
+                        <nSeqAdic>3</nSeqAdic>
+                        <cFabricante>FABRIC001</cFabricante>
+                        <vDescDI>1201.53</vDescDI>
+                    </adi>
+                </DI>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMSSN102>
+                    <ICMSSN101>
                         <orig>0</orig>
-                        <CSOSN>102</CSOSN>
-                    </ICMSSN102>
-
+                        <CSOSN>101</CSOSN>
+                        <pCredSN>0</pCredSN>
+                        <vCredICMSSN>0.00</vCredICMSSN>
+                    </ICMSSN101>
                 </ICMS>
-
-
                 <IPI>
                     <cEnq>999</cEnq>
-                    <IPITrib>
-                        <CST>99</CST>
-                        <vBC>0.00</vBC>
-
-                        <pIPI>0.00</pIPI>
-                        <vIPI>10.48</vIPI>
-                    </IPITrib>
+                    <IPINT>
+                        <CST>03</CST>
+                    </IPINT>
                 </IPI>
                 <PIS>
-                    <PISOutr>
-                        <CST>49</CST>
-                        <vBC>0.00</vBC>
-                        <pPIS>0.00</pPIS>
-                        <vPIS>0.00</vPIS>
-                    </PISOutr>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
                 </PIS>
                 <COFINS>
-                    <COFINSOutr>
-                        <CST>49</CST>
-                        <vBC>0.00</vBC>
-                        <pCOFINS>0.00</pCOFINS>
-                        <vCOFINS>0.00</vCOFINS>
-                    </COFINSOutr>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
                 </COFINS>
             </imposto>
-
-            <impostoDevol>
-                <pDevol>0.00</pDevol>
-                <IPI>
-                    <vIPIDevol>0.00</vIPIDevol>
-                </IPI>
-            </impostoDevol>
-
-        </det>
-
-        <det nItem="4">
-            <prod>
-                <cProd>2246</cProd>
-                <cEAN>7908896603141</cEAN>
-                <xProd>Bota Arion 2.0 6&quot; - Invictus - PRETO - 37</xProd>
-                <NCM>64039990</NCM>
-                <CEST>2805900</CEST>
-
-                <CFOP>5202</CFOP>
-                <uCom>UN</uCom>
-                <qCom>1.0000</qCom>
-                <vUnCom>316.540000</vUnCom>
-                <vProd>316.54</vProd>
-                <cEANTrib>7908896603141</cEANTrib>
-                <uTrib>UN</uTrib>
-                <qTrib>1.0000</qTrib>
-                <vUnTrib>316.540000</vUnTrib>
-                <indTot>1</indTot>
-            </prod>
-            <imposto>
-                <ICMS>
-                    <ICMSSN102>
-                        <orig>0</orig>
-                        <CSOSN>102</CSOSN>
-                    </ICMSSN102>
-
-                </ICMS>
-
-
-                <IPI>
-                    <cEnq>999</cEnq>
-                    <IPITrib>
-                        <CST>99</CST>
-                        <vBC>0.00</vBC>
-
-                        <pIPI>0.00</pIPI>
-                        <vIPI>0.00</vIPI>
-                    </IPITrib>
-                </IPI>
-                <PIS>
-                    <PISOutr>
-                        <CST>49</CST>
-                        <vBC>0.00</vBC>
-                        <pPIS>0.00</pPIS>
-                        <vPIS>0.00</vPIS>
-                    </PISOutr>
-                </PIS>
-                <COFINS>
-                    <COFINSOutr>
-                        <CST>49</CST>
-                        <vBC>0.00</vBC>
-                        <pCOFINS>0.00</pCOFINS>
-                        <vCOFINS>0.00</vCOFINS>
-                    </COFINSOutr>
-                </COFINS>
-            </imposto>
-
-            <impostoDevol>
-                <pDevol>0.00</pDevol>
-                <IPI>
-                    <vIPIDevol>0.00</vIPIDevol>
-                </IPI>
-            </impostoDevol>
-
         </det>
         <total>
             <ICMSTot>
 
+
                 <vBC>0.00</vBC>
                 <vICMS>0.00</vICMS>
                 <vICMSDeson>0</vICMSDeson>
+
                 <vFCP>0.00</vFCP>
-                <vBCST>0</vBCST>
-                <vST>0</vST>
+                <vBCST>0.00</vBCST>
+                <vST>0.00</vST>
                 <vFCPST>0.00</vFCPST>
                 <vFCPSTRet>0.00</vFCPSTRet>
-                <vProd>712.87</vProd>
+                <vProd>4300.07</vProd>
                 <vFrete>0.00</vFrete>
                 <vSeg>0</vSeg>
                 <vDesc>0.00</vDesc>
                 <vII>0</vII>
-                <vIPI>41.23</vIPI>
+                <vIPI>0.00</vIPI>
                 <vIPIDevol>0.00</vIPIDevol>
                 <vPIS>0.00</vPIS>
                 <vCOFINS>0.00</vCOFINS>
-                <vOutro>0.00</vOutro>
-                <vNF>754.10</vNF>
+                <vOutro>1396.81</vOutro>
+                <vNF>5696.88</vNF>
             </ICMSTot>
         </total>
         <transp>
@@ -376,23 +286,27 @@
             <vol>
                 <qVol>1</qVol>
                 <esp>Caixa</esp>
-                <pesoL>2.900</pesoL>
-                <pesoB>2.900</pesoB>
+                <pesoL>2.122</pesoL>
+                <pesoB>2.122</pesoB>
             </vol>
         </transp>
         <pag>
             <detPag>
-                <tPag>90</tPag>
-                <vPag>0.00</vPag>
+                <tPag>01</tPag>
+                <vPag>5696.88</vPag>
             </detPag>
         </pag>
-
-
         <infAdic>
+            <infAdFisco>IMPORTACAO REALIZADA PELO REGIME DE TRIBUTACAO UNIFICADO (RTU) NA PONTE DA
+                AMIZADE TERMO RTU: 238013/2025</infAdFisco>
             <infCpl>Documento emitido por ME ou EPP optante pelo Simples Nacional. Não gera direito
-                a crédito fiscal de IPI. - Total aproximado de tributos: 238,54 (33,46%) Federais
-                117,35 (16,46%) Estaduais 121,19 (17,00%). Fonte.: IBPT/empresometro.com.br.</infCpl>
+                a crédito fiscal de IPI.</infCpl>
         </infAdic>
+        <exporta>
+            <UFSaidaPais>SC</UFSaidaPais>
+            <xLocExporta>Santa Catarina</xLocExporta>
+            <xLocDespacho>Santa Catarina</xLocDespacho>
+        </exporta>
         <infRespTec>
             <CNPJ>28977040000107</CNPJ>
             <xContato>Ricardo Schroeder</xContato>

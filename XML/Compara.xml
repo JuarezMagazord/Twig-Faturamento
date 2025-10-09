@@ -1,347 +1,164 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-    <infNFe Id="NFe42250948134335000129550050000077401000079804" versao="4.00">
+    <infNFe Id="NFe42251004723370000299550010000010271000020319" versao="4.00">
         <ide>
             <cUF>42</cUF>
-            <cNF>00007980</cNF>
-            <natOp>Devolucao Compra para Comercializacao</natOp>
+            <cNF>00002031</cNF>
+            <natOp>Transferencia Merc.Adq.e/ou Rec.Terceiro</natOp>
             <mod>55</mod>
-            <serie>5</serie>
-            <nNF>7740</nNF>
-            <dhEmi>2025-09-08T12:15:00-03:00</dhEmi>
-            <dhSaiEnt>2025-09-08T12:15:00-03:00</dhSaiEnt>
+            <serie>1</serie>
+            <nNF>1027</nNF>
+            <dhEmi>2025-10-09T07:48:21-03:00</dhEmi>
+            <dhSaiEnt>2025-10-09T07:48:21-03:00</dhSaiEnt>
             <tpNF>1</tpNF>
             <idDest>1</idDest>
-            <cMunFG>4214805</cMunFG>
+            <cMunFG>4213203</cMunFG>
             <tpImp>1</tpImp>
             <tpEmis>1</tpEmis>
-            <cDV>4</cDV>
+            <cDV>9</cDV>
             <tpAmb>1</tpAmb>
-            <finNFe>4</finNFe>
-            <indFinal>1</indFinal>
+            <finNFe>1</finNFe>
+            <indFinal>0</indFinal>
             <indPres>2</indPres>
             <indIntermed>0</indIntermed>
             <procEmi>0</procEmi>
             <verProc>Magazord 1.0</verProc>
-            <NFref>
-                <refNFe>42250713992333000196550030004224311289657670</refNFe>
-            </NFref>
-            <NFref>
-                <refNFe>42250613992333000196550030004135761246062734</refNFe>
-            </NFref>
-            <NFref>
-                <refNFe>42240713992333000196550030003202051320034728</refNFe>
-            </NFref>
-            <NFref>
-                <refNFe>42250513992333000196550030004057751538676037</refNFe>
-            </NFref>
-            <NFref>
-                <refNFe>42250713992333000196550030004224971440375537</refNFe>
-            </NFref>
         </ide>
         <emit>
-            <CNPJ>48134335000129</CNPJ>
-            <xNome>Tatical Militaria Ltda</xNome>
-            <xFant>Tatical Militaria</xFant>
+            <CNPJ>04723370000299</CNPJ>
+            <xNome>Têxtil Arte Brasil Importação e Exportação Ltda</xNome>
+            <xFant>Têxtil Arte</xFant>
             <enderEmit>
-                <xLgr>Rua Princesa Isabel</xLgr>
-                <nro>807</nro>
-                <xCpl>Sala 01</xCpl>
-                <xBairro>Canoas</xBairro>
-                <cMun>4214805</cMun>
-                <xMun>Rio do Sul</xMun>
+                <xLgr>Rua Jerusalem</xLgr>
+                <nro>159</nro>
+                <xCpl>Galpão 03</xCpl>
+                <xBairro>Centro</xBairro>
+                <cMun>4213203</cMun>
+                <xMun>Pomerode</xMun>
                 <UF>SC</UF>
-                <CEP>89164054</CEP>
+                <CEP>89107000</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>47989073755</fone>
+                <fone>4733875543</fone>
             </enderEmit>
-            <IE>261942158</IE>
-            <IM>ISENTO</IM>
-            <CNAE>4763604</CNAE>
-            <CRT>1</CRT>
+            <IE>262985233</IE>
+            <IM>isento</IM>
+            <CRT>3</CRT>
         </emit>
         <dest>
-            <CNPJ>13992333000196</CNPJ>
-            <xNome>R.BRANDS LTDA - MATRIZ SC</xNome>
+            <CNPJ>04723370000108</CNPJ>
+            <xNome>TEXTIL ARTE BRASIL IMPORTACAO E EXPORTACAO LTDA</xNome>
             <enderDest>
-                <xLgr>Avenida Governador Adolfo Konder</xLgr>
-                <nro>705</nro>
-                <xCpl>Bloco 01 Armazem 07</xCpl>
-                <xBairro>Cidade Nova</xBairro>
-                <cMun>4208203</cMun>
-                <xMun>Itajaí</xMun>
+                <xLgr>RUA JERUSALEM</xLgr>
+                <nro>159</nro>
+                <xBairro>CENTRO</xBairro>
+                <cMun>4213203</cMun>
+                <xMun>Pomerode</xMun>
                 <UF>SC</UF>
-                <CEP>88308001</CEP>
+                <CEP>89107000</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>4837715050</fone>
+                <fone>4733875543</fone>
             </enderDest>
             <indIEDest>1</indIEDest>
-            <IE>257426558</IE>
+            <IE>255047460</IE>
         </dest>
+        <entrega>
+            <CNPJ>04723370000108</CNPJ>
+            <xLgr>RUA JERUSALEM</xLgr>
+            <nro>159</nro>
+            <xBairro>CENTRO</xBairro>
+            <cMun>4213203</cMun>
+            <xMun>Pomerode</xMun>
+            <UF>SC</UF>
+            <CEP>89107000</CEP>
+        </entrega>
 
 
         <det nItem="1">
             <prod>
-                <cProd>76</cProd>
-                <cEAN>7898618487190</cEAN>
-                <xProd>Refil De Hidratacao Viper Preto - Invictus - PRETO</xProd>
-                <NCM>39232990</NCM>
-                <CEST>2805800</CEST>
-                <CFOP>5202</CFOP>
-                <uCom>UN</uCom>
+                <cProd>CFOP5152</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>NF Complementar</xProd>
+                <NCM>94044000</NCM>
+                <cBenef>SC800006</cBenef>
+                <CFOP>5152</CFOP>
+                <uCom>PC</uCom>
                 <qCom>1.0000</qCom>
-                <vUnCom>98.740000</vUnCom>
-                <vProd>98.74</vProd>
-                <cEANTrib>7898618487190</cEANTrib>
-                <uTrib>UN</uTrib>
+                <vUnCom>45.952000</vUnCom>
+                <vProd>45.95</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>PC</uTrib>
                 <qTrib>1.0000</qTrib>
-                <vUnTrib>98.740000</vUnTrib>
+                <vUnTrib>45.952000</vUnTrib>
                 <indTot>1</indTot>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMSSN102>
+                    <ICMS00>
                         <orig>0</orig>
-                        <CSOSN>102</CSOSN>
-                    </ICMSSN102>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>0.00</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
+                    </ICMS00>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
-                    <IPITrib>
-                        <CST>99</CST>
-                        <vBC>98.74</vBC>
-                        <pIPI>15.00</pIPI>
-                        <vIPI>14.81</vIPI>
-                    </IPITrib>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
                 </IPI>
                 <PIS>
-                    <PISOutr>
-                        <CST>49</CST>
-                        <vBC>0.00</vBC>
-                        <pPIS>0.00</pPIS>
-                        <vPIS>0.00</vPIS>
-                    </PISOutr>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
                 </PIS>
                 <COFINS>
-                    <COFINSOutr>
-                        <CST>49</CST>
-                        <vBC>0.00</vBC>
-                        <pCOFINS>0.00</pCOFINS>
-                        <vCOFINS>0.00</vCOFINS>
-                    </COFINSOutr>
-                </COFINS>
-            </imposto>
-        </det>
-
-        <det nItem="2">
-            <prod>
-                <cProd>1255</cProd>
-                <cEAN>7908005368671</cEAN>
-                <xProd>Mochila Seal - WARSKIN BLACK</xProd>
-                <NCM>42029200</NCM>
-                <CEST>1900501</CEST>
-                <CFOP>5202</CFOP>
-                <uCom>UN</uCom>
-                <qCom>1.0000</qCom>
-                <vUnCom>245.190000</vUnCom>
-                <vProd>245.19</vProd>
-                <cEANTrib>7908005368671</cEANTrib>
-                <uTrib>UN</uTrib>
-                <qTrib>1.0000</qTrib>
-                <vUnTrib>245.190000</vUnTrib>
-                <indTot>1</indTot>
-            </prod>
-            <imposto>
-                <ICMS>
-                    <ICMSSN102>
-                        <orig>0</orig>
-                        <CSOSN>102</CSOSN>
-                    </ICMSSN102>
-                </ICMS>
-                <IPI>
-                    <cEnq>999</cEnq>
-                    <IPITrib>
-                        <CST>99</CST>
-                        <vBC>245.19</vBC>
-                        <pIPI>6.50</pIPI>
-                        <vIPI>15.94</vIPI>
-                    </IPITrib>
-                </IPI>
-                <PIS>
-                    <PISOutr>
-                        <CST>49</CST>
-                        <vBC>0.00</vBC>
-                        <pPIS>0.00</pPIS>
-                        <vPIS>0.00</vPIS>
-                    </PISOutr>
-                </PIS>
-                <COFINS>
-                    <COFINSOutr>
-                        <CST>49</CST>
-                        <vBC>0.00</vBC>
-                        <pCOFINS>0.00</pCOFINS>
-                        <vCOFINS>0.00</vCOFINS>
-                    </COFINSOutr>
-                </COFINS>
-            </imposto>
-        </det>
-
-        <det nItem="3">
-            <prod>
-                <cProd>1660</cProd>
-                <cEAN>7908005377208</cEAN>
-                <xProd>Caneta X-Treme - Invictus - PRETO</xProd>
-                <NCM>96081000</NCM>
-                <CEST>1903000</CEST>
-                <CFOP>5202</CFOP>
-                <uCom>UN</uCom>
-                <qCom>1.0000</qCom>
-                <vUnCom>52.400000</vUnCom>
-                <vProd>52.40</vProd>
-                <cEANTrib>7908005377208</cEANTrib>
-                <uTrib>UN</uTrib>
-                <qTrib>1.0000</qTrib>
-                <vUnTrib>52.400000</vUnTrib>
-                <indTot>1</indTot>
-            </prod>
-            <imposto>
-                <ICMS>
-                    <ICMSSN102>
-                        <orig>0</orig>
-                        <CSOSN>102</CSOSN>
-                    </ICMSSN102>
-                </ICMS>
-                <IPI>
-                    <cEnq>999</cEnq>
-                    <IPITrib>
-                        <CST>99</CST>
-                        <vBC>52.40</vBC>
-                        <pIPI>20.00</pIPI>
-                        <vIPI>10.48</vIPI>
-                    </IPITrib>
-                </IPI>
-                <PIS>
-                    <PISOutr>
-                        <CST>49</CST>
-                        <vBC>0.00</vBC>
-                        <pPIS>0.00</pPIS>
-                        <vPIS>0.00</vPIS>
-                    </PISOutr>
-                </PIS>
-                <COFINS>
-                    <COFINSOutr>
-                        <CST>49</CST>
-                        <vBC>0.00</vBC>
-                        <pCOFINS>0.00</pCOFINS>
-                        <vCOFINS>0.00</vCOFINS>
-                    </COFINSOutr>
-                </COFINS>
-            </imposto>
-        </det>
-
-        <det nItem="4">
-            <prod>
-                <cProd>2246</cProd>
-                <cEAN>7908896603141</cEAN>
-                <xProd>Bota Arion 2.0 6&quot; - Invictus - PRETO - 37</xProd>
-                <NCM>64039990</NCM>
-                <CEST>2805900</CEST>
-                <CFOP>5202</CFOP>
-                <uCom>UN</uCom>
-                <qCom>1.0000</qCom>
-                <vUnCom>316.540000</vUnCom>
-                <vProd>316.54</vProd>
-                <cEANTrib>7908896603141</cEANTrib>
-                <uTrib>UN</uTrib>
-                <qTrib>1.0000</qTrib>
-                <vUnTrib>316.540000</vUnTrib>
-                <indTot>1</indTot>
-            </prod>
-            <imposto>
-                <ICMS>
-                    <ICMSSN102>
-                        <orig>0</orig>
-                        <CSOSN>102</CSOSN>
-                    </ICMSSN102>
-                </ICMS>
-                <IPI>
-                    <cEnq>999</cEnq>
-                    <IPITrib>
-                        <CST>99</CST>
-                        <vBC>0.00</vBC>
-                        <pIPI>0.00</pIPI>
-                        <vIPI>0.00</vIPI>
-                    </IPITrib>
-                </IPI>
-                <PIS>
-                    <PISOutr>
-                        <CST>49</CST>
-                        <vBC>0.00</vBC>
-                        <pPIS>0.00</pPIS>
-                        <vPIS>0.00</vPIS>
-                    </PISOutr>
-                </PIS>
-                <COFINS>
-                    <COFINSOutr>
-                        <CST>49</CST>
-                        <vBC>0.00</vBC>
-                        <pCOFINS>0.00</pCOFINS>
-                        <vCOFINS>0.00</vCOFINS>
-                    </COFINSOutr>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
                 </COFINS>
             </imposto>
         </det>
         <total>
             <ICMSTot>
 
-                <vBC>712.87</vBC>
-                <vICMS>85.54</vICMS>
+                <vBC>0.00</vBC>
+                <vICMS>0.00</vICMS>
                 <vICMSDeson>0</vICMSDeson>
                 <vFCP>0.00</vFCP>
                 <vBCST>0</vBCST>
                 <vST>0</vST>
                 <vFCPST>0.00</vFCPST>
                 <vFCPSTRet>0.00</vFCPSTRet>
-                <vProd>712.87</vProd>
+                <vProd>45.95</vProd>
                 <vFrete>0.00</vFrete>
                 <vSeg>0</vSeg>
                 <vDesc>0.00</vDesc>
                 <vII>0</vII>
-                <vIPI>41.23</vIPI>
+                <vIPI>0.00</vIPI>
                 <vIPIDevol>0.00</vIPIDevol>
                 <vPIS>0.00</vPIS>
                 <vCOFINS>0.00</vCOFINS>
                 <vOutro>0.00</vOutro>
-
-                <vNF>754.10</vNF>
+                <vNF>45.95</vNF>
             </ICMSTot>
         </total>
         <transp>
             <modFrete>9</modFrete>
-            <vol>
-                <qVol>1</qVol>
-                <esp>Caixa</esp>
-                <pesoL>2.900</pesoL>
-                <pesoB>2.900</pesoB>
-            </vol>
         </transp>
         <pag>
             <detPag>
-                <tPag>90</tPag>
-                <vPag>0.00</vPag>
+                <tPag>01</tPag>
+                <vPag>45.95</vPag>
             </detPag>
         </pag>
-        <infAdic>
-            <infCpl>Documento emitido por ME ou EPP optante pelo Simples Nacional. Não gera direito
-                a crédito fiscal de IPI. - Total aproximado de tributos: 238,54 (33,46%) Federais
-                117,35 (16,46%) Estaduais 121,19 (17,00%). Fonte.: IBPT/empresometro.com.br.</infCpl>
-        </infAdic>
         <infRespTec>
             <CNPJ>28977040000107</CNPJ>
             <xContato>Ricardo Schroeder</xContato>
-            <email>ricardo@magazord.com.br</email>
+            <email>nfe@magazord.com.br</email>
             <fone>4735208013</fone>
         </infRespTec>
     </infNFe>

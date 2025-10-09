@@ -1,17 +1,40 @@
-{% set aliquotaIPI = 0.00 %}
+{% set mensagem = '' %}
 
-    {% if self.configuracaoParametros %}
-        {% if self.aliquotaProdutoDerivacao|length > 0 and self.aliquotaProdutoDerivacao[self.notaFiscalItem.produtoDerivacao.codigo]  is defined %}    
-            {% set aliquotaIPI = (self.aliquotaProdutoDerivacao[self.notaFiscalItem.produtoDerivacao.codigo]) %}
-        {% elseif self.aliquotaNcm|length > 0 and self.aliquotaNcm[self.notaFiscalItem.ncm.codigo]  is defined %}
-            {% set aliquotaIPI = (self.aliquotaNcm[self.notaFiscalItem.ncm.codigo]) %}
-        {% elseif self.aliquotaCfops|length > 0 and self.aliquotaCfops[self.notaFiscalItem.cfop.codigo]  is defined %}
-            {% set aliquotaIPI = (self.aliquotaCfops[self.notaFiscalItem.cfop.codigo]) %}    
-        {% else %}
-            {% set aliquotaIPI = 0.00 %}
-        {% endif %}    
-    {% else %}
-        {% set aliquotaIPI = 0.00 %}
+{% if self.getPedido() and self.getPedido().getOrigem() == 2 %}
+    {% set mensagem = mensagem ~ ' - Marketplace: ' ~ self.getPedido().getPedidoMarketplace().getMarketplace().getNome() ~' - '%}
+{% endif %}
+
+{% if self.getNotaFiscal().getCfop().getCodigo() not in [5209] %}
+    {% set mensagem = mensagem ~ ''%}
+{% endif %}
+
+{% set codigoPedido = self.getPedido().getCodigo()|default(false) %}
+{% if codigoPedido %}
+    {% set mensagem = mensagem ~ 'Pedido: ' ~ codigoPedido ~' - '%}
+{% endif %}
+
+{% if self.inscricaoEstadualDestino %}
+    {% set mensagem = mensagem ~ self.inscricaoEstadualDestino.mensagem %}
+{% endif %}
+
+{% set vlrNacional = get_imposto_param_total_calculado('VLR_TOTAL_NACIONAL_IBPT') %}
+{% set vlrEstadual = get_imposto_param_total_calculado('VLR_TOTAL_ESTADUAL_IBPT') %}
+{% if vlrNacional > 0 or vlrEstadual > 0 %}
+    {% set BCIBPT = get_imposto_param_total_calculado('VLR_TOTAL_BASE_IBPT') %}
+    {% set mensagemibpt = ' - Total aproximado de tributos: ' ~ (vlrNacional + vlrEstadual)|number_format(2,',','.') ~ ' (' ~ regra_de_tres(BCIBPT, 100, (vlrNacional + vlrEstadual))|number_format(2,',','.') ~ '%) Federais ' ~ vlrNacional|number_format(2,',','.') ~ ' (' ~ regra_de_tres(BCIBPT, 100, vlrNacional)|number_format(2,',','.') ~ '%) Estaduais ' ~ vlrEstadual|number_format(2,',','.') ~ ' (' ~ regra_de_tres(BCIBPT, 100, vlrEstadual)|number_format(2,',','.') ~ '%). Fonte.: IBPT/empresometro.com.br.' %}
+    {% set mensagem = mensagem ~ mensagemibpt %}
+{% endif %}
+
+{# Nova validação para Forma de Pagamento #}
+{% if self.getNotaFiscal().getFormaPagamento() %}
+    {% set formaPagamento = self.getNotaFiscal().getFormaPagamento().getNome() %}
+    {% if formaPagamento %}
+        {% set mensagem = mensagem ~ ' - Forma de Pagamento: ' ~ formaPagamento %}
     {% endif %}
-    
-    {{ self.result(aliquotaIPI) }}
+{% endif %}
+
+{% if (self.getNotaFiscal().getCfop().getCodigo() in ['5202']) %}
+    {% set mensagem = mensagem ~ ' - Destaque de ICMS conforme art. 59, parágrafo 9ª da resolução CGSN 140/218.' %}
+{% endif %}
+
+{{ self.result(mensagem) }}

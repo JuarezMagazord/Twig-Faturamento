@@ -1,0 +1,53 @@
+{# Aliq 3,25 (ipi1) '74122000','76169900','84145910','85364900','90303311' #}
+
+{# Aliq 5,00 (ipi2) '85044029' #}
+
+{# Aliq 5,20 (ipi3) '82032090' #}
+
+{# Aliq 6,50 (ipi4) '39162000','40103900','85043111','85333110','85362000' #}
+    
+{# Aliq 7.80 (ipi5) '84821010','84829990','84833090' #}
+
+{# Aliq 9,75 (ipi6) '73151900','85318000','85365090','85366100','85366990','85369090','85371011','85371019','85381000','85389090','85469000','85472090','90283031','90328990','91070010','94051190' #}
+
+{# Aliq 15,00 (ipi7) '73151210'#}
+{% set ipi1 = 3.25 / 100 %}
+{% set ipi2 = 5.00 / 100 %}
+{% set ipi3 = 5.20 / 100 %}
+{% set ipi4 = 6.50 / 100 %}
+{% set ipi5 = 7.80 / 100 %}
+{% set ipi6 = 9.75 / 100 %}
+{% set ipi7 = 15.00 / 100 %}
+{% set baseICMS = ((self.notaFiscalItem.valorUnitario * self.notaFiscalItem.quantidade) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) %}
+
+    {# IPI 1 - 3,25% #}
+{% if self.notaFiscalItem.ncm.codigo in ['74122000','76169900','84145910','85364900','90303311'] %}
+    {{ self.result(baseICMS * ipi1) }}
+
+    {# IPI 2 - 5,00% #}
+{% elseif self.notaFiscalItem.ncm.codigo in ['85044029'] %}
+    {{ self.result(baseICMS * ipi2) }}
+
+    {# IPI 3 - 5,20% #}
+{% elseif self.notaFiscalItem.ncm.codigo in ['82032090'] %}
+    {{ self.result(baseICMS * ipi3) }}
+
+    {# IPI 4 - 6,50% #}
+{% elseif self.notaFiscalItem.ncm.codigo in ['39162000','40103900','85043111','85333110','85362000'] %}
+    {{ self.result(baseICMS * ipi4) }}
+
+    {# IPI 5 - 7,80% #}
+{% elseif self.notaFiscalItem.ncm.codigo in ['84821010','84829990','84833090'] %}
+    {{ self.result(baseICMS * ipi5) }}
+
+    {# IPI 6 - 9,75% #}
+{% elseif self.notaFiscalItem.ncm.codigo in ['73151900','85318000','85365090','85366100','85366990','85369090','85371011','85371019','85381000','85389090','85469000','85472090','90283031','90328990','91070010','94051190'] %}
+    {{ self.result(baseICMS * ipi6) }}
+
+    {# IPI 7 - 15,00% #}
+{% elseif self.notaFiscalItem.ncm.codigo in ['73151210'] %}
+    {{ self.result(baseICMS) }}
+
+{% else %}
+    {{ self.result(baseICMS) }}
+{% endif %}

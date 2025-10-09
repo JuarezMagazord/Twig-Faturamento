@@ -1,0 +1,16 @@
+{% if calculo_get_parametro_calculado('PARTILHA_ICMS') == 'sim' %}                                
+ {% set base_calculo = calculo_get_parametro_calculado('VLR_BASE_ICMS') %}                                
+{% set aliquota_fcp = calculo_get_parametro_calculado('ALIQ_FCP_DESTINO') / 100 %}                                
+{# DIFAL BASE DUPLA #}                                
+{% if self.siglaEstado in ['BA','GO','MG','PA','PB','PR','PE','RS','SE','TO'] %}                                
+{% set difal_destino = (100 - calculo_get_parametro_calculado('ALIQ_ICMS_DESTINO')) %}                                
+{% set difal_origem = (100 - calculo_get_parametro_calculado('ALIQ_ICMS')) %}                                
+ {% set base_calculo_difal = (base_calculo * difal_origem) %}                                
+ {% set base_calculo_difal = (base_calculo_difal / difal_destino) %}                                
+ {{ self.result(base_calculo_difal * aliquota_fcp) }}                                
+ {% else %}                                
+ {{ self.result(base_calculo * aliquota_fcp) }}                                
+ {% endif %}                                
+ {% else %}                                
+ {{ self.result(0.00) }}                                
+ {% endif %}

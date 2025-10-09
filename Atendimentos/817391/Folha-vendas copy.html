@@ -1,0 +1,83 @@
+<style>
+    /* Quebra de página só depois do resumo */
+    .page-break {
+        page-break-before: always;
+    }
+
+    /* Cada pedido deve ser considerado um bloco indivisível */
+    .pedido-container {
+        page-break-inside: avoid;
+        margin-bottom: 20px;
+        border: 1px solid #ccc; /* opcional, só pra visualizar blocos */
+        padding: 10px;
+    }
+
+    /* Garante que tabelas não quebrem no meio */
+    .pedido-container table {
+        page-break-inside: avoid;
+    }
+</style>
+
+<body>
+{{ print_button() }}
+{{ print_resumo(folhaVendaResumo, true, true) }}
+
+<!-- Quebra de página só depois do resumo -->
+<div class="page-break"></div>
+
+{% for pedidoFolhaVenda in pedidosFolhaVenda %}
+    <div class="pedido-container">
+        <table class="table-default">
+            <tr>
+                <td class="title td-default">Pedido:</td>
+                <td class="td-default">{{ pedidoFolhaVenda.pedido.id }} - {{ pedidoFolhaVenda.pedido.codigo }}</td>
+                <td class="td-default">{{ print_codigo_barras(pedidoFolhaVenda.pedido.codigo) }}</td>
+            </tr>
+        </table>
+
+        <table class="table-default">
+            <tr>
+                <th class="th-default">Dados do Cliente</th>
+                <th class="th-default">Dados do Pedido</th>
+            </tr>
+            <tr>
+                <td class="td-default">
+                    <strong>Código: </strong>{{ pedidoFolhaVenda.cliente.id }}<br>
+                    <strong>Nome: </strong>{{ pedidoFolhaVenda.cliente.nome }}<br>
+                    <strong>CPF/CNPJ: </strong>{{ pedidoFolhaVenda.cliente.cpfCnpj }}<br>
+                    <strong>Tipo: </strong>{{ print_pessoa_tipo(pedidoFolhaVenda.cliente.tipo) }}<br>
+                    <strong>Estado: </strong>{{ pedidoFolhaVenda.endereco.cidade.estado.sigla }}
+                    - {{ pedidoFolhaVenda.endereco.cidade.estado.nome }}
+                </td>
+                <td class="td-default">
+                    <strong>Rep.: </strong>{{ pedidoFolhaVenda.loja.nome }}<br>
+                    <strong>FormaPgto: </strong>{{ pedidoFolhaVenda.formaPagamento.nome | default('-') }}<br>
+                    <strong>Transp.: </strong>{{ pedidoFolhaVenda.transportadoraServico.descricao | default('-') }}<br>
+                    <strong>CondiçãoPgto: </strong>{{ pedidoFolhaVenda.condicaoPagamento.nome | default('-') }}<br>
+                    <strong>Emissão: </strong>{{ print_date(pedidoFolhaVenda.pedido.dataHora) }}<br>
+                    <strong>Aprovação: </strong> {{ print_date(pedidoFolhaVenda.pedido.dataAprovado) }}
+                </td>
+            </tr>
+        </table>
+
+        <table class="table-default">
+            <tr>
+                <th class="th-default">Imagem</th>
+                <th class="th-default">Produto</th>
+                <th class="th-default">Descrição</th>
+                <th class="th-default">Depósito</th>
+                <th class="th-default">Qtde</th>
+            </tr>
+            {% for pedidoItem in pedidoFolhaVenda.pedidoItem %}
+                <tr>
+                    <td class="td-default">{{ print_produto_imagem(pedidoItem) }}</td>
+                    <td class="td-default">{{ pedidoItem.produtoDerivacao.codigo }}</td>
+                    <td class="td-default">{{ pedidoItem.descricao }}</td>
+                    <td class="td-default">{{ pedidoItem.deposito.nome }}</td>
+                    <td class="td-default">{{ pedidoItem.quantidade }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endfor %}
+</body>

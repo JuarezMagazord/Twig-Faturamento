@@ -1,433 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe41250923835584000110550050000000081000001156" versao="4.00">
+        <ide>
+            <cUF>41</cUF>
+            <cNF>00000115</cNF>
+            <natOp>Venda Merc.Adq.Rec.Terc.Dest.Nao Contrib</natOp>
+            <mod>55</mod>
+            <serie>5</serie>
+            <nNF>8</nNF>
+            <dhEmi>2025-09-25T14:59:54-03:00</dhEmi>
+            <dhSaiEnt>2025-09-25T14:59:54-03:00</dhSaiEnt>
+            <tpNF>1</tpNF>
+            <idDest>2</idDest>
+            <cMunFG>4113700</cMunFG>
+            <tpImp>1</tpImp>
+            <tpEmis>1</tpEmis>
+            <cDV>6</cDV>
+            <tpAmb>1</tpAmb>
+            <finNFe>1</finNFe>
+            <indFinal>1</indFinal>
+            <indPres>2</indPres>
+            <indIntermed>0</indIntermed>
+            <procEmi>0</procEmi>
+            <verProc>Magazord 1.0</verProc>
+        </ide>
+        <emit>
+            <CNPJ>23835584000110</CNPJ>
+            <xNome>Neopecuaria Ltda</xNome>
+            <xFant>Neopecuaria</xFant>
+            <enderEmit>
+                <xLgr>Rua Paraíba</xLgr>
+                <nro>660</nro>
+                <xCpl>SL 03</xCpl>
+                <xBairro>Jardim Higienópolis</xBairro>
+                <cMun>4113700</cMun>
+                <xMun>Londrina</xMun>
+                <UF>PR</UF>
+                <CEP>86020090</CEP>
+                <cPais>1058</cPais>
+                <xPais>Brasil</xPais>
+                <fone>4333249947</fone>
+            </enderEmit>
+            <IE>9095920117</IE>
+            <IM>isento</IM>
+            <CRT>1</CRT>
+        </emit>
+        <dest>
+            <CPF>06679004977</CPF>
+            <xNome>Mery sebastiane Antunes Arruda</xNome>
+            <enderDest>
+                <xLgr>SC 370 km 17</xLgr>
+                <nro>17</nro>
+                <xCpl>Casa de campo santa Paulina</xCpl>
+                <xBairro>Farofa</xBairro>
+                <cMun>4211892</cMun>
+                <xMun>Painel</xMun>
+                <UF>SC</UF>
+                <CEP>88543000</CEP>
+                <cPais>1058</cPais>
+                <xPais>Brasil</xPais>
+                <fone>49988247056</fone>
+            </enderDest>
+            <indIEDest>9</indIEDest>
+            <email>antunesmery@yahoo.com</email>
+        </dest>
+        <entrega>
+            <CPF>06679004977</CPF>
+            <xNome>Mery sebastiane Antunes Arruda</xNome>
+            <xLgr>SC 370 km 17</xLgr>
+            <nro>17</nro>
+            <xCpl>Casa de campo santa Paulina</xCpl>
+            <xBairro>Farofa</xBairro>
+            <cMun>4211892</cMun>
+            <xMun>Painel</xMun>
+            <UF>SC</UF>
+            <CEP>88543000</CEP>
+        </entrega>
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mestre de RPG - D&D 5ª Edição</title>
-    <style>
-        /* Estilo Geral */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1em;
-            text-align: center;
-        }
-        main {
-            padding: 20px;
-        }
-        .section {
-            margin-bottom: 40px;
-        }
-        .section h2 {
-            color: #333;
-        }
-        .form-group {
-            margin-bottom: 10px;
-        }
-        .form-group label {
-            display: block;
-            font-weight: bold;
-        }
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .card {
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            width: 300px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-        .card input {
-            width: 100%;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            padding: 8px;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-        .card select {
-            width: 100%;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            padding: 8px;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-        .card .remove-btn {
-            display: flex;
-            place-content: center;
-            position: absolute;
-            top: 9px;
-            right: 10px;
-            background-color: red;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 39px;
-            cursor: pointer;
-            zoom: 76%;
-            font-size: 16px;
-        }
-        .card .remove-btn:hover {
-            background-color: darkred;
-        }
 
-        /* Cores das Bordas por Raça */
-        .card.anão {
-            border: 3px solid #8B4513; /* Marrom */
-        }
-        .card.elfo {
-            border: 3px solid #228B22; /* Verde */
-        }
-        .card.halfling {
-            border: 3px solid #FFD700; /* Amarelo */
-        }
-        .card.humano {
-            border: 3px solid #1E90FF; /* Azul */
-        }
-        .card.draconato {
-            border: 3px solid #FF4500; /* Vermelho */
-        }
-        .card.gnomo {
-            border: 3px solid #FFA500; /* Laranja */
-        }
-        .card.meio-elfo {
-            border: 3px solid #A9A9A9; /* Cinza */
-        }
-        .card.meio-orc {
-            border: 3px solid #000000; /* Preto */
-        }
-        .card.tiefling {
-            border: 3px solid #800080; /* Roxo */
-        }
+        <det nItem="1">
+            <prod>
+                <cProd>bimeda-doracide-500-ml</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Bimeda Doracide 500 mL - Doramectina 1% Injetavel para Bovinos</xProd>
+                <NCM>30049059</NCM>
+                <CEST>1300100</CEST>
+                <CFOP>6108</CFOP>
+                <uCom>MI</uCom>
+                <qCom>1.0000</qCom>
+                <vUnCom>186.030000</vUnCom>
+                <vProd>186.03</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>MI</uTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>186.030000</vUnTrib>
+                <vFrete>33.93</vFrete>
+                <indTot>1</indTot>
+                <xPed>0012509969928</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMSSN102>
+                        <orig>0</orig>
+                        <CSOSN>103</CSOSN>
+                    </ICMSSN102>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>0.00</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISOutr>
+                        <CST>49</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISOutr>
+                </PIS>
+                <COFINS>
+                    <COFINSOutr>
+                        <CST>49</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSOutr>
+                </COFINS>
+                <ICMSUFDest>
+                    <vBCUFDest>0.00</vBCUFDest>
+                    <vBCFCPUFDest>0.00</vBCFCPUFDest>
+                    <pFCPUFDest>0.00</pFCPUFDest>
+                    <pICMSUFDest>17.00</pICMSUFDest>
+                    <pICMSInter>12.00</pICMSInter>
+                    <pICMSInterPart>100.00</pICMSInterPart>
+                    <vFCPUFDest>0.00</vFCPUFDest>
+                    <vICMSUFDest>0.00</vICMSUFDest>
+                    <vICMSUFRemet>0.00</vICMSUFRemet>
+                </ICMSUFDest>
+            </imposto>
+        </det>
+        <total>
+            <ICMSTot>
 
-        /* Estilos de ícones e emojis */
-        .icon {
-            margin-right: 8px;
-        }
-    </style>
-    <title>Gerador de Cards de Monstros D&D</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
-        body {
-            font-family: 'MedievalSharp', cursive;
-            background-image: url('https://www.publicdomainpictures.net/pictures/320000/velka/background-paper-medieval-1586080599YHU.jpg');
-            background-size: cover;
-            color: #333;
-            padding: 20px;
-        }
-        .container {
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 20px;
-            width: 80%;
-            max-width: 600px;
-            margin: auto;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #5A3E1B;
-        }
-        .field {
-            margin-bottom: 15px;
-        }
-        label {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-        }
-        input[type="text"], textarea, input[type="file"] {
-            width: 100%;
-            padding: 10px;
-            font-size: 1.2em;
-            border: 2px solid #5A3E1B;
-            border-radius: 5px;
-        }
-        textarea {
-            resize: vertical;
-        }
-        button {
-            background-color: #5A3E1B;
-            color: white;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-            display: block;
-            width: 100%;
-        }
-        button:hover {
-            background-color: #3E2A1B;
-        }
-        .card {
-            border: 2px solid #5A3E1B;
-            border-radius: 10px;
-            padding: 15px;
-            background-color: #fff;
-            margin-bottom: 15px;
-            position: relative;
-        }
-        .card-header {
-            font-size: 1.8em;
-            color: #5A3E1B;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-        .card-content {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-            white-space: pre-line;
-        }
-        .card-image {
-            width: 100%;
-            height: auto;
-            max-width: 300px;
-            max-height: 350px;
-            border-radius: 5px;
-            margin-bottom: 15px;
-        }
-        .remove-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: red;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 25px;
-            height: 25px;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
 
-<header>
-    <h1>Mestre de RPG - D&D 5ª Edição</h1>
-</header>
+                <vBC>0.00</vBC>
+                <vICMS>0.00</vICMS>
+                <vICMSDeson>0</vICMSDeson>
 
-<main>
-    <div class="section">
-        <h2>Adicionar Jogadores</h2>
-        <form id="playerForm">
-            <div class="form-group">
-                <label for="playerName"><span class="icon">👤</span> Nome do Jogador:</label>
-                <input type="text" id="playerName" required>
-            </div>
-            <div class="form-group">
-                <label for="characterName"><span class="icon">⚔️</span> Nome do Personagem:</label>
-                <input type="text" id="characterName" required>
-            </div>
-            <div class="form-group">
-                <label for="characterClass"><span class="icon">🛡️</span> Classe:</label>
-                <select id="characterClass" required>
-                    <option value="">Selecione uma classe</option>
-                    <option value="Bárbaro">Bárbaro</option>
-                    <option value="Bardo">Bardo</option>
-                    <option value="Clérigo">Clérigo</option>
-                    <option value="Druida">Druida</option>
-                    <option value="Guerreiro">Guerreiro</option>
-                    <option value="Ladino">Ladino</option>
-                    <option value="Mago">Mago</option>
-                    <option value="Monge">Monge</option>
-                    <option value="Paladino">Paladino</option>
-                    <option value="Patrulheiro">Patrulheiro</option>
-                    <option value="Feiticeiro">Feiticeiro</option>
-                    <option value="Bruxo">Bruxo</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="characterRace"><span class="icon">🦸‍♂️</span> Raça:</label>
-                <select id="characterRace" required>
-                    <option value="">Selecione uma raça</option>
-                    <option value="anão">Anão</option>
-                    <option value="elfo">Elfo</option>
-                    <option value="halfling">Halfling</option>
-                    <option value="humano">Humano</option>
-                    <option value="draconato">Draconato</option>
-                    <option value="gnomo">Gnomo</option>
-                    <option value="meio-elfo">Meio-Elfo</option>
-                    <option value="meio-orc">Meio-Orc</option>
-                    <option value="tiefling">Tiefling</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="characterLevel"><span class="icon">🎲</span> Nível:</label>
-                <input type="number" id="characterLevel" min="1" max="20" required>
-            </div>
-            <div class="form-group">
-                <label for="currentHP"><span class="icon">❤️</span> Pontos de Vida Atuais:</label>
-                <input type="number" id="currentHP" min="0" required>
-            </div>
-            <div class="form-group">
-                <label for="tempHP"><span class="icon">💪</span> Pontos de Vida Temporários:</label>
-                <input type="number" id="tempHP" min="0">
-            </div>
-            <button type="submit">Adicionar Jogador</button>
-        </form>
-    </div>
-
-    <div class="section">
-        <h2>Personagens</h2>
-        <div class="card-container" id="cardContainer"></div>
-    </div>
-</main>
-
-<script>
-    const playerForm = document.getElementById('playerForm');
-    const cardContainer = document.getElementById('cardContainer');
-
-    playerForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const playerName = document.getElementById('playerName').value;
-        const characterName = document.getElementById('characterName').value;
-        const characterClass = document.getElementById('characterClass').value;
-        const characterRace = document.getElementById('characterRace').value;
-        const characterLevel = document.getElementById('characterLevel').value;
-        const currentHP = document.getElementById('currentHP').value;
-        const tempHP = document.getElementById('tempHP').value;
-
-        const card = document.createElement('div');
-        card.className = `card ${characterRace}`; // Aplica a classe específica da raça
-
-        card.innerHTML = `
-            <button class="remove-btn" title="Remover">&#10005;</button>
-            <label>Nome do Jogador:</label>
-            <input type="text" value="${playerName}" disabled>
-            <label>Nome do Personagem:</label>
-            <input type="text" value="${characterName}">
-            <label>Classe:</label>
-            <input type="text" value="${characterClass}" disabled>
-            <label>Raça:</label>
-            <input type="text" value="${characterRace}" disabled>
-            <label>Nível:</label>
-            <input type="number" value="${characterLevel}" min="1" max="20">
-            <label>Pontos de Vida Atuais:</label>
-            <input type="number" value="${currentHP}" min="0">
-            <label>Pontos de Vida Temporários:</label>
-            <input type="number" value="${tempHP}" min="0">
-        `;
-
-        card.querySelector('.remove-btn').addEventListener('click', () => card.remove());
-
-        cardContainer.appendChild(card);
-        playerForm.reset();
-    });
-</script>
-<div class="container">
-        <h1>Gerador de Cards de Monstros D&D 🐉</h1>
-
-        <!-- Campo de geração de cartão -->
-        <div class="field">
-            <label for="monstro">Nome do Monstro 🧙‍♂️:</label>
-            <input type="text" id="monstro" name="monstro" placeholder="Digite o nome do monstro">
-        </div>
-        <div class="field">
-            <label for="atributos">Atributos (FOR, DES, CON, INT, SAB, CAR) 💪:</label>
-            <input type="text" id="atributos" name="atributos" placeholder="Ex: 18, 14, 16, 10, 12, 8">
-        </div>
-        <div class="field">
-            <label for="vantagens">Vantagens 🛡️:</label>
-            <textarea id="vantagens" name="vantagens" rows="3" placeholder="Digite as vantagens"></textarea>
-        </div>
-        <div class="field">
-            <label for="habilidades">Habilidades ✨:</label>
-            <textarea id="habilidades" name="habilidades" rows="3" placeholder="Digite as habilidades"></textarea>
-        </div>
-        <div class="field">
-            <label for="imagem">Imagem do Monstro 📷:</label>
-            <input type="file" id="imagem" name="imagem" accept="image/*">
-        </div>
-        <button onclick="gerarCard()">Gerar Card</button>
-
-        <!-- Local para exibir os cartões -->
-        <div id="cards-container"></div>
-    </div>
-
-    <script>
-        function gerarCard() {
-            let monstro = document.getElementById('monstro').value;
-            let atributos = document.getElementById('atributos').value.split(',').map(attr => attr.trim());
-            let vantagens = document.getElementById('vantagens').value.split(',').map(adv => adv.trim().replace(/\n/g, '<br>'));
-            let habilidades = document.getElementById('habilidades').value.split(',').map(hab => hab.trim().replace(/\n/g, '<br>'));
-            let imagem = document.getElementById('imagem').files[0];
-            let cardContainer = document.getElementById('cards-container');
-
-            let card = document.createElement('div');
-            card.className = 'card';
-
-            let cardHeader = document.createElement('div');
-            cardHeader.className = 'card-header';
-            cardHeader.textContent = monstro;
-
-            if (imagem) {
-                let reader = new FileReader();
-                reader.onload = function(e) {
-                    let img = document.createElement('img');
-                    img.className = 'card-image';
-                    img.src = e.target.result;
-                    card.appendChild(img);
-                }
-                reader.readAsDataURL(imagem);
-            }
-
-            let cardContent = document.createElement('div');
-            cardContent.className = 'card-content';
-            cardContent.innerHTML = `
-                <strong>Atributos:</strong> FOR ${atributos[0]}, DES ${atributos[1]}, CON ${atributos[2]}, INT ${atributos[3]}, SAB ${atributos[4]}, CAR ${atributos[5]}<br>
-                <strong>Vantagens:</strong> ${vantagens.join(', ')}<br>
-                <strong>Habilidades:</strong> ${habilidades.join(', ')}
-            `;
-
-            let removeBtn = document.createElement('button');
-            removeBtn.className = 'remove-btn';
-            removeBtn.textContent = 'X';
-            removeBtn.onclick = function() {
-                card.remove();
-            };
-
-            card.appendChild(cardHeader);
-            card.appendChild(cardContent);
-            card.appendChild(removeBtn);
-
-            cardContainer.appendChild(card);
-        }
-    </script>
-</body>
-</html>
-
+                <vFCPUFDest>0.00</vFCPUFDest>
+                <vICMSUFDest>0.00</vICMSUFDest>
+                <vICMSUFRemet>0.00</vICMSUFRemet>
+                <vFCP>0.00</vFCP>
+                <vBCST>0.00</vBCST>
+                <vST>0.00</vST>
+                <vFCPST>0.00</vFCPST>
+                <vFCPSTRet>0.00</vFCPSTRet>
+                <vProd>186.03</vProd>
+                <vFrete>33.93</vFrete>
+                <vSeg>0</vSeg>
+                <vDesc>0.00</vDesc>
+                <vII>0</vII>
+                <vIPI>0.00</vIPI>
+                <vIPIDevol>0.00</vIPIDevol>
+                <vPIS>0.00</vPIS>
+                <vCOFINS>0.00</vCOFINS>
+                <vOutro>0.00</vOutro>
+                <vNF>219.96</vNF>
+            </ICMSTot>
+        </total>
+        <transp>
+            <modFrete>0</modFrete>
+            <transporta>
+                <CNPJ>73939449000193</CNPJ>
+                <xNome>Total Express</xNome>
+                <xEnder>Avenida Piracema, 155</xEnder>
+                <xMun>Barueri</xMun>
+                <UF>SP</UF>
+            </transporta>
+            <vol>
+                <qVol>1</qVol>
+                <esp>Caixa</esp>
+                <pesoL>0.650</pesoL>
+                <pesoB>0.650</pesoB>
+            </vol>
+        </transp>
+        <pag>
+            <detPag>
+                <tPag>17</tPag>
+                <vPag>219.96</vPag>
+                <card>
+                    <tpIntegra>2</tpIntegra>
+                </card>
+            </detPag>
+        </pag>
+        <infAdic>
+            <infCpl>Pedido: 0012509969928 - Documento emitido por ME ou EPP optante pelo Simples Nacional. Não gera
+                direito a crédito fiscal de IPI. - Total aproximado de tributos: 71,37 (32,45%) Federais 29,58 (13,45%)
+                Estaduais 41,79 (19,00%). Fonte.: IBPT/empresometro.com.br. - Codigo de Rastreio Total Express :
+                MZ202509418709NE</infCpl>
+            <obsCont xCampo="Pedido de Venda">
+                <xTexto>0012509969928</xTexto>
+            </obsCont>
+        </infAdic>
+        <infRespTec>
+            <CNPJ>28977040000107</CNPJ>
+            <xContato>Ricardo Schroeder</xContato>
+            <email>nfe@magazord.com.br</email>
+            <fone>4735208013</fone>
+            <idCSRT>02</idCSRT>
+            <hashCSRT>Cn/TDYn82eRdJq0+TQ6nG5IRzek=</hashCSRT>
+        </infRespTec>
+    </infNFe>
+</NFe>
