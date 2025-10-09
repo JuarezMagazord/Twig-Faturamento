@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folha de vendas {{ folhaVenda.id }}</title>
+    {{ default_css() }}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            background: white;
+            line-height: 1.4;
+        }
+
+        .document-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            border: 2px solid #333;
+            padding: 20px;
+            position: relative;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 0;
+            color: #333;
+        }
+
+        .header-logo {
+            height: 40px;
+        }
+
+        .pedido-header {
+            text-align: left;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .pedido-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        .pedido-info .pedido-numero {
+            font-weight: bold;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .folha-numero {
+            text-align: right;
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        .dados-section {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .dados-cliente, .dados-pedido {
+            flex: 1;
+            padding: 0 10px;
+        }
+
+        .dados-cliente {
+            border-right: 1px solid #ddd;
+        }
+
+        .section-title {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .dados-item {
+            font-size: 12px;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .dados-item strong {
+            font-weight: bold;
+            display: inline-block;
+            width: 80px;
+        }
+
+        .item-quantity-side {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            margin-right: 15px;
+            font-size: 11px;
+        }
+
+        .item-quantity-side .quantity-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .itens-section {
+            margin-top: 30px;
+        }
+
+        .itens-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .item {
+            display: flex;
+            border-bottom: 1px solid #333;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+
+        .item-image {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .item-details {
+            flex: 1;
+        }
+
+        .item-code {
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .item-product {
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            line-height: 1.3;
+        }
+
+        .item-specs {
+            font-size: 11px;
+            color: #666;
+            line-height: 1.3;
+        }
+
+        .item-specs div {
+            margin-bottom: 2px;
+        }
+
+        .item-quantity {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            width: 120px;
+            font-size: 11px;
+        }
+
+        .prazo-vermelho {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: #666;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        .table-default {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .td-default, .th-default {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .th-default {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .document-container {
+                border: none;
+                max-width: none;
+                margin: 0;
+                padding: 15px;
+            }
+
+            .footer {
+                position: fixed;
+                bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+{{ print_button() }}
+
+<div class="document-container">
+    <div class="header">
+        <h1>Folha Vendas</h1>
+        <img src="https://magazord-public.s3.amazonaws.com/ambientenobre/img/2024/03/loja/59/favicon.png" alt="Logo" class="header-logo">
+    </div>
+    
+    <div class="pedido-info">
+        <div>
+            <strong>Pedido:</strong> <span class="pedido-numero">{{ pedidosFolhaVenda[0].pedido.id }} - {{ pedidosFolhaVenda[0].pedido.codigo }}</span>
+        </div>
+        <div>
+            Folha de Vendas número {{ folhaVenda.id }}
+        </div>
+    </div>
+
+    {% for pedidoFolhaVenda in pedidosFolhaVenda %}
+        <div class="{% if not loop.first %}page-break{% endif %}">
+            {% if not loop.first %}
+            <div class="header">
+                <h1>Folha Vendas</h1>
+                <img src="https://magazord-public.s3.amazonaws.com/ambientenobre/img/2024/03/loja/59/favicon.png" alt="Logo" class="header-logo">
+            </div>
+            
+            <div class="pedido-info">
+                <div>
+                    <strong>Pedido:</strong> <span class="pedido-numero">{{ pedidoFolhaVenda.pedido.id }} - {{ pedidoFolhaVenda.pedido.codigo }}</span>
+                </div>
+                <div>
+                    Folha de Vendas número {{ folhaVenda.id }}
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="dados-section">
+                <div class="dados-cliente">
+                    <div class="section-title">Dados do Cliente</div>
+                    <div class="dados-item"><strong>Código:</strong> {{ pedidoFolhaVenda.cliente.id }}</div>
+                    <div class="dados-item"><strong>Nome:</strong> {{ pedidoFolhaVenda.cliente.nome }}</div>
+                    <div class="dados-item"><strong>CPF/CNPJ:</strong> {{ pedidoFolhaVenda.cliente.cpfCnpj }}</div>
+                    <div class="dados-item"><strong>Tipo:</strong> {{ print_pessoa_tipo(pedidoFolhaVenda.cliente.tipo) }}</div>
+                    <div class="dados-item"><strong>Estado:</strong> {{ pedidoFolhaVenda.endereco.cidade.estado.sigla }} - {{ pedidoFolhaVenda.endereco.cidade.estado.nome }}</div>
+                </div>
+                <div class="dados-pedido">
+                    <div class="section-title">Dados do Pedido</div>
+                    <div class="dados-item"><strong>Rep.:</strong> {{ pedidoFolhaVenda.loja.nome }}</div>
+                    <div class="dados-item"><strong>FormaPgto:</strong> {{ pedidoFolhaVenda.formaPagamento.nome | default('-') }}</div>
+                    <div class="dados-item"><strong>Transp.:</strong> {{ pedidoFolhaVenda.transportadoraServico.descricao | default('-') }}</div>
+                    <div class="dados-item"><strong>CondiçãoPgto:</strong> {{ pedidoFolhaVenda.condicaoPagamento.nome | default('-') }}</div>
+                    <div class="dados-item"><strong>Aprovação:</strong> {{ print_date(pedidoFolhaVenda.pedido.dataAprovado) }}</div>
+                </div>
+            </div>
+
+            <div class="itens-section">
+                <div class="itens-title">ITENS</div>
+                
+                {% for pedidoItem in pedidoFolhaVenda.pedidoItem %}
+                    <div class="item">
+                        <div class="item-image">
+                            {{ print_produto_imagem(pedidoItem) }}
+                        </div>
+                        <div class="item-info">
+                            <div class="item-left">
+                                <div class="item-code">
+                                    <strong>CÓDIGO:</strong> <strong>{{ pedidoItem.produtoDerivacao.codigo }}</strong>
+                                </div>
+                                <div class="item-specs">
+                                    <div><strong>QUANTIDADE:</strong> <strong class="quantity-number">{{ pedidoItem.quantidade }}</strong></div>
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <div class="item-product">
+                                    <strong>PRODUTO:</strong> <strong>{{ pedidoItem.descricao }}</strong>
+                                </div>
+                                <div class="item-specs">
+                                    <div><strong>PRAZO:</strong> <strong class="prazo-vermelho">{{ pedidoItem.produtoDerivacao.produto.marca.nome }}</strong></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            {% if pedidoFolhaVenda.pedido.observacao is defined and pedidoFolhaVenda.pedido.observacao %}
+            <table class="table-default">
+                <tr>
+                    <th class="th-default">Observações</th>
+                </tr>
+                <tr>
+                    <td class="td-default">
+                        {% for observacao in pedidoFolhaVenda.pedido.getObservacoesPedido() %}
+                            {{ observacao.mensagem }} - {{ observacao.data_hora }} <br>
+                        {% endfor %}
+                    </td>
+                </tr>
+            </table>
+            {% endif %}
+        </div>
+    {% endfor %}
+
+    <div class="footer">
+        <div>Página 2 de 23</div>
+        <div>Folha de Vendas número {{ folhaVenda.id }} - Magazord</div>
+        <div>Emitido em: {{ "now"|date("M d, Y H:i A") }}</div>
+    </div>
+</div>
+
+</body>
+</html>
