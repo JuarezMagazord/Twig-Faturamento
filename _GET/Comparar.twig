@@ -1,96 +1,40 @@
-{% set cfopCodigo = '' %}
-{% set operacaoInterna = (estadoEmissor == estadoDestinatario) %}
-{% set isBrinde = (formaPagamento and formaPagamento.isBrinde()) %}
-{% set isContribuinteICMS = (destinatario.tipo == 2 and destinatario.inscricaoEstadual) %}
-{% set isProducaoPropria = (produtoDerivacao is not null and produtoDerivacao.produto.marca.getProducaoPropria() == true) %}
-{% set cfopConfig = get_cfop_by_ncm(ncm, entidade, tipo, operacaoInterna, destinatario) %}
-{% if isBrinde == false  and cfopConfig %}
-    {% set cfopCodigo = cfopConfig %}
-{% else %}
-    {% if tipo == 1 %}
-        {% if tipoCadastroPedido == 29 %}
-            {% if operacaoInterna %}
-                {% set cfopCodigo = '5152' %}
-            {% else %}
-                {% set cfopCodigo = '6152' %}
-            {% endif %}
-        {% elseif tipoCadastroPedido == 30 %}
-            {% if operacaoInterna %}
-                {% set cfopCodigo = '5912' %}
-            {% else %}
-                {% set cfopCodigo = '6912' %}
-            {% endif %}
-        {% elseif origem == 'filial' and destino == 'filial' %}
-            {% if operacaoInterna %}
-                {% set cfopCodigo = '5152' %}
-            {% else %}
-                {% set cfopCodigo = '6152' %}
-            {% endif %}
-        {% elseif origem == 'filial' and destino == 'fornecedor' %}
-            {% if operacaoInterna %}
-                {% set cfopCodigo = '5202' %}
-            {% else %}
-                {% set cfopCodigo = '6202' %}
-            {% endif %}
-        {% else %}
-            {% if operacaoInterna %}
-                {% if isBrinde %}
-                    {% set cfopCodigo = '5910' %}
-                {% else %}
-                    {% if isProducaoPropria %}
-                        {% set cfopCodigo = '5101' %}
-                    {% else %}
-                        {% set cfopCodigo = '5102' %}
-                    {% endif %}
-                {% endif %}
-            {% else %}
-                {% if isBrinde %}
-                    {% set cfopCodigo = '6910' %}
-                {% else %}
-                    {% if isContribuinteICMS %}
-                        {% if isProducaoPropria %}
-                            {% set cfopCodigo = '6101' %}
-                        {% else %}
-                            {% set cfopCodigo = '6102' %}
-                        {% endif %}
-                    {% else %}
-                        {% if isProducaoPropria %}
-                            {% set cfopCodigo = '6107' %}
-                        {% else %}
-                            {% set cfopCodigo = '6108' %}
-                        {% endif %}
-                    {% endif %}
-                {% endif %}
-            {% endif %}
-        {% endif %}
-    {% else %}
-        {% if origem == 'filial' and destino == 'cliente' %}
-            {% if operacaoInterna %}
-                {% if isProducaoPropria %}
-                    {% set cfopCodigo = '1201' %}
-                {% else %}
-                    {% set cfopCodigo = '1202' %}
-                {% endif %}
-            {% else %}
-                {% if isProducaoPropria %}
-                    {% set cfopCodigo = '2201' %}
-                {% else %}
-                    {% set cfopCodigo = '2202' %}
-                {% endif %}
-            {% endif %}
-        {% elseif origem == 'transportadora' and destino == 'filial' %}
-            {% if operacaoInterna %}
-                {% set cfopCodigo = '1353' %}
-            {% else %}
-                {% set cfopCodigo = '2353' %}
-            {% endif %}
-        {% else %}
-            {% if operacaoInterna %}
-                {% set cfopCodigo = '1102' %}
-            {% else %}
-                {% set cfopCodigo = '2102' %}
-            {% endif %}
-        {% endif %}
+{% set mensagem = '' %}
+
+{% if self.getPedido() and self.getPedido().getOrigem() == 2 %}
+    {% set mensagem = mensagem ~ ' - Marketplace: ' ~ self.getPedido().getPedidoMarketplace().getMarketplace().getNome() ~' - '%}
+{% endif %}
+
+{% if self.getNotaFiscal().getCfop().getCodigo() not in [5209] %}
+    {% set mensagem = mensagem ~ ''%}
+{% endif %}
+
+{% set codigoPedido = self.getPedido().getCodigo()|default(false) %}
+{% if codigoPedido %}
+    {% set mensagem = mensagem ~ 'Pedido: ' ~ codigoPedido ~' - '%}
+{% endif %}
+
+{% if self.inscricaoEstadualDestino %}
+    {% set mensagem = mensagem ~ self.inscricaoEstadualDestino.mensagem %}
+{% endif %}
+
+{% set vlrNacional = get_imposto_param_total_calculado('VLR_TOTAL_NACIONAL_IBPT') %}
+{% set vlrEstadual = get_imposto_param_total_calculado('VLR_TOTAL_ESTADUAL_IBPT') %}
+{% if vlrNacional > 0 or vlrEstadual > 0 %}
+    {% set BCIBPT = get_imposto_param_total_calculado('VLR_TOTAL_BASE_IBPT') %}
+    {% set mensagemibpt = ' - Total aproximado de tributos: ' ~ (vlrNacional + vlrEstadual)|number_format(2,',','.') ~ ' (' ~ regra_de_tres(BCIBPT, 100, (vlrNacional + vlrEstadual))|number_format(2,',','.') ~ '%) Federais ' ~ vlrNacional|number_format(2,',','.') ~ ' (' ~ regra_de_tres(BCIBPT, 100, vlrNacional)|number_format(2,',','.') ~ '%) Estaduais ' ~ vlrEstadual|number_format(2,',','.') ~ ' (' ~ regra_de_tres(BCIBPT, 100, vlrEstadual)|number_format(2,',','.') ~ '%). Fonte.: IBPT/empresometro.com.br.' %}
+    {% set mensagem = mensagem ~ mensagemibpt %}
+{% endif %}
+
+{# Nova validação para Forma de Pagamento #}
+{% if self.getNotaFiscal().getFormaPagamento() %}
+    {% set formaPagamento = self.getNotaFiscal().getFormaPagamento().getNome() %}
+    {% if formaPagamento %}
+        {% set mensagem = mensagem ~ ' - Forma de Pagamento: ' ~ formaPagamento %}
     {% endif %}
 {% endif %}
-{{ cfopCodigo }}
+
+{% if (self.getNotaFiscal().getCfop().getCodigo() in ['5202']) %}
+    {% set mensagem = mensagem ~ ' - Destaque de ICMS conforme art. 59, parágrafo 9ª da resolução CGSN 140/218.' %}
+{% endif %}
+
+{{ self.result(mensagem) }}

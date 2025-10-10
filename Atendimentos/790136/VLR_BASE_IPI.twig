@@ -1,0 +1,24 @@
+{% set zeraBaseCalculo = false %}
+{# Solicitação via ticket, 790136 #}
+{% set vlrPIS = calculo_get_parametro_calculado('VLR_PIS') %}
+{% set vlrCOFINS = calculo_get_parametro_calculado('VLR_COFINS') %}
+{% set descontoPC = vlrPIS + vlrCOFINS %}
+
+{% if self.configuracaoParametros %}
+    {% set cfopZerada = self.configuracaoParametros.getOpcoesIPI().getCfopBaseZerada()|split(',') %}
+    {% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+{% endif %}
+{% if zeraBaseCalculo %}
+    {{ self.result('0.00') }}
+{% elseif self.configuracaoGlobal %}
+    {% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}
+        {# Solicitação via ticket, 790136 #}
+        {% if self.notaFiscalItem().notaFiscal().pessoa.tipo == 2 and self.notaFiscalItem().notaFiscal().pessoa.contribuinteIcms %}
+            {{ self.result(self.notaFiscalItem.valorProduto + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto - descontoPC) }}
+        {% else %}
+            {{ self.result(self.notaFiscalItem.valorProduto + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto ) }}
+        {% endif %}
+    {% else %}
+        {{ self.result('0.00') }}
+    {% endif %}
+{% endif %}

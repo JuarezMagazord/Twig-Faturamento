@@ -1,0 +1,7 @@
+{% if calculo_get_parametro_calculado('PARTILHA_ICMS') == 'sim' %}
+    {% set base_calculo = calculo_get_parametro_calculado('VLR_BASE_ICMS') %}
+    {% set aliquota_fcp = calculo_get_parametro_calculado('ALIQ_FCP_DESTINO') / 100 %}
+    {{ self.result(base_calculo * aliquota_fcp) }}
+{% else %}
+    {{ self.result(0) }}
+{% endif %}

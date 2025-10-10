@@ -1,99 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-    <infNFe Id="NFe42251027680193000125550010001136891002328590" versao="4.00">
+    <infNFe Id="NFe42251004723370000299550010000010271000020319" versao="4.00">
         <ide>
             <cUF>42</cUF>
-            <cNF>00232859</cNF>
-            <natOp>Devolucao Venda Merc.Adq/Receb.de Terc.</natOp>
+            <cNF>00002031</cNF>
+            <natOp>Transferencia Merc.Adq.e/ou Rec.Terceiro</natOp>
             <mod>55</mod>
             <serie>1</serie>
-            <nNF>113689</nNF>
-            <dhEmi>2025-10-02T08:37:30-03:00</dhEmi>
-            <dhSaiEnt>2025-10-02T08:37:30-03:00</dhSaiEnt>
-            <tpNF>0</tpNF>
-            <idDest>2</idDest>
+            <nNF>1027</nNF>
+            <dhEmi>2025-10-09T07:48:21-03:00</dhEmi>
+            <dhSaiEnt>2025-10-09T07:48:21-03:00</dhSaiEnt>
+            <tpNF>1</tpNF>
+            <idDest>1</idDest>
             <cMunFG>4213203</cMunFG>
             <tpImp>1</tpImp>
-
             <tpEmis>1</tpEmis>
-
-            <cDV>0</cDV>
+            <cDV>9</cDV>
             <tpAmb>1</tpAmb>
-            <finNFe>4</finNFe>
-            <indFinal>1</indFinal>
+            <finNFe>1</finNFe>
+            <indFinal>0</indFinal>
             <indPres>2</indPres>
             <indIntermed>0</indIntermed>
             <procEmi>0</procEmi>
             <verProc>Magazord 1.0</verProc>
-
-            <NFref>
-                <refNFe>42250827680193000125550010001108781002273575</refNFe>
-            </NFref>
-            <NFref>
-                <refNFe>42250827680193000125550010001108681002273455</refNFe>
-            </NFref>
         </ide>
         <emit>
-            <CNPJ>27680193000125</CNPJ>
-            <xNome>SOTTILE COMÉRCIO DE ARTIGOS DE DECORAÇÃO LTDA</xNome>
-            <xFant>Sottile Casa</xFant>
+            <CNPJ>04723370000299</CNPJ>
+            <xNome>Têxtil Arte Brasil Importação e Exportação Ltda</xNome>
+            <xFant>Têxtil Arte</xFant>
             <enderEmit>
-                <xLgr>Rua Ricardo Koch</xLgr>
-                <nro>800</nro>
-                <xBairro>Testo Central</xBairro>
+                <xLgr>Rua Jerusalem</xLgr>
+                <nro>159</nro>
+                <xCpl>Galpão 03</xCpl>
+                <xBairro>Centro</xBairro>
                 <cMun>4213203</cMun>
                 <xMun>Pomerode</xMun>
                 <UF>SC</UF>
                 <CEP>89107000</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>4733066394</fone>
+                <fone>4733875543</fone>
             </enderEmit>
-            <IE>258332727</IE>
-            <IEST>127103007</IEST>
-            <IM>ISENTO</IM>
-            <CNAE>4759899</CNAE>
+            <IE>262985233</IE>
+            <IM>isento</IM>
             <CRT>3</CRT>
         </emit>
         <dest>
-            <CPF>52589072449</CPF>
-            <xNome>Izabel Cristina Cavalcanti de Morais</xNome>
+            <CNPJ>04723370000108</CNPJ>
+            <xNome>TEXTIL ARTE BRASIL IMPORTACAO E EXPORTACAO LTDA</xNome>
             <enderDest>
-                <xLgr>Rua Jaco Velosino</xLgr>
-                <nro>205</nro>
-                <xCpl>Apt 501</xCpl>
-                <xBairro>Casa Forte</xBairro>
-                <cMun>2611606</cMun>
-                <xMun>Recife</xMun>
-                <UF>PE</UF>
-                <CEP>52061410</CEP>
+                <xLgr>RUA JERUSALEM</xLgr>
+                <nro>159</nro>
+                <xBairro>CENTRO</xBairro>
+                <cMun>4213203</cMun>
+                <xMun>Pomerode</xMun>
+                <UF>SC</UF>
+                <CEP>89107000</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>81999941817</fone>
+                <fone>4733875543</fone>
             </enderDest>
-            <indIEDest>9</indIEDest>
-            <email>belmorais1209@gmail.com</email>
+            <indIEDest>1</indIEDest>
+            <IE>255047460</IE>
         </dest>
+        <entrega>
+            <CNPJ>04723370000108</CNPJ>
+            <xLgr>RUA JERUSALEM</xLgr>
+            <nro>159</nro>
+            <xBairro>CENTRO</xBairro>
+            <cMun>4213203</cMun>
+            <xMun>Pomerode</xMun>
+            <UF>SC</UF>
+            <CEP>89107000</CEP>
+        </entrega>
 
 
         <det nItem="1">
             <prod>
-                <cProd>55U2927</cProd>
+                <cProd>CFOP5152</cProd>
                 <cEAN>SEM GTIN</cEAN>
-                <xProd>Cupula Conica 35x30x25 - Cru Tramado</xProd>
-                <NCM>94052100</NCM>
-                <CFOP>2202</CFOP>
+                <xProd>NF Complementar</xProd>
+                <NCM>94044000</NCM>
+                <cBenef>SC800006</cBenef>
+                <CFOP>5152</CFOP>
                 <uCom>PC</uCom>
                 <qCom>1.0000</qCom>
-                <vUnCom>229.150000</vUnCom>
-                <vProd>229.15</vProd>
+                <vUnCom>45.952000</vUnCom>
+                <vProd>45.95</vProd>
                 <cEANTrib>SEM GTIN</cEANTrib>
                 <uTrib>PC</uTrib>
                 <qTrib>1.0000</qTrib>
-                <vUnTrib>229.150000</vUnTrib>
-                <vOutro>51.59</vOutro>
+                <vUnTrib>45.952000</vUnTrib>
                 <indTot>1</indTot>
-                <xPed>0012508686037</xPed>
             </prod>
             <imposto>
                 <ICMS>
@@ -101,252 +99,62 @@
                         <orig>0</orig>
                         <CST>00</CST>
                         <modBC>3</modBC>
-                        <vBC>280.74</vBC>
-                        <pICMS>7.00</pICMS>
-                        <vICMS>19.65</vICMS>
+                        <vBC>0.00</vBC>
+                        <pICMS>0.00</pICMS>
+                        <vICMS>0.00</vICMS>
                     </ICMS00>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
                     <IPINT>
-                        <CST>03</CST>
+                        <CST>53</CST>
                     </IPINT>
                 </IPI>
                 <PIS>
-                    <PISAliq>
-                        <CST>01</CST>
-                        <vBC>223.19</vBC>
-                        <pPIS>1.65</pPIS>
-                        <vPIS>3.68</vPIS>
-                    </PISAliq>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
                 </PIS>
                 <COFINS>
-                    <COFINSAliq>
-                        <CST>01</CST>
-                        <vBC>223.19</vBC>
-                        <pCOFINS>7.60</pCOFINS>
-                        <vCOFINS>16.96</vCOFINS>
-                    </COFINSAliq>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
                 </COFINS>
-                <ICMSUFDest>
-                    <vBCUFDest>280.74</vBCUFDest>
-                    <vBCFCPUFDest>280.74</vBCFCPUFDest>
-                    <pFCPUFDest>0.00</pFCPUFDest>
-                    <pICMSUFDest>20.50</pICMSUFDest>
-                    <pICMSInter>7.00</pICMSInter>
-                    <pICMSInterPart>100.00</pICMSInterPart>
-                    <vFCPUFDest>0.00</vFCPUFDest>
-                    <vICMSUFDest>37.90</vICMSUFDest>
-                    <vICMSUFRemet>0.00</vICMSUFRemet>
-                </ICMSUFDest>
             </imposto>
-            <impostoDevol>
-                <pDevol>0.00</pDevol>
-                <IPI>
-                    <vIPIDevol>0.00</vIPIDevol>
-                </IPI>
-            </impostoDevol>
-        </det>
-
-        <det nItem="2">
-            <prod>
-                <cProd>C261C-AB</cProd>
-                <cEAN>7908269400452</cEAN>
-                <xProd>Abajur Murano Palles C/ Ouro - Ambar</xProd>
-                <NCM>70139900</NCM>
-                <CEST>1400100</CEST>
-                <CFOP>2202</CFOP>
-                <uCom>PC</uCom>
-                <qCom>1.0000</qCom>
-                <vUnCom>1654.280000</vUnCom>
-                <vProd>1654.28</vProd>
-                <cEANTrib>7908269400452</cEANTrib>
-                <uTrib>PC</uTrib>
-                <qTrib>1.0000</qTrib>
-                <vUnTrib>1654.280000</vUnTrib>
-                <indTot>1</indTot>
-                <xPed>0012508686037</xPed>
-            </prod>
-            <imposto>
-                <ICMS>
-                    <ICMS00>
-                        <orig>0</orig>
-                        <CST>00</CST>
-                        <modBC>3</modBC>
-                        <vBC>1654.28</vBC>
-                        <pICMS>7.00</pICMS>
-                        <vICMS>115.80</vICMS>
-                    </ICMS00>
-                </ICMS>
-                <IPI>
-                    <cEnq>999</cEnq>
-                    <IPINT>
-                        <CST>03</CST>
-                    </IPINT>
-                </IPI>
-                <PIS>
-                    <PISAliq>
-                        <CST>01</CST>
-                        <vBC>1315.15</vBC>
-                        <pPIS>1.65</pPIS>
-                        <vPIS>21.70</vPIS>
-                    </PISAliq>
-                </PIS>
-                <COFINS>
-                    <COFINSAliq>
-                        <CST>01</CST>
-                        <vBC>1315.15</vBC>
-                        <pCOFINS>7.60</pCOFINS>
-                        <vCOFINS>99.95</vCOFINS>
-                    </COFINSAliq>
-                </COFINS>
-                <ICMSUFDest>
-                    <vBCUFDest>1654.28</vBCUFDest>
-                    <vBCFCPUFDest>1654.28</vBCFCPUFDest>
-                    <pFCPUFDest>0.00</pFCPUFDest>
-                    <pICMSUFDest>20.50</pICMSUFDest>
-                    <pICMSInter>7.00</pICMSInter>
-                    <pICMSInterPart>100.00</pICMSInterPart>
-                    <vFCPUFDest>0.00</vFCPUFDest>
-                    <vICMSUFDest>223.33</vICMSUFDest>
-                    <vICMSUFRemet>0.00</vICMSUFRemet>
-                </ICMSUFDest>
-            </imposto>
-            <impostoDevol>
-                <pDevol>0.00</pDevol>
-                <IPI>
-                    <vIPIDevol>0.00</vIPIDevol>
-                </IPI>
-            </impostoDevol>
-        </det>
-
-        <det nItem="3">
-            <prod>
-                <cProd>LIT3803</cProd>
-                <cEAN>7908269413803</cEAN>
-                <xProd>Toalha de Lavabo 600 g/m² Literie 100% Algodao Allure - Branco</xProd>
-                <NCM>63026000</NCM>
-                <CEST>2805100</CEST>
-                <CFOP>2202</CFOP>
-                <uCom>UN</uCom>
-                <qCom>1.0000</qCom>
-                <vUnCom>5.290000</vUnCom>
-                <vProd>5.29</vProd>
-                <cEANTrib>7908269413803</cEANTrib>
-                <uTrib>UN</uTrib>
-                <qTrib>1.0000</qTrib>
-                <vUnTrib>5.290000</vUnTrib>
-                <indTot>1</indTot>
-                <xPed>0012508180228</xPed>
-            </prod>
-            <imposto>
-                <ICMS>
-                    <ICMS00>
-                        <orig>0</orig>
-                        <CST>00</CST>
-                        <modBC>3</modBC>
-                        <vBC>5.29</vBC>
-                        <pICMS>7.00</pICMS>
-                        <vICMS>0.37</vICMS>
-                    </ICMS00>
-                </ICMS>
-                <IPI>
-                    <cEnq>999</cEnq>
-                    <IPINT>
-                        <CST>03</CST>
-                    </IPINT>
-                </IPI>
-                <PIS>
-                    <PISAliq>
-                        <CST>01</CST>
-                        <vBC>4.21</vBC>
-                        <pPIS>1.65</pPIS>
-                        <vPIS>0.07</vPIS>
-                    </PISAliq>
-                </PIS>
-                <COFINS>
-                    <COFINSAliq>
-                        <CST>01</CST>
-                        <vBC>4.21</vBC>
-                        <pCOFINS>7.60</pCOFINS>
-                        <vCOFINS>0.32</vCOFINS>
-                    </COFINSAliq>
-                </COFINS>
-                <ICMSUFDest>
-                    <vBCUFDest>5.29</vBCUFDest>
-                    <vBCFCPUFDest>5.29</vBCFCPUFDest>
-                    <pFCPUFDest>0.00</pFCPUFDest>
-                    <pICMSUFDest>20.50</pICMSUFDest>
-                    <pICMSInter>7.00</pICMSInter>
-                    <pICMSInterPart>100.00</pICMSInterPart>
-                    <vFCPUFDest>0.00</vFCPUFDest>
-                    <vICMSUFDest>0.71</vICMSUFDest>
-                    <vICMSUFRemet>0.00</vICMSUFRemet>
-                </ICMSUFDest>
-            </imposto>
-            <impostoDevol>
-                <pDevol>0.00</pDevol>
-                <IPI>
-                    <vIPIDevol>0.00</vIPIDevol>
-                </IPI>
-            </impostoDevol>
         </det>
         <total>
             <ICMSTot>
 
-                <vBC>1940.31</vBC>
-                <vICMS>135.82</vICMS>
+                <vBC>0.00</vBC>
+                <vICMS>0.00</vICMS>
                 <vICMSDeson>0</vICMSDeson>
-                <vFCPUFDest>0.00</vFCPUFDest>
-                <vICMSUFDest>261.94</vICMSUFDest>
-                <vICMSUFRemet>0.00</vICMSUFRemet>
                 <vFCP>0.00</vFCP>
                 <vBCST>0</vBCST>
                 <vST>0</vST>
                 <vFCPST>0.00</vFCPST>
                 <vFCPSTRet>0.00</vFCPSTRet>
-                <vProd>1888.72</vProd>
+                <vProd>45.95</vProd>
                 <vFrete>0.00</vFrete>
                 <vSeg>0</vSeg>
                 <vDesc>0.00</vDesc>
                 <vII>0</vII>
                 <vIPI>0.00</vIPI>
                 <vIPIDevol>0.00</vIPIDevol>
-                <vPIS>25.45</vPIS>
-                <vCOFINS>117.23</vCOFINS>
-                <vOutro>51.59</vOutro>
-                <vNF>1940.31</vNF>
+                <vPIS>0.00</vPIS>
+                <vCOFINS>0.00</vCOFINS>
+                <vOutro>0.00</vOutro>
+                <vNF>45.95</vNF>
             </ICMSTot>
         </total>
         <transp>
-            <modFrete>1</modFrete>
-            <transporta>
-                <CNPJ>48740351001480</CNPJ>
-                <xNome>Braspress</xNome>
-                <IE>254995926</IE>
-
-                <xEnder>Rua Doutor Pedro Zimmermann, 1938</xEnder>
-                <xMun>Blumenau</xMun>
-                <UF>SC</UF>
-            </transporta>
-            <vol>
-                <qVol>1</qVol>
-                <esp>Volume</esp>
-                <pesoL>6.100</pesoL>
-                <pesoB>6.100</pesoB>
-            </vol>
+            <modFrete>9</modFrete>
         </transp>
         <pag>
             <detPag>
-                <tPag>90</tPag>
-                <vPag>0.00</vPag>
+                <tPag>01</tPag>
+                <vPag>45.95</vPag>
             </detPag>
         </pag>
-        <infAdic>
-            <obsCont xCampo="Pedido de Venda">
-                <xTexto>0012508180228, 0012508686037</xTexto>
-            </obsCont>
-        </infAdic>
         <infRespTec>
             <CNPJ>28977040000107</CNPJ>
             <xContato>Ricardo Schroeder</xContato>
