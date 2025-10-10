@@ -749,7 +749,7 @@
             </cobr>
         {% endif %}
         <pag>
-
+            {# Informações de pagamentos #}
             {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() in [2,4] or notaFiscal.cfopConfiguracao.tipoOperacao == 5 %}
                 <detPag>
                     <tPag>90</tPag>
@@ -826,6 +826,7 @@
                 {% endfor %}
             {% endif %}
         </pag>
+        {# Fim do pagamento#}
         {% if pedidoMarketplace == true %}
             <infIntermed>
                 <CNPJ>{{ notaFiscal.formaRecebimento.opcoesSefaz.cnpj|replace({'.':'','-':'','/':''}) }}</CNPJ>

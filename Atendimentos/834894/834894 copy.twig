@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
     {% set notaFiscal = notaFiscalXml.notaFiscal %}
-    {% set desoneraIcmsSuframa = notaFiscal.isDestinatarioBeneficioSuframa() %}
     <infNFe Id="NFe{{ notaFiscal.chave }}" versao="4.00">
         <ide>
             <cUF>{{ enderecoEmitente.cidade.estado.codigoIbge }}</cUF>
@@ -29,9 +28,8 @@
             {% endif %}
             <cMunFG>{{ enderecoEmitente.cidade.codigoIbgePai }}</cMunFG>
             <tpImp>1</tpImp>
-            {# contingencia EPEC tipo emissao 4 #}
-            {% if notaFiscal.serie.opcoes.contingenciaHabilitada == true %}
-                <tpEmis>4</tpEmis>
+            {% if tipoEmissao %}
+                <tpEmis>{{ tipoEmissao }}</tpEmis>
             {% else %}
                 <tpEmis>1</tpEmis>
             {% endif %}
@@ -42,14 +40,10 @@
             <indPres>{{ notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getIndicadorPresenca() }}</indPres>
             {% set pedidosCodigo = [] %}
             {% set pedidoMarketplace = false %}
-            {% set pedidoManual = false %}
             {% for i, pedidoNotaFiscal in pedidosNotaFiscal %}
                 {% set pedidosCodigo = pedidosCodigo|merge([pedidoNotaFiscal.pedido.codigo]) %}
                 {% if pedidoNotaFiscal.pedido.isOrigemMarketplace() %}
                     {% set pedidoMarketplace = true %}
-                {% endif %}
-                {% if pedidoNotaFiscal.pedido.isOrigemManual() %}
-                    {% set pedidoManual = true %}
                 {% endif %}
             {% endfor %}
             {% if pedidoMarketplace == true %}
@@ -64,7 +58,7 @@
             {% if notaFiscal.serie.opcoes.contingenciaHabilitada == true %}
                 <dhCont>{{ format_date_sefaz(notaFiscal.dataEmissao) }}</dhCont>
                 <xJust>Indisponibilidade na autorizadora padrao</xJust>
-            {% endif %}
+{% endif %}
             {% set showEnderecoDestinatario = true %}
             {% if notaFiscal.notaFiscalRelacionada %}
                 {% for notaRelacionada in notaFiscal.notaFiscalRelacionada %}
@@ -116,7 +110,7 @@
                 <xPais>Brasil</xPais>
                 <fone>{{ contatoPrincipalEmitente.contato|replace({'(':'',')':'','-':'',' ':''}) }}</fone>
             </enderEmit>
-            <IE>{{ notaFiscal.pessoaEmissao.inscricaoEstadual|trim|replace({'.':'','/':'','-':''}) }}</IE>
+            <IE>{{ notaFiscal.pessoaEmissao.inscricaoEstadual|replace({'.':'','/':'','-':''}) }}</IE>
             {% if inscricaoEstadualDestino %}
                 <IEST>{{ inscricaoEstadualDestino }}</IEST>
             {% endif %}
@@ -142,10 +136,10 @@
             <enderDest>
                 <xLgr>{{ limpa_texto(enderecoEntrega.logradouro)|trim|escape }}</xLgr>
                 <nro>{{ enderecoEntrega.numero|default('S/N') }}</nro>
-                {% if enderecoEntrega.complemento|length > 0 and notaFiscal.pessoa.tipo != 3 %}
+                {% if enderecoEntrega.complemento|length > 0 and notaFiscal.pessoa.tipo != 3%}
                     <xCpl>{{ limpa_texto(enderecoEntrega.complemento)|slice(0,60)|escape }}</xCpl>
                 {% elseif notaFiscal.pessoa.tipo == 3 %}
-                    <xCpl>{{ limpa_texto(enderecoEntrega.nomeCidade)|trim|escape ~', '~ limpa_texto(enderecoEntrega.nomeEstado)|trim|escape ~', '~ enderecoEntrega.pais.sigla }}</xCpl>
+                    <xCpl>{{ limpa_texto(enderecoEntrega.nomeCidade)|trim|escape ~', '~ limpa_texto(enderecoEntrega.nomeEstado)|trim|escape ~', '~ enderecoEntrega.pais.sigla}}</xCpl>
                 {% endif %}
                 <xBairro>{{ limpa_texto(enderecoEntrega.bairro)|trim|escape }}</xBairro>
                 {% if notaFiscal.pessoa.tipo == 3 %}
@@ -166,49 +160,16 @@
                     <fone>{{ contatoPrincipalDestinatario.contato|replace({'(':'',')':'','-':'',' ':''}) }}</fone>
                 {% endif %}
             </enderDest>
-            {% if (notaFiscal.pessoa.inscricaoEstadual is defined and notaFiscal.pessoa.inscricaoEstadual) and (notaFiscal.pessoa.tipo == 1 or notaFiscal.pessoa.tipo == 2) %}
+            {% if notaFiscal.pessoa.tipo == 2 and notaFiscal.pessoa.inscricaoEstadual %}
                 <indIEDest>1</indIEDest>
                 <IE>{{ notaFiscal.pessoa.inscricaoEstadual|replace({'.':'','/':'','-':''}) }}</IE>
             {% else %}
                 <indIEDest>9</indIEDest>
             {% endif %}
-            {% if desoneraIcmsSuframa %}
-                <ISUF>{{ notaFiscal.pessoa.suframa|replace({'.':'','/':'','-':''}) }}</ISUF>
-            {% endif %}
             {% if notaFiscal.pessoa.email|length > 0 and notaFiscal.pessoa.email|length <= 60 %}
                 <email>{{ notaFiscal.pessoa.email }}</email>
             {% endif %}
         </dest>
-        {% set mostraLocalRetirada = filial.opcoesGlobais.localRetirada %}
-        {# A nivel de configuracao da filial #}
-        {% if mostraLocalRetirada %}
-            {% set localRetiradaPessoa = pessoaLocalRetirada.pessoa %}
-            {% set localRetiradaPessoaEndereco = pessoaLocalRetirada.endereco %}
-            <retirada>
-                {% if localRetiradaPessoa.isJuridica %}
-                    <CNPJ>{{ localRetiradaPessoa.cpfCnpj|replace({'.':'','-':'','/':''}) }}</CNPJ>
-                {% else %}
-                    <CPF>{{ localRetiradaPessoa.cpfCnpj|replace({'.':'','-':'','/':''}) }}</CPF>
-                {% endif %}
-                <xNome>{{ localRetiradaPessoa.nome|escape }}</xNome>
-                <xLgr>{{ limpa_texto(localRetiradaPessoaEndereco.logradouro)|trim|escape }}</xLgr>
-                <nro>{{ localRetiradaPessoaEndereco.numero|default('S/N') }}</nro>
-                {% if localRetiradaPessoaEndereco.complemento|length > 0 %}
-                    <xCpl>{{ limpa_texto(localRetiradaPessoaEndereco.complemento)|slice(0,60)|escape }}</xCpl>
-                {% endif %}
-                <xBairro>{{ limpa_texto(localRetiradaPessoaEndereco.bairro)|trim|escape }}</xBairro>
-                <cMun>{{ localRetiradaPessoaEndereco.cidade.codigoIbgePai }}</cMun>
-                <xMun>{{ localRetiradaPessoaEndereco.cidade.nome }}</xMun>
-                <UF>{{ localRetiradaPessoaEndereco.cidade.estado.sigla }}</UF>
-                <CEP>{{ "%08d"|format(localRetiradaPessoaEndereco.cep) }}</CEP>
-                {% if pessoaLocalRetirada.contatoPrincipal %}
-                    <fone>{{ pessoaLocalRetirada.contatoPrincipal }}</fone>
-                {% endif %}
-                {% if localRetiradaPessoa.isJuridica and localRetiradaPessoa.inscricaoEstadual %}
-                    <IE>{{ localRetiradaPessoa.inscricaoEstadual|trim }}</IE>
-                {% endif %}
-            </retirada>
-        {% endif %}
         {% if notaFiscal.pessoa.tipo != 3 %}
             {% if showEnderecoDestinatario %}
                 <entrega>
@@ -217,7 +178,6 @@
                     {% else %}
                         <CPF>{{ notaFiscal.pessoa.cpfCnpj|replace({'.':'','-':'','/':''}) }}</CPF>
                     {% endif %}
-                    <xNome>{{ enderecoEntrega.nomeDestinatario|escape }}</xNome>
                     <xLgr>{{ limpa_texto(enderecoEntrega.logradouro)|trim|escape }}</xLgr>
                     <nro>{{ enderecoEntrega.numero|default('S/N') }}</nro>
                     {% if enderecoEntrega.complemento|length > 0 %}
@@ -228,9 +188,6 @@
                     <xMun>{{ enderecoEntrega.cidade.nome }}</xMun>
                     <UF>{{ enderecoEntrega.cidade.estado.sigla }}</UF>
                     <CEP>{{ "%08d"|format(enderecoEntrega.cep) }}</CEP>
-                    {% if notaFiscal.pessoa.inscricaoEstadual %}
-                        <IE>{{ notaFiscal.pessoa.inscricaoEstadual|replace({'.':'','/':'','-':''}) }}</IE>
-                    {% endif %}
                 </entrega>
             {% endif %}
         {% endif %}
@@ -272,32 +229,8 @@
                         {% set cest_codigo = notaFiscalItem.cest.codigo %}
                         <CEST>{{ "%07d"|format(cest_codigo) }}</CEST>
                     {% endif %}
-                    {% set arrBeneficioFiscal = notaFiscalItem.getInformacoesGerais().getCodigoBeneficioFiscalAsArray() %}
-                    {% if arrBeneficioFiscal is not empty %}
-                        {% for codBeneficio in arrBeneficioFiscal %}
-                            {% set beneficioFiscal = get_param_beneficio_fiscal(codBeneficio) %}
-                            {% set infoBeneficio = beneficioFiscal.getInformacoes() %}
-                            {% set isCreditoPresumido = beneficioFiscal.isCreditoPresumido() %}
-
-                            {% if not isCreditoPresumido %}
-                                <cBenef>{{ codBeneficio }}</cBenef>
-                            {% else %}
-                                {% set finalidadeUsagCred = notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() in [1, 2] %}
-                                {% if finalidadeUsagCred %}
-                                    {% set pCredPresumido = infoBeneficio.findPercentualCreditoByAliquota(
-                                        get_param_value_item_by_nome_logico('ALIQ_ICMS')
-                                    ) %}
-                                    {% if pCredPresumido is not null %}
-                                        {% set vCredPresumido = (get_param_value_item_by_nome_logico('VLR_ICMS') * (pCredPresumido / 100))|round(2) %}
-                                        <gCred>
-                                            <cCredPresumido>{{ codBeneficio }}</cCredPresumido>
-                                            <pCredPresumido>{{ pCredPresumido|number_format(2, '.', '') }}</pCredPresumido>
-                                            <vCredPresumido>{{ vCredPresumido|number_format(2, '.', '') }}</vCredPresumido>
-                                        </gCred>
-                                    {% endif %}
-                                {% endif %}
-                            {% endif %}
-                        {% endfor %}
+                    {% if notaFiscalItem.getInformacoesGerais().getCodigoBeneficioFiscal() %}
+                        <cBenef>{{ notaFiscalItem.getInformacoesGerais().getCodigoBeneficioFiscal() }}</cBenef>
                     {% endif %}
                     <CFOP>{{ notaFiscalItem.cfop.codigo }}</CFOP>
                     <uCom>{{ notaFiscalItem.unidadeMedida.sigla }}</uCom>
@@ -309,49 +242,17 @@
                     <qTrib>{{ notaFiscalItem.quantidade }}</qTrib>
                     <vUnTrib>{{ notaFiscalItem.valorUnitario }}</vUnTrib>
                     {% if notaFiscalItem.valorFrete > 0 %}
-                        <vFrete>{{ notaFiscalItem.valorFrete|number_format(2,'.','') }}</vFrete>
+                        <vFrete>{{ notaFiscalItem.valorFrete }}</vFrete>
                     {% endif %}
                     {% if notaFiscalItem.valorDesconto > 0 %}
-                        <vDesc>{{ notaFiscalItem.valorDesconto|number_format(2,'.','') }}</vDesc>
+                        <vDesc>{{ notaFiscalItem.valorDesconto }}</vDesc>
                     {% endif %}
                     {% if notaFiscalItem.valorOutrasDespesas > 0 %}
                         <vOutro>{{ notaFiscalItem.valorOutrasDespesas }}</vOutro>
                     {% endif %}
                     <indTot>1</indTot>
-                     {% if declaracaoImportacao %}
-                        <DI>
-                            <nDI>{{ declaracaoImportacao.numero }}</nDI>
-                            <dDI>{{ declaracaoImportacao.data|date("Y-m-d") }}</dDI>
-                            <xLocDesemb>{{ declaracaoImportacao.localDesembaraco }}</xLocDesemb>
-                            <UFDesemb>{{ declaracaoImportacao.ufDesembaraco.sigla }}</UFDesemb>
-                            <dDesemb>{{ declaracaoImportacao.dataDesembaraco|date("Y-m-d") }}</dDesemb>
-                            <tpViaTransp>{{ declaracaoImportacao.viaTransporte }}</tpViaTransp>
-                            <vAFRMM>{{ declaracaoImportacao.valorAFRMM ? declaracaoImportacao.valorAFRMM|number_format(2,'.','') : '0.00' }}</vAFRMM>
-                            <tpIntermedio>{{ declaracaoImportacao.formaImportacao }}</tpIntermedio>
-                            <cExportador>{{ declaracaoImportacao.codigoExportador }}</cExportador>
-                            {% if  notaFiscalItem.getInformacoesGerais().getAdicaoImportacao() %}
-                                {% set adicaoItem = declaracaoImportacao.getAdicaoByParameter(notaFiscalItem.getInformacoesGerais().getAdicaoImportacao()) %}
-                                 {% if adicaoItem %}
-                                    <adi>
-                                        <nAdicao>{{ adicaoItem.getNumero() }}</nAdicao>
-                                        <nSeqAdic>{{ adicaoItem.getSequencial() }}</nSeqAdic>
-                                        <cFabricante>{{ adicaoItem.getCodigoFabricante() }}</cFabricante>
-                                        {% if adicaoItem.getValorDesconto() %}
-                                            <vDescDI>{{ adicaoItem.getValorDesconto() }}</vDescDI>
-                                        {% endif %}
-                                        {% if adicaoItem.getNumeroDrawback() %}
-                                            <nDraw>{{ adicaoItem.getNumeroDrawback() }}</nDraw>
-                                        {% endif %}
-                                    </adi>
-                                {% endif %}
-                            {% endif %}
-                        </DI>
-                    {% endif %}
                     {% if pedidosCodigo|length > 0 %}
                         <xPed>{{ pedidosCodigo|join(', ') }}</xPed>
-                    {% endif %}
-                    {% if notaFiscalItem.getInformacoesGerais().getCodigoFci()|length > 0 %}
-                        <nFCI>{{ notaFiscalItem.getInformacoesGerais().getCodigoFci() }}</nFCI>
                     {% endif %}
                     {# Grupo de Combustivel  #}
                     {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getCfopCombustivel() and  notaFiscalItem.produtoDerivacao.informacoes.codigoANP %}
@@ -373,7 +274,7 @@
                     <ICMS>
                         {% set situacao_tributaria_icms = get_param_value_item_by_nome_logico('ICMS_SITUACAO_TRIB')|default(false) %}
                         {% set valor_credito_icms = 0 %}
-                        {% if  filial.opcoesGlobais.aproveitamentoCreditoICMS > 0 %}
+                        {%  if  filial.opcoesGlobais.aproveitamentoCreditoICMS > 0 %}
                             {% set valor_credito_icms = notaFiscal.valorTotal * (filial.opcoesGlobais.aproveitamentoCreditoICMS / 100) %}
                         {% endif %}
                         {% if situacao_tributaria_icms == 'false' %}
@@ -382,7 +283,7 @@
                                 <CSOSN>102</CSOSN>
                             </ICMSSN102>
                             {# Quando for CRT 2 geralmente utiliza as mesmas situacoes tributarias do CRT 3 #}
-                        {% elseif filial.opcoesGlobais.crt in [1, 4] %}
+                        {% elseif filial.opcoesGlobais.crt == 1 %}
                             {% if situacao_tributaria_icms in [102,103,300,400] %}
                                 <ICMSSN102>
                                     <orig>{{ get_param_value_item_by_nome_logico('ORIGEM_ICMS') }}</orig>
@@ -393,7 +294,7 @@
                                     <orig>{{ get_param_value_item_by_nome_logico('ORIGEM_ICMS') }}</orig>
                                     <CSOSN>{{ situacao_tributaria_icms }}</CSOSN>
                                     <pCredSN>{{ filial.opcoesGlobais.aproveitamentoCreditoICMS }}</pCredSN>
-                                    <vCredICMSSN>{{ valor_credito_icms|number_format(2,'.','') }}</vCredICMSSN>
+                                    <vCredICMSSN>{{ valor_credito_icms|number_format(2,'.','')  }}</vCredICMSSN>
                                 </ICMSSN{{ situacao_tributaria_icms }}>
                             {% elseif situacao_tributaria_icms == '900' %}
                                 <ICMSSN{{ situacao_tributaria_icms }}>
@@ -404,27 +305,7 @@
                                     <pICMS>{{ get_param_value_item_by_nome_logico('ALIQ_ICMS') }}</pICMS>
                                     <vICMS>{{ get_param_value_item_by_nome_logico('VLR_ICMS') }}</vICMS>
                                     <pCredSN>{{ filial.opcoesGlobais.aproveitamentoCreditoICMS }}</pCredSN>
-                                    <vCredICMSSN>{{ valor_credito_icms|number_format(2,'.','') }}</vCredICMSSN>
-                                </ICMSSN{{ situacao_tributaria_icms }}>
-                            {% elseif configFilialParametros.getOpcoesICMS().getUtilizaICMSEfetivo() and situacao_tributaria_icms == '500' %}
-                                <ICMSSN{{ situacao_tributaria_icms }}>
-                                    <orig>{{ get_param_value_item_by_nome_logico('ORIGEM_ICMS') }}</orig>
-                                    <CST>{{ situacao_tributaria_icms }}</CST>
-                                    <pRedBCEfet>{{ get_param_value_item_by_nome_logico('PERC_REDUCAO_BASE_ICMS_EFETIVA') }}</pRedBCEfet>
-                                    <vBCEfet>{{ get_param_value_item_by_nome_logico('VLR_BASE_ICMS_EFETIVA') }}</vBCEfet>
-                                    <pICMSEfet>{{ get_param_value_item_by_nome_logico('ALIQ_ICMS_EFETIVA') }}</pICMSEfet>
-                                    <vICMSEfet>{{ get_param_value_item_by_nome_logico('VLR_ICMS_EFETIVO') }}</vICMSEfet>
-                                </ICMSSN{{ situacao_tributaria_icms }}>
-                            {% elseif situacao_tributaria_icms in  ['202'] %}
-                                <ICMSSN{{ situacao_tributaria_icms }}>
-                                    <orig>{{ get_param_value_item_by_nome_logico('ORIGEM_ICMS') }}</orig>
-                                    <CSOSN>{{ situacao_tributaria_icms }}</CSOSN>
-                                    <modBCST>4</modBCST>
-                                    <pMVAST>{{ get_param_value_item_by_nome_logico('ICMS_ST_PERC_MVA')|number_format(2,'.','') }}</pMVAST>
-                                    <pRedBCST>{{ get_param_value_item_by_nome_logico('ICMS_ST_PERC_REDUCAO')|number_format(2,'.','') }}</pRedBCST>
-                                    <vBCST>{{ get_param_value_item_by_nome_logico('ICMS_ST_BASE_CALCULO')|number_format(2,'.','') }}</vBCST>
-                                    <pICMSST>{{ get_param_value_item_by_nome_logico('ICMS_ST_ALIQUOTA')|number_format(2,'.','') }}</pICMSST>
-                                    <vICMSST>{{ get_param_value_item_by_nome_logico('ICMS_ST_VALOR')|number_format(2,'.','') }}</vICMSST>
+                                    <vCredICMSSN>{{ valor_credito_icms|number_format(2,'.','')  }}</vCredICMSSN>
                                 </ICMSSN{{ situacao_tributaria_icms }}>
                             {% else %}
                                 <ICMSSN{{ situacao_tributaria_icms }}>
@@ -448,72 +329,15 @@
                                     <CST>20</CST>
                                     <modBC>3</modBC>
                                     <pRedBC>{{ get_param_value_item_by_nome_logico('PERC_REDUCAO_BASE_CALCULO_ICMS') }}</pRedBC>
-                                    <vBC>{{ ((get_param_value_item_by_nome_logico('VLR_BASE_ICMS'))|round(2)|number_format(2,'.','')) }}</vBC>
+                                    <vBC>{{ ((get_param_value_item_by_nome_logico('VLR_BASE_ICMS') - get_param_value_item_by_nome_logico('VLR_ICMS_DESONERADO'))|round(2)|number_format(2,'.','')) }}</vBC>
                                     <pICMS>{{ get_param_value_item_by_nome_logico('ALIQ_ICMS') }}</pICMS>
                                     <vICMS>{{ get_param_value_item_by_nome_logico('VLR_ICMS') }}</vICMS>
                                 </ICMS20>
-                            {% elseif situacao_tributaria_icms == '51' %}
-                                {% set pDiferimento = 0.00 %}
-                                {% set icmsDiferido = 0.00 %}
-                                {% if notaFiscalItem.getInformacoesGerais().getCodigoBeneficioFiscal() %}
-                                    {% set beneficioFiscal = get_param_beneficio_fiscal(notaFiscalItem.getInformacoesGerais().getCodigoBeneficioFiscal()) %}
-                                    {% set pDiferimento = beneficioFiscal.getInformacoes().findPercentualDiferimentoByAliquota(get_param_value_item_by_nome_logico('ALIQ_ICMS')) %}
-                                    {% set icmsDiferido = (get_param_value_item_by_nome_logico('VLR_ICMS') * (pDiferimento / 100))|round(2)|number_format(2,'.','') %}
-                                {% endif %}
-                                <ICMS51>
-                                    <orig>{{ get_param_value_item_by_nome_logico('ORIGEM_ICMS') }}</orig>
-                                    <CST>51</CST>
-                                    <modBC>3</modBC>
-                                    <pRedBC>{{ get_param_value_item_by_nome_logico('PERC_REDUCAO_BASE_CALCULO_ICMS') }}</pRedBC>
-                                    <vBC>{{ ((get_param_value_item_by_nome_logico('VLR_BASE_ICMS'))|round(2)|number_format(2,'.','')) }}</vBC>
-                                    <pICMS>{{ get_param_value_item_by_nome_logico('ALIQ_ICMS') }}</pICMS>
-                                    <vICMSOp>{{ get_param_value_item_by_nome_logico('VLR_ICMS') }}</vICMSOp>
-                                    <pDif>{{ pDiferimento|round(2)|number_format(2,'.','') }}</pDif>
-                                    <vICMSDif>{{ icmsDiferido|round(2)|number_format(2,'.','') }}</vICMSDif>
-                                    <vICMS>{{ (get_param_value_item_by_nome_logico('VLR_ICMS') -  icmsDiferido)|round(2)|number_format(2,'.','') }}</vICMS>
-                                </ICMS51>
-                            {% elseif situacao_tributaria_icms in  ['10', '30', '70'] %}
-                                <ICMS{{ situacao_tributaria_icms }}>
-                                    <orig>{{ get_param_value_item_by_nome_logico('ORIGEM_ICMS') }}</orig>
-                                    <CST>{{ situacao_tributaria_icms }}</CST>
-                                    <modBC>3</modBC>
-                                    <vBC>{{ get_param_value_item_by_nome_logico('VLR_BASE_ICMS')|number_format(2,'.','') }}</vBC>
-                                    <pICMS>{{ get_param_value_item_by_nome_logico('ALIQ_ICMS')|number_format(2,'.','') }}</pICMS>
-                                    <vICMS>{{ get_param_value_item_by_nome_logico('VLR_ICMS')|number_format(2,'.','') }}</vICMS>
-                                    <modBCST>4</modBCST>
-                                    <pMVAST>{{ get_param_value_item_by_nome_logico('ICMS_ST_PERC_MVA')|number_format(2,'.','') }}</pMVAST>
-                                    <pRedBCST>{{ get_param_value_item_by_nome_logico('ICMS_ST_PERC_REDUCAO')|number_format(2,'.','') }}</pRedBCST>
-                                    <vBCST>{{ get_param_value_item_by_nome_logico('ICMS_ST_BASE_CALCULO')|number_format(2,'.','') }}</vBCST>
-                                    <pICMSST>{{ get_param_value_item_by_nome_logico('ICMS_ST_ALIQUOTA')|number_format(2,'.','') }}</pICMSST>
-                                    <vICMSST>{{ get_param_value_item_by_nome_logico('ICMS_ST_VALOR')|number_format(2,'.','') }}</vICMSST>
-                                    {% if situacao_tributaria_icms in ['30'] %}
-                                        {% if desoneraIcmsSuframa %}
-                                            {# 7 - SUFRAMA -> Desonera o ICMS original, que seria pago ao governo caso nao tivesse a SUFRAMA #}
-                                            <vICMSDeson>{{ (notaFiscalItem.informacoesGerais.descontoIcmsSuframa|number_format(2,'.','')) }}</vICMSDeson>
-                                            <motDesICMS>7</motDesICMS>
-                                        {% endif %}
-                                    {% endif %}
-                                </ICMS{{ situacao_tributaria_icms }}>
-                            {% elseif situacao_tributaria_icms in ['40','41','50'] %}
+                            {% elseif situacao_tributaria_icms in ['30','40','41','50'] %}
                                 <ICMS40>
                                     <orig>{{ get_param_value_item_by_nome_logico('ORIGEM_ICMS') }}</orig>
                                     <CST>{{ situacao_tributaria_icms }}</CST>
-
-                                    {% if desoneraIcmsSuframa %}
-                                        {# 7 - SUFRAMA -> Desonera o ICMS original, que seria pago ao governo caso nao tivesse a SUFRAMA #}
-                                        <vICMSDeson>{{ (notaFiscalItem.informacoesGerais.descontoIcmsSuframa|number_format(2,'.','')) }}</vICMSDeson>
-                                        <motDesICMS>7</motDesICMS>
-                                    {% endif %}
                                 </ICMS40>
-                            {% elseif configFilialParametros.getOpcoesICMS().getUtilizaICMSEfetivo() and situacao_tributaria_icms == '60' %}
-                                <ICMS{{ situacao_tributaria_icms }}>
-                                    <orig>{{ get_param_value_item_by_nome_logico('ORIGEM_ICMS') }}</orig>
-                                    <CST>{{ situacao_tributaria_icms }}</CST>
-                                    <pRedBCEfet>{{ get_param_value_item_by_nome_logico('PERC_REDUCAO_BASE_ICMS_EFETIVA') }}</pRedBCEfet>
-                                    <vBCEfet>{{ get_param_value_item_by_nome_logico('VLR_BASE_ICMS_EFETIVA') }}</vBCEfet>
-                                    <pICMSEfet>{{ get_param_value_item_by_nome_logico('ALIQ_ICMS_EFETIVA') }}</pICMSEfet>
-                                    <vICMSEfet>{{ get_param_value_item_by_nome_logico('VLR_ICMS_EFETIVO') }}</vICMSEfet>
-                                </ICMS{{ situacao_tributaria_icms }}>
                             {% else %}
                                 <ICMS{{ situacao_tributaria_icms }}>
                                     <orig>{{ get_param_value_item_by_nome_logico('ORIGEM_ICMS') }}</orig>
@@ -524,14 +348,13 @@
                     </ICMS>
                     {% set cst_ipi = get_param_value_item_by_nome_logico('IPI_SITUACAO_TRIB') %}
                     {% if cst_ipi in ['00','49','50','99'] %}
-                        {% set devolucao = notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() == 4 %}
                         <IPI>
                             <cEnq>999</cEnq>
                             <IPITrib>
                                 <CST>{{ cst_ipi }}</CST>
-                                <vBC>{{ devolucao ? '0.00' :  get_param_value_item_by_nome_logico('VLR_BASE_IPI') }}</vBC>
+                                <vBC>{{ get_param_value_item_by_nome_logico('VLR_BASE_IPI') }}</vBC>
                                 <pIPI>{{ get_param_value_item_by_nome_logico('ALIQ_IPI') }}</pIPI>
-                                <vIPI>{{ devolucao ? '0.00' : get_param_value_item_by_nome_logico('VLR_IPI') }}</vIPI>
+                                <vIPI>{{ get_param_value_item_by_nome_logico('VLR_IPI') }}</vIPI>
                             </IPITrib>
                         </IPI>
                     {% elseif cst_ipi in ['55'] %}
@@ -624,7 +447,7 @@
                     {% endif %}
                 </imposto>
                 {% set valor_ipi_item = get_param_value_item_by_nome_logico('VLR_IPI') %}
-                {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() == 4 %}
+                {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() == 4 and (notaFiscal.cfop.codigo != 6202 and notaFiscal.cfop.codigo != 5202) %}
                     <impostoDevol>
                         <pDevol>0.00</pDevol>
                         <IPI>
@@ -632,7 +455,7 @@
                         </IPI>
                     </impostoDevol>
                 {% endif %}
-                {% if mostraObservacoesProduto and notaFiscalItem.infoAdicional is defined and notaFiscalItem.infoAdicional|length > 0 %}
+                {% if notaFiscalItem.infoAdicional is defined and notaFiscalItem.infoAdicional|length > 0 %}
                     <infAdProd>{{ notaFiscalItem.infoAdicional }}</infAdProd>
                 {% endif %}
             </det>
@@ -640,40 +463,26 @@
         <total>
             <ICMSTot>
                 {{ set_nota_fiscal(notaFiscal.id) }}
-
-                {% if desoneraIcmsSuframa %}
-                    <vBC>0</vBC>
-                    <vICMS>0</vICMS>
-                    <vICMSDeson>{{ (notaFiscal.informacoes.descontoIcmsSuframa|number_format(2,'.','')) }}</vICMSDeson>
-                {% else %}
-                    <vBC>{{ get_param_value_by_nome_logico('VLR_TOTAL_BASE_ICMS') }}</vBC>
-                    <vICMS>{{ get_param_value_by_nome_logico('VLR_TOTAL_ICMS') }}</vICMS>
-                    <vICMSDeson>0</vICMSDeson>
-                {% endif %}
-
+                <vBC>{{ get_param_value_by_nome_logico('VLR_TOTAL_BASE_ICMS') }}</vBC>
+                <vICMS>{{ get_param_value_by_nome_logico('VLR_TOTAL_ICMS') }}</vICMS>
+                <vICMSDeson>0</vICMSDeson>
                 {% if partilhaICMS %}
                     <vFCPUFDest>{{ get_param_value_by_nome_logico('VLR_TOTAL_ICMS_FCP_DESTINO') }}</vFCPUFDest>
                     <vICMSUFDest>{{ get_param_value_by_nome_logico('VLR_TOTAL_ICMS_DESTINO') }}</vICMSUFDest>
                     <vICMSUFRemet>{{ get_param_value_by_nome_logico('VLR_TOTAL_ICMS_PARTILHA_DESTINO') }}</vICMSUFRemet>
                 {% endif %}
                 <vFCP>0.00</vFCP>
-                {% set valor_icms_st = get_param_value_by_nome_logico('ICMS_ST_VALOR_TOTAL') %}
-                {% if valor_icms_st %}
-                    <vBCST>{{ get_param_value_by_nome_logico('ICMS_ST_BASE_CALCULO_TOTAL') }}</vBCST>
-                    <vST>{{ valor_icms_st }}</vST>
-                {% else %}
-                    <vBCST>0</vBCST>
-                    <vST>0</vST>
-                {% endif %}
+                <vBCST>0</vBCST>
+                <vST>0</vST>
                 <vFCPST>0.00</vFCPST>
                 <vFCPSTRet>0.00</vFCPSTRet>
                 <vProd>{{ notaFiscal.valorTotalProduto|number_format(2,'.','') }}</vProd>
-                <vFrete>{{ notaFiscal.valorTotalFrete|number_format(2,'.','') }}</vFrete>
+                <vFrete>{{ notaFiscal.valorTotalFrete }}</vFrete>
                 <vSeg>0</vSeg>
-                <vDesc>{{ notaFiscal.valorDesconto|number_format(2,'.','') }}</vDesc>
+                <vDesc>{{ notaFiscal.valorDesconto }}</vDesc>
                 <vII>0</vII>
                 {% set valor_ipi = get_param_value_by_nome_logico('VLR_TOTAL_IPI') %}
-                {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() == 4 %}
+                {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() == 4 and (notaFiscal.cfop.codigo != 6202 and notaFiscal.cfop.codigo != 5202) %}
                     <vIPI>0.00</vIPI>
                     <vIPIDevol>{{ valor_ipi ? valor_ipi : '0.00' }}</vIPIDevol>
                 {% else %}
@@ -684,7 +493,12 @@
                 <vCOFINS>{{ get_param_value_by_nome_logico('VLR_TOTAL_COFINS') }}</vCOFINS>
                 <vOutro>{{ notaFiscal.valorOutrasDespesas }}</vOutro>
                 {% set valor_total = notaFiscal.valorTotal %}
+                
+                {% if valor_ipi > 0 and (notaFiscal.cfop.codigo == 6202 and notaFiscal.cfop.codigo == 5202) %}
+                <vNF>{{ (valor_total+valor_ipi)|number_format(2,'.','') }}</vNF>
+                 {% else %}
                 <vNF>{{ valor_total|number_format(2,'.','') }}</vNF>
+                {% endif %}
                 {% if filial.opcoesGlobais.tributoFederal and filial.opcoesGlobais.tributoEstadual %}
                     <vTotTrib>{{ (valor_trib_estadual + valor_trib_federal)|number_format(2,'.','') }}</vTotTrib>
                 {% endif %}
@@ -719,37 +533,15 @@
                         <esp>Caixa</esp>
                     {% endif %}
                     {% if notaFiscal.notaFiscalVolume.pesoLiquido > 0 %}
-                        <pesoL>{{ notaFiscal.notaFiscalVolume.pesoLiquido|number_format(3,'.','') }}</pesoL>
+                        <pesoL>{{ notaFiscal.notaFiscalVolume.pesoLiquido }}</pesoL>
                     {% endif %}
                     {% if notaFiscal.notaFiscalVolume.pesoBruto > 0 %}
-                        <pesoB>{{ notaFiscal.notaFiscalVolume.pesoBruto|number_format(3,'.','') }}</pesoB>
+                        <pesoB>{{ notaFiscal.notaFiscalVolume.pesoBruto }}</pesoB>
                     {% endif %}
                 </vol>
             {% endif %}
         </transp>
-        {% set condPagamento = notaFiscal.condicaoPagamento %}
-        {% set condicao = notaFiscal.cfopConfiguracao.getTipoOperacao() in [1,2] and condPagamento and not condPagamento.isAVista and not condPagamento.isUmaVez  %}
-        {% if condicao %}
-            <cobr>
-                <fat>
-                    {% set valor_total = notaFiscal.valorTotal + notaFiscal.valorDesconto %}
-                    {% set valor_pago = notaFiscal.valorPago %}
-                    <nFat>{{ notaFiscal.numero }}</nFat>
-                    <vOrig>{{ valor_total|number_format(2,'.','') }}</vOrig>
-                    <vDesc>{{ notaFiscal.valorDesconto|number_format(2,'.','') }}</vDesc>
-                    <vLiq>{{ valor_pago|number_format(2,'.','') }}</vLiq>
-                </fat>
-                {% for parcelaNf in parcelasNotaFiscal %}
-                    <dup>
-                        <nDup>{{ zord_str_pad(parcelaNf['parcela'], 3, '0') }}</nDup>
-                        <dVenc>{{ parcelaNf['dataVencimento']|date('Y-m-d') }}</dVenc>
-                        <vDup>{{ parcelaNf['valorParcela']|number_format(2,'.','') }}</vDup>
-                    </dup>
-                {% endfor %}
-            </cobr>
-        {% endif %}
         <pag>
-
             {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() in [2,4] or notaFiscal.cfopConfiguracao.tipoOperacao == 5 %}
                 <detPag>
                     <tPag>90</tPag>
@@ -780,29 +572,12 @@
                         {% endfor %}
                     {% else %}
                         <detPag>
-                        {% set tpag = pagamento.formaPagamento %}
-                        {% set pedidoMarketplace = true %}
-                        {% if pedidoMarketplace == true and tpag == '01' %}
-                           <tPag> 03 </tPag>
-                        {% else %}
-                           <tPag>{{ pagamento.formaPagamento }}</tPag>
-                        {% endif %}
+                            <tPag>{{ pagamento.formaPagamento }}</tPag>
                             {% if pagamento.formaPagamento == 90 %}
                                 <vPag>0.00</vPag>
                             {% else %}
-                                {% if pagamento.formaPagamento == 99 and pagamento.nomeFormaPagamento is not empty %}
-                                    <xPag>{{ pagamento.nomeFormaPagamento }}</xPag>
-                                {% endif %}
                                 <vPag>{{ pagamento.valor|number_format(2,'.','') }}</vPag>
-                                {% set semIntegradoraPagamento =
-                                    (pagamento.formaPagamento == '17' and pagamento.cartoes|length < 1)
-                                    or (pedidoManual and pagamento.formaPagamento in ['03', '04'])
-                                %}
-                                {% if semIntegradoraPagamento %}
-                                    <card>
-                                        <tpIntegra>2</tpIntegra>
-                                    </card>
-                                {% elseif pagamento.cartoes|length > 0 %}
+                                {% if pagamento.cartoes|length > 0 %}
                                     <card>
                                         {% for cartao in pagamento.cartoes %}
                                             <tpIntegra>{{ cartao['tipoIntegracao'] }}</tpIntegra>
@@ -878,10 +653,6 @@
                 <xContato>{{ responsavelTecnico.getContato() }}</xContato>
                 <email>{{ responsavelTecnico.getEmail() }}</email>
                 <fone>{{ responsavelTecnico.getTelefone()|replace({'(':'',')':'','-':'',' ':''}) }}</fone>
-                {% if csrt and csrt['id'] %}
-                    <idCSRT>{{ zord_str_pad(csrt['id'], 2, '0') }}</idCSRT>
-                    <hashCSRT>{{ csrt['hash'] }}</hashCSRT>
-                {% endif %}
             </infRespTec>
         {% endif %}
     </infNFe>

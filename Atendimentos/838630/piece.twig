@@ -1,0 +1,87 @@
+{# Início do pagamento #}
+<pag>
+    {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() in [2,4] or notaFiscal.cfopConfiguracao.tipoOperacao == 5 %}
+        <detPag>
+            <tPag>90</tPag>
+            <vPag>0.00</vPag>
+        </detPag>
+    {% else %}
+        {% for pagamento in pagamentos %}
+            {% if pagamento.cartoes|length > 1 %}
+                {% for cartao in pagamento.cartoes %}
+                    <detPag>
+                        <tPag>{{ pagamento.formaPagamento }}</tPag>
+                        <vPag>{{ cartao.valor|number_format(2,'.','') }}</vPag>
+                        <card>
+                            <tpIntegra>{{ cartao['tipoIntegracao'] }}</tpIntegra>
+                            {% if infoRecebimentoSefaz and  infoRecebimentoSefaz['cnpj'] %}
+                                <CNPJ>{{ infoRecebimentoSefaz['cnpj'] }}</CNPJ>
+                            {% endif %}
+                            {% if cartao['bandeira'] is not null %}
+                                <tBand>{{ cartao['bandeira'] }}</tBand>
+                            {% endif %}
+                            {% if cartao['codigoAuth'] is not null %}
+                                {% set codTransaction = cartao['codigoAuth'] %}
+                                {% set transaction = codTransaction |split('-')[1]|default(codTransaction) %}
+                                <cAut>{{ transaction|slice(-20) }}</cAut>
+                            {% endif %}
+                        </card>
+                    </detPag>
+                {% endfor %}
+            {% elseif pagamento.formaPagamento|length is null %}
+                <detPag>
+                    <tPag>03</tPag>
+                    <vPag>{{ cartao.valor|number_format(2,'.','') }}</vPag>
+                    <card>
+                        <tpIntegra>2</tpIntegra>
+                    </card>
+                </detPag>
+            {% else %}
+                <detPag>
+                {% set tpag = pagamento.formaPagamento %}
+                {% set pedidoMarketplace = true %}
+                {% if pedidoMarketplace == true and tpag == '01' %}
+                    <tPag> 03 </tPag>
+                {% else %}
+                    <tPag>{{ pagamento.formaPagamento }}</tPag>
+                {% endif %}
+                    {% if pagamento.formaPagamento == 90 %}
+                        <vPag>0.00</vPag>
+                    {% else %}
+                        {% if pagamento.formaPagamento == 99 and pagamento.nomeFormaPagamento is not empty %}
+                            <xPag>{{ pagamento.nomeFormaPagamento }}</xPag>
+                        {% endif %}
+                        <vPag>{{ pagamento.valor|number_format(2,'.','') }}</vPag>
+                        {% set semIntegradoraPagamento =
+                            (pagamento.formaPagamento == '17' and pagamento.cartoes|length < 1)
+                            or (pedidoManual and pagamento.formaPagamento in ['03', '04'])
+                        %}
+                        {% if semIntegradoraPagamento %}
+                            <card>
+                                <tpIntegra>2</tpIntegra>
+                            </card>
+                        {% elseif pagamento.cartoes|length > 0 %}
+                            <card>
+                                {% for cartao in pagamento.cartoes %}
+                                    <tpIntegra>{{ cartao['tipoIntegracao'] }}</tpIntegra>
+                                    {% if infoRecebimentoSefaz and  infoRecebimentoSefaz['cnpj'] %}
+                                        <CNPJ>{{ infoRecebimentoSefaz['cnpj'] }}</CNPJ>
+                                    {% endif %}
+                                    {% if cartao['bandeira'] is not null %}
+                                        <tBand>{{ cartao['bandeira'] }}</tBand>
+                                    {% endif %}
+                                    {% if cartao['codigoAuth'] is not null %}
+                                        {% set codTransaction = cartao['codigoAuth'] %}
+                                        {% set transaction = codTransaction |split('-')[1]|default(codTransaction) %}
+                                        <cAut>{{ transaction|slice(-20) }}</cAut>
+                                    {% endif %}
+                                {% endfor %}
+                            </card>
+                        {% endif %}
+                    {% endif %}
+                </detPag>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</pag>
+{# Fim dos pagamentos #}
