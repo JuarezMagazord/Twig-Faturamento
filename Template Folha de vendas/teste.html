@@ -1,218 +1,132 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-    <infNFe Id="NFe41250923835584000110550050000000081000001156" versao="4.00">
-        <ide>
-            <cUF>41</cUF>
-            <cNF>00000115</cNF>
-            <natOp>Venda Merc.Adq.Rec.Terc.Dest.Nao Contrib</natOp>
-            <mod>55</mod>
-            <serie>5</serie>
-            <nNF>8</nNF>
-            <dhEmi>2025-09-25T14:59:54-03:00</dhEmi>
-            <dhSaiEnt>2025-09-25T14:59:54-03:00</dhSaiEnt>
-            <tpNF>1</tpNF>
-            <idDest>2</idDest>
-            <cMunFG>4113700</cMunFG>
-            <tpImp>1</tpImp>
-            <tpEmis>1</tpEmis>
-            <cDV>6</cDV>
-            <tpAmb>1</tpAmb>
-            <finNFe>1</finNFe>
-            <indFinal>1</indFinal>
-            <indPres>2</indPres>
-            <indIntermed>0</indIntermed>
-            <procEmi>0</procEmi>
-            <verProc>Magazord 1.0</verProc>
-        </ide>
-        <emit>
-            <CNPJ>23835584000110</CNPJ>
-            <xNome>Neopecuaria Ltda</xNome>
-            <xFant>Neopecuaria</xFant>
-            <enderEmit>
-                <xLgr>Rua Paraíba</xLgr>
-                <nro>660</nro>
-                <xCpl>SL 03</xCpl>
-                <xBairro>Jardim Higienópolis</xBairro>
-                <cMun>4113700</cMun>
-                <xMun>Londrina</xMun>
-                <UF>PR</UF>
-                <CEP>86020090</CEP>
-                <cPais>1058</cPais>
-                <xPais>Brasil</xPais>
-                <fone>4333249947</fone>
-            </enderEmit>
-            <IE>9095920117</IE>
-            <IM>isento</IM>
-            <CRT>1</CRT>
-        </emit>
-        <dest>
-            <CPF>06679004977</CPF>
-            <xNome>Mery sebastiane Antunes Arruda</xNome>
-            <enderDest>
-                <xLgr>SC 370 km 17</xLgr>
-                <nro>17</nro>
-                <xCpl>Casa de campo santa Paulina</xCpl>
-                <xBairro>Farofa</xBairro>
-                <cMun>4211892</cMun>
-                <xMun>Painel</xMun>
-                <UF>SC</UF>
-                <CEP>88543000</CEP>
-                <cPais>1058</cPais>
-                <xPais>Brasil</xPais>
-                <fone>49988247056</fone>
-            </enderDest>
-            <indIEDest>9</indIEDest>
-            <email>antunesmery@yahoo.com</email>
-        </dest>
-        <entrega>
-            <CPF>06679004977</CPF>
-            <xNome>Mery sebastiane Antunes Arruda</xNome>
-            <xLgr>SC 370 km 17</xLgr>
-            <nro>17</nro>
-            <xCpl>Casa de campo santa Paulina</xCpl>
-            <xBairro>Farofa</xBairro>
-            <cMun>4211892</cMun>
-            <xMun>Painel</xMun>
-            <UF>SC</UF>
-            <CEP>88543000</CEP>
-        </entrega>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Folha de vendas {{ folhaVenda.id }}</title>
+    {{ default_css() }}
+    <style>
+        @media print {
+            .resumo-print {
+                font-size: 16px;
+            }
 
+            .resumo-print table {
+                width: 100%;
+                border-collapse: collapse;
+                table-layout: fixed;
+            }
 
-        <det nItem="1">
-            <prod>
-                <cProd>bimeda-doracide-500-ml</cProd>
-                <cEAN>SEM GTIN</cEAN>
-                <xProd>Bimeda Doracide 500 mL - Doramectina 1% Injetavel para Bovinos</xProd>
-                <NCM>30049059</NCM>
-                <CEST>1300100</CEST>
-                <CFOP>6108</CFOP>
-                <uCom>MI</uCom>
-                <qCom>1.0000</qCom>
-                <vUnCom>186.030000</vUnCom>
-                <vProd>186.03</vProd>
-                <cEANTrib>SEM GTIN</cEANTrib>
-                <uTrib>MI</uTrib>
-                <qTrib>1.0000</qTrib>
-                <vUnTrib>186.030000</vUnTrib>
-                <vFrete>33.93</vFrete>
-                <indTot>1</indTot>
-                <xPed>0012509969928</xPed>
-            </prod>
-            <imposto>
-                <ICMS>
-                    <ICMSSN102>
-                        <orig>0</orig>
-                        <CSOSN>103</CSOSN>
-                    </ICMSSN102>
-                </ICMS>
-                <IPI>
-                    <cEnq>999</cEnq>
-                    <IPITrib>
-                        <CST>99</CST>
-                        <vBC>0.00</vBC>
-                        <pIPI>0.00</pIPI>
-                        <vIPI>0.00</vIPI>
-                    </IPITrib>
-                </IPI>
-                <PIS>
-                    <PISOutr>
-                        <CST>49</CST>
-                        <vBC>0.00</vBC>
-                        <pPIS>0.00</pPIS>
-                        <vPIS>0.00</vPIS>
-                    </PISOutr>
-                </PIS>
-                <COFINS>
-                    <COFINSOutr>
-                        <CST>49</CST>
-                        <vBC>0.00</vBC>
-                        <pCOFINS>0.00</pCOFINS>
-                        <vCOFINS>0.00</vCOFINS>
-                    </COFINSOutr>
-                </COFINS>
-                <ICMSUFDest>
-                    <vBCUFDest>0.00</vBCUFDest>
-                    <vBCFCPUFDest>0.00</vBCFCPUFDest>
-                    <pFCPUFDest>0.00</pFCPUFDest>
-                    <pICMSUFDest>17.00</pICMSUFDest>
-                    <pICMSInter>12.00</pICMSInter>
-                    <pICMSInterPart>100.00</pICMSInterPart>
-                    <vFCPUFDest>0.00</vFCPUFDest>
-                    <vICMSUFDest>0.00</vICMSUFDest>
-                    <vICMSUFRemet>0.00</vICMSUFRemet>
-                </ICMSUFDest>
-            </imposto>
-        </det>
-        <total>
-            <ICMSTot>
+            .resumo-print th, .resumo-print td {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                white-space: normal;
+                font-size: 16px;
+                padding: 4px;
+                border: 1px solid #000;
+            }
 
+            .resumo-print .table-default {
+                overflow-x: auto;
+                display: block;
+            }
 
-                <vBC>0.00</vBC>
-                <vICMS>0.00</vICMS>
-                <vICMSDeson>0</vICMSDeson>
+            .resumo-print .page-break {
+                page-break-before: always;
+            }
 
-                <vFCPUFDest>0.00</vFCPUFDest>
-                <vICMSUFDest>0.00</vICMSUFDest>
-                <vICMSUFRemet>0.00</vICMSUFRemet>
-                <vFCP>0.00</vFCP>
-                <vBCST>0.00</vBCST>
-                <vST>0.00</vST>
-                <vFCPST>0.00</vFCPST>
-                <vFCPSTRet>0.00</vFCPSTRet>
-                <vProd>186.03</vProd>
-                <vFrete>33.93</vFrete>
-                <vSeg>0</vSeg>
-                <vDesc>0.00</vDesc>
-                <vII>0</vII>
-                <vIPI>0.00</vIPI>
-                <vIPIDevol>0.00</vIPIDevol>
-                <vPIS>0.00</vPIS>
-                <vCOFINS>0.00</vCOFINS>
-                <vOutro>0.00</vOutro>
-                <vNF>219.96</vNF>
-            </ICMSTot>
-        </total>
-        <transp>
-            <modFrete>0</modFrete>
-            <transporta>
-                <CNPJ>73939449000193</CNPJ>
-                <xNome>Total Express</xNome>
-                <xEnder>Avenida Piracema, 155</xEnder>
-                <xMun>Barueri</xMun>
-                <UF>SP</UF>
-            </transporta>
-            <vol>
-                <qVol>1</qVol>
-                <esp>Caixa</esp>
-                <pesoL>0.650</pesoL>
-                <pesoB>0.650</pesoB>
-            </vol>
-        </transp>
-        <pag>
-            <detPag>
-                <tPag>17</tPag>
-                <vPag>219.96</vPag>
-                <card>
-                    <tpIntegra>2</tpIntegra>
-                </card>
-            </detPag>
-        </pag>
-        <infAdic>
-            <infCpl>Pedido: 0012509969928 - Documento emitido por ME ou EPP optante pelo Simples Nacional. Não gera
-                direito a crédito fiscal de IPI. - Total aproximado de tributos: 71,37 (32,45%) Federais 29,58 (13,45%)
-                Estaduais 41,79 (19,00%). Fonte.: IBPT/empresometro.com.br. - Codigo de Rastreio Total Express :
-                MZ202509418709NE</infCpl>
-            <obsCont xCampo="Pedido de Venda">
-                <xTexto>0012509969928</xTexto>
-            </obsCont>
-        </infAdic>
-        <infRespTec>
-            <CNPJ>28977040000107</CNPJ>
-            <xContato>Ricardo Schroeder</xContato>
-            <email>nfe@magazord.com.br</email>
-            <fone>4735208013</fone>
-            <idCSRT>02</idCSRT>
-            <hashCSRT>Cn/TDYn82eRdJq0+TQ6nG5IRzek=</hashCSRT>
-        </infRespTec>
-    </infNFe>
-</NFe>
+            .resumo-print img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            /* Estilo específico para imagens de código de barras no resumo */
+            .resumo-print td .codigo-barras img {
+                max-width: none !important;
+                width: auto !important;
+                height: auto !important;
+            }
+        }
+
+        /* Estilo padrão para as tabelas e células fora do resumo */
+        th.th-default, td.td-default {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    {{ print_button() }}
+
+    <div class="resumo-print">
+        {{ print_resumo(folhaVendaResumo, true, true) }}
+    </div>
+
+    {% for pedidoFolhaVenda in pedidosFolhaVenda %}
+        <table class="page-break table-default">
+            <tr>
+                <td class="title td-default">Pedido:</td>
+                <td class="td-default">{{ pedidoFolhaVenda.pedido.id }} - {{ pedidoFolhaVenda.pedido.codigo }}</td>
+                <td class="td-default codigo-barras">{{ print_codigo_barras(pedidoFolhaVenda.pedido.codigo) }}</td>
+            </tr>
+        </table>
+
+        <table class="table-default">
+            <tr>
+                <th class="th-default">Dados do Cliente</th>
+                <th class="th-default">Dados do Pedido</th>
+            </tr>
+            <tr>
+                <td class="td-default">
+                    <strong>Código: </strong>{{ pedidoFolhaVenda.cliente.id }}<br>
+                    <strong>Código MKT: </strong> {{ pedidoFolhaVenda.pedido.pedidoMarketplace.numeroPedido | default ('-') }}
+                    <strong>Nome: </strong>{{ pedidoFolhaVenda.cliente.nome }}<br>
+                    <strong>Tipo: </strong>{{ print_pessoa_tipo(pedidoFolhaVenda.cliente.tipo) }}<br>
+                    <strong>Estado: </strong>{{ pedidoFolhaVenda.endereco.cidade.estado.sigla }}
+                    - {{ pedidoFolhaVenda.endereco.cidade.estado.nome | default('') }}
+                </td>
+                <td class="td-default">
+                    <strong>Rep.: </strong>{{ pedidoFolhaVenda.loja.nome }}<br>
+                    <strong>FormaPgto: </strong>{{ pedidoFolhaVenda.formaPagamento.nome | default('-') }}<br>
+                    <strong>Transp.: </strong>{{ pedidoFolhaVenda.transportadoraServico.descricao | default('-') }}<br>
+                    <strong>CondiçãoPgto: </strong>{{ pedidoFolhaVenda.condicaoPagamento.nome | default('-') }}<br>
+                    <strong>Emissão: </strong>{{ print_date(pedidoFolhaVenda.pedido.dataHora) }}<br>
+                    <strong>Aprovação: </strong>{{ print_date(pedidoFolhaVenda.pedido.dataAprovado) }}
+                </td>
+            </tr>
+        </table>
+
+        <table class="table-default">
+            <tr>
+                <th class="th-default">Imagem</th>
+                <th class="th-default">Produto</th>
+                <th class="th-default">Descrição</th>
+                <th class="th-default">Marca</th>
+                <th class="th-default">Depósito</th>
+                <th class="th-default">Qtde</th>
+                <th class="th-default">Pré-Venda</th>
+                <th class='th-default'>Ean</th>
+            </tr>
+            {% for pedidoItem in pedidoFolhaVenda.pedidoItem %}
+                <tr>
+                    <td class="td-default">{{ print_produto_imagem(pedidoItem) }}</td>
+                    <td class="td-default">{{ pedidoItem.produtoDerivacao.codigo }}</td>
+                    <td class="td-default">{{ pedidoItem.descricao }}</td>
+                    <td class="td-default">{{ pedidoItem.produtoDerivacao.produto.marca.nome }}</td>
+                    <td class="td-default">{{ pedidoItem.deposito.nome }}</td>
+                    <td class="td-default">{{ pedidoItem.quantidade }}</td>
+                    <td class="td-default">{{ print_date(pedidoItem.dataPreVenda) }}</td>
+                    <td class="td-default">
+                     {% set ean = '' %}
+                     {% for itemResumo in folhaVendaResumo.resumoItens %}
+                       {% if itemResumo.produto_derivacao_codigo == pedidoItem.produtoDerivacao.codigo %}
+                          {% set ean = itemResumo.produto_ean %}
+                       {% endif %}
+                     {% endfor %}
+                     {{ ean }}
+                     </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endfor %}
+</body>
+</html>

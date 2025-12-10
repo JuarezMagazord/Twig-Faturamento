@@ -1,108 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-    <infNFe Id="NFe42251004723370000299550010000010271000020319" versao="4.00">
+    <infNFe Id="NFe41251012560360000127550050000007481000008544" versao="4.00">
         <ide>
-            <cUF>42</cUF>
-            <cNF>00002031</cNF>
-            <natOp>Transferencia Merc.Adq.e/ou Rec.Terceiro</natOp>
+            <cUF>41</cUF>
+            <cNF>00000854</cNF>
+            <natOp>Venda Merc.Adq.Rec.Terc.Dest.Nao Contrib</natOp>
             <mod>55</mod>
-            <serie>1</serie>
-            <nNF>1027</nNF>
-            <dhEmi>2025-10-09T07:48:21-03:00</dhEmi>
-            <dhSaiEnt>2025-10-09T07:48:21-03:00</dhSaiEnt>
+            <serie>5</serie>
+            <nNF>748</nNF>
+            <dhEmi>2025-10-15T08:45:32-03:00</dhEmi>
+            <dhSaiEnt>2025-10-15T08:45:32-03:00</dhSaiEnt>
             <tpNF>1</tpNF>
-            <idDest>1</idDest>
-            <cMunFG>4213203</cMunFG>
+            <idDest>2</idDest>
+            <cMunFG>4119905</cMunFG>
             <tpImp>1</tpImp>
             <tpEmis>1</tpEmis>
-            <cDV>9</cDV>
+            <cDV>4</cDV>
             <tpAmb>1</tpAmb>
             <finNFe>1</finNFe>
-            <indFinal>0</indFinal>
+            <indFinal>1</indFinal>
             <indPres>2</indPres>
-            <indIntermed>0</indIntermed>
+            <indIntermed>1</indIntermed>
             <procEmi>0</procEmi>
             <verProc>Magazord 1.0</verProc>
         </ide>
         <emit>
-            <CNPJ>04723370000299</CNPJ>
-            <xNome>Têxtil Arte Brasil Importação e Exportação Ltda</xNome>
-            <xFant>Têxtil Arte</xFant>
+            <CNPJ>12560360000127</CNPJ>
+            <xNome>Auer Com. e Distrib. de Materiais para Construção Ltda</xNome>
+            <xFant>Stokasa</xFant>
             <enderEmit>
-                <xLgr>Rua Jerusalem</xLgr>
-                <nro>159</nro>
-                <xCpl>Galpão 03</xCpl>
-                <xBairro>Centro</xBairro>
-                <cMun>4213203</cMun>
-                <xMun>Pomerode</xMun>
-                <UF>SC</UF>
-                <CEP>89107000</CEP>
+                <xLgr>Avenida Souza Naves</xLgr>
+                <nro>3092</nro>
+                <xBairro>Chapada</xBairro>
+                <cMun>4119905</cMun>
+                <xMun>Ponta Grossa</xMun>
+                <UF>PR</UF>
+                <CEP>84062000</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>4733875543</fone>
+                <fone>4299817061</fone>
             </enderEmit>
-            <IE>262985233</IE>
-            <IM>isento</IM>
-            <CRT>3</CRT>
+            <IE>9053442770</IE>
+            <IM>ISENTO</IM>
+            <CRT>1</CRT>
         </emit>
         <dest>
-            <CNPJ>04723370000108</CNPJ>
-            <xNome>TEXTIL ARTE BRASIL IMPORTACAO E EXPORTACAO LTDA</xNome>
+            <CPF>28086848515</CPF>
+            <xNome>Valdete Maria da Silva</xNome>
             <enderDest>
-                <xLgr>RUA JERUSALEM</xLgr>
-                <nro>159</nro>
-                <xBairro>CENTRO</xBairro>
-                <cMun>4213203</cMun>
-                <xMun>Pomerode</xMun>
-                <UF>SC</UF>
-                <CEP>89107000</CEP>
+                <xLgr>Travessa Polivalente</xLgr>
+                <nro>57</nro>
+                <xCpl>Ref: escri de advocacia e restaurante mae e filho</xCpl>
+                <xBairro>Uruguai</xBairro>
+                <cMun>2927408</cMun>
+                <xMun>Salvador</xMun>
+                <UF>BA</UF>
+                <CEP>40450330</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>4733875543</fone>
             </enderDest>
-            <indIEDest>1</indIEDest>
-            <IE>255047460</IE>
+            <indIEDest>9</indIEDest>
         </dest>
         <entrega>
-            <CNPJ>04723370000108</CNPJ>
-            <xLgr>RUA JERUSALEM</xLgr>
-            <nro>159</nro>
-            <xBairro>CENTRO</xBairro>
-            <cMun>4213203</cMun>
-            <xMun>Pomerode</xMun>
-            <UF>SC</UF>
-            <CEP>89107000</CEP>
+            <CPF>28086848515</CPF>
+            <xNome>Valdete Maria da Silva</xNome>
+            <xLgr>Travessa Polivalente</xLgr>
+            <nro>57</nro>
+            <xCpl>Ref: escri de advocacia e restaurante mae e filho</xCpl>
+            <xBairro>Uruguai</xBairro>
+            <cMun>2927408</cMun>
+            <xMun>Salvador</xMun>
+            <UF>BA</UF>
+            <CEP>40450330</CEP>
         </entrega>
 
 
         <det nItem="1">
             <prod>
-                <cProd>CFOP5152</cProd>
+                <cProd>94724</cProd>
                 <cEAN>SEM GTIN</cEAN>
-                <xProd>NF Complementar</xProd>
-                <NCM>94044000</NCM>
-                <cBenef>SC800006</cBenef>
-                <CFOP>5152</CFOP>
-                <uCom>PC</uCom>
+                <xProd>Menegotti Esmerilhadeira Eletrica MEE 750W 4&quot; 1/2 - 220V</xProd>
+                <NCM>84672999</NCM>
+                <CEST>0801900</CEST>
+                <CFOP>6108</CFOP>
+                <uCom>UN</uCom>
                 <qCom>1.0000</qCom>
-                <vUnCom>45.952000</vUnCom>
-                <vProd>45.95</vProd>
+                <vUnCom>269.900000</vUnCom>
+                <vProd>269.90</vProd>
                 <cEANTrib>SEM GTIN</cEANTrib>
-                <uTrib>PC</uTrib>
+                <uTrib>UN</uTrib>
                 <qTrib>1.0000</qTrib>
-                <vUnTrib>45.952000</vUnTrib>
+                <vUnTrib>269.900000</vUnTrib>
                 <indTot>1</indTot>
+                <xPed>0012510777259</xPed>
+
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMS00>
-                        <orig>0</orig>
-                        <CST>00</CST>
-                        <modBC>3</modBC>
-                        <vBC>0.00</vBC>
-                        <pICMS>0.00</pICMS>
-                        <vICMS>0.00</vICMS>
-                    </ICMS00>
+                    <ICMSSN102>
+                        <orig>3</orig>
+                        <CSOSN>102</CSOSN>
+                    </ICMSSN102>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
@@ -111,29 +109,52 @@
                     </IPINT>
                 </IPI>
                 <PIS>
-                    <PISNT>
-                        <CST>07</CST>
-                    </PISNT>
+                    <PISOutr>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISOutr>
                 </PIS>
                 <COFINS>
-                    <COFINSNT>
-                        <CST>07</CST>
-                    </COFINSNT>
+                    <COFINSOutr>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSOutr>
                 </COFINS>
+                <ICMSUFDest>
+                    <vBCUFDest>0.00</vBCUFDest>
+                    <vBCFCPUFDest>0.00</vBCFCPUFDest>
+                    <pFCPUFDest>0.00</pFCPUFDest>
+                    <pICMSUFDest>20.50</pICMSUFDest>
+                    <pICMSInter>4.00</pICMSInter>
+                    <pICMSInterPart>100.00</pICMSInterPart>
+                    <vFCPUFDest>0.00</vFCPUFDest>
+                    <vICMSUFDest>0.00</vICMSUFDest>
+                    <vICMSUFRemet>0.00</vICMSUFRemet>
+                </ICMSUFDest>
             </imposto>
+            <infAdProd>Resolução do Senado Federal 13/2012 Nº da FCI: adm@stokasa.com.br</infAdProd>
         </det>
         <total>
             <ICMSTot>
 
+
                 <vBC>0.00</vBC>
                 <vICMS>0.00</vICMS>
                 <vICMSDeson>0</vICMSDeson>
+
+                <vFCPUFDest>0.00</vFCPUFDest>
+                <vICMSUFDest>0.00</vICMSUFDest>
+                <vICMSUFRemet>0.00</vICMSUFRemet>
                 <vFCP>0.00</vFCP>
-                <vBCST>0</vBCST>
-                <vST>0</vST>
+                <vBCST>0.00</vBCST>
+                <vST>0.00</vST>
                 <vFCPST>0.00</vFCPST>
                 <vFCPSTRet>0.00</vFCPSTRet>
-                <vProd>45.95</vProd>
+                <vProd>269.90</vProd>
                 <vFrete>0.00</vFrete>
                 <vSeg>0</vSeg>
                 <vDesc>0.00</vDesc>
@@ -143,23 +164,54 @@
                 <vPIS>0.00</vPIS>
                 <vCOFINS>0.00</vCOFINS>
                 <vOutro>0.00</vOutro>
-                <vNF>45.95</vNF>
+                <vNF>269.90</vNF>
             </ICMSTot>
         </total>
         <transp>
-            <modFrete>9</modFrete>
+            <modFrete>2</modFrete>
+            <transporta>
+                <CNPJ>03361252000134</CNPJ>
+                <xNome>Mercado Livre Coletas</xNome>
+                <xEnder>Avenida Souza Naves, 3092</xEnder>
+                <xMun>Ponta Grossa</xMun>
+                <UF>PR</UF>
+            </transporta>
+            <vol>
+                <qVol>1</qVol>
+                <esp>Caixa</esp>
+                <pesoL>1.000</pesoL>
+                <pesoB>1.000</pesoB>
+            </vol>
         </transp>
         <pag>
             <detPag>
-                <tPag>01</tPag>
-                <vPag>45.95</vPag>
+                <tPag>17</tPag>
+                <vPag>269.90</vPag>
+                <card>
+                    <tpIntegra>2</tpIntegra>
+                </card>
             </detPag>
         </pag>
+        <infIntermed>
+            <CNPJ>03007331000141</CNPJ>
+            <idCadIntTran>Ebazar.com.br. Ltda</idCadIntTran>
+        </infIntermed>
+        <infAdic>
+            <infCpl>- Marketplace: Mercado Livre - Pedido: 0012510777259 - Documento emitido por ME
+                ou EPP optante pelo Simples Nacional. Não gera direito a crédito fiscal de IPI. -
+                Total aproximado de tributos: 63,80 (23,64%) Federais 40,05 (14,84%) Estaduais 23,75
+                (8,80%). Fonte.: IBPT/empresometro.com.br.</infCpl>
+            <obsCont xCampo="Pedido de Venda">
+                <xTexto>0012510777259</xTexto>
+            </obsCont>
+        </infAdic>
         <infRespTec>
             <CNPJ>28977040000107</CNPJ>
             <xContato>Ricardo Schroeder</xContato>
             <email>nfe@magazord.com.br</email>
             <fone>4735208013</fone>
+            <idCSRT>02</idCSRT>
+            <hashCSRT>ZO7THyTmH6JlIISLxzsDyh1aup4=</hashCSRT>
         </infRespTec>
     </infNFe>
 </NFe>

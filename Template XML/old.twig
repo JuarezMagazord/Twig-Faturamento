@@ -738,11 +738,11 @@
                 <vII>0</vII>
                 {% set valor_ipi = get_param_value_by_nome_logico('VLR_TOTAL_IPI') %}
                 {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() == 4 %}
-                    <vIPI>{{ valor_ipi ? valor_ipi : '0.00' }}</vIPI>
-                    <vIPIDevol>0.00</vIPIDevol>
-                {% else %}
                     <vIPI>0.00</vIPI>
                     <vIPIDevol>{{ valor_ipi ? valor_ipi : '0.00' }}</vIPIDevol>
+                {% else %}
+                    <vIPI>{{ valor_ipi ? valor_ipi : '0.00' }}</vIPI>
+                    <vIPIDevol>0.00</vIPIDevol>
                 {% endif %}
                 <vPIS>{{ get_param_value_by_nome_logico('VLR_TOTAL_PIS') }}</vPIS>
                 <vCOFINS>{{ get_param_value_by_nome_logico('VLR_TOTAL_COFINS') }}</vCOFINS>
