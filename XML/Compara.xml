@@ -1,160 +1,380 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-    <infNFe Id="NFe42251004723370000299550010000010271000020319" versao="4.00">
+    <infNFe Id="NFe42260141367655000180550050000002331000003437" versao="4.00">
         <ide>
             <cUF>42</cUF>
-            <cNF>00002031</cNF>
-            <natOp>Transferencia Merc.Adq.e/ou Rec.Terceiro</natOp>
+            <cNF>00000343</cNF>
+            <natOp>Venda Mercad.Adquir.ou Receb.Terceiros</natOp>
             <mod>55</mod>
-            <serie>1</serie>
-            <nNF>1027</nNF>
-            <dhEmi>2025-10-09T07:48:21-03:00</dhEmi>
-            <dhSaiEnt>2025-10-09T07:48:21-03:00</dhSaiEnt>
+            <serie>5</serie>
+            <nNF>233</nNF>
+            <dhEmi>2026-01-22T16:12:48-03:00</dhEmi>
+            <dhSaiEnt>2026-01-22T16:12:48-03:00</dhSaiEnt>
             <tpNF>1</tpNF>
-            <idDest>1</idDest>
-            <cMunFG>4213203</cMunFG>
+            <idDest>2</idDest>
+            <cMunFG>4208906</cMunFG>
             <tpImp>1</tpImp>
             <tpEmis>1</tpEmis>
-            <cDV>9</cDV>
+            <cDV>7</cDV>
             <tpAmb>1</tpAmb>
             <finNFe>1</finNFe>
-            <indFinal>0</indFinal>
+            <indFinal>1</indFinal>
             <indPres>2</indPres>
             <indIntermed>0</indIntermed>
             <procEmi>0</procEmi>
             <verProc>Magazord 1.0</verProc>
         </ide>
         <emit>
-            <CNPJ>04723370000299</CNPJ>
-            <xNome>Têxtil Arte Brasil Importação e Exportação Ltda</xNome>
-            <xFant>Têxtil Arte</xFant>
+            <CNPJ>41367655000180</CNPJ>
+            <xNome>GR4 Comercio e Importacao Ltda</xNome>
+            <xFant>Togo Brasil</xFant>
             <enderEmit>
-                <xLgr>Rua Jerusalem</xLgr>
-                <nro>159</nro>
-                <xCpl>Galpão 03</xCpl>
-                <xBairro>Centro</xBairro>
-                <cMun>4213203</cMun>
-                <xMun>Pomerode</xMun>
+                <xLgr>Rua Carlos Eggert</xLgr>
+                <nro>653</nro>
+                <xBairro>Vila Lalau</xBairro>
+                <cMun>4208906</cMun>
+                <xMun>Jaraguá do Sul</xMun>
                 <UF>SC</UF>
-                <CEP>89107000</CEP>
+                <CEP>89256330</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>4733875543</fone>
+                <fone>4733058799</fone>
             </enderEmit>
-            <IE>262985233</IE>
-            <IM>isento</IM>
+            <IE>260990272</IE>
+            <IM>ISENTO</IM>
+            <CNAE>4663000</CNAE>
             <CRT>3</CRT>
         </emit>
         <dest>
-            <CNPJ>04723370000108</CNPJ>
-            <xNome>TEXTIL ARTE BRASIL IMPORTACAO E EXPORTACAO LTDA</xNome>
+            <CNPJ>07147401000118</CNPJ>
+            <xNome>FIRE COMERCIO INSTALACAO ELETRICA HIDRAULICA E INCENDIO LTDA</xNome>
             <enderDest>
-                <xLgr>RUA JERUSALEM</xLgr>
-                <nro>159</nro>
-                <xBairro>CENTRO</xBairro>
-                <cMun>4213203</cMun>
-                <xMun>Pomerode</xMun>
-                <UF>SC</UF>
-                <CEP>89107000</CEP>
+                <xLgr>Rua Antenor Bergamo</xLgr>
+                <nro>620</nro>
+                <xCpl>barracao</xCpl>
+                <xBairro>Parque dos Cocais</xBairro>
+                <cMun>3556206</cMun>
+                <xMun>Valinhos</xMun>
+                <UF>SP</UF>
+                <CEP>13273182</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>4733875543</fone>
+                <fone>1938591124</fone>
             </enderDest>
             <indIEDest>1</indIEDest>
-            <IE>255047460</IE>
+            <IE>708193435113</IE>
+            <email>tecnofire.tecnofire@uol.com.br</email>
         </dest>
         <entrega>
-            <CNPJ>04723370000108</CNPJ>
-            <xLgr>RUA JERUSALEM</xLgr>
-            <nro>159</nro>
-            <xBairro>CENTRO</xBairro>
-            <cMun>4213203</cMun>
-            <xMun>Pomerode</xMun>
-            <UF>SC</UF>
-            <CEP>89107000</CEP>
+            <CNPJ>07147401000118</CNPJ>
+            <xNome>FIRE COMERCIO INSTALAÇÃO ELETRICA HIDRAULICA E INC</xNome>
+            <xLgr>Rua Antenor Bergamo</xLgr>
+            <nro>620</nro>
+            <xCpl>barracao</xCpl>
+            <xBairro>Parque dos Cocais</xBairro>
+            <cMun>3556206</cMun>
+            <xMun>Valinhos</xMun>
+            <UF>SP</UF>
+            <CEP>13273182</CEP>
+            <IE>708193435113</IE>
         </entrega>
 
 
         <det nItem="1">
             <prod>
-                <cProd>CFOP5152</cProd>
-                <cEAN>SEM GTIN</cEAN>
-                <xProd>NF Complementar</xProd>
-                <NCM>94044000</NCM>
-                <cBenef>SC800006</cBenef>
-                <CFOP>5152</CFOP>
-                <uCom>PC</uCom>
-                <qCom>1.0000</qCom>
-                <vUnCom>45.952000</vUnCom>
-                <vProd>45.95</vProd>
-                <cEANTrib>SEM GTIN</cEANTrib>
-                <uTrib>PC</uTrib>
-                <qTrib>1.0000</qTrib>
-                <vUnTrib>45.952000</vUnTrib>
+                <cProd>1.082.600.002</cProd>
+                <cEAN>7898715322509</cEAN>
+                <xProd>Ventilador Industrial para Painel Eletrico - 16 W / 18 W / 220 V Monofasico. IP54 - GIVPE 9804</xProd>
+                <NCM>84145910</NCM>
+                <CEST>2109200</CEST>
+                <CFOP>6102</CFOP>
+                <uCom>UN</uCom>
+                <qCom>3.0000</qCom>
+                <vUnCom>337.320000</vUnCom>
+                <vProd>1011.96</vProd>
+                <cEANTrib>7898715322509</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>3.0000</qTrib>
+                <vUnTrib>337.320000</vUnTrib>
+                <vFrete>28.68</vFrete>
                 <indTot>1</indTot>
+                <xPed>0012601773891</xPed>
             </prod>
             <imposto>
                 <ICMS>
                     <ICMS00>
-                        <orig>0</orig>
+                        <orig>1</orig>
                         <CST>00</CST>
                         <modBC>3</modBC>
-                        <vBC>0.00</vBC>
-                        <pICMS>0.00</pICMS>
-                        <vICMS>0.00</vICMS>
+                        <vBC>1040.64</vBC>
+                        <pICMS>4.00</pICMS>
+                        <vICMS>41.63</vICMS>
                     </ICMS00>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
-                    <IPINT>
-                        <CST>53</CST>
-                    </IPINT>
+                    <IPITrib>
+                        <CST>50</CST>
+                        <vBC>1040.64</vBC>
+                        <pIPI>3.25</pIPI>
+                        <vIPI>33.82</vIPI>
+                    </IPITrib>
                 </IPI>
                 <PIS>
-                    <PISNT>
-                        <CST>07</CST>
-                    </PISNT>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>999.01</vBC>
+                        <pPIS>1.65</pPIS>
+                        <vPIS>16.48</vPIS>
+                    </PISAliq>
                 </PIS>
                 <COFINS>
-                    <COFINSNT>
-                        <CST>07</CST>
-                    </COFINSNT>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>999.01</vBC>
+                        <pCOFINS>7.60</pCOFINS>
+                        <vCOFINS>75.92</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="2">
+            <prod>
+                <cProd>1.082.999.042</cProd>
+                <cEAN>7898715322899</cEAN>
+                <xProd>Grade de Ventilacao para Modelo GIVPE 9804</xProd>
+                <NCM>84149020</NCM>
+                <CEST>2109200</CEST>
+                <CFOP>6102</CFOP>
+                <uCom>UN</uCom>
+                <qCom>3.0000</qCom>
+                <vUnCom>63.250000</vUnCom>
+                <vProd>189.75</vProd>
+                <cEANTrib>7898715322899</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>3.0000</qTrib>
+                <vUnTrib>63.250000</vUnTrib>
+                <vFrete>5.40</vFrete>
+                <indTot>1</indTot>
+                <xPed>0012601773891</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>1</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>195.15</vBC>
+                        <pICMS>4.00</pICMS>
+                        <vICMS>7.81</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>50</CST>
+                        <vBC>195.15</vBC>
+                        <pIPI>3.25</pIPI>
+                        <vIPI>6.34</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>187.34</vBC>
+                        <pPIS>1.65</pPIS>
+                        <vPIS>3.09</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>187.34</vBC>
+                        <pCOFINS>7.60</pCOFINS>
+                        <vCOFINS>14.24</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="3">
+            <prod>
+                <cProd>1.082.600.170</cProd>
+                <cEAN>7898715322530</cEAN>
+                <xProd>Exaustor Industrial para Painel Eletrico - 130 W / 170 W / 220 V Monofasico. IP54 - GIEPE 40000</xProd>
+                <NCM>84145910</NCM>
+                <CEST>2109200</CEST>
+                <CFOP>6102</CFOP>
+                <uCom>UN</uCom>
+                <qCom>1.0000</qCom>
+                <vUnCom>2126.880000</vUnCom>
+                <vProd>2126.88</vProd>
+                <cEANTrib>7898715322530</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>2126.880000</vUnTrib>
+                <vFrete>60.36</vFrete>
+                <indTot>1</indTot>
+                <xPed>0012601773891</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>1</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>2187.24</vBC>
+                        <pICMS>4.00</pICMS>
+                        <vICMS>87.49</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>50</CST>
+                        <vBC>2187.24</vBC>
+                        <pIPI>3.25</pIPI>
+                        <vIPI>71.09</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>2099.75</vBC>
+                        <pPIS>1.65</pPIS>
+                        <vPIS>34.65</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>2099.75</vBC>
+                        <pCOFINS>7.60</pCOFINS>
+                        <vCOFINS>159.58</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="4">
+            <prod>
+                <cProd>1.082.999.044</cProd>
+                <cEAN>7898715322912</cEAN>
+                <xProd>Grade de Ventilacao para Modelo GIEPE 35110 e GIEPE 40000</xProd>
+                <NCM>84149020</NCM>
+                <CEST>2109200</CEST>
+                <CFOP>6102</CFOP>
+                <uCom>UN</uCom>
+                <qCom>1.0000</qCom>
+                <vUnCom>193.250000</vUnCom>
+                <vProd>193.25</vProd>
+                <cEANTrib>7898715322912</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>193.250000</vUnTrib>
+                <vFrete>5.50</vFrete>
+                <indTot>1</indTot>
+                <xPed>0012601773891</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>1</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>198.75</vBC>
+                        <pICMS>4.00</pICMS>
+                        <vICMS>7.95</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>50</CST>
+                        <vBC>198.75</vBC>
+                        <pIPI>3.25</pIPI>
+                        <vIPI>6.46</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>190.80</vBC>
+                        <pPIS>1.65</pPIS>
+                        <vPIS>3.15</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>190.80</vBC>
+                        <pCOFINS>7.60</pCOFINS>
+                        <vCOFINS>14.50</vCOFINS>
+                    </COFINSAliq>
                 </COFINS>
             </imposto>
         </det>
         <total>
             <ICMSTot>
 
-                <vBC>0.00</vBC>
-                <vICMS>0.00</vICMS>
+
+                <vBC>3621.78</vBC>
+                <vICMS>144.88</vICMS>
                 <vICMSDeson>0</vICMSDeson>
+
                 <vFCP>0.00</vFCP>
-                <vBCST>0</vBCST>
-                <vST>0</vST>
+                <vBCST>0.00</vBCST>
+                <vST>0.00</vST>
                 <vFCPST>0.00</vFCPST>
                 <vFCPSTRet>0.00</vFCPSTRet>
-                <vProd>45.95</vProd>
-                <vFrete>0.00</vFrete>
+                <vProd>3521.84</vProd>
+                <vFrete>99.94</vFrete>
                 <vSeg>0</vSeg>
                 <vDesc>0.00</vDesc>
-                <vII>0</vII>
-                <vIPI>0.00</vIPI>
+                <vII>0.00</vII>
+                <vIPI>117.71</vIPI>
                 <vIPIDevol>0.00</vIPIDevol>
-                <vPIS>0.00</vPIS>
-                <vCOFINS>0.00</vCOFINS>
+                <vPIS>57.37</vPIS>
+                <vCOFINS>264.24</vCOFINS>
                 <vOutro>0.00</vOutro>
-                <vNF>45.95</vNF>
+                <vNF>3739.49</vNF>
             </ICMSTot>
         </total>
         <transp>
-            <modFrete>9</modFrete>
+            <modFrete>0</modFrete>
+            <transporta>
+                <CNPJ>04195643000199</CNPJ>
+                <xNome>Transportes Ouro Negro Ltda</xNome>
+                <xEnder>Rua Alexandre Levi, S/N</xEnder>
+                <xMun>Lages</xMun>
+                <UF>SC</UF>
+            </transporta>
+            <vol>
+                <qVol>1</qVol>
+                <esp>Caixa</esp>
+                <pesoL>6.600</pesoL>
+                <pesoB>6.600</pesoB>
+            </vol>
         </transp>
         <pag>
             <detPag>
-                <tPag>01</tPag>
-                <vPag>45.95</vPag>
+                <tPag>03</tPag>
+                <vPag>3739.49</vPag>
+                <card>
+                    <tpIntegra>1</tpIntegra>
+                    <CNPJ>19468242000132</CNPJ>
+                    <tBand>02</tBand>
+                    <cAut>422eb1ec83cf369e7a2b</cAut>
+                </card>
             </detPag>
         </pag>
+        <infAdic>
+            <infCpl>Pedido: 0012601773891 - Diferimento do ICMS conforme TTD 409 N.215000002311657.  - Total aproximado de tributos: 677,29 (18,70%) Federais 554,14 (15,30%) Estaduais 123,15 (3,40%). Fonte.: IBPT/empresometro.com.br.</infCpl>
+            <obsCont xCampo="Pedido de Venda">
+                <xTexto>0012601773891</xTexto>
+            </obsCont>
+        </infAdic>
         <infRespTec>
             <CNPJ>28977040000107</CNPJ>
             <xContato>Ricardo Schroeder</xContato>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etiqueta de Produto</title>
+    {{ default_css() }}
+
+    {% set colunas = 3 %}
+    {% set larguraImpresao = 105 %} 
+    {% set margem = 3 %}
+    {% set larguraUtil = larguraImpresao - (margem * 2) %}  {# 105mm - 6mm = 99mm úteis #}
+
+    {% set larguraEtiqueta = (larguraUtil / colunas) %}  
+    {% set alturaEtiqueta = 40 %}  
+
+    {% set tamanhoTextoCodigoProduto = 7 %}
+    {% set tamanhoTextoNomeProduto = 7 %}
+    {% set tamanhoTextoDerivacaoProduto = 7 %}
+
+    <style>
+        @page {
+            size: {{ larguraImpresao }}mm auto;
+            margin: {{ margem }}mm;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: {{ larguraUtil }}mm;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .etiqueta-container {
+            width: {{ larguraUtil }}mm;
+            display: grid;
+            grid-template-columns: repeat({{ colunas }}, {{ larguraEtiqueta }}mm);
+            gap: 0;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .etiqueta {
+            width: {{ larguraEtiqueta }}mm;
+            height: {{ alturaEtiqueta }}mm;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 2px;
+        }
+
+        .barcode img {
+            max-width: 90%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="etiqueta-container">
+    {% for produto in produtos %}
+        {% for i in 0..produto.quantidade -1 %}
+            <div class="etiqueta">
+                <strong style="font-size: 14px;">{{ produto.codigo }}</strong>
+
+                <div style="font-size: {{ tamanhoTextoNomeProduto }}px;
+                            max-width:100%;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            text-align:center;">
+                    {{ produto.nome }}
+                </div>
+
+                <div style="font-size: {{ tamanhoTextoDerivacaoProduto }}px;
+                            max-width:100%;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            text-align:center;">
+                    {{ produto.nomeDerivacao }}
+                </div>
+
+                <div class="preco">R$ {{ produto.preco }}</div>
+
+                <div class="barcode">
+                    <img src="{{ barcode_src(produto.codigo) }}" alt="Código de barras">
+                </div>
+            </div>
+        {% endfor %}
+    {% endfor %}
+</div>
+
+</body>
+</html>

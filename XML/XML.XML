@@ -1,246 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-    <infNFe Id="NFe42250905621126000105550020000001011000002140" versao="4.00">
+    <infNFe Id="NFe43251136110052000168550050000007341000008400" versao="4.00">
         <ide>
-            <cUF>42</cUF>
-            <cNF>00000214</cNF>
-            <natOp>Compra para Comercializacao</natOp>
+            <cUF>43</cUF>
+            <cNF>00000840</cNF>
+            <natOp>Remessa Mercad.ou Bem P/Cons.ou Reparo</natOp>
             <mod>55</mod>
-            <serie>2</serie>
-            <nNF>101</nNF>
-            <dhEmi>2025-09-12T09:37:42-03:00</dhEmi>
-            <dhSaiEnt>2025-09-12T09:37:42-03:00</dhSaiEnt>
-            <tpNF>0</tpNF>
-            <idDest>3</idDest>
-            <cMunFG>4209300</cMunFG>
+            <serie>5</serie>
+            <nNF>734</nNF>
+            <dhEmi>2025-11-11T12:07:33-03:00</dhEmi>
+            <dhSaiEnt>2025-11-11T12:07:33-03:00</dhSaiEnt>
+            <tpNF>1</tpNF>
+            <idDest>2</idDest>
+            <cMunFG>4304606</cMunFG>
             <tpImp>1</tpImp>
             <tpEmis>1</tpEmis>
             <cDV>0</cDV>
             <tpAmb>1</tpAmb>
             <finNFe>1</finNFe>
-            <indFinal>0</indFinal>
+            <indFinal>1</indFinal>
             <indPres>2</indPres>
             <indIntermed>0</indIntermed>
             <procEmi>0</procEmi>
             <verProc>Magazord 1.0</verProc>
         </ide>
         <emit>
-            <CNPJ>05621126000105</CNPJ>
-            <xNome>SSA - Comercio e Assistencia Tecnica Ltda</xNome>
-            <xFant>S.S.A</xFant>
+            <CNPJ>36110052000168</CNPJ>
+            <xNome>MRM Comércio Varejista de Móveis Ltda</xNome>
+            <xFant>Palácio do Conforto</xFant>
             <enderEmit>
-                <xLgr>Rua Graça Aranha</xLgr>
-                <nro>639</nro>
-                <xBairro>Caravagio</xBairro>
-                <cMun>4209300</cMun>
-                <xMun>Lages</xMun>
-                <UF>SC</UF>
-                <CEP>88509440</CEP>
+                <xLgr>Avenida Boqueirão</xLgr>
+                <nro>2200</nro>
+                <xBairro>Igara</xBairro>
+                <cMun>4304606</cMun>
+                <xMun>Canoas</xMun>
+                <UF>RS</UF>
+                <CEP>92412232</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>4932290129</fone>
+                <fone>5197957742</fone>
             </enderEmit>
-            <IE>254572723</IE>
+            <IE>0240560973</IE>
             <IM>ISENTO</IM>
-            <CNAE>4751201</CNAE>
-            <CRT>1</CRT>
+            <CRT>3</CRT>
         </emit>
         <dest>
-            <idEstrangeiro>80052397-0</idEstrangeiro>
-            <xNome>IMPORTADORA AMERICAS S.A.</xNome>
+            <CPF>04028792959</CPF>
+            <xNome>Fabiana Ventura Faccio</xNome>
             <enderDest>
-                <xLgr>ITA YVATE ESQUINA MONSENOR RODRIGIEZ - EDIFICIO SA</xLgr>
-                <nro>01</nro>
-                <xCpl>CIUDADE DEL ESTE, PLANTA URBANA, PY</xCpl>
-                <xBairro>CENTRO COMERCIAL</xBairro>
-                <cMun>9999999</cMun>
-                <xMun>EXTERIOR</xMun>
-                <UF>EX</UF>
-                <cPais>5860</cPais>
-                <xPais>Paraguay</xPais>
+                <xLgr>Rua prefeito Jose Kehrig</xLgr>
+                <nro>5417</nro>
+                <xCpl>Ap 802 / Edificio cardeal</xCpl>
+                <xBairro>Centro</xBairro>
+                <cMun>4215703</cMun>
+                <xMun>Santo Amaro da Imperatriz</xMun>
+                <UF>SC</UF>
+                <CEP>88140000</CEP>
+                <cPais>1058</cPais>
+                <xPais>Brasil</xPais>
             </enderDest>
             <indIEDest>9</indIEDest>
-            <email>comtabilidad@importadoraamericas.com</email>
         </dest>
+        <entrega>
+            <CPF>04028792959</CPF>
+            <xNome>Fabiana Ventura Faccio</xNome>
+            <xLgr>Rua prefeito Jose Kehrig</xLgr>
+            <nro>5417</nro>
+            <xCpl>Ap 802 / Edificio cardeal</xCpl>
+            <xBairro>Centro</xBairro>
+            <cMun>4215703</cMun>
+            <xMun>Santo Amaro da Imperatriz</xMun>
+            <UF>SC</UF>
+            <CEP>88140000</CEP>
+        </entrega>
 
 
         <det nItem="1">
             <prod>
-                <cProd>2112-1</cProd>
+                <cProd>CFOP6915</cProd>
                 <cEAN>SEM GTIN</cEAN>
-                <xProd>Caixa de Som JBL GO 04 Bluetooth</xProd>
-                <NCM>85182200</NCM>
-                <CEST>2105700</CEST>
-                <CFOP>3102</CFOP>
+                <xProd>3 Portas Modulado Sele 7cmx47cmx2,10mt</xProd>
+                <NCM>94035000</NCM>
+                <CFOP>6915</CFOP>
                 <uCom>UN</uCom>
-                <qCom>5.0000</qCom>
-                <vUnCom>165.076000</vUnCom>
-                <vProd>825.38</vProd>
+                <qCom>3.0000</qCom>
+                <vUnCom>100.000000</vUnCom>
+                <vProd>300.00</vProd>
                 <cEANTrib>SEM GTIN</cEANTrib>
                 <uTrib>UN</uTrib>
-                <qTrib>5.0000</qTrib>
-                <vUnTrib>165.076000</vUnTrib>
-                <vOutro>264.12</vOutro>
+                <qTrib>3.0000</qTrib>
+                <vUnTrib>100.000000</vUnTrib>
                 <indTot>1</indTot>
-                <DI>
-                    <nDI>238013/2025</nDI>
-                    <dDI>2025-09-11</dDI>
-                    <xLocDesemb>Foz do Iguacu Ponte da Amizade</xLocDesemb>
-                    <UFDesemb>PR</UFDesemb>
-                    <dDesemb>2025-09-11</dDesemb>
-                    <tpViaTransp>7</tpViaTransp>
-                    <vAFRMM>0.00</vAFRMM>
-                    <tpIntermedio>1</tpIntermedio>
-                    <cExportador>RTU01</cExportador>
-                    <adi>
-                        <nAdicao>1</nAdicao>
-                        <nSeqAdic>1</nSeqAdic>
-                        <cFabricante>FABRIC001</cFabricante>
-                        <vDescDI>825.38</vDescDI>
-                    </adi>
-                </DI>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMSSN101>
+                    <ICMS41>
                         <orig>0</orig>
-                        <CSOSN>101</CSOSN>
-                        <pCredSN>0</pCredSN>
-                        <vCredICMSSN>0.00</vCredICMSSN>
-                    </ICMSSN101>
-                </ICMS>
-                <IPI>
-                    <cEnq>999</cEnq>
-                    <IPINT>
-                        <CST>03</CST>
-                    </IPINT>
-                </IPI>
-                <PIS>
-                    <PISNT>
-                        <CST>07</CST>
-                    </PISNT>
-                </PIS>
-                <COFINS>
-                    <COFINSNT>
-                        <CST>07</CST>
-                    </COFINSNT>
-                </COFINS>
-            </imposto>
-        </det>
+                        <CST>41</CST>
 
-        <det nItem="2">
-            <prod>
-                <cProd>1414-1</cProd>
-                <cEAN>SEM GTIN</cEAN>
-                <xProd>Smarthphone Redmi 14C 256GB</xProd>
-                <NCM>85171300</NCM>
-                <CEST>2111000</CEST>
-                <CFOP>3102</CFOP>
-                <uCom>UN</uCom>
-                <qCom>4.0000</qCom>
-                <vUnCom>568.290000</vUnCom>
-                <vProd>2273.16</vProd>
-                <cEANTrib>SEM GTIN</cEANTrib>
-                <uTrib>UN</uTrib>
-                <qTrib>4.0000</qTrib>
-                <vUnTrib>568.290000</vUnTrib>
-                <vOutro>748.21</vOutro>
-                <indTot>1</indTot>
-                <DI>
-                    <nDI>238013/2025</nDI>
-                    <dDI>2025-09-11</dDI>
-                    <xLocDesemb>Foz do Iguacu Ponte da Amizade</xLocDesemb>
-                    <UFDesemb>PR</UFDesemb>
-                    <dDesemb>2025-09-11</dDesemb>
-                    <tpViaTransp>7</tpViaTransp>
-                    <vAFRMM>0.00</vAFRMM>
-                    <tpIntermedio>1</tpIntermedio>
-                    <cExportador>RTU01</cExportador>
-                    <adi>
-                        <nAdicao>2</nAdicao>
-                        <nSeqAdic>2</nSeqAdic>
-                        <cFabricante>FABRIC001</cFabricante>
-                        <vDescDI>2273.16</vDescDI>
-                    </adi>
-                </DI>
-            </prod>
-            <imposto>
-                <ICMS>
-                    <ICMSSN101>
-                        <orig>0</orig>
-                        <CSOSN>101</CSOSN>
-                        <pCredSN>0</pCredSN>
-                        <vCredICMSSN>0.00</vCredICMSSN>
-                    </ICMSSN101>
+                    </ICMS41>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
                     <IPINT>
-                        <CST>03</CST>
-                    </IPINT>
-                </IPI>
-                <PIS>
-                    <PISNT>
-                        <CST>07</CST>
-                    </PISNT>
-                </PIS>
-                <COFINS>
-                    <COFINSNT>
-                        <CST>07</CST>
-                    </COFINSNT>
-                </COFINS>
-            </imposto>
-        </det>
-
-        <det nItem="3">
-            <prod>
-                <cProd>2256-1</cProd>
-                <cEAN>SEM GTIN</cEAN>
-                <xProd>Microfone Hollyland Lark M2</xProd>
-                <NCM>85181090</NCM>
-                <CEST>2105700</CEST>
-                <CFOP>3102</CFOP>
-                <uCom>UN</uCom>
-                <qCom>2.0000</qCom>
-                <vUnCom>600.765000</vUnCom>
-                <vProd>1201.53</vProd>
-                <cEANTrib>SEM GTIN</cEANTrib>
-                <uTrib>UN</uTrib>
-                <qTrib>2.0000</qTrib>
-                <vUnTrib>600.765000</vUnTrib>
-                <vOutro>384.48</vOutro>
-                <indTot>1</indTot>
-                <DI>
-                    <nDI>238013/2025</nDI>
-                    <dDI>2025-09-11</dDI>
-                    <xLocDesemb>Foz do Iguacu Ponte da Amizade</xLocDesemb>
-                    <UFDesemb>PR</UFDesemb>
-                    <dDesemb>2025-09-11</dDesemb>
-                    <tpViaTransp>7</tpViaTransp>
-                    <vAFRMM>0.00</vAFRMM>
-                    <tpIntermedio>1</tpIntermedio>
-                    <cExportador>RTU01</cExportador>
-                    <adi>
-                        <nAdicao>3</nAdicao>
-                        <nSeqAdic>3</nSeqAdic>
-                        <cFabricante>FABRIC001</cFabricante>
-                        <vDescDI>1201.53</vDescDI>
-                    </adi>
-                </DI>
-            </prod>
-            <imposto>
-                <ICMS>
-                    <ICMSSN101>
-                        <orig>0</orig>
-                        <CSOSN>101</CSOSN>
-                        <pCredSN>0</pCredSN>
-                        <vCredICMSSN>0.00</vCredICMSSN>
-                    </ICMSSN101>
-                </ICMS>
-                <IPI>
-                    <cEnq>999</cEnq>
-                    <IPINT>
-                        <CST>03</CST>
+                        <CST>53</CST>
                     </IPINT>
                 </IPI>
                 <PIS>
@@ -268,7 +131,7 @@
                 <vST>0.00</vST>
                 <vFCPST>0.00</vFCPST>
                 <vFCPSTRet>0.00</vFCPSTRet>
-                <vProd>4300.07</vProd>
+                <vProd>300.00</vProd>
                 <vFrete>0.00</vFrete>
                 <vSeg>0</vSeg>
                 <vDesc>0.00</vDesc>
@@ -277,40 +140,34 @@
                 <vIPIDevol>0.00</vIPIDevol>
                 <vPIS>0.00</vPIS>
                 <vCOFINS>0.00</vCOFINS>
-                <vOutro>1396.81</vOutro>
-                <vNF>5696.88</vNF>
+                <vOutro>0.00</vOutro>
+                <vNF>300.00</vNF>
             </ICMSTot>
         </total>
         <transp>
-            <modFrete>9</modFrete>
+            <modFrete>0</modFrete>
+            <transporta>
+                <CNPJ>00428307000279</CNPJ>
+                <xNome>Expresso Sao Miguel S/A</xNome>
+                <xEnder>Avenida Pelotas, 309</xEnder>
+                <xMun>São Leopoldo</xMun>
+                <UF>RS</UF>
+            </transporta>
             <vol>
                 <qVol>1</qVol>
                 <esp>Caixa</esp>
-                <pesoL>2.122</pesoL>
-                <pesoB>2.122</pesoB>
             </vol>
         </transp>
         <pag>
             <detPag>
                 <tPag>01</tPag>
-                <vPag>5696.88</vPag>
+                <vPag>300.00</vPag>
             </detPag>
         </pag>
-        <infAdic>
-            <infAdFisco>IMPORTACAO REALIZADA PELO REGIME DE TRIBUTACAO UNIFICADO (RTU) NA PONTE DA
-                AMIZADE TERMO RTU: 238013/2025</infAdFisco>
-            <infCpl>Documento emitido por ME ou EPP optante pelo Simples Nacional. Não gera direito
-                a crédito fiscal de IPI.</infCpl>
-        </infAdic>
-        <exporta>
-            <UFSaidaPais>SC</UFSaidaPais>
-            <xLocExporta>Santa Catarina</xLocExporta>
-            <xLocDespacho>Santa Catarina</xLocDespacho>
-        </exporta>
         <infRespTec>
             <CNPJ>28977040000107</CNPJ>
             <xContato>Ricardo Schroeder</xContato>
-            <email>ricardo@magazord.com.br</email>
+            <email>nfe@magazord.com.br</email>
             <fone>4735208013</fone>
         </infRespTec>
     </infNFe>

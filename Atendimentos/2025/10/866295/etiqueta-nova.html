@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etiqueta de Produto</title>
+    {{ default_css() }}
+
+    {% set colunas = 1 %}
+    {% set larguraImpresao = 100 %} {# tamanho em mm #}
+    {% set espacamentoEtiquetasLaterais = 3 %} {# tamanho em mm #}
+    {% set larguraEtiqueta = 100 %} {# largura em mm #}
+    {% set alturaEtiqueta = 10 %} {# altura em mm #}
+
+    <style>
+        @page {
+            size: {{ larguraImpresao }}mm auto;
+            margin: 0 3mm;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-content: flex-start;
+            width: {{ larguraImpresao }}mm;
+            font-family: Arial, sans-serif;
+        }
+
+        .etiqueta-container {
+            display: grid;
+            grid-template-columns: repeat({{ colunas }}, 1fr);
+            gap: {{ espacamentoEtiquetasLaterais }}mm;
+            width: 100%;
+            padding: 5mm;
+        }
+
+        .etiqueta {
+            width: {{ larguraEtiqueta }}mm;
+            height: {{ alturaEtiqueta }}mm;
+            background: #fff;
+            border: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5mm 8mm;
+            box-sizing: border-box;
+        }
+
+        .coluna-esquerda {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .codigo {
+            font-size: 8px;
+            color: #555;
+            letter-spacing: 0.5px;
+        }
+
+        .preco {
+            font-size: 12px;
+            font-weight: bold;
+            color: #000;
+            margin-top: 2px;
+        }
+
+        .coluna-direita {
+            text-align: left;
+            flex: 1;
+            margin-left: 8mm;
+        }
+
+        .descricao {
+            font-size: 9px;
+            line-height: 1.2;
+            color: #000;
+            font-weight: 500;
+        }
+
+        .tamanho {
+            font-size: 8px;
+            color: #333;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="etiqueta-container">
+    {% for produto in produtos %}
+        {% for i in 0..produto.quantidade -1 %}
+            <div class="etiqueta">
+                <div class="coluna-esquerda">
+                    <div class="codigo">CÓD. {{ produto.codigo }}</div>
+                    <div class="preco">R$ {{ produto.preco }}</div>
+                </div>
+
+                <div class="coluna-direita">
+                    <div class="descricao">{{ produto.nome }}</div>
+                    <div class="tamanho">{{ produto.nomeDerivacao }}</div>
+                </div>
+            </div>
+        {% endfor %}
+    {% endfor %}
+</div>
+
+</body>
+</html>

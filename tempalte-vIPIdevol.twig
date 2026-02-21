@@ -541,7 +541,7 @@
                 </vol>
             {% endif %}
         </transp>
-        <pag>
+       <pag>
             {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() in [2,4] or notaFiscal.cfopConfiguracao.tipoOperacao == 5 %}
                 <detPag>
                     <tPag>90</tPag>
@@ -576,11 +576,23 @@
                             {% if pagamento.formaPagamento == 90 %}
                                 <vPag>0.00</vPag>
                             {% else %}
+                                {% if pagamento.formaPagamento == 99 and pagamento.nomeFormaPagamento is not empty %}
+                                    <xPag>{{ pagamento.nomeFormaPagamento }}</xPag>
+                                {% endif %}
                                 <vPag>{{ pagamento.valor|number_format(2,'.','') }}</vPag>
-                                {% if pagamento.cartoes|length > 0 %}
+                                {% if pagamento.formaPagamento == 17 and pagamento.cartoes|length < 1 %}
+                                    <card>
+                                        <tpIntegra>2</tpIntegra>
+                                    </card>
+                                {% elseif pagamento.cartoes|length > 0 %}
                                     <card>
                                         {% for cartao in pagamento.cartoes %}
-                                            <tpIntegra>{{ cartao['tipoIntegracao'] }}</tpIntegra>
+                                {% if notaFiscal.formaRecebimento.id == 79 or notaFiscal.formaRecebimento.id == 78 %}
+                                        <tpIntegra>2</tpIntegra>
+{% else %}
+<tpIntegra>{{ cartao['tipoIntegracao'] }}</tpIntegra>
+                                            {% endif %}
+
                                             {% if infoRecebimentoSefaz and  infoRecebimentoSefaz['cnpj'] %}
                                                 <CNPJ>{{ infoRecebimentoSefaz['cnpj'] }}</CNPJ>
                                             {% endif %}

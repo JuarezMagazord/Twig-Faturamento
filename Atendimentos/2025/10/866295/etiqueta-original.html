@@ -6,13 +6,13 @@
     <title>Etiqueta de Produto</title>
     {{ default_css() }}
 
-    {% set colunas = 2 %}
+    {% set colunas = 1 %}
 
-    {% set larguraImpresao = 105 %} {# tamanho em mm #}
+    {% set larguraImpresao = 100 %} {# tamanho em mm #}
     {% set espacamentoEtiquetasLaterais = 3 %} {# tamanho em mm #}
 
-    {% set larguraEtiqueta = 50 %} {# tamanho em mm #}
-    {% set alturaEtiqueta = 20 %} {# tamanho em mm #}
+    {% set larguraEtiqueta = 10 %} {# tamanho em mm #}
+    {% set alturaEtiqueta = 22 %} {# tamanho em mm #}
 
     {% set tamanhoTextoCodigoProduto = 7 %} {# Tamanho em Pixels #}
     {% set tamanhoTextoNomeProduto = 7 %} {# Tamanho em Pixels #}
@@ -67,15 +67,25 @@
     {% for produto in produtos %}
         {% for i in 0..produto.quantidade -1 %}
             <div class="etiqueta">
-                <strong style="font-size: 10px;">{{ produto.codigo }}</strong>
-                <!-- <div style="font-size: {{ tamanhoTextoNomeProduto }}px;max-width:100%;white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ produto.nome }}</div> -->
-                <div style="font-size: 8px;white-space: nowrap; overflow: hidden;">{{ produto.nome }}</div>
-                <!-- <div style="font-zie: {{ tamanhoTextoDerivacaoProduto }}px;max-width:100%;white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{ produto.nomeDerivacao }}</div> -->
-                <div style="font-zie: 8px;white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{ produto.nomeDerivacao }}</div>
-                <!--<div class="preco">R$ {{ produto.preco }}</div> -->
-                <div class="barcode">
-                    <img class="barcode-default" src="{{ barcode_src(produto.codigo) }}" alt="Código de barras" style="max-width: auto; max-height: 60%;">
-                </div>
+                <strong style="font-size: {{ tamanhoTextoCodigoProduto }}px;">{{ produto.codigo }}</strong>
+                <!-- Nome do produto com word-wrap -->
+                <div style="
+                    font-size: {{ tamanhoTextoNomeProduto }}px;
+                    max-width: 100%;
+                    overflow-wrap: break-word;
+                    word-break: break-word;
+                    hyphens: auto;"
+                >{{ produto.nome }}</div>
+                
+                <!-- Derivação com word-wrap -->
+                <div style="
+                    font-size: {{ tamanhoTextoDerivacaoProduto }}px;
+                    max-width: 100%;
+                    overflow-wrap: break-word;
+                    word-break: break-word;
+                    hyphens: auto;"
+                >{{ produto.nomeDerivacao }}</div>
+                 <strong style="font-size: {{ tamanhoTextoCodigoProduto }}px;">{{ produto.preco}}</strong>
             </div>
         {% endfor %}
     {% endfor %}
