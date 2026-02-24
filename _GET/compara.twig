@@ -250,7 +250,7 @@
         {% set contemIBSInformado = false %}
         {% set valor_trib_estadual = 0 %}
         {% set valor_trib_federal = 0 %}
-
+        {% set icmsDiferido = 0.00 %}
         {% for i, notaFiscalItem in notaFiscal.notaFiscalItem %}
             {{ set_nota_fiscal_item(notaFiscalItem.id) }}
             <det nItem="{{ i + 1 }}">
@@ -474,6 +474,14 @@
                                     <vICMSDif>{{ icmsDiferido|round(2)|number_format(2,'.','') }}</vICMSDif>
                                     <vICMS>{{ (get_param_value_item_by_nome_logico('VLR_ICMS') -  icmsDiferido)|round(2)|number_format(2,'.','') }}</vICMS>
                                 </ICMS51>
+                            {% elseif situacao_tributaria_icms == '61'  %}
+                                <ICMS61>
+                                    <orig>{{ get_param_value_item_by_nome_logico('ORIGEM_ICMS') }}</orig>
+                                    <CST>{{ situacao_tributaria_icms }}</CST>
+                                    <qBCMonoRet>0.00</qBCMonoRet>
+                                    <adRemICMSRet>0.00</adRemICMSRet>
+                                    <vICMSMonoRet>0.00</vICMSMonoRet>
+                                </ICMS61>
                             {% elseif situacao_tributaria_icms in  ['10', '30', '70'] %}
                                 <ICMS{{ situacao_tributaria_icms }}>
                                     <orig>{{ get_param_value_item_by_nome_logico('ORIGEM_ICMS') }}</orig>
@@ -568,6 +576,14 @@
                             </IPITrib>
                         </IPI>
                     {% endif %}
+                    {% if declaracaoImportacao %}
+                        <II>
+                            <vBC>{{ get_param_value_item_by_nome_logico('VLR_BASE_II')|number_format(2,'.','') }}</vBC>
+                            <vDespAdu>{{ get_param_value_item_by_nome_logico('VLR_DESP_ADU')|number_format(2,'.','') }}</vDespAdu>
+                            <vII>{{ get_param_value_item_by_nome_logico('VLR_II')|number_format(2,'.','') }}</vII>
+                            <vIOF>{{ get_param_value_item_by_nome_logico('VLR_IOF')|number_format(2,'.','') }}</vIOF>
+                        </II>
+                    {% endif %}
                     <PIS>
                         {% if get_param_value_item_by_nome_logico('PIS_SITUACAO_TRIB') in ['01','02'] %}
                             <PISAliq>
@@ -611,7 +627,7 @@
                         {% endif %}
                     </COFINS>
                     {% set partilhaICMS = get_param_value_item_by_nome_logico('PARTILHA_ICMS') == 'sim' %}
-                    {% if partilhaICMS %}
+                    {% if partilhaICMS and situacao_tributaria_icms != '61' %}
                         <ICMSUFDest>
                             <vBCUFDest>{{ get_param_value_item_by_nome_logico('VLR_BASE_ICMS') }}</vBCUFDest>
                             <vBCFCPUFDest>{{ get_param_value_item_by_nome_logico('VLR_BASE_ICMS') }}</vBCFCPUFDest>
@@ -648,6 +664,8 @@
                         {% else %}
                             {% if vlrBaseIBS and vlrBaseIBS > 0 %}
                                 {% set contemIBSInformado = true %}
+                                {% set reducaoAliquotaIBS = get_param_value_item_by_nome_logico('PERC_REDUCAO_ALIQUOTA_IBS') %}
+                                {% set reducaoAliquotaCBS = get_param_value_item_by_nome_logico('PERC_REDUCAO_ALIQUOTA_CBS') %}
                                 <IBSCBS>
                                     <CST>{{ get_param_value_item_by_nome_logico('SITUACAO_TRIB_IBS') }}</CST>
                                     <cClassTrib>{{  get_param_value_item_by_nome_logico('CLASSIFICACAO_TRIB_IBS')  }}</cClassTrib>
@@ -655,27 +673,33 @@
                                         <vBC>{{ get_param_value_item_by_nome_logico('VLR_BASE_IBS') }}</vBC>
                                         <gIBSUF>
                                             <pIBSUF>{{ get_param_value_item_by_nome_logico('ALIQ_UF_IBS') }}</pIBSUF>
-                                            <gRed>
-                                                <pRedAliq>{{ get_param_value_item_by_nome_logico('PERC_REDUCAO_ALIQUOTA_CBS') }}</pRedAliq>
-                                                <pAliqEfet>{{ (get_param_value_item_by_nome_logico('ALIQ_UF_IBS') * (1 - (get_param_value_item_by_nome_logico('PERC_REDUCAO_ALIQUOTA_IBS') / 100)))|round(2)|number_format(2,'.','') }}</pAliqEfet>
-                                            </gRed>
+                                            {% if reducaoAliquotaIBS > 0 %}
+                                                <gRed>
+                                                    <pRedAliq>{{ get_param_value_item_by_nome_logico('PERC_REDUCAO_ALIQUOTA_IBS') }}</pRedAliq>
+                                                    <pAliqEfet>{{ (get_param_value_item_by_nome_logico('ALIQ_UF_IBS') * (1 - (get_param_value_item_by_nome_logico('PERC_REDUCAO_ALIQUOTA_IBS') / 100)))|round(2)|number_format(2,'.','') }}</pAliqEfet>
+                                                </gRed>
+                                            {% endif %}
                                             <vIBSUF>{{ get_param_value_item_by_nome_logico('VLR_UF_IBS') }}</vIBSUF>
                                         </gIBSUF>
                                         <gIBSMun>
                                             <pIBSMun>{{ get_param_value_item_by_nome_logico('ALIQ_MUN_IBS') }}</pIBSMun>
-                                            <gRed>
-                                                <pRedAliq>{{ get_param_value_item_by_nome_logico('PERC_REDUCAO_ALIQUOTA_IBS') }}</pRedAliq>
-                                                <pAliqEfet>{{ (get_param_value_item_by_nome_logico('ALIQ_MUN_IBS') * (1 - (get_param_value_item_by_nome_logico('PERC_REDUCAO_ALIQUOTA_IBS') / 100)))|round(2)|number_format(2,'.','') }}</pAliqEfet>
-                                            </gRed>
+                                            {% if reducaoAliquotaIBS > 0 %}
+                                                <gRed>
+                                                    <pRedAliq>{{ get_param_value_item_by_nome_logico('PERC_REDUCAO_ALIQUOTA_IBS') }}</pRedAliq>
+                                                    <pAliqEfet>{{ (get_param_value_item_by_nome_logico('ALIQ_MUN_IBS') * (1 - (get_param_value_item_by_nome_logico('PERC_REDUCAO_ALIQUOTA_IBS') / 100)))|round(2)|number_format(2,'.','') }}</pAliqEfet>
+                                                </gRed>
+                                            {% endif %}
                                             <vIBSMun>{{ get_param_value_item_by_nome_logico('VLR_MUN_IBS') }}</vIBSMun>
                                         </gIBSMun>
                                         <vIBS>{{ (get_param_value_item_by_nome_logico('VLR_MUN_IBS') + get_param_value_item_by_nome_logico('VLR_UF_IBS'))|round(2)|number_format(2,'.','') }}</vIBS>
                                         <gCBS>
                                             <pCBS>{{ get_param_value_item_by_nome_logico('ALIQ_CBS') }}</pCBS>
-                                            <gRed>
-                                                <pRedAliq>{{ get_param_value_item_by_nome_logico('PERC_REDUCAO_ALIQUOTA_CBS') }}</pRedAliq>
-                                                <pAliqEfet>{{ (get_param_value_item_by_nome_logico('ALIQ_CBS') * (1 - (get_param_value_item_by_nome_logico('PERC_REDUCAO_ALIQUOTA_CBS') / 100)))|round(2)|number_format(2,'.','') }}</pAliqEfet>
-                                            </gRed>
+                                            {% if reducaoAliquotaCBS > 0 %}
+                                                <gRed>
+                                                    <pRedAliq>{{ get_param_value_item_by_nome_logico('PERC_REDUCAO_ALIQUOTA_CBS') }}</pRedAliq>
+                                                    <pAliqEfet>{{ (get_param_value_item_by_nome_logico('ALIQ_CBS') * (1 - (get_param_value_item_by_nome_logico('PERC_REDUCAO_ALIQUOTA_CBS') / 100)))|round(2)|number_format(2,'.','') }}</pAliqEfet>
+                                                </gRed>
+                                            {% endif %}
                                             <vCBS>{{ get_param_value_item_by_nome_logico('VLR_CBS') }}</vCBS>
                                         </gCBS>
                                     </gIBSCBS>
@@ -711,7 +735,7 @@
                     <vICMSDeson>{{ (notaFiscal.informacoes.descontoIcmsSuframa|number_format(2,'.','')) }}</vICMSDeson>
                 {% else %}
                     <vBC>{{ get_param_value_by_nome_logico('VLR_TOTAL_BASE_ICMS') }}</vBC>
-                    <vICMS>{{ get_param_value_by_nome_logico('VLR_TOTAL_ICMS') }}</vICMS>
+                    <vICMS>{{ (get_param_value_by_nome_logico('VLR_TOTAL_ICMS') - icmsDiferido)|number_format(2,'.','') }}</vICMS>
                     <vICMSDeson>0</vICMSDeson>
                 {% endif %}
 
@@ -735,14 +759,15 @@
                 <vFrete>{{ notaFiscal.valorTotalFrete|number_format(2,'.','') }}</vFrete>
                 <vSeg>0</vSeg>
                 <vDesc>{{ notaFiscal.valorDesconto|number_format(2,'.','') }}</vDesc>
-                <vII>0</vII>
+                {% set valor_ii = get_param_value_by_nome_logico('VLR_TOTAL_II') %}
+                <vII>{{ valor_ii ? valor_ii : '0.00' }}</vII>
                 {% set valor_ipi = get_param_value_by_nome_logico('VLR_TOTAL_IPI') %}
                 {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() == 4 %}
-                    <vIPI>{{ valor_ipi ? valor_ipi : '0.00' }}</vIPI>
-                    <vIPIDevol>0.00</vIPIDevol>
+                  <vIPI>{{ valor_ipi ? valor_ipi : '0.00' }}</vIPI>
+                  <vIPIDevol>0.00</vIPIDevol>
                 {% else %}
-                    <vIPI>0.00</vIPI>
-                    <vIPIDevol>{{ valor_ipi ? valor_ipi : '0.00' }}</vIPIDevol>
+                  <vIPI>0.00</vIPI>
+                  <vIPIDevol>{{ valor_ipi ? valor_ipi : '0.00' }}</vIPIDevol>
                 {% endif %}
                 <vPIS>{{ get_param_value_by_nome_logico('VLR_TOTAL_PIS') }}</vPIS>
                 <vCOFINS>{{ get_param_value_by_nome_logico('VLR_TOTAL_COFINS') }}</vCOFINS>
@@ -954,7 +979,7 @@
                 {% endif %}
             </infAdic>
         {% endif %}
-        {% if notaFiscal.pessoa.tipo == 3 %}
+        {% if notaFiscal.pessoa.tipo == 3 and notaFiscal.informacoes.origem != 'importacao' %}
             <exporta>
                 <UFSaidaPais>{{ enderecoEmitente.cidade.estado.sigla }}</UFSaidaPais>
                 <xLocExporta>{{ enderecoEmitente.cidade.estado.nome }}</xLocExporta>

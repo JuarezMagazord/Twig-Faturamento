@@ -7,100 +7,112 @@
     {{ default_css() }}
 
     {% set colunas = 1 %}
-    {% set larguraImpresao = 60 %}
-    {% set larguraEtiqueta = 60 %}
-    {% set alturaEtiqueta = 30 %}
-
-    {% set tamanhoTextoCodigoProduto = 8 %}
-    {% set tamanhoTextoNomeProduto = 7 %}
-    {% set tamanhoTextoDerivacaoProduto = 7 %}
+    {% set larguraImpresao = 100 %}
+    {% set espacamentoEtiquetasLaterais = 1 %}
+    {% set larguraEtiqueta = 100 %}
+    {% set alturaEtiqueta = 10 %}
 
     <style>
         @page {
             size: {{ larguraImpresao }}mm auto;
-            margin-top: 0mm !important;
-            margin-bottom: 0mm !important;
-            margin-left: 0mm !important;
-            margin-right: 0mm !important;
+            margin: 0; /* remove margens de impressão */
         }
 
         body {
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-content: flex-start;
+            width: {{ larguraImpresao }}mm;
             font-family: Arial, sans-serif;
-            width: {{ larguraImpresao }}mm;  /* página com 60mm de largura */
+        }
+
+        .etiqueta-container {
+            display: grid;
+            grid-template-columns: repeat({{ colunas }}, 1fr);
+            gap: {{ espacamentoEtiquetasLaterais }}mm;
+            width: 100%;
+            padding: 0; /* remove o padding lateral */
+            margin: 0; /* remove espaçamento externo */
         }
 
         .etiqueta {
             width: {{ larguraEtiqueta }}mm;
             height: {{ alturaEtiqueta }}mm;
-            padding: 2mm;
+            background: #fff;
+            border: 1px solid #ccc;
+            display: grid;
+            grid-template-columns: 3cm 3cm auto; /* Coluna 1, 2 e 3 */
+            align-items: center;
+            padding: 2mm 3mm;
             box-sizing: border-box;
-            text-align: center;
-            page-break-inside: avoid;
-            display: flex;                /* ativa flexbox */
-            flex-direction: column;       /* empilha verticalmente */
-            justify-content: center;      /* CENTRALIZA VERTICAL */
-            align-items: center;          /* CENTRALIZA HORIZONTAL */
         }
 
-        .linha-texto {
-            line-height: 1.1;
+        /* COLUNA 1 */
+        .coluna-1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+        }
+
+        .codigo {
+            font-size: 8px;
+            color: #555;
+            letter-spacing: 0.5px;
         }
 
         .preco {
+            font-size: 12px;
+            font-weight: bold;
+            color: #000;
+            margin-top: 2px;
+        }
+
+        /* COLUNA 2 */
+        .coluna-2 {
+            font-size: 9px;
+            font-weight: 500;
+            color: #000;
+            line-height: 1.2;
+            overflow-wrap: break-word;
+            word-break: break-word;
+            white-space: normal;
+            padding: 0 1mm; /* leve respiro, mas sem empurrar */
+        }
+
+        /* COLUNA 3 */
+        .coluna-3 {
+            text-align: left;
             font-size: 8px;
-            margin-top: 0.5mm;
-            margin-bottom: 1mm;
+            color: #333;
         }
-
-        .barcode img {
-            max-width: 100%;
-        }
-
-        .barcode img {
-            width: 40mm;
-            height: 6mm;
-            display: block;
-        }
-
     </style>
 </head>
 <body>
 
-{% for produto in produtos %}
-    {% for i in 0..produto.quantidade -1 %}
-        <div class="etiqueta">
-            <div class="linha-texto" style="font-size: {{ tamanhoTextoCodigoProduto }}px; font-weight: bold;">
-                {{ produto.codigo }}
-            </div>
-
-            <div class="linha-texto"
-                 style="font-size: {{ tamanhoTextoNomeProduto }}px;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;">
-                {{ produto.nome }}
-            </div>
-
-            <div class="linha-texto"
-                 style="font-size: {{ tamanhoTextoDerivacaoProduto }}px;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;">
-                {{ produto.nomeDerivacao }}
-            </div>
-
-            <div class="preco">
-                R$ {{ produto.preco }}
-            </div>
-
-            <div class="barcode">
-                    <img class="barcode-default" src="{{ barcode_src(produto.codigo) }}" alt="Código de barras" style="max-width: 90%; max-height: auto;">
+<div class="etiqueta-container">
+    {% for produto in produtos %}
+        {% for i in 0..produto.quantidade -1 %}
+            <div class="etiqueta">
+                <div class="coluna-1">
+                    <div class="codigo">CÓD. {{ produto.codigo }}</div>
+                    <div class="preco">R$ {{ produto.preco }}</div>
                 </div>
-        </div>
+
+                <div class="coluna-2">
+                    {{ produto.nome }}
+                </div>
+
+                <div class="coluna-3">
+                    {{ produto.nomeDerivacao }}
+                </div>
+            </div>
+        {% endfor %}
     {% endfor %}
-{% endfor %}
+</div>
 
 </body>
 </html>
