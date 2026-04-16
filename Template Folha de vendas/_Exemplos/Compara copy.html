@@ -18,7 +18,10 @@
     <style>
         @page {
             size: {{ larguraImpresao }}mm auto;
-            margin: 0;
+            margin-top: 0mm !important;
+            margin-bottom: 0mm !important;
+            margin-left: 0mm !important;
+            margin-right: 0mm !important;
         }
 
         body {
@@ -29,13 +32,16 @@
         }
 
         .etiqueta {
-            width: {{ larguraEtiqueta }}mm;      /* 60mm */
-            /* sem height fixa pra não esmagar o código */
-            min-height: {{ alturaEtiqueta }}mm;  /* garante altura mínima da etiqueta */
+            width: {{ larguraEtiqueta }}mm;
+            height: {{ alturaEtiqueta }}mm;
+            padding: 2mm;
             box-sizing: border-box;
-            padding: 2mm 2mm 2mm 2mm;
             text-align: center;
             page-break-inside: avoid;
+            display: flex;                /* ativa flexbox */
+            flex-direction: column;       /* empilha verticalmente */
+            justify-content: center;      /* CENTRALIZA VERTICAL */
+            align-items: center;          /* CENTRALIZA HORIZONTAL */
         }
 
         .linha-texto {
@@ -53,11 +59,11 @@
         }
 
         .barcode img {
-            width: 40mm;    /* largura controlada (dentro dos 60mm da etiqueta) */
-            height: 6mm;   /* altura se ajusta sem distorcer */
+            width: 40mm;
+            height: 6mm;
             display: block;
-            margin: 0 auto;
         }
+
     </style>
 </head>
 <body>

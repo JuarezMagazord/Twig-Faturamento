@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-    <infNFe Id="NFe42260208814909000195550050000008301000022910" versao="4.00">
+    <infNFe Id="NFe43260455323084000196550050000029891000034470" versao="4.00">
         <ide>
-            <cUF>42</cUF>
-            <cNF>00002291</cNF>
+            <cUF>43</cUF>
+            <cNF>00003447</cNF>
             <natOp>Venda Merc.Adq.Rec.Terc.Dest.Nao Contrib</natOp>
             <mod>55</mod>
             <serie>5</serie>
-            <nNF>830</nNF>
-            <dhEmi>2026-02-18T13:38:31-03:00</dhEmi>
-            <dhSaiEnt>2026-02-18T13:38:31-03:00</dhSaiEnt>
+            <nNF>2989</nNF>
+            <dhEmi>2026-04-14T08:54:49-03:00</dhEmi>
+            <dhSaiEnt>2026-04-14T08:54:49-03:00</dhSaiEnt>
             <tpNF>1</tpNF>
             <idDest>2</idDest>
-            <cMunFG>4215802</cMunFG>
+            <cMunFG>4314902</cMunFG>
             <tpImp>1</tpImp>
             <tpEmis>1</tpEmis>
             <cDV>0</cDV>
@@ -25,77 +25,75 @@
             <verProc>Magazord 1.0</verProc>
         </ide>
         <emit>
-            <CNPJ>08814909000195</CNPJ>
-            <xNome>Futura Comercial LTDA</xNome>
-            <xFant>Blend Home</xFant>
+            <CNPJ>55323084000196</CNPJ>
+            <xNome>C. T. BITENCOURT LTDA</xNome>
+            <xFant>Extremo Sul Aventura</xFant>
             <enderEmit>
-                <xLgr>Estrada Cruzeiro</xLgr>
-                <nro>995</nro>
-                <xCpl>Galpão 2</xCpl>
-                <xBairro>Cruzeiro</xBairro>
-                <cMun>4215802</cMun>
-                <xMun>São Bento do Sul</xMun>
-                <UF>SC</UF>
-                <CEP>89286275</CEP>
+                <xLgr>Rua Riachuelo</xLgr>
+                <nro>1582</nro>
+                <xCpl>2 Andar</xCpl>
+                <xBairro>Centro Histórico</xBairro>
+                <cMun>4314902</cMun>
+                <xMun>Porto Alegre</xMun>
+                <UF>RS</UF>
+                <CEP>90010273</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>47997230386</fone>
+                <fone>51998098162</fone>
             </enderEmit>
-            <IE>262211165</IE>
-            <IM>ISENTO</IM>
-            <CNAE>4754701</CNAE>
+            <IE>0964011492</IE>
+            <IM>isento</IM>
             <CRT>1</CRT>
         </emit>
         <dest>
-            <CNPJ>21747251000104</CNPJ>
-            <xNome>EVOLUTION FAMILY CLUB</xNome>
+            <CNPJ>00394494007734</CNPJ>
+            <xNome>Policia federal de Foz do Iguacu</xNome>
             <enderDest>
-                <xLgr>Rua Vitorino Calegare</xLgr>
-                <nro>141</nro>
-                <xCpl>ADMINISTRACAO</xCpl>
-                <xBairro>Jardim Paraiso</xBairro>
-                <cMun>3505708</cMun>
-                <xMun>Barueri</xMun>
-                <UF>SP</UF>
-                <CEP>06412270</CEP>
+                <xLgr>Avenida Paraná</xLgr>
+                <nro>3471</nro>
+                <xCpl>PF</xCpl>
+                <xBairro>Centro Cívico</xBairro>
+                <cMun>4108304</cMun>
+                <xMun>Foz do Iguaçu</xMun>
+                <UF>PR</UF>
+                <CEP>85863469</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>11981067200</fone>
+                <fone>45991276403</fone>
             </enderDest>
             <indIEDest>9</indIEDest>
-            <email>evolution.faleconosco@gmail.com</email>
+            <email>danielfernandes.curitiba@gmail.com</email>
         </dest>
         <entrega>
-            <CNPJ>21747251000104</CNPJ>
-            <xNome>EVOLUTION FAMILY CLUB</xNome>
-            <xLgr>Rua Vitorino Calegare</xLgr>
-            <nro>141</nro>
-            <xCpl>ADMINISTRACAO</xCpl>
-            <xBairro>Jardim Paraiso</xBairro>
-            <cMun>3505708</cMun>
-            <xMun>Barueri</xMun>
-            <UF>SP</UF>
-            <CEP>06412270</CEP>
+            <CNPJ>00394494007734</CNPJ>
+            <xNome>Policia federal de Foz do Iguaçu</xNome>
+            <xLgr>Avenida Javier Koelbel</xLgr>
+            <nro>48</nro>
+            <xCpl>Salao BONI</xCpl>
+            <xBairro>Bourbon</xBairro>
+            <cMun>4108304</cMun>
+            <xMun>Foz do Iguaçu</xMun>
+            <UF>PR</UF>
+            <CEP>85853610</CEP>
         </entrega>
 
         <det nItem="1">
             <prod>
-                <cProd>962</cProd>
-                <cEAN>7908776703947</cEAN>
-                <xProd>Aparador em Madeira Macica Dijon - - Pinhao/Corda Nude</xProd>
-                <NCM>94036000</NCM>
+                <cProd>3020-Coyote-42</cProd>
+                <cEAN>7908896605787</cEAN>
+                <xProd>Bota Arion 2.0 Novo cano 6&#039;&#039; - Invictus - Coyote - 42</xProd>
+                <NCM>64041900</NCM>
                 <CFOP>6108</CFOP>
                 <uCom>UN</uCom>
                 <qCom>1.0000</qCom>
-                <vUnCom>1599.990000</vUnCom>
-                <vProd>1599.99</vProd>
-                <cEANTrib>7908776703947</cEANTrib>
+                <vUnCom>639.900000</vUnCom>
+                <vProd>639.90</vProd>
+                <cEANTrib>7908896605787</cEANTrib>
                 <uTrib>UN</uTrib>
                 <qTrib>1.0000</qTrib>
-                <vUnTrib>1599.990000</vUnTrib>
-                <vFrete>119.90</vFrete>
+                <vUnTrib>639.900000</vUnTrib>
                 <indTot>1</indTot>
-                <xPed>0012602538810</xPed>
+                <xPed>0012604678857</xPed>
             </prod>
             <imposto>
                 <ICMS>
@@ -124,7 +122,7 @@
                     <vBCUFDest>0.00</vBCUFDest>
                     <vBCFCPUFDest>0.00</vBCFCPUFDest>
                     <pFCPUFDest>0.00</pFCPUFDest>
-                    <pICMSUFDest>18.00</pICMSUFDest>
+                    <pICMSUFDest>19.50</pICMSUFDest>
                     <pICMSInter>12.00</pICMSInter>
                     <pICMSInterPart>100.00</pICMSInterPart>
                     <vFCPUFDest>0.00</vFCPUFDest>
@@ -133,10 +131,286 @@
                 </ICMSUFDest>
             </imposto>
         </det>
+
+        <det nItem="2">
+            <prod>
+                <cProd>3020-Coyote-41</cProd>
+                <cEAN>7908896605770</cEAN>
+                <xProd>Bota Arion 2.0 Novo cano 6&#039;&#039; - Invictus - Coyote - 41</xProd>
+                <NCM>64041900</NCM>
+                <CFOP>6108</CFOP>
+                <uCom>UN</uCom>
+                <qCom>1.0000</qCom>
+                <vUnCom>639.900000</vUnCom>
+                <vProd>639.90</vProd>
+                <cEANTrib>7908896605770</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>639.900000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604678857</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMSSN102>
+                        <orig>0</orig>
+                        <CSOSN>102</CSOSN>
+                    </ICMSSN102>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
+                </PIS>
+                <COFINS>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
+                </COFINS>
+                <ICMSUFDest>
+                    <vBCUFDest>0.00</vBCUFDest>
+                    <vBCFCPUFDest>0.00</vBCFCPUFDest>
+                    <pFCPUFDest>0.00</pFCPUFDest>
+                    <pICMSUFDest>19.50</pICMSUFDest>
+                    <pICMSInter>12.00</pICMSInter>
+                    <pICMSInterPart>100.00</pICMSInterPart>
+                    <vFCPUFDest>0.00</vFCPUFDest>
+                    <vICMSUFDest>0.00</vICMSUFDest>
+                    <vICMSUFRemet>0.00</vICMSUFRemet>
+                </ICMSUFDest>
+            </imposto>
+        </det>
+
+        <det nItem="3">
+            <prod>
+                <cProd>18004-VerdeOliva-41a45</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Meia Batalha - Br Force - Verde Oliva - 41 a 45</xProd>
+                <NCM>61159600</NCM>
+                <CFOP>6108</CFOP>
+                <uCom>UN</uCom>
+                <qCom>4.0000</qCom>
+                <vUnCom>23.000000</vUnCom>
+                <vProd>92.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>4.0000</qTrib>
+                <vUnTrib>23.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604678857</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMSSN102>
+                        <orig>0</orig>
+                        <CSOSN>102</CSOSN>
+                    </ICMSSN102>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
+                </PIS>
+                <COFINS>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
+                </COFINS>
+                <ICMSUFDest>
+                    <vBCUFDest>0.00</vBCUFDest>
+                    <vBCFCPUFDest>0.00</vBCFCPUFDest>
+                    <pFCPUFDest>0.00</pFCPUFDest>
+                    <pICMSUFDest>19.50</pICMSUFDest>
+                    <pICMSInter>12.00</pICMSInter>
+                    <pICMSInterPart>100.00</pICMSInterPart>
+                    <vFCPUFDest>0.00</vFCPUFDest>
+                    <vICMSUFDest>0.00</vICMSUFDest>
+                    <vICMSUFRemet>0.00</vICMSUFRemet>
+                </ICMSUFDest>
+            </imposto>
+        </det>
+
+        <det nItem="4">
+            <prod>
+                <cProd>9040-Unico</cProd>
+                <cEAN>7908896602519</cEAN>
+                <xProd>Canivete Phanton Coyote - Invictus</xProd>
+                <NCM>82119320</NCM>
+                <CEST>0801700</CEST>
+                <CFOP>6108</CFOP>
+                <uCom>UN</uCom>
+                <qCom>1.0000</qCom>
+                <vUnCom>199.900000</vUnCom>
+                <vProd>199.90</vProd>
+                <cEANTrib>7908896602519</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>199.900000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604678857</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMSSN102>
+                        <orig>2</orig>
+                        <CSOSN>102</CSOSN>
+                    </ICMSSN102>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
+                </PIS>
+                <COFINS>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
+                </COFINS>
+                <ICMSUFDest>
+                    <vBCUFDest>0.00</vBCUFDest>
+                    <vBCFCPUFDest>0.00</vBCFCPUFDest>
+                    <pFCPUFDest>0.00</pFCPUFDest>
+                    <pICMSUFDest>19.50</pICMSUFDest>
+                    <pICMSInter>4.00</pICMSInter>
+                    <pICMSInterPart>100.00</pICMSInterPart>
+                    <vFCPUFDest>0.00</vFCPUFDest>
+                    <vICMSUFDest>0.00</vICMSUFDest>
+                    <vICMSUFRemet>0.00</vICMSUFRemet>
+                </ICMSUFDest>
+            </imposto>
+        </det>
+
+        <det nItem="5">
+            <prod>
+                <cProd>18004-Preto-36a40</cProd>
+                <cEAN>7908005364796</cEAN>
+                <xProd>Meia Batalha - Br Force - Preto - 36 a 40</xProd>
+                <NCM>61159600</NCM>
+                <CFOP>6108</CFOP>
+                <uCom>UN</uCom>
+                <qCom>1.0000</qCom>
+                <vUnCom>23.000000</vUnCom>
+                <vProd>23.00</vProd>
+                <cEANTrib>7908005364796</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>23.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604678857</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMSSN102>
+                        <orig>0</orig>
+                        <CSOSN>102</CSOSN>
+                    </ICMSSN102>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
+                </PIS>
+                <COFINS>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
+                </COFINS>
+                <ICMSUFDest>
+                    <vBCUFDest>0.00</vBCUFDest>
+                    <vBCFCPUFDest>0.00</vBCFCPUFDest>
+                    <pFCPUFDest>0.00</pFCPUFDest>
+                    <pICMSUFDest>19.50</pICMSUFDest>
+                    <pICMSInter>12.00</pICMSInter>
+                    <pICMSInterPart>100.00</pICMSInterPart>
+                    <vFCPUFDest>0.00</vFCPUFDest>
+                    <vICMSUFDest>0.00</vICMSUFDest>
+                    <vICMSUFRemet>0.00</vICMSUFRemet>
+                </ICMSUFDest>
+            </imposto>
+        </det>
+
+        <det nItem="6">
+            <prod>
+                <cProd>9002-UN</cProd>
+                <cEAN>7898618487015</cEAN>
+                <xProd>Canivete Phanton - Invictus</xProd>
+                <NCM>82119320</NCM>
+                <CEST>0801700</CEST>
+                <CFOP>6108</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>129.000000</vUnCom>
+                <vProd>258.00</vProd>
+                <cEANTrib>7898618487015</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>129.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604678857</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMSSN102>
+                        <orig>2</orig>
+                        <CSOSN>102</CSOSN>
+                    </ICMSSN102>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISNT>
+                        <CST>07</CST>
+                    </PISNT>
+                </PIS>
+                <COFINS>
+                    <COFINSNT>
+                        <CST>07</CST>
+                    </COFINSNT>
+                </COFINS>
+                <ICMSUFDest>
+                    <vBCUFDest>0.00</vBCUFDest>
+                    <vBCFCPUFDest>0.00</vBCFCPUFDest>
+                    <pFCPUFDest>0.00</pFCPUFDest>
+                    <pICMSUFDest>19.50</pICMSUFDest>
+                    <pICMSInter>4.00</pICMSInter>
+                    <pICMSInterPart>100.00</pICMSInterPart>
+                    <vFCPUFDest>0.00</vFCPUFDest>
+                    <vICMSUFDest>0.00</vICMSUFDest>
+                    <vICMSUFRemet>0.00</vICMSUFRemet>
+                </ICMSUFDest>
+            </imposto>
+        </det>
         <total>
+
             <ICMSTot>
-
-
                 <vBC>0.00</vBC>
                 <vICMS>0.00</vICMS>
                 <vICMSDeson>0</vICMSDeson>
@@ -149,8 +423,8 @@
                 <vST>0.00</vST>
                 <vFCPST>0.00</vFCPST>
                 <vFCPSTRet>0.00</vFCPSTRet>
-                <vProd>1599.99</vProd>
-                <vFrete>119.90</vFrete>
+                <vProd>1852.70</vProd>
+                <vFrete>0.00</vFrete>
                 <vSeg>0</vSeg>
                 <vDesc>0.00</vDesc>
                 <vII>0.00</vII>
@@ -159,50 +433,44 @@
                 <vPIS>0.00</vPIS>
                 <vCOFINS>0.00</vCOFINS>
                 <vOutro>0.00</vOutro>
-                <vNF>1719.89</vNF>
+                <vNF>1852.70</vNF>
             </ICMSTot>
         </total>
         <transp>
             <modFrete>0</modFrete>
             <transporta>
-                <CNPJ>48755687000100</CNPJ>
-                <xNome>Dl Cargas e Logistica Unipessoal LTDA</xNome>
-                <xFant>Dl Cargas</xFant>
-                <xEnder>Rua Murutu, 0</xEnder>
-                <xMun>Guarulhos</xMun>
+                <CNPJ>73939449000193</CNPJ>
+                <xNome>Total Express</xNome>
+                <xEnder>Avenida Piracema, 155</xEnder>
+                <xMun>Barueri</xMun>
                 <UF>SP</UF>
             </transporta>
             <vol>
                 <qVol>1</qVol>
                 <esp>Caixa</esp>
-                <pesoL>12.500</pesoL>
-                <pesoB>12.500</pesoB>
+                <pesoL>3.300</pesoL>
+                <pesoB>3.300</pesoB>
             </vol>
         </transp>
         <pag>
             <detPag>
                 <tPag>03</tPag>
-                <vPag>1719.89</vPag>
+                <vPag>1852.70</vPag>
                 <card>
                     <tpIntegra>1</tpIntegra>
-                    <CNPJ>51746143000188</CNPJ>
+                    <CNPJ>19468242000132</CNPJ>
                     <tBand>01</tBand>
-                    <cAut>2cbb</cAut>
+                    <cAut>432e9091a875288e8a67</cAut>
                 </card>
             </detPag>
         </pag>
         <infAdic>
-            <infAdFisco>Pedimos por gentileza, que confira sua mercadoria no ato da entrega. Trocas
-                ou devoluções devem ser solicitadas dentro de até 7 dias após o recebimento.
-                Lembramos também que não conseguimos oferecer assistência para situações de mau uso.
-                TRANSPORTADORA! FAVOR AGENDAR A ENTREGA COM O CLIENTE, AFIM DE EVITAR TRANSTORNOS
-                COM ENTREGA. COTAÇÃO: 14111.</infAdFisco>
-            <infCpl>Pedido: 0012602538810 - Documento emitido por ME ou EPP optante pelo Simples
+            <infCpl>Pedido: 0012604678857 - Documento emitido por ME ou EPP optante pelo Simples
                 Nacional. Não gera direito a crédito fiscal de IPI. - Total aproximado de tributos:
-                469,53 (27,30%) Federais 263,14 (15,30%) Estaduais 206,39 (12,00%). Fonte.:
+                574,67 (31,02%) Federais 259,72 (14,02%) Estaduais 314,95 (17,00%). Fonte.:
                 IBPT/empresometro.com.br.</infCpl>
             <obsCont xCampo="Pedido de Venda">
-                <xTexto>0012602538810</xTexto>
+                <xTexto>0012604678857</xTexto>
             </obsCont>
         </infAdic>
         <infRespTec>

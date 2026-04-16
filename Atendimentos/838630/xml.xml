@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe35250951148833000135550050000005191000006880" versao="4.00">
+        <ide>
+            <cUF>35</cUF>
+            <cNF>00000688</cNF>
+            <natOp>Venda Merc.Adq.c/Subst.Trib.entre C.Subs</natOp>
+            <mod>55</mod>
+            <serie>5</serie>
+            <nNF>519</nNF>
+            <dhEmi>2025-09-18T16:54:59-03:00</dhEmi>
+            <dhSaiEnt>2025-09-18T16:54:59-03:00</dhSaiEnt>
+            <tpNF>1</tpNF>
+            <idDest>1</idDest>
+            <cMunFG>3504107</cMunFG>
+            <tpImp>1</tpImp>
+            <tpEmis>1</tpEmis>
+            <cDV>0</cDV>
+            <tpAmb>1</tpAmb>
+            <finNFe>1</finNFe>
+            <indFinal>1</indFinal>
+            <indPres>2</indPres>
+            <indIntermed>0</indIntermed>
+            <procEmi>0</procEmi>
+            <verProc>Magazord 1.0</verProc>
+        </ide>
+        <emit>
+            <CNPJ>51148833000135</CNPJ>
+            <xNome>Solo Loja Digital Ltda</xNome>
+            <xFant>Solo Loja</xFant>
+            <enderEmit>
+                <xLgr>Rua Letícia Bonini</xLgr>
+                <nro>100 E</nro>
+                <xCpl>Fundos</xCpl>
+                <xBairro>Jardim Ipê</xBairro>
+                <cMun>3504107</cMun>
+                <xMun>Atibaia</xMun>
+                <UF>SP</UF>
+                <CEP>12945240</CEP>
+                <cPais>1058</cPais>
+                <xPais>Brasil</xPais>
+                <fone>11941690568</fone>
+            </enderEmit>
+            <IE>190432332119</IE>
+            <IM>Isento</IM>
+            <CRT>3</CRT>
+        </emit>
+        <dest>
+            <CPF>85801637060</CPF>
+            <xNome>Comprador (Testes Internos)</xNome>
+            <enderDest>
+                <xLgr>Avenida Brigadeiro Faria Lima</xLgr>
+                <nro>3732</nro>
+                <xCpl>Andar 22 23 e 26</xCpl>
+                <xBairro>Itaim Bibi</xBairro>
+                <cMun>3550308</cMun>
+                <xMun>São Paulo</xMun>
+                <UF>SP</UF>
+                <CEP>04538132</CEP>
+                <cPais>1058</cPais>
+                <xPais>Brasil</xPais>
+                <fone>47989898989</fone>
+            </enderDest>
+            <indIEDest>9</indIEDest>
+            <email>teste@comprador.com.br</email>
+        </dest>
+        <entrega>
+            <CPF>85801637060</CPF>
+            <xNome>Solo Loja Digital Ltda</xNome>
+            <xLgr>Avenida Brigadeiro Faria Lima</xLgr>
+            <nro>3732</nro>
+            <xCpl>Andar 22 23 e 26</xCpl>
+            <xBairro>Itaim Bibi</xBairro>
+            <cMun>3550308</cMun>
+            <xMun>São Paulo</xMun>
+            <UF>SP</UF>
+            <CEP>04538132</CEP>
+        </entrega>
+        <autXML>
+            <CNPJ>82240821000160</CNPJ>
+        </autXML>
+
+
+        <det nItem="1">
+            <prod>
+                <cProd>1.01.01.0190009</cProd>
+                <cEAN>7898744390593</cEAN>
+                <xProd>Pia Tampo Em Inox + Furo Para Cooktop de Inducao 120x56,7cm Solo - Esquerdo</xProd>
+                <NCM>73241000</NCM>
+                <CFOP>5405</CFOP>
+                <uCom>UN</uCom>
+                <qCom>1.0000</qCom>
+                <vUnCom>499.000000</vUnCom>
+                <vProd>499.00</vProd>
+                <cEANTrib>7898744390593</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>499.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012509581418</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS60>
+                        <orig>0</orig>
+                        <CST>60</CST>
+                    </ICMS60>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>499.00</vBC>
+                        <pPIS>1.65</pPIS>
+                        <vPIS>8.23</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>499.00</vBC>
+                        <pCOFINS>7.60</pCOFINS>
+                        <vCOFINS>37.92</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+        <total>
+            <ICMSTot>
+
+
+                <vBC>0.00</vBC>
+                <vICMS>0.00</vICMS>
+                <vICMSDeson>0</vICMSDeson>
+
+                <vFCP>0.00</vFCP>
+                <vBCST>0.00</vBCST>
+                <vST>0.00</vST>
+                <vFCPST>0.00</vFCPST>
+                <vFCPSTRet>0.00</vFCPSTRet>
+                <vProd>499.00</vProd>
+                <vFrete>0.00</vFrete>
+                <vSeg>0</vSeg>
+                <vDesc>0.00</vDesc>
+                <vII>0</vII>
+                <vIPI>0.00</vIPI>
+                <vIPIDevol>0.00</vIPIDevol>
+                <vPIS>8.23</vPIS>
+                <vCOFINS>37.92</vCOFINS>
+                <vOutro>0.00</vOutro>
+                <vNF>499.00</vNF>
+            </ICMSTot>
+        </total>
+        <transp>
+            <modFrete>9</modFrete>
+            <vol>
+                <qVol>1</qVol>
+                <esp>Caixa</esp>
+                <pesoL>7.000</pesoL>
+                <pesoB>7.000</pesoB>
+            </vol>
+        </transp>
+        <pag>
+            <detPag>
+                <tPag>03</tPag>
+                <vPag>499.00</vPag>
+                <card>
+                    <tpIntegra>2</tpIntegra>
+                </card>
+            </detPag>
+        </pag>
+        <infIntermed>
+            <CNPJ>35635824000112</CNPJ>
+            <idCadIntTran>Shpp S Tecnologia e Serviços Ltda</idCadIntTran>
+        </infIntermed>
+        <infAdic>
+            <infCpl>Pedido: 0012509581418 - Imposto Recolhido por Substituição Tributária Artigo Art. 274 RICMS/SP e Lei 6.374/89 e Ajuste SINIEF -4/93. IPI recohido anteriormente Art. 9 inc. II e III. Venda destinada a não contribuinte do ICMS. Conf. EC 87/2015 e Lei Complementar 190/2022 - Total aproximado de tributos: 156,94 (31,45%) Federais 67,12 (13,45%) Estaduais 89,82 (18,00%). Fonte.: IBPT/empresometro.com.br.</infCpl>
+            <obsCont xCampo="Pedido de Venda">
+                <xTexto>0012509581418</xTexto>
+            </obsCont>
+        </infAdic>
+        <infRespTec>
+            <CNPJ>28977040000107</CNPJ>
+            <xContato>Ricardo Schroeder</xContato>
+            <email>ricardo@magazord.com.br</email>
+            <fone>4735208013</fone>
+        </infRespTec>
+    </infNFe>
+</NFe>
