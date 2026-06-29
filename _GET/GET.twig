@@ -39,3 +39,10 @@
 {% self.configuracaoParametros.getOpcoesIPI().getAliquotaProdutoDerivacao() %}
 
 {% if self.notaFiscalItem.getProdutoDerivacao() is not null and self.notaFiscalItem.getProdutoDerivacao().getId() in [] %}
+
+{#################################}
+{## Template para etiqueta HTML ##}
+{#################################}
+
+{# preço da dereivação #}
+{{ produto.preco }}

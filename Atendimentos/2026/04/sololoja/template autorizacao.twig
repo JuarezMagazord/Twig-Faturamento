@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
     {% set notaFiscal = notaFiscalXml.notaFiscal %}
-    {% set dataAtual = "now"|date('Y-m-d') %}
     {% set desoneraIcmsSuframa = notaFiscal.isDestinatarioBeneficioSuframa() %}
     <infNFe Id="NFe{{ notaFiscal.chave }}" versao="4.00">
         <ide>
@@ -18,6 +17,9 @@
             <nNF>{{ notaFiscal.numero }}</nNF>
             <dhEmi>{{ format_date_sefaz(notaFiscal.dataEmissao) }}</dhEmi>
             <dhSaiEnt>{{ format_date_sefaz(notaFiscal.dataEmissao) }}</dhSaiEnt>
+            {% if enviaTagsReforma and dataPrevisaoEntrega %}
+                <dPrevEntrega>{{ dataPrevisaoEntrega|date('Y-m-d') }}</dPrevEntrega>
+            {% endif %}
             <tpNF>{{ notaFiscal.tipo }}</tpNF>
             {% if notaFiscal.pessoa.tipo == 3 %}
                 <idDest>3</idDest>
@@ -38,15 +40,33 @@
             {% endif %}
             <cDV>{{ notaFiscal.digitoVerificador }}</cDV>
             <tpAmb>{{ notaFiscal.serie.opcoes.ambiente }}</tpAmb>
-            <finNFe>{{ notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() }}</finNFe>
+            {% set finalidade = notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() %}
+            {% set isNotaDebitoCredito = finalidade in [5, 6] %}
+            <finNFe>{{ finalidade }}</finNFe>
+            {% if finalidade == 5 %}
+                <tpNFCredito>{{ zord_str_pad(notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getTipoNotaCredito(), 2, '0') }}</tpNFCredito>
+            {% elseif  finalidade == 6 %}
+                <tpNFDebito>{{ zord_str_pad(notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getTipoNotaDebito(), 2, '0') }}</tpNFDebito>
+            {% endif %}
             <indFinal>{{ notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getOperacaoConsumidorFinal() ? 1 : 0 }}</indFinal>
             <indPres>{{ notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getIndicadorPresenca() }}</indPres>
             {% set pedidosCodigo = [] %}
             {% set pedidoMarketplace = false %}
             {% set pedidoManual = false %}
             {% for i, pedidoNotaFiscal in pedidosNotaFiscal %}
-                {% set pedidosCodigo = pedidosCodigo|merge([pedidoNotaFiscal.pedido.codigo]) %}
-                {% if pedidoNotaFiscal.pedido.isOrigemMarketplace() %}
+                {% set idPessoaPosthaus = null %}
+                {% if pedidoNotaFiscal.pedido.pedidoMarketplace %}
+                    {% set lojaMktpl = pedidoNotaFiscal.pedido.pedidoMarketplace.getLojaMarketplace() %}
+                    {% if lojaMktpl and lojaMktpl.getOpcoesPosthaus() %}
+                        {% set idPessoaPosthaus = lojaMktpl.getOpcoesPosthaus().getClientePessoaId() %}
+                    {% endif %}
+                {% endif %}
+                {% if  pedidoNotaFiscal.pedido.pessoa.id ==  idPessoaPosthaus and  pedidoNotaFiscal.pedido.codigoSecundario %}
+                    {% set pedidosCodigo = pedidosCodigo|merge([pedidoNotaFiscal.pedido.codigoSecundario]) %}
+                {% else %}
+                    {% set pedidosCodigo = pedidosCodigo|merge([pedidoNotaFiscal.pedido.codigo]) %}
+                {% endif %}
+                {% if pedidoNotaFiscal.pedido.isOrigemMarketplace() and pedidoNotaFiscal.pedido.pessoa.id !=  idPessoaPosthaus %}
                     {% set pedidoMarketplace = true %}
                 {% endif %}
                 {% if pedidoNotaFiscal.pedido.isOrigemManual() %}
@@ -67,6 +87,7 @@
                 <xJust>Indisponibilidade na autorizadora padrao</xJust>
             {% endif %}
             {% set showEnderecoDestinatario = true %}
+            {% set notaCreditoDebitoUsaRelacionada = ((not isNotaDebitoCredito) or (notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.requerNFeRelacionada())) %}
             {% if notaFiscal.notaFiscalRelacionada %}
                 {% for notaRelacionada in notaFiscal.notaFiscalRelacionada %}
                     {% if notaRelacionada.chave is null %}
@@ -247,7 +268,6 @@
             {% endfor %}
         {% endif %}
         {% set partilhaICMS = false %}
-        {% set contemIBSInformado = false %}
         {% set valor_trib_estadual = 0 %}
         {% set valor_trib_federal = 0 %}
 
@@ -282,7 +302,13 @@
                             {% set isCreditoPresumido = beneficioFiscal.isCreditoPresumido() %}
 
                             {% if not isCreditoPresumido %}
-                                <cBenef>{{ codBeneficio }}</cBenef>
+                                {% if situacao_tributaria_icms in ['41'] %}
+                                    {% if enderecoEntrega.cidade.estado.sigla == 'SP' %}
+                                        <cBenef>{{'SP099999'}}</cBenef>
+                                    {% else %}
+                                        <cBenef>{{ codBeneficio }}</cBenef>
+                                    {% endif %}
+                                {% endif %}
                             {% else %}
                                 {% set finalidadeUsagCred = notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() in [1, 2] %}
                                 {% if finalidadeUsagCred %}
@@ -320,7 +346,7 @@
                         <vOutro>{{ notaFiscalItem.valorOutrasDespesas }}</vOutro>
                     {% endif %}
                     <indTot>1</indTot>
-                    {% if declaracaoImportacao %}
+                     {% if declaracaoImportacao %}
                         <DI>
                             <nDI>{{ declaracaoImportacao.numero }}</nDI>
                             <dDI>{{ declaracaoImportacao.data|date("Y-m-d") }}</dDI>
@@ -333,7 +359,7 @@
                             <cExportador>{{ declaracaoImportacao.codigoExportador }}</cExportador>
                             {% if  notaFiscalItem.getInformacoesGerais().getAdicaoImportacao() %}
                                 {% set adicaoItem = declaracaoImportacao.getAdicaoByParameter(notaFiscalItem.getInformacoesGerais().getAdicaoImportacao()) %}
-                                {% if adicaoItem %}
+                                 {% if adicaoItem %}
                                     <adi>
                                         <nAdicao>{{ adicaoItem.getNumero() }}</nAdicao>
                                         <nSeqAdic>{{ adicaoItem.getSequencial() }}</nSeqAdic>
@@ -526,17 +552,14 @@
                     </ICMS>
                     {% set cst_ipi = get_param_value_item_by_nome_logico('IPI_SITUACAO_TRIB') %}
                     {% if cst_ipi in ['00','49','50','99'] %}
+                        {% set devolucao = notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() == 4 %}
                         <IPI>
                             <cEnq>999</cEnq>
                             <IPITrib>
-
                                 <CST>{{ cst_ipi }}</CST>
-
-                                <vBC>{{ get_param_value_item_by_nome_logico('VLR_BASE_IPI') }}</vBC>
-
+                                <vBC>{{ devolucao ? '0.00' :  get_param_value_item_by_nome_logico('VLR_BASE_IPI') }}</vBC>
                                 <pIPI>{{ get_param_value_item_by_nome_logico('ALIQ_IPI') }}</pIPI>
-
-                                <vIPI>{{ get_param_value_item_by_nome_logico('VLR_IPI') }}</vIPI>
+                                <vIPI>{{ devolucao ? '0.00' : get_param_value_item_by_nome_logico('VLR_IPI') }}</vIPI>
                             </IPITrib>
                         </IPI>
                     {% elseif cst_ipi in ['55'] %}
@@ -627,68 +650,9 @@
                             <vICMSUFRemet>{{ get_param_value_item_by_nome_logico('VLR_ICMS_PARTILHA_ORIGEM') }}</vICMSUFRemet>
                         </ICMSUFDest>
                     {% endif %}
-                    {% if enviaTagsReforma %}
-                        {# se nao ta informado nao vamos colocar as tags no xml, ate 2026 é opcional o envio #}
-                        {% set vlrBaseIS = get_param_value_item_by_nome_logico('VLR_BASE_IS') %}
-                        {% set vlrBaseIBS = get_param_value_item_by_nome_logico('VLR_BASE_IBS') %}
-                        {% if vlrBaseIS and vlrBaseIS > 0 %}
-                            <IS>
-                                <CSTIS>{{ get_param_value_item_by_nome_logico('SITUACAO_TRIB_IS') }}</CSTIS>
-                                <cClassTribIS>{{ get_param_value_item_by_nome_logico('CLASSIFICACAO_TRIB_IS') }}</cClassTribIS>
-                                <vBCIS>{{ get_param_value_item_by_nome_logico('VLR_BASE_IS') }}</vBCIS>
-                                <pIS>{{ get_param_value_item_by_nome_logico('ALIQ_IS') }}</pIS>
-                                <uTrib>{{ notaFiscalItem.unidadeMedida.sigla }}</uTrib>
-                                <qTrib>{{ notaFiscalItem.quantidade }}</qTrib>
-                                <vIS>{{ get_param_value_item_by_nome_logico('VLR_IS') }}</vIS>
-                            </IS>
-                        {% endif %}
-                        {% if get_param_value_item_by_nome_logico('SITUACAO_TRIB_IBS') in ['400', '410'] %}
-                            {% set contemIBSInformado = true %}
-                            <IBSCBS>
-                                <CST>{{ get_param_value_item_by_nome_logico('SITUACAO_TRIB_IBS') }}</CST>
-                                <cClassTrib>{{  get_param_value_item_by_nome_logico('CLASSIFICACAO_TRIB_IBS')  }}</cClassTrib>
-                            </IBSCBS>
-                        {% else %}
-                            {% if vlrBaseIBS and vlrBaseIBS > 0 %}
-                                {% set contemIBSInformado = true %}
-                                <IBSCBS>
-                                    <CST>{{ get_param_value_item_by_nome_logico('SITUACAO_TRIB_IBS') }}</CST>
-                                    <cClassTrib>{{  get_param_value_item_by_nome_logico('CLASSIFICACAO_TRIB_IBS')  }}</cClassTrib>
-                                    <gIBSCBS>
-                                        <vBC>{{ get_param_value_item_by_nome_logico('VLR_BASE_IBS') }}</vBC>
-                                        <gIBSUF>
-                                            <pIBSUF>{{ get_param_value_item_by_nome_logico('ALIQ_UF_IBS') }}</pIBSUF>
-                                            <gRed>
-                                                <pRedAliq>{{ get_param_value_item_by_nome_logico('PERC_REDUCAO_ALIQUOTA_CBS') }}</pRedAliq>
-                                                <pAliqEfet>{{ (get_param_value_item_by_nome_logico('ALIQ_UF_IBS') * (1 - (get_param_value_item_by_nome_logico('PERC_REDUCAO_ALIQUOTA_IBS') / 100)))|round(2)|number_format(2,'.','') }}</pAliqEfet>
-                                            </gRed>
-                                            <vIBSUF>{{ get_param_value_item_by_nome_logico('VLR_UF_IBS') }}</vIBSUF>
-                                        </gIBSUF>
-                                        <gIBSMun>
-                                            <pIBSMun>{{ get_param_value_item_by_nome_logico('ALIQ_MUN_IBS') }}</pIBSMun>
-                                            <gRed>
-                                                <pRedAliq>{{ get_param_value_item_by_nome_logico('PERC_REDUCAO_ALIQUOTA_IBS') }}</pRedAliq>
-                                                <pAliqEfet>{{ (get_param_value_item_by_nome_logico('ALIQ_MUN_IBS') * (1 - (get_param_value_item_by_nome_logico('PERC_REDUCAO_ALIQUOTA_IBS') / 100)))|round(2)|number_format(2,'.','') }}</pAliqEfet>
-                                            </gRed>
-                                            <vIBSMun>{{ get_param_value_item_by_nome_logico('VLR_MUN_IBS') }}</vIBSMun>
-                                        </gIBSMun>
-                                        <vIBS>{{ (get_param_value_item_by_nome_logico('VLR_MUN_IBS') + get_param_value_item_by_nome_logico('VLR_UF_IBS'))|round(2)|number_format(2,'.','') }}</vIBS>
-                                        <gCBS>
-                                            <pCBS>{{ get_param_value_item_by_nome_logico('ALIQ_CBS') }}</pCBS>
-                                            <gRed>
-                                                <pRedAliq>{{ get_param_value_item_by_nome_logico('PERC_REDUCAO_ALIQUOTA_CBS') }}</pRedAliq>
-                                                <pAliqEfet>{{ (get_param_value_item_by_nome_logico('ALIQ_CBS') * (1 - (get_param_value_item_by_nome_logico('PERC_REDUCAO_ALIQUOTA_CBS') / 100)))|round(2)|number_format(2,'.','') }}</pAliqEfet>
-                                            </gRed>
-                                            <vCBS>{{ get_param_value_item_by_nome_logico('VLR_CBS') }}</vCBS>
-                                        </gCBS>
-                                    </gIBSCBS>
-                                </IBSCBS>
-                            {% endif %}
-                        {% endif %}
-                    {% endif %}
                 </imposto>
                 {% set valor_ipi_item = get_param_value_item_by_nome_logico('VLR_IPI') %}
-                {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() == 4 and (notaFiscal.cfop.codigo != 6202 and notaFiscal.cfop.codigo != 5202) %}
+                {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() == 4 %}
                     <impostoDevol>
                         <pDevol>0.00</pDevol>
                         <IPI>
@@ -698,9 +662,6 @@
                 {% endif %}
                 {% if mostraObservacoesProduto and notaFiscalItem.infoAdicional is defined and notaFiscalItem.infoAdicional|length > 0 %}
                     <infAdProd>{{ notaFiscalItem.infoAdicional }}</infAdProd>
-                {% endif %}
-                {% if enviaTagsReforma %}
-                    <vItem>{{ notaFiscalItem.valorTotal|number_format(2,'.','') }}</vItem>
                 {% endif %}
             </det>
         {% endfor %}
@@ -740,80 +701,22 @@
                 <vDesc>{{ notaFiscal.valorDesconto|number_format(2,'.','') }}</vDesc>
                 <vII>0</vII>
                 {% set valor_ipi = get_param_value_by_nome_logico('VLR_TOTAL_IPI') %}
-
-
-                {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() == 4 and (notaFiscal.cfop.codigo != 6202 and notaFiscal.cfop.codigo != 5202) %}
-
+                {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() == 4 %}
                     <vIPI>0.00</vIPI>
-
                     <vIPIDevol>{{ valor_ipi ? valor_ipi : '0.00' }}</vIPIDevol>
-
                 {% else %}
-
                     <vIPI>{{ valor_ipi ? valor_ipi : '0.00' }}</vIPI>
-
                     <vIPIDevol>0.00</vIPIDevol>
-
                 {% endif %}
-
                 <vPIS>{{ get_param_value_by_nome_logico('VLR_TOTAL_PIS') }}</vPIS>
-
                 <vCOFINS>{{ get_param_value_by_nome_logico('VLR_TOTAL_COFINS') }}</vCOFINS>
-
                 <vOutro>{{ notaFiscal.valorOutrasDespesas }}</vOutro>
-
                 {% set valor_total = notaFiscal.valorTotal %}
-
-                
-
-                {% if valor_ipi > 0 and (notaFiscal.cfop.codigo == 6202 and notaFiscal.cfop.codigo == 5202) %}
-
-                <vNF>{{ (valor_total+valor_ipi)|number_format(2,'.','') }}</vNF>
-
-                 {% else %}
-
                 <vNF>{{ valor_total|number_format(2,'.','') }}</vNF>
-
-                {% endif %}
-
                 {% if filial.opcoesGlobais.tributoFederal and filial.opcoesGlobais.tributoEstadual %}
-
                     <vTotTrib>{{ (valor_trib_estadual + valor_trib_federal)|number_format(2,'.','') }}</vTotTrib>
-
                 {% endif %}
             </ICMSTot>
-            {% if enviaTagsReforma %}
-                {# validar se foi configurado o template para mostrar as tags obrigatorio em 2026 #}
-                {% if contemIBSInformado %}
-                    <IBSCBSTot>
-                        <!-- Grupo total da NF-e: IBS, CBS e IS -->
-                            <vBCIBSCBS>{{ get_param_value_by_nome_logico('VLR_TOTAL_BASE_IBS') }}</vBCIBSCBS>
-                            <gIBS>
-                                <gIBSUF>
-                                    <vDif>0.00</vDif>
-                                    <vDevTrib>0.00</vDevTrib>
-                                    <vIBSUF>{{ get_param_value_by_nome_logico('VLR_TOTAL_UF_IBS') }}</vIBSUF>
-                                </gIBSUF>
-                                <gIBSMun>
-                                    <vDif>0.00</vDif>
-                                    <vDevTrib>0.00</vDevTrib>
-                                    <vIBSMun>{{ get_param_value_by_nome_logico('VLR_TOTAL_MUN_IBS') }}</vIBSMun>
-                                </gIBSMun>
-                                <vIBS>{{ get_param_value_by_nome_logico('VLR_TOTAL_IBS') }}</vIBS>
-                                <vCredPres>0.00</vCredPres>
-                                <vCredPresCondSus>0.00</vCredPresCondSus>
-                            </gIBS>
-                            <gCBS>
-                                <vDif>0.00</vDif>
-                                <vDevTrib>0.00</vDevTrib>
-                                <vCBS>{{ get_param_value_by_nome_logico('VLR_TOTAL_CBS') }}</vCBS>
-                                <vCredPres>0.00</vCredPres>
-                                <vCredPresCondSus>0.00</vCredPresCondSus>
-                            </gCBS>
-                        </IBSCBSTot>
-                    <vNFTot>{{ notaFiscal.valorTotal|number_format(2,'.','') }}</vNFTot>
-                {% endif %}
-            {% endif %}
         </total>
         <transp>
             <modFrete>{{ notaFiscal.modalidadeFrete }}</modFrete>
@@ -873,20 +776,71 @@
                 {% endfor %}
             </cobr>
         {% endif %}
-        <pag>
-            {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() in [2,4] or notaFiscal.cfopConfiguracao.tipoOperacao == 5 %}
+            {# Início do pagamento #}
+<pag>
+    {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() in [2,4] or notaFiscal.cfopConfiguracao.tipoOperacao == 5 %}
+        <detPag>
+            <tPag>90</tPag>
+            <vPag>0.00</vPag>
+        </detPag>
+    {% else %}
+        {% for pagamento in pagamentos %}
+            {% if pagamento.cartoes|length > 1 %}
+                {% for cartao in pagamento.cartoes %}
+                    <detPag>
+                        <tPag>{{ pagamento.formaPagamento }}</tPag>
+                        <vPag>{{ cartao.valor|number_format(2,'.','') }}</vPag>
+                        <card>
+                            <tpIntegra>{{ cartao['tipoIntegracao'] }}</tpIntegra>
+                            {% if infoRecebimentoSefaz and  infoRecebimentoSefaz['cnpj'] %}
+                                <CNPJ>{{ infoRecebimentoSefaz['cnpj'] }}</CNPJ>
+                            {% endif %}
+                            {% if cartao['bandeira'] is not null %}
+                                <tBand>{{ cartao['bandeira'] }}</tBand>
+                            {% endif %}
+                            {% if cartao['codigoAuth'] is not null %}
+                                {% set codTransaction = cartao['codigoAuth'] %}
+                                {% set transaction = codTransaction |split('-')[1]|default(codTransaction) %}
+                                <cAut>{{ transaction|slice(-20) }}</cAut>
+                            {% endif %}
+                        </card>
+                    </detPag>
+                {% endfor %}
+            {% elseif pagamento.formaPagamento|length is null %}
                 <detPag>
-                    <tPag>90</tPag>
-                    <vPag>0.00</vPag>
+                    <tPag>03</tPag>
+                    <vPag>{{ cartao.valor|number_format(2,'.','') }}</vPag>
+                    <card>
+                        <tpIntegra>2</tpIntegra>
+                    </card>
                 </detPag>
             {% else %}
-                {% for pagamento in pagamentos %}
-                    {% if pagamento.cartoes|length > 1 %}
-                        {% for cartao in pagamento.cartoes %}
-                            <detPag>
-                                <tPag>{{ pagamento.formaPagamento }}</tPag>
-                                <vPag>{{ cartao.valor|number_format(2,'.','') }}</vPag>
-                                <card>
+                <detPag>
+                {% set tpag = pagamento.formaPagamento %}
+                {% set pedidoMarketplace = true %}
+                {% if pedidoMarketplace == true and tpag == '01' %}
+                    <tPag> 03 </tPag>
+                {% else %}
+                    <tPag>{{ pagamento.formaPagamento }}</tPag>
+                {% endif %}
+                    {% if pagamento.formaPagamento == 90 %}
+                        <vPag>0.00</vPag>
+                    {% else %}
+                        {% if pagamento.formaPagamento == 99 and pagamento.nomeFormaPagamento is not empty %}
+                            <xPag>{{ pagamento.nomeFormaPagamento }}</xPag>
+                        {% endif %}
+                        <vPag>{{ pagamento.valor|number_format(2,'.','') }}</vPag>
+                        {% set semIntegradoraPagamento =
+                            (pagamento.formaPagamento == '17' and pagamento.cartoes|length < 1)
+                            or (pedidoManual and pagamento.formaPagamento in ['03', '04'])
+                        %}
+                        {% if semIntegradoraPagamento %}
+                            <card>
+                                <tpIntegra>2</tpIntegra>
+                            </card>
+                        {% elseif pagamento.cartoes|length > 0 %}
+                            <card>
+                                {% for cartao in pagamento.cartoes %}
                                     <tpIntegra>{{ cartao['tipoIntegracao'] }}</tpIntegra>
                                     {% if infoRecebimentoSefaz and  infoRecebimentoSefaz['cnpj'] %}
                                         <CNPJ>{{ infoRecebimentoSefaz['cnpj'] }}</CNPJ>
@@ -899,51 +853,16 @@
                                         {% set transaction = codTransaction |split('-')[1]|default(codTransaction) %}
                                         <cAut>{{ transaction|slice(-20) }}</cAut>
                                     {% endif %}
-                                </card>
-                            </detPag>
-                        {% endfor %}
-                    {% else %}
-                        <detPag>
-                            <tPag>{{ pagamento.formaPagamento }}</tPag>
-                            {% if pagamento.formaPagamento == 90 %}
-                                <vPag>0.00</vPag>
-                            {% else %}
-                                {% if pagamento.formaPagamento == 99 and pagamento.nomeFormaPagamento is not empty %}
-                                    <xPag>{{ pagamento.nomeFormaPagamento }}</xPag>
-                                {% endif %}
-                                <vPag>{{ pagamento.valor|number_format(2,'.','') }}</vPag>
-                                {% set semIntegradoraPagamento =
-                                    (pagamento.formaPagamento == '17' and pagamento.cartoes|length < 1)
-                                    or (pedidoManual and pagamento.formaPagamento in ['03', '04'])
-                                %}
-                                {% if semIntegradoraPagamento %}
-                                    <card>
-                                        <tpIntegra>2</tpIntegra>
-                                    </card>
-                                {% elseif pagamento.cartoes|length > 0 %}
-                                    <card>
-                                        {% for cartao in pagamento.cartoes %}
-                                            <tpIntegra>{{ cartao['tipoIntegracao'] }}</tpIntegra>
-                                            {% if infoRecebimentoSefaz and  infoRecebimentoSefaz['cnpj'] %}
-                                                <CNPJ>{{ infoRecebimentoSefaz['cnpj'] }}</CNPJ>
-                                            {% endif %}
-                                            {% if cartao['bandeira'] is not null %}
-                                                <tBand>{{ cartao['bandeira'] }}</tBand>
-                                            {% endif %}
-                                            {% if cartao['codigoAuth'] is not null %}
-                                                {% set codTransaction = cartao['codigoAuth'] %}
-                                                {% set transaction = codTransaction |split('-')[1]|default(codTransaction) %}
-                                                <cAut>{{ transaction|slice(-20) }}</cAut>
-                                            {% endif %}
-                                        {% endfor %}
-                                    </card>
-                                {% endif %}
-                            {% endif %}
-                        </detPag>
+                                {% endfor %}
+                            </card>
+                        {% endif %}
                     {% endif %}
-                {% endfor %}
+                </detPag>
             {% endif %}
-        </pag>
+        {% endfor %}
+    {% endif %}
+</pag>
+{# Fim dos pagamentos #}
         {% if pedidoMarketplace == true %}
             <infIntermed>
                 <CNPJ>{{ notaFiscal.formaRecebimento.opcoesSefaz.cnpj|replace({'.':'','-':'','/':''}) }}</CNPJ>

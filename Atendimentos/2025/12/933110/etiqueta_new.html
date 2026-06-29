@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etiqueta de Produto</title>
+    {{ default_css() }}
+
+    {% set colunas = 3 %}
+    {% set larguraImpresao = 100 %}
+    {% set larguraEtiqueta = 95 %}
+    {% set alturaEtiqueta = 22 %}
+
+    {% set tamanhoTextoCodigoProduto = 8 %}
+    {% set tamanhoTextoNomeProduto = 7 %}
+    {% set tamanhoTextoDerivacaoProduto = 7 %}
+
+    <style>
+        @page {
+            size: {{ larguraImpresao }}mm auto;
+            margin-top: 0mm !important;
+            margin-bottom: 0mm !important;
+            margin-left: 0mm !important;
+            margin-right: 0mm !important;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            width: {{ larguraImpresao }}mm;  /* página com 60mm de largura */
+        }
+
+        .etiqueta {
+            width: {{ larguraEtiqueta }}mm;
+            height: {{ alturaEtiqueta }}mm;
+            padding: 2mm;
+            box-sizing: border-box;
+            text-align: center;
+            page-break-inside: avoid;
+            display: flex;                /* ativa flexbox */
+            flex-direction: column;       /* empilha verticalmente */
+            justify-content: center;      /* CENTRALIZA VERTICAL */
+            align-items: center;          /* CENTRALIZA HORIZONTAL */
+        }
+
+        .linha-texto {
+            line-height: 1.1;
+        }
+
+        .preco {
+            font-size: 8px;
+            margin-top: 0.5mm;
+            margin-bottom: 1mm;
+        }
+
+        .barcode img {
+            max-width: 100%;
+        }
+
+        .barcode img {
+            width: 40mm;
+            height: 6mm;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+{% for produto in produtos %}
+    {% for i in 0..produto.quantidade -1 %}
+        <div class="etiqueta">
+            <div class="linha-texto" style="font-size: {{ tamanhoTextoCodigoProduto }}px; font-weight: bold;">
+                {{ produto.codigo }}
+            </div>
+
+            <div class="linha-texto"
+                 style="font-size: {{ tamanhoTextoNomeProduto }}px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;">
+                {{ produto.nome }}
+            </div>
+
+            <div class="linha-texto"
+                 style="font-size: {{ tamanhoTextoDerivacaoProduto }}px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;">
+                {{ produto.nomeDerivacao }}
+            </div>
+
+            <div class="preco">
+                R$ {{ produto.preco }}
+            </div>
+
+            <div class="barcode">
+                    <img class="barcode-default" src="{{ barcode_src(produto.codigo) }}" alt="Código de barras" style="max-width: 90%; max-height: auto;">
+                </div>
+        </div>
+    {% endfor %}
+{% endfor %}
+
+</body>
+</html>

@@ -526,17 +526,14 @@
                     </ICMS>
                     {% set cst_ipi = get_param_value_item_by_nome_logico('IPI_SITUACAO_TRIB') %}
                     {% if cst_ipi in ['00','49','50','99'] %}
+                        {% set devolucao = notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() == 4 %}
                         <IPI>
                             <cEnq>999</cEnq>
                             <IPITrib>
-
                                 <CST>{{ cst_ipi }}</CST>
-
-                                <vBC>{{ get_param_value_item_by_nome_logico('VLR_BASE_IPI') }}</vBC>
-
+                                <vBC>{{ devolucao ? '0.00' :  get_param_value_item_by_nome_logico('VLR_BASE_IPI') }}</vBC>
                                 <pIPI>{{ get_param_value_item_by_nome_logico('ALIQ_IPI') }}</pIPI>
-
-                                <vIPI>{{ get_param_value_item_by_nome_logico('VLR_IPI') }}</vIPI>
+                                <vIPI>{{ devolucao ? '0.00' : get_param_value_item_by_nome_logico('VLR_IPI') }}</vIPI>
                             </IPITrib>
                         </IPI>
                     {% elseif cst_ipi in ['55'] %}
@@ -688,7 +685,7 @@
                     {% endif %}
                 </imposto>
                 {% set valor_ipi_item = get_param_value_item_by_nome_logico('VLR_IPI') %}
-                {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() == 4 and (notaFiscal.cfop.codigo != 6202 and notaFiscal.cfop.codigo != 5202) %}
+                {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() == 4 %}
                     <impostoDevol>
                         <pDevol>0.00</pDevol>
                         <IPI>
@@ -740,46 +737,20 @@
                 <vDesc>{{ notaFiscal.valorDesconto|number_format(2,'.','') }}</vDesc>
                 <vII>0</vII>
                 {% set valor_ipi = get_param_value_by_nome_logico('VLR_TOTAL_IPI') %}
-
-
-                {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() == 4 and (notaFiscal.cfop.codigo != 6202 and notaFiscal.cfop.codigo != 5202) %}
-
+                {% if notaFiscal.cfopConfiguracao.CFOPConfiguracaoNotaFiscal.getFinalidade() == 4 %}
                     <vIPI>0.00</vIPI>
-
                     <vIPIDevol>{{ valor_ipi ? valor_ipi : '0.00' }}</vIPIDevol>
-
                 {% else %}
-
                     <vIPI>{{ valor_ipi ? valor_ipi : '0.00' }}</vIPI>
-
                     <vIPIDevol>0.00</vIPIDevol>
-
                 {% endif %}
-
                 <vPIS>{{ get_param_value_by_nome_logico('VLR_TOTAL_PIS') }}</vPIS>
-
                 <vCOFINS>{{ get_param_value_by_nome_logico('VLR_TOTAL_COFINS') }}</vCOFINS>
-
                 <vOutro>{{ notaFiscal.valorOutrasDespesas }}</vOutro>
-
                 {% set valor_total = notaFiscal.valorTotal %}
-
-                
-
-                {% if valor_ipi > 0 and (notaFiscal.cfop.codigo == 6202 and notaFiscal.cfop.codigo == 5202) %}
-
-                <vNF>{{ (valor_total+valor_ipi)|number_format(2,'.','') }}</vNF>
-
-                 {% else %}
-
                 <vNF>{{ valor_total|number_format(2,'.','') }}</vNF>
-
-                {% endif %}
-
                 {% if filial.opcoesGlobais.tributoFederal and filial.opcoesGlobais.tributoEstadual %}
-
                     <vTotTrib>{{ (valor_trib_estadual + valor_trib_federal)|number_format(2,'.','') }}</vTotTrib>
-
                 {% endif %}
             </ICMSTot>
             {% if enviaTagsReforma %}

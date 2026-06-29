@@ -1,0 +1,32 @@
+{% set zeraAliquota = false %}
+    {% if self.configuracaoParametros %}
+            {% set cfopZerada = self.configuracaoParametros.getOpcoesICMS().getCfopAliquotaZerada()|split(',') %}
+            {% set zeraAliquota = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+    {% endif %}
+    
+    {% if zeraAliquota or self.notaFiscalItem.notaFiscal.pessoa.tipo == 3 %}
+            {{ self.result('0.00') }}
+    {% elseif  self.importado and self.siglaEstado != self.siglaEstadoEmissor %}
+        {% if self.origemFiscal == '7' %}
+            {{ self.result(self.aliquotaICMS.ICMSInterestadual) }}
+        {% else %}
+            {{ self.result(4.00) }}
+        {% endif %}
+    {% elseif self.siglaEstado == self.siglaEstadoEmissor %}
+        {% if self.notaFiscalItem.ncm.codigo in ['29094411'	,'32151100'	,'34025000'	,'38249949'	,'39169010'	,'40161090'	,'40169990'	,'42029200'	,'73269090'	,'84145990'	,'84149020'	,'84433299'	,'84713012'	,'84717010'	,'84717040'	,'84718000'	,'84733090'	,'84852000'	,'85181090'	,'85182100'	,'85182200'	,'85183000'	,'85258929'	,'85285200'	,'85287200'	,'85363090'	,'85395200'	,'85437099'	,'94013900'	,'94031000'	,'94054900'	,'95045000']%}
+            {{ self.result('17.00') }}
+        {% elseif self.notaFiscalItem.ncm.codigo in ['84433111'	,'84716052'	,'84716053'	,'84716054'	,'84719011'	,'84733011'	,'84733019'	,'84733041'	,'84733042'	,'85044010'	,'85044021'	,'85044040'	,'85176241'	,'85176254'	,'85176277'	,'85235110'	,'85423110'	,'85423190'	,'85423291'	,'85444200']%}
+            {{ self.result('12.00') }}
+        {% else %}
+            {{ self.result(self.aliquotaICMS.ICMSInterno) }}
+        {% endif %}
+    {% else %}
+        {{ self.result(self.aliquotaICMS.ICMSInterestadual) }}
+    {% endif %}
+
+
+{% if self.notaFiscalItem.ncm.codigo in ['84433111'	,'84716052'	,'84716053'	,'84716054'	,'84719011'	,'84733011'	,'84733019'	,'84733041'	,'84733042'	,'85044010'	,'85044021'	,'85044040'	,'85176241'	,'85176254'	,'85176277'	,'85235110'	,'85423110'	,'85423190'	,'85423291'	,'85444200']%}
+    {{ self.result(20) }}
+{% else %}
+    {{self.result('00')}}
+{% endif %}
