@@ -1,129 +1,203 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-    <infNFe Id="NFe43251136110052000168550050000007341000008400" versao="4.00">
+    <infNFe Id="NFe42260654456594000179550050000032561000040377" versao="4.00">
         <ide>
-            <cUF>43</cUF>
-            <cNF>00000840</cNF>
-            <natOp>Remessa Mercad.ou Bem P/Cons.ou Reparo</natOp>
+            <cUF>42</cUF>
+            <cNF>00004037</cNF>
+            <natOp>Devolucao Compra para Comercializacao</natOp>
             <mod>55</mod>
             <serie>5</serie>
-            <nNF>734</nNF>
-            <dhEmi>2025-11-11T12:07:33-03:00</dhEmi>
-            <dhSaiEnt>2025-11-11T12:07:33-03:00</dhSaiEnt>
+            <nNF>3256</nNF>
+            <dhEmi>2026-06-15T14:00:11-03:00</dhEmi>
+            <dhSaiEnt>2026-06-15T14:00:11-03:00</dhSaiEnt>
             <tpNF>1</tpNF>
-            <idDest>2</idDest>
-            <cMunFG>4304606</cMunFG>
+            <idDest>1</idDest>
+            <cMunFG>4217808</cMunFG>
             <tpImp>1</tpImp>
             <tpEmis>1</tpEmis>
-            <cDV>0</cDV>
+            <cDV>7</cDV>
             <tpAmb>1</tpAmb>
-            <finNFe>1</finNFe>
-            <indFinal>1</indFinal>
+            <finNFe>4</finNFe>
+            <indFinal>0</indFinal>
             <indPres>2</indPres>
             <indIntermed>0</indIntermed>
             <procEmi>0</procEmi>
             <verProc>Magazord 1.0</verProc>
+            <NFref>
+                <refNFe>42260679658134000154550040008986211631498477</refNFe>
+            </NFref>
         </ide>
         <emit>
-            <CNPJ>36110052000168</CNPJ>
-            <xNome>MRM Comércio Varejista de Móveis Ltda</xNome>
-            <xFant>Palácio do Conforto</xFant>
+            <CNPJ>54456594000179</CNPJ>
+            <xNome>Sandri Comercio Digital LTDA</xNome>
+            <xFant>Sandri Comercio Digital LTDA</xFant>
             <enderEmit>
-                <xLgr>Avenida Boqueirão</xLgr>
-                <nro>2200</nro>
-                <xBairro>Igara</xBairro>
-                <cMun>4304606</cMun>
-                <xMun>Canoas</xMun>
-                <UF>RS</UF>
-                <CEP>92412232</CEP>
+                <xLgr>Av Nereu Ramos</xLgr>
+                <nro>850</nro>
+                <xBairro>Vila Mariana</xBairro>
+                <cMun>4217808</cMun>
+                <xMun>Taió</xMun>
+                <UF>SC</UF>
+                <CEP>89190000</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>5197957742</fone>
+                <fone>4735628900</fone>
             </enderEmit>
-            <IE>0240560973</IE>
+            <IE>262845733</IE>
             <IM>ISENTO</IM>
-            <CRT>3</CRT>
+            <CRT>1</CRT>
         </emit>
         <dest>
-            <CPF>04028792959</CPF>
-            <xNome>Fabiana Ventura Faccio</xNome>
+            <CNPJ>79658134000154</CNPJ>
+            <xNome>AGRO SANDRI LTDA EM RECUPERACAO JUDICIAL</xNome>
             <enderDest>
-                <xLgr>Rua prefeito Jose Kehrig</xLgr>
-                <nro>5417</nro>
-                <xCpl>Ap 802 / Edificio cardeal</xCpl>
-                <xBairro>Centro</xBairro>
-                <cMun>4215703</cMun>
-                <xMun>Santo Amaro da Imperatriz</xMun>
+                <xLgr>AV. FRANZ XAVIER MAINHARDT</xLgr>
+                <nro>545</nro>
+                <xBairro>PADRE EDUARDO</xBairro>
+                <cMun>4217808</cMun>
+                <xMun>Taió</xMun>
                 <UF>SC</UF>
-                <CEP>88140000</CEP>
+                <CEP>89190000</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
+                <fone>4735628900</fone>
             </enderDest>
-            <indIEDest>9</indIEDest>
+            <indIEDest>1</indIEDest>
+            <IE>251404811</IE>
         </dest>
-        <entrega>
-            <CPF>04028792959</CPF>
-            <xNome>Fabiana Ventura Faccio</xNome>
-            <xLgr>Rua prefeito Jose Kehrig</xLgr>
-            <nro>5417</nro>
-            <xCpl>Ap 802 / Edificio cardeal</xCpl>
-            <xBairro>Centro</xBairro>
-            <cMun>4215703</cMun>
-            <xMun>Santo Amaro da Imperatriz</xMun>
-            <UF>SC</UF>
-            <CEP>88140000</CEP>
-        </entrega>
-
 
         <det nItem="1">
             <prod>
-                <cProd>CFOP6915</cProd>
-                <cEAN>SEM GTIN</cEAN>
-                <xProd>3 Portas Modulado Sele 7cmx47cmx2,10mt</xProd>
-                <NCM>94035000</NCM>
-                <CFOP>6915</CFOP>
+                <cProd>SANDDV007</cProd>
+                <cEAN>7899429996239</cEAN>
+                <xProd>MICRO AREIA SILICA PARA GATOS SANDRIPET - 1,6KG</xProd>
+                <NCM>38249979</NCM>
+                <CFOP>5202</CFOP>
                 <uCom>UN</uCom>
-                <qCom>3.0000</qCom>
-                <vUnCom>100.000000</vUnCom>
-                <vProd>300.00</vProd>
-                <cEANTrib>SEM GTIN</cEANTrib>
+                <qCom>5.0000</qCom>
+                <vUnCom>16.120000</vUnCom>
+                <vProd>80.60</vProd>
+                <cEANTrib>7899429996239</cEANTrib>
                 <uTrib>UN</uTrib>
-                <qTrib>3.0000</qTrib>
-                <vUnTrib>100.000000</vUnTrib>
+                <qTrib>5.0000</qTrib>
+                <vUnTrib>16.120000</vUnTrib>
                 <indTot>1</indTot>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMS41>
-                        <orig>0</orig>
-                        <CST>41</CST>
-
-                    </ICMS41>
+                    <ICMSSN900>
+                        <orig>2</orig>
+                        <CSOSN>900</CSOSN>
+                        <modBC>3</modBC>
+                        <vBC>80.60</vBC>
+                        <pICMS>4.0000</pICMS>
+                        <vICMS>3.22</vICMS>
+                        <pCredSN>0</pCredSN>
+                        <vCredICMSSN>0.00</vCredICMSSN>
+                    </ICMSSN900>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
-                    <IPINT>
-                        <CST>53</CST>
-                    </IPINT>
+                    <IPITrib>
+                        <CST>50</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>6.50</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
                 </IPI>
                 <PIS>
-                    <PISNT>
-                        <CST>07</CST>
-                    </PISNT>
+                    <PISOutr>
+                        <CST>49</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISOutr>
                 </PIS>
                 <COFINS>
-                    <COFINSNT>
-                        <CST>07</CST>
-                    </COFINSNT>
+                    <COFINSAliq>
+                        <CST>02</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>0</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
                 </COFINS>
             </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>5.24</vIPIDevol>
+                </IPI>
+            </impostoDevol>
+        </det>
+
+        <det nItem="2">
+            <prod>
+                <cProd>SANDDV008</cProd>
+                <cEAN>7899429966232</cEAN>
+                <xProd>AREIA SILICA PARA GATOS SANDRIPET - 1,6KG</xProd>
+                <NCM>38249979</NCM>
+                <CFOP>5202</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>14.300000</vUnCom>
+                <vProd>28.60</vProd>
+                <cEANTrib>7899429966232</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>14.300000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMSSN900>
+                        <orig>2</orig>
+                        <CSOSN>900</CSOSN>
+                        <modBC>3</modBC>
+                        <vBC>28.60</vBC>
+                        <pICMS>4.0000</pICMS>
+                        <vICMS>1.15</vICMS>
+                        <pCredSN>0</pCredSN>
+                        <vCredICMSSN>0.00</vCredICMSSN>
+                    </ICMSSN900>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPITrib>
+                        <CST>50</CST>
+                        <vBC>0.00</vBC>
+                        <pIPI>6.50</pIPI>
+                        <vIPI>0.00</vIPI>
+                    </IPITrib>
+                </IPI>
+                <PIS>
+                    <PISOutr>
+                        <CST>49</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISOutr>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>02</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>0</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+            <impostoDevol>
+                <pDevol>0.00</pDevol>
+                <IPI>
+                    <vIPIDevol>1.86</vIPIDevol>
+                </IPI>
+            </impostoDevol>
         </det>
         <total>
+
             <ICMSTot>
-
-
-                <vBC>0.00</vBC>
-                <vICMS>0.00</vICMS>
+                <vBC>109.20</vBC>
+                <vICMS>4.37</vICMS>
                 <vICMSDeson>0</vICMSDeson>
 
                 <vFCP>0.00</vFCP>
@@ -131,39 +205,37 @@
                 <vST>0.00</vST>
                 <vFCPST>0.00</vFCPST>
                 <vFCPSTRet>0.00</vFCPSTRet>
-                <vProd>300.00</vProd>
+                <vProd>109.20</vProd>
                 <vFrete>0.00</vFrete>
                 <vSeg>0</vSeg>
                 <vDesc>0.00</vDesc>
-                <vII>0</vII>
+                <vII>0.00</vII>
                 <vIPI>0.00</vIPI>
-                <vIPIDevol>0.00</vIPIDevol>
+                <vIPIDevol>7.10</vIPIDevol>
                 <vPIS>0.00</vPIS>
                 <vCOFINS>0.00</vCOFINS>
                 <vOutro>0.00</vOutro>
-                <vNF>300.00</vNF>
+                <vNF>116.30</vNF>
             </ICMSTot>
         </total>
         <transp>
-            <modFrete>0</modFrete>
-            <transporta>
-                <CNPJ>00428307000279</CNPJ>
-                <xNome>Expresso Sao Miguel S/A</xNome>
-                <xEnder>Avenida Pelotas, 309</xEnder>
-                <xMun>São Leopoldo</xMun>
-                <UF>RS</UF>
-            </transporta>
+            <modFrete>9</modFrete>
             <vol>
                 <qVol>1</qVol>
-                <esp>Caixa</esp>
+                <esp>1CX,</esp>
+                <pesoL>12.200</pesoL>
+                <pesoB>12.200</pesoB>
             </vol>
         </transp>
         <pag>
             <detPag>
-                <tPag>01</tPag>
-                <vPag>300.00</vPag>
+                <tPag>90</tPag>
+                <vPag>0.00</vPag>
             </detPag>
         </pag>
+        <infAdic>
+            <infCpl>Documento emitido por ME ou EPP optante pelo Simples Nacional.  Não gera direito a crédito fiscal de IPI.  - Total aproximado de tributos: 33,25 (30,45%) Federais 14,69 (13,45%) Estaduais 18,56 (17,00%). Fonte.: IBPT/empresometro.com.br.</infCpl>
+        </infAdic>
         <infRespTec>
             <CNPJ>28977040000107</CNPJ>
             <xContato>Ricardo Schroeder</xContato>

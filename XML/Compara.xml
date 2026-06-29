@@ -1,378 +1,649 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-    <infNFe Id="NFe42260141367655000180550050000002331000003437" versao="4.00">
+    <infNFe Id="NFe42260321189744000176550030002490571003390389" versao="4.00">
         <ide>
             <cUF>42</cUF>
-            <cNF>00000343</cNF>
-            <natOp>Venda Mercad.Adquir.ou Receb.Terceiros</natOp>
+            <cNF>00339038</cNF>
+            <natOp>Venda Producao Estab. P/Nao Contribuinte</natOp>
             <mod>55</mod>
-            <serie>5</serie>
-            <nNF>233</nNF>
-            <dhEmi>2026-01-22T16:12:48-03:00</dhEmi>
-            <dhSaiEnt>2026-01-22T16:12:48-03:00</dhSaiEnt>
+            <serie>3</serie>
+            <nNF>249057</nNF>
+            <dhEmi>2026-03-06T09:43:45-03:00</dhEmi>
+            <dhSaiEnt>2026-03-06T09:43:45-03:00</dhSaiEnt>
             <tpNF>1</tpNF>
             <idDest>2</idDest>
-            <cMunFG>4208906</cMunFG>
+            <cMunFG>4202909</cMunFG>
             <tpImp>1</tpImp>
             <tpEmis>1</tpEmis>
-            <cDV>7</cDV>
+            <cDV>9</cDV>
             <tpAmb>1</tpAmb>
             <finNFe>1</finNFe>
             <indFinal>1</indFinal>
             <indPres>2</indPres>
+
+
             <indIntermed>0</indIntermed>
+
             <procEmi>0</procEmi>
             <verProc>Magazord 1.0</verProc>
         </ide>
         <emit>
-            <CNPJ>41367655000180</CNPJ>
-            <xNome>GR4 Comercio e Importacao Ltda</xNome>
-            <xFant>Togo Brasil</xFant>
+            <CNPJ>21189744000176</CNPJ>
+            <xNome>Manalinda Fitness Ltda</xNome>
+            <xFant>Manalinda</xFant>
             <enderEmit>
-                <xLgr>Rua Carlos Eggert</xLgr>
-                <nro>653</nro>
-                <xBairro>Vila Lalau</xBairro>
-                <cMun>4208906</cMun>
-                <xMun>Jaraguá do Sul</xMun>
+                <xLgr>Rua Maximiliano Furbringer</xLgr>
+                <nro>221</nro>
+                <xCpl>Galpao 2</xCpl>
+                <xBairro>Jardim Maluche</xBairro>
+                <cMun>4202909</cMun>
+                <xMun>Brusque</xMun>
                 <UF>SC</UF>
-                <CEP>89256330</CEP>
+                <CEP>88354670</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>4733058799</fone>
+                <fone>4730447400</fone>
             </enderEmit>
-            <IE>260990272</IE>
+            <IE>257481354</IE>
+            <IEST>821997800180</IEST>
             <IM>ISENTO</IM>
-            <CNAE>4663000</CNAE>
+            <CNAE>1412601</CNAE>
             <CRT>3</CRT>
         </emit>
         <dest>
-            <CNPJ>07147401000118</CNPJ>
-            <xNome>FIRE COMERCIO INSTALACAO ELETRICA HIDRAULICA E INCENDIO LTDA</xNome>
+            <CPF>01868953130</CPF>
+            <xNome>Clarice de Oliveira Alves Pucci</xNome>
             <enderDest>
-                <xLgr>Rua Antenor Bergamo</xLgr>
-                <nro>620</nro>
-                <xCpl>barracao</xCpl>
-                <xBairro>Parque dos Cocais</xBairro>
-                <cMun>3556206</cMun>
-                <xMun>Valinhos</xMun>
-                <UF>SP</UF>
-                <CEP>13273182</CEP>
+                <xLgr>SHCES Quadra 911 Bloco A</xLgr>
+                <nro>301</nro>
+                <xBairro>Cruzeiro Novo</xBairro>
+                <cMun>5300108</cMun>
+                <xMun>Brasília</xMun>
+                <UF>DF</UF>
+                <CEP>70655001</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>1938591124</fone>
+                <fone>61981391719</fone>
             </enderDest>
-            <indIEDest>1</indIEDest>
-            <IE>708193435113</IE>
-            <email>tecnofire.tecnofire@uol.com.br</email>
+            <indIEDest>9</indIEDest>
+            <email>claricefs.adv@gmail.com</email>
         </dest>
         <entrega>
-            <CNPJ>07147401000118</CNPJ>
-            <xNome>FIRE COMERCIO INSTALAÇÃO ELETRICA HIDRAULICA E INC</xNome>
-            <xLgr>Rua Antenor Bergamo</xLgr>
-            <nro>620</nro>
-            <xCpl>barracao</xCpl>
-            <xBairro>Parque dos Cocais</xBairro>
-            <cMun>3556206</cMun>
-            <xMun>Valinhos</xMun>
-            <UF>SP</UF>
-            <CEP>13273182</CEP>
-            <IE>708193435113</IE>
+            <CPF>01868953130</CPF>
+            <xNome>Clarice de Oliveira Alves Pucci</xNome>
+            <xLgr>SHCES Quadra 911 Bloco A</xLgr>
+            <nro>301</nro>
+            <xBairro>Cruzeiro Novo</xBairro>
+            <cMun>5300108</cMun>
+            <xMun>Brasília</xMun>
+            <UF>DF</UF>
+            <CEP>70655001</CEP>
         </entrega>
 
 
         <det nItem="1">
             <prod>
-                <cProd>1.082.600.002</cProd>
-                <cEAN>7898715322509</cEAN>
-                <xProd>Ventilador Industrial para Painel Eletrico - 16 W / 18 W / 220 V Monofasico. IP54 - GIVPE 9804</xProd>
-                <NCM>84145910</NCM>
-                <CEST>2109200</CEST>
-                <CFOP>6102</CFOP>
+                <cProd>7892018060267</cProd>
+                <cEAN>7892018060267</cEAN>
+                <xProd>Top Neon - Marinho - M</xProd>
+                <NCM>61046300</NCM>
+
+                <gCred>
+                    <cCredPresumido>SC850043</cCredPresumido>
+                    <pCredPresumido>57.14</pCredPresumido>
+                    <vCredPresumido>1.47</vCredPresumido>
+                </gCred>
+                <CFOP>6107</CFOP>
                 <uCom>UN</uCom>
-                <qCom>3.0000</qCom>
-                <vUnCom>337.320000</vUnCom>
-                <vProd>1011.96</vProd>
-                <cEANTrib>7898715322509</cEANTrib>
+                <qCom>1.0000</qCom>
+                <vUnCom>36.849435</vUnCom>
+                <vProd>36.85</vProd>
+                <cEANTrib>7892018060267</cEANTrib>
                 <uTrib>UN</uTrib>
-                <qTrib>3.0000</qTrib>
-                <vUnTrib>337.320000</vUnTrib>
-                <vFrete>28.68</vFrete>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>36.849435</vUnTrib>
                 <indTot>1</indTot>
-                <xPed>0012601773891</xPed>
+                <xPed>0012603775413</xPed>
             </prod>
             <imposto>
                 <ICMS>
                     <ICMS00>
-                        <orig>1</orig>
+                        <orig>0</orig>
                         <CST>00</CST>
                         <modBC>3</modBC>
-                        <vBC>1040.64</vBC>
-                        <pICMS>4.00</pICMS>
-                        <vICMS>41.63</vICMS>
+                        <vBC>36.85</vBC>
+                        <pICMS>7.00</pICMS>
+                        <vICMS>2.58</vICMS>
                     </ICMS00>
                 </ICMS>
+
+
                 <IPI>
                     <cEnq>999</cEnq>
-                    <IPITrib>
-                        <CST>50</CST>
-                        <vBC>1040.64</vBC>
-                        <pIPI>3.25</pIPI>
-                        <vIPI>33.82</vIPI>
-                    </IPITrib>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
                 </IPI>
                 <PIS>
                     <PISAliq>
                         <CST>01</CST>
-                        <vBC>999.01</vBC>
-                        <pPIS>1.65</pPIS>
-                        <vPIS>16.48</vPIS>
+                        <vBC>36.85</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.24</vPIS>
                     </PISAliq>
                 </PIS>
                 <COFINS>
                     <COFINSAliq>
                         <CST>01</CST>
-                        <vBC>999.01</vBC>
-                        <pCOFINS>7.60</pCOFINS>
-                        <vCOFINS>75.92</vCOFINS>
+                        <vBC>36.85</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>1.11</vCOFINS>
                     </COFINSAliq>
                 </COFINS>
+                <ICMSUFDest>
+                    <vBCUFDest>36.85</vBCUFDest>
+                    <vBCFCPUFDest>36.85</vBCFCPUFDest>
+                    <pFCPUFDest>0.00</pFCPUFDest>
+                    <pICMSUFDest>20.00</pICMSUFDest>
+                    <pICMSInter>7.00</pICMSInter>
+                    <pICMSInterPart>100.00</pICMSInterPart>
+                    <vFCPUFDest>0.00</vFCPUFDest>
+                    <vICMSUFDest>4.79</vICMSUFDest>
+                    <vICMSUFRemet>0.00</vICMSUFRemet>
+                </ICMSUFDest>
             </imposto>
+
+
         </det>
 
         <det nItem="2">
             <prod>
-                <cProd>1.082.999.042</cProd>
-                <cEAN>7898715322899</cEAN>
-                <xProd>Grade de Ventilacao para Modelo GIVPE 9804</xProd>
-                <NCM>84149020</NCM>
-                <CEST>2109200</CEST>
-                <CFOP>6102</CFOP>
+                <cProd>7892018060625</cProd>
+                <cEAN>7892018060625</cEAN>
+                <xProd>Legging Vies - Marinho - M</xProd>
+                <NCM>61046300</NCM>
+
+                <gCred>
+                    <cCredPresumido>SC850043</cCredPresumido>
+                    <pCredPresumido>57.14</pCredPresumido>
+                    <vCredPresumido>3.11</vCredPresumido>
+                </gCred>
+                <CFOP>6107</CFOP>
                 <uCom>UN</uCom>
-                <qCom>3.0000</qCom>
-                <vUnCom>63.250000</vUnCom>
-                <vProd>189.75</vProd>
-                <cEANTrib>7898715322899</cEANTrib>
+                <qCom>1.0000</qCom>
+                <vUnCom>77.850565</vUnCom>
+                <vProd>77.85</vProd>
+                <cEANTrib>7892018060625</cEANTrib>
                 <uTrib>UN</uTrib>
-                <qTrib>3.0000</qTrib>
-                <vUnTrib>63.250000</vUnTrib>
-                <vFrete>5.40</vFrete>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>77.850565</vUnTrib>
                 <indTot>1</indTot>
-                <xPed>0012601773891</xPed>
+                <xPed>0012603775413</xPed>
             </prod>
             <imposto>
                 <ICMS>
                     <ICMS00>
-                        <orig>1</orig>
+                        <orig>0</orig>
                         <CST>00</CST>
                         <modBC>3</modBC>
-                        <vBC>195.15</vBC>
-                        <pICMS>4.00</pICMS>
-                        <vICMS>7.81</vICMS>
+                        <vBC>77.85</vBC>
+                        <pICMS>7.00</pICMS>
+                        <vICMS>5.45</vICMS>
                     </ICMS00>
                 </ICMS>
+
+
                 <IPI>
                     <cEnq>999</cEnq>
-                    <IPITrib>
-                        <CST>50</CST>
-                        <vBC>195.15</vBC>
-                        <pIPI>3.25</pIPI>
-                        <vIPI>6.34</vIPI>
-                    </IPITrib>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
                 </IPI>
                 <PIS>
                     <PISAliq>
                         <CST>01</CST>
-                        <vBC>187.34</vBC>
-                        <pPIS>1.65</pPIS>
-                        <vPIS>3.09</vPIS>
+                        <vBC>77.85</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.51</vPIS>
                     </PISAliq>
                 </PIS>
                 <COFINS>
                     <COFINSAliq>
                         <CST>01</CST>
-                        <vBC>187.34</vBC>
-                        <pCOFINS>7.60</pCOFINS>
-                        <vCOFINS>14.24</vCOFINS>
+                        <vBC>77.85</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>2.34</vCOFINS>
                     </COFINSAliq>
                 </COFINS>
+                <ICMSUFDest>
+                    <vBCUFDest>77.85</vBCUFDest>
+                    <vBCFCPUFDest>77.85</vBCFCPUFDest>
+                    <pFCPUFDest>0.00</pFCPUFDest>
+                    <pICMSUFDest>20.00</pICMSUFDest>
+                    <pICMSInter>7.00</pICMSInter>
+                    <pICMSInterPart>100.00</pICMSInterPart>
+                    <vFCPUFDest>0.00</vFCPUFDest>
+                    <vICMSUFDest>10.12</vICMSUFDest>
+                    <vICMSUFRemet>0.00</vICMSUFRemet>
+                </ICMSUFDest>
             </imposto>
+
+
         </det>
 
         <det nItem="3">
             <prod>
-                <cProd>1.082.600.170</cProd>
-                <cEAN>7898715322530</cEAN>
-                <xProd>Exaustor Industrial para Painel Eletrico - 130 W / 170 W / 220 V Monofasico. IP54 - GIEPE 40000</xProd>
-                <NCM>84145910</NCM>
-                <CEST>2109200</CEST>
-                <CFOP>6102</CFOP>
+                <cProd>7892018077623</cProd>
+                <cEAN>7892018077623</cEAN>
+                <xProd>Top Basico em Poliamida - Vermelho - M</xProd>
+                <NCM>63090010</NCM>
+
+                <gCred>
+                    <cCredPresumido>SC850043</cCredPresumido>
+                    <pCredPresumido>57.14</pCredPresumido>
+                    <vCredPresumido>1.21</vCredPresumido>
+                </gCred>
+                <CFOP>6107</CFOP>
                 <uCom>UN</uCom>
                 <qCom>1.0000</qCom>
-                <vUnCom>2126.880000</vUnCom>
-                <vProd>2126.88</vProd>
-                <cEANTrib>7898715322530</cEANTrib>
+                <vUnCom>30.132260</vUnCom>
+                <vProd>30.13</vProd>
+                <cEANTrib>7892018077623</cEANTrib>
                 <uTrib>UN</uTrib>
                 <qTrib>1.0000</qTrib>
-                <vUnTrib>2126.880000</vUnTrib>
-                <vFrete>60.36</vFrete>
+                <vUnTrib>30.132260</vUnTrib>
                 <indTot>1</indTot>
-                <xPed>0012601773891</xPed>
+                <xPed>0012603775413</xPed>
             </prod>
             <imposto>
                 <ICMS>
                     <ICMS00>
-                        <orig>1</orig>
+                        <orig>0</orig>
                         <CST>00</CST>
                         <modBC>3</modBC>
-                        <vBC>2187.24</vBC>
-                        <pICMS>4.00</pICMS>
-                        <vICMS>87.49</vICMS>
+                        <vBC>30.13</vBC>
+                        <pICMS>7.00</pICMS>
+                        <vICMS>2.11</vICMS>
                     </ICMS00>
                 </ICMS>
+
+
                 <IPI>
                     <cEnq>999</cEnq>
-                    <IPITrib>
-                        <CST>50</CST>
-                        <vBC>2187.24</vBC>
-                        <pIPI>3.25</pIPI>
-                        <vIPI>71.09</vIPI>
-                    </IPITrib>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
                 </IPI>
                 <PIS>
                     <PISAliq>
                         <CST>01</CST>
-                        <vBC>2099.75</vBC>
-                        <pPIS>1.65</pPIS>
-                        <vPIS>34.65</vPIS>
+                        <vBC>30.13</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.20</vPIS>
                     </PISAliq>
                 </PIS>
                 <COFINS>
                     <COFINSAliq>
                         <CST>01</CST>
-                        <vBC>2099.75</vBC>
-                        <pCOFINS>7.60</pCOFINS>
-                        <vCOFINS>159.58</vCOFINS>
+                        <vBC>30.13</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.90</vCOFINS>
                     </COFINSAliq>
                 </COFINS>
+                <ICMSUFDest>
+                    <vBCUFDest>30.13</vBCUFDest>
+                    <vBCFCPUFDest>30.13</vBCFCPUFDest>
+                    <pFCPUFDest>0.00</pFCPUFDest>
+                    <pICMSUFDest>20.00</pICMSUFDest>
+                    <pICMSInter>7.00</pICMSInter>
+                    <pICMSInterPart>100.00</pICMSInterPart>
+                    <vFCPUFDest>0.00</vFCPUFDest>
+                    <vICMSUFDest>3.92</vICMSUFDest>
+                    <vICMSUFRemet>0.00</vICMSUFRemet>
+                </ICMSUFDest>
             </imposto>
+
+
         </det>
 
         <det nItem="4">
             <prod>
-                <cProd>1.082.999.044</cProd>
-                <cEAN>7898715322912</cEAN>
-                <xProd>Grade de Ventilacao para Modelo GIEPE 35110 e GIEPE 40000</xProd>
-                <NCM>84149020</NCM>
-                <CEST>2109200</CEST>
-                <CFOP>6102</CFOP>
+                <cProd>7892018077463</cProd>
+                <cEAN>7892018077463</cEAN>
+                <xProd>Legging Basica em Poliamida - Vermelho - M</xProd>
+                <NCM>63090010</NCM>
+
+                <gCred>
+                    <cCredPresumido>SC850043</cCredPresumido>
+                    <pCredPresumido>57.14</pCredPresumido>
+                    <vCredPresumido>2.19</vCredPresumido>
+                </gCred>
+                <CFOP>6107</CFOP>
                 <uCom>UN</uCom>
                 <qCom>1.0000</qCom>
-                <vUnCom>193.250000</vUnCom>
-                <vProd>193.25</vProd>
-                <cEANTrib>7898715322912</cEANTrib>
+                <vUnCom>54.817740</vUnCom>
+                <vProd>54.82</vProd>
+                <cEANTrib>7892018077463</cEANTrib>
                 <uTrib>UN</uTrib>
                 <qTrib>1.0000</qTrib>
-                <vUnTrib>193.250000</vUnTrib>
-                <vFrete>5.50</vFrete>
+                <vUnTrib>54.817740</vUnTrib>
                 <indTot>1</indTot>
-                <xPed>0012601773891</xPed>
+                <xPed>0012603775413</xPed>
             </prod>
             <imposto>
                 <ICMS>
                     <ICMS00>
-                        <orig>1</orig>
+                        <orig>0</orig>
                         <CST>00</CST>
                         <modBC>3</modBC>
-                        <vBC>198.75</vBC>
-                        <pICMS>4.00</pICMS>
-                        <vICMS>7.95</vICMS>
+                        <vBC>54.82</vBC>
+                        <pICMS>7.00</pICMS>
+                        <vICMS>3.84</vICMS>
                     </ICMS00>
                 </ICMS>
+
+
                 <IPI>
                     <cEnq>999</cEnq>
-                    <IPITrib>
-                        <CST>50</CST>
-                        <vBC>198.75</vBC>
-                        <pIPI>3.25</pIPI>
-                        <vIPI>6.46</vIPI>
-                    </IPITrib>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
                 </IPI>
                 <PIS>
                     <PISAliq>
                         <CST>01</CST>
-                        <vBC>190.80</vBC>
-                        <pPIS>1.65</pPIS>
-                        <vPIS>3.15</vPIS>
+                        <vBC>54.82</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.36</vPIS>
                     </PISAliq>
                 </PIS>
                 <COFINS>
                     <COFINSAliq>
                         <CST>01</CST>
-                        <vBC>190.80</vBC>
-                        <pCOFINS>7.60</pCOFINS>
-                        <vCOFINS>14.50</vCOFINS>
+                        <vBC>54.82</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>1.64</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+                <ICMSUFDest>
+                    <vBCUFDest>54.82</vBCUFDest>
+                    <vBCFCPUFDest>54.82</vBCFCPUFDest>
+                    <pFCPUFDest>0.00</pFCPUFDest>
+                    <pICMSUFDest>20.00</pICMSUFDest>
+                    <pICMSInter>7.00</pICMSInter>
+                    <pICMSInterPart>100.00</pICMSInterPart>
+                    <vFCPUFDest>0.00</vFCPUFDest>
+                    <vICMSUFDest>7.13</vICMSUFDest>
+                    <vICMSUFRemet>0.00</vICMSUFRemet>
+                </ICMSUFDest>
+            </imposto>
+
+
+        </det>
+
+        <det nItem="5">
+            <prod>
+                <cProd>7892018079382</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Top Basico em Poliamida - Marrom Escuro - M</xProd>
+                <NCM>63090010</NCM>
+
+                <gCred>
+                    <cCredPresumido>SC850043</cCredPresumido>
+                    <pCredPresumido>57.14</pCredPresumido>
+                    <vCredPresumido>1.21</vCredPresumido>
+                </gCred>
+                <CFOP>6107</CFOP>
+                <uCom>UN</uCom>
+                <qCom>1.0000</qCom>
+                <vUnCom>30.132260</vUnCom>
+                <vProd>30.13</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>30.132260</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012603775413</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>0</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>30.13</vBC>
+                        <pICMS>7.00</pICMS>
+                        <vICMS>2.11</vICMS>
+                    </ICMS00>
+                </ICMS>
+
+
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>30.13</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.20</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>30.13</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.90</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+                <ICMSUFDest>
+                    <vBCUFDest>30.13</vBCUFDest>
+                    <vBCFCPUFDest>30.13</vBCFCPUFDest>
+                    <pFCPUFDest>0.00</pFCPUFDest>
+                    <pICMSUFDest>20.00</pICMSUFDest>
+                    <pICMSInter>7.00</pICMSInter>
+                    <pICMSInterPart>100.00</pICMSInterPart>
+                    <vFCPUFDest>0.00</vFCPUFDest>
+                    <vICMSUFDest>3.92</vICMSUFDest>
+                    <vICMSUFRemet>0.00</vICMSUFRemet>
+                </ICMSUFDest>
+            </imposto>
+
+
+        </det>
+
+        <det nItem="6">
+            <prod>
+                <cProd>7892018079221</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Legging Basica em Poliamida - Marrom Escuro - M</xProd>
+                <NCM>63090010</NCM>
+
+                <gCred>
+                    <cCredPresumido>SC850043</cCredPresumido>
+                    <pCredPresumido>57.14</pCredPresumido>
+                    <vCredPresumido>2.19</vCredPresumido>
+                </gCred>
+                <CFOP>6107</CFOP>
+                <uCom>UN</uCom>
+                <qCom>1.0000</qCom>
+                <vUnCom>54.817740</vUnCom>
+                <vProd>54.82</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>54.817740</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012603775413</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>0</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>54.82</vBC>
+                        <pICMS>7.00</pICMS>
+                        <vICMS>3.84</vICMS>
+                    </ICMS00>
+                </ICMS>
+
+
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>54.82</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.36</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>54.82</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>1.64</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+                <ICMSUFDest>
+                    <vBCUFDest>54.82</vBCUFDest>
+                    <vBCFCPUFDest>54.82</vBCFCPUFDest>
+                    <pFCPUFDest>0.00</pFCPUFDest>
+                    <pICMSUFDest>20.00</pICMSUFDest>
+                    <pICMSInter>7.00</pICMSInter>
+                    <pICMSInterPart>100.00</pICMSInterPart>
+                    <vFCPUFDest>0.00</vFCPUFDest>
+                    <vICMSUFDest>7.13</vICMSUFDest>
+                    <vICMSUFRemet>0.00</vICMSUFRemet>
+                </ICMSUFDest>
+            </imposto>
+
+
+        </det>
+
+        <det nItem="7">
+            <prod>
+                <cProd>7892018062421</cProd>
+                <cEAN>7892018062421</cEAN>
+                <xProd>Tapa Bumbum - Preto - M</xProd>
+                <NCM>61046300</NCM>
+
+                <CFOP>6910</CFOP>
+                <uCom>UN</uCom>
+                <qCom>1.0000</qCom>
+                <vUnCom>9.000000</vUnCom>
+                <vProd>9.00</vProd>
+                <cEANTrib>7892018062421</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>9.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012603775413</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS00>
+                        <orig>0</orig>
+                        <CST>00</CST>
+                        <modBC>3</modBC>
+                        <vBC>9.00</vBC>
+                        <pICMS>7.00</pICMS>
+                        <vICMS>0.63</vICMS>
+                    </ICMS00>
+                </ICMS>
+
+
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>9.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.06</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>9.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.27</vCOFINS>
                     </COFINSAliq>
                 </COFINS>
             </imposto>
+
+
         </det>
         <total>
             <ICMSTot>
 
-
-                <vBC>3621.78</vBC>
-                <vICMS>144.88</vICMS>
+                <vBC>293.60</vBC>
+                <vICMS>20.56</vICMS>
                 <vICMSDeson>0</vICMSDeson>
-
                 <vFCP>0.00</vFCP>
-                <vBCST>0.00</vBCST>
-                <vST>0.00</vST>
+                <vBCST>0</vBCST>
+                <vST>0</vST>
                 <vFCPST>0.00</vFCPST>
                 <vFCPSTRet>0.00</vFCPSTRet>
-                <vProd>3521.84</vProd>
-                <vFrete>99.94</vFrete>
+                <vProd>293.60</vProd>
+                <vFrete>0.00</vFrete>
                 <vSeg>0</vSeg>
                 <vDesc>0.00</vDesc>
-                <vII>0.00</vII>
-                <vIPI>117.71</vIPI>
+                <vII>0</vII>
+                <vIPI>0.00</vIPI>
                 <vIPIDevol>0.00</vIPIDevol>
-                <vPIS>57.37</vPIS>
-                <vCOFINS>264.24</vCOFINS>
+                <vPIS>1.93</vPIS>
+                <vCOFINS>8.80</vCOFINS>
                 <vOutro>0.00</vOutro>
-                <vNF>3739.49</vNF>
+                <vNF>293.60</vNF>
             </ICMSTot>
         </total>
         <transp>
             <modFrete>0</modFrete>
             <transporta>
-                <CNPJ>04195643000199</CNPJ>
-                <xNome>Transportes Ouro Negro Ltda</xNome>
-                <xEnder>Rua Alexandre Levi, S/N</xEnder>
-                <xMun>Lages</xMun>
-                <UF>SC</UF>
+                <CNPJ>18277493000177</CNPJ>
+                <xNome>Loggi</xNome>
+                <xEnder>Rua Al Santos, 2400</xEnder>
+                <xMun>São Paulo</xMun>
+                <UF>SP</UF>
             </transporta>
             <vol>
                 <qVol>1</qVol>
                 <esp>Caixa</esp>
-                <pesoL>6.600</pesoL>
-                <pesoB>6.600</pesoB>
+                <pesoL>1.400</pesoL>
+                <pesoB>1.400</pesoB>
             </vol>
         </transp>
         <pag>
             <detPag>
-                <tPag>03</tPag>
-                <vPag>3739.49</vPag>
+                <tPag>17</tPag>
+                <vPag>293.60</vPag>
                 <card>
-                    <tpIntegra>1</tpIntegra>
-                    <CNPJ>19468242000132</CNPJ>
-                    <tBand>02</tBand>
-                    <cAut>422eb1ec83cf369e7a2b</cAut>
+                    <tpIntegra>2</tpIntegra>
                 </card>
             </detPag>
         </pag>
+
+
         <infAdic>
-            <infCpl>Pedido: 0012601773891 - Diferimento do ICMS conforme TTD 409 N.215000002311657.  - Total aproximado de tributos: 677,29 (18,70%) Federais 554,14 (15,30%) Estaduais 123,15 (3,40%). Fonte.: IBPT/empresometro.com.br.</infCpl>
+            <infCpl>Pedido: 0012603775413 -   - Total aproximado de tributos: 89,38 (30,44%) Federais 39,48 (13,45%) Estaduais 49,90 (17,00%). Fonte.: IBPT/empresometro.com.br. - Codigo de Rastreio Loggi : MZ202603107018MA</infCpl>
             <obsCont xCampo="Pedido de Venda">
-                <xTexto>0012601773891</xTexto>
+                <xTexto>0012603775413</xTexto>
             </obsCont>
         </infAdic>
         <infRespTec>

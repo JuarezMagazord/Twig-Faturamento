@@ -1,0 +1,308 @@
+<style>
+    body {
+        font-size: 10px;
+    }
+
+.td-default {
+padding: 5px !important;
+}
+
+.td-custom-item {
+padding: 2px 2px 2px 5px !important;
+border: none !important;
+}
+
+.td-custom-resumo {
+border: none !important;
+}
+
+.table-default {
+font-size: 10px;
+margin-bottom: 10px !important;
+}
+
+.quebrar-depois {
+page-break-after: always; /* Sempre quebra a página após o elemento */
+}
+
+.nao-quebrar-meio {
+page-break-inside: avoid;
+break-inside: avoid;
+}
+
+.resumo {
+border: none !important;
+}
+
+.resumo tbody tr:nth-child(odd) {
+background-color: rgb(207, 207, 207);
+}
+
+.resumo tbody tr:nth-child(even) {
+background-color: #ffffff;
+}
+
+.itens tbody tr:nth-child(odd) {
+background-color: rgb(207, 207, 207);
+}
+
+.itens tbody tr:nth-child(even) {
+background-color: #ffffff;
+}
+</style>
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Folha de vendas
+        {{ folhaVenda.id }}</title>
+        {{ default_css() }}
+    </head>
+
+    <body>
+    <!-- {{ print_button() }} -->
+
+    {% set resumoItensOrdenado = [] %}
+
+    {% for item in folhaVendaResumo.resumoItens %}
+        {% set tamanho = 0 %}
+        {% set break = false %}
+        {% for pedidoFolhaVenda in pedidosFolhaVenda if not break %}
+            {% for pedidoItem in pedidoFolhaVenda.pedidoItem if not break %}
+                {% if item.produto_derivacao_codigo == pedidoItem.getProdutoDerivacao().codigo %}
+                    {% if pedidoItem.produtoDerivacao is not null %}
+                        {% for derivacao in pedidoItem.produtoDerivacao.getDerivacaoItem() if not break %}
+                            {% if derivacao.getDerivacaoItem().derivacao is not null and 'tamanho' in derivacao.getDerivacaoItem().derivacao.nome | lower %}
+                                {% set tamanho = derivacao.getDerivacaoItem().ordem %}
+                                {% set break = true %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+
+        {% set novaLista = [] %}
+        {% set inserido = false %}
+
+        {% for resumo in resumoItensOrdenado %}
+            {% if not inserido and tamanho < resumo.tamanho %}
+                {% set novaLista = novaLista | merge([{'item': item, 'tamanho': tamanho}]) %}
+                {% set inserido = true %}
+            {% endif %}
+            {% set novaLista = novaLista | merge([resumo]) %}
+        {% endfor %}
+
+        {% if not inserido %}
+        {% set novaLista = novaLista | merge([{'item': item, 'tamanho': tamanho}]) %}
+        {% endif %}
+
+        {% set resumoItensOrdenado = novaLista %}
+    {% endfor %}
+
+
+    <table class="table-default resumo quebrar-depois">
+        <thead>
+            <tr>
+                <th class="th-default">Código - SKU</th>
+                <th class="th-default">Produto</th>
+                <th class="th-default">Depósito</th>
+                <th class="th-default">Qtde</th>
+                <th class="th-default">Qtde Estoque</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        {% set totalItems = 0 %}
+        {% for resumo in resumoItensOrdenado %}
+            {% set item = resumo.item %}
+            {% set totalItems = totalItems + item.qtde_item %}
+            <tr>
+                <td class='td-default td-custom-resumo'>{{ item.produto_derivacao_codigo }}</td>
+                <td class='td-default td-custom-resumo'>{{ item.produto_nome }}
+                -
+                {{ item.produto_derivacao_nome }}</td>
+                <td class='td-default td-custom-resumo'>{{ item.deposito_nome }}</td>
+                <td class='td-default td-custom-resumo'>{{ item.qtde_item }}</td>
+                <td class='td-default td-custom-resumo'>{{ item.qtde_estoque_total }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4" style="text-align: right; font-size: 18px;"></td>
+                <td colspan='1' style="font-size: 16px; text-align: left;">Total de Itens:
+                {{ totalItems }}</td>
+            </tr>
+        </tfoot>
+    </table>
+
+
+    {% for pedidoFolhaVenda in pedidosFolhaVenda %}
+        <section class="nao-quebrar-meio">
+        <table class="table-default">
+            <tr>
+                <td class="title td-default">Pedido:</td>
+                <td class="td-default">{{ pedidoFolhaVenda.pedido.id }}
+                -
+                {{ pedidoFolhaVenda.pedido.codigo }}</td>
+                <td class="td-default">{{ print_codigo_barras(pedidoFolhaVenda.pedido.codigo) }}</td>
+            </tr>
+        </table>
+        {% set quantidadeItensPedido = 0 %}
+        {% for pedidoItem in pedidoFolhaVenda.pedidoItem %}
+            {% set quantidadeItensPedido = quantidadeItensPedido + pedidoItem.quantidade %}
+        {% endfor %}
+        <table class="table-default">
+            <tr>
+                <th class="th-default">Dados do Cliente</th>
+                <th class="th-default">Dados do Pedido</th>
+            </tr>
+            <tr>
+                <td class="td-default">
+                <strong>Código:
+                </strong>
+                {{ pedidoFolhaVenda.cliente.id }}<br>
+                <strong>Nome:
+                </strong>
+                {{ pedidoFolhaVenda.cliente.nome }}<br>
+                <strong>
+                Origem - Source:
+                </strong>
+                {{ pedidoFolhaVenda.pedido.pedidoTracking.source | default('-')}}<br>
+                <strong>CPF/CNPJ:
+                </strong>
+                {{ pedidoFolhaVenda.cliente.cpfCnpj }}<br>
+                <strong>Tipo:
+                </strong>
+                {{ print_pessoa_tipo(pedidoFolhaVenda.cliente.tipo) }}<br>
+                <strong>Cidade:
+                </strong>
+                {{ pedidoFolhaVenda.endereco.cidade.nome }}<br>
+                <strong>Estado:
+                </strong>
+                {{ pedidoFolhaVenda.endereco.cidade.estado.sigla }}
+                -
+                {{ pedidoFolhaVenda.endereco.cidade.estado.nome }}
+                </td>
+                <td class="td-default">
+                <strong>Rep.:
+                </strong>
+                {{ pedidoFolhaVenda.loja.nome }}<br>
+                <strong>FormaPgto:
+                </strong>
+                {{ pedidoFolhaVenda.formaPagamento.nome | default('-') }}<br>
+                <strong>Transp.:
+                </strong>
+                {{ pedidoFolhaVenda.transportadoraServico.descricao | default('-') }}<br>
+                <strong>CondiçãoPgto:
+                </strong>
+                {{ pedidoFolhaVenda.condicaoPagamento.nome | default('-') }}<br>
+                <strong>Emissão:
+                </strong>
+                {{ print_date(pedidoFolhaVenda.pedido.dataHora) }}<br>
+                <strong>Aprovação:
+                </strong>
+                {{ print_date(pedidoFolhaVenda.pedido.dataAprovado) }}
+                </td>
+            </tr>
+        </table>
+        <span style="font-size: 12px;">
+        <strong>Quantidade de Produtos:
+        {{quantidadeItensPedido}}</strong>
+        </span>
+        <span style="font-size: 12px;">
+            <strong>Valor do pedido: {{pedidoFolhaVenda.pedido.valorTotal}} </strong>
+        </span>
+
+        <table class="table-default itens">
+        <thead>
+        <tr>
+        <th class="th-default">Produto</th>
+        <th class="th-default">Descrição</th>
+        <th class="th-default">Localização</th>
+        <th class="th-default">Qtde</th>
+        <!-- <th class="th-default">Valor unitário</th> -->
+        </tr>
+        </thead>
+
+        {% set pedidoItemOrdenado = [] %}
+
+        {% for pedidoItem in pedidoFolhaVenda.pedidoItem %}
+        {% set tamanho = 0 %}
+        {% set break = false %}
+        {% if pedidoItem.produtoDerivacao is not null %}
+        {% for derivacao in pedidoItem.produtoDerivacao.getDerivacaoItem() if not break %}
+        {% if derivacao.getDerivacaoItem().derivacao is not null and 'tamanho' in derivacao.getDerivacaoItem().derivacao.nome | lower %}
+        {% set tamanho = derivacao.getDerivacaoItem().ordem %}
+        {% set break = true %}
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+
+        {% set novaLista = [] %}
+        {% set inserido = false %}
+        {% for item in pedidoItemOrdenado %}
+        {% if not inserido and tamanho < item.tamanho %}
+        {% set novaLista = novaLista | merge([{'item': pedidoItem, 'tamanho': tamanho}]) %}
+        {% set inserido = true %}
+        {% endif %}
+        {% set novaLista = novaLista | merge([item]) %}
+        {% endfor %}
+
+        {% if not inserido %}
+        {% set novaLista = novaLista | merge([{'item': pedidoItem, 'tamanho': tamanho}]) %}
+        {% endif %}
+        {% set pedidoItemOrdenado = novaLista %}
+        {% endfor %}
+
+        {% set agrupadoPorPai = [] %}
+        {% set indPai = [] %}
+        {% for pedidoItem in pedidoItemOrdenado %}
+        {% set paiId = pedidoItem.item.produtoDerivacao.pai.id ~ '_pai' %}
+
+        {% if agrupadoPorPai[paiId] is not defined %}
+        {% set agrupadoPorPai = agrupadoPorPai | merge({ (paiId): [] }) %}
+        {% endif %}
+
+        {% set agrupadoPorPai = agrupadoPorPai | merge({ (paiId): agrupadoPorPai[paiId] | merge([pedidoItem]) }) %}
+    {% endfor %}
+
+
+
+                <tbody>
+                {% for paiId, itens in agrupadoPorPai %}
+                    {% for pedido in itens %}
+                        {% set localizacao = '' %}  
+                        <tr>
+                            {% if (pedido.item.produtoDerivacaoKit) %}
+                            {% set estoqueKit = find_one_by('\\Magamobi\\MagaZord\\Model\\Estoque', {'produtoDerivacao': pedido.item.produtoDerivacaoKit, "deposito" : 1}) %}
+                                {% if estoqueKit.getLocalizacaoConcatenada() %}
+                                    {% set localizacao = ' ('~ estoqueKit.getLocalizacaoConcatenada() ~')' %}
+                                {% endif %}
+                            {% endif %}
+                            {% if pedido.item.getEstoqueItem().getLocalizacaoConcatenada() %}
+                                {% set localizacao = ' (' ~ pedido.item.getEstoqueItem().getLocalizacaoConcatenada() ~ ')' %}
+                            {% endif %}     
+                            {% if pedido.item.quantidade > 1 %}
+                                <td style="font-weight: bold; font-size: 12px;" class="td-default td-custom-item">{{ pedido.item.produtoDerivacao.codigo }}</td>
+                                <td style="font-weight: bold; font-size: 12px;" class="td-default td-custom-item">{{ pedido.item.descricao }}</td>
+                                <td style="font-weight: bold; font-size: 12px;" class="td-default td-custom-item">{{ localizacao }}</td>
+                                <td style="font-weight: bold; font-size: 12px;" class="td-default td-custom-item">{{ pedido.item.quantidade }}</td>
+                            {% else %}
+                                <td class="td-default td-custom-item">{{ pedido.item.produtoDerivacao.codigo }}</td>
+                                <td class="td-default td-custom-item">{{ pedido.item.descricao }}</td>
+                                <td class="td-default td-custom-item">{{ localizacao }}</td>
+                                <td class="td-default td-custom-item">{{ pedido.item.quantidade }}</td>
+                                <!-- <td class="td-default td-custom-item">{{ pedido.item.valorUnitario * pedido.item.quantidade }}</td> -->
+                                {% endif %}
+                        </tr>
+                    {% endfor %}
+                {% endfor %}
+                </tbody>
+            </table>
+        </section>
+        {% endfor %}
+    </body>
+</html>
