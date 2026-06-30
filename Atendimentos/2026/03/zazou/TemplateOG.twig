@@ -18,9 +18,9 @@
     {% set gapEtiquetas = 3 %} {# mm #}
 
     {# Textos #}
-    {% set tamanhoTextoCodigoProduto = 10 %}
-    {% set tamanhoTextoNomeProduto = 10 %}
-    {% set tamanhoTextoDerivacaoProduto = 10 %}
+    {% set tamanhoTextoCodigoProduto = 7 %}
+    {% set tamanhoTextoNomeProduto = 7 %}
+    {% set tamanhoTextoDerivacaoProduto = 7 %}
 
     <style>
         @page {
@@ -51,8 +51,7 @@
             box-sizing: border-box;
             padding: 2mm;
             overflow: hidden;
-            /*Borda para visualização
-            border: 0.2mm dashed red;*/
+            /*border: 0.2mm dashed red;*/
         }
 
         .secao {
@@ -62,8 +61,7 @@
             align-items: flex-start; 
             text-align: left;
             overflow: hidden;
-            /*Borda para visualização
-            border: 0.2mm dashed blue;*/
+            /*border: 0.2mm dashed blue;*/
         }
 
         .secao-barcode {
@@ -81,8 +79,15 @@
             width: 100%; 
             max-height: 18mm;
             min-height: 14mm;
-            /*Borda para visualização
-            border: 0.2mm dotted green;*/
+            /*border: 0.2mm dotted green;*/
+        }
+
+        .textoDefault {
+            font-size: 11px;
+            max-width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     </style>
 
@@ -96,49 +101,72 @@
 
                 <!-- Sessão 1  -->
                 <div class="secao">
+                    <!-- Título -->
                     <p>ZAZOU</p>
 
-                    <div style="font-size: 10px; max-width: 100%; overflow: hidden; text-overflow: ellipsis;">
-                        {{ produto.nome }}
-                     <br>
-                        {{ produto.nomeDerivacao }}
-                    </div>
                     
                     <div class="barcode">
-                        <img style="width: 70%; max-height:9mm; min-height:8mm" src="{{ barcode_src(produto.codigo) }}" alt="Código de barras">
-                    <strong style="font-size: 10px; padding: 2px;"> <br>
-                       Ref {{ produto.codigo }}
+                    <!-- Nome do produto -->
+                    <div class="textoDefault">
+                        {{ produto.nome }} - 
+                    
+                    <!-- Derivação do produto -->
+                        {{ produto.nomeDerivacao }}
+                    </div>
+                        <!-- Código de barras -->
+                        <img style="width: 70%; max-height:10mm; min-height:8mm" src="{{ barcode_src(produto.codigo) }}" alt="Código de barras">
+                    
+                    <!-- Referência -->
+                    <strong style="font-size: 9px;"> <br>
+                       Ref: {{ produto.codigo }}
                     </strong>
                     </div>
                 </div>
 
+
+
+
+
                 <!-- Sessão 2 -->
-                <div style="font-size: 10px; max-width: 100%; overflow: hidden; text-overflow: ellipsis;border: 0.2mm;">
-                    {{ produto.nome }}
-                <br>
-                    {{ produto.nomeDerivacao }}
-                        
+                <div style="overflow: visible;" class="secao secao-barcode">
+                    <!-- Nome do produto -->
+                    <div class="textoDefault">
+                        {{ produto.nome }} - 
+
+                        <!-- Derivação -->
+                        {{ produto.nomeDerivacao }} 
+                    </div>
+
                     <div class="barcode">
-                        <strong style="font-size: 10px; "> <br>
-                            Ref {{ produto.codigo }}
+                        <!-- Código de barras -->
+                        <img style="width: 70%; max-height:10mm; min-height:8mm" src="{{ barcode_src(produto.codigo) }}" alt="Código de barras">
+                        <!-- Referência -->
+                        <strong style="font-size: 9px;"> <br>
+                            Ref: {{ produto.codigo }}
                         </strong>
-                        <img style="width: 70%; max-height:11mm; min-height:8mm;" src="{{ barcode_src(produto.codigo) }}" alt="Código de barras">
                     </div>
                 </div>
 
+
+
+
+
+
                 <!-- Sessão 3 -->
                 <div class="secao">
-                    <div style="
-                        font-size: 10px; max-width: 100%; overflow: hidden; text-overflow: ellipsis;">
-                        {{ produto.nome }}
-                        {{ produto.nomeDerivacao }} - 
-                        R$ {{ produto.preco }}
-                        <div style="text-align: center; width: 100%;">
-                            <strong> <br>
-                                Ref {{ produto.codigo }}
-                            </strong>
-                        </div>
 
+                    <!-- Referência -->
+                    <strong style="font-size: 9px;"> <br>
+                        Ref: {{ produto.codigo }}
+                    </strong>
+                    <div class="textoDefault">
+                        {{ produto.nome }}
+
+                    <!-- Derivação -->
+                        {{ produto.nomeDerivacao }} 
+                    <br>
+                    <!-- Preço -->
+                        R$ {{ produto.preco }}
                     </div>
                 </div>
 

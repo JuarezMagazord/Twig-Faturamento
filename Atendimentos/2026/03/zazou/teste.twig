@@ -1,0 +1,55 @@
+{% set totalPecas = 0 %}
+{% for pedidoFolhaVenda in pedidosFolhaVenda %}
+{% set qtdCliente = get_quantidade_pedido_cliente(pedidoFolhaVenda.pedidoRastreio.pedido.pessoa.id) %}
+{{print_text('')}}
+{% if folhaVenda.separador %}{{print_text('Separador: ' ~ folhaVenda.separador.nome,2)}}{% endif %}
+{{print_orientacao('center')}}
+{% if pedidoFolhaVenda.pedidoRastreio.transportadoraServico %}{{print_text(pedidoFolhaVenda.pedidoRastreio.transportadoraServico.descricao,2)}}{% endif %}
+{{print_text('Loja ' ~ pedidoFolhaVenda.pedidoRastreio.pedido.getLoja().getNome(), 2)}}
+{{print_text('Pedido ' ~ pedidoFolhaVenda.pedidoRastreio.pedido.codigo, 2)}}
+{{print_barcode(pedidoFolhaVenda.pedidoRastreio.pedido.codigo)}}
+{{print_orientacao('left')}}
+
+
+
+{# Aqui são as informaões X #}
+
+
+
+{{print_empty_line()}}
+{{print_text_detalhe(pad(pedidoFolhaVenda.pedidoRastreio.pedido.pedidoPessoa.nome, 25, 0) ~ pad(pedidoFolhaVenda.pedidoRastreio.pedido.pessoa.id, 6, 1, 'left'),2)}}
+{{print_text('Qtd Pedidos Clientes: ' ~ qtdCliente)}}
+{{print_text('Data: '~pedidoFolhaVenda.pedidoRastreio.pedido.dataHora|date('d/m/Y'))}}
+{{print_line()}}
+{% for pedidoItem in pedidoFolhaVenda.pedidoRastreio.pedidoItem %}
+{{print_enfase(true)}}
+{% if pedidoItem.produtoDerivacaoKit %}
+{{print_text('SKU KIT: '~ pedidoItem.produtoDerivacaoKit.codigo(),1)}}
+{{print_text('KIT Nome: '~ pedidoItem.produtoDerivacaoKit.produto.nome(),1)}}
+{% endif %}
+{{print_text_detalhe(pad(pedidoItem.produtoDerivacao.codigo, 26, 0) ~ pad(pedidoItem.quantidade, 5, 1, 'left'),2)}}
+{% set totalPecas = totalPecas + pedidoItem.quantidade %}
+{{print_enfase(false)}}
+{{print_orientacao('left')}}
+{{print_text(pedidoItem.produtoDerivacao.produto.nome ~ ' - ' ~ pedidoItem.produtoDerivacao.nome,2)}}
+{% set personalizacaoDescricao = '' %}
+{% if pedidoItem.info is defined and pedidoItem.info.personalizacao is defined %}
+
+{# Informações Z #}
+
+{% set personalizacaoDescricao = '' %}
+{% for personalizacao in pedidoItem.info.personalizacao %}
+{% set personalizacaoDescricao = personalizacaoDescricao ~ personalizacao.descricao %}
+{{print_text('Personalização: '~ personalizacaoDescricao,2)}}
+{% endfor %}
+{% endif %}
+{% if pedidoItem.presente %}
+{{print_enfase(true)}}
+{{print_text('Presente: Sim')}}
+{{print_enfase(false)}}
+{% endif %}
+{{print_line()}}
+{% endfor %}
+{{print_cut()}}
+{% endfor %}
+{{print_finalize(false)}}
