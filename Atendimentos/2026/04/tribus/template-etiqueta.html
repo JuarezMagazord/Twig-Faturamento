@@ -1,76 +1,110 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etiqueta de Produto</title>
-    {{ default_css() }}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Etiqueta de Produto 39x39</title>
+        {{ default_css() }}
 
-    {% set colunas = 2 %}
+        {% set colunas = 1 %}
 
-    {% set larguraImpresao = 105 %} {# tamanho em mm #}
-    {% set espacamentoEtiquetasLaterais = 3 %} {# tamanho em mm #}
+        {# Dimensões do driver #}
+        {% set larguraEtiqueta = 39 %} 
+        {% set alturaEtiqueta = 39 %} 
 
-    {% set larguraEtiqueta = 50 %} {# tamanho em mm #}
-    {% set alturaEtiqueta = 30 %} {# tamanho em mm #}
+        {# Reduzido levemente o tamanho do texto para dar mais respiro #}
+        {% set tamanhoTextoConteudo = 9.5 %} 
 
-    {% set tamanhoTextoCodigoProduto = 7 %} {# Tamanho em Pixels #}
-    {% set tamanhoTextoNomeProduto = 7 %} {# Tamanho em Pixels #}
-    {% set tamanhoTextoDerivacaoProduto = 7 %} {# Tamanho em Pixels #}
+        <style>
+            @page {
+                size: {{ larguraEtiqueta }}mm {{ alturaEtiqueta }}mm;
+                margin: 0;
+                }
 
+            body {
+                margin: 0;
+                padding: 0;
+                width: {{ larguraEtiqueta }}mm;
+                height: {{ alturaEtiqueta }}mm;
+                background-color: #ffffff;
+                -webkit-print-color-adjust: exact;
+                }
 
+            .etiqueta-container {
+                width: 100%;
+                height: 100%;
+                }
 
-    <style>
-        @page {
-            size: {{ larguraImpresao }}mm auto;
-            margin: 0 3mm;
-        }
+            .etiqueta {
+                width: {{ larguraEtiqueta }}mm;
+                height: {{ alturaEtiqueta }}mm;
+                box-sizing: border-box;
+                position: relative; /* Transforma a etiqueta em uma caixinha de referência */
 
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            align-content: flex-start;
-            width: {{ larguraImpresao }}mm; /* Largura fixa da impressão */
-        }
+                display: flex;
+                flex-direction: column;
+                justify-content: center; /* Mantém o preço perfeitamente centralizado no meio */
+                align-items: center;
 
-        .etiqueta-container {
-            display: grid;
-            grid-template-columns: repeat({{ colunas }}, 1fr);
-            gap: 0 {{ espacamentoEtiquetasLaterais }}mm; /* Espaçamento entre etiquetas */
-            width: {{ larguraImpresao }}mm; /* Mantém a largura fixa */
-            margin: 0 3mm;
-        }
+                padding: 0;
+                page-break-after: always;
+                }
 
-        .etiqueta {
-            width: {{ larguraEtiqueta }}mm; /* Largura da etiqueta */
-            height: {{ alturaEtiqueta }}mm; /* Altura da etiqueta */
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
+            .texto-superior {
+                position: absolute; 
+                top: 0.5mm;   
+                left: 0.5mm; 
+                right: 0.5mm; 
 
+                font-size: {{ tamanhoTextoConteudo }}px;
+                line-height: 1.2;
+                color: #000000;
+                word-break: break-word; 
+                overflow-wrap: break-word;
+                text-align: left;
+                }
 
-    </style>
-</head>
-<body>
+            .codigo-destaque {
+                font-weight: bold;
+                text-transform: uppercase;
+                }
 
-<div class="etiqueta-container" style="grid-template-columns: repeat({{ colunas }}, 1fr);">
+            .preco {
+                font-size: 20px;
+                font-weight: bold;
+                text-align: center;
+                color: #000000;
+            }
+
+            .barcode img {
+                max-width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+
+    <div class="etiqueta-container">
     {% for produto in produtos %}
-        {% for i in 0..produto.quantidade -1 %}
-            <div class="etiqueta">
-                <strong style="font-size: {{ tamanhoTextoCodigoProduto }}px;">{{ produto.codigo }}</strong>
-                <div style="font-size: {{ tamanhoTextoNomeProduto }}px;max-width:100%;white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ produto.nome }}</div>
-                <div style="font-zie: {{ tamanhoTextoDerivacaoProduto }}px;max-width:100%;white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{ produto.nomeDerivacao }}</div>
-                <span>R$ {{ produto.preco }}</span>
+    {% for i in 0..produto.quantidade -1 %}
+        <div class="etiqueta">
+        
+            <div class="texto-superior">
+                <span class="codigo-destaque">{{ produto.codigo }}</span>
+                {% if produto.nome %} - {{ produto.nome }}{% endif %}
+                {% if produto.nomeDerivacao %} - {{ produto.nomeDerivacao }}{% endif %}
             </div>
-        {% endfor %}
+            
+            <div class="preco">
+                R$ {{ produto.preco }}
+            </div>
+            <div class="barcode">
+                <img class="barcode-default" src="{{ barcode_src(produto.codigo) }}" alt="Código de barras" style="max-width: 90%; max-height: auto;">
+                <span>{{ produto.codigoEan }}</span>
+            </div>
+        </div>
     {% endfor %}
-</div>
-</body>
+    {% endfor %}
+    </div>
+
+    </body>
 </html>

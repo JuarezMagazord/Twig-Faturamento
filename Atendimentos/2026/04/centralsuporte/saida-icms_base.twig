@@ -1,0 +1,46 @@
+{% set zeraBaseCalculo = false %}
+{% if self.configuracaoParametros %}
+    {% set cfopZerada = self.configuracaoParametros.getOpcoesICMS().getCfopBaseZerada()|split(',') %}
+	{% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
+{% endif %}
+
+{% set aliquotaIPI = 0.00 %}
+	{% if self.configuracaoParametros %}
+		{% if self.aliquotaProdutoDerivacao|length > 0 and self.aliquotaProdutoDerivacao[self.notaFiscalItem.produtoDerivacao.codigo]  is defined %}
+			{% set aliquotaIPI = (self.aliquotaProdutoDerivacao[self.notaFiscalItem.produtoDerivacao.codigo]) %}
+		{% elseif self.aliquotaNcm|length > 0 and self.aliquotaNcm[self.notaFiscalItem.ncm.codigo]  is defined %}
+			{% set aliquotaIPI = (self.aliquotaNcm[self.notaFiscalItem.ncm.codigo]) %}
+		{% else %}
+			{% set aliquotaIPI = 0.00 %}
+		{% endif %}	
+		
+	{% else %}
+		{% set aliquotaIPI = 0.00 %}
+	{% endif %}
+
+{% if zeraBaseCalculo %}
+	{{ self.result('0.00') }}
+{% else %}	
+	{% if aliquotaIPI == 0.00 or (self.notaFiscalItem.notaFiscal.pessoa.tipo == 2 and self.notaFiscalItem.notaFiscal.pessoa.contribuinteIcms == true) %}
+		{% if self.configuracaoGlobal %}
+			{% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 2 %}	
+				{{ self.result(( self.notaFiscalItem.valorProduto) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+			{% else %}
+				{{ self.result('0.00') }}
+			{% endif %}
+		{% else %}
+			{{ self.result( self.notaFiscalItem.valorProduto + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+		{% endif %}
+	{% else %}
+		{% if self.configuracaoGlobal %}
+			{% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 and (self.notaFiscalItem.getCfopConfiguracao().getId() == 347 or self.notaFiscalItem.getCfopConfiguracao().getId() == 363) %}
+				{% set baseMultIPI = 1 + (aliquotaIPI / 100) %}
+				{{ self.result((((self.notaFiscalItem.valorProduto * baseMultIPI)  + (self.notaFiscalItem.valorFrete * baseMultIPI) + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto))) }}
+			{% else %}
+				{{ self.result(0.00) }}
+			{% endif %}
+		{% else %}
+			{{ self.result((self.notaFiscalItem.valorProduto) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}
+		{% endif %}
+	{% endif %}
+{% endif %}

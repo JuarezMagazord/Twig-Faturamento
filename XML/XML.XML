@@ -1,106 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-    <infNFe Id="NFe43260455323084000196550050000029891000034470" versao="4.00">
+    <infNFe Id="NFe42260431475549000166550020000000411000008790" versao="4.00">
         <ide>
-            <cUF>43</cUF>
-            <cNF>00003447</cNF>
-            <natOp>Venda Merc.Adq.Rec.Terc.Dest.Nao Contrib</natOp>
+            <cUF>42</cUF>
+            <cNF>00000879</cNF>
+            <natOp>Remessa P/Dep.Fechado ou Armazem Geral</natOp>
             <mod>55</mod>
-            <serie>5</serie>
-            <nNF>2989</nNF>
-            <dhEmi>2026-04-14T08:54:49-03:00</dhEmi>
-            <dhSaiEnt>2026-04-14T08:54:49-03:00</dhSaiEnt>
+            <serie>2</serie>
+            <nNF>41</nNF>
+            <dhEmi>2026-04-20T09:45:42-03:00</dhEmi>
+            <dhSaiEnt>2026-04-20T09:45:42-03:00</dhSaiEnt>
             <tpNF>1</tpNF>
-            <idDest>2</idDest>
-            <cMunFG>4314902</cMunFG>
+            <idDest>1</idDest>
+            <cMunFG>4205407</cMunFG>
             <tpImp>1</tpImp>
             <tpEmis>1</tpEmis>
             <cDV>0</cDV>
             <tpAmb>1</tpAmb>
             <finNFe>1</finNFe>
-            <indFinal>1</indFinal>
+            <indFinal>0</indFinal>
             <indPres>2</indPres>
             <indIntermed>0</indIntermed>
             <procEmi>0</procEmi>
             <verProc>Magazord 1.0</verProc>
         </ide>
         <emit>
-            <CNPJ>55323084000196</CNPJ>
-            <xNome>C. T. BITENCOURT LTDA</xNome>
-            <xFant>Extremo Sul Aventura</xFant>
+            <CNPJ>31475549000166</CNPJ>
+            <xNome>Medina Softboards</xNome>
+            <xFant>Medina Softboards</xFant>
             <enderEmit>
-                <xLgr>Rua Riachuelo</xLgr>
-                <nro>1582</nro>
-                <xCpl>2 Andar</xCpl>
-                <xBairro>Centro Histórico</xBairro>
-                <cMun>4314902</cMun>
-                <xMun>Porto Alegre</xMun>
-                <UF>RS</UF>
-                <CEP>90010273</CEP>
+                <xLgr>Rua Santa Luzia</xLgr>
+                <nro>100</nro>
+                <xCpl>Ed The Place sala 117</xCpl>
+                <xBairro>Trindade</xBairro>
+                <cMun>4205407</cMun>
+                <xMun>Florianópolis</xMun>
+                <UF>SC</UF>
+                <CEP>88036540</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>51998098162</fone>
+                <fone>48999720176</fone>
             </enderEmit>
-            <IE>0964011492</IE>
-            <IM>isento</IM>
-            <CRT>1</CRT>
+            <IE>258977868</IE>
+            <IM>ISENTO</IM>
+            <CNAE>4781400</CNAE>
+            <CRT>3</CRT>
         </emit>
         <dest>
-            <CNPJ>00394494007734</CNPJ>
-            <xNome>Policia federal de Foz do Iguacu</xNome>
+            <CNPJ>00165030000158</CNPJ>
+            <xNome>Tornado Operador Logistico LTDA</xNome>
             <enderDest>
-                <xLgr>Avenida Paraná</xLgr>
-                <nro>3471</nro>
-                <xCpl>PF</xCpl>
-                <xBairro>Centro Cívico</xBairro>
-                <cMun>4108304</cMun>
-                <xMun>Foz do Iguaçu</xMun>
-                <UF>PR</UF>
-                <CEP>85863469</CEP>
+                <xLgr>Rua Gercino Machado</xLgr>
+                <nro>679</nro>
+                <xBairro>Beira Rio</xBairro>
+                <cMun>4202305</cMun>
+                <xMun>Biguaçu</xMun>
+                <UF>SC</UF>
+                <CEP>88164290</CEP>
                 <cPais>1058</cPais>
                 <xPais>Brasil</xPais>
-                <fone>45991276403</fone>
+                <fone>11911860947</fone>
             </enderDest>
-            <indIEDest>9</indIEDest>
-            <email>danielfernandes.curitiba@gmail.com</email>
+            <indIEDest>1</indIEDest>
+            <IE>254547168</IE>
+            <email>tributario@loggi.com</email>
         </dest>
         <entrega>
-            <CNPJ>00394494007734</CNPJ>
-            <xNome>Policia federal de Foz do Iguaçu</xNome>
-            <xLgr>Avenida Javier Koelbel</xLgr>
-            <nro>48</nro>
-            <xCpl>Salao BONI</xCpl>
-            <xBairro>Bourbon</xBairro>
-            <cMun>4108304</cMun>
-            <xMun>Foz do Iguaçu</xMun>
-            <UF>PR</UF>
-            <CEP>85853610</CEP>
+            <CNPJ>00165030000158</CNPJ>
+            <xNome>TORNADO OPERADOR LOGISTICO LTDA</xNome>
+            <xLgr>Rua Gercino Machado</xLgr>
+            <nro>679</nro>
+            <xBairro>Beira Rio</xBairro>
+            <cMun>4202305</cMun>
+            <xMun>Biguaçu</xMun>
+            <UF>SC</UF>
+            <CEP>88164290</CEP>
+            <IE>254547168</IE>
         </entrega>
 
         <det nItem="1">
             <prod>
-                <cProd>3020-Coyote-42</cProd>
-                <cEAN>7908896605787</cEAN>
-                <xProd>Bota Arion 2.0 Novo cano 6&#039;&#039; - Invictus - Coyote - 42</xProd>
-                <NCM>64041900</NCM>
-                <CFOP>6108</CFOP>
+                <cProd>M52B-P</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta Medina Softboards - Branco - P</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
                 <uCom>UN</uCom>
-                <qCom>1.0000</qCom>
-                <vUnCom>639.900000</vUnCom>
-                <vProd>639.90</vProd>
-                <cEANTrib>7908896605787</cEANTrib>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
                 <uTrib>UN</uTrib>
-                <qTrib>1.0000</qTrib>
-                <vUnTrib>639.900000</vUnTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
                 <indTot>1</indTot>
-                <xPed>0012604678857</xPed>
+                <xPed>0012604227780</xPed>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMSSN102>
+                    <ICMS40>
                         <orig>0</orig>
-                        <CSOSN>102</CSOSN>
-                    </ICMSSN102>
+                        <CST>50</CST>
+
+                    </ICMS40>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
@@ -109,53 +112,50 @@
                     </IPINT>
                 </IPI>
                 <PIS>
-                    <PISNT>
-                        <CST>07</CST>
-                    </PISNT>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
                 </PIS>
                 <COFINS>
-                    <COFINSNT>
-                        <CST>07</CST>
-                    </COFINSNT>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
                 </COFINS>
-                <ICMSUFDest>
-                    <vBCUFDest>0.00</vBCUFDest>
-                    <vBCFCPUFDest>0.00</vBCFCPUFDest>
-                    <pFCPUFDest>0.00</pFCPUFDest>
-                    <pICMSUFDest>19.50</pICMSUFDest>
-                    <pICMSInter>12.00</pICMSInter>
-                    <pICMSInterPart>100.00</pICMSInterPart>
-                    <vFCPUFDest>0.00</vFCPUFDest>
-                    <vICMSUFDest>0.00</vICMSUFDest>
-                    <vICMSUFRemet>0.00</vICMSUFRemet>
-                </ICMSUFDest>
             </imposto>
         </det>
 
         <det nItem="2">
             <prod>
-                <cProd>3020-Coyote-41</cProd>
-                <cEAN>7908896605770</cEAN>
-                <xProd>Bota Arion 2.0 Novo cano 6&#039;&#039; - Invictus - Coyote - 41</xProd>
-                <NCM>64041900</NCM>
-                <CFOP>6108</CFOP>
+                <cProd>M54B-M</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta MDN - Branco - M</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
                 <uCom>UN</uCom>
-                <qCom>1.0000</qCom>
-                <vUnCom>639.900000</vUnCom>
-                <vProd>639.90</vProd>
-                <cEANTrib>7908896605770</cEANTrib>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
                 <uTrib>UN</uTrib>
-                <qTrib>1.0000</qTrib>
-                <vUnTrib>639.900000</vUnTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
                 <indTot>1</indTot>
-                <xPed>0012604678857</xPed>
+                <xPed>0012604227780</xPed>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMSSN102>
+                    <ICMS40>
                         <orig>0</orig>
-                        <CSOSN>102</CSOSN>
-                    </ICMSSN102>
+                        <CST>50</CST>
+
+                    </ICMS40>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
@@ -164,53 +164,50 @@
                     </IPINT>
                 </IPI>
                 <PIS>
-                    <PISNT>
-                        <CST>07</CST>
-                    </PISNT>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
                 </PIS>
                 <COFINS>
-                    <COFINSNT>
-                        <CST>07</CST>
-                    </COFINSNT>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
                 </COFINS>
-                <ICMSUFDest>
-                    <vBCUFDest>0.00</vBCUFDest>
-                    <vBCFCPUFDest>0.00</vBCFCPUFDest>
-                    <pFCPUFDest>0.00</pFCPUFDest>
-                    <pICMSUFDest>19.50</pICMSUFDest>
-                    <pICMSInter>12.00</pICMSInter>
-                    <pICMSInterPart>100.00</pICMSInterPart>
-                    <vFCPUFDest>0.00</vFCPUFDest>
-                    <vICMSUFDest>0.00</vICMSUFDest>
-                    <vICMSUFRemet>0.00</vICMSUFRemet>
-                </ICMSUFDest>
             </imposto>
         </det>
 
         <det nItem="3">
             <prod>
-                <cProd>18004-VerdeOliva-41a45</cProd>
+                <cProd>M54P-XGG</cProd>
                 <cEAN>SEM GTIN</cEAN>
-                <xProd>Meia Batalha - Br Force - Verde Oliva - 41 a 45</xProd>
-                <NCM>61159600</NCM>
-                <CFOP>6108</CFOP>
+                <xProd>Camiseta MDN - Preto - XGG</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
                 <uCom>UN</uCom>
-                <qCom>4.0000</qCom>
-                <vUnCom>23.000000</vUnCom>
-                <vProd>92.00</vProd>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
                 <cEANTrib>SEM GTIN</cEANTrib>
                 <uTrib>UN</uTrib>
-                <qTrib>4.0000</qTrib>
-                <vUnTrib>23.000000</vUnTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
                 <indTot>1</indTot>
-                <xPed>0012604678857</xPed>
+                <xPed>0012604227780</xPed>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMSSN102>
+                    <ICMS40>
                         <orig>0</orig>
-                        <CSOSN>102</CSOSN>
-                    </ICMSSN102>
+                        <CST>50</CST>
+
+                    </ICMS40>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
@@ -219,54 +216,50 @@
                     </IPINT>
                 </IPI>
                 <PIS>
-                    <PISNT>
-                        <CST>07</CST>
-                    </PISNT>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
                 </PIS>
                 <COFINS>
-                    <COFINSNT>
-                        <CST>07</CST>
-                    </COFINSNT>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
                 </COFINS>
-                <ICMSUFDest>
-                    <vBCUFDest>0.00</vBCUFDest>
-                    <vBCFCPUFDest>0.00</vBCFCPUFDest>
-                    <pFCPUFDest>0.00</pFCPUFDest>
-                    <pICMSUFDest>19.50</pICMSUFDest>
-                    <pICMSInter>12.00</pICMSInter>
-                    <pICMSInterPart>100.00</pICMSInterPart>
-                    <vFCPUFDest>0.00</vFCPUFDest>
-                    <vICMSUFDest>0.00</vICMSUFDest>
-                    <vICMSUFRemet>0.00</vICMSUFRemet>
-                </ICMSUFDest>
             </imposto>
         </det>
 
         <det nItem="4">
             <prod>
-                <cProd>9040-Unico</cProd>
-                <cEAN>7908896602519</cEAN>
-                <xProd>Canivete Phanton Coyote - Invictus</xProd>
-                <NCM>82119320</NCM>
-                <CEST>0801700</CEST>
-                <CFOP>6108</CFOP>
+                <cProd>M54B-XGG</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta MDN - Branco - XGG</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
                 <uCom>UN</uCom>
-                <qCom>1.0000</qCom>
-                <vUnCom>199.900000</vUnCom>
-                <vProd>199.90</vProd>
-                <cEANTrib>7908896602519</cEANTrib>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
                 <uTrib>UN</uTrib>
-                <qTrib>1.0000</qTrib>
-                <vUnTrib>199.900000</vUnTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
                 <indTot>1</indTot>
-                <xPed>0012604678857</xPed>
+                <xPed>0012604227780</xPed>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMSSN102>
-                        <orig>2</orig>
-                        <CSOSN>102</CSOSN>
-                    </ICMSSN102>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
@@ -275,53 +268,50 @@
                     </IPINT>
                 </IPI>
                 <PIS>
-                    <PISNT>
-                        <CST>07</CST>
-                    </PISNT>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
                 </PIS>
                 <COFINS>
-                    <COFINSNT>
-                        <CST>07</CST>
-                    </COFINSNT>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
                 </COFINS>
-                <ICMSUFDest>
-                    <vBCUFDest>0.00</vBCUFDest>
-                    <vBCFCPUFDest>0.00</vBCFCPUFDest>
-                    <pFCPUFDest>0.00</pFCPUFDest>
-                    <pICMSUFDest>19.50</pICMSUFDest>
-                    <pICMSInter>4.00</pICMSInter>
-                    <pICMSInterPart>100.00</pICMSInterPart>
-                    <vFCPUFDest>0.00</vFCPUFDest>
-                    <vICMSUFDest>0.00</vICMSUFDest>
-                    <vICMSUFRemet>0.00</vICMSUFRemet>
-                </ICMSUFDest>
             </imposto>
         </det>
 
         <det nItem="5">
             <prod>
-                <cProd>18004-Preto-36a40</cProd>
-                <cEAN>7908005364796</cEAN>
-                <xProd>Meia Batalha - Br Force - Preto - 36 a 40</xProd>
-                <NCM>61159600</NCM>
-                <CFOP>6108</CFOP>
+                <cProd>M53B-G</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta M. - Branco - G</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
                 <uCom>UN</uCom>
-                <qCom>1.0000</qCom>
-                <vUnCom>23.000000</vUnCom>
-                <vProd>23.00</vProd>
-                <cEANTrib>7908005364796</cEANTrib>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
                 <uTrib>UN</uTrib>
-                <qTrib>1.0000</qTrib>
-                <vUnTrib>23.000000</vUnTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
                 <indTot>1</indTot>
-                <xPed>0012604678857</xPed>
+                <xPed>0012604227780</xPed>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMSSN102>
+                    <ICMS40>
                         <orig>0</orig>
-                        <CSOSN>102</CSOSN>
-                    </ICMSSN102>
+                        <CST>50</CST>
+
+                    </ICMS40>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
@@ -330,54 +320,50 @@
                     </IPINT>
                 </IPI>
                 <PIS>
-                    <PISNT>
-                        <CST>07</CST>
-                    </PISNT>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
                 </PIS>
                 <COFINS>
-                    <COFINSNT>
-                        <CST>07</CST>
-                    </COFINSNT>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
                 </COFINS>
-                <ICMSUFDest>
-                    <vBCUFDest>0.00</vBCUFDest>
-                    <vBCFCPUFDest>0.00</vBCFCPUFDest>
-                    <pFCPUFDest>0.00</pFCPUFDest>
-                    <pICMSUFDest>19.50</pICMSUFDest>
-                    <pICMSInter>12.00</pICMSInter>
-                    <pICMSInterPart>100.00</pICMSInterPart>
-                    <vFCPUFDest>0.00</vFCPUFDest>
-                    <vICMSUFDest>0.00</vICMSUFDest>
-                    <vICMSUFRemet>0.00</vICMSUFRemet>
-                </ICMSUFDest>
             </imposto>
         </det>
 
         <det nItem="6">
             <prod>
-                <cProd>9002-UN</cProd>
-                <cEAN>7898618487015</cEAN>
-                <xProd>Canivete Phanton - Invictus</xProd>
-                <NCM>82119320</NCM>
-                <CEST>0801700</CEST>
-                <CFOP>6108</CFOP>
+                <cProd>M54B-P</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta MDN - Branco - P</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
                 <uCom>UN</uCom>
                 <qCom>2.0000</qCom>
-                <vUnCom>129.000000</vUnCom>
-                <vProd>258.00</vProd>
-                <cEANTrib>7898618487015</cEANTrib>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
                 <uTrib>UN</uTrib>
                 <qTrib>2.0000</qTrib>
-                <vUnTrib>129.000000</vUnTrib>
+                <vUnTrib>183.000000</vUnTrib>
                 <indTot>1</indTot>
-                <xPed>0012604678857</xPed>
+                <xPed>0012604227780</xPed>
             </prod>
             <imposto>
                 <ICMS>
-                    <ICMSSN102>
-                        <orig>2</orig>
-                        <CSOSN>102</CSOSN>
-                    </ICMSSN102>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
                 </ICMS>
                 <IPI>
                     <cEnq>999</cEnq>
@@ -386,26 +372,1425 @@
                     </IPINT>
                 </IPI>
                 <PIS>
-                    <PISNT>
-                        <CST>07</CST>
-                    </PISNT>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
                 </PIS>
                 <COFINS>
-                    <COFINSNT>
-                        <CST>07</CST>
-                    </COFINSNT>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
                 </COFINS>
-                <ICMSUFDest>
-                    <vBCUFDest>0.00</vBCUFDest>
-                    <vBCFCPUFDest>0.00</vBCFCPUFDest>
-                    <pFCPUFDest>0.00</pFCPUFDest>
-                    <pICMSUFDest>19.50</pICMSUFDest>
-                    <pICMSInter>4.00</pICMSInter>
-                    <pICMSInterPart>100.00</pICMSInterPart>
-                    <vFCPUFDest>0.00</vFCPUFDest>
-                    <vICMSUFDest>0.00</vICMSUFDest>
-                    <vICMSUFRemet>0.00</vICMSUFRemet>
-                </ICMSUFDest>
+            </imposto>
+        </det>
+
+        <det nItem="7">
+            <prod>
+                <cProd>M53P-G</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta M. - Preto - G</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="8">
+            <prod>
+                <cProd>M53P-XGG</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta M. - Preto - XGG</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="9">
+            <prod>
+                <cProd>M54P-P</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta MDN - Preto - P</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="10">
+            <prod>
+                <cProd>M54B-G</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta MDN - Branco - G</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="11">
+            <prod>
+                <cProd>M52P-G</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta Medina Softboards - Preto - G</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="12">
+            <prod>
+                <cProd>M52P-M</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta Medina Softboards - Preto - M</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="13">
+            <prod>
+                <cProd>M53P-GG</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta M. - Preto - GG</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="14">
+            <prod>
+                <cProd>M55-1</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Bone Big Smile - Preto - unico</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>5.0000</qCom>
+                <vUnCom>159.000000</vUnCom>
+                <vProd>795.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>5.0000</qTrib>
+                <vUnTrib>159.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="15">
+            <prod>
+                <cProd>M52B-G</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta Medina Softboards - Branco - G</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="16">
+            <prod>
+                <cProd>M54P-M</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta MDN - Preto - M</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="17">
+            <prod>
+                <cProd>M54P-G</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta MDN - Preto - G</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="18">
+            <prod>
+                <cProd>M56-2</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Bone Smile Melt - Preto - unico</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>5.0000</qCom>
+                <vUnCom>159.000000</vUnCom>
+                <vProd>795.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>5.0000</qTrib>
+                <vUnTrib>159.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="19">
+            <prod>
+                <cProd>M53P-P</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta M. - Preto - P</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="20">
+            <prod>
+                <cProd>M53P-M</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta M. - Preto - M</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="21">
+            <prod>
+                <cProd>M54B-GG</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta MDN - Branco - GG</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="22">
+            <prod>
+                <cProd>M52B-XGG</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta Medina Softboards - Branco - XGG</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="23">
+            <prod>
+                <cProd>M52B-GG</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta Medina Softboards - Branco - GG</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="24">
+            <prod>
+                <cProd>M54P-GG</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta MDN - Preto - GG</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="25">
+            <prod>
+                <cProd>M53B-XGG</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta M. - Branco - XGG</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="26">
+            <prod>
+                <cProd>M52P-P</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta Medina Softboards - Preto - P</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="27">
+            <prod>
+                <cProd>M52P-GG</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta Medina Softboards - Preto - GG</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="28">
+            <prod>
+                <cProd>M53B-GG</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta M. - Branco - GG</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="29">
+            <prod>
+                <cProd>M57-3</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Bone Smile Yin Yang - BORDO - unico</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>5.0000</qCom>
+                <vUnCom>159.000000</vUnCom>
+                <vProd>795.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>5.0000</qTrib>
+                <vUnTrib>159.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="30">
+            <prod>
+                <cProd>M52B-M</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta Medina Softboards - Branco - M</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="31">
+            <prod>
+                <cProd>M52P-XGG</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta Medina Softboards - Preto - XGG</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="32">
+            <prod>
+                <cProd>M53B-M</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta M. - Branco - M</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
+            </imposto>
+        </det>
+
+        <det nItem="33">
+            <prod>
+                <cProd>M53B-P</cProd>
+                <cEAN>SEM GTIN</cEAN>
+                <xProd>Camiseta M. - Branco - P</xProd>
+                <NCM>52092200</NCM>
+                <cBenef>SC840004</cBenef>
+                <CFOP>5905</CFOP>
+                <uCom>UN</uCom>
+                <qCom>2.0000</qCom>
+                <vUnCom>183.000000</vUnCom>
+                <vProd>366.00</vProd>
+                <cEANTrib>SEM GTIN</cEANTrib>
+                <uTrib>UN</uTrib>
+                <qTrib>2.0000</qTrib>
+                <vUnTrib>183.000000</vUnTrib>
+                <indTot>1</indTot>
+                <xPed>0012604227780</xPed>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMS40>
+                        <orig>0</orig>
+                        <CST>50</CST>
+
+                    </ICMS40>
+                </ICMS>
+                <IPI>
+                    <cEnq>999</cEnq>
+                    <IPINT>
+                        <CST>53</CST>
+                    </IPINT>
+                </IPI>
+                <PIS>
+                    <PISAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.65</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISAliq>
+                </PIS>
+                <COFINS>
+                    <COFINSAliq>
+                        <CST>01</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>3.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSAliq>
+                </COFINS>
             </imposto>
         </det>
         <total>
@@ -415,15 +1800,12 @@
                 <vICMS>0.00</vICMS>
                 <vICMSDeson>0</vICMSDeson>
 
-                <vFCPUFDest>0.00</vFCPUFDest>
-                <vICMSUFDest>0.00</vICMSUFDest>
-                <vICMSUFRemet>0.00</vICMSUFRemet>
                 <vFCP>0.00</vFCP>
                 <vBCST>0.00</vBCST>
                 <vST>0.00</vST>
                 <vFCPST>0.00</vFCPST>
                 <vFCPSTRet>0.00</vFCPSTRet>
-                <vProd>1852.70</vProd>
+                <vProd>13365.00</vProd>
                 <vFrete>0.00</vFrete>
                 <vSeg>0</vSeg>
                 <vDesc>0.00</vDesc>
@@ -433,44 +1815,32 @@
                 <vPIS>0.00</vPIS>
                 <vCOFINS>0.00</vCOFINS>
                 <vOutro>0.00</vOutro>
-                <vNF>1852.70</vNF>
+                <vNF>13365.00</vNF>
             </ICMSTot>
         </total>
         <transp>
-            <modFrete>0</modFrete>
-            <transporta>
-                <CNPJ>73939449000193</CNPJ>
-                <xNome>Total Express</xNome>
-                <xEnder>Avenida Piracema, 155</xEnder>
-                <xMun>Barueri</xMun>
-                <UF>SP</UF>
-            </transporta>
+            <modFrete>9</modFrete>
             <vol>
                 <qVol>1</qVol>
                 <esp>Caixa</esp>
-                <pesoL>3.300</pesoL>
-                <pesoB>3.300</pesoB>
+                <pesoL>12.375</pesoL>
+                <pesoB>12.375</pesoB>
             </vol>
         </transp>
         <pag>
             <detPag>
-                <tPag>03</tPag>
-                <vPag>1852.70</vPag>
-                <card>
-                    <tpIntegra>1</tpIntegra>
-                    <CNPJ>19468242000132</CNPJ>
-                    <tBand>01</tBand>
-                    <cAut>432e9091a875288e8a67</cAut>
-                </card>
+                <tPag>90</tPag>
+                <vPag>0.00</vPag>
             </detPag>
         </pag>
         <infAdic>
-            <infCpl>Pedido: 0012604678857 - Documento emitido por ME ou EPP optante pelo Simples
-                Nacional. Não gera direito a crédito fiscal de IPI. - Total aproximado de tributos:
-                574,67 (31,02%) Federais 259,72 (14,02%) Estaduais 314,95 (17,00%). Fonte.:
+            <infCpl>Pedido: 0012604227780 - - Total aproximado de tributos: 4.069,74 (30,45%)
+                Federais 1.797,69 (13,45%) Estaduais 2.272,05 (17,00%). Fonte.:
+                IBPT/empresometro.com.br.Pedido: 0012604227780 - - Total aproximado de tributos:
+                4.069,74 (30,45%) Federais 1.797,69 (13,45%) Estaduais 2.272,05 (17,00%). Fonte.:
                 IBPT/empresometro.com.br.</infCpl>
             <obsCont xCampo="Pedido de Venda">
-                <xTexto>0012604678857</xTexto>
+                <xTexto>0012604227780</xTexto>
             </obsCont>
         </infAdic>
         <infRespTec>

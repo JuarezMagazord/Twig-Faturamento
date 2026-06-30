@@ -1,136 +1,345 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
- 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Folha de vendas
-            {{ folhaVenda.id }}</title>
-        {{ default_css() }}
-    </head>
- 
-    <body>
- 
-        {% for pedidoFolhaVenda in pedidosFolhaVenda %}
-            <table class="page-break table-default">
-                <tr>
-                    <td class="title td-default">Pedido:</td>
-                    <td class="td-default">{{ pedidoFolhaVenda.pedido.id }}
-                        -
-                        {{ pedidoFolhaVenda.pedido.codigo }}</td>
-                    <td class="td-default">{{ print_codigo_barras(pedidoFolhaVenda.pedido.codigo) }}</td>
-                </tr>
-            </table>
- 
-            <table class="table-default">
-                <tr>
-                    <th class="th-default">Dados do Cliente</th>
-                    <th class="th-default">Dados do Pedido</th>
-                </tr>
-                <tr>
-                    <td class="td-default">
-                        <strong>Código:
-                        </strong>
-                        {{ pedidoFolhaVenda.cliente.id }}<br>
-                        <strong>Nome:
-                        </strong>
-                        {{ pedidoFolhaVenda.cliente.nome }}<br>
-                        <strong>CPF/CNPJ:
-                        </strong>
-                        {{ pedidoFolhaVenda.cliente.cpfCnpj }}<br>
-                        <strong>Tipo:
-                        </strong>
-                        {{ print_pessoa_tipo(pedidoFolhaVenda.cliente.tipo) }}<br>
-                        <strong>Estado:
-                        </strong>
-                        {{ pedidoFolhaVenda.endereco.cidade.estado.sigla }}
-                        -
-                        {{ pedidoFolhaVenda.endereco.cidade.estado.nome }}<br>
-                        <strong>Obs:
-                        </strong>
-                        {% for observacao in pedidoFolhaVenda.pedido.getObservacoesPedido() %}
-                            {{ observacao.mensagem }}
-                            -
-                            {{ observacao.data_hora }}
-                            <br>
-                        {% endfor %}
- 
-                    </td>
-                    <td class="td-default">
-                        <strong>Rep.:
-                        </strong>
-                        {{ pedidoFolhaVenda.loja.nome }}<br>
-                        <strong>FormaPgto:
-                        </strong>
-                        {{ pedidoFolhaVenda.formaPagamento.nome | default('-') }}<br>
-                        <strong>Transp.:
-                        </strong>
-                        {{ pedidoFolhaVenda.transportadoraServico.descricao | default('-') }}<br>
-                        <strong>CondiçãoPgto:
-                        </strong>
-                        {{ pedidoFolhaVenda.condicaoPagamento.nome | default('-') }}<br>
-                        <strong>Emissão:
-                        </strong>
-                        {{ print_date(pedidoFolhaVenda.pedido.dataHora) }}<br>
-                        <strong>Aprovação:
-                        </strong>
-                        {{ print_date(pedidoFolhaVenda.pedido.dataAprovado) }}
-                    </td>
-                </tr>
-            </table>
- 
-            <!--  -->
-            <table class="table-default">
-                <tr>
-                    <th class="th-default">Imagem</th>
-                    <th class="th-default">Código</th>
-                    <th class="th-default">Descrição</th>
-                    <th class="th-default">Valor</th>
-                    <th class="th-default">Qtde</th>
-                </tr>
-                    {% set totalItems = 0 %}
+<?xml version="1.0" encoding="UTF-8"?>
+<NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+  <infNFe Id="NFe42260612392009000174550050000011991000013093" versao="4.00">
+    <ide>
+      <cUF>42</cUF>
+      <cNF>00001309</cNF>
+      <natOp>Venda de Producao do Estabelecimento</natOp>
+      <mod>55</mod>
+      <serie>5</serie>
+      <nNF>1199</nNF>
+      <dhEmi>2026-06-23T09:25:28-03:00</dhEmi>
+      <dhSaiEnt>2026-06-23T09:25:28-03:00</dhSaiEnt>
+      <tpNF>1</tpNF>
+      <idDest>2</idDest>
+      <cMunFG>4213203</cMunFG>
+      <tpImp>1</tpImp>
+      <tpEmis>1</tpEmis>
+      <cDV>3</cDV>
+      <tpAmb>1</tpAmb>
+      <finNFe>1</finNFe>
+      <indFinal>1</indFinal>
+      <indPres>2</indPres>
+      <indIntermed>0</indIntermed>
+      <procEmi>0</procEmi>
+      <verProc>Magazord 1.0</verProc>
+    </ide>
+    <emit>
+      <CNPJ>12392009000174</CNPJ>
+      <xNome>Kroten Industria e Comercio de Tintas Ltda</xNome>
+      <xFant>Kroten Ecotintas</xFant>
+      <enderEmit>
+        <xLgr>R dos Atiradores</xLgr>
+        <nro>8171</nro>
+        <xBairro>Testo Central</xBairro>
+        <cMun>4213203</cMun>
+        <xMun>Pomerode</xMun>
+        <UF>SC</UF>
+        <CEP>89356250</CEP>
+        <cPais>1058</cPais>
+        <xPais>Brasil</xPais>
+        <fone>4733950230</fone>
+      </enderEmit>
+      <IE>256283419</IE>
+      <IM>ISENTO</IM>
+      <CNAE>2071100</CNAE>
+      <CRT>1</CRT>
+    </emit>
+    <dest>
+      <CNPJ>22685472000168</CNPJ>
+      <xNome>ER CONSTRUCOES LTDA</xNome>
+      <enderDest>
+        <xLgr>AVENIDA FREDERICO LEAO BITENCOURT</xLgr>
+        <nro>64</nro>
+        <xBairro>CENTRO</xBairro>
+        <cMun>3157005</cMun>
+        <xMun>Salinas</xMun>
+        <UF>MG</UF>
+        <CEP>39560000</CEP>
+        <cPais>1058</cPais>
+        <xPais>Brasil</xPais>
+        <fone>31986664331</fone>
+      </enderDest>
+      <indIEDest>1</indIEDest>
+      <IE>0025779290016</IE>
+      <email>erconstrucoes3@gmail.com</email>
+    </dest>
+    <entrega>
+      <CNPJ>22685472000168</CNPJ>
+      <xNome>ER CONSTRUÇÕES LTDA</xNome>
+      <xLgr>AVENIDA FREDERICO LEAO BITENCOURT</xLgr>
+      <nro>64</nro>
+      <xBairro>CENTRO</xBairro>
+      <cMun>3157005</cMun>
+      <xMun>Salinas</xMun>
+      <UF>MG</UF>
+      <CEP>39560000</CEP>
+      <IE>0025779290016</IE>
+    </entrega>
 
-                {% for pedidoItem in pedidoFolhaVenda.pedidoItem %}
-                    {% set localizacao = '' %}
-                    <tr>
-                        {% if (pedidoItem.produtoDerivacaoKit) %}
-                            {% set estoqueKit = find_one_by('\\Magamobi\\MagaZord\\Model\\Estoque', {'produtoDerivacao': pedidoItem.produtoDerivacaoKit, "deposito" : 1}) %}
-                            {% if estoqueKit.getLocalizacaoConcatenada() %}
-                                {% set localizacao = ' ('~ estoqueKit.getLocalizacaoConcatenada() ~')' %}
-                            {% endif %}
-                            <td class="td-default">{{ print_produto_imagem_kit(pedidoItem) }}</td>
-                            <td class="td-default">{{ pedidoItem.produtoDerivacaoKit.codigo  ~ localizacao }}</td>
-                            <td class="td-default">{{ pedidoItem.produtoDerivacaoKit.produto.nome }}
-                                -
-                                {{ pedidoItem.produtoDerivacaoKit.nome }}</td>
-                            <td class="td-default">{{ pedidoItem.pedidoItemKit.valorItem }}</td>
-                            <td class="td-default">{{ pedidoItem.pedidoItemKit.quantidade }}</td>
-                        {% set totalItems = totalItems + pedidoItem.pedidoItemKit.quantidade %}
+    <det nItem="1">
+      <prod>
+        <cProd>115-Ecossilica-162L</cProd>
+        <cEAN>SEM GTIN</cEAN>
+        <xProd>Tinta Mineral - Ecossilica - 16,2L</xProd>
+        <NCM>32159000</NCM>
+        <CFOP>6101</CFOP>
+        <uCom>UN</uCom>
+        <qCom>4.0000</qCom>
+        <vUnCom>679.000000</vUnCom>
+        <vProd>2716.00</vProd>
+        <cEANTrib>SEM GTIN</cEANTrib>
+        <uTrib>UN</uTrib>
+        <qTrib>4.0000</qTrib>
+        <vUnTrib>679.000000</vUnTrib>
+        <indTot>1</indTot>
+        <xPed>0012606531219</xPed>
+      </prod>
+      <imposto>
+        <ICMS>
+          <ICMSSN101>
+            <orig>0</orig>
+            <CSOSN>101</CSOSN>
+            <pCredSN>0</pCredSN>
+            <vCredICMSSN>0.00</vCredICMSSN>
+          </ICMSSN101>
+        </ICMS>
+        <IPI>
+          <cEnq>999</cEnq>
+          <IPINT>
+            <CST>53</CST>
+          </IPINT>
+        </IPI>
+        <PIS>
+          <PISNT>
+            <CST>07</CST>
+          </PISNT>
+        </PIS>
+        <COFINS>
+          <COFINSNT>
+            <CST>07</CST>
+          </COFINSNT>
+        </COFINS>
+      </imposto>
+    </det>
 
-                        {% else %}
- 
-                            {% if pedidoItem.getEstoqueItem().getLocalizacaoConcatenada() %}
-                                {% set localizacao = ' (' ~ pedidoItem.getEstoqueItem().getLocalizacaoConcatenada() ~ ')' %}
-                            {% endif %}
-                            <td class="td-default">{{ print_produto_imagem(pedidoItem) }}
-                            </td>
-                            <td class="td-default">{{ pedidoItem.produtoDerivacao.codigo ~ localizacao}}
-                            </td>
-                            <td class="td-default">{{ pedidoItem.descricao }}</td>
-                            <td class="td-default">{{ (pedidoItem.valorUnitario*pedidoItem.quantidade) }}</td>
-                            <td class="td-default">{{ pedidoItem.quantidade }}</td>
-                            {% set totalItems = totalItems + pedidoItem.quantidade %}
-                        {% endif %}
-                    </tr>
-                {% endfor %}
-            </table>
-            <tfoot>
-                <tr>
-                    <td colspan="4" style="text-align: right; font-size: 18px;"></td>
-                    <td colspan='1' style="font-size: 16px; text-align: left;">Total de Itens:
-                        {{ totalItems }}</td>
-                </tr>
-            </tfoot>
-        {% endfor %}
-    </body>
-</html>
+    <det nItem="2">
+      <prod>
+        <cProd>130-18L</cProd>
+        <cEAN>SEM GTIN</cEAN>
+        <xProd>Fundo Preparador para Paredes - 18L</xProd>
+        <NCM>32159000</NCM>
+        <CFOP>6101</CFOP>
+        <uCom>L</uCom>
+        <qCom>2.0000</qCom>
+        <vUnCom>249.000000</vUnCom>
+        <vProd>498.00</vProd>
+        <cEANTrib>SEM GTIN</cEANTrib>
+        <uTrib>L</uTrib>
+        <qTrib>2.0000</qTrib>
+        <vUnTrib>249.000000</vUnTrib>
+        <indTot>1</indTot>
+        <xPed>0012606531219</xPed>
+      </prod>
+      <imposto>
+        <ICMS>
+          <ICMSSN101>
+            <orig>0</orig>
+            <CSOSN>101</CSOSN>
+            <pCredSN>0</pCredSN>
+            <vCredICMSSN>0.00</vCredICMSSN>
+          </ICMSSN101>
+        </ICMS>
+        <IPI>
+          <cEnq>999</cEnq>
+          <IPINT>
+            <CST>53</CST>
+          </IPINT>
+        </IPI>
+        <PIS>
+          <PISNT>
+            <CST>07</CST>
+          </PISNT>
+        </PIS>
+        <COFINS>
+          <COFINSNT>
+            <CST>07</CST>
+          </COFINSNT>
+        </COFINS>
+      </imposto>
+    </det>
+
+    <det nItem="3">
+      <prod>
+        <cProd>131-18L</cProd>
+        <cEAN>SEM GTIN</cEAN>
+        <xProd>Diluidor Mineral - 18L</xProd>
+        <NCM>32159000</NCM>
+        <CFOP>6101</CFOP>
+        <uCom>L</uCom>
+        <qCom>1.0000</qCom>
+        <vUnCom>219.000000</vUnCom>
+        <vProd>219.00</vProd>
+        <cEANTrib>SEM GTIN</cEANTrib>
+        <uTrib>L</uTrib>
+        <qTrib>1.0000</qTrib>
+        <vUnTrib>219.000000</vUnTrib>
+        <indTot>1</indTot>
+        <xPed>0012606531219</xPed>
+      </prod>
+      <imposto>
+        <ICMS>
+          <ICMSSN101>
+            <orig>0</orig>
+            <CSOSN>101</CSOSN>
+            <pCredSN>0</pCredSN>
+            <vCredICMSSN>0.00</vCredICMSSN>
+          </ICMSSN101>
+        </ICMS>
+        <IPI>
+          <cEnq>999</cEnq>
+          <IPINT>
+            <CST>53</CST>
+          </IPINT>
+        </IPI>
+        <PIS>
+          <PISNT>
+            <CST>07</CST>
+          </PISNT>
+        </PIS>
+        <COFINS>
+          <COFINSNT>
+            <CST>07</CST>
+          </COFINSNT>
+        </COFINS>
+      </imposto>
+    </det>
+
+    <det nItem="4">
+      <prod>
+        <cProd>115-Ecossilica-162L</cProd>
+        <cEAN>SEM GTIN</cEAN>
+        <xProd>Tinta Mineral - Ecossilica - 16,2L</xProd>
+        <NCM>32159000</NCM>
+        <CFOP>6101</CFOP>
+        <uCom>UN</uCom>
+        <qCom>2.0000</qCom>
+        <vUnCom>679.000000</vUnCom>
+        <vProd>1358.00</vProd>
+        <cEANTrib>SEM GTIN</cEANTrib>
+        <uTrib>UN</uTrib>
+        <qTrib>2.0000</qTrib>
+        <vUnTrib>679.000000</vUnTrib>
+        <indTot>1</indTot>
+        <xPed>0012606531219</xPed>
+      </prod>
+      <imposto>
+        <ICMS>
+          <ICMSSN101>
+            <orig>0</orig>
+            <CSOSN>101</CSOSN>
+            <pCredSN>0</pCredSN>
+            <vCredICMSSN>0.00</vCredICMSSN>
+          </ICMSSN101>
+        </ICMS>
+        <IPI>
+          <cEnq>999</cEnq>
+          <IPINT>
+            <CST>53</CST>
+          </IPINT>
+        </IPI>
+        <PIS>
+          <PISNT>
+            <CST>07</CST>
+          </PISNT>
+        </PIS>
+        <COFINS>
+          <COFINSNT>
+            <CST>07</CST>
+          </COFINSNT>
+        </COFINS>
+      </imposto>
+    </det>
+    <total>
+
+      <ICMSTot>
+        <vBC>0.00</vBC>
+        <vICMS>0.00</vICMS>
+        <vICMSDeson>0</vICMSDeson>
+
+        <vFCP>0.00</vFCP>
+        <vBCST>0.00</vBCST>
+        <vST>0.00</vST>
+        <vFCPST>0.00</vFCPST>
+        <vFCPSTRet>0.00</vFCPSTRet>
+        <vProd>4791.00</vProd>
+        <vFrete>0.00</vFrete>
+        <vSeg>0</vSeg>
+        <vDesc>0.00</vDesc>
+        <vII>0.00</vII>
+        <vIPI>0.00</vIPI>
+        <vIPIDevol>0.00</vIPIDevol>
+        <vPIS>0.00</vPIS>
+        <vCOFINS>0.00</vCOFINS>
+        <vOutro>0.00</vOutro>
+        <vNF>4791.00</vNF>
+      </ICMSTot>
+    </total>
+    <transp>
+      <modFrete>0</modFrete>
+      <transporta>
+        <CNPJ>85348407000248</CNPJ>
+        <xNome>AZURELOG TRANSPORTES LTDA</xNome>
+        <xEnder>Rodovia Ingo Hering, 4820</xEnder>
+        <xMun>Gaspar</xMun>
+        <UF>SC</UF>
+      </transporta>
+      <vol>
+        <qVol>9</qVol>
+        <esp>VOLUMES</esp>
+        <pesoL>195.480</pesoL>
+        <pesoB>195.480</pesoB>
+      </vol>
+    </transp>
+    <cobr>
+      <fat>
+        <nFat>1199</nFat>
+        <vOrig>4791.00</vOrig>
+        <vDesc>0.00</vDesc>
+        <vLiq>4791.00</vLiq>
+      </fat>
+      <dup>
+        <nDup>001</nDup>
+        <dVenc>2026-06-23</dVenc>
+        <vDup>4791.00</vDup>
+      </dup>
+    </cobr>
+    <pag>
+      <detPag>
+        <tPag>03</tPag>
+        <vPag>4791.00</vPag>
+        <card>
+          <tpIntegra>1</tpIntegra>
+          <CNPJ>19468242000132</CNPJ>
+          <tBand>01</tBand>
+          <cAut>4f518f11d16b1720c77b</cAut>
+        </card>
+      </detPag>
+    </pag>
+    <infAdic>
+      <infCpl>Pedido: 0012606531219 - Documento emitido por ME ou EPP optante pelo Simples Nacional. Não gera direito a
+        crédito fiscal de IPI. - Total aproximado de tributos: 1.458,86 (30,45%) Federais 644,39 (13,45%) Estaduais
+        814,47 (17,00%). Fonte.: IBPT/empresometro.com.br. - Codigo de Rastreio Azurelog Transportes : MZ202606467700KE
+      </infCpl>
+      <obsCont xCampo="Pedido de Venda">
+        <xTexto>0012606531219</xTexto>
+      </obsCont>
+    </infAdic>
+    <infRespTec>
+      <CNPJ>28977040000107</CNPJ>
+      <xContato>Ricardo Schroeder</xContato>
+      <email>nfe@magazord.com.br</email>
+      <fone>4735208013</fone>
+    </infRespTec>
+  </infNFe>
+</NFe>

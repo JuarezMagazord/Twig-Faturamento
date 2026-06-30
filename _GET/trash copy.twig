@@ -1,60 +1,238 @@
-<<<<<<< Updated upstream
-{% set zeraAliquota = false %}
-    {% if self.configuracaoParametros %}
-            {% set cfopZerada = self.configuracaoParametros.getOpcoesPIS().getCfopAliquotaZerada()|split(',') %}
-            {% set zeraAliquota = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}
-    {% endif %}
-    {#{% if zeraAliquota or self.situacaoTributariaPIS.codigo in ['04', '06'] %}
-            {{ self.result('0.00') }}
-    {% else %}
-        {{ self.result(self.aliquotaPIS) }}
-    {% endif %} #}
-=======
-{% set zeraBaseCalculo = false %}																
-{% if self.configuracaoParametros %}																
-{% set cfopZerada = self.configuracaoParametros.getOpcoesICMS().getCfopBaseZerada()|split(',') %}																
-	{% set zeraBaseCalculo = self.notaFiscalItem.getCfop().getCodigo() in cfopZerada %}															
-{% endif %}																
-																
-{% set aliquotaIPI = 0.00 %}																
-{% if self.configuracaoParametros %}																
-{% if self.aliquotaCfops|length > 0 %}																
-		{% if self.aliquotaCfops[self.notaFiscalItem.cfop.codigo]  is defined %}														
-			{% set aliquotaIPI = (self.aliquotaCfops[self.notaFiscalItem.cfop.codigo]) %}													
-		{% else %}														
-			{% set aliquotaIPI = 0.00 %}													
-		{% endif %}														
-	{% else %}															
-		{% set aliquotaIPI = 0.00 %}														
-	{% endif %}															
-{% else %}																
-{% set aliquotaIPI = 0.00 %}																
-{% endif %}																
-																
-{% if zeraBaseCalculo %}																
-	{{ self.result('0.00') }}															
-{% else %}																
-	{% if aliquotaIPI == 0.00 %}															
-		{% if self.configuracaoGlobal %}														
-			{% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}													
-				{{ self.result(( self.notaFiscalItem.valorProduto) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}												
-			{% else %}													
-				{{ self.result(0.00) }}												
-			{% endif %}													
-		{% else %}														
-			{{ self.result( self.notaFiscalItem.valorProduto + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}													
-		{% endif %}														
-	{% else %}															
-		{% if self.configuracaoGlobal %}														
-			{% if self.configuracaoGlobal.getOpcoesGlobais().getCrt() == 3 %}													
-				{% set baseMultIPI = 1 + (aliquotaIPI / 100) %}												
-				{{ self.result((((self.notaFiscalItem.valorProduto * baseMultIPI)  + (self.notaFiscalItem.valorFrete * baseMultIPI) + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto))) }}												
-			{% else %}													
-				{{ self.result(0.00) }}												
-			{% endif %}													
-		{% else %}														
-			{{ self.result((self.notaFiscalItem.valorProduto) + self.notaFiscalItem.valorFrete + self.notaFiscalItem.valorOutrasDespesas - self.notaFiscalItem.valorDesconto) }}													
-		{% endif %}														
-	{% endif %}															
-{% endif %}
->>>>>>> Stashed changes
+<style>
+    body {
+        font-size: 10px;
+    }
+
+    .td-default {
+        padding: 5px !important;
+    }
+
+    .td-custom-item {
+        padding: 2px 2px 2px 5px !important;
+        border: none !important;
+    }
+
+    .td-custom-resumo {
+        border: none !important;
+    }
+
+    .table-default {
+        font-size: 10px;
+        margin-bottom: 10px !important;
+    }
+
+    .quebrar-depois {
+        page-break-after: always;
+    }
+
+    .nao-quebrar-meio {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    .resumo {
+        border: none !important;
+    }
+
+    .resumo tbody tr:nth-child(odd),
+    .itens tbody tr:nth-child(odd) {
+        background-color: rgb(207, 207, 207);
+    }
+
+    .resumo tbody tr:nth-child(even),
+    .itens tbody tr:nth-child(even) {
+        background-color: #ffffff;
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Folha de vendas {{ folhaVenda.id }}</title>
+    {{ default_css() }}
+</head>
+
+<body>
+{{ print_button() }}
+
+{% set itensPorLocalizacao = {} %}
+
+{% for pedidoFolhaVenda in pedidosFolhaVenda %}
+    {% for pedidoItem in pedidoFolhaVenda.pedidoItem %}
+
+        {% set localizacao = pedidoItem.getEstoqueItem().getLocalizacaoConcatenada() | default('SEM LOCAL') %}
+        {% set chaveProduto = pedidoItem.produtoDerivacao.codigo %}
+
+        {% if itensPorLocalizacao[localizacao] is not defined %}
+            {% set itensPorLocalizacao = itensPorLocalizacao | merge({ (localizacao): {} }) %}
+        {% endif %}
+
+        {% if itensPorLocalizacao[localizacao][chaveProduto] is not defined %}
+            {% set itensPorLocalizacao = itensPorLocalizacao | merge({
+                (localizacao): itensPorLocalizacao[localizacao] | merge({
+                    (chaveProduto): {
+                        descricao: pedidoItem.descricao,
+                        quantidade: pedidoItem.quantidade,
+                        qtde_estoque: pedidoItem.getEstoqueItem().quantidadeDisponivelVenda
+                    }
+                })
+            }) %}
+        {% else %}
+            {% set itensPorLocalizacao = itensPorLocalizacao | merge({
+                (localizacao): itensPorLocalizacao[localizacao] | merge({
+                    (chaveProduto): {
+                        descricao: pedidoItem.descricao,
+                        quantidade: itensPorLocalizacao[localizacao][chaveProduto].quantidade + pedidoItem.quantidade,
+                        qtde_estoque: itensPorLocalizacao[localizacao][chaveProduto].qtde_estoque
+                    }
+                })
+            }) %}
+        {% endif %}
+
+    {% endfor %}
+{% endfor %}
+
+<table class="table-default resumo quebrar-depois">
+    <thead>
+        <tr>
+            <th class="th-default">Localização</th>
+            <th class="th-default">Produto</th>
+            <th class="th-default">Qtde</th>
+            <th class="th-default">Qtde Estoque</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for localizacao, produtos in itensPorLocalizacao %}
+            {% set totalLocal = 0 %}
+
+            {% for codigo, item in produtos %}
+                {% set totalLocal = totalLocal + item.quantidade %}
+                <tr>
+                    <td class="td-default td-custom-resumo">{{ localizacao }}</td>
+                    <td class="td-default td-custom-resumo">{{ item.descricao }}</td>
+                    <td class="td-default td-custom-resumo">{{ item.quantidade }}</td>
+                    <td class="td-default td-custom-resumo">{{ item.qtde_estoque }}</td>
+                </tr>
+            {% endfor %}
+
+            <tr>
+                <td colspan="2" style="text-align:right;">
+                    <strong>Total {{ localizacao }}:</strong>
+                </td>
+                <td><strong>{{ totalLocal }}</strong></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% for pedidoFolhaVenda in pedidosFolhaVenda %}
+<section class="nao-quebrar-meio">
+
+    <table class="table-default">
+        <tr>
+            <td class="title td-default">Pedido:</td>
+            <td class="td-default">
+                {{ pedidoFolhaVenda.pedido.id }} - {{ pedidoFolhaVenda.pedido.codigo }}
+            </td>
+            <td class="td-default">
+                {{ print_codigo_barras(pedidoFolhaVenda.pedido.codigo) }}
+            </td>
+        </tr>
+    </table>
+
+    {% set quantidadeItensPedido = 0 %}
+    {% for pedidoItem in pedidoFolhaVenda.pedidoItem %}
+        {% set quantidadeItensPedido = quantidadeItensPedido + pedidoItem.quantidade %}
+    {% endfor %}
+
+    <table class="table-default">
+        <tr>
+            <th class="th-default">Dados do Cliente</th>
+            <th class="th-default">Dados do Pedido</th>
+        </tr>
+        <tr>
+            <td class="td-default">
+                <strong>Código:</strong> {{ pedidoFolhaVenda.cliente.id }}<br>
+                <strong>Nome:</strong> {{ pedidoFolhaVenda.cliente.nome }}<br>
+                <strong>CPF/CNPJ:</strong> {{ pedidoFolhaVenda.cliente.cpfCnpj }}<br>
+                <strong>Tipo:</strong> {{ print_pessoa_tipo(pedidoFolhaVenda.cliente.tipo) }}<br>
+                <strong>Estado:</strong>
+                {% if pedidoFolhaVenda.endereco and pedidoFolhaVenda.endereco.cidade %}
+                    {{ pedidoFolhaVenda.endereco.cidade.estado.sigla }} - {{ pedidoFolhaVenda.endereco.cidade.estado.nome }}
+                {% else %}
+                    Não informado
+                {% endif %}
+                <br>
+                <strong>Data Nascimento:</strong>
+                {{ print_date(pedidoFolhaVenda.cliente.dataNascimento) }}
+            </td>
+
+            <td class="td-default">
+                <strong>Rep.:</strong> {{ pedidoFolhaVenda.loja.nome }}<br>
+                <strong>FormaPgto:</strong> {{ pedidoFolhaVenda.formaPagamento.nome | default('-') }}<br>
+                <strong>Transp.:</strong> {{ pedidoFolhaVenda.transportadoraServico.descricao | default('-') }}<br>
+                <strong>CondiçãoPgto:</strong> {{ pedidoFolhaVenda.condicaoPagamento.nome | default('-') }}<br>
+                <strong>Emissão:</strong> {{ print_date(pedidoFolhaVenda.pedido.dataHora) }}<br>
+                <strong>Aprovação:</strong> {{ print_date(pedidoFolhaVenda.pedido.dataAprovado) }}
+            </td>
+        </tr>
+    </table>
+
+    <span style="font-size: 12px;">
+        <strong>Quantidade de Produtos: {{ quantidadeItensPedido }}</strong>
+    </span>
+
+    <table class="table-default">
+        <tr>
+            <th class="th-default">Observação</th>
+        </tr>
+        <tr>
+            <td class="td-default">
+                {% for observacao in pedidoFolhaVenda.pedido.getObservacoesPedido() %}
+                    {{ observacao.mensagem }} - {{ observacao.data_hora }}<br>
+                {% endfor %}
+            </td>
+        </tr>
+    </table>
+
+    <table class="table-default itens">
+        <thead>
+            <tr>
+                <th class="th-default">Produto</th>
+                <th class="th-default">Descrição</th>
+                <th class="th-default">Depósito</th>
+                <th class="th-default">Localização</th>
+                <th class="th-default">Qtde</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for pedidoItem in pedidoFolhaVenda.pedidoItem %}
+                <tr>
+                    <td class="td-default td-custom-item">{{ pedidoItem.produtoDerivacao.codigo }}</td>
+                    <td class="td-default td-custom-item">{{ pedidoItem.descricao }}</td>
+                    <td class="td-default td-custom-item">{{ pedidoItem.deposito.nome }}</td>
+                    <td class="td-default">
+                        {{ pedidoItem.getEstoqueItem().getLocalizacaoConcatenada() }}
+                    </td>
+
+                    {% if pedidoItem.quantidade > 1 %}
+                        <td class="td-default td-custom-item" style="font-weight: bold; font-size: 12px;">
+                            {{ pedidoItem.quantidade }}
+                        </td>
+                    {% else %}
+                        <td class="td-default td-custom-item">
+                            {{ pedidoItem.quantidade }}
+                        </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</section>
+{% endfor %}
+
+</body>
+</html>
